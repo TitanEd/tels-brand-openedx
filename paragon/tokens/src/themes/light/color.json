@@ -28,6 +28,14 @@
         "$description": "Light primary color."
       }
     },
+
+    "success": {
+      "base": {
+        "$value": "#18BBA2",
+        "source": "$success",
+        "$description": "Basic success color."
+      }
+    },
     "text": {
       "base": {
         "$value": "#111827",

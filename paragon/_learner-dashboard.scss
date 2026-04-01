@@ -1,0 +1,32 @@
+.course-progress {
+  flex: 0 0 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .progress {
+    flex: 1;
+    border: 0;
+    height: 5px;
+    background: var(--pgn-color-alert-bg-info);
+  }
+
+  .progress-bar {
+    border-radius: 5px;
+  }
+
+  .progress-label {
+    flex: 0 0 50px;
+    text-align: right;
+    font-size: 0.875rem;
+  }
+}
+
+.pgn__action-row {
+
+  &:has(.course-progress) {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

@@ -4355,6 +4355,31 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 .theme-toggle-button .toggle-switch .switch .slider.round::before {
   border-radius: 50%;
 }
+.course-progress {
+  flex: 0 0 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.course-progress .progress {
+  flex: 1;
+  border: 0;
+  height: 5px;
+  background: var(--pgn-color-alert-bg-info);
+}
+.course-progress .progress-bar {
+  border-radius: 5px;
+}
+.course-progress .progress-label {
+  flex: 0 0 50px;
+  text-align: right;
+  font-size: 0.875rem;
+}
+.pgn__action-row:has(.course-progress) {
+  flex-wrap: wrap;
+  width: 100%;
+}
 [data-paragon-theme-variant=dark] #root {
   position: relative;
   z-index: 1;
