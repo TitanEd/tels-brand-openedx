@@ -1,12 +1,14 @@
-// Use this file to define style overrides for @edx/paragon
-// This file is included after all Paragon styles, but should generally avoid using private mixins in Paragon.
-
-// Override Paragon v23's runtime CSS custom properties with Axim brand colors.
-// Paragon SCSS variables all resolve to var(--pgn-color-*), so overriding
-// those custom properties is the only effective path to retheming.
+/*
+ * Axim brand — light theme variant
+ * Overrides Paragon v23's light theme CSS custom properties with Axim colors.
+ * Loaded after paragon-theme-variants-light.css, so these win by cascade order.
+ *
+ * Navy    #092B4D  → primary, brand
+ * Magenta #9D0054  → accent-a, secondary, danger-hover
+ */
 
 :root {
-  // -------- Primary → Navy #092B4D --------
+  /* Primary */
   --pgn-color-primary-base: #092B4D;
   --pgn-color-primary-100: #E6EAEF;
   --pgn-color-primary-200: #CED5DB;
@@ -18,7 +20,7 @@
   --pgn-color-primary-800: #051828;
   --pgn-color-primary-900: #03101A;
 
-  // -------- Brand → Navy #092B4D --------
+  /* Brand */
   --pgn-color-brand-base: #092B4D;
   --pgn-color-brand-100: #E6EAEF;
   --pgn-color-brand-200: #CED5DB;
@@ -30,7 +32,7 @@
   --pgn-color-brand-800: #051828;
   --pgn-color-brand-900: #03101A;
 
-  // -------- Accent-A → Magenta #9D0054 --------
+  /* Accent-A */
   --pgn-color-accent-a: #9D0054;
   --pgn-color-accent-a-100: #F5E0ED;
   --pgn-color-accent-a-200: #E4B0CF;
@@ -42,9 +44,19 @@
   --pgn-color-accent-a-800: #6E003B;
   --pgn-color-accent-a-900: #5E0032;
 
-  // -------- Action hover/focus states --------
-  // Paragon's buttons use --pgn-color-action-default-<variant>-<tier> for hover/focus.
-  // Map these to match the new palette so interactive states recolor correctly.
+  /* Secondary → Magenta */
+  --pgn-color-secondary-base: #9D0054;
+  --pgn-color-secondary-100: #F5E0ED;
+  --pgn-color-secondary-200: #E4B0CF;
+  --pgn-color-secondary-300: #CE80AA;
+  --pgn-color-secondary-400: #B6407F;
+  --pgn-color-secondary-500: #9D0054;
+  --pgn-color-secondary-600: #8D004C;
+  --pgn-color-secondary-700: #7E0043;
+  --pgn-color-secondary-800: #6E003B;
+  --pgn-color-secondary-900: #5E0032;
+
+  /* Action default (hover/focus) states mirror the palette one step darker */
   --pgn-color-action-default-primary-100: #CED5DB;
   --pgn-color-action-default-primary-200: #9DABB8;
   --pgn-color-action-default-primary-300: #476281;
@@ -76,7 +88,17 @@
   --pgn-color-action-default-accent-a-800: #5E0032;
   --pgn-color-action-default-accent-a-900: #4E0029;
 
-  // -------- Brand-scoped link colors --------
+  --pgn-color-action-default-secondary-100: #E4B0CF;
+  --pgn-color-action-default-secondary-200: #CE80AA;
+  --pgn-color-action-default-secondary-300: #B6407F;
+  --pgn-color-action-default-secondary-400: #9D0054;
+  --pgn-color-action-default-secondary-500: #8D004C;
+  --pgn-color-action-default-secondary-600: #7E0043;
+  --pgn-color-action-default-secondary-700: #6E003B;
+  --pgn-color-action-default-secondary-800: #5E0032;
+  --pgn-color-action-default-secondary-900: #4E0029;
+
+  /* Brand-scoped links */
   --pgn-color-link-brand-base: #092B4D;
   --pgn-color-link-brand-hover: #072036;
   --pgn-color-link-brand-inline-base: #092B4D;
