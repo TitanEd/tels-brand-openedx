@@ -17,8 +17,8 @@
   },
   "scripts": {
     "build-tokens": "paragon build-tokens --source ./paragon/tokens/src/ --build-dir ./paragon/build -t light --verbose",
-    "build-scss": "paragon build-scss --corePath ./paragon/core.scss --themesPath ./paragon/build/themes",
-    "build": "rm -rf dist && mkdir dist && npm run build-tokens && npm run build-scss"
+    "build-dist": "node ./scripts/build-dist.js",
+    "build": "rm -rf dist && mkdir dist && npm run build-tokens && npm run build-dist"
   },
   "devDependencies": {
     "@openedx/paragon": "23.14.9"
