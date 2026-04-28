@@ -1,0 +1,9 @@
+// Core SCSS entry compiled by `paragon build-scss` into dist/core.{css,min.css}.
+// Pulls in Paragon's own core abstractions, then layers our brand fonts + variable overrides + CSS-custom-property overrides.
+
+@use "~@openedx/paragon/styles/css/themes/light/abstraction-variables.css";
+@import "./build/core/index.css";
+
+@import "./variables";
+@import "./fonts";
+@import "./overrides";

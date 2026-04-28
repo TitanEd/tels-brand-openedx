@@ -1,0 +1,33 @@
+{
+  "$type": "color",
+  "color": {
+    "primary": {
+      "base": {
+        "$value": "#092B4D",
+        "source": "$primary",
+        "$description": "Axim brand navy."
+      }
+    },
+    "brand": {
+      "base": {
+        "$value": "#092B4D",
+        "source": "$brand",
+        "$description": "Axim brand navy."
+      }
+    },
+    "accent": {
+      "a": {
+        "$value": "#9D0054",
+        "source": "$accent-a",
+        "$description": "Axim brand magenta."
+      }
+    },
+    "secondary": {
+      "base": {
+        "$value": "#9D0054",
+        "source": "$secondary",
+        "$description": "Axim brand magenta."
+      }
+    }
+  }
+}
