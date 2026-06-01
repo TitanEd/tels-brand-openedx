@@ -1,0 +1,17 @@
+{
+  "color": {
+    "$type": "color",
+    "primary": {
+      "base": {
+        "$value": "#000000",
+        "$description": "EDL primary brand color (black)."
+      }
+    },
+    "secondary": {
+      "base": {
+        "$value": "#9b51e0",
+        "$description": "EDL secondary brand color (purple)."
+      }
+    }
+  }
+}
