@@ -67,8 +67,17 @@ footer.tutor-container {
     .nav-colophon {
         display: block;
         overflow: hidden;
+        margin: 0 0 12px;
+        width: 100%;
+        visibility: visible;
         ol {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             text-align: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
             li {
                 display: inline-block;
                 vertical-align: top;
@@ -81,12 +90,23 @@ footer.tutor-container {
                     line-height: 24px;
                 }
                 a {
+                    display: inline-block;
                     color: var(--pgn-color-text-footer);
                     text-decoration: none;
                     &:hover {
                         text-decoration: none;
                     }
                 }
+            }
+        }
+    }
+    > .nav-colophon {
+        ol {
+            li {
+                display: none !important;
+            }
+            li:first-child {
+                display: block !important;
             }
         }
     }

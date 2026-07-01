@@ -2066,9 +2066,18 @@ footer.tutor-container .logo-list li:last-child:after {
 footer.tutor-container .nav-colophon {
   display: block;
   overflow: hidden;
+  margin: 0 0 12px;
+  width: 100%;
+  visibility: visible;
 }
 footer.tutor-container .nav-colophon ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 footer.tutor-container .nav-colophon ol li {
   display: inline-block;
@@ -2092,11 +2101,15 @@ footer.tutor-container .nav-colophon ol li {
   }
 }
 footer.tutor-container .nav-colophon ol li a {
+  display: inline-block;
   color: var(--pgn-color-text-footer);
   text-decoration: none;
 }
 footer.tutor-container .nav-colophon ol li a:hover {
   text-decoration: none;
+}
+footer.tutor-container > .nav-colophon ol li:not(:first-child) {
+  display: none;
 }
 footer.tutor-container .copyright-site {
   display: block;
@@ -5159,9 +5172,18 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon {
   display: block;
   overflow: hidden;
+  margin: 0 0 12px;
+  width: 100%;
+  visibility: visible;
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon ol li {
   display: inline-block;
@@ -5185,11 +5207,15 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   }
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon ol li a {
+  display: inline-block;
   color: var(--pgn-color-text-footer);
   text-decoration: none;
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon ol li a:hover {
   text-decoration: none;
+}
+[data-paragon-theme-variant=dark] footer.tutor-container > .nav-colophon ol li:not(:first-child) {
+  display: none;
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .copyright-site {
   display: block;
