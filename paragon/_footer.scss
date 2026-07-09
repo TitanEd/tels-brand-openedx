@@ -15,7 +15,6 @@ footer.tutor-container {
         text-align: left;
     }
     .footer-top {
-        display: none;
         margin: 0 0 15px;
         &:after {
             clear: both;
@@ -23,6 +22,7 @@ footer.tutor-container {
             content: "";
         }
         .powered-area {
+            display: none;
             margin: 0 0 10px;
             @media (--pgn-size-breakpoint-min-width-md) {
                 margin: 0 0 15px;
@@ -100,13 +100,13 @@ footer.tutor-container {
             }
         }
     }
-    > .nav-colophon {
+    .nav-colophon {
         ol {
             li {
                 display: none !important;
             }
             li:first-child {
-                display: block !important;
+                display: inline-block !important;
             }
         }
     }

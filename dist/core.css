@@ -2000,7 +2000,6 @@ footer.tutor-container {
   }
 }
 footer.tutor-container .footer-top {
-  display: none;
   margin: 0 0 15px;
 }
 footer.tutor-container .footer-top:after {
@@ -2009,6 +2008,7 @@ footer.tutor-container .footer-top:after {
   content: "";
 }
 footer.tutor-container .footer-top .powered-area {
+  display: none;
   margin: 0 0 10px;
 }
 @media (min-width: 768px) {
@@ -2085,6 +2085,7 @@ footer.tutor-container .nav-colophon ol li {
   padding: 0 8px;
   font-size: 14px;
   line-height: 20px;
+  display: none !important;
 }
 @media (min-width: 768px) {
   footer.tutor-container .nav-colophon ol li {
@@ -2108,8 +2109,8 @@ footer.tutor-container .nav-colophon ol li a {
 footer.tutor-container .nav-colophon ol li a:hover {
   text-decoration: none;
 }
-footer.tutor-container > .nav-colophon ol li:not(:first-child) {
-  display: none;
+footer.tutor-container .nav-colophon ol li:first-child {
+  display: inline-block !important;
 }
 footer.tutor-container .copyright-site {
   display: block;
@@ -5106,7 +5107,6 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   }
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .footer-top {
-  display: none;
   margin: 0 0 15px;
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .footer-top:after {
@@ -5115,6 +5115,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   content: "";
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .footer-top .powered-area {
+  display: none;
   margin: 0 0 10px;
 }
 @media (min-width: 768px) {
@@ -5191,6 +5192,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   padding: 0 8px;
   font-size: 14px;
   line-height: 20px;
+  display: none !important;
 }
 @media (min-width: 768px) {
   [data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon ol li {
@@ -5214,8 +5216,8 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon ol li a:hover {
   text-decoration: none;
 }
-[data-paragon-theme-variant=dark] footer.tutor-container > .nav-colophon ol li:not(:first-child) {
-  display: none;
+[data-paragon-theme-variant=dark] footer.tutor-container .nav-colophon ol li:first-child {
+  display: inline-block !important;
 }
 [data-paragon-theme-variant=dark] footer.tutor-container .copyright-site {
   display: block;
