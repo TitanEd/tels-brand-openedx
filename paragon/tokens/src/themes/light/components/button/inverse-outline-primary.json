@@ -1,0 +1,27 @@
+{
+  "$description": "INVERSE OUTLINE PRIMARY — .btn-inverse-outline-primary on primary bg (Learning instructor toolbar: Staff, Studio). Default white outline/text; hover white fill + primary text (Paragon default hover text = primary on primary bg = invisible).",
+  "color": {
+    "btn": {
+      "hover": {
+        "text": {
+          "inverse-outline-primary": {
+            "$value": "{color.primary.base}",
+            "$description": "Hover text on white fill → --pgn-color-btn-hover-text-inverse-outline-primary"
+          }
+        },
+        "bg": {
+          "inverse-outline-primary": {
+            "$value": "{color.white}",
+            "$description": "Hover fill → --pgn-color-btn-hover-bg-inverse-outline-primary"
+          }
+        },
+        "border": {
+          "inverse-outline-primary": {
+            "$value": "{color.white}",
+            "$description": "Hover border → --pgn-color-btn-hover-border-inverse-outline-primary"
+          }
+        }
+      }
+    }
+  }
+}

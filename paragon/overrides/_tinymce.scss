@@ -1,0 +1,99 @@
+// LAYER 2 — TinyMCE override (NOT Paragon — ships blue #207ab7 defaults)
+// Tokens reused: button solid-primary / outline + color.primary.base
+// Why: Editor dialogs (.tox-*) ignore Paragon CSS; map to brand vars here.
+
+.tox {
+  .tox-button:not(.tox-button--secondary):not(.tox-button--icon) {
+    background-color: var(--pgn-color-btn-bg-primary) !important;
+    border-color: var(--pgn-color-btn-border-primary) !important;
+    color: var(--pgn-color-btn-text-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled) {
+      background-color: var(--pgn-color-btn-hover-bg-primary) !important;
+      border-color: var(--pgn-color-btn-hover-border-primary) !important;
+      color: var(--pgn-color-btn-hover-text-primary) !important;
+    }
+  }
+
+  .tox-button--secondary {
+    border-color: var(--pgn-color-btn-border-outline-primary) !important;
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled) {
+      border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+      color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+    }
+  }
+
+  .tox-dialog__body-nav-item--active {
+    border-bottom-color: var(--pgn-color-primary-base) !important;
+    color: var(--pgn-color-primary-base) !important;
+  }
+
+  .tox-dialog__body-nav-item:hover {
+    color: var(--pgn-color-primary-base);
+  }
+
+  // Checkbox icons (Insert/Edit Image → "Image is decorative")
+  .tox-checkbox__icons {
+    .tox-checkbox-icon__checked svg path,
+    .tox-icon.tox-checkbox-icon__checked svg path {
+      fill: var(--pgn-color-primary-base) !important;
+    }
+
+    .tox-checkbox-icon__unchecked svg path {
+      fill: var(--pgn-color-form-input-border, var(--pgn-color-gray-500)) !important;
+    }
+  }
+
+  .tox-checkbox:not(.tox-checkbox--disabled):hover {
+    .tox-checkbox-icon__unchecked svg path {
+      fill: var(--pgn-color-primary-base) !important;
+    }
+  }
+
+  // Text inputs inside TinyMCE dialogs
+  .tox-textfield,
+  .tox-listboxfield .tox-listbox,
+  .tox-textarea {
+    border-color: var(--pgn-color-form-input-border) !important;
+    border-radius: var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base)) !important;
+    color: var(--pgn-color-form-input-base) !important;
+
+    &:focus {
+      border-color: var(--pgn-color-form-input-focus-border, var(--pgn-color-primary-base)) !important;
+      box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+    }
+  }
+
+  // Language / native <select> in dialogs (Insert/Edit Code Sample)
+  // Use tox mixin — TinyMCE already renders .tox-selectfield__icon-js (avoid double chevron)
+  .tox-selectfield select {
+    border-color: var(--pgn-color-form-input-border) !important;
+    border-radius: var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base)) !important;
+    @include tels-branded-tox-select;
+  }
+}
+
+// TinyMCE listbox / menu collections render in .tox-tinymce-aux (often outside #root)
+.tox.tox-tinymce-aux,
+.tox-tinymce-aux,
+.tox {
+  .tox-collection__item {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  .tox-collection__item--active,
+  .tox-collection__item--enabled,
+  .tox-collection__item[aria-selected="true"] {
+    background-color: var(--pgn-color-primary-base) !important;
+    color: var(--pgn-color-white) !important;
+  }
+
+  .tox-listboxfield .tox-listbox--select:focus {
+    border-color: var(--pgn-color-primary-base) !important;
+    box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+  }
+}

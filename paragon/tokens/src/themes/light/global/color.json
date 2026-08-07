@@ -1,0 +1,126 @@
+{
+  "$type": "color",
+  "$description": "LAYER 1 — Global semantic colors (light). Change color.primary.base once → buttons, links, tabs, selects, TinyMCE accents. Applied via CSS vars; bridges only rematch selectors.",
+  "color": {
+    "white": {
+      "$value": "#FFFFFF",
+      "$description": "UI label: White"
+    },
+    "black": {
+      "$value": "#000000",
+      "$description": "UI label: Black"
+    },
+    "red": {
+      "$value": "#C32D3A",
+      "$description": "Base red (feeds Danger when linked)"
+    },
+    "green": {
+      "$value": "#178253",
+      "$description": "Base green (feeds Success when linked)"
+    },
+    "blue": {
+      "$value": "#23419F",
+      "$description": "Base blue"
+    },
+    "yellow": {
+      "$value": "#FFD900",
+      "$description": "Base yellow (feeds Warning when linked)"
+    },
+    "teal": {
+      "$value": "#006DAA",
+      "$description": "Base teal (feeds Info when linked)"
+    },
+    "accent": {
+      "a": {
+        "$value": "#00BBF9",
+        "$description": "UI label: Accent A"
+      },
+      "b": {
+        "$value": "#FFEE88",
+        "$description": "UI label: Accent B"
+      }
+    },
+    "primary": {
+      "base": {
+        "$value": "#EB5939",
+        "$description": "UI label: Primary \u2014 cascades to solid primary button bg and related primary uses"
+      },
+      "light": {
+        "$value": "#F2F7F8",
+        "$description": "Primary light surface"
+      }
+    },
+    "secondary": {
+      "base": {
+        "$value": "#454545",
+        "$description": "UI label: Secondary"
+      }
+    },
+    "brand": {
+      "base": {
+        "$value": "#EB5939",
+        "$description": "UI label: Brand"
+      }
+    },
+    "success": {
+      "base": {
+        "$value": "{color.green}",
+        "$description": "UI label: Success"
+      }
+    },
+    "info": {
+      "base": {
+        "$value": "{color.teal}",
+        "$description": "UI label: Info"
+      }
+    },
+    "warning": {
+      "base": {
+        "$value": "{color.yellow}",
+        "$description": "UI label: Warning"
+      }
+    },
+    "danger": {
+      "base": {
+        "$value": "{color.red}",
+        "$description": "UI label: Danger"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "#E1DDDB",
+        "$description": "UI label: Light base"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "#273F2F",
+        "$description": "UI label: Dark base"
+      }
+    },
+    "gray": {
+      "base": {
+        "$value": "#707070",
+        "$description": "UI label: Gray base"
+      }
+    },
+    "text": {
+      "base": {
+        "$value": "#111827",
+        "$description": "UI label: Body text (text-base)"
+      },
+      "light": {
+        "$value": "#515661",
+        "$description": "Lighter body text"
+      },
+      "primary": {
+        "$value": "#515661",
+        "$description": "Text primary variant"
+      },
+      "footer": {
+        "$value": "#374151",
+        "$description": "Footer text"
+      }
+    }
+  }
+}

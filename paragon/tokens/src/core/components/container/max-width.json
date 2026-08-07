@@ -1,0 +1,29 @@
+{
+  "$description": "LAYER 1 — PAGE MAX-WIDTH (all MFEs). Edit size.container.max-width.xl to change main content width everywhere. Applied by tels-content-width in paragon/overrides/_layout.scss + paragon/_header.scss / _footer.scss.",
+  "size": {
+    "container": {
+      "max-width": {
+        "xs": {
+          "$value": "464px",
+          "$description": "Container max-width xs → --pgn-size-container-max-width-xs"
+        },
+        "sm": {
+          "$value": "708px",
+          "$description": "Container max-width sm → --pgn-size-container-max-width-sm"
+        },
+        "md": {
+          "$value": "952px",
+          "$description": "Container max-width md → --pgn-size-container-max-width-md"
+        },
+        "lg": {
+          "$value": "1192px",
+          "$description": "Container max-width lg → --pgn-size-container-max-width-lg"
+        },
+        "xl": {
+          "$value": "1600px",
+          "$description": "MAIN page max-width (change this) → --pgn-size-container-max-width-xl"
+        }
+      }
+    }
+  }
+}

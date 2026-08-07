@@ -1,0 +1,25 @@
+// LAYER 2 — Dropdown kit (Paragon JSX menus)
+// Tokens: themes/light/components/dropdown/colors.json
+// Menu border: Open edX / Paragon default (we do not override border-color).
+// Native HTML <select>: see _selects.scss.
+
+.dropdown-menu {
+  background-color: var(--pgn-color-dropdown-bg, var(--pgn-color-white)) !important;
+}
+
+.dropdown-item,
+[role="listbox"] [role="option"] {
+  color: var(--pgn-color-dropdown-item-text, var(--pgn-color-text-base)) !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:focus-visible,
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active,
+[role="listbox"] [role="option"]:hover,
+[role="listbox"] [role="option"]:focus,
+[role="listbox"] [role="option"][aria-selected="true"] {
+  background-color: var(--pgn-color-dropdown-item-hover-bg, var(--pgn-color-primary-base)) !important;
+  color: var(--pgn-color-dropdown-item-hover-text, var(--pgn-color-white)) !important;
+}

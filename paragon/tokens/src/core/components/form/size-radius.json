@@ -1,0 +1,41 @@
+{
+  "$description": "FORM CONTROL size — border radius for inputs and selects (follows global radius)",
+  "size": {
+    "form": {
+      "input": {
+        "radius": {
+          "border": {
+            "base": {
+              "$value": "{size.border.radius.base}",
+              "$description": "Input/select radius → --pgn-size-form-input-radius-border-base"
+            },
+            "sm": {
+              "$value": "{size.border.radius.sm}",
+              "$description": "Input radius sm"
+            },
+            "lg": {
+              "$value": "{size.border.radius.lg}",
+              "$description": "Input radius lg"
+            }
+          }
+        },
+        "width": {
+          "border": {
+            "$value": "1px",
+            "$description": "Input border width → --pgn-size-form-input-width-border"
+          }
+        }
+      },
+      "control": {
+        "select": {
+          "radius": {
+            "border": {
+              "$value": "{size.border.radius.base}",
+              "$description": "Select radius → --pgn-size-form-control-select-radius-border"
+            }
+          }
+        }
+      }
+    }
+  }
+}

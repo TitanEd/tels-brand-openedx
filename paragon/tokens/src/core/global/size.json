@@ -1,0 +1,25 @@
+{
+  "$description": "Layer 1 \u2014 size metrics (shared core)",
+  "size": {
+    "border": {
+      "radius": {
+        "sm": {
+          "$value": "0.25rem",
+          "$description": "Radius sm \u2192 --pgn-size-border-radius-sm"
+        },
+        "base": {
+          "$value": "0.375rem",
+          "$description": "Radius base \u2192 --pgn-size-border-radius-base"
+        },
+        "lg": {
+          "$value": "0.5rem",
+          "$description": "Radius lg \u2192 --pgn-size-border-radius-lg"
+        }
+      },
+      "width": {
+        "$value": "1px",
+        "$description": "Border width"
+      }
+    }
+  }
+}

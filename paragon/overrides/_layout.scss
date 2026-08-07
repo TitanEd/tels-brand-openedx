@@ -1,0 +1,146 @@
+// LAYER 1/2 — Layout (shared shells) (page max-width + side padding)
+// Tokens defined in:
+//   core/components/container/max-width.json → size.container.max-width.xl
+//   core/global/spacing.json                 → spacing.grid.gutter-width (L/R pad = half)
+// Why: one place drives Learning, Discussion, Catalog, headers, footers.
+// Header/footer shells also call @include tels-content-width from MFE maps (_header/_footer).
+// Do NOT hardcode px for width/padding in MFE SCSS — change tokens above.
+
+@mixin tels-content-width {
+  max-width: calc(var(--pgn-size-container-max-width-xl) + var(--pgn-spacing-grid-gutter-width)) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+}
+
+$tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
+
+// --- Shared shells (no .container-xl inside, or neutralize nested one) ---
+#courseTabsNavigation,
+.header-action-bar,
+.header-action-bar + .d-flex.flex-row.position-relative {
+  @include tels-content-width;
+}
+
+// Learning wraps tabs in .container-xl — don't double-constrain
+#courseTabsNavigation > .container-xl {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+// Discussion uses .navbar.fixed-top (escapes parent) — keep in flow so max-width applies
+.header-action-bar {
+  .navbar.fixed-top {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+// --- Bootstrap / Paragon containers ---
+.container,
+.container-fluid:not(#main),
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+#main-content.container-xl,
+#main-content {
+  padding-left: $tels-gutter-x !important;
+  padding-right: $tels-gutter-x !important;
+  box-sizing: border-box;
+}
+
+// Discussion / some MFEs: full-bleed main shell; children use tels-content-width
+main#main.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+#main-content.container-xl,
+#main-content {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: calc(var(--pgn-size-container-max-width-sm) + var(--pgn-spacing-grid-gutter-width)) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: calc(var(--pgn-size-container-max-width-md) + var(--pgn-spacing-grid-gutter-width)) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: calc(var(--pgn-size-container-max-width-lg) + var(--pgn-spacing-grid-gutter-width)) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  #main-content.container-xl,
+  #main-content {
+    max-width: calc(var(--pgn-size-container-max-width-xl) + var(--pgn-spacing-grid-gutter-width)) !important;
+  }
+}
+
+.container-mw-xs {
+  max-width: calc(var(--pgn-size-container-max-width-xs) + var(--pgn-spacing-grid-gutter-width)) !important;
+}
+
+.container-mw-sm {
+  max-width: calc(var(--pgn-size-container-max-width-sm) + var(--pgn-spacing-grid-gutter-width)) !important;
+}
+
+.container-mw-md {
+  max-width: calc(var(--pgn-size-container-max-width-md) + var(--pgn-spacing-grid-gutter-width)) !important;
+}
+
+.container-mw-lg {
+  max-width: calc(var(--pgn-size-container-max-width-lg) + var(--pgn-spacing-grid-gutter-width)) !important;
+}
+
+.container-mw-xl {
+  max-width: calc(var(--pgn-size-container-max-width-xl) + var(--pgn-spacing-grid-gutter-width)) !important;
+}
+
+.mw-xs { max-width: var(--pgn-size-container-max-width-xs) !important; }
+.mw-sm { max-width: var(--pgn-size-container-max-width-sm) !important; }
+.mw-md { max-width: var(--pgn-size-container-max-width-md) !important; }
+.mw-lg { max-width: var(--pgn-size-container-max-width-lg) !important; }
+.mw-xl { max-width: var(--pgn-size-container-max-width-xl) !important; }

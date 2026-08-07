@@ -1,0 +1,45 @@
+{
+  "$description": "OUTLINE PRIMARY — class: btn btn-outline-primary / btn-outline-primary btn-sm (Expand all, View About Page in Studio)",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-primary": {
+          "$value": "transparent",
+          "$description": "Background → --pgn-color-btn-bg-outline-primary"
+        }
+      },
+      "text": {
+        "outline-primary": {
+          "$value": "{color.primary.base}",
+          "$description": "Text → --pgn-color-btn-text-outline-primary"
+        }
+      },
+      "border": {
+        "outline-primary": {
+          "$value": "{color.primary.base}",
+          "$description": "Border → --pgn-color-btn-border-outline-primary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-primary": {
+            "$value": "transparent",
+            "$description": "Hover bg → --pgn-color-btn-hover-bg-outline-primary"
+          }
+        },
+        "text": {
+          "outline-primary": {
+            "$value": "{color.theme.hover.primary}",
+            "$description": "Hover text → --pgn-color-btn-hover-text-outline-primary"
+          }
+        },
+        "border": {
+          "outline-primary": {
+            "$value": "{color.primary.700}",
+            "$description": "Hover border → --pgn-color-btn-hover-border-outline-primary"
+          }
+        }
+      }
+    }
+  }
+}

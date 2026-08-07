@@ -1,0 +1,119 @@
+// LAYER 2 — Form kit override (all MFEs)
+// Tokens defined in:
+//   themes/light/components/form/input.json       → colors (input, indicator, checkbox icon)
+//   core/components/form/size-radius.json         → radius / border width
+// Why: Gradebook filters, Authn, Discussion, Catalog filters share one control look.
+// Use !important so MFE/local SCSS cannot keep Bootstrap/Indigo defaults.
+// Checkbox: do NOT set primary bg on :checked — SVG check icon is already primary-colored.
+
+:root {
+  accent-color: var(--pgn-color-primary-base);
+}
+
+.page-gradebook,
+.sidebar-container,
+.student-filters,
+.grade-filter-inputs,
+.gradebook-content,
+.pgn__form-group,
+.form-group {
+  .pgn__form-label,
+  label.pgn__form-label {
+    color: var(--pgn-color-body-base, var(--pgn-color-text-base));
+  }
+}
+
+.page-gradebook .form-control,
+.page-gradebook select.form-control,
+.page-gradebook input.form-control,
+.student-filters .form-control,
+.grade-filter-inputs .form-control,
+.gradebook-content .form-control,
+.pgn__form-control-decorator-group .form-control,
+.pgn__form-control-decorator-group > .form-control,
+select.form-control,
+input.form-control,
+textarea.form-control,
+.form-control {
+  color: var(--pgn-color-form-input-base) !important;
+  background-color: var(--pgn-color-form-input-bg-base) !important;
+  border-color: var(--pgn-color-form-input-border) !important;
+  border-radius: var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base)) !important;
+  border-width: var(--pgn-size-form-input-width-border, 1px) !important;
+  accent-color: var(--pgn-color-primary-base);
+}
+
+select.form-control {
+  accent-color: var(--pgn-color-primary-base);
+  // Option hover/selected colors: see _selects.scss (appearance: base-select)
+}
+
+.form-control:focus,
+select.form-control:focus,
+input.form-control:focus,
+textarea.form-control:focus,
+.pgn__form-control-decorator-group:focus-within .form-control {
+  border-color: var(--pgn-color-form-input-focus-border) !important;
+  box-shadow: 0 0 0 0.125rem color-mix(in srgb, var(--pgn-color-primary-base) 25%, transparent) !important;
+  outline: none !important;
+}
+
+.form-control:disabled,
+select.form-control:disabled,
+input.form-control:disabled {
+  background-color: var(--pgn-color-form-input-bg-disabled, var(--pgn-color-gray-100)) !important;
+  border-color: var(--pgn-color-form-input-border) !important;
+}
+
+// Paragon checkbox / radio — checked icon SVG is already primary-colored
+// (--pgn-other-content-form-control-checkbox-indicator-icon-checked-base).
+// Do NOT set background-color to primary on :checked (hides the checkmark).
+.pgn__form-checkbox-input {
+  accent-color: var(--pgn-color-primary-base);
+  border-color: var(--pgn-color-form-control-indicator-border, var(--pgn-color-gray-700)) !important;
+  background-color: var(--pgn-color-form-control-indicator-bg-base, var(--pgn-color-white)) !important;
+
+  &:checked {
+    border-color: var(--pgn-color-form-control-indicator-checked-border-base, var(--pgn-color-primary-base)) !important;
+    background-color: var(--pgn-color-form-control-indicator-bg-base, var(--pgn-color-white)) !important;
+    background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  &:indeterminate {
+    background-image: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  &:focus {
+    border-color: var(--pgn-color-primary-base) !important;
+  }
+
+  &:focus::before {
+    border-color: var(--pgn-color-primary-base) !important;
+  }
+}
+
+.custom-control-input:checked ~ .custom-control-label::before,
+.form-check-input:checked {
+  background-color: var(--pgn-color-form-control-indicator-checked-bg-base, var(--pgn-color-primary-base)) !important;
+  border-color: var(--pgn-color-form-control-indicator-checked-border-base, var(--pgn-color-primary-base)) !important;
+}
+
+// Info badges / filter chips (Track: Audit) — were Bootstrap blue
+.badge.badge-info,
+.badge-info {
+  background-color: var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-white) !important;
+  border-radius: var(--pgn-size-border-radius-sm) !important;
+
+  .btn,
+  .btn-primary,
+  .btn-info {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: var(--pgn-color-white) !important;
+  }
+}

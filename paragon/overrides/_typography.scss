@@ -1,0 +1,93 @@
+// LAYER 1 — Global typography override
+// Tokens defined in:
+//   core/global/typography.json          → font family + H1–H6 sizes
+//   core/components/text/headings-font.json → headings font-family (inherits body)
+//   themes/*/components/text/headings.json  → heading color
+// Why: one place to change typeface/heading scale for every MFE.
+// Must NOT use `* { font-family }` — that breaks FontAwesome (.fa) icons.
+
+html {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-base);
+}
+
+body {
+  font-family: var(--pgn-typography-font-family-base);
+  color: var(--pgn-color-body-base, var(--pgn-color-text-base));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Headings — family + size + color from Layer 1 tokens (all MFEs)
+h1, .h1 {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h1-base);
+  color: var(--pgn-color-headings-base);
+  line-height: var(--pgn-typography-headings-line-height, 1.25);
+}
+
+h2, .h2 {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h2-base);
+  color: var(--pgn-color-headings-base);
+  line-height: var(--pgn-typography-headings-line-height, 1.25);
+}
+
+h3, .h3 {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h3-base);
+  color: var(--pgn-color-headings-base);
+  line-height: var(--pgn-typography-headings-line-height, 1.25);
+}
+
+h4, .h4 {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h4-base);
+  color: var(--pgn-color-headings-base);
+  line-height: var(--pgn-typography-headings-line-height, 1.25);
+}
+
+h5, .h5 {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h5-base);
+  color: var(--pgn-color-headings-base);
+  line-height: var(--pgn-typography-headings-line-height, 1.25);
+}
+
+h6, .h6 {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h6-base);
+  color: var(--pgn-color-headings-base);
+  line-height: var(--pgn-typography-headings-line-height, 1.25);
+}
+
+// Protect icon fonts — never inherit the brand UI font
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fad,
+[class^="fa-"],
+[class*=" fa-"],
+.pgn__icon.fa,
+.pgn__icon.fas,
+.pgn__icon.far {
+  font-family: FontAwesome, "FontAwesome", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro" !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased;
+
+  &::before {
+    font-family: FontAwesome, "FontAwesome", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro" !important;
+  }
+}
+
+// Paragon SVG icons — leave font alone; they draw with currentColor paths
+.pgn__icon svg,
+.btn-icon__icon svg {
+  font-family: inherit;
+}

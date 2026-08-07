@@ -1,0 +1,39 @@
+{
+  "$description": "SEARCH FIELD — values only. External: style .pgn__searchfield_wrapper (box) and .pgn__searchfield__button separately. Internal: outer .pgn__searchfield border + icon button.",
+  "color": {
+    "search-field": {
+      "border": {
+        "base": {
+          "$value": "{color.gray.500}",
+          "$description": "Search box border → --pgn-color-search-field-border-base"
+        },
+        "interaction": {
+          "$value": "{color.primary.base}",
+          "$description": "Hover/active border"
+        },
+        "focus": {
+          "$value": "{color.primary.base}",
+          "$description": "Focus border"
+        }
+      },
+      "button": {
+        "bg": {
+          "primary": {
+            "$value": "{color.primary.base}",
+            "$description": "External submit .btn-primary fill"
+          }
+        }
+      },
+      "icon": {
+        "base": {
+          "$value": "{color.primary.base}",
+          "$description": "Internal icon-button color"
+        }
+      },
+      "form-bg": {
+        "$value": "{color.white}",
+        "$description": "Search box background"
+      }
+    }
+  }
+}

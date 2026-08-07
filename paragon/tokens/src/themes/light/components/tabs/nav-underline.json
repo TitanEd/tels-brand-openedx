@@ -1,0 +1,25 @@
+{
+  "$description": "COURSE / NAV UNDERLINE TABS \u2014 .nav-underline-tabs .nav-link (Learning MFE course tabs).",
+  "color": {
+    "nav-tabs": {
+      "base": {
+        "link": {
+          "active": {
+            "text": {
+              "$value": "{color.primary.base}",
+              "$description": "Active tab text color"
+            },
+            "border": {
+              "$value": "{color.primary.base}",
+              "$description": "Active tab underline"
+            }
+          },
+          "text": {
+            "$value": "{color.gray.700}",
+            "$description": "Inactive tab text"
+          }
+        }
+      }
+    }
+  }
+}

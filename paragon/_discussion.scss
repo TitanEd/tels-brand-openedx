@@ -1,0 +1,44 @@
+// LAYER 3 — Discussion MFE (posts / filters / TinyMCE dialogs)
+// Width (tabs, action bar, content row): Layer 1 via overrides/_layout.scss
+// Native select: Layer 2 overrides/_selects.scss (tels-branded-select mixin)
+// Checkbox: Layer 2 overrides/_forms.scss
+// Dropdown hover: Layer 2 overrides/_dropdown.scss
+// TinyMCE dialogs mount under .tox-tinymce-aux (often outside #root)
+// Values only via var(--pgn-*).
+
+#root {
+  .discussion-posts,
+  .discussion-comments,
+  .forum-nav-browse-filter,
+  [data-testid="posts-view"],
+  [class*="discussion"] {
+    // Remap native selects under discussion parents (mixin from _selects.scss)
+    select.form-control {
+      @include tels-branded-select;
+    }
+
+    // Search radius from Layer 2 search-field-size token
+    .pgn__searchfield:not(.pgn__searchfield--external) {
+      border-radius: var(--pgn-size-search-field-border-radius, var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base))) !important;
+    }
+  }
+}
+
+// TinyMCE Language / list pickers outside #root — tokens: primary + form
+.tox.tox-silver-sink.tox-tinymce-aux,
+.tox-tinymce-aux {
+  .tox-dialog .tox-selectfield select {
+    @include tels-branded-tox-select; // no extra chevron (TinyMCE has its own icon)
+  }
+
+  .tox-collection__item {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  .tox-collection__item--active,
+  .tox-collection__item--enabled,
+  .tox-collection__item[aria-selected="true"] {
+    background-color: var(--pgn-color-primary-base) !important;
+    color: var(--pgn-color-white) !important;
+  }
+}

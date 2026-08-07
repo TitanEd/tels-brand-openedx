@@ -1,0 +1,14 @@
+// LAYER 3 — Shared site headers (all MFEs)
+// Width tokens: core/components/container/max-width.json + core/global/spacing.json
+// Applied via tels-content-width mixin from overrides/_layout.scss
+
+// Catalog / learner-dashboard / authn desktop header
+.site-header-desktop > .container-fluid,
+.site-header-mobile > .container-fluid {
+  @include tels-content-width;
+}
+
+// Learning MFE header
+.learning-header > .container-xl {
+  @include tels-content-width;
+}

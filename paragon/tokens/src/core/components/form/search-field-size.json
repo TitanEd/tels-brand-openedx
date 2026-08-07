@@ -1,0 +1,13 @@
+{
+  "$description": "SEARCH FIELD size — radius follows global form/input radius (Paragon default is 0).",
+  "size": {
+    "search-field": {
+      "border": {
+        "radius": {
+          "$value": "{size.border.radius.base}",
+          "$description": "SearchField shell + input radius → --pgn-size-search-field-border-radius"
+        }
+      }
+    }
+  }
+}

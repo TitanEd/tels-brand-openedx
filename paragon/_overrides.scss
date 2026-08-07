@@ -1,2 +1,30 @@
-// Use this file to define style overrides for @edx/paragon
-// This file is included after all Paragon styles, but should generally avoid using private mixins in Paragon.
+// TitanEd brand CSS entry (imported from core.scss).
+//
+// Edit guide: CONTROLS.md
+//   Layer 1 — tokens (primary, font, width, pad)
+//   Layer 2 — tokens + overrides/* (buttons, link, tabs, form, search, dropdown)
+//   Layer 3 — paragon/_*.scss (MFE parents only)
+// Values only in JSON. SCSS maps class → var(--pgn-*).
+
+// Layer 2 — shared layout + typography first (mixins used by MFEs)
+@import "./overrides/layout";
+@import "./overrides/typography";
+@import "./overrides/forms";
+@import "./overrides/selects";
+@import "./overrides/searchfield";
+@import "./overrides/buttons";
+@import "./overrides/links";
+@import "./overrides/dropdown";
+@import "./overrides/tinymce";
+
+// Layer 3 — chrome + per-MFE
+@import "./header";
+@import "./footer";
+@import "./catalog";
+@import "./gradebook";
+@import "./learning";
+@import "./discussion";
+@import "./account";
+@import "./authn";
+@import "./learner-dashboard";
+@import "./authoring";

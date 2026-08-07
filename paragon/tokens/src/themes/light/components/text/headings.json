@@ -1,0 +1,11 @@
+{
+  "$description": "UI label: Headings color",
+  "color": {
+    "headings": {
+      "base": {
+        "$value": "{color.black}",
+        "$description": "UI label: Headings color \u2192 --pgn-color-headings-base"
+      }
+    }
+  }
+}

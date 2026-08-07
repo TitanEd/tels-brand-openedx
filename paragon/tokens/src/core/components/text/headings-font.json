@@ -1,0 +1,24 @@
+{
+  "$description": "Headings use the same brand font as body (inherit). Change typeface only in core/global/typography.json.",
+  "typography": {
+    "headings": {
+      "font": {
+        "family": {
+          "$value": "{typography.font.family.base}",
+          "$type": "fontFamily",
+          "$description": "Heading font → same as body (--pgn-typography-font-family-base)"
+        },
+        "weight": {
+          "$value": "{typography.font.weight.bold}",
+          "$type": "fontWeight",
+          "$description": "Heading font weight"
+        }
+      },
+      "line-height": {
+        "$value": "1.25",
+        "$type": "number",
+        "$description": "Headings line-height → --pgn-typography-headings-line-height"
+      }
+    }
+  }
+}

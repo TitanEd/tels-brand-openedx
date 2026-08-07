@@ -1,0 +1,27 @@
+{
+  "$description": "LAYER 2 — Dropdown kit (Paragon JSX menus). Item hover only — menu border left to Open edX default. Applied by overrides/_dropdown.scss. Native <select>: overrides/_selects.scss.",
+  "color": {
+    "dropdown": {
+      "bg": {
+        "$value": "{color.white}",
+        "$description": "Menu background → --pgn-color-dropdown-bg"
+      },
+      "item": {
+        "text": {
+          "$value": "{color.text.base}",
+          "$description": "Item text → --pgn-color-dropdown-item-text"
+        },
+        "hover": {
+          "bg": {
+            "$value": "{color.primary.base}",
+            "$description": "Item hover/focus/active bg → --pgn-color-dropdown-item-hover-bg"
+          },
+          "text": {
+            "$value": "{color.white}",
+            "$description": "Item hover text → --pgn-color-dropdown-item-hover-text"
+          }
+        }
+      }
+    }
+  }
+}

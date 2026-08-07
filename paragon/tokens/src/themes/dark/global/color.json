@@ -1,0 +1,38 @@
+{
+  "$type": "color",
+  "$description": "LAYER 1 — Dark semantic colors. Keep primary aligned with light. Add aliases needed by Layer 2 dark component tokens.",
+  "color": {
+    "white": {
+      "$value": "#FFFFFF",
+      "$description": "White (dropdown hover text, etc.)"
+    },
+    "primary": {
+      "base": {
+        "$value": "#EB5939",
+        "$description": "Primary on dark surfaces."
+      },
+      "light": {
+        "$value": "#2A2220",
+        "$description": "Primary-tinted surface for row/trigger hover on dark"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "#374151",
+        "$description": "Muted surface (table headers on dark)"
+      }
+    },
+    "bg": {
+      "base": {
+        "$value": "#111827",
+        "$description": "Dark mode page background."
+      }
+    },
+    "text": {
+      "base": {
+        "$value": "#F9FAFB",
+        "$description": "Dark mode body text."
+      }
+    }
+  }
+}

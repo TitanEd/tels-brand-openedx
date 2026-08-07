@@ -1,0 +1,29 @@
+{
+  "$description": "ICON BUTTON PRIMARY \u2014 class: btn-icon btn-icon-primary. Does NOT change solid btn-primary.",
+  "color": {
+    "icon-button": {
+      "text": {
+        "primary": {
+          "base": {
+            "$value": "{color.primary.base}",
+            "$description": "Icon color \u2192 --pgn-color-icon-button-text-primary-base"
+          }
+        }
+      },
+      "bg": {
+        "primary": {
+          "hover": {
+            "$value": "{color.primary.base}",
+            "$description": "Hover background for icon-primary"
+          },
+          "active": {
+            "base": {
+              "$value": "{color.primary.base}",
+              "$description": "Active background"
+            }
+          }
+        }
+      }
+    }
+  }
+}

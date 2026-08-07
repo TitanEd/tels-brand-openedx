@@ -1,0 +1,130 @@
+// LAYER 3 — Authn MFE (login / register / reset / progressive profiling)
+// Parents: .layout, .content, #main-content.main-content, forms
+// Buttons + links (incl. Alert / message wrappers) → Layer 2 tokens only.
+// Values only via var(--pgn-*).
+
+$tels-authn-link: var(--pgn-color-link-base, var(--pgn-color-primary-base));
+$tels-authn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700));
+$tels-authn-inline: var(--pgn-color-link-inline-base, #{$tels-authn-link});
+$tels-authn-inline-hover: var(--pgn-color-link-inline-hover-base, #{$tels-authn-link-hover});
+
+.layout,
+.content,
+#main-content.main-content,
+.main-content,
+#forget-password-form,
+#login-form,
+#registration-form,
+form[name="forget-password-form"],
+form[name="login-form"],
+form[name="registration-form"] {
+  // ----- Links (mailto, support, TOS, alert messages) -----
+  a:not(.btn):not(.nav-link):not(.dropdown-item),
+  a.pgn__hyperlink,
+  a.inline-link,
+  a.alert-link,
+  .alert-link,
+  .alert a,
+  .alert .alert-message-content a,
+  .pgn__alert-message-wrapper a,
+  .alert-message-content a,
+  .pgn__form-text a,
+  .invalid-feedback a,
+  .form-text a {
+    color: $tels-authn-inline !important;
+
+    &:hover,
+    &:focus {
+      color: $tels-authn-inline-hover !important;
+    }
+  }
+
+  a.btn-link,
+  button.btn-link,
+  .btn.btn-link {
+    color: $tels-authn-link !important;
+
+    &:hover,
+    &:focus {
+      color: $tels-authn-link-hover !important;
+    }
+  }
+
+  // ----- Solid brand (Submit / Sign in / Register) -----
+  .btn.btn-brand,
+  a.btn.btn-brand,
+  button.btn.btn-brand,
+  .pgn__stateful-btn.btn-brand {
+    color: var(--pgn-color-btn-text-brand) !important;
+    background-color: var(--pgn-color-btn-bg-brand) !important;
+    border-color: var(--pgn-color-btn-border-brand) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled) {
+      color: var(--pgn-color-btn-hover-text-brand, var(--pgn-color-btn-text-brand)) !important;
+      background-color: var(--pgn-color-btn-hover-bg-brand, var(--pgn-color-btn-bg-brand)) !important;
+      border-color: var(--pgn-color-btn-hover-border-brand, var(--pgn-color-btn-border-brand)) !important;
+    }
+  }
+
+  // ----- Solid primary -----
+  .btn.btn-primary,
+  a.btn.btn-primary,
+  button.btn.btn-primary,
+  .pgn__stateful-btn.btn-primary {
+    color: var(--pgn-color-btn-text-primary) !important;
+    background-color: var(--pgn-color-btn-bg-primary) !important;
+    border-color: var(--pgn-color-btn-border-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled) {
+      color: var(--pgn-color-btn-hover-text-primary, var(--pgn-color-btn-text-primary)) !important;
+      background-color: var(--pgn-color-btn-hover-bg-primary, var(--pgn-color-btn-bg-primary)) !important;
+      border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-border-primary)) !important;
+    }
+  }
+
+  // ----- Outline primary / secondary -----
+  .btn.btn-outline-primary,
+  a.btn.btn-outline-primary {
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    border-color: var(--pgn-color-btn-border-outline-primary) !important;
+    background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+
+  .btn.btn-outline-secondary,
+  a.btn.btn-outline-secondary {
+    color: var(--pgn-color-btn-text-outline-secondary) !important;
+    border-color: var(--pgn-color-btn-border-outline-secondary) !important;
+    background-color: var(--pgn-color-btn-bg-outline-secondary, transparent) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+
+  // Alert action buttons inside messages
+  .alert .btn,
+  .pgn__alert-actions .btn {
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+}
+
+// Authn alerts can render above the form (still under .layout / .content)
+.layout .alert,
+.content .alert,
+#main-content .alert,
+.main-content .alert {
+  a:not(.btn),
+  a.alert-link,
+  .alert-link,
+  .alert-message-content a,
+  .pgn__alert-message-wrapper a {
+    color: $tels-authn-inline !important;
+
+    &:hover,
+    &:focus {
+      color: $tels-authn-inline-hover !important;
+    }
+  }
+}

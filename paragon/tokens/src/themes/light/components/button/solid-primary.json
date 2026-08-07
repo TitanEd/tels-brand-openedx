@@ -1,0 +1,47 @@
+{
+  "$description": "SOLID PRIMARY only — class: .btn.btn-primary. Outline lives in outline-primary.json (do not duplicate here).",
+  "color": {
+    "btn": {
+      "bg": {
+        "primary": {
+          "$value": "{color.primary.base}",
+          "$description": "Solid primary background → --pgn-color-btn-bg-primary"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Solid primary text → --pgn-color-btn-text-primary (modify null keeps white)"
+        }
+      },
+      "border": {
+        "primary": {
+          "$value": "{color.btn.bg.primary}",
+          "$description": "Solid primary border → --pgn-color-btn-border-primary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "primary": {
+            "$value": "{color.theme.hover.primary}",
+            "$description": "Solid primary hover bg → --pgn-color-btn-hover-bg-primary"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Solid primary hover text → --pgn-color-btn-hover-text-primary"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.theme.hover.primary}",
+            "$description": "Solid primary hover border → --pgn-color-btn-hover-border-primary"
+          }
+        }
+      }
+    }
+  }
+}

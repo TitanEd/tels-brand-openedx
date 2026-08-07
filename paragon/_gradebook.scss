@@ -1,0 +1,33 @@
+// LAYER 3 — Gradebook MFE (learner search, filters, links)
+// Parents: .page-gradebook
+// Form/select: Layer 2 _forms.scss + _selects.scss
+// Search: Layer 2 _searchfield.scss (tokens remapped below for primary border)
+// Dropdown: Layer 2 _dropdown.scss
+// Values only via var(--pgn-*).
+
+#root main > .d-flex.sidebar-container.page-gradebook,
+.page-gradebook {
+  select.form-control,
+  select.form-control.has-value,
+  .pgn__form-control-decorator-group > select.form-control {
+    @include tels-branded-select;
+  }
+
+  // Remap search tokens under gradebook; do not wrap box+button together
+  .search-container > .pgn__searchfield {
+    --pgn-color-search-field-border-base: var(--pgn-color-primary-base);
+    --pgn-color-search-field-border-interaction: var(--pgn-color-primary-base);
+    --pgn-color-search-field-border-focus: var(--pgn-color-primary-base);
+  }
+
+  a,
+  .btn-link,
+  button.btn-link,
+  .grade-button {
+    color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+
+    &:hover {
+      color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$description": "SOLID SECONDARY only — class: .btn.btn-secondary. Outline lives in outline-secondary.json (do not duplicate here).",
+  "color": {
+    "btn": {
+      "bg": {
+        "secondary": {
+          "$value": "{color.secondary.base}",
+          "$description": "Solid secondary background → --pgn-color-btn-bg-secondary"
+        }
+      },
+      "text": {
+        "secondary": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Solid secondary text → --pgn-color-btn-text-secondary"
+        }
+      },
+      "border": {
+        "secondary": {
+          "$value": "{color.btn.bg.secondary}",
+          "$description": "Solid secondary border → --pgn-color-btn-border-secondary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Solid secondary hover bg → --pgn-color-btn-hover-bg-secondary"
+          }
+        },
+        "text": {
+          "secondary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Solid secondary hover text → --pgn-color-btn-hover-text-secondary"
+          }
+        },
+        "border": {
+          "secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Solid secondary hover border → --pgn-color-btn-hover-border-secondary"
+          }
+        }
+      }
+    }
+  }
+}

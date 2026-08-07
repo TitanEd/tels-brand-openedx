@@ -1,0 +1,15 @@
+// Assembled by `paragon build-scss` into published `dist/core.css`.
+// Common styles for the TitanEd theme (base Open edX / Paragon layout).
+
+// For --pgn-elevation-box-shadow-level-1, etc
+@use "~@openedx/paragon/styles/css/themes/light/abstraction-variables.css";
+
+// Imports custom-media-breakpoints.css
+@import './build/core/index.css';
+
+@import "~@openedx/paragon/dist/Button/mixins";
+
+@import "./variables";
+@import "./fonts";
+// Brand overrides + MFE maps (see CONTROLS.md — 3 layers)
+@import "./overrides";

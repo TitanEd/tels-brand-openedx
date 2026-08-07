@@ -1,0 +1,83 @@
+{
+  "$description": "LAYER 1 — GLOBAL FONT. Change brand typeface HERE only. Cascades via --pgn-typography-font-family-* + overrides/_typography.scss. Do not set font-family on * (breaks .fa icons).",
+  "typography": {
+    "font": {
+      "family": {
+        "sans": {
+          "serif": {
+            "$value": [
+              "Inter",
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "Roboto",
+              "Helvetica Neue",
+              "Arial",
+              "Noto Sans",
+              "sans-serif"
+            ],
+            "$description": "★ BRAND FONT STACK — edit this array to change typeface site-wide"
+          }
+        },
+        "base": {
+          "$value": "{typography.font.family.sans.serif}",
+          "$description": "Body / UI font → --pgn-typography-font-family-base (links to sans.serif above)"
+        },
+        "monospace": {
+          "$value": [
+            "SFMono-Regular",
+            "Menlo",
+            "Monaco",
+            "Consolas",
+            "Liberation Mono",
+            "Courier New",
+            "monospace"
+          ],
+          "$description": "Code / mono → --pgn-typography-font-family-monospace"
+        }
+      },
+      "size": {
+        "base": {
+          "$value": "1.125rem",
+          "$description": "UI label: Body font size → --pgn-typography-font-size-base"
+        },
+        "h1": {
+          "base": {
+            "$value": "2.5rem",
+            "$description": "UI label: H1 → --pgn-typography-font-size-h1-base"
+          }
+        },
+        "h2": {
+          "base": {
+            "$value": "2rem",
+            "$description": "UI label: H2 → --pgn-typography-font-size-h2-base"
+          }
+        },
+        "h3": {
+          "base": {
+            "$value": "1.375rem",
+            "$description": "UI label: H3 → --pgn-typography-font-size-h3-base"
+          }
+        },
+        "h4": {
+          "base": {
+            "$value": "1.125rem",
+            "$description": "UI label: H4 → --pgn-typography-font-size-h4-base"
+          }
+        },
+        "h5": {
+          "base": {
+            "$value": "0.875rem",
+            "$description": "UI label: H5 → --pgn-typography-font-size-h5-base"
+          }
+        },
+        "h6": {
+          "base": {
+            "$value": "0.75rem",
+            "$description": "UI label: H6 → --pgn-typography-font-size-h6-base"
+          }
+        }
+      }
+    }
+  }
+}
