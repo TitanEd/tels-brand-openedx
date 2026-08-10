@@ -1,0 +1,33 @@
+{
+  "$description": "ALERT (light) — component-level color tokens (class: .alert). Defaults reference the same semantic roots Paragon derives automatically, so this is a real override point that doesn't change current appearance until edited.",
+  "color": {
+    "alert": {
+      "title": {
+        "$value": "{color.black}",
+        "$description": "Alert title text → --pgn-color-alert-title"
+      },
+      "content": {
+        "$value": "{color.gray.700}",
+        "$description": "Alert body text → --pgn-color-alert-content"
+      },
+      "icon": {
+        "success": { "$value": "{color.theme.default.success}", "$description": "Success icon → --pgn-color-alert-icon-success" },
+        "info": { "$value": "{color.theme.default.info}", "$description": "Info icon → --pgn-color-alert-icon-info" },
+        "danger": { "$value": "{color.theme.default.danger}", "$description": "Danger icon → --pgn-color-alert-icon-danger" },
+        "warning": { "$value": "{color.theme.default.warning}", "$description": "Warning icon → --pgn-color-alert-icon-warning" }
+      },
+      "bg": {
+        "success": { "$value": "{color.theme.bg.success}", "$description": "Success background → --pgn-color-alert-bg-success" },
+        "info": { "$value": "{color.theme.bg.info}", "$description": "Info background → --pgn-color-alert-bg-info" },
+        "danger": { "$value": "{color.theme.bg.danger}", "$description": "Danger background → --pgn-color-alert-bg-danger" },
+        "warning": { "$value": "{color.theme.bg.warning}", "$description": "Warning background → --pgn-color-alert-bg-warning" }
+      },
+      "border": {
+        "success": { "$value": "{color.theme.border.success}", "$description": "Success border → --pgn-color-alert-border-success" },
+        "info": { "$value": "{color.theme.border.info}", "$description": "Info border → --pgn-color-alert-border-info" },
+        "danger": { "$value": "{color.theme.border.danger}", "$description": "Danger border → --pgn-color-alert-border-danger" },
+        "warning": { "$value": "{color.theme.border.warning}", "$description": "Warning border → --pgn-color-alert-border-warning" }
+      }
+    }
+  }
+}

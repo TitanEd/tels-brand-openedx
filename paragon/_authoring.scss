@@ -2,3 +2,124 @@
 // Parent-scoped maps only when Authoring shells need remaps.
 // TinyMCE: Layer 2 overrides/_tinymce.scss
 // Values only via var(--pgn-*).
+
+// Course outline (Content > Course outline): section/subsection/unit rows are
+// plain divs that get their rounded-corner look from an inline `style=""`
+// written by the MFE's own JS, not from a themeable class — so nothing in
+// Layer 1/2 ever reached them and they kept a hardcoded ~0.35rem radius no
+// matter what the token scale was set to. Same token + tier every other
+// "card" surface already uses (Layer 2 overrides/_cards.scss, and Paragon's
+// own stock .pgn__card, both read --pgn-size-card-border-radius-base), so
+// section/subsection/unit cards now track the base/md tier like everything
+// else. `:has(> .col > …)` keeps this scoped to the actual card wrapper row
+// and not the outer page-layout `.row` that also contains these cards.
+.course-outline-container {
+  .row:has(> .col > [data-testid="section-card"]),
+  .row:has(> .col > [data-testid="subsection-card"]),
+  .row:has(> .col > [data-testid="unit-card"]) {
+    border-radius: var(--pgn-size-card-border-radius-base) !important;
+  }
+}
+
+// ---------------------------------------------------------------------
+// Everything below found by cloning frontend-app-course-authoring and
+// grepping its own source for border-radius/borderRadius (not from pasted
+// DOM alone) — same audit method used for Learning. Grouped by what each
+// one hardcodes and which tier it's mapped to; source file cited per rule.
+// ---------------------------------------------------------------------
+
+// Bordered/shadowed content-panel pattern repeated verbatim (same .375rem,
+// same border/shadow shape) across many unrelated feature areas — all
+// hardcode Bootstrap's stock default instead of the token, so none of them
+// would have tracked a token change. One tier for all: base, matching every
+// other content panel (form container, card, alert) in this system.
+.outline-empty-placeholder,                  // course-outline/empty-placeholder/EmptyPlaceholder.scss
+.add-team-member,                            // course-team/add-team-member/AddTeamMember.scss
+.add-user-form,                              // course-team/add-user-form/AddUserForm.scss
+.course-team-member,                         // course-team/course-team-member/CourseTeamMember.scss
+.updates-container,                          // course-updates/CourseUpdates.scss
+.update-form,                                // course-updates/update-form/UpdateForm.scss
+.tinyMceWidget .tox-tinymce,                 // editors/.../ProblemEditor/EditProblemView/index.scss
+.group-configurations-empty-placeholder,     // group-configurations/empty-placeholder/EmptyPlaceholder.scss
+.configuration-card,                         // group-configurations/GroupConfigurations.scss
+.pgn__pageBanner-component,                  // schedule-and-details/basic-section/BasicSection.scss
+.textbooks-empty-placeholder {               // textbooks/empty-placeholder/EmptyPlaceholder.scss
+  border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+// Library authoring's "section/subsections" and "units" list views
+// override Paragon's own .pgn__card with a hardcoded 8px, breaking it out
+// of the base-tier cascade every other .pgn__card on the page follows —
+// restore it. Their draggable child rows (SortableItem, same drag-list
+// component the course outline uses) get a hardcoded 8px too, via a
+// componentStyle/actionStyle prop that overrides SortableItem's own
+// default — same tier, same reasoning as the course-outline rows above.
+.library-container-children .pgn__card,      // library-authoring/section-subsections/index.scss
+.library-unit-page .pgn__card {              // library-authoring/units/index.scss
+  border-radius: var(--pgn-size-card-border-radius-base) !important;
+}
+.library-container-children .row {           // library-authoring/section-subsections/LibraryContainerChildren.tsx
+  border-radius: var(--pgn-size-card-border-radius-base) !important;
+}
+
+// Small marker/focus-ring scale — matches Badge/Toast/Annotation (sm).
+.dropdown-selector-tag-actions:focus-visible,  // content-tags-drawer/ContentTagsDropDownSelector.scss
+.history-widget-bar,                           // library-authoring/generic/history-widget/HistoryWidget.scss
+.status-box,                                   // library-authoring/hierarchy/index.scss (draft/published marker)
+.embed-video-container {                       // schedule-and-details/introducing-section/introduction-video/IntroductionVideo.scss
+  border-radius: var(--pgn-size-border-radius-sm) !important;
+}
+
+// Content-hierarchy tree rows (library-authoring/hierarchy/index.scss) —
+// bordered row-cards, same tier as every other content-row card.
+.content-hierarchy .hierarchy-row,
+.content-hierarchy .hierarchy-row.selected {
+  border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+// Course-unit sidebar "Published and live" panel (course-unit/unit-sidebar/
+// unit-info/PublishControls.scss) — a content panel, same tier as the rest.
+.course-unit-publish-controls {
+  border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+// Content Optimizer scan-results filter chip should track the Chip
+// component's own token, not an arbitrary px value.
+.scan-results-active-filters-chip {            // optimizer-page/scan-results/ScanResults.scss
+  border-radius: var(--pgn-size-chip-border-radius) !important;
+}
+
+// Content Optimizer's collapsible scan-result sections — same family as
+// Layer 2 overrides/_cards.scss's .collapsible-card fix, same tier.
+.open-section-rounded.is-open,                 // optimizer-page/scan-results/ScanResults.scss
+.closed-section-rounded-top {
+  border-radius: var(--pgn-size-card-border-radius-base) !important;
+}
+
+// Textbook form container — content panel, same tier as the rest.
+.textbook-form {                               // textbooks/textbook-form/TextbookForm.scss
+  border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+// ---------------------------------------------------------------------
+// Found but NOT fixed — no safe selector without a source-level class hook:
+//
+// - course-outline/drag-helper/CourseItemOverlay.tsx (dnd-kit DragOverlay,
+//   the "ghost" that follows the cursor while actively dragging a section/
+//   subsection/unit row) hardcodes the same 0.35rem as the row it's copied
+//   from. It carries no class/data-testid of its own and, per dnd-kit
+//   convention, likely portals outside .course-outline-container, so a
+//   class selector here can't reliably reach it without risking matching
+//   unrelated elements. Needs either a class added at the source or
+//   live-DOM confirmation of where it actually mounts.
+// - custom-pages/CustomPages.tsx passes SortableItem a hardcoded 6px
+//   componentStyle for the draggable custom-page rows — no stable wrapper
+//   class found in the file to scope a selector to.
+// - library-authoring/units/LibraryUnitBlocks.tsx passes SortableItem a
+//   hardcoded '8px 8px 0px 0px' actionStyle for its block-header bar — same
+//   issue, no stable wrapper class found in the file itself.
+// - library-authoring/create-library/CreateLibrary.tsx's loading-state
+//   dropzone hardcodes 8px — only distinguishing selector available is the
+//   generic Bootstrap border-dashed combo, which risks matching other
+//   dropzone-style elements elsewhere in Studio.
+// ---------------------------------------------------------------------

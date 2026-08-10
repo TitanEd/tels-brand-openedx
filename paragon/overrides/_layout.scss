@@ -6,8 +6,14 @@
 // Header/footer shells also call @include tels-content-width from MFE maps (_header/_footer).
 // Do NOT hardcode px for width/padding in MFE SCSS — change tokens above.
 
+// max-width is the token's own value, full stop — the max-width tokens are
+// documented as "MAIN page max-width (change this)", i.e. the number you'd
+// expect to see as the actual rendered width. (Previously this added
+// + gutter-width on top, so e.g. xl silently rendered at 1624px against a
+// 1600px token — confirmed via computed styles across Catalog, Learner
+// Dashboard and Learning. Padding stays additive *inside* that box.)
 @mixin tels-content-width {
-  max-width: calc(var(--pgn-size-container-max-width-xl) + var(--pgn-spacing-grid-gutter-width)) !important;
+  max-width: var(--pgn-size-container-max-width-xl) !important;
   width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -20,7 +26,6 @@ $tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 
 // --- Shared shells (no .container-xl inside, or neutralize nested one) ---
 #courseTabsNavigation,
-.header-action-bar,
 .header-action-bar + .d-flex.flex-row.position-relative {
   @include tels-content-width;
 }
@@ -35,18 +40,33 @@ $tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
   padding-right: 0 !important;
 }
 
-// Discussion uses .navbar.fixed-top (escapes parent) — keep in flow so max-width applies
+// Discussion's outer bar (.header-action-bar, bg-white position-sticky) stays
+// full-bleed — no width/padding of its own, so its background spans edge to
+// edge like any other sticky toolbar. The constrained/centered content-width
+// box is the inner .navbar.fixed-top instead (previously it was the other
+// way around: the outer bar got tels-content-width while the inner nav was
+// only neutralized to width:100/padding:0, which meant the inner nav had no
+// max-width of its own to fall back on if the outer constraint didn't apply
+// — rendering it viewport-wide instead of content-width). .fixed-top is
+// still neutralized to position:relative here (it needs to scroll with
+// .header-action-bar's own position-sticky, not escape to the viewport).
 .header-action-bar {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
+
   .navbar.fixed-top {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
+    max-width: var(--pgn-size-container-max-width-xl) !important;
     width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+    padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+    box-sizing: border-box;
   }
 }
 
@@ -86,7 +106,7 @@ main#main.container-fluid {
 @media (min-width: 576px) {
   .container,
   .container-sm {
-    max-width: calc(var(--pgn-size-container-max-width-sm) + var(--pgn-spacing-grid-gutter-width)) !important;
+    max-width: var(--pgn-size-container-max-width-sm) !important;
   }
 }
 
@@ -94,7 +114,7 @@ main#main.container-fluid {
   .container,
   .container-sm,
   .container-md {
-    max-width: calc(var(--pgn-size-container-max-width-md) + var(--pgn-spacing-grid-gutter-width)) !important;
+    max-width: var(--pgn-size-container-max-width-md) !important;
   }
 }
 
@@ -103,7 +123,7 @@ main#main.container-fluid {
   .container-sm,
   .container-md,
   .container-lg {
-    max-width: calc(var(--pgn-size-container-max-width-lg) + var(--pgn-spacing-grid-gutter-width)) !important;
+    max-width: var(--pgn-size-container-max-width-lg) !important;
   }
 }
 
@@ -115,28 +135,28 @@ main#main.container-fluid {
   .container-xl,
   #main-content.container-xl,
   #main-content {
-    max-width: calc(var(--pgn-size-container-max-width-xl) + var(--pgn-spacing-grid-gutter-width)) !important;
+    max-width: var(--pgn-size-container-max-width-xl) !important;
   }
 }
 
 .container-mw-xs {
-  max-width: calc(var(--pgn-size-container-max-width-xs) + var(--pgn-spacing-grid-gutter-width)) !important;
+  max-width: var(--pgn-size-container-max-width-xs) !important;
 }
 
 .container-mw-sm {
-  max-width: calc(var(--pgn-size-container-max-width-sm) + var(--pgn-spacing-grid-gutter-width)) !important;
+  max-width: var(--pgn-size-container-max-width-sm) !important;
 }
 
 .container-mw-md {
-  max-width: calc(var(--pgn-size-container-max-width-md) + var(--pgn-spacing-grid-gutter-width)) !important;
+  max-width: var(--pgn-size-container-max-width-md) !important;
 }
 
 .container-mw-lg {
-  max-width: calc(var(--pgn-size-container-max-width-lg) + var(--pgn-spacing-grid-gutter-width)) !important;
+  max-width: var(--pgn-size-container-max-width-lg) !important;
 }
 
 .container-mw-xl {
-  max-width: calc(var(--pgn-size-container-max-width-xl) + var(--pgn-spacing-grid-gutter-width)) !important;
+  max-width: var(--pgn-size-container-max-width-xl) !important;
 }
 
 .mw-xs { max-width: var(--pgn-size-container-max-width-xs) !important; }

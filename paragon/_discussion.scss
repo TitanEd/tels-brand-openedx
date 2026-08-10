@@ -22,6 +22,27 @@
       border-radius: var(--pgn-size-search-field-border-radius, var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base))) !important;
     }
   }
+
+  // Filter bar + results list read as one continuous card (filter trigger,
+  // divider, results — see .discussion-posts markup), but the filter bar's
+  // OWN radius comes from the generic .collapsible-card-lg rule (Layer 2
+  // overrides/_cards.scss), which rounds all 4 corners. Since the results
+  // list right below it is square-cornered by default, that put a rounded
+  // corner directly above a sharp one — a visible seam where the two
+  // "attached" pieces meet. Round only the filter bar's top here, and match
+  // the results list's bottom corners to it, so the whole block reads as
+  // one seamless card top-to-bottom.
+  .discussion-posts {
+    .filter-bar.collapsible-card-lg {
+      border-radius: var(--pgn-size-card-border-radius-base) var(--pgn-size-card-border-radius-base) 0 0 !important;
+    }
+
+    .list-group.list-group-flush {
+      border-bottom-left-radius: var(--pgn-size-card-border-radius-base) !important;
+      border-bottom-right-radius: var(--pgn-size-card-border-radius-base) !important;
+      overflow: hidden;
+    }
+  }
 }
 
 // TinyMCE Language / list pickers outside #root — tokens: primary + form

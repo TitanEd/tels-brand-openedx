@@ -227,6 +227,26 @@ $tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700)
           background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
         }
       }
+
+      // index.scss hardcodes 6px on the focus ring for these two, bypassing
+      // the token Paragon's own .btn already computes correctly
+      // (--pgn-size-btn-focus-border-radius-base = base + focus gap).
+      .previous-button:focus::before,
+      .next-button:focus::before {
+        border-radius: var(--pgn-size-btn-focus-border-radius-base) !important;
+      }
+    }
+
+    // Outline-tab "flag for review" marker (course-home/outline-tab/widgets/
+    // FlagButton.scss) hardcodes .2rem — put it on sm like every other small marker.
+    .flag-button {
+      border-radius: var(--pgn-size-border-radius-sm) !important;
+    }
+
+    // Unit content border (index.scss `.sequence`, >=sm breakpoint) hardcodes
+    // 4px — put it on base like every other content-surface border.
+    .sequence {
+      border-radius: var(--pgn-size-border-radius-base) !important;
     }
 
     .outline-sidebar-heading.btn.btn-link {
@@ -237,5 +257,53 @@ $tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700)
         color: $tels-learn-link-hover !important;
       }
     }
+
+    // Sidebar-tray toggle ships with Paragon's own `.rounded-0` utility
+    // (forces 0, wins over the .btn-icon 50% default). Two-class selector
+    // outranks that single-class utility so this wins on specificity, not
+    // just load order — put it on the token scale like every other button.
+    .outline-sidebar-toggle-btn.rounded-0 {
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    // The frame around that toggle (CourseOutlineTrigger.jsx) ships with no
+    // radius class at all, so it stayed square while the button inside it
+    // now rounds — match it to the same tier so the whole chip reads as one shape.
+    .outline-sidebar-heading-wrapper {
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    // Discussions sidebar (SidebarBase.jsx) is correctly `rounded-sm`, but the
+    // full-bleed iframe inside it (DiscussionsSidebar.jsx, no title bar so it
+    // starts flush at the very top) has no radius of its own, so its square
+    // corners poke past the rounded parent — that's the broken corner line.
+    // Give the iframe the parent's own computed radius instead of clipping
+    // with overflow (would fight #course-sidebar's own overflow-y: scroll
+    // at the mobile breakpoint).
+    .discussions-sidebar-frame {
+      border-radius: inherit !important;
+    }
+
+    // Staff "content tools" floating trigger (bottom-right corner tab)
+    // hardcodes .3rem top corners + .5rem on its ::before — put both on the
+    // token scale. Top-only rounding is intentional (it's a tab flush against
+    // the viewport edge), so only the two top corners are set.
+    .content-tools .trigger {
+      border-top-left-radius: var(--pgn-size-border-radius-base) !important;
+      border-top-right-radius: var(--pgn-size-border-radius-base) !important;
+
+      &::before {
+        border-radius: var(--pgn-size-border-radius-lg) !important;
+      }
+    }
+  }
+
+  // Streak-celebration modal title (shared/streak-celebration/
+  // StreakCelebrationModal.scss) hardcodes 2rem — exact match for the h2
+  // token, but implemented on .modal-title instead of the .h2 class, so it
+  // never tracked it. Kept outside `main` — Paragon's Modal can portal
+  // outside it, this only needs to stay inside the MFE's own #root.
+  .streak-modal .modal-title {
+    font-size: var(--pgn-typography-font-size-h2-base) !important;
   }
 }

@@ -21,6 +21,15 @@
     border-color: var(--pgn-color-search-field-border-focus) !important;
   }
 
+  // Paragon core draws the focus ring as an absolutely-positioned ::after
+  // (a "double" border) that never sets its own border-radius, so it always
+  // renders square corners on top of our rounded field — the rectangular
+  // line seen on click. Force it to match the field's actual radius so it
+  // tracks --pgn-size-search-field-border-radius automatically.
+  &.has-focus::after {
+    border-radius: inherit !important;
+  }
+
   .pgn__searchfield-form,
   .pgn__form-control-decorator-group,
   .pgn__searchfield_wrapper {
@@ -63,6 +72,14 @@
     border-color: var(--pgn-color-search-field-border-focus) !important;
   }
 
+  // Same square-cornered ::after focus ring as the internal variant above,
+  // drawn on .pgn__searchfield_wrapper instead of .pgn__searchfield itself
+  // (external mode splits the box from the submit button). Match the
+  // wrapper's own radius so it stays in sync with the token.
+  &.has-focus .pgn__searchfield_wrapper::after {
+    border-radius: inherit !important;
+  }
+
   .form-control {
     border: none !important;
     box-shadow: none !important;
@@ -78,4 +95,10 @@
   border-color: var(--pgn-color-btn-border-primary) !important;
   color: var(--pgn-color-btn-text-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+
+// Submit button focus ring — same unrounded ::after bug as above, this time
+// on the search button (keyboard focus-visible, e.g. tabbing to it).
+.pgn__searchfield .btn:focus-visible::after {
+  border-radius: inherit !important;
 }

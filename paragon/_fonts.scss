@@ -10,3 +10,11 @@
 //
 // Then set the family name in:
 //   paragon/tokens/src/core/global/typography.json → typography.font.family.sans.serif
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("./fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}

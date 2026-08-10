@@ -1,0 +1,19 @@
+{
+  "$description": "NAVBAR (light) — component-level color tokens. Dark/light navbar variants are contrast-driven (white-on-dark, black-on-light opacities), not brand-tinted by design — same defaults as Paragon stock, now a documented, independently overridable control point.",
+  "color": {
+    "navbar": {
+      "dark": {
+        "text": { "$value": "{color.white}", "modify": [{ "type": "alpha", "amount": 0.5 }], "$description": "Dark navbar link text → --pgn-color-navbar-dark-text" },
+        "hover": { "$value": "{color.white}", "modify": [{ "type": "alpha", "amount": 0.75 }], "$description": "Dark navbar link hover → --pgn-color-navbar-dark-hover" },
+        "active": { "$value": "{color.white}", "$description": "Dark navbar active link → --pgn-color-navbar-dark-active" },
+        "disabled": { "$value": "{color.white}", "modify": [{ "type": "alpha", "amount": 0.25 }], "$description": "Dark navbar disabled link → --pgn-color-navbar-dark-disabled" }
+      },
+      "light": {
+        "text": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.5 }], "$description": "Light navbar link text → --pgn-color-navbar-light-text" },
+        "hover": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.7 }], "$description": "Light navbar link hover → --pgn-color-navbar-light-hover" },
+        "active": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.9 }], "$description": "Light navbar active link → --pgn-color-navbar-light-active" },
+        "disabled": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.3 }], "$description": "Light navbar disabled link → --pgn-color-navbar-light-disabled" }
+      }
+    }
+  }
+}

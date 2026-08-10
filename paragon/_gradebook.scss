@@ -5,8 +5,13 @@
 // Dropdown: Layer 2 _dropdown.scss
 // Values only via var(--pgn-*).
 
+// Gradebook's shell (.sidebar-container > .sidebar + .sidebar-contents) doesn't match
+// any selector in overrides/_layout.scss (no .container-xl / #main-content wrapper here),
+// so the page never picked up the site max-width/centering. Apply it directly.
 #root main > .d-flex.sidebar-container.page-gradebook,
 .page-gradebook {
+  @include tels-content-width;
+
   select.form-control,
   select.form-control.has-value,
   .pgn__form-control-decorator-group > select.form-control {

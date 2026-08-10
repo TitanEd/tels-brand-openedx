@@ -5,6 +5,18 @@
 
 .dropdown-menu {
   background-color: var(--pgn-color-dropdown-bg, var(--pgn-color-white)) !important;
+
+  // The menu panel is rounded, but items (incl. their hover/active fill) are
+  // square. Without this, the first/last item's highlight is a rectangle that
+  // pokes past the panel's rounded corners. Clipping to the panel's own
+  // border-radius fixes the overflow without rounding each item individually.
+  overflow: hidden;
+}
+
+[role="listbox"] {
+  // Same reasoning as .dropdown-menu above: clip square option hover/active
+  // fills to this container's own rounded corners.
+  overflow: hidden;
 }
 
 .dropdown-item,

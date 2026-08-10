@@ -17,6 +17,6 @@ npm run serve
 | `paragon/tokens/src/core/global/` | Radius, spacing, typography (Phase 1 shared) |
 | `paragon/tokens/src/core/components/container/` | Main max-width (all MFEs) |
 | `paragon/tokens/src/themes/light/global/` | Primary + brand kit |
-| `paragon/tokens/src/themes/light/components/` | Button / Link / Text / Tabs / Form / Card |
+| `paragon/tokens/src/themes/light/components/` | Button / Link / Text / Tabs / Form / Dropdown |
 | `paragon/overrides/` | Component bridges (layout, forms, selects, searchfield, buttons, tinymce) |
 | `paragon/_*.scss` | Per-MFE + header/footer maps (`_catalog`, `_learning`, …) |

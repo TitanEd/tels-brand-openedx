@@ -18,7 +18,7 @@ Layer 3 — MFE parents only
   → paragon/_catalog.scss, _learning.scss, …
 ```
 
-**Removed for now:** table, collapsible.
+**Not part of this system:** table, collapsible, card border/radius/color — permanent boundary, not a deferred phase. Those components stay Open edX/Paragon stock.
 
 ```bash
 cd tels-brand-openedx && make build

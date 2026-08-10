@@ -1,0 +1,21 @@
+// LAYER 2 — Card / Collapsible override
+// Tokens: core/components/Card.json (@openedx/paragon) — card.border.radius.base
+//         cascades from {size.border.radius.base}; no brand token file needed,
+//         it's already wired correctly upstream.
+//
+// Why this file exists: @openedx/paragon's own core.css ships TWO rules for
+// .collapsible-card / .collapsible-card-lg (the course-outline accordion
+// boxes) at equal specificity —
+//   .card, .collapsible-card, .collapsible-card-lg { border-radius: calc(...) }
+//   .collapsible-card, .collapsible-card-lg { border-radius: 0 }
+// — and the second one (hardcoded 0, later in source order) always wins,
+// so the accordion's outer box renders with a square corner no matter what
+// the radius token is set to, even though its own .collapsible-trigger
+// still rounds its top corners to match when expanded (Paragon's own
+// inconsistency). Restore the outer radius to match .pgn__card, and clip
+// so the trigger/body backgrounds don't overrun the (larger) rounded corner.
+.collapsible-card,
+.collapsible-card-lg {
+  border-radius: var(--pgn-size-card-border-radius-base) !important;
+  overflow: hidden;
+}

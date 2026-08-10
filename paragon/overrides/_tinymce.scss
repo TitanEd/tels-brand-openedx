@@ -2,6 +2,21 @@
 // Tokens reused: button solid-primary / outline + color.primary.base
 // Why: Editor dialogs (.tox-*) ignore Paragon CSS; map to brand vars here.
 
+// Outer editor shell (toolbar + edit area + statusbar) and dialog popups
+// (Insert/Edit Image, etc.) ship with TinyMCE's own skin radius, never
+// touched by any Paragon or brand token. Put both on the token scale:
+// the editor shell reads as a form/content surface (base), dialogs read as
+// modals (lg, same tier as .modal-content).
+.tox-tinymce {
+  border-radius: var(--pgn-size-border-radius-base) !important;
+  overflow: hidden;
+}
+
+.tox-dialog {
+  border-radius: var(--pgn-size-modal-content-border-radius, var(--pgn-size-border-radius-lg)) !important;
+  overflow: hidden;
+}
+
 .tox {
   .tox-button:not(.tox-button--secondary):not(.tox-button--icon) {
     background-color: var(--pgn-color-btn-bg-primary) !important;

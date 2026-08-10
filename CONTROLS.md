@@ -84,16 +84,40 @@ SCSS: `overrides/_links.scss` · Authn parent map: `_authn.scss`
 | A — Paragon JSX menu | `.dropdown-menu`, `.dropdown-item` | `themes/light/components/dropdown/colors.json` + `overrides/_dropdown.scss` |
 | B — native `<select>` | `select.form-control` + `option` | primary + `form/input.json` + `overrides/_selects.scss` |
 
+### Alert / Badge / Chip / Navbar / Modal / Toast
+
+No thin SCSS bridge needed — Paragon's own component CSS already reads these `--pgn-*` names directly. Each JSON file is now the documented, independently overridable control point (colors default to your semantic roots; radius/padding default to global size tokens, so they still cascade unless you override them here).
+
+| Component | Class | File(s) |
+|-----------|-------|---------|
+| Alert | `.alert` | `themes/light/components/alert/colors.json` + `core/components/alert/size.json` |
+| Badge | `.badge` | `themes/light/components/badge/colors.json` + `core/components/badge/size.json` |
+| Chip | `.pgn__chip` | `themes/light/components/chip/colors.json` + `core/components/chip/size.json` |
+| Navbar | `.navbar` | `themes/light/components/navbar/colors.json` |
+| Modal | `.modal-content` | `themes/light/components/modal/colors.json` + `core/components/modal/size.json` |
+| Toast | `.toast` | `themes/light/components/toast/colors.json` + `core/components/toast/size.json` |
+
+Navbar dark/light variants are contrast-driven (white/black at set opacities), not brand-tinted, by Paragon's own design — same as before, just now editable in one place instead of only living in `node_modules`.
+
+### Card radius (`.pgn__card`, `.collapsible-card`, Studio course outline)
+
+| Class | File(s) |
+|-------|---------|
+| `.pgn__card`, `.collapsible-card` / `.collapsible-card-lg` | No brand JSON — Paragon's own `--pgn-size-card-border-radius-base` already reads `{size.border.radius.base}` (Layer 1). `overrides/_cards.scss` only patches a Paragon core.css specificity bug that zeroed the collapsible's outer corner. |
+| Studio **Course outline** section/subsection/unit rows | `_authoring.scss` — these aren't `.pgn__card`, they're plain divs with a radius set inline by the MFE's own JS, so nothing here reaches them by class. Forced (`!important`, scoped to `.course-outline-container`) to the same `--pgn-size-card-border-radius-base` var so they track base/md like every other card. |
+
+Card **color** (bg/border color) is still Open edX/Paragon stock by design — not themed, no JSON file, not planned.
+
 ---
 
-## Not in scope for now (removed)
+## Not part of this system (permanent, not deferred)
 
-- Collapsible kit — deleted
+- Collapsible kit (colors) — deleted
 - Table kit — deleted
-- **Card border/radius/color overrides** — deleted (course outline / `.pgn_collapsible` / cards use Open edX defaults)
+- **Card color overrides** — not themed (course outline / `.pgn_collapsible` / cards keep Open edX default bg/border colors). Card **radius** is themed — see above.
 - Global `color.border` in surfaces — removed (non-button component borders stay stock)
 
-**Kept:** button borders, form/search borders (input kits), dropdown item hover (menu border = stock).
+**Kept:** button borders, form/search borders (input kits), dropdown item hover (menu border = stock), card radius (all tiers cascade from Layer 1 base).
 
 Still present for runtime: TinyMCE (uses primary/button/form vars).
 
