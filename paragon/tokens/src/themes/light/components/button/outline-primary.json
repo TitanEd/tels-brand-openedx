@@ -30,6 +30,7 @@
         "text": {
           "outline-primary": {
             "$value": "{color.theme.hover.primary}",
+            "modify": null,
             "$description": "Hover text → --pgn-color-btn-hover-text-outline-primary"
           }
         },
@@ -37,6 +38,27 @@
           "outline-primary": {
             "$value": "{color.primary.700}",
             "$description": "Hover border → --pgn-color-btn-hover-border-outline-primary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-primary": {
+            "$value": "transparent",
+            "$description": "Active bg → --pgn-color-btn-active-bg-outline-primary"
+          }
+        },
+        "text": {
+          "outline-primary": {
+            "$value": "{color.theme.active.primary}",
+            "modify": null,
+            "$description": "Active text → --pgn-color-btn-active-text-outline-primary (modify null stops color-yiq gray)"
+          }
+        },
+        "border": {
+          "outline-primary": {
+            "$value": "{color.theme.active.primary}",
+            "$description": "Active border → --pgn-color-btn-active-border-outline-primary"
           }
         }
       }

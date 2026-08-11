@@ -38,6 +38,7 @@ Each kit = JSON (colors / hover / focus) + thin SCSS that only maps classes → 
 | `.btn.btn-outline-primary` | `themes/light/components/button/outline-primary.json` |
 | `.btn.btn-outline-secondary` | `themes/light/components/button/outline-secondary.json` |
 | `.btn-icon.btn-icon-primary` | `themes/light/components/button/icon-primary.json` |
+| `.btn-icon.btn-icon-secondary` (Studio drag handles) | `themes/light/components/button/icon-secondary.json` |
 | Padding / radius (all buttons) | `core/components/button/size-padding-radius.json` |
 
 Inside each button JSON you edit: `bg`, `text`, `border`, and under `hover` the same for hover state.  
@@ -104,7 +105,7 @@ Navbar dark/light variants are contrast-driven (white/black at set opacities), n
 | Class | File(s) |
 |-------|---------|
 | `.pgn__card`, `.collapsible-card` / `.collapsible-card-lg` | No brand JSON — Paragon's own `--pgn-size-card-border-radius-base` already reads `{size.border.radius.base}` (Layer 1). `overrides/_cards.scss` only patches a Paragon core.css specificity bug that zeroed the collapsible's outer corner. |
-| Studio **Course outline** section/subsection/unit rows | `_authoring.scss` — these aren't `.pgn__card`, they're plain divs with a radius set inline by the MFE's own JS, so nothing here reaches them by class. Forced (`!important`, scoped to `.course-outline-container`) to the same `--pgn-size-card-border-radius-base` var so they track base/md like every other card. |
+| Studio **Course outline** section/subsection/unit rows | `_authoring.scss` — these aren't `.pgn__card`, they're plain divs with radius + left border set inline by the MFE's own JS. Forced (`!important`, scoped to `.course-outline-container`) to `--pgn-size-card-border-radius-base`. Live/published left stripe remapped from stock Open edX `#00688d` to `--pgn-color-primary-base` (Draft yellow / Staff black stay). |
 
 Card **color** (bg/border color) is still Open edX/Paragon stock by design — not themed, no JSON file, not planned.
 

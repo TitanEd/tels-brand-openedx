@@ -67,6 +67,72 @@
   line-height: 1.5rem !important;
 }
 
+// Main nav (Courses / Discover / …): stock header fills
+// `.nav-link.active` / hover with `--pgn-color-bg-active` but leaves square
+// corners and no gap, so adjacent items read as one block. Radius token +
+// flex gap on every shared header that uses this markup.
+#root header.site-header-desktop .main-nav,
+#root header.site-header-mobile .main-nav,
+#root header.learning-header .main-nav {
+  gap: var(--pgn-spacing-spacer-2);
+
+  .nav-link {
+    border-radius: var(--pgn-size-border-radius-base) !important;
+
+    &:hover,
+    &:focus,
+    &.active {
+      border-radius: var(--pgn-size-border-radius-base) !important;
+    }
+  }
+}
+
+// Secondary header nav links (when present) share the same active fill —
+// keep the same radius so hover/active don't go square there either.
+#root header.site-header-desktop .secondary-menu-container .nav-link,
+#root header.site-header-mobile .secondary-menu-container .nav-link {
+  border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+// Studio header uses a different DOM (`.studio-header` + `pgn__action-row`,
+// not `.site-header-desktop .main-nav`). Content / Settings / Tools are
+// `DropdownButton`s with Bootstrap `mr-2` on each `.dropdown` — same visual
+// job as site-header main-nav spacing. Prefer flex gap (same spacer-2 token
+// as site-header) and zero the per-item mr so spacing is one system, not
+// mr + gap stacked.
+#root .studio-header [data-testid="desktop-menu"].nav,
+#root .studio-header .pgn__action-row > .nav {
+  display: flex;
+  align-items: center;
+  gap: var(--pgn-spacing-spacer-2);
+
+  > .dropdown.mr-2,
+  > .mr-2.dropdown,
+  > .dropdown {
+    margin-right: 0 !important;
+  }
+
+  .btn,
+  .dropdown-toggle {
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+}
+
+// Studio home header (isHiddenMainMenu) wraps the logo in
+// `Row.flex-nowrap.ml-4` (HeaderBody.tsx) — extra left inset other MFEs
+// never apply. Course context already uses `m-0`. Zero ml-4 so logo L edge
+// matches site-header / learning-header under the same content gutter.
+#root .studio-header .row.flex-nowrap.ml-4 {
+  margin-left: 0 !important;
+}
+
+// Studio Container ships `px-2.5` + container-mw-xl; other headers use
+// tels-content-width (max-width xl + half gutter). Same shell here.
+#root .studio-header > .container-fluid,
+#root .studio-header > .container-mw-xl {
+  @include tels-content-width;
+}
+
 // Account menu trigger (avatar + name) sits in its own .nav.secondary-menu-
 // container — same vertical rhythm and text size as the main nav so nothing
 // in the header bar sits taller/shorter or reads at a different scale.
@@ -76,4 +142,5 @@
   padding-bottom: .6rem !important;
   font-size: 1rem !important;
   line-height: 1.5rem !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }

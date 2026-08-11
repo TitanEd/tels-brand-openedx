@@ -1,0 +1,29 @@
+{
+  "$description": "ICON BUTTON SECONDARY — class: btn-icon btn-icon-secondary (e.g. Studio drag handles). Does NOT change solid btn-secondary.",
+  "color": {
+    "icon-button": {
+      "text": {
+        "secondary": {
+          "base": {
+            "$value": "{color.secondary.base}",
+            "$description": "Icon color → --pgn-color-icon-button-text-secondary-base"
+          }
+        }
+      },
+      "bg": {
+        "secondary": {
+          "hover": {
+            "$value": "{color.secondary.base}",
+            "$description": "Hover background for icon-secondary"
+          },
+          "active": {
+            "base": {
+              "$value": "{color.secondary.base}",
+              "$description": "Active background"
+            }
+          }
+        }
+      }
+    }
+  }
+}

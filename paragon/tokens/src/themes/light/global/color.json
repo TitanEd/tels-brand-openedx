@@ -52,7 +52,7 @@
     },
     "secondary": {
       "base": {
-        "$value": "#454545",
+        "$value": "#EB5939",
         "$description": "UI label: Secondary"
       }
     },

@@ -19,6 +19,15 @@
   .row:has(> .col > [data-testid="unit-card"]) {
     border-radius: var(--pgn-size-card-border-radius-base) !important;
   }
+
+  // Subsection/unit wrappers get `border-left: 5px solid …` from inline JS.
+  // Published/Live used hardcoded Open edX primary (#00688d). Remap those to
+  // brand primary. Draft (yellow) / Staff only (black) keep inline colors —
+  // they lack .text-success-500 on the status pill.
+  .row:has(> .col > [data-testid="subsection-card"] .text-success-500),
+  .row:has(> .col > [data-testid="unit-card"] .text-success-500) {
+    border-left-color: var(--pgn-color-primary-base) !important;
+  }
 }
 
 // Studio also depends on @edx/frontend-component-header (same package as
@@ -40,6 +49,51 @@
 // fixed height so the header sizes itself to its content instead.
 #root .studio-header {
   height: auto !important;
+}
+
+// ----- Studio chrome gaps (match site-header spacer-2 rhythm) -----
+// Sequence unit tabs / Prev / Next / New unit are `d-flex` with no gap in
+// CourseSequence.scss — buttons sit flush (segmented-control look) while
+// Layer 2 already rounds every `.btn`. Same spacer-2 as site-header
+// `.main-nav` so Studio chrome matches other MFEs.
+.sequence-navigation {
+  gap: var(--pgn-spacing-spacer-2);
+
+  .sequence-navigation-tabs-container,
+  .sequence-navigation-tabs {
+    gap: var(--pgn-spacing-spacer-2);
+  }
+
+  .btn {
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+}
+
+// Unit sub-header Preview / View live — Paragon ButtonGroup joins them
+// (negative margin + squared adjacent corners). Source:
+// course-unit/header-navigations/HeaderNavigations.tsx. Split into spaced
+// pills like outline buttons elsewhere (and like site-header nav gap).
+.header-navigations {
+  display: flex;
+  align-items: center;
+  gap: var(--pgn-spacing-spacer-2);
+
+  .btn-group,
+  .pgn__button-group {
+    display: inline-flex;
+    gap: var(--pgn-spacing-spacer-2);
+
+    > .btn {
+      margin-left: 0 !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+  }
+}
+
+// Add-component type strip already uses CSS gap, but hardcoded .75rem —
+// map to spacer-3 (1 × spacer-base) so it tracks the spacing scale.
+.new-component-type {
+  gap: var(--pgn-spacing-spacer-3) !important;
 }
 
 // ---------------------------------------------------------------------
