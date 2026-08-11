@@ -1,9 +1,128 @@
 // LAYER 3 — Gradebook MFE (learner search, filters, links)
 // Parents: .page-gradebook
 // Form/select: Layer 2 _forms.scss + _selects.scss
-// Search: Layer 2 _searchfield.scss (tokens remapped below for primary border)
+// Search: Layer 2 _searchfield.scss (no page-specific remap — same default
+// gray border + primary hover/focus as every other search field on the site;
+// it previously forced a permanent primary-colored border here only, which
+// read as a different search-bar design from the rest of the product)
 // Dropdown: Layer 2 _dropdown.scss
 // Values only via var(--pgn-*).
+
+// ----- Horizontal scroll: table only, not the whole main column -----
+// Gradebook MFE sources of the full-component x-scroll:
+//
+// 1. GradesView.scss → `.gradebook-content { width: 100vw }` — viewport-relative,
+//    so with sidebar `margin-left: 350px` the column is always wider than the
+//    shell and the page/column scrolls sideways.
+// 2. WithSidebar.scss → `.sidebar-contents { overflow-x: auto }` — that wrapper
+//    is header + filters + search + table + pagination, so its scroller moves
+//    the entire main column. `.opening` also uses `width: calc(100vw - 350px)`.
+// 3. Paragon DataTable → overflow-x on `.pgn__data-table-layout-wrapper` below
+//    ~1400px; flex children default `min-width: auto` so a wide table refuses
+//    to shrink and the scroll never settles on the table box.
+//
+// Fix (no overflow-x: hidden): kill 100vw, size the open sidebar column as
+// % of parent, drop column-level overflow-x, min-width: 0 down the flex chain,
+// leave `.gradebook-container` (MFE already `overflow-x: auto`) as the
+// horizontal scroll host for the wide table.
+
+// Sidebar width must match WithSidebar.scss `$sidebar-width` — not a design
+// token; it's Gradebook layout chrome.
+$tels-gradebook-sidebar-width: 350px;
+
+.pgn__data-table-layout-wrapper {
+  overflow-x: visible !important;
+
+  .pgn__data-table-layout-main {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+.page-gradebook {
+  .sidebar-contents {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    // Kill MFE column scroller — do not use overflow-x: hidden (clips
+    // dropdowns/tooltips via the overflow-x/y pairing rule).
+    overflow-x: visible !important;
+
+    // MFE `.opening` used calc(100vw - 350px); stay % of parent instead.
+    &.opening {
+      width: calc(100% - #{$tels-gradebook-sidebar-width}) !important;
+      max-width: calc(100% - #{$tels-gradebook-sidebar-width});
+    }
+  }
+
+  // Open filter drawer: margin-left 350px from MFE — shrink width so the
+  // column does not extend past the shell (100% + margin = x-overflow).
+  .sidebar.open + .sidebar-contents {
+    width: calc(100% - #{$tels-gradebook-sidebar-width}) !important;
+    max-width: calc(100% - #{$tels-gradebook-sidebar-width});
+  }
+
+  .gradebook-content {
+    // Override GradesView `width: 100vw` — fill the sidebar-contents column.
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  // MFE already puts overflow-x/y: auto here — reinforce as the only x-scroller
+  // for the wide grade table (not .sidebar-contents / .gradebook-content).
+  .gradebook-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    box-sizing: border-box;
+
+    .pgn__data-table-layout-wrapper,
+    .pgn__data-table-wrapper,
+    .pgn__data-table-container {
+      max-width: 100%;
+      min-width: 0;
+    }
+  }
+
+  // Step 1 header row (Edit Filters + learner search). Right-aligned search
+  // sized to the shortest width that keeps the floating label
+  // ("Search for a learner") on one line — not a flex-grow strip.
+  .step-message-1 + .d-flex.justify-content-between {
+    gap: var(--pgn-spacing-spacer-3);
+
+    #edit-filters-btn {
+      flex-shrink: 0;
+    }
+
+    .search-container {
+      flex: 0 0 auto;
+      margin-left: auto;
+      max-width: 100%;
+
+      .pgn__searchfield {
+        // 21ch ≈ "Search for a learner" + submit icon + field pad.
+        // Label is position:absolute in Paragon, so it does not grow the box —
+        // measure the string in ch and reserve room for the icon button.
+        width: calc(
+          21ch
+          + var(--pgn-size-icon-button-diameter-sm, 2.25rem)
+          + var(--pgn-spacing-spacer-4, 1.5rem)
+        );
+        max-width: 100%;
+      }
+
+      label.has-label-text {
+        white-space: nowrap;
+      }
+    }
+  }
+}
 
 // Gradebook's shell (.sidebar-container > .sidebar + .sidebar-contents) doesn't match
 // any selector in overrides/_layout.scss (no .container-xl / #main-content wrapper here),
@@ -18,13 +137,6 @@
     @include tels-branded-select;
   }
 
-  // Remap search tokens under gradebook; do not wrap box+button together
-  .search-container > .pgn__searchfield {
-    --pgn-color-search-field-border-base: var(--pgn-color-primary-base);
-    --pgn-color-search-field-border-interaction: var(--pgn-color-primary-base);
-    --pgn-color-search-field-border-focus: var(--pgn-color-primary-base);
-  }
-
   a,
   .btn-link,
   button.btn-link,
@@ -34,5 +146,11 @@
     &:hover {
       color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
     }
+  }
+
+  // Applied-filter badges — each one is its own <div>...<br></div> (line
+  // break per badge, no class on the wrapper to hook), stacked with no gap.
+  .badge.badge-info {
+    margin-bottom: var(--pgn-spacing-spacer-2);
   }
 }

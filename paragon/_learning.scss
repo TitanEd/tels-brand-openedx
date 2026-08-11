@@ -184,7 +184,16 @@ $tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700)
   }
 
   // ----- Main: course tabs + unit chrome + outline + navigation -----
-  main {
+  // Gate on .learning-header — every Learning MFE page mounts that header,
+  // while Account / Profile / Dashboard / Authn also render `#root > … > main`
+  // and would otherwise inherit this block. Concretely:
+  // `#root main .btn.btn-link { color: link !important }` is ID-level and
+  // beats Account's solid Edit remapping
+  // (`.account-section … > .btn.btn-link { color: --pgn-color-btn-text-primary }`),
+  // so Edit rendered brand-colored text instead of the white button token.
+  // Same leak hit Profile's outline Add / icon-edit buttons. `:has()` keeps
+  // Learning's own main chrome intact without painting every other MFE.
+  &:has(.learning-header) main {
     @include tels-learn-buttons;
     @include tels-learn-links;
     @include tels-learn-tabs;
@@ -271,6 +280,13 @@ $tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700)
     // now rounds — match it to the same tier so the whole chip reads as one shape.
     .outline-sidebar-heading-wrapper {
       border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    // Outline tray (.outline-sidebar): the sticky module-heading row sits
+    // flush against the section list below it with no gap of its own —
+    // same "sticky bar touching content" pattern as Discussion's filter bar.
+    #outline-sidebar-outline {
+      margin-top: var(--pgn-spacing-spacer-3) !important;
     }
 
     // Discussions sidebar (SidebarBase.jsx) is correctly `rounded-sm`, but the

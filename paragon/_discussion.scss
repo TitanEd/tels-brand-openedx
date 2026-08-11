@@ -23,6 +23,27 @@
     }
   }
 
+  // Tab buttons (My posts / All posts / Topics / Learners) have no gap of
+  // their own between pills — relies only on each .nav-link's own padding,
+  // so they read as touching. .nav is already flex; add breathing room
+  // between items.
+  .nav-button-group.nav-pills {
+    gap: var(--pgn-spacing-spacer-2);
+
+    // Every pill needs its own visible edge, active or not — without this,
+    // only the active tab reads as a "button" (filled bg) and the others
+    // are bare text, so the group's right-side boundary disappears on
+    // every inactive tab. Give all of them the same border, active just
+    // swaps it to the primary tone that matches its own fill.
+    .nav-link {
+      border: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
+
+      &.active {
+        border-color: var(--pgn-color-primary-base);
+      }
+    }
+  }
+
   // Filter bar + results list read as one continuous card (filter trigger,
   // divider, results — see .discussion-posts markup), but the filter bar's
   // OWN radius comes from the generic .collapsible-card-lg rule (Layer 2
@@ -33,7 +54,11 @@
   // the results list's bottom corners to it, so the whole block reads as
   // one seamless card top-to-bottom.
   .discussion-posts {
+    // Sits flush under .header-action-bar with no gap of its own — give the
+    // whole filter+results block some breathing room from the sticky bar
+    // above it.
     .filter-bar.collapsible-card-lg {
+      margin-top: var(--pgn-spacing-spacer-3) !important;
       border-radius: var(--pgn-size-card-border-radius-base) var(--pgn-size-card-border-radius-base) 0 0 !important;
     }
 

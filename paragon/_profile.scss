@@ -1,0 +1,235 @@
+// LAYER 3 — Profile MFE
+// Card + pinned-button pattern below is the same one used in _account.scss
+// (left-accent bordered card, Add/Edit button pinned to its top-right
+// corner) — matches Edly's own Indigo theme (ulmo/indigo,
+// paragon/_account.scss) structurally, re-implemented on our own token set.
+// Account and Profile are meant to read as one system, not two different
+// treatments, so this mirrors Account field-for-field.
+//
+// Confirmed against real source (frontend-app-profile, profile/ProfilePage.jsx):
+// - Page has no <Container size="xl"> wrapper of its own (unlike Account).
+// - Banner + certificates grey bar are full-bleed; inner white card /
+//   profile-info shell / certificates text wrapper use
+//   --pgn-size-container-max-width-xl + equal L/R from half
+//   --pgn-spacing-grid-gutter-width (same model as tels-content-width).
+//   Profile-info keeps py-6 vertical pad via --pgn-spacing-spacer-6.
+// - Full name / Country / Primary language spoken / Education / Bio: each
+//   field is its own `.pgn-transition-replace-group.position-relative`.
+// - X / Facebook / LinkedIn share ONE outer `.pgn-transition-replace-group`,
+//   with each field a bare `.pt-40px` inside — :has()/:not() splits those.
+
+// ----- Width + equal L/R pad (tokens only) -----
+// max-width: --pgn-size-container-max-width-xl
+// L/R pad:   half --pgn-spacing-grid-gutter-width (same as tels-content-width)
+// Do NOT use MFE hardcoded px-120px / py-6 for these shells.
+
+// Banner background stays full-bleed; inner white card is capped + centered.
+// Replace MFE px-120px with equal gutter L/R so side inset tracks Layer 1.
+.profile-page-bg-banner {
+  max-width: none !important;
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+
+  > .col.container-fluid {
+    max-width: var(--pgn-size-container-max-width-xl) !important;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+// Profile information shell — kill MFE px-120px; keep py-6 vertical rhythm
+// via spacer-6 token. Content-width + equal gutter L/R + centered.
+.profile-page > .col.d-inline-flex.px-120px,
+.profile-page > div > .px-120px {
+  display: flex !important;
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+  padding-top: var(--pgn-spacing-spacer-6) !important;
+  padding-bottom: var(--pgn-spacing-spacer-6) !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+}
+
+// Certificates grey bar — full-bleed background (no outer max-width / no
+// outer px-120px). Max-width + equal gutter L/R only on the INNER text wrapper.
+.profile-page > .col.container-fluid.d-inline-flex,
+.profile-page > div > .col.container-fluid.d-inline-flex {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+
+  > div {
+    max-width: var(--pgn-size-container-max-width-xl) !important;
+    width: 100%;
+    padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+    padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+    box-sizing: border-box;
+  }
+}
+
+// Dual scope: `#root .profile-page` beats any remaining ID-level
+// `.btn.btn-link` leaks; bare `.profile-page` covers mounts without #root.
+#root .profile-page,
+.profile-page {
+  // Username (static block outside transition groups) — 18px under default
+  // root (spacer-base × 1.125). Keeps the value on the spacing token scale.
+  .col-6 > .m-0:has(> .edit-section-header) {
+    margin-bottom: calc(var(--pgn-spacing-spacer-base, 1rem) * 1.125) !important;
+  }
+
+  // Field card — same look as Account's: white bg, light border, primary
+  // left-accent stripe. `padding` is `!important` because it's overriding
+  // the field's own pt-40px/pt-0/p-0 spacing utility (that vertical rhythm
+  // is replaced by this card's own uniform padding + margin-bottom below).
+  .pgn-transition-replace-group:not(:has(.pt-40px)),
+  .pgn-transition-replace-group .pt-40px {
+    position: relative;
+    background-color: var(--pgn-color-white);
+    border: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
+    border-left: .5rem solid var(--pgn-color-primary-light);
+    border-radius: var(--pgn-size-border-radius-base);
+    padding: 1rem 1.25rem !important;
+    margin-bottom: var(--pgn-spacing-spacer-base, 1rem) !important;
+  }
+
+  // Label — reserve room so it never runs under the pinned button, same
+  // figure as Account's h6.
+  p.h5.font-weight-bold {
+    padding-right: 5.5rem;
+  }
+
+  // "Add …" buttons (`.btn.btn-link.p-0.text-left` / `.lh-36px`) — remapped to
+  // the outline-primary kit (themes/light/components/button/outline-primary.json),
+  // same tokens as Cancel on this page, including hover/focus/active.
+  // Broad selectors + button. prefix: MFE class order varies; links.scss
+  // `.btn.btn-link { color: link !important }` must lose on every state.
+  button.btn.btn-link.p-0.text-left,
+  button.btn.btn-link.p-0.lh-36px,
+  .btn.btn-link.p-0.text-left,
+  .btn.btn-link.lh-36px:not(.btn-sm) {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    margin: 0 0 var(--pgn-spacing-spacer-base, 1rem) 0 !important;
+    background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-outline-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base) !important;
+    font-size: var(--pgn-typography-btn-font-size-base) !important;
+    line-height: 1.25rem !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+
+    svg {
+      display: none !important;
+    }
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
+      border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+      color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+      text-decoration: none !important;
+    }
+  }
+
+  .p-0.m-0:has(> .btn.btn-link.p-0),
+  .p-0.m-0:has(> button.btn.btn-link) {
+    margin-bottom: var(--pgn-spacing-spacer-base, 1rem) !important;
+    // Reserve room under the absolutely pinned Add button so the card
+    // doesn't collapse to label-only height.
+    min-height: 2.5rem;
+  }
+
+  // Edit-mode Save / Cancel — same kits as Account editable-field forms.
+  // Save: flat solid-primary (no hover darken, matches other MFEs).
+  // Cancel: full outline-primary kit including hover/focus/active.
+  .btn.btn-primary,
+  .pgn__stateful-btn.btn-primary,
+  button.btn.btn-primary {
+    color: var(--pgn-color-btn-text-primary) !important;
+    background-color: var(--pgn-color-btn-bg-primary) !important;
+    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
+      color: var(--pgn-color-btn-text-primary) !important;
+      background-color: var(--pgn-color-btn-bg-primary) !important;
+      border-color: var(--pgn-color-btn-border-primary) !important;
+    }
+  }
+
+  .btn.btn-outline-primary,
+  button.btn.btn-outline-primary {
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-outline-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
+      color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
+    }
+  }
+
+  // Display-name row (name + edit-pencil button) — the two .col-auto cells
+  // are both m-0/p-0, so name and button sat flush with no breathing room
+  // between them.
+  .row.flex-nowrap {
+    gap: var(--pgn-spacing-spacer-2);
+  }
+
+  // Display-name row's edit-pencil button — icon-only bare `.btn.btn-link.btn-sm`
+  // remapped to icon-button tokens (Paragon IconButton kit).
+  .row.flex-nowrap .btn.btn-link.btn-sm {
+    width: var(--pgn-size-icon-button-diameter-sm);
+    height: var(--pgn-size-icon-button-diameter-sm);
+    padding: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    border-radius: 50%;
+    background-color: transparent !important;
+    color: var(--pgn-color-icon-button-text-primary-base) !important;
+
+    svg {
+      width: var(--pgn-size-icon-sm);
+      height: var(--pgn-size-icon-sm);
+      color: var(--pgn-color-icon-button-text-primary-base) !important;
+    }
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: var(--pgn-color-icon-button-bg-primary-hover) !important;
+      color: var(--pgn-color-icon-button-text-primary-hover) !important;
+
+      svg {
+        color: var(--pgn-color-icon-button-text-primary-hover) !important;
+      }
+    }
+  }
+}
