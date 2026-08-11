@@ -158,24 +158,13 @@
     min-height: 2.5rem;
   }
 
-  // Edit-mode Save / Cancel — same kits as Account editable-field forms.
-  // Save: flat solid-primary (no hover darken, matches other MFEs).
-  // Cancel: full outline-primary kit including hover/focus/active.
+  // Edit-mode Save / Cancel — same as Account. Save = Paragon-native hover;
+  // Cancel = outline-primary kit.
   .btn.btn-primary,
   .pgn__stateful-btn.btn-primary,
   button.btn.btn-primary {
     color: var(--pgn-color-btn-text-primary) !important;
-    background-color: var(--pgn-color-btn-bg-primary) !important;
-    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-primary) !important;
     border-radius: var(--pgn-size-btn-border-radius-base) !important;
-
-    &:hover:not(:disabled):not([aria-disabled="true"]),
-    &:focus:not(:disabled),
-    &:active:not(:disabled) {
-      color: var(--pgn-color-btn-text-primary) !important;
-      background-color: var(--pgn-color-btn-bg-primary) !important;
-      border-color: var(--pgn-color-btn-border-primary) !important;
-    }
   }
 
   .btn.btn-outline-primary,

@@ -57,15 +57,14 @@
       display: none;
     }
 
-    // Flat solid like Layer 2 .btn-primary — no hover darken. Re-assert base
-    // tokens on :hover/:focus/:active so .btn-link link-color rules cannot
-    // flash brand text or clear the fill.
+    // Remapped .btn-link → solid look. Paint fill with tokens; use hover
+    // tokens so it tracks Paragon solid-primary hover (theme.hover / *-700).
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--pgn-color-btn-bg-primary) !important;
-      border-color: var(--pgn-color-btn-border-primary) !important;
-      color: var(--pgn-color-btn-text-primary) !important;
+      background-color: var(--pgn-color-btn-hover-bg-primary) !important;
+      border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-hover-bg-primary)) !important;
+      color: var(--pgn-color-btn-hover-text-primary, var(--pgn-color-btn-text-primary)) !important;
     }
   }
 
@@ -97,26 +96,13 @@
     }
   }
 
-  // Edit-mode Save / Cancel (editable-field form). Cancel is
-  // `.btn.btn-outline-primary` — map the full outline-primary kit
-  // (themes/light/components/button/outline-primary.json) so border/text/
-  // hover match other MFEs. Save stays flat solid-primary like Layer 2.
+  // Edit-mode Save / Cancel. Cancel = outline-primary kit. Save = real
+  // .btn-primary — label/radius only so Paragon-native hover stays intact.
   .btn.btn-primary,
   .pgn__stateful-btn.btn-primary,
   button.btn.btn-primary {
     color: var(--pgn-color-btn-text-primary) !important;
-    background-color: var(--pgn-color-btn-bg-primary) !important;
-    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-primary) !important;
     border-radius: var(--pgn-size-btn-border-radius-base) !important;
-
-    // Flat solid like Layer 2 — keep base tokens on interaction states.
-    &:hover:not(:disabled):not([aria-disabled="true"]),
-    &:focus:not(:disabled),
-    &:active:not(:disabled) {
-      color: var(--pgn-color-btn-text-primary) !important;
-      background-color: var(--pgn-color-btn-bg-primary) !important;
-      border-color: var(--pgn-color-btn-border-primary) !important;
-    }
   }
 
   .btn.btn-outline-primary,

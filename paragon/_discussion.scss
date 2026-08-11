@@ -71,6 +71,8 @@
 }
 
 // TinyMCE Language / list pickers outside #root — tokens: primary + form
+// Dialog stacking: Layer 2 overrides/_tinymce.scss sets .tox-tinymce-aux
+// z-index above Discussion sticky bars (MFE had aux at 1, action bar at 2).
 .tox.tox-silver-sink.tox-tinymce-aux,
 .tox-tinymce-aux {
   .tox-dialog .tox-selectfield select {

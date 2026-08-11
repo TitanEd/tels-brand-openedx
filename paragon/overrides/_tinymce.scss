@@ -93,9 +93,15 @@
 }
 
 // TinyMCE listbox / menu collections render in .tox-tinymce-aux (often outside #root)
-.tox.tox-tinymce-aux,
-.tox-tinymce-aux,
-.tox {
+//
+// Discussion MFE ships `.tox-tinymce-aux { z-index: 1 !important }` while
+// `.header-action-bar` is z-index: 2 and `#courseTabsNavigation` is 3 — so
+// Source Code / Insert Code Sample dialogs paint *under* the sticky bars.
+// Lift aux to the same tier as Paragon modals (#paragon-portal-root uses 5000).
+.tox.tox-silver-sink.tox-tinymce-aux,
+.tox-tinymce-aux {
+  z-index: 5000 !important;
+
   .tox-collection__item {
     color: var(--pgn-color-text-base) !important;
   }

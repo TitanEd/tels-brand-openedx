@@ -41,8 +41,8 @@ Each kit = JSON (colors / hover / focus) + thin SCSS that only maps classes → 
 | `.btn-icon.btn-icon-secondary` (Studio drag handles) | `themes/light/components/button/icon-secondary.json` |
 | Padding / radius (all buttons) | `core/components/button/size-padding-radius.json` |
 
-Inside each button JSON you edit: `bg`, `text`, `border`, and under `hover` the same for hover state.  
-SCSS map: `overrides/_buttons.scss` (do not put hex here).
+Inside each button JSON you edit: `bg`, `text`, `border`, and under `hover` / `active` the same for those states.  
+SCSS: `overrides/_buttons.scss` — Paragon-equivalent `.btn:hover` (reads `--pgn-btn-hover-bg`) + `button-variant` locals for primary/brand. No `!important` on solid fills. Outline kits keep `!important` for Studio.
 
 **One file = one button type.** Do not put outline keys inside `solid-*.json` (that overwrites `outline-*.json`).  
 Changing Layer 1 `color.primary.base` updates solid-primary when it links `{color.primary.base}`.
@@ -75,6 +75,7 @@ SCSS: `overrides/_links.scss` · Authn parent map: `_authn.scss`
 | Class | File | SCSS |
 |-------|------|------|
 | `.pgn__searchfield` (internal) | `themes/light/components/form/search-field.json` | `overrides/_searchfield.scss` |
+| `.pgn__searchfield__iconbutton-submit` (Authoring / Studio icon search) | same → `icon.base` / `icon.hover` / `icon.bg.hover` (not icon-primary fill) | same |
 | `.pgn__searchfield--external` (box ≠ button) | same | same |
 | Search radius | `core/components/form/search-field-size.json` | — |
 
@@ -120,7 +121,7 @@ Card **color** (bg/border color) is still Open edX/Paragon stock by design — n
 
 **Kept:** button borders, form/search borders (input kits), dropdown item hover (menu border = stock), card radius (all tiers cascade from Layer 1 base).
 
-Still present for runtime: TinyMCE (uses primary/button/form vars).
+Still present for runtime: TinyMCE (uses primary/button/form vars; `.tox-tinymce-aux` z-index lifted in `overrides/_tinymce.scss` so Source Code / Code Sample dialogs sit above Discussion sticky bars).
 
 ---
 

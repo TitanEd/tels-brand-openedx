@@ -44,9 +44,40 @@
     color: var(--pgn-color-form-input-base) !important;
   }
 
+  // Submit icon — search-field tokens only. Do NOT inherit .btn-icon-primary
+  // hover (solid primary fill + white icon). Authoring / Studio filters use
+  // this internal SearchField (e.g. data-testid="input-filter-courses-search").
+  .pgn__searchfield__iconbutton-submit,
+  .pgn__searchfield__iconbutton-submit.btn-icon,
   .pgn__searchfield__iconbutton-submit.btn-icon-primary,
-  .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit {
+  .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit,
+  button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit {
     color: var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base)) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+    .pgn__icon,
+    .btn-icon__icon,
+    svg {
+      color: inherit !important;
+      fill: currentColor !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:active {
+      color: var(--pgn-color-search-field-icon-hover, var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base))) !important;
+      background: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+      background-color: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+      box-shadow: none !important;
+    }
+
+    &:active {
+      background: var(--pgn-color-search-field-icon-bg-active, var(--pgn-color-search-field-icon-bg-hover, transparent)) !important;
+      background-color: var(--pgn-color-search-field-icon-bg-active, var(--pgn-color-search-field-icon-bg-hover, transparent)) !important;
+    }
   }
 }
 
@@ -88,11 +119,11 @@
   }
 }
 
-// External submit button — uses primary button tokens (separate from the box)
+// External submit — radius + label only. Do not !important the fill: the
+// button is .btn.btn-primary and must keep Paragon's native hover/active
+// ( --pgn-btn-hover-bg from solid-primary tokens ).
 .pgn__searchfield__button.btn,
 .pgn__searchfield__button.btn.btn-primary {
-  background-color: var(--pgn-color-search-field-button-bg-primary, var(--pgn-color-btn-bg-primary)) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
   color: var(--pgn-color-btn-text-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }

@@ -26,8 +26,7 @@ $tels-dash-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700))
     .btn.btn-primary,
     button[type="submit"] {
       color: var(--pgn-color-btn-text-brand, var(--pgn-color-btn-text-primary)) !important;
-      background-color: var(--pgn-color-btn-bg-brand, var(--pgn-color-btn-bg-primary)) !important;
-      border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary)) !important;
+      border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary));
       border-radius: var(--pgn-size-btn-border-radius-base) !important;
     }
   }
@@ -154,8 +153,7 @@ $tels-dash-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700))
     .btn.btn-brand,
     .btn.btn-primary {
       color: var(--pgn-color-btn-text-brand, var(--pgn-color-btn-text-primary)) !important;
-      background-color: var(--pgn-color-btn-bg-brand, var(--pgn-color-btn-bg-primary)) !important;
-      border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary)) !important;
+      border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary));
       border-radius: var(--pgn-size-btn-border-radius-base) !important;
     }
 

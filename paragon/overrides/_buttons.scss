@@ -1,6 +1,10 @@
-// LAYER 2 — Button override (outline / sm / ActionRow)
+// LAYER 2 — Button override
 // Tokens: themes/*/components/button/*.json + core/.../button/size-padding-radius.json
-// Why: Reinforce Paragon vars where MFE/Bootstrap overrides fight them (Gradebook Apply).
+//
+// brandOverride replaces Paragon core.css, so we must own Paragon's solid
+// paint path: button-variant locals + .btn:hover reading --pgn-btn-hover-bg.
+// Do not !important solid fills (that flattens hover). Outline kits keep
+// !important to beat Studio utility classes.
 
 .page-gradebook,
 .grade-filter-action,
@@ -72,31 +76,55 @@ a.btn.btn-outline-primary,
   }
 }
 
-// Solid primary/brand: base fill only (no hover darken). The !important base
-// bg matches other MFEs — Paragon's non-!important hover never wins, so
-// solids stay flat on hover site-wide. Do not add hover-bg here.
+// ---------------------------------------------------------------------------
+// Paragon solid paint path (mirrors @openedx/paragon Button/index.scss)
+// brandOverride replaces Paragon core — without this, --pgn-btn-hover-bg
+// has no :hover rule to apply.
+// ---------------------------------------------------------------------------
+.btn:not(.btn-link) {
+  color: var(--pgn-btn-color, var(--pgn-color-body-base));
+  background-color: var(--pgn-btn-bg, transparent);
+  border-color: var(--pgn-btn-border-color, transparent);
+
+  &:not(:disabled, .disabled) {
+    &:hover {
+      color: var(--pgn-btn-hover-color, var(--pgn-color-body-base));
+      background-color: var(--pgn-btn-hover-bg, transparent);
+      border-color: var(--pgn-btn-hover-border-color, transparent);
+      text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+      color: var(--pgn-btn-active-color, inherit);
+      background-color: var(--pgn-btn-active-bg, inherit);
+      border-color: var(--pgn-btn-active-border-color, transparent);
+    }
+  }
+}
+
+// Primary + brand locals from tokens (same as Paragon button-variant mixin)
+.btn-primary,
 button.btn.btn-primary,
 a.btn.btn-primary,
-.btn.btn-primary,
 #edit-filters-btn {
+  @include button-variant("primary");
+
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 
+.btn-brand,
 button.btn.btn-brand,
-a.btn.btn-brand,
-.btn.btn-brand {
+a.btn.btn-brand {
+  @include button-variant("brand");
+
   color: var(--pgn-color-btn-text-brand) !important;
-  background-color: var(--pgn-color-btn-bg-brand) !important;
-  border-color: var(--pgn-color-btn-border-brand) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 
 // Icon buttons — btn-icon btn-icon-primary / btn-icon-secondary
 // Tokens: themes/light/components/button/icon-primary.json, icon-secondary.json
-// Studio drag handles: button.btn-icon.btn-icon-secondary[aria-label="Drag to reorder"]
 .btn-icon.btn-icon-primary,
 button.btn-icon.btn-icon-primary {
   color: var(--pgn-color-icon-button-text-primary-base) !important;

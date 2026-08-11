@@ -2952,9 +2952,63 @@ select.form-control.has-value option:focus,
   background-color: var(--pgn-color-search-field-form-bg) !important;
   color: var(--pgn-color-form-input-base) !important;
 }
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon,
 .pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary,
-.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit {
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit {
   color: var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base)) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit .pgn__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit .btn-icon__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit svg,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon .pgn__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon .btn-icon__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon svg,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary .pgn__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary .btn-icon__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary svg,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit .pgn__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit .btn-icon__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit svg,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit .pgn__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit .btn-icon__icon,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit svg {
+  color: inherit !important;
+  fill: currentColor !important;
+}
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit:hover, .pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit:focus, .pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit:focus-visible, .pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit:active,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon:hover,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon:focus,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon:focus-visible,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon:active,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary:hover,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary:focus,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary:focus-visible,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary:active,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:hover,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:focus,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:focus-visible,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:active,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:hover,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:focus,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:focus-visible,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:active {
+  color: var(--pgn-color-search-field-icon-hover, var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base))) !important;
+  background: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+  background-color: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+  box-shadow: none !important;
+}
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit:active,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon:active,
+.pgn__searchfield:not(.pgn__searchfield--external) .pgn__searchfield__iconbutton-submit.btn-icon-primary:active,
+.pgn__searchfield:not(.pgn__searchfield--external) .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:active,
+.pgn__searchfield:not(.pgn__searchfield--external) button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit:active {
+  background: var(--pgn-color-search-field-icon-bg-active, var(--pgn-color-search-field-icon-bg-hover, transparent)) !important;
+  background-color: var(--pgn-color-search-field-icon-bg-active, var(--pgn-color-search-field-icon-bg-hover, transparent)) !important;
 }
 
 .pgn__searchfield.pgn__searchfield--external {
@@ -2985,8 +3039,6 @@ select.form-control.has-value option:focus,
 
 .pgn__searchfield__button.btn,
 .pgn__searchfield__button.btn.btn-primary {
-  background-color: var(--pgn-color-search-field-button-bg-primary, var(--pgn-color-btn-bg-primary)) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
   color: var(--pgn-color-btn-text-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
@@ -3079,22 +3131,67 @@ a.btn.btn-outline-primary.active:not(:disabled),
   background-color: var(--pgn-color-btn-active-bg-outline-primary, var(--pgn-color-btn-hover-bg-outline-primary, transparent)) !important;
 }
 
+.btn:not(.btn-link) {
+  color: var(--pgn-btn-color, var(--pgn-color-body-base));
+  background-color: var(--pgn-btn-bg, transparent);
+  border-color: var(--pgn-btn-border-color, transparent);
+}
+.btn:not(.btn-link):not(:disabled, .disabled):hover {
+  color: var(--pgn-btn-hover-color, var(--pgn-color-body-base));
+  background-color: var(--pgn-btn-hover-bg, transparent);
+  border-color: var(--pgn-btn-hover-border-color, transparent);
+  text-decoration: none;
+}
+.btn:not(.btn-link):not(:disabled, .disabled):active, .btn:not(.btn-link):not(:disabled, .disabled).active {
+  color: var(--pgn-btn-active-color, inherit);
+  background-color: var(--pgn-btn-active-bg, inherit);
+  border-color: var(--pgn-btn-active-border-color, transparent);
+}
+
+.btn-primary,
 button.btn.btn-primary,
 a.btn.btn-primary,
-.btn.btn-primary,
 #edit-filters-btn {
+  --pgn-btn-color: var(--pgn-color-btn-text-primary);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-primary);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-primary);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-primary);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-primary);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-primary);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-primary);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-primary);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-primary);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-primary);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-primary);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-primary);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-primary);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-primary);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-primary);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-primary);
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 
+.btn-brand,
 button.btn.btn-brand,
-a.btn.btn-brand,
-.btn.btn-brand {
+a.btn.btn-brand {
+  --pgn-btn-color: var(--pgn-color-btn-text-brand);
+  --pgn-btn-bg: var(--pgn-color-btn-bg-brand);
+  --pgn-btn-border-color: var(--pgn-color-btn-border-brand);
+  --pgn-btn-hover-color: var(--pgn-color-btn-hover-text-brand);
+  --pgn-btn-hover-bg: var(--pgn-color-btn-hover-bg-brand);
+  --pgn-btn-hover-border-color: var(--pgn-color-btn-hover-border-brand);
+  --pgn-btn-disabled-color: var(--pgn-color-btn-disabled-text-brand);
+  --pgn-btn-disabled-bg: var(--pgn-color-btn-disabled-bg-brand);
+  --pgn-btn-disabled-border-color: var(--pgn-color-btn-disabled-border-brand);
+  --pgn-btn-active-color: var(--pgn-color-btn-active-text-brand);
+  --pgn-btn-active-bg: var(--pgn-color-btn-active-bg-brand);
+  --pgn-btn-active-border-color: var(--pgn-color-btn-active-border-brand);
+  --pgn-btn-focus-outline-color: var(--pgn-color-btn-focus-outline-brand);
+  --pgn-btn-focus-color: var(--pgn-color-btn-focus-text-brand);
+  --pgn-btn-focus-border-color: var(--pgn-color-btn-focus-border-brand);
+  --pgn-btn-focus-bg: var(--pgn-color-btn-focus-bg-brand);
   color: var(--pgn-color-btn-text-brand) !important;
-  background-color: var(--pgn-color-btn-bg-brand) !important;
-  border-color: var(--pgn-color-btn-border-brand) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 
@@ -3318,26 +3415,25 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
   color: var(--pgn-color-white) !important;
 }
 
-.tox.tox-tinymce-aux .tox-collection__item,
-.tox-tinymce-aux .tox-collection__item,
-.tox .tox-collection__item {
+.tox.tox-silver-sink.tox-tinymce-aux,
+.tox-tinymce-aux {
+  z-index: 5000 !important;
+}
+.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item,
+.tox-tinymce-aux .tox-collection__item {
   color: var(--pgn-color-text-base) !important;
 }
-.tox.tox-tinymce-aux .tox-collection__item--active,
-.tox.tox-tinymce-aux .tox-collection__item--enabled,
-.tox.tox-tinymce-aux .tox-collection__item[aria-selected=true],
+.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item--active,
+.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item--enabled,
+.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item[aria-selected=true],
 .tox-tinymce-aux .tox-collection__item--active,
 .tox-tinymce-aux .tox-collection__item--enabled,
-.tox-tinymce-aux .tox-collection__item[aria-selected=true],
-.tox .tox-collection__item--active,
-.tox .tox-collection__item--enabled,
-.tox .tox-collection__item[aria-selected=true] {
+.tox-tinymce-aux .tox-collection__item[aria-selected=true] {
   background-color: var(--pgn-color-primary-base) !important;
   color: var(--pgn-color-white) !important;
 }
-.tox.tox-tinymce-aux .tox-listboxfield .tox-listbox--select:focus,
-.tox-tinymce-aux .tox-listboxfield .tox-listbox--select:focus,
-.tox .tox-listboxfield .tox-listbox--select:focus {
+.tox.tox-silver-sink.tox-tinymce-aux .tox-listboxfield .tox-listbox--select:focus,
+.tox-tinymce-aux .tox-listboxfield .tox-listbox--select:focus {
   border-color: var(--pgn-color-primary-base) !important;
   box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
 }
@@ -3705,8 +3801,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root .learning-header a.btn.btn-brand,
 #root .learning-header button.btn.btn-brand {
   color: var(--pgn-color-btn-text-brand) !important;
-  background-color: var(--pgn-color-btn-bg-brand) !important;
-  border-color: var(--pgn-color-btn-border-brand) !important;
+  border-color: var(--pgn-color-btn-border-brand);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root .learning-header .btn.btn-primary,
@@ -3714,8 +3809,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root .learning-header button.btn.btn-primary,
 #root .learning-header .pgn__stateful-btn.btn-primary {
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root .learning-header .btn.btn-outline-primary,
@@ -3847,8 +3941,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root [data-testid=instructor-toolbar] a.btn.btn-brand,
 #root [data-testid=instructor-toolbar] button.btn.btn-brand {
   color: var(--pgn-color-btn-text-brand) !important;
-  background-color: var(--pgn-color-btn-bg-brand) !important;
-  border-color: var(--pgn-color-btn-border-brand) !important;
+  border-color: var(--pgn-color-btn-border-brand);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root [data-testid=instructor-toolbar] .btn.btn-primary,
@@ -3856,8 +3949,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root [data-testid=instructor-toolbar] button.btn.btn-primary,
 #root [data-testid=instructor-toolbar] .pgn__stateful-btn.btn-primary {
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root [data-testid=instructor-toolbar] .btn.btn-outline-primary,
@@ -3979,8 +4071,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main a.btn.btn-brand,
 #root:has(.learning-header) main button.btn.btn-brand {
   color: var(--pgn-color-btn-text-brand) !important;
-  background-color: var(--pgn-color-btn-bg-brand) !important;
-  border-color: var(--pgn-color-btn-border-brand) !important;
+  border-color: var(--pgn-color-btn-border-brand);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root:has(.learning-header) main .btn.btn-primary,
@@ -3988,8 +4079,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main button.btn.btn-primary,
 #root:has(.learning-header) main .pgn__stateful-btn.btn-primary {
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root:has(.learning-header) main .btn.btn-outline-primary,
@@ -4135,8 +4225,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .top-unit-navigation a.btn.btn-brand,
 #root:has(.learning-header) main .top-unit-navigation button.btn.btn-brand {
   color: var(--pgn-color-btn-text-brand) !important;
-  background-color: var(--pgn-color-btn-bg-brand) !important;
-  border-color: var(--pgn-color-btn-border-brand) !important;
+  border-color: var(--pgn-color-btn-border-brand);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root:has(.learning-header) main .unit-navigation .btn.btn-primary,
@@ -4148,8 +4237,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .top-unit-navigation button.btn.btn-primary,
 #root:has(.learning-header) main .top-unit-navigation .pgn__stateful-btn.btn-primary {
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root:has(.learning-header) main .unit-navigation .btn.btn-outline-primary,
@@ -4510,19 +4598,6 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
   color: var(--pgn-color-white) !important;
 }
-.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item,
-.tox-tinymce-aux .tox-collection__item {
-  color: var(--pgn-color-text-base) !important;
-}
-.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item--active,
-.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item--enabled,
-.tox.tox-silver-sink.tox-tinymce-aux .tox-collection__item[aria-selected=true],
-.tox-tinymce-aux .tox-collection__item--active,
-.tox-tinymce-aux .tox-collection__item--enabled,
-.tox-tinymce-aux .tox-collection__item[aria-selected=true] {
-  background-color: var(--pgn-color-primary-base) !important;
-  color: var(--pgn-color-white) !important;
-}
 
 #root .account-section .pgn-transition-replace-group,
 #root .account-section > .form-group {
@@ -4559,9 +4634,9 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
   display: none;
 }
 #root .account-section .d-flex.align-items-start > .btn.btn-link:hover, #root .account-section .d-flex.align-items-start > .btn.btn-link:focus, #root .account-section .d-flex.align-items-start > .btn.btn-link:active {
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
-  color: var(--pgn-color-btn-text-primary) !important;
+  background-color: var(--pgn-color-btn-hover-bg-primary) !important;
+  border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-hover-bg-primary)) !important;
+  color: var(--pgn-color-btn-hover-text-primary, var(--pgn-color-btn-text-primary)) !important;
 }
 #root .account-section .form-group:not(:has(> .d-flex.align-items-start > .btn.btn-link)) > p[data-hj-suppress] > button.btn-link {
   position: absolute;
@@ -4589,20 +4664,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root .account-section .pgn__stateful-btn.btn-primary,
 #root .account-section button.btn.btn-primary {
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
-}
-#root .account-section .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]), #root .account-section .btn.btn-primary:focus:not(:disabled), #root .account-section .btn.btn-primary:active:not(:disabled),
-#root .account-section .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#root .account-section .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-#root .account-section .pgn__stateful-btn.btn-primary:active:not(:disabled),
-#root .account-section button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#root .account-section button.btn.btn-primary:focus:not(:disabled),
-#root .account-section button.btn.btn-primary:active:not(:disabled) {
-  color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
 }
 #root .account-section .btn.btn-outline-primary,
 #root .account-section button.btn.btn-outline-primary {
@@ -4784,29 +4846,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 .profile-page .pgn__stateful-btn.btn-primary,
 .profile-page button.btn.btn-primary {
   color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
-}
-#root .profile-page .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]), #root .profile-page .btn.btn-primary:focus:not(:disabled), #root .profile-page .btn.btn-primary:active:not(:disabled),
-#root .profile-page .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#root .profile-page .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-#root .profile-page .pgn__stateful-btn.btn-primary:active:not(:disabled),
-#root .profile-page button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#root .profile-page button.btn.btn-primary:focus:not(:disabled),
-#root .profile-page button.btn.btn-primary:active:not(:disabled),
-.profile-page .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.profile-page .btn.btn-primary:focus:not(:disabled),
-.profile-page .btn.btn-primary:active:not(:disabled),
-.profile-page .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.profile-page .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-.profile-page .pgn__stateful-btn.btn-primary:active:not(:disabled),
-.profile-page button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.profile-page button.btn.btn-primary:focus:not(:disabled),
-.profile-page button.btn.btn-primary:active:not(:disabled) {
-  color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
 }
 #root .profile-page .btn.btn-outline-primary,
 #root .profile-page button.btn.btn-outline-primary,
@@ -4868,852 +4908,424 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
   color: var(--pgn-color-icon-button-text-primary-hover) !important;
 }
 
-.layout a:not(.btn):not(.nav-link):not(.dropdown-item),
-.layout a.pgn__hyperlink,
-.layout a.inline-link,
-.layout a.alert-link,
-.layout .alert-link,
-.layout .alert a,
-.layout .alert .alert-message-content a,
-.layout .pgn__alert-message-wrapper a,
-.layout .alert-message-content a,
-.layout .pgn__form-text a,
-.layout .invalid-feedback a,
-.layout .form-text a,
-.content a:not(.btn):not(.nav-link):not(.dropdown-item),
-.content a.pgn__hyperlink,
-.content a.inline-link,
-.content a.alert-link,
-.content .alert-link,
-.content .alert a,
-.content .alert .alert-message-content a,
-.content .pgn__alert-message-wrapper a,
-.content .alert-message-content a,
-.content .pgn__form-text a,
-.content .invalid-feedback a,
-.content .form-text a,
-#main-content.main-content a:not(.btn):not(.nav-link):not(.dropdown-item),
-#main-content.main-content a.pgn__hyperlink,
-#main-content.main-content a.inline-link,
-#main-content.main-content a.alert-link,
-#main-content.main-content .alert-link,
-#main-content.main-content .alert a,
-#main-content.main-content .alert .alert-message-content a,
-#main-content.main-content .pgn__alert-message-wrapper a,
-#main-content.main-content .alert-message-content a,
-#main-content.main-content .pgn__form-text a,
-#main-content.main-content .invalid-feedback a,
-#main-content.main-content .form-text a,
-.main-content a:not(.btn):not(.nav-link):not(.dropdown-item),
-.main-content a.pgn__hyperlink,
-.main-content a.inline-link,
-.main-content a.alert-link,
-.main-content .alert-link,
-.main-content .alert a,
-.main-content .alert .alert-message-content a,
-.main-content .pgn__alert-message-wrapper a,
-.main-content .alert-message-content a,
-.main-content .pgn__form-text a,
-.main-content .invalid-feedback a,
-.main-content .form-text a,
-#forget-password-form a:not(.btn):not(.nav-link):not(.dropdown-item),
-#forget-password-form a.pgn__hyperlink,
-#forget-password-form a.inline-link,
-#forget-password-form a.alert-link,
-#forget-password-form .alert-link,
-#forget-password-form .alert a,
-#forget-password-form .alert .alert-message-content a,
-#forget-password-form .pgn__alert-message-wrapper a,
-#forget-password-form .alert-message-content a,
-#forget-password-form .pgn__form-text a,
-#forget-password-form .invalid-feedback a,
-#forget-password-form .form-text a,
-#login-form a:not(.btn):not(.nav-link):not(.dropdown-item),
-#login-form a.pgn__hyperlink,
-#login-form a.inline-link,
-#login-form a.alert-link,
-#login-form .alert-link,
-#login-form .alert a,
-#login-form .alert .alert-message-content a,
-#login-form .pgn__alert-message-wrapper a,
-#login-form .alert-message-content a,
-#login-form .pgn__form-text a,
-#login-form .invalid-feedback a,
-#login-form .form-text a,
-#registration-form a:not(.btn):not(.nav-link):not(.dropdown-item),
-#registration-form a.pgn__hyperlink,
-#registration-form a.inline-link,
-#registration-form a.alert-link,
-#registration-form .alert-link,
-#registration-form .alert a,
-#registration-form .alert .alert-message-content a,
-#registration-form .pgn__alert-message-wrapper a,
-#registration-form .alert-message-content a,
-#registration-form .pgn__form-text a,
-#registration-form .invalid-feedback a,
-#registration-form .form-text a,
-form[name=forget-password-form] a:not(.btn):not(.nav-link):not(.dropdown-item),
-form[name=forget-password-form] a.pgn__hyperlink,
-form[name=forget-password-form] a.inline-link,
-form[name=forget-password-form] a.alert-link,
-form[name=forget-password-form] .alert-link,
-form[name=forget-password-form] .alert a,
-form[name=forget-password-form] .alert .alert-message-content a,
-form[name=forget-password-form] .pgn__alert-message-wrapper a,
-form[name=forget-password-form] .alert-message-content a,
-form[name=forget-password-form] .pgn__form-text a,
-form[name=forget-password-form] .invalid-feedback a,
-form[name=forget-password-form] .form-text a,
-form[name=login-form] a:not(.btn):not(.nav-link):not(.dropdown-item),
-form[name=login-form] a.pgn__hyperlink,
-form[name=login-form] a.inline-link,
-form[name=login-form] a.alert-link,
-form[name=login-form] .alert-link,
-form[name=login-form] .alert a,
-form[name=login-form] .alert .alert-message-content a,
-form[name=login-form] .pgn__alert-message-wrapper a,
-form[name=login-form] .alert-message-content a,
-form[name=login-form] .pgn__form-text a,
-form[name=login-form] .invalid-feedback a,
-form[name=login-form] .form-text a,
-form[name=registration-form] a:not(.btn):not(.nav-link):not(.dropdown-item),
-form[name=registration-form] a.pgn__hyperlink,
-form[name=registration-form] a.inline-link,
-form[name=registration-form] a.alert-link,
-form[name=registration-form] .alert-link,
-form[name=registration-form] .alert a,
-form[name=registration-form] .alert .alert-message-content a,
-form[name=registration-form] .pgn__alert-message-wrapper a,
-form[name=registration-form] .alert-message-content a,
-form[name=registration-form] .pgn__form-text a,
-form[name=registration-form] .invalid-feedback a,
-form[name=registration-form] .form-text a {
-  color: var(--pgn-color-link-inline-base, var(--pgn-color-link-base, var(--pgn-color-primary-base))) !important;
+#root .extra-large-screen-top-stripe,
+#root .medium-screen-top-stripe,
+#root .small-screen-top-stripe,
+#root .col-md-2.bg-white {
+  display: none !important;
 }
-.layout a:not(.btn):not(.nav-link):not(.dropdown-item):hover, .layout a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-.layout a.pgn__hyperlink:hover,
-.layout a.pgn__hyperlink:focus,
-.layout a.inline-link:hover,
-.layout a.inline-link:focus,
-.layout a.alert-link:hover,
-.layout a.alert-link:focus,
-.layout .alert-link:hover,
-.layout .alert-link:focus,
-.layout .alert a:hover,
-.layout .alert a:focus,
-.layout .alert .alert-message-content a:hover,
-.layout .alert .alert-message-content a:focus,
-.layout .pgn__alert-message-wrapper a:hover,
-.layout .pgn__alert-message-wrapper a:focus,
-.layout .alert-message-content a:hover,
-.layout .alert-message-content a:focus,
-.layout .pgn__form-text a:hover,
-.layout .pgn__form-text a:focus,
-.layout .invalid-feedback a:hover,
-.layout .invalid-feedback a:focus,
-.layout .form-text a:hover,
-.layout .form-text a:focus,
-.content a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-.content a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-.content a.pgn__hyperlink:hover,
-.content a.pgn__hyperlink:focus,
-.content a.inline-link:hover,
-.content a.inline-link:focus,
-.content a.alert-link:hover,
-.content a.alert-link:focus,
-.content .alert-link:hover,
-.content .alert-link:focus,
-.content .alert a:hover,
-.content .alert a:focus,
-.content .alert .alert-message-content a:hover,
-.content .alert .alert-message-content a:focus,
-.content .pgn__alert-message-wrapper a:hover,
-.content .pgn__alert-message-wrapper a:focus,
-.content .alert-message-content a:hover,
-.content .alert-message-content a:focus,
-.content .pgn__form-text a:hover,
-.content .pgn__form-text a:focus,
-.content .invalid-feedback a:hover,
-.content .invalid-feedback a:focus,
-.content .form-text a:hover,
-.content .form-text a:focus,
-#main-content.main-content a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-#main-content.main-content a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-#main-content.main-content a.pgn__hyperlink:hover,
-#main-content.main-content a.pgn__hyperlink:focus,
-#main-content.main-content a.inline-link:hover,
-#main-content.main-content a.inline-link:focus,
-#main-content.main-content a.alert-link:hover,
-#main-content.main-content a.alert-link:focus,
-#main-content.main-content .alert-link:hover,
-#main-content.main-content .alert-link:focus,
-#main-content.main-content .alert a:hover,
-#main-content.main-content .alert a:focus,
-#main-content.main-content .alert .alert-message-content a:hover,
-#main-content.main-content .alert .alert-message-content a:focus,
-#main-content.main-content .pgn__alert-message-wrapper a:hover,
-#main-content.main-content .pgn__alert-message-wrapper a:focus,
-#main-content.main-content .alert-message-content a:hover,
-#main-content.main-content .alert-message-content a:focus,
-#main-content.main-content .pgn__form-text a:hover,
-#main-content.main-content .pgn__form-text a:focus,
-#main-content.main-content .invalid-feedback a:hover,
-#main-content.main-content .invalid-feedback a:focus,
-#main-content.main-content .form-text a:hover,
-#main-content.main-content .form-text a:focus,
-.main-content a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-.main-content a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-.main-content a.pgn__hyperlink:hover,
-.main-content a.pgn__hyperlink:focus,
-.main-content a.inline-link:hover,
-.main-content a.inline-link:focus,
-.main-content a.alert-link:hover,
-.main-content a.alert-link:focus,
-.main-content .alert-link:hover,
-.main-content .alert-link:focus,
-.main-content .alert a:hover,
-.main-content .alert a:focus,
-.main-content .alert .alert-message-content a:hover,
-.main-content .alert .alert-message-content a:focus,
-.main-content .pgn__alert-message-wrapper a:hover,
-.main-content .pgn__alert-message-wrapper a:focus,
-.main-content .alert-message-content a:hover,
-.main-content .alert-message-content a:focus,
-.main-content .pgn__form-text a:hover,
-.main-content .pgn__form-text a:focus,
-.main-content .invalid-feedback a:hover,
-.main-content .invalid-feedback a:focus,
-.main-content .form-text a:hover,
-.main-content .form-text a:focus,
-#forget-password-form a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-#forget-password-form a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-#forget-password-form a.pgn__hyperlink:hover,
-#forget-password-form a.pgn__hyperlink:focus,
-#forget-password-form a.inline-link:hover,
-#forget-password-form a.inline-link:focus,
-#forget-password-form a.alert-link:hover,
-#forget-password-form a.alert-link:focus,
-#forget-password-form .alert-link:hover,
-#forget-password-form .alert-link:focus,
-#forget-password-form .alert a:hover,
-#forget-password-form .alert a:focus,
-#forget-password-form .alert .alert-message-content a:hover,
-#forget-password-form .alert .alert-message-content a:focus,
-#forget-password-form .pgn__alert-message-wrapper a:hover,
-#forget-password-form .pgn__alert-message-wrapper a:focus,
-#forget-password-form .alert-message-content a:hover,
-#forget-password-form .alert-message-content a:focus,
-#forget-password-form .pgn__form-text a:hover,
-#forget-password-form .pgn__form-text a:focus,
-#forget-password-form .invalid-feedback a:hover,
-#forget-password-form .invalid-feedback a:focus,
-#forget-password-form .form-text a:hover,
-#forget-password-form .form-text a:focus,
-#login-form a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-#login-form a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-#login-form a.pgn__hyperlink:hover,
-#login-form a.pgn__hyperlink:focus,
-#login-form a.inline-link:hover,
-#login-form a.inline-link:focus,
-#login-form a.alert-link:hover,
-#login-form a.alert-link:focus,
-#login-form .alert-link:hover,
-#login-form .alert-link:focus,
-#login-form .alert a:hover,
-#login-form .alert a:focus,
-#login-form .alert .alert-message-content a:hover,
-#login-form .alert .alert-message-content a:focus,
-#login-form .pgn__alert-message-wrapper a:hover,
-#login-form .pgn__alert-message-wrapper a:focus,
-#login-form .alert-message-content a:hover,
-#login-form .alert-message-content a:focus,
-#login-form .pgn__form-text a:hover,
-#login-form .pgn__form-text a:focus,
-#login-form .invalid-feedback a:hover,
-#login-form .invalid-feedback a:focus,
-#login-form .form-text a:hover,
-#login-form .form-text a:focus,
-#registration-form a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-#registration-form a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-#registration-form a.pgn__hyperlink:hover,
-#registration-form a.pgn__hyperlink:focus,
-#registration-form a.inline-link:hover,
-#registration-form a.inline-link:focus,
-#registration-form a.alert-link:hover,
-#registration-form a.alert-link:focus,
-#registration-form .alert-link:hover,
-#registration-form .alert-link:focus,
-#registration-form .alert a:hover,
-#registration-form .alert a:focus,
-#registration-form .alert .alert-message-content a:hover,
-#registration-form .alert .alert-message-content a:focus,
-#registration-form .pgn__alert-message-wrapper a:hover,
-#registration-form .pgn__alert-message-wrapper a:focus,
-#registration-form .alert-message-content a:hover,
-#registration-form .alert-message-content a:focus,
-#registration-form .pgn__form-text a:hover,
-#registration-form .pgn__form-text a:focus,
-#registration-form .invalid-feedback a:hover,
-#registration-form .invalid-feedback a:focus,
-#registration-form .form-text a:hover,
-#registration-form .form-text a:focus,
-form[name=forget-password-form] a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-form[name=forget-password-form] a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-form[name=forget-password-form] a.pgn__hyperlink:hover,
-form[name=forget-password-form] a.pgn__hyperlink:focus,
-form[name=forget-password-form] a.inline-link:hover,
-form[name=forget-password-form] a.inline-link:focus,
-form[name=forget-password-form] a.alert-link:hover,
-form[name=forget-password-form] a.alert-link:focus,
-form[name=forget-password-form] .alert-link:hover,
-form[name=forget-password-form] .alert-link:focus,
-form[name=forget-password-form] .alert a:hover,
-form[name=forget-password-form] .alert a:focus,
-form[name=forget-password-form] .alert .alert-message-content a:hover,
-form[name=forget-password-form] .alert .alert-message-content a:focus,
-form[name=forget-password-form] .pgn__alert-message-wrapper a:hover,
-form[name=forget-password-form] .pgn__alert-message-wrapper a:focus,
-form[name=forget-password-form] .alert-message-content a:hover,
-form[name=forget-password-form] .alert-message-content a:focus,
-form[name=forget-password-form] .pgn__form-text a:hover,
-form[name=forget-password-form] .pgn__form-text a:focus,
-form[name=forget-password-form] .invalid-feedback a:hover,
-form[name=forget-password-form] .invalid-feedback a:focus,
-form[name=forget-password-form] .form-text a:hover,
-form[name=forget-password-form] .form-text a:focus,
-form[name=login-form] a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-form[name=login-form] a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-form[name=login-form] a.pgn__hyperlink:hover,
-form[name=login-form] a.pgn__hyperlink:focus,
-form[name=login-form] a.inline-link:hover,
-form[name=login-form] a.inline-link:focus,
-form[name=login-form] a.alert-link:hover,
-form[name=login-form] a.alert-link:focus,
-form[name=login-form] .alert-link:hover,
-form[name=login-form] .alert-link:focus,
-form[name=login-form] .alert a:hover,
-form[name=login-form] .alert a:focus,
-form[name=login-form] .alert .alert-message-content a:hover,
-form[name=login-form] .alert .alert-message-content a:focus,
-form[name=login-form] .pgn__alert-message-wrapper a:hover,
-form[name=login-form] .pgn__alert-message-wrapper a:focus,
-form[name=login-form] .alert-message-content a:hover,
-form[name=login-form] .alert-message-content a:focus,
-form[name=login-form] .pgn__form-text a:hover,
-form[name=login-form] .pgn__form-text a:focus,
-form[name=login-form] .invalid-feedback a:hover,
-form[name=login-form] .invalid-feedback a:focus,
-form[name=login-form] .form-text a:hover,
-form[name=login-form] .form-text a:focus,
-form[name=registration-form] a:not(.btn):not(.nav-link):not(.dropdown-item):hover,
-form[name=registration-form] a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
-form[name=registration-form] a.pgn__hyperlink:hover,
-form[name=registration-form] a.pgn__hyperlink:focus,
-form[name=registration-form] a.inline-link:hover,
-form[name=registration-form] a.inline-link:focus,
-form[name=registration-form] a.alert-link:hover,
-form[name=registration-form] a.alert-link:focus,
-form[name=registration-form] .alert-link:hover,
-form[name=registration-form] .alert-link:focus,
-form[name=registration-form] .alert a:hover,
-form[name=registration-form] .alert a:focus,
-form[name=registration-form] .alert .alert-message-content a:hover,
-form[name=registration-form] .alert .alert-message-content a:focus,
-form[name=registration-form] .pgn__alert-message-wrapper a:hover,
-form[name=registration-form] .pgn__alert-message-wrapper a:focus,
-form[name=registration-form] .alert-message-content a:hover,
-form[name=registration-form] .alert-message-content a:focus,
-form[name=registration-form] .pgn__form-text a:hover,
-form[name=registration-form] .pgn__form-text a:focus,
-form[name=registration-form] .invalid-feedback a:hover,
-form[name=registration-form] .invalid-feedback a:focus,
-form[name=registration-form] .form-text a:hover,
-form[name=registration-form] .form-text a:focus {
-  color: var(--pgn-color-link-inline-hover-base, var(--pgn-color-link-hover, var(--pgn-color-primary-700))) !important;
+#root .layout {
+  min-height: 100vh;
+  background: var(--pgn-color-primary-light);
+  padding: var(--pgn-spacing-spacer-3-5, 1.25rem);
+  overflow: hidden;
+  position: relative;
 }
-.layout a.btn-link,
-.layout button.btn-link,
-.layout .btn.btn-link,
-.content a.btn-link,
-.content button.btn-link,
-.content .btn.btn-link,
-#main-content.main-content a.btn-link,
-#main-content.main-content button.btn-link,
-#main-content.main-content .btn.btn-link,
-.main-content a.btn-link,
-.main-content button.btn-link,
-.main-content .btn.btn-link,
-#forget-password-form a.btn-link,
-#forget-password-form button.btn-link,
-#forget-password-form .btn.btn-link,
-#login-form a.btn-link,
-#login-form button.btn-link,
-#login-form .btn.btn-link,
-#registration-form a.btn-link,
-#registration-form button.btn-link,
-#registration-form .btn.btn-link,
-form[name=forget-password-form] a.btn-link,
-form[name=forget-password-form] button.btn-link,
-form[name=forget-password-form] .btn.btn-link,
-form[name=login-form] a.btn-link,
-form[name=login-form] button.btn-link,
-form[name=login-form] .btn.btn-link,
-form[name=registration-form] a.btn-link,
-form[name=registration-form] button.btn-link,
-form[name=registration-form] .btn.btn-link {
+@media (min-width: 576px) {
+  #root .layout {
+    padding: var(--pgn-spacing-spacer-5, 3rem);
+  }
+}
+@media (--pgn-size-breakpoint-min-width-sm) {
+  #root .layout {
+    padding: var(--pgn-spacing-spacer-5, 3rem);
+  }
+}
+#root .layout::after, #root .layout::before {
+  position: absolute;
+  left: -400px;
+  bottom: -400px;
+  content: "";
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: 400px -400px 143px 90px color-mix(in srgb, var(--pgn-color-primary-base) 45%, transparent);
+  display: none;
+}
+@media (min-width: 576px) {
+  #root .layout::after, #root .layout::before {
+    display: block;
+  }
+}
+@media (--pgn-size-breakpoint-min-width-sm) {
+  #root .layout::after, #root .layout::before {
+    display: block;
+  }
+}
+#root .layout::before {
+  right: 400px;
+  top: -400px;
+  left: auto;
+  bottom: auto;
+  box-shadow: 400px 400px 143px 90px color-mix(in srgb, var(--pgn-color-primary-base) 45%, transparent);
+}
+#root .layout .col-md-3.bg-white {
+  display: none;
+}
+#root .layout .pgn__hyperlink.default-link.standalone-link {
+  display: none;
+}
+#root .layout .bg-primary-400 {
+  background: none !important;
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: block;
+}
+#root .layout .bg-primary-400 .min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+  display: flex !important;
+}
+@media screen and (max-width: 1200px) {
+  #root .layout .bg-primary-400 .min-vh-100 {
+    min-height: 20px !important;
+    display: block !important;
+  }
+}
+#root .layout .bg-primary-400 h1 {
+  margin: 0 auto !important;
+  max-width: 564px !important;
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h1-mobile, var(--pgn-typography-font-size-h1-base)) !important;
+  line-height: var(--pgn-typography-headings-line-height, var(--pgn-typography-line-height-base));
+  font-weight: var(--pgn-typography-font-weight-normal);
+  color: var(--pgn-color-primary-base) !important;
+  padding: var(--pgn-spacing-spacer-5, 3rem) 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  #root .layout .bg-primary-400 h1 {
+    font-size: var(--pgn-typography-font-size-h1-base) !important;
+  }
+}
+@media (--pgn-size-breakpoint-min-width-sm) {
+  #root .layout .bg-primary-400 h1 {
+    font-size: var(--pgn-typography-font-size-h1-base) !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #root .layout .bg-primary-400 h1 {
+    padding: 0;
+  }
+}
+#root .layout .bg-primary-400 h1 .text-accent-a {
+  display: block !important;
+  font-size: var(--pgn-typography-font-size-display-mobile-1, var(--pgn-typography-font-size-display-1)) !important;
+  line-height: var(--pgn-typography-line-height-display-base, 1);
+  font-weight: var(--pgn-typography-font-weight-bold);
+  color: var(--pgn-color-primary-base) !important;
+}
+@media (min-width: 576px) {
+  #root .layout .bg-primary-400 h1 .text-accent-a {
+    font-size: var(--pgn-typography-font-size-display-1) !important;
+  }
+}
+@media (--pgn-size-breakpoint-min-width-sm) {
+  #root .layout .bg-primary-400 h1 .text-accent-a {
+    font-size: var(--pgn-typography-font-size-display-1) !important;
+  }
+}
+#root .layout .content {
+  background: var(--pgn-color-body-bg);
+  border-radius: 20px 0;
+  padding: var(--pgn-spacing-spacer-3-5, 1.25rem);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+@media (min-width: 576px) {
+  #root .layout .content {
+    padding: var(--pgn-spacing-spacer-5, 3rem);
+    border-radius: 50px 0;
+  }
+}
+@media (--pgn-size-breakpoint-min-width-sm) {
+  #root .layout .content {
+    padding: var(--pgn-spacing-spacer-5, 3rem);
+    border-radius: 50px 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #root .layout .content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 564px;
+  }
+}
+#root .layout .content .nav.nav-tabs,
+#root .layout .content .nav.nav-underline-tabs {
+  border-bottom: var(--pgn-size-border-width, 1px) solid var(--pgn-color-light-base, var(--pgn-color-nav-tabs-base-border-base));
+  max-width: 450px;
+  margin: 0 auto;
+}
+#root .layout .content .nav.nav-tabs .nav-link,
+#root .layout .content .nav.nav-tabs a,
+#root .layout .content .nav.nav-tabs button[role=tab],
+#root .layout .content .nav.nav-underline-tabs .nav-link,
+#root .layout .content .nav.nav-underline-tabs a,
+#root .layout .content .nav.nav-underline-tabs button[role=tab] {
+  font-size: var(--pgn-typography-font-size-h5-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: var(--pgn-typography-line-height-sm, var(--pgn-typography-line-height-base));
+  font-weight: var(--pgn-typography-font-weight-semi-bold);
+  padding: 0 0 var(--pgn-spacing-spacer-3, 1rem);
+  margin: 0 var(--pgn-spacing-spacer-4-5, 2rem) calc(-1 * var(--pgn-size-border-width, 1px)) 0;
+  color: var(--pgn-color-nav-tabs-base-link-text, var(--pgn-color-text-primary)) !important;
+  background: none !important;
+  border-bottom: calc(var(--pgn-size-border-width, 1px) * 2) solid transparent;
+}
+#root .layout .content .nav.nav-tabs .nav-link:hover, #root .layout .content .nav.nav-tabs .nav-link:focus,
+#root .layout .content .nav.nav-tabs a:hover,
+#root .layout .content .nav.nav-tabs a:focus,
+#root .layout .content .nav.nav-tabs button[role=tab]:hover,
+#root .layout .content .nav.nav-tabs button[role=tab]:focus,
+#root .layout .content .nav.nav-underline-tabs .nav-link:hover,
+#root .layout .content .nav.nav-underline-tabs .nav-link:focus,
+#root .layout .content .nav.nav-underline-tabs a:hover,
+#root .layout .content .nav.nav-underline-tabs a:focus,
+#root .layout .content .nav.nav-underline-tabs button[role=tab]:hover,
+#root .layout .content .nav.nav-underline-tabs button[role=tab]:focus {
+  color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base)) !important;
+  border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-base)) !important;
+  background: none !important;
+}
+#root .layout .content .nav.nav-tabs .nav-link.active, #root .layout .content .nav.nav-tabs .nav-link[aria-selected=true],
+#root .layout .content .nav.nav-tabs a.active,
+#root .layout .content .nav.nav-tabs a[aria-selected=true],
+#root .layout .content .nav.nav-tabs button[role=tab].active,
+#root .layout .content .nav.nav-tabs button[role=tab][aria-selected=true],
+#root .layout .content .nav.nav-underline-tabs .nav-link.active,
+#root .layout .content .nav.nav-underline-tabs .nav-link[aria-selected=true],
+#root .layout .content .nav.nav-underline-tabs a.active,
+#root .layout .content .nav.nav-underline-tabs a[aria-selected=true],
+#root .layout .content .nav.nav-underline-tabs button[role=tab].active,
+#root .layout .content .nav.nav-underline-tabs button[role=tab][aria-selected=true] {
+  color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base)) !important;
+  border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-base)) !important;
+  background: none !important;
+}
+#root .layout .content #main-content {
+  min-width: 100px !important;
+  padding: var(--pgn-spacing-spacer-3-5, 1.25rem) 0 0 !important;
+}
+#root .layout .content #main-content > .mw-xs {
+  min-width: 100px !important;
+  max-width: 450px !important;
+  margin: 0 auto !important;
+}
+#root .layout .content #main-content .alert-danger {
+  border-radius: var(--pgn-size-alert-border-radius, var(--pgn-size-border-radius-base));
+  background: color-mix(in srgb, var(--pgn-color-danger-base) 8%, var(--pgn-color-white));
+  padding: var(--pgn-spacing-alert-padding-y, var(--pgn-spacing-spacer-3)) var(--pgn-spacing-alert-padding-x, var(--pgn-spacing-spacer-3));
+  color: var(--pgn-color-danger-base);
+  font-size: var(--pgn-typography-font-size-h5-base, var(--pgn-typography-font-size-base));
+  line-height: var(--pgn-typography-line-height-sm, var(--pgn-typography-line-height-base));
+  box-shadow: none;
+}
+#root .layout .content #main-content .alert-danger .alert-heading {
+  color: var(--pgn-color-danger-base);
+  font-size: var(--pgn-typography-font-size-h5-base, var(--pgn-typography-font-size-base));
+  line-height: var(--pgn-typography-line-height-sm, var(--pgn-typography-line-height-base));
+  font-weight: var(--pgn-typography-font-weight-semi-bold);
+}
+#root .layout .content #main-content .pgn__form-control-decorator-group {
+  margin-inline-end: 0;
+}
+#root .layout .content #main-content #forgot-password {
+  font-size: var(--pgn-typography-font-size-h5-base, var(--pgn-typography-font-size-base)) !important;
+  font-weight: var(--pgn-typography-font-weight-normal) !important;
   color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
 }
-.layout a.btn-link:hover, .layout a.btn-link:focus,
-.layout button.btn-link:hover,
-.layout button.btn-link:focus,
-.layout .btn.btn-link:hover,
-.layout .btn.btn-link:focus,
-.content a.btn-link:hover,
-.content a.btn-link:focus,
-.content button.btn-link:hover,
-.content button.btn-link:focus,
-.content .btn.btn-link:hover,
-.content .btn.btn-link:focus,
-#main-content.main-content a.btn-link:hover,
-#main-content.main-content a.btn-link:focus,
-#main-content.main-content button.btn-link:hover,
-#main-content.main-content button.btn-link:focus,
-#main-content.main-content .btn.btn-link:hover,
-#main-content.main-content .btn.btn-link:focus,
-.main-content a.btn-link:hover,
-.main-content a.btn-link:focus,
-.main-content button.btn-link:hover,
-.main-content button.btn-link:focus,
-.main-content .btn.btn-link:hover,
-.main-content .btn.btn-link:focus,
-#forget-password-form a.btn-link:hover,
-#forget-password-form a.btn-link:focus,
-#forget-password-form button.btn-link:hover,
-#forget-password-form button.btn-link:focus,
-#forget-password-form .btn.btn-link:hover,
-#forget-password-form .btn.btn-link:focus,
-#login-form a.btn-link:hover,
-#login-form a.btn-link:focus,
-#login-form button.btn-link:hover,
-#login-form button.btn-link:focus,
-#login-form .btn.btn-link:hover,
-#login-form .btn.btn-link:focus,
-#registration-form a.btn-link:hover,
-#registration-form a.btn-link:focus,
-#registration-form button.btn-link:hover,
-#registration-form button.btn-link:focus,
-#registration-form .btn.btn-link:hover,
-#registration-form .btn.btn-link:focus,
-form[name=forget-password-form] a.btn-link:hover,
-form[name=forget-password-form] a.btn-link:focus,
-form[name=forget-password-form] button.btn-link:hover,
-form[name=forget-password-form] button.btn-link:focus,
-form[name=forget-password-form] .btn.btn-link:hover,
-form[name=forget-password-form] .btn.btn-link:focus,
-form[name=login-form] a.btn-link:hover,
-form[name=login-form] a.btn-link:focus,
-form[name=login-form] button.btn-link:hover,
-form[name=login-form] button.btn-link:focus,
-form[name=login-form] .btn.btn-link:hover,
-form[name=login-form] .btn.btn-link:focus,
-form[name=registration-form] a.btn-link:hover,
-form[name=registration-form] a.btn-link:focus,
-form[name=registration-form] button.btn-link:hover,
-form[name=registration-form] button.btn-link:focus,
-form[name=registration-form] .btn.btn-link:hover,
-form[name=registration-form] .btn.btn-link:focus {
+#root .layout .content #main-content #forgot-password:hover, #root .layout .content #main-content #forgot-password:focus, #root .layout .content #main-content #forgot-password:active {
   color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
 }
-.layout .btn.btn-brand,
-.layout a.btn.btn-brand,
-.layout button.btn.btn-brand,
-.layout .pgn__stateful-btn.btn-brand,
-.content .btn.btn-brand,
-.content a.btn.btn-brand,
-.content button.btn.btn-brand,
-.content .pgn__stateful-btn.btn-brand,
-#main-content.main-content .btn.btn-brand,
-#main-content.main-content a.btn.btn-brand,
-#main-content.main-content button.btn.btn-brand,
-#main-content.main-content .pgn__stateful-btn.btn-brand,
-.main-content .btn.btn-brand,
-.main-content a.btn.btn-brand,
-.main-content button.btn.btn-brand,
-.main-content .pgn__stateful-btn.btn-brand,
-#forget-password-form .btn.btn-brand,
-#forget-password-form a.btn.btn-brand,
-#forget-password-form button.btn.btn-brand,
-#forget-password-form .pgn__stateful-btn.btn-brand,
-#login-form .btn.btn-brand,
-#login-form a.btn.btn-brand,
-#login-form button.btn.btn-brand,
-#login-form .pgn__stateful-btn.btn-brand,
-#registration-form .btn.btn-brand,
-#registration-form a.btn.btn-brand,
-#registration-form button.btn.btn-brand,
-#registration-form .pgn__stateful-btn.btn-brand,
-form[name=forget-password-form] .btn.btn-brand,
-form[name=forget-password-form] a.btn.btn-brand,
-form[name=forget-password-form] button.btn.btn-brand,
-form[name=forget-password-form] .pgn__stateful-btn.btn-brand,
-form[name=login-form] .btn.btn-brand,
-form[name=login-form] a.btn.btn-brand,
-form[name=login-form] button.btn.btn-brand,
-form[name=login-form] .pgn__stateful-btn.btn-brand,
-form[name=registration-form] .btn.btn-brand,
-form[name=registration-form] a.btn.btn-brand,
-form[name=registration-form] button.btn.btn-brand,
-form[name=registration-form] .pgn__stateful-btn.btn-brand {
-  color: var(--pgn-color-btn-text-brand) !important;
-  background-color: var(--pgn-color-btn-bg-brand) !important;
-  border-color: var(--pgn-color-btn-border-brand) !important;
-  border-radius: var(--pgn-size-btn-border-radius-base) !important;
-}
-.layout .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]), .layout .btn.btn-brand:focus:not(:disabled),
-.layout a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.layout a.btn.btn-brand:focus:not(:disabled),
-.layout button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.layout button.btn.btn-brand:focus:not(:disabled),
-.layout .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.layout .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-.content .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.content .btn.btn-brand:focus:not(:disabled),
-.content a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.content a.btn.btn-brand:focus:not(:disabled),
-.content button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.content button.btn.btn-brand:focus:not(:disabled),
-.content .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.content .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-#main-content.main-content .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content .btn.btn-brand:focus:not(:disabled),
-#main-content.main-content a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content a.btn.btn-brand:focus:not(:disabled),
-#main-content.main-content button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content button.btn.btn-brand:focus:not(:disabled),
-#main-content.main-content .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-.main-content .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.main-content .btn.btn-brand:focus:not(:disabled),
-.main-content a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.main-content a.btn.btn-brand:focus:not(:disabled),
-.main-content button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.main-content button.btn.btn-brand:focus:not(:disabled),
-.main-content .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-.main-content .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-#forget-password-form .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form .btn.btn-brand:focus:not(:disabled),
-#forget-password-form a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form a.btn.btn-brand:focus:not(:disabled),
-#forget-password-form button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form button.btn.btn-brand:focus:not(:disabled),
-#forget-password-form .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-#login-form .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#login-form .btn.btn-brand:focus:not(:disabled),
-#login-form a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#login-form a.btn.btn-brand:focus:not(:disabled),
-#login-form button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#login-form button.btn.btn-brand:focus:not(:disabled),
-#login-form .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#login-form .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-#registration-form .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form .btn.btn-brand:focus:not(:disabled),
-#registration-form a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form a.btn.btn-brand:focus:not(:disabled),
-#registration-form button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form button.btn.btn-brand:focus:not(:disabled),
-#registration-form .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-form[name=forget-password-form] .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] .btn.btn-brand:focus:not(:disabled),
-form[name=forget-password-form] a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] a.btn.btn-brand:focus:not(:disabled),
-form[name=forget-password-form] button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] button.btn.btn-brand:focus:not(:disabled),
-form[name=forget-password-form] .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-form[name=login-form] .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] .btn.btn-brand:focus:not(:disabled),
-form[name=login-form] a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] a.btn.btn-brand:focus:not(:disabled),
-form[name=login-form] button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] button.btn.btn-brand:focus:not(:disabled),
-form[name=login-form] .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] .pgn__stateful-btn.btn-brand:focus:not(:disabled),
-form[name=registration-form] .btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] .btn.btn-brand:focus:not(:disabled),
-form[name=registration-form] a.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] a.btn.btn-brand:focus:not(:disabled),
-form[name=registration-form] button.btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] button.btn.btn-brand:focus:not(:disabled),
-form[name=registration-form] .pgn__stateful-btn.btn-brand:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] .pgn__stateful-btn.btn-brand:focus:not(:disabled) {
-  color: var(--pgn-color-btn-hover-text-brand, var(--pgn-color-btn-text-brand)) !important;
-  background-color: var(--pgn-color-btn-hover-bg-brand, var(--pgn-color-btn-bg-brand)) !important;
-  border-color: var(--pgn-color-btn-hover-border-brand, var(--pgn-color-btn-border-brand)) !important;
-}
-.layout .btn.btn-primary,
-.layout a.btn.btn-primary,
-.layout button.btn.btn-primary,
-.layout .pgn__stateful-btn.btn-primary,
-.content .btn.btn-primary,
-.content a.btn.btn-primary,
-.content button.btn.btn-primary,
-.content .pgn__stateful-btn.btn-primary,
-#main-content.main-content .btn.btn-primary,
-#main-content.main-content a.btn.btn-primary,
-#main-content.main-content button.btn.btn-primary,
-#main-content.main-content .pgn__stateful-btn.btn-primary,
-.main-content .btn.btn-primary,
-.main-content a.btn.btn-primary,
-.main-content button.btn.btn-primary,
-.main-content .pgn__stateful-btn.btn-primary,
-#forget-password-form .btn.btn-primary,
-#forget-password-form a.btn.btn-primary,
-#forget-password-form button.btn.btn-primary,
-#forget-password-form .pgn__stateful-btn.btn-primary,
-#login-form .btn.btn-primary,
-#login-form a.btn.btn-primary,
-#login-form button.btn.btn-primary,
-#login-form .pgn__stateful-btn.btn-primary,
-#registration-form .btn.btn-primary,
-#registration-form a.btn.btn-primary,
-#registration-form button.btn.btn-primary,
-#registration-form .pgn__stateful-btn.btn-primary,
-form[name=forget-password-form] .btn.btn-primary,
-form[name=forget-password-form] a.btn.btn-primary,
-form[name=forget-password-form] button.btn.btn-primary,
-form[name=forget-password-form] .pgn__stateful-btn.btn-primary,
-form[name=login-form] .btn.btn-primary,
-form[name=login-form] a.btn.btn-primary,
-form[name=login-form] button.btn.btn-primary,
-form[name=login-form] .pgn__stateful-btn.btn-primary,
-form[name=registration-form] .btn.btn-primary,
-form[name=registration-form] a.btn.btn-primary,
-form[name=registration-form] button.btn.btn-primary,
-form[name=registration-form] .pgn__stateful-btn.btn-primary {
-  color: var(--pgn-color-btn-text-primary) !important;
-  background-color: var(--pgn-color-btn-bg-primary) !important;
-  border-color: var(--pgn-color-btn-border-primary) !important;
-  border-radius: var(--pgn-size-btn-border-radius-base) !important;
-}
-.layout .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]), .layout .btn.btn-primary:focus:not(:disabled),
-.layout a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.layout a.btn.btn-primary:focus:not(:disabled),
-.layout button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.layout button.btn.btn-primary:focus:not(:disabled),
-.layout .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.layout .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-.content .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.content .btn.btn-primary:focus:not(:disabled),
-.content a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.content a.btn.btn-primary:focus:not(:disabled),
-.content button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.content button.btn.btn-primary:focus:not(:disabled),
-.content .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.content .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-#main-content.main-content .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content .btn.btn-primary:focus:not(:disabled),
-#main-content.main-content a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content a.btn.btn-primary:focus:not(:disabled),
-#main-content.main-content button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content button.btn.btn-primary:focus:not(:disabled),
-#main-content.main-content .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#main-content.main-content .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-.main-content .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.main-content .btn.btn-primary:focus:not(:disabled),
-.main-content a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.main-content a.btn.btn-primary:focus:not(:disabled),
-.main-content button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.main-content button.btn.btn-primary:focus:not(:disabled),
-.main-content .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-.main-content .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-#forget-password-form .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form .btn.btn-primary:focus:not(:disabled),
-#forget-password-form a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form a.btn.btn-primary:focus:not(:disabled),
-#forget-password-form button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form button.btn.btn-primary:focus:not(:disabled),
-#forget-password-form .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#forget-password-form .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-#login-form .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#login-form .btn.btn-primary:focus:not(:disabled),
-#login-form a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#login-form a.btn.btn-primary:focus:not(:disabled),
-#login-form button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#login-form button.btn.btn-primary:focus:not(:disabled),
-#login-form .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#login-form .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-#registration-form .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form .btn.btn-primary:focus:not(:disabled),
-#registration-form a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form a.btn.btn-primary:focus:not(:disabled),
-#registration-form button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form button.btn.btn-primary:focus:not(:disabled),
-#registration-form .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-#registration-form .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-form[name=forget-password-form] .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] .btn.btn-primary:focus:not(:disabled),
-form[name=forget-password-form] a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] a.btn.btn-primary:focus:not(:disabled),
-form[name=forget-password-form] button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] button.btn.btn-primary:focus:not(:disabled),
-form[name=forget-password-form] .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=forget-password-form] .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-form[name=login-form] .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] .btn.btn-primary:focus:not(:disabled),
-form[name=login-form] a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] a.btn.btn-primary:focus:not(:disabled),
-form[name=login-form] button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] button.btn.btn-primary:focus:not(:disabled),
-form[name=login-form] .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=login-form] .pgn__stateful-btn.btn-primary:focus:not(:disabled),
-form[name=registration-form] .btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] .btn.btn-primary:focus:not(:disabled),
-form[name=registration-form] a.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] a.btn.btn-primary:focus:not(:disabled),
-form[name=registration-form] button.btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] button.btn.btn-primary:focus:not(:disabled),
-form[name=registration-form] .pgn__stateful-btn.btn-primary:hover:not(:disabled):not([aria-disabled=true]),
-form[name=registration-form] .pgn__stateful-btn.btn-primary:focus:not(:disabled) {
-  color: var(--pgn-color-btn-hover-text-primary, var(--pgn-color-btn-text-primary)) !important;
-  background-color: var(--pgn-color-btn-hover-bg-primary, var(--pgn-color-btn-bg-primary)) !important;
-  border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-border-primary)) !important;
-}
-.layout .btn.btn-outline-primary,
-.layout a.btn.btn-outline-primary,
-.content .btn.btn-outline-primary,
-.content a.btn.btn-outline-primary,
-#main-content.main-content .btn.btn-outline-primary,
-#main-content.main-content a.btn.btn-outline-primary,
-.main-content .btn.btn-outline-primary,
-.main-content a.btn.btn-outline-primary,
-#forget-password-form .btn.btn-outline-primary,
-#forget-password-form a.btn.btn-outline-primary,
-#login-form .btn.btn-outline-primary,
-#login-form a.btn.btn-outline-primary,
-#registration-form .btn.btn-outline-primary,
-#registration-form a.btn.btn-outline-primary,
-form[name=forget-password-form] .btn.btn-outline-primary,
-form[name=forget-password-form] a.btn.btn-outline-primary,
-form[name=login-form] .btn.btn-outline-primary,
-form[name=login-form] a.btn.btn-outline-primary,
-form[name=registration-form] .btn.btn-outline-primary,
-form[name=registration-form] a.btn.btn-outline-primary {
-  color: var(--pgn-color-btn-text-outline-primary) !important;
-  border-color: var(--pgn-color-btn-border-outline-primary) !important;
-  background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
-  border-radius: var(--pgn-size-btn-border-radius-base) !important;
-}
-.layout .btn.btn-outline-secondary,
-.layout a.btn.btn-outline-secondary,
-.content .btn.btn-outline-secondary,
-.content a.btn.btn-outline-secondary,
-#main-content.main-content .btn.btn-outline-secondary,
-#main-content.main-content a.btn.btn-outline-secondary,
-.main-content .btn.btn-outline-secondary,
-.main-content a.btn.btn-outline-secondary,
-#forget-password-form .btn.btn-outline-secondary,
-#forget-password-form a.btn.btn-outline-secondary,
-#login-form .btn.btn-outline-secondary,
-#login-form a.btn.btn-outline-secondary,
-#registration-form .btn.btn-outline-secondary,
-#registration-form a.btn.btn-outline-secondary,
-form[name=forget-password-form] .btn.btn-outline-secondary,
-form[name=forget-password-form] a.btn.btn-outline-secondary,
-form[name=login-form] .btn.btn-outline-secondary,
-form[name=login-form] a.btn.btn-outline-secondary,
-form[name=registration-form] .btn.btn-outline-secondary,
-form[name=registration-form] a.btn.btn-outline-secondary {
-  color: var(--pgn-color-btn-text-outline-secondary) !important;
-  border-color: var(--pgn-color-btn-border-outline-secondary) !important;
-  background-color: var(--pgn-color-btn-bg-outline-secondary, transparent) !important;
-  border-radius: var(--pgn-size-btn-border-radius-base) !important;
-}
-.layout .alert .btn,
-.layout .pgn__alert-actions .btn,
-.content .alert .btn,
-.content .pgn__alert-actions .btn,
-#main-content.main-content .alert .btn,
-#main-content.main-content .pgn__alert-actions .btn,
-.main-content .alert .btn,
-.main-content .pgn__alert-actions .btn,
-#forget-password-form .alert .btn,
-#forget-password-form .pgn__alert-actions .btn,
-#login-form .alert .btn,
-#login-form .pgn__alert-actions .btn,
-#registration-form .alert .btn,
-#registration-form .pgn__alert-actions .btn,
-form[name=forget-password-form] .alert .btn,
-form[name=forget-password-form] .pgn__alert-actions .btn,
-form[name=login-form] .alert .btn,
-form[name=login-form] .pgn__alert-actions .btn,
-form[name=registration-form] .alert .btn,
-form[name=registration-form] .pgn__alert-actions .btn {
+#root .layout .content #main-content .btn-brand,
+#root .layout .content #main-content .btn-primary,
+#root .layout .content #main-content .btn.btn-brand,
+#root .layout .content #main-content .btn.btn-primary {
+  font-size: var(--pgn-typography-btn-font-size-base) !important;
+  font-weight: var(--pgn-typography-font-weight-semi-bold);
+  line-height: var(--pgn-typography-line-height-base);
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 
-.layout .alert a:not(.btn),
-.layout .alert a.alert-link,
-.layout .alert .alert-link,
-.layout .alert .alert-message-content a,
-.layout .alert .pgn__alert-message-wrapper a,
-.content .alert a:not(.btn),
-.content .alert a.alert-link,
-.content .alert .alert-link,
-.content .alert .alert-message-content a,
-.content .alert .pgn__alert-message-wrapper a,
-#main-content .alert a:not(.btn),
-#main-content .alert a.alert-link,
-#main-content .alert .alert-link,
-#main-content .alert .alert-message-content a,
-#main-content .alert .pgn__alert-message-wrapper a,
-.main-content .alert a:not(.btn),
-.main-content .alert a.alert-link,
-.main-content .alert .alert-link,
-.main-content .alert .alert-message-content a,
-.main-content .alert .pgn__alert-message-wrapper a {
+#root:has(.layout) .alert .btn,
+#root:has(.layout) .pgn__alert-actions .btn,
+#root:has(.layout) .btn.btn-brand,
+#root:has(.layout) .btn.btn-primary,
+#root .layout .alert .btn,
+#root .layout .pgn__alert-actions .btn,
+#root .layout .btn.btn-brand,
+#root .layout .btn.btn-primary,
+#root .layout .content .alert .btn,
+#root .layout .content .pgn__alert-actions .btn,
+#root .layout .content .btn.btn-brand,
+#root .layout .content .btn.btn-primary,
+#root .layout .content #main-content .alert .btn,
+#root .layout .content #main-content .pgn__alert-actions .btn,
+#root .layout .content #main-content .btn.btn-brand,
+#root .layout .content #main-content .btn.btn-primary,
+#root .content .alert .btn,
+#root .content .pgn__alert-actions .btn,
+#root .content .btn.btn-brand,
+#root .content .btn.btn-primary,
+#root #main-content.main-content .alert .btn,
+#root #main-content.main-content .pgn__alert-actions .btn,
+#root #main-content.main-content .btn.btn-brand,
+#root #main-content.main-content .btn.btn-primary,
+#root .main-content .alert .btn,
+#root .main-content .pgn__alert-actions .btn,
+#root .main-content .btn.btn-brand,
+#root .main-content .btn.btn-primary,
+#root #forget-password-form .alert .btn,
+#root #forget-password-form .pgn__alert-actions .btn,
+#root #forget-password-form .btn.btn-brand,
+#root #forget-password-form .btn.btn-primary,
+#root #sign-in-form .alert .btn,
+#root #sign-in-form .pgn__alert-actions .btn,
+#root #sign-in-form .btn.btn-brand,
+#root #sign-in-form .btn.btn-primary,
+#root #registration-form .alert .btn,
+#root #registration-form .pgn__alert-actions .btn,
+#root #registration-form .btn.btn-brand,
+#root #registration-form .btn.btn-primary,
+#root form[name=forget-password-form] .alert .btn,
+#root form[name=forget-password-form] .pgn__alert-actions .btn,
+#root form[name=forget-password-form] .btn.btn-brand,
+#root form[name=forget-password-form] .btn.btn-primary,
+#root form[name=sign-in-form] .alert .btn,
+#root form[name=sign-in-form] .pgn__alert-actions .btn,
+#root form[name=sign-in-form] .btn.btn-brand,
+#root form[name=sign-in-form] .btn.btn-primary,
+#root form[name=registration-form] .alert .btn,
+#root form[name=registration-form] .pgn__alert-actions .btn,
+#root form[name=registration-form] .btn.btn-brand,
+#root form[name=registration-form] .btn.btn-primary {
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+
+#root #forgot-password,
+#root #forgot-password.btn-link,
+#root #forgot-password.text-body,
+#root a#forgot-password.btn.btn-link {
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+#root #forgot-password:hover, #root #forgot-password:focus, #root #forgot-password:active,
+#root #forgot-password.btn-link:hover,
+#root #forgot-password.btn-link:focus,
+#root #forgot-password.btn-link:active,
+#root #forgot-password.text-body:hover,
+#root #forgot-password.text-body:focus,
+#root #forgot-password.text-body:active,
+#root a#forgot-password.btn.btn-link:hover,
+#root a#forgot-password.btn.btn-link:focus,
+#root a#forgot-password.btn.btn-link:active {
+  color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+#root .layout a.pgn__hyperlink.inline-link,
+#root .layout a.pgn__hyperlink.default-link.inline-link,
+#root #main-content a.pgn__hyperlink,
+#root #forget-password-form a.pgn__hyperlink {
   color: var(--pgn-color-link-inline-base, var(--pgn-color-link-base, var(--pgn-color-primary-base))) !important;
 }
-.layout .alert a:not(.btn):hover, .layout .alert a:not(.btn):focus,
-.layout .alert a.alert-link:hover,
-.layout .alert a.alert-link:focus,
-.layout .alert .alert-link:hover,
-.layout .alert .alert-link:focus,
-.layout .alert .alert-message-content a:hover,
-.layout .alert .alert-message-content a:focus,
-.layout .alert .pgn__alert-message-wrapper a:hover,
-.layout .alert .pgn__alert-message-wrapper a:focus,
-.content .alert a:not(.btn):hover,
-.content .alert a:not(.btn):focus,
-.content .alert a.alert-link:hover,
-.content .alert a.alert-link:focus,
-.content .alert .alert-link:hover,
-.content .alert .alert-link:focus,
-.content .alert .alert-message-content a:hover,
-.content .alert .alert-message-content a:focus,
-.content .alert .pgn__alert-message-wrapper a:hover,
-.content .alert .pgn__alert-message-wrapper a:focus,
-#main-content .alert a:not(.btn):hover,
-#main-content .alert a:not(.btn):focus,
-#main-content .alert a.alert-link:hover,
-#main-content .alert a.alert-link:focus,
-#main-content .alert .alert-link:hover,
-#main-content .alert .alert-link:focus,
-#main-content .alert .alert-message-content a:hover,
-#main-content .alert .alert-message-content a:focus,
-#main-content .alert .pgn__alert-message-wrapper a:hover,
-#main-content .alert .pgn__alert-message-wrapper a:focus,
-.main-content .alert a:not(.btn):hover,
-.main-content .alert a:not(.btn):focus,
-.main-content .alert a.alert-link:hover,
-.main-content .alert a.alert-link:focus,
-.main-content .alert .alert-link:hover,
-.main-content .alert .alert-link:focus,
-.main-content .alert .alert-message-content a:hover,
-.main-content .alert .alert-message-content a:focus,
-.main-content .alert .pgn__alert-message-wrapper a:hover,
-.main-content .alert .pgn__alert-message-wrapper a:focus {
+#root .layout a.pgn__hyperlink.inline-link:hover, #root .layout a.pgn__hyperlink.inline-link:focus, #root .layout a.pgn__hyperlink.inline-link:active,
+#root .layout a.pgn__hyperlink.default-link.inline-link:hover,
+#root .layout a.pgn__hyperlink.default-link.inline-link:focus,
+#root .layout a.pgn__hyperlink.default-link.inline-link:active,
+#root #main-content a.pgn__hyperlink:hover,
+#root #main-content a.pgn__hyperlink:focus,
+#root #main-content a.pgn__hyperlink:active,
+#root #forget-password-form a.pgn__hyperlink:hover,
+#root #forget-password-form a.pgn__hyperlink:focus,
+#root #forget-password-form a.pgn__hyperlink:active {
+  color: var(--pgn-color-link-inline-hover-base, var(--pgn-color-link-hover, var(--pgn-color-primary-700))) !important;
+}
+
+#root .layout .alert a:not(.btn),
+#root .layout .alert a.alert-link,
+#root .layout .alert .alert-link,
+#root .layout .alert .alert-message-content a,
+#root .layout .alert .pgn__alert-message-wrapper a,
+#root .content .alert a:not(.btn),
+#root .content .alert a.alert-link,
+#root .content .alert .alert-link,
+#root .content .alert .alert-message-content a,
+#root .content .alert .pgn__alert-message-wrapper a,
+#root #main-content .alert a:not(.btn),
+#root #main-content .alert a.alert-link,
+#root #main-content .alert .alert-link,
+#root #main-content .alert .alert-message-content a,
+#root #main-content .alert .pgn__alert-message-wrapper a,
+#root .main-content .alert a:not(.btn),
+#root .main-content .alert a.alert-link,
+#root .main-content .alert .alert-link,
+#root .main-content .alert .alert-message-content a,
+#root .main-content .alert .pgn__alert-message-wrapper a {
+  color: var(--pgn-color-link-inline-base, var(--pgn-color-link-base, var(--pgn-color-primary-base))) !important;
+}
+#root .layout .alert a:not(.btn):hover, #root .layout .alert a:not(.btn):focus, #root .layout .alert a:not(.btn):active,
+#root .layout .alert a.alert-link:hover,
+#root .layout .alert a.alert-link:focus,
+#root .layout .alert a.alert-link:active,
+#root .layout .alert .alert-link:hover,
+#root .layout .alert .alert-link:focus,
+#root .layout .alert .alert-link:active,
+#root .layout .alert .alert-message-content a:hover,
+#root .layout .alert .alert-message-content a:focus,
+#root .layout .alert .alert-message-content a:active,
+#root .layout .alert .pgn__alert-message-wrapper a:hover,
+#root .layout .alert .pgn__alert-message-wrapper a:focus,
+#root .layout .alert .pgn__alert-message-wrapper a:active,
+#root .content .alert a:not(.btn):hover,
+#root .content .alert a:not(.btn):focus,
+#root .content .alert a:not(.btn):active,
+#root .content .alert a.alert-link:hover,
+#root .content .alert a.alert-link:focus,
+#root .content .alert a.alert-link:active,
+#root .content .alert .alert-link:hover,
+#root .content .alert .alert-link:focus,
+#root .content .alert .alert-link:active,
+#root .content .alert .alert-message-content a:hover,
+#root .content .alert .alert-message-content a:focus,
+#root .content .alert .alert-message-content a:active,
+#root .content .alert .pgn__alert-message-wrapper a:hover,
+#root .content .alert .pgn__alert-message-wrapper a:focus,
+#root .content .alert .pgn__alert-message-wrapper a:active,
+#root #main-content .alert a:not(.btn):hover,
+#root #main-content .alert a:not(.btn):focus,
+#root #main-content .alert a:not(.btn):active,
+#root #main-content .alert a.alert-link:hover,
+#root #main-content .alert a.alert-link:focus,
+#root #main-content .alert a.alert-link:active,
+#root #main-content .alert .alert-link:hover,
+#root #main-content .alert .alert-link:focus,
+#root #main-content .alert .alert-link:active,
+#root #main-content .alert .alert-message-content a:hover,
+#root #main-content .alert .alert-message-content a:focus,
+#root #main-content .alert .alert-message-content a:active,
+#root #main-content .alert .pgn__alert-message-wrapper a:hover,
+#root #main-content .alert .pgn__alert-message-wrapper a:focus,
+#root #main-content .alert .pgn__alert-message-wrapper a:active,
+#root .main-content .alert a:not(.btn):hover,
+#root .main-content .alert a:not(.btn):focus,
+#root .main-content .alert a:not(.btn):active,
+#root .main-content .alert a.alert-link:hover,
+#root .main-content .alert a.alert-link:focus,
+#root .main-content .alert a.alert-link:active,
+#root .main-content .alert .alert-link:hover,
+#root .main-content .alert .alert-link:focus,
+#root .main-content .alert .alert-link:active,
+#root .main-content .alert .alert-message-content a:hover,
+#root .main-content .alert .alert-message-content a:focus,
+#root .main-content .alert .alert-message-content a:active,
+#root .main-content .alert .pgn__alert-message-wrapper a:hover,
+#root .main-content .alert .pgn__alert-message-wrapper a:focus,
+#root .main-content .alert .pgn__alert-message-wrapper a:active {
   color: var(--pgn-color-link-inline-hover-base, var(--pgn-color-link-hover, var(--pgn-color-primary-700))) !important;
 }
 
@@ -5744,8 +5356,7 @@ form[name=registration-form] .pgn__alert-actions .btn {
 #root form.masquerade-bar .btn.btn-primary,
 #root form.masquerade-bar button[type=submit] {
   color: var(--pgn-color-btn-text-brand, var(--pgn-color-btn-text-primary)) !important;
-  background-color: var(--pgn-color-btn-bg-brand, var(--pgn-color-btn-bg-primary)) !important;
-  border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary)) !important;
+  border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary));
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root #course-list-active-filters {
@@ -5845,8 +5456,7 @@ form[name=registration-form] .pgn__alert-actions .btn {
 #root #dashboard-container .btn.btn-brand,
 #root #dashboard-container .btn.btn-primary {
   color: var(--pgn-color-btn-text-brand, var(--pgn-color-btn-text-primary)) !important;
-  background-color: var(--pgn-color-btn-bg-brand, var(--pgn-color-btn-bg-primary)) !important;
-  border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary)) !important;
+  border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary));
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
 #root #dashboard-container .pgn__form-checkbox-input,

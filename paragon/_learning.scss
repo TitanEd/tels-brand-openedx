@@ -6,12 +6,13 @@ $tels-learn-link: var(--pgn-color-link-base, var(--pgn-color-primary-base));
 $tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700));
 
 @mixin tels-learn-buttons {
+  // Solids: label + radius only — no !important background (lets Paragon
+  // .btn:hover use --pgn-btn-hover-bg from Layer 2 / light tokens).
   .btn.btn-brand,
   a.btn.btn-brand,
   button.btn.btn-brand {
     color: var(--pgn-color-btn-text-brand) !important;
-    background-color: var(--pgn-color-btn-bg-brand) !important;
-    border-color: var(--pgn-color-btn-border-brand) !important;
+    border-color: var(--pgn-color-btn-border-brand);
     border-radius: var(--pgn-size-btn-border-radius-base) !important;
   }
 
@@ -20,8 +21,7 @@ $tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700)
   button.btn.btn-primary,
   .pgn__stateful-btn.btn-primary {
     color: var(--pgn-color-btn-text-primary) !important;
-    background-color: var(--pgn-color-btn-bg-primary) !important;
-    border-color: var(--pgn-color-btn-border-primary) !important;
+    border-color: var(--pgn-color-btn-border-primary);
     border-radius: var(--pgn-size-btn-border-radius-base) !important;
   }
 

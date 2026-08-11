@@ -27,7 +27,21 @@
       "icon": {
         "base": {
           "$value": "{color.primary.base}",
-          "$description": "Internal icon-button color"
+          "$description": "Internal icon-button color → --pgn-color-search-field-icon-base"
+        },
+        "hover": {
+          "$value": "{color.theme.hover.primary}",
+          "$description": "Internal search icon hover/focus → --pgn-color-search-field-icon-hover"
+        },
+        "bg": {
+          "hover": {
+            "$value": "transparent",
+            "$description": "Internal search icon hover bg (not solid primary) → --pgn-color-search-field-icon-bg-hover"
+          },
+          "active": {
+            "$value": "transparent",
+            "$description": "Internal search icon active bg → --pgn-color-search-field-icon-bg-active"
+          }
         }
       },
       "form-bg": {
