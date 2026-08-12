@@ -1,0 +1,13 @@
+{
+  "$description": "MENU — dropdown/menu panel size tokens (class: .pgn__menu). Radius defaults to global base radius (cascades), independently overridable here. Was previously hardcoded (.25em) in @openedx/paragon's own tokens and never followed the shared radius scale — this file is what makes it track sm/base/lg like every other component.",
+  "size": {
+    "menu": {
+      "base": {
+        "border-radius": {
+          "$value": "{size.border.radius.base}",
+          "$description": "Menu panel radius → --pgn-size-menu-base-border-radius"
+        }
+      }
+    }
+  }
+}

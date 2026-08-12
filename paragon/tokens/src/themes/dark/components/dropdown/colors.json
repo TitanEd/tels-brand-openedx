@@ -1,0 +1,27 @@
+{
+  "$description": "LAYER 2 (dark) — Dropdown kit. Item hover only — no custom menu border. Applied by overrides/_dropdown.scss.",
+  "color": {
+    "dropdown": {
+      "bg": {
+        "$value": "{color.bg.base}",
+        "$description": "Menu background → --pgn-color-dropdown-bg"
+      },
+      "item": {
+        "text": {
+          "$value": "{color.text.base}",
+          "$description": "Item text → --pgn-color-dropdown-item-text"
+        },
+        "hover": {
+          "bg": {
+            "$value": "{color.primary.base}",
+            "$description": "Item hover/focus/active bg → --pgn-color-dropdown-item-hover-bg"
+          },
+          "text": {
+            "$value": "{color.white}",
+            "$description": "Item hover text → --pgn-color-dropdown-item-hover-text"
+          }
+        }
+      }
+    }
+  }
+}

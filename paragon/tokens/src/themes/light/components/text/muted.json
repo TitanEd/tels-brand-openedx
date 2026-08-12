@@ -1,0 +1,11 @@
+{
+  "$description": "UI label: Muted text",
+  "color": {
+    "text": {
+      "muted": {
+        "$value": "{color.gray.500}",
+        "$description": "Muted text \u2192 --pgn-color-text-muted"
+      }
+    }
+  }
+}

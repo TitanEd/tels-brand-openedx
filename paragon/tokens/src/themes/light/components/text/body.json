@@ -1,0 +1,15 @@
+{
+  "$description": "UI labels: Body text / Page background (body.bg)",
+  "color": {
+    "body": {
+      "base": {
+        "$value": "{color.gray.700}",
+        "$description": "Body text \u2192 --pgn-color-body-base"
+      },
+      "bg": {
+        "$value": "{color.bg.base}",
+        "$description": "Body background \u2192 --pgn-color-body-bg"
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$description": "Button size / padding / radius for ALL variants (.btn, .btn-sm, .btn-lg) including ActionRow",
+  "size": {
+    "btn": {
+      "border": {
+        "width": {
+          "$value": "{size.border.width}",
+          "$description": "Button border width"
+        },
+        "radius": {
+          "base": {
+            "$value": "{size.border.radius.base}",
+            "$description": "UI: Button radius → --pgn-size-btn-border-radius-base"
+          },
+          "sm": {
+            "$value": "{size.border.radius.sm}",
+            "$description": "UI: Button radius sm (.btn-sm) → --pgn-size-btn-border-radius-sm"
+          },
+          "lg": {
+            "$value": "{size.border.radius.lg}",
+            "$description": "UI: Button radius lg → --pgn-size-btn-border-radius-lg"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "btn": {
+      "padding": {
+        "x": {
+          "base": {
+            "$value": "{spacing.input.btn.padding.x}",
+            "$description": "UI: Button padding X → --pgn-spacing-btn-padding-x-base"
+          },
+          "sm": {
+            "$value": "{spacing.input.btn.padding.sm.x}",
+            "$description": "UI: Button padding X sm → --pgn-spacing-btn-padding-x-sm"
+          }
+        },
+        "y": {
+          "base": {
+            "$value": "{spacing.input.btn.padding.y}",
+            "$description": "UI: Button padding Y → --pgn-spacing-btn-padding-y-base"
+          },
+          "sm": {
+            "$value": "{spacing.input.btn.padding.sm.y}",
+            "$description": "UI: Button padding Y sm → --pgn-spacing-btn-padding-y-sm"
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "btn": {
+      "font": {
+        "size": {
+          "base": {
+            "$value": "{typography.input.btn.font.size.base}",
+            "$description": "UI: Button font size → --pgn-typography-btn-font-size-base"
+          },
+          "sm": {
+            "$value": "{typography.input.btn.font.size.sm}",
+            "$description": "UI: Button font size sm → --pgn-typography-btn-font-size-sm"
+          }
+        }
+      }
+    }
+  }
+}

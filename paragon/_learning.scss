@@ -1,0 +1,325 @@
+// LAYER 3 — Learning MFE (course home / unit / outline / progress / dates)
+// Scope: .learning-header, instructor toolbar, everything under <main>
+// Buttons / links / tabs → Layer 2 tokens only (var(--pgn-*))
+
+$tels-learn-link: var(--pgn-color-link-base, var(--pgn-color-primary-base));
+$tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700));
+
+@mixin tels-learn-buttons {
+  // Solids: label + radius only — no !important background (lets Paragon
+  // .btn:hover use --pgn-btn-hover-bg from Layer 2 / light tokens).
+  .btn.btn-brand,
+  a.btn.btn-brand,
+  button.btn.btn-brand {
+    color: var(--pgn-color-btn-text-brand) !important;
+    border-color: var(--pgn-color-btn-border-brand);
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+
+  .btn.btn-primary,
+  a.btn.btn-primary,
+  button.btn.btn-primary,
+  .pgn__stateful-btn.btn-primary {
+    color: var(--pgn-color-btn-text-primary) !important;
+    border-color: var(--pgn-color-btn-border-primary);
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+
+  .btn.btn-outline-primary,
+  a.btn.btn-outline-primary,
+  button.btn.btn-outline-primary {
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    border-color: var(--pgn-color-btn-border-outline-primary) !important;
+    background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
+    }
+
+    .pgn__icon {
+      color: currentColor !important;
+    }
+  }
+
+  .btn.btn-outline-secondary,
+  a.btn.btn-outline-secondary,
+  button.btn.btn-outline-secondary {
+    color: var(--pgn-color-btn-text-outline-secondary) !important;
+    border-color: var(--pgn-color-btn-border-outline-secondary) !important;
+    background-color: var(--pgn-color-btn-bg-outline-secondary, transparent) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      color: var(--pgn-color-btn-hover-text-outline-secondary) !important;
+      border-color: var(--pgn-color-btn-hover-border-outline-secondary) !important;
+      background-color: var(--pgn-color-btn-hover-bg-outline-secondary, transparent) !important;
+    }
+
+    &:disabled {
+      opacity: 0.65;
+    }
+
+    .pgn__icon {
+      color: currentColor !important;
+    }
+  }
+
+  // Instructor bar on primary bg — white outline; hover = white fill + primary text
+  .btn.btn-inverse-outline-primary,
+  a.btn.btn-inverse-outline-primary,
+  button.btn.btn-inverse-outline-primary {
+    color: var(--pgn-color-btn-text-inverse-outline-primary) !important;
+    border-color: var(--pgn-color-btn-border-inverse-outline-primary) !important;
+    background-color: var(--pgn-color-btn-bg-inverse-outline-primary, transparent) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      color: var(--pgn-color-btn-hover-text-inverse-outline-primary, var(--pgn-color-primary-base)) !important;
+      background-color: var(--pgn-color-btn-hover-bg-inverse-outline-primary, var(--pgn-color-white)) !important;
+      border-color: var(--pgn-color-btn-hover-border-inverse-outline-primary, var(--pgn-color-white)) !important;
+    }
+  }
+
+  a.btn-link,
+  button.btn-link,
+  .btn.btn-link,
+  .pgn__stateful-btn.btn-link {
+    color: $tels-learn-link !important;
+
+    &:hover,
+    &:focus {
+      color: $tels-learn-link-hover !important;
+    }
+  }
+
+  // Learning MFE adds .text-dark / .text-primary-500 on icon + bookmark controls
+  .btn-icon.btn-icon-primary,
+  button.btn-icon.btn-icon-primary {
+    color: var(--pgn-color-icon-button-text-primary-base) !important;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-text-primary-base)) !important;
+      background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
+    }
+  }
+}
+
+@mixin tels-learn-links {
+  a:not(.btn):not(.nav-link):not(.dropdown-item),
+  a.pgn__hyperlink,
+  a.inline-link {
+    color: $tels-learn-link !important;
+
+    &:hover,
+    &:focus {
+      color: $tels-learn-link-hover !important;
+    }
+  }
+
+  // Course outline unit rows (sidebar)
+  #outline-sidebar-outline a,
+  .outline-sidebar a,
+  #courseHome-outline a {
+    color: $tels-learn-link !important;
+
+    &:hover,
+    &:focus {
+      color: $tels-learn-link-hover !important;
+    }
+  }
+}
+
+@mixin tels-learn-tabs {
+  .nav-underline-tabs {
+    .nav-link {
+      color: var(--pgn-color-nav-tabs-base-link-text, var(--pgn-color-gray-700)) !important;
+
+      &:hover,
+      &:focus {
+        color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base)) !important;
+      }
+
+      &.active {
+        color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base)) !important;
+        border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-base)) !important;
+      }
+    }
+
+    // Overflow "More..." is btn-link inside nav
+    .btn.btn-link.nav-link {
+      color: $tels-learn-link !important;
+    }
+  }
+}
+
+#root {
+  // ----- Header: user menu outline-primary -----
+  .learning-header {
+    @include tels-content-width;
+
+    .logo {
+      color: inherit;
+    }
+
+    @include tels-learn-buttons;
+    @include tels-learn-links;
+  }
+
+  // ----- Instructor toolbar (primary strip) -----
+  [data-testid="instructor-toolbar"] {
+    .container-xl,
+    .bg-primary > .container-xl {
+      @include tels-content-width;
+    }
+
+    @include tels-learn-buttons;
+    @include tels-learn-links;
+  }
+
+  // ----- Main: course tabs + unit chrome + outline + navigation -----
+  // Gate on .learning-header — every Learning MFE page mounts that header,
+  // while Account / Profile / Dashboard / Authn also render `#root > … > main`
+  // and would otherwise inherit this block. Concretely:
+  // `#root main .btn.btn-link { color: link !important }` is ID-level and
+  // beats Account's solid Edit remapping
+  // (`.account-section … > .btn.btn-link { color: --pgn-color-btn-text-primary }`),
+  // so Edit rendered brand-colored text instead of the white button token.
+  // Same leak hit Profile's outline Add / icon-edit buttons. `:has()` keeps
+  // Learning's own main chrome intact without painting every other MFE.
+  &:has(.learning-header) main {
+    @include tels-learn-buttons;
+    @include tels-learn-links;
+    @include tels-learn-tabs;
+
+    // Bookmark + link utilities forced by Learning MFE
+    .btn.btn-link.text-primary-500,
+    .btn.btn-link .text-primary,
+    .pgn__stateful-btn.btn-link.text-primary-500 {
+      color: $tels-learn-link !important;
+    }
+
+    // Active discussions/notification tray indicator
+    .sidebar-active.border-primary-700 {
+      border-bottom-color: var(--pgn-color-primary-base) !important;
+    }
+
+    // Unit prev/next + bottom navigation
+    .unit-navigation,
+    .top-unit-navigation {
+      @include tels-learn-buttons;
+    }
+
+    // Learning MFE renders Previous as btn-outline-secondary; pair with Next (outline-primary).
+    .unit-navigation {
+      a.previous-button.btn.btn-outline-secondary,
+      button.previous-button.btn.btn-outline-secondary {
+        color: var(--pgn-color-btn-text-outline-primary) !important;
+        border-color: var(--pgn-color-btn-border-outline-primary) !important;
+        background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+        border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+        .pgn__icon {
+          color: currentColor !important;
+        }
+
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
+          color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+          border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+          background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
+        }
+      }
+
+      // index.scss hardcodes 6px on the focus ring for these two, bypassing
+      // the token Paragon's own .btn already computes correctly
+      // (--pgn-size-btn-focus-border-radius-base = base + focus gap).
+      .previous-button:focus::before,
+      .next-button:focus::before {
+        border-radius: var(--pgn-size-btn-focus-border-radius-base) !important;
+      }
+    }
+
+    // Outline-tab "flag for review" marker (course-home/outline-tab/widgets/
+    // FlagButton.scss) hardcodes .2rem — put it on sm like every other small marker.
+    .flag-button {
+      border-radius: var(--pgn-size-border-radius-sm) !important;
+    }
+
+    // Unit content border (index.scss `.sequence`, >=sm breakpoint) hardcodes
+    // 4px — put it on base like every other content-surface border.
+    .sequence {
+      border-radius: var(--pgn-size-border-radius-base) !important;
+    }
+
+    .outline-sidebar-heading.btn.btn-link {
+      color: var(--pgn-color-body-base, var(--pgn-color-text-base)) !important;
+
+      &:hover,
+      &:focus {
+        color: $tels-learn-link-hover !important;
+      }
+    }
+
+    // Sidebar-tray toggle ships with Paragon's own `.rounded-0` utility
+    // (forces 0, wins over the .btn-icon 50% default). Two-class selector
+    // outranks that single-class utility so this wins on specificity, not
+    // just load order — put it on the token scale like every other button.
+    .outline-sidebar-toggle-btn.rounded-0 {
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    // The frame around that toggle (CourseOutlineTrigger.jsx) ships with no
+    // radius class at all, so it stayed square while the button inside it
+    // now rounds — match it to the same tier so the whole chip reads as one shape.
+    .outline-sidebar-heading-wrapper {
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    // Outline tray (.outline-sidebar): the sticky module-heading row sits
+    // flush against the section list below it with no gap of its own —
+    // same "sticky bar touching content" pattern as Discussion's filter bar.
+    #outline-sidebar-outline {
+      margin-top: var(--pgn-spacing-spacer-3) !important;
+    }
+
+    // Discussions sidebar (SidebarBase.jsx) is correctly `rounded-sm`, but the
+    // full-bleed iframe inside it (DiscussionsSidebar.jsx, no title bar so it
+    // starts flush at the very top) has no radius of its own, so its square
+    // corners poke past the rounded parent — that's the broken corner line.
+    // Give the iframe the parent's own computed radius instead of clipping
+    // with overflow (would fight #course-sidebar's own overflow-y: scroll
+    // at the mobile breakpoint).
+    .discussions-sidebar-frame {
+      border-radius: inherit !important;
+    }
+
+    // Staff "content tools" floating trigger (bottom-right corner tab)
+    // hardcodes .3rem top corners + .5rem on its ::before — put both on the
+    // token scale. Top-only rounding is intentional (it's a tab flush against
+    // the viewport edge), so only the two top corners are set.
+    .content-tools .trigger {
+      border-top-left-radius: var(--pgn-size-border-radius-base) !important;
+      border-top-right-radius: var(--pgn-size-border-radius-base) !important;
+
+      &::before {
+        border-radius: var(--pgn-size-border-radius-lg) !important;
+      }
+    }
+  }
+
+  // Streak-celebration modal title (shared/streak-celebration/
+  // StreakCelebrationModal.scss) hardcodes 2rem — exact match for the h2
+  // token, but implemented on .modal-title instead of the .h2 class, so it
+  // never tracked it. Kept outside `main` — Paragon's Modal can portal
+  // outside it, this only needs to stay inside the MFE's own #root.
+  .streak-modal .modal-title {
+    font-size: var(--pgn-typography-font-size-h2-base) !important;
+  }
+}

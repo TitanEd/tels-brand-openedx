@@ -1,0 +1,153 @@
+// LAYER 3 — Account MFE
+// Parent-scoped maps only when Account shells need remaps.
+// Forms/buttons/typography: Layer 1–2 tokens + overrides.
+// Values only via var(--pgn-*).
+//
+// Card layout: left-accent card per field, Edit/Add button pinned to the
+// card's top-right corner. Each field is a .form-group; most are wrapped in
+// the MFE's own `.pgn-transition-replace-group` (which ships
+// position-relative, used to anchor the pinned button); Password has no
+// such wrapper, so it's matched as a direct .form-group child instead.
+
+// `#root` prefix: Learning used to paint `#root main .btn.btn-link` with the
+// link/brand color at ID specificity. That beat any class-only Account rule
+// even with !important. Learning is now gated on `.learning-header`, and this
+// `#root` scope keeps the solid Edit remap ahead of any future ID-level leak.
+#root .account-section {
+  .pgn-transition-replace-group,
+  > .form-group {
+    background-color: var(--pgn-color-white);
+    border: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
+    border-left: .5rem solid var(--pgn-color-primary-light);
+    border-radius: var(--pgn-size-border-radius-base);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  // Label row — button is pinned to the card corner, not inline.
+  .d-flex.align-items-start {
+    align-items: center !important;
+    margin-bottom: .5rem;
+  }
+
+  h6[aria-level='3'] {
+    margin: 0;
+    padding-right: 5.5rem; // reserve space for the pinned button
+  }
+
+  // Edit button, pinned to the card corner. Position/size from the shared
+  // button-kit tokens so it tracks every other .btn on the site.
+  // Colors: solid-primary kit (themes/light/components/button/solid-primary.json)
+  // — text/hover-text are #FFF with modify:null so color-yiq cannot rewrite them.
+  .d-flex.align-items-start > .btn.btn-link {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    margin: 0 !important;
+    padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    font-size: var(--pgn-typography-btn-font-size-base) !important;
+    line-height: 1.25rem;
+    text-decoration: none !important;
+    background-color: var(--pgn-color-btn-bg-primary) !important;
+    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-primary) !important;
+    color: var(--pgn-color-btn-text-primary) !important;
+
+    svg {
+      display: none;
+    }
+
+    // Remapped .btn-link → solid look. Paint fill with tokens; use hover
+    // tokens so it tracks Paragon solid-primary hover (theme.hover / *-700).
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--pgn-color-btn-hover-bg-primary) !important;
+      border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-hover-bg-primary)) !important;
+      color: var(--pgn-color-btn-hover-text-primary, var(--pgn-color-btn-text-primary)) !important;
+    }
+  }
+
+  // "Add …" — empty fields with no Edit button; same pin, outline-secondary kit.
+  .form-group:not(:has(> .d-flex.align-items-start > .btn.btn-link)) > p[data-hj-suppress] > button.btn-link {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    margin: 0 !important;
+    padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    font-size: var(--pgn-typography-btn-font-size-base) !important;
+    line-height: 1.25rem;
+    text-decoration: none !important;
+    background-color: var(--pgn-color-btn-bg-outline-secondary, transparent) !important;
+    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-outline-secondary) !important;
+    color: var(--pgn-color-btn-text-outline-secondary) !important;
+
+    svg {
+      display: none;
+    }
+
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: var(--pgn-color-btn-hover-bg-outline-secondary, transparent) !important;
+      border-color: var(--pgn-color-btn-hover-border-outline-secondary) !important;
+      color: var(--pgn-color-btn-hover-text-outline-secondary) !important;
+    }
+  }
+
+  // Edit-mode Save / Cancel. Cancel = outline-primary kit. Save = real
+  // .btn-primary — label/radius only so Paragon-native hover stays intact.
+  .btn.btn-primary,
+  .pgn__stateful-btn.btn-primary,
+  button.btn.btn-primary {
+    color: var(--pgn-color-btn-text-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+
+  .btn.btn-outline-primary,
+  button.btn.btn-outline-primary {
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+    border: var(--pgn-size-btn-border-width) solid var(--pgn-color-btn-border-outline-primary) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+    // Full outline-primary hover kit (outline-primary.json) — darker text +
+    // primary-700 border; bg stays the hover-bg token (transparent by default).
+    &:hover:not(:disabled):not([aria-disabled="true"]),
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
+      color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
+    }
+  }
+
+  // Description/help text under the value → light tinted block
+  > .pgn-transition-replace-group p.small.text-muted:not(:empty) {
+    background-color: var(--pgn-color-primary-light);
+    border-radius: var(--pgn-size-border-radius-sm);
+    margin-top: .75rem !important;
+    padding: .5rem .75rem;
+  }
+}
+
+// Sidebar section nav — plain text list, current section in primary + bold
+// (Scrollspy sets this client-side; .active is its own currentClassName).
+.jump-nav {
+  a {
+    color: var(--pgn-color-gray-700);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--pgn-color-primary-base);
+    }
+  }
+
+  a.active,
+  a.font-weight-bold {
+    color: var(--pgn-color-primary-base) !important;
+    font-weight: var(--pgn-typography-font-weight-bold) !important;
+  }
+}

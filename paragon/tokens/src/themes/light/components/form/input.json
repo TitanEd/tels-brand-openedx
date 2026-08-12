@@ -1,0 +1,65 @@
+{
+  "$description": "LAYER 2 — Form colors (.form-control, select, checkbox). Applied by overrides/_forms.scss + _selects.scss. Paragon checkbox: keep indicator bg white + SVG check token on :checked — do NOT paint checked fill primary (hides mark).",
+  "color": {
+    "form": {
+      "input": {
+        "base": {
+          "$value": "{color.gray.700}",
+          "$description": "Input/select text → --pgn-color-form-input-base"
+        },
+        "border": {
+          "$value": "{color.gray.500}",
+          "$description": "Input/select border → --pgn-color-form-input-border"
+        },
+        "bg": {
+          "base": {
+            "$value": "{color.bg.base}",
+            "$description": "Input/select background → --pgn-color-form-input-bg-base"
+          },
+          "disabled": {
+            "$value": "{color.gray.100}",
+            "$description": "Disabled background"
+          }
+        },
+        "focus": {
+          "border": {
+            "$value": "{color.primary.base}",
+            "$description": "Focus border → --pgn-color-form-input-focus-border"
+          }
+        },
+        "placeholder": {
+          "$value": "{color.gray.500}",
+          "$description": "Placeholder text"
+        }
+      },
+      "control": {
+        "indicator": {
+          "border": {
+            "$value": "{color.gray.700}",
+            "$description": "Checkbox/radio border"
+          },
+          "checked": {
+            "bg": {
+              "base": {
+                "$value": "{color.primary.base}",
+                "$description": "Checked checkbox/radio fill → primary"
+              }
+            },
+            "border": {
+              "base": {
+                "$value": "{color.primary.base}",
+                "$description": "Checked checkbox/radio border"
+              }
+            }
+          }
+        }
+      }
+    },
+    "input": {
+      "focus": {
+        "$value": "{color.primary.base}",
+        "$description": "Global input focus → --pgn-color-input-focus"
+      }
+    }
+  }
+}

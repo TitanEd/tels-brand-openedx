@@ -1,0 +1,11 @@
+{
+  "$description": "ANNOTATION — highlight/comment popover size tokens (Learning MFE text annotations). Radius defaults to global sm radius (small popover, cascades), independently overridable here. Was previously hardcoded (.25rem) in @openedx/paragon's own tokens.",
+  "size": {
+    "annotation": {
+      "border-radius": {
+        "$value": "{size.border.radius.sm}",
+        "$description": "Annotation radius → --pgn-size-annotation-border-radius"
+      }
+    }
+  }
+}

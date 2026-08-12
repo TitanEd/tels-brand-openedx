@@ -1,0 +1,23 @@
+// LAYER 3 — Shared site footer (all MFEs)
+// Width tokens: max-width.json + spacing.json via tels-content-width
+// Learning / Dashboard: footer.tutor-container IS the constrained element (no inner container)
+// Catalog: footer.footer > .container-fluid
+
+footer.tutor-container,
+#footer.tutor-container,
+.wrapper-footer > footer.tutor-container,
+.wrapper-footer > #footer {
+  @include tels-content-width;
+}
+
+footer.footer,
+footer[role="contentinfo"]:not(.tutor-container) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  > .container-fluid,
+  > .container,
+  > .container-xl {
+    @include tels-content-width;
+  }
+}

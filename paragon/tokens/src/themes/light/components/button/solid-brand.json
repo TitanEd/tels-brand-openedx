@@ -1,0 +1,55 @@
+{
+  "$description": "Layer 2 — Button solid brand",
+  "color": {
+    "btn": {
+      "bg": {
+        "brand": {
+          "$value": "{color.brand.base}",
+          "$description": "UI label: Solid brand background → --pgn-color-btn-bg-brand"
+        }
+      },
+      "text": {
+        "brand": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "UI label: Solid brand text → --pgn-color-btn-text-brand"
+        },
+        "outline-brand": {
+          "$value": "{color.brand.base}",
+          "$description": "Outline brand text"
+        }
+      },
+      "border": {
+        "brand": {
+          "$value": "{color.btn.bg.brand}",
+          "$description": "Solid brand border"
+        },
+        "outline-brand": {
+          "$value": "{color.brand.base}",
+          "$description": "Outline brand border"
+        }
+      },
+      "hover": {
+        "bg": {
+          "brand": {
+            "$value": "{color.theme.hover.brand}",
+            "$description": "Solid brand hover bg → --pgn-color-btn-hover-bg-brand"
+          }
+        },
+        "text": {
+          "brand": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Solid brand hover text → --pgn-color-btn-hover-text-brand"
+          }
+        },
+        "border": {
+          "brand": {
+            "$value": "{color.theme.hover.brand}",
+            "$description": "Solid brand hover border → --pgn-color-btn-hover-border-brand"
+          }
+        }
+      }
+    }
+  }
+}

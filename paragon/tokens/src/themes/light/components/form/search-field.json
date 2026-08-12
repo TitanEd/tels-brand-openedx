@@ -1,0 +1,53 @@
+{
+  "$description": "SEARCH FIELD — values only. External: style .pgn__searchfield_wrapper (box) and .pgn__searchfield__button separately. Internal: outer .pgn__searchfield border + icon button.",
+  "color": {
+    "search-field": {
+      "border": {
+        "base": {
+          "$value": "{color.gray.500}",
+          "$description": "Search box border → --pgn-color-search-field-border-base"
+        },
+        "interaction": {
+          "$value": "{color.primary.base}",
+          "$description": "Hover/active border"
+        },
+        "focus": {
+          "$value": "{color.primary.base}",
+          "$description": "Focus border"
+        }
+      },
+      "button": {
+        "bg": {
+          "primary": {
+            "$value": "{color.primary.base}",
+            "$description": "External submit .btn-primary fill"
+          }
+        }
+      },
+      "icon": {
+        "base": {
+          "$value": "{color.primary.base}",
+          "$description": "Internal icon-button color → --pgn-color-search-field-icon-base"
+        },
+        "hover": {
+          "$value": "{color.theme.hover.primary}",
+          "$description": "Internal search icon hover/focus → --pgn-color-search-field-icon-hover"
+        },
+        "bg": {
+          "hover": {
+            "$value": "transparent",
+            "$description": "Internal search icon hover bg (not solid primary) → --pgn-color-search-field-icon-bg-hover"
+          },
+          "active": {
+            "$value": "transparent",
+            "$description": "Internal search icon active bg → --pgn-color-search-field-icon-bg-active"
+          }
+        }
+      },
+      "form-bg": {
+        "$value": "{color.white}",
+        "$description": "Search box background"
+      }
+    }
+  }
+}

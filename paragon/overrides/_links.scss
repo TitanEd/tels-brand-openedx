@@ -1,0 +1,48 @@
+// LAYER 2 — Links / hyperlinks / alert links
+// Tokens: themes/light/components/link/colors.json
+// Why: Paragon .inline-link defaults to info blue; Bootstrap .alert-link
+// often inherits alert-info blue. Map everything to link tokens.
+
+$tels-link: var(--pgn-color-link-base, var(--pgn-color-primary-base));
+$tels-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700));
+$tels-link-inline: var(--pgn-color-link-inline-base, #{$tels-link});
+$tels-link-inline-hover: var(--pgn-color-link-inline-hover-base, #{$tels-link-hover});
+
+a.inline-link,
+a.pgn__hyperlink,
+a.pgn__hyperlink.inline-link,
+a.pgn__hyperlink.default-link,
+.pgn__hyperlink.default-link.inline-link,
+.pgn__hyperlink.default-link,
+a.alert-link,
+.alert-link,
+.alert a:not(.btn),
+.alert .alert-message-content a:not(.btn),
+.pgn__alert-message-wrapper a:not(.btn),
+.alert-message-content a:not(.btn) {
+  color: $tels-link-inline !important;
+
+  &:hover,
+  &:focus {
+    color: $tels-link-inline-hover !important;
+  }
+}
+
+a.btn-link,
+button.btn-link,
+.btn.btn-link {
+  color: $tels-link !important;
+
+  &:hover,
+  &:focus {
+    color: $tels-link-hover !important;
+  }
+}
+
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more) {
+  color: $tels-link;
+
+  &:hover {
+    color: $tels-link-hover;
+  }
+}

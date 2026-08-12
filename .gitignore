@@ -1,2 +1,8 @@
+node_modules/
+paragon/build/
+dist/*.map
+*.log
 .DS_Store
-.vscode
+
+# Do not commit duplicate token trees (source is tokens/src only)
+paragon/tokens/generated/

@@ -1,0 +1,13 @@
+// LAYER 3 — Catalog MFE (Explore courses / home / about)
+// Parents: #root .container-mw-xl, .home-banner
+// Width/padding: Layer 1 tokens via overrides/_layout.scss (tels-content-width)
+// Checkbox: Layer 2 overrides/_forms.scss
+// Search: Layer 2 overrides/_searchfield.scss
+// Values only via var(--pgn-*).
+
+#root {
+  // Courses list — reinforce internal SearchField border from search-field tokens
+  .container-mw-xl .pgn__searchfield:not(.pgn__searchfield--external) {
+    border-color: var(--pgn-color-search-field-border-base) !important;
+  }
+}

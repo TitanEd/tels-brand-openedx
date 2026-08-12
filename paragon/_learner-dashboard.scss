@@ -1,0 +1,191 @@
+// LAYER 3 — Learner Dashboard MFE (My Courses)
+// Width: Layer 1 via tels-content-width
+// Overflow: Refine popover (#course-filter-controls-card) + active filter chips
+// Buttons / links / chips → Layer 2 tokens (var(--pgn-*) only)
+
+$tels-dash-link: var(--pgn-color-link-base, var(--pgn-color-primary-base));
+$tels-dash-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700));
+
+#root {
+  // Outer shell: no extra side padding (inner container owns gutters)
+  #dashboard-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #dashboard-container .container-mw-xl.container-fluid,
+  #dashboard-content > .container-mw-xl {
+    @include tels-content-width;
+  }
+
+  // Staff "View as" bar
+  form.masquerade-bar {
+    @include tels-content-width;
+
+    .btn.btn-brand,
+    .btn.btn-primary,
+    button[type="submit"] {
+      color: var(--pgn-color-btn-text-brand, var(--pgn-color-btn-text-primary)) !important;
+      border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary));
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+  }
+
+  // ----- Active filter chips: wrap instead of overflow/overlap -----
+  #course-list-active-filters {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    max-width: 100%;
+    overflow: visible !important;
+
+    .pgn__chip {
+      flex: 0 0 auto;
+      max-width: 100%;
+    }
+  }
+
+  // ----- Refine popover: MFE hardcodes height:288px — brand font makes "Upgraded" clip -----
+  #course-filter-controls-card {
+    height: auto !important;
+    min-height: 288px;
+    max-height: none !important;
+    overflow: visible !important;
+    align-items: flex-start !important;
+    box-sizing: border-box;
+
+    &.no-enrollments {
+      min-height: 172px;
+      height: auto !important;
+    }
+
+    .filter-form-col {
+      overflow: visible !important;
+      box-sizing: border-box;
+    }
+
+    .pgn__form-checkbox,
+    .pgn__form-radio {
+      overflow: visible;
+    }
+
+    // Divider between Course Status / Sort
+    > hr {
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+  }
+
+  // Tooltip/portal wrapper must not clip the card
+  .pgn__modal-popup__tooltip,
+  [data-focus-lock-disabled] {
+    overflow: visible !important;
+  }
+
+  // ----- Chips: border/label/hover use primary (Paragon hover uses dark-500 = brand green) -----
+  .pgn__chip.pgn__chip-light {
+    border-color: var(--pgn-color-primary-base) !important;
+
+    .pgn__chip__label {
+      color: var(--pgn-color-primary-base) !important;
+    }
+
+    .pgn__chip__icon-before,
+    .pgn__chip__icon-after {
+      color: var(--pgn-color-primary-base) !important;
+    }
+
+    &.interactive:hover,
+    &:hover {
+      background-color: var(--pgn-color-primary-base) !important;
+      border-color: var(--pgn-color-primary-base) !important;
+
+      .pgn__chip__label,
+      .pgn__chip__icon-before,
+      .pgn__chip__icon-after,
+      .pgn__chip__icon-after.btn-icon {
+        color: var(--pgn-color-white) !important;
+      }
+    }
+  }
+
+  // ----- Links / Buttons / checkbox accent -----
+  // Scoped to #dashboard-container, NOT bare #root — #root is the global
+  // React mount point every MFE shares (Account, Gradebook, Profile, all of
+  // them), so this block was leaking site-wide instead of staying on the
+  // dashboard page. Concretely: `#root .btn.btn-link { color: ... !important }`
+  // carries ID-level specificity, which beats ANY number of classes stacked
+  // on a selector elsewhere (e.g. _account.scss's Edit button rule) — so
+  // Account's solid Edit button was rendering with the dashboard's link
+  // color instead of its own --pgn-color-btn-text-primary token, and same
+  // exposure for Profile's Add button / edit-icon button, both also built
+  // on .btn.btn-link. Same fix for the two Buttons rules right under it —
+  // identical bare-#root leak, just not yet reported as a symptom elsewhere.
+  #dashboard-container {
+    a:not(.btn):not(.nav-link):not(.dropdown-item),
+    a.pgn__hyperlink,
+    a.inline-link,
+    .btn.btn-link,
+    button.btn-link {
+      color: $tels-dash-link !important;
+
+      &:hover,
+      &:focus {
+        color: $tels-dash-link-hover !important;
+      }
+    }
+
+    .btn.btn-outline-primary,
+    button.btn.btn-outline-primary {
+      color: var(--pgn-color-btn-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+        border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+      }
+    }
+
+    .btn.btn-brand,
+    .btn.btn-primary {
+      color: var(--pgn-color-btn-text-brand, var(--pgn-color-btn-text-primary)) !important;
+      border-color: var(--pgn-color-btn-border-brand, var(--pgn-color-btn-border-primary));
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    // Checkbox / radio already use form tokens; reinforce accent under dashboard
+    .pgn__form-checkbox-input,
+    .pgn__form-radio-input {
+      accent-color: var(--pgn-color-primary-base);
+    }
+  }
+}
+
+// Footer: tutor “Powered by” row often renders as a bare <ul> — kill bullets + keep horizontal
+footer.tutor-container ul,
+footer#footer ul,
+.wrapper-footer footer ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+
+  li {
+    list-style: none !important;
+  }
+
+  a {
+    color: $tels-dash-link !important;
+
+    &:hover {
+      color: $tels-dash-link-hover !important;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$description": "BADGE — component-level size tokens (class: .badge). Base radius defaults to global sm radius (cascades); pill radius is its own fixed shape value, not tied to the sm/base/lg scale.",
+  "size": {
+    "badge": {
+      "border-radius": {
+        "base": {
+          "$value": "{size.border.radius.sm}",
+          "$description": "Badge radius → --pgn-size-badge-border-radius-base"
+        },
+        "pill": {
+          "$value": "10rem",
+          "$description": "Pill badge radius → --pgn-size-badge-border-radius-pill"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "badge": {
+      "padding": {
+        "x": {
+          "base": {
+            "$value": ".5rem",
+            "$description": "Badge padding X → --pgn-spacing-badge-padding-x-base"
+          },
+          "pill": {
+            "$value": ".6em",
+            "$description": "Pill badge padding X → --pgn-spacing-badge-padding-x-pill"
+          }
+        },
+        "y": {
+          "$value": ".125rem",
+          "$description": "Badge padding Y → --pgn-spacing-badge-padding-y"
+        }
+      }
+    }
+  }
+}

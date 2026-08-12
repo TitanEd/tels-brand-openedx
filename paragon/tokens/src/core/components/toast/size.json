@@ -1,0 +1,31 @@
+{
+  "$description": "TOAST — component-level size tokens (.toast). Radius defaults to global sm radius, border width defaults to global border width (both cascade), independently overridable here.",
+  "size": {
+    "toast": {
+      "border": {
+        "radius": {
+          "$value": "{size.border.radius.sm}",
+          "$description": "Toast radius → --pgn-size-toast-border-radius"
+        },
+        "width": {
+          "$value": "{size.border.width}",
+          "$description": "Toast border width → --pgn-size-toast-border-width"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "toast": {
+      "padding": {
+        "x": {
+          "$value": ".75rem",
+          "$description": "Toast padding X → --pgn-spacing-toast-padding-x"
+        },
+        "y": {
+          "$value": ".25rem",
+          "$description": "Toast padding Y → --pgn-spacing-toast-padding-y"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+// LAYER 3 — Discussion MFE (posts / filters / TinyMCE dialogs)
+// Width (tabs, action bar, content row): Layer 1 via overrides/_layout.scss
+// Native select: Layer 2 overrides/_selects.scss (tels-branded-select mixin)
+// Checkbox: Layer 2 overrides/_forms.scss
+// Dropdown hover: Layer 2 overrides/_dropdown.scss
+// TinyMCE dialogs mount under .tox-tinymce-aux (often outside #root)
+// Values only via var(--pgn-*).
+
+#root {
+  .discussion-posts,
+  .discussion-comments,
+  .forum-nav-browse-filter,
+  [data-testid="posts-view"],
+  [class*="discussion"] {
+    // Remap native selects under discussion parents (mixin from _selects.scss)
+    select.form-control {
+      @include tels-branded-select;
+    }
+
+    // Search radius from Layer 2 search-field-size token
+    .pgn__searchfield:not(.pgn__searchfield--external) {
+      border-radius: var(--pgn-size-search-field-border-radius, var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base))) !important;
+    }
+  }
+
+  // Tab buttons (My posts / All posts / Topics / Learners) have no gap of
+  // their own between pills — relies only on each .nav-link's own padding,
+  // so they read as touching. .nav is already flex; add breathing room
+  // between items.
+  .nav-button-group.nav-pills {
+    gap: var(--pgn-spacing-spacer-2);
+
+    // Every pill needs its own visible edge, active or not — without this,
+    // only the active tab reads as a "button" (filled bg) and the others
+    // are bare text, so the group's right-side boundary disappears on
+    // every inactive tab. Give all of them the same border, active just
+    // swaps it to the primary tone that matches its own fill.
+    .nav-link {
+      border: var(--pgn-size-border-width) solid var(--pgn-color-light-400);
+
+      &.active {
+        border-color: var(--pgn-color-primary-base);
+      }
+    }
+  }
+
+  // Filter bar + results list read as one continuous card (filter trigger,
+  // divider, results — see .discussion-posts markup), but the filter bar's
+  // OWN radius comes from the generic .collapsible-card-lg rule (Layer 2
+  // overrides/_cards.scss), which rounds all 4 corners. Since the results
+  // list right below it is square-cornered by default, that put a rounded
+  // corner directly above a sharp one — a visible seam where the two
+  // "attached" pieces meet. Round only the filter bar's top here, and match
+  // the results list's bottom corners to it, so the whole block reads as
+  // one seamless card top-to-bottom.
+  .discussion-posts {
+    // Sits flush under .header-action-bar with no gap of its own — give the
+    // whole filter+results block some breathing room from the sticky bar
+    // above it.
+    .filter-bar.collapsible-card-lg {
+      margin-top: var(--pgn-spacing-spacer-3) !important;
+      border-radius: var(--pgn-size-card-border-radius-base) var(--pgn-size-card-border-radius-base) 0 0 !important;
+    }
+
+    .list-group.list-group-flush {
+      border-bottom-left-radius: var(--pgn-size-card-border-radius-base) !important;
+      border-bottom-right-radius: var(--pgn-size-card-border-radius-base) !important;
+      overflow: hidden;
+    }
+  }
+}
+
+// TinyMCE Language / list pickers outside #root — tokens: primary + form
+// Dialog stacking: Layer 2 overrides/_tinymce.scss sets .tox-tinymce-aux
+// z-index above Discussion sticky bars (MFE had aux at 1, action bar at 2).
+.tox.tox-silver-sink.tox-tinymce-aux,
+.tox-tinymce-aux {
+  .tox-dialog .tox-selectfield select {
+    @include tels-branded-tox-select; // no extra chevron (TinyMCE has its own icon)
+  }
+
+  .tox-collection__item {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  .tox-collection__item--active,
+  .tox-collection__item--enabled,
+  .tox-collection__item[aria-selected="true"] {
+    background-color: var(--pgn-color-primary-base) !important;
+    color: var(--pgn-color-white) !important;
+  }
+}

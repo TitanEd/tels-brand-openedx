@@ -1,0 +1,12 @@
+{
+  "$description": "MODAL (light) — component-level color tokens (.modal-content). Same defaults Paragon derives (bg follows page background), now a documented, independently overridable control point.",
+  "color": {
+    "modal": {
+      "content": {
+        "bg": { "$value": "{color.bg.base}", "$description": "Modal content bg → --pgn-color-modal-content-bg" },
+        "border": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.2 }], "$description": "Modal content border → --pgn-color-modal-content-border" }
+      },
+      "backdrop-bg": { "$value": "{color.black}", "$description": "Modal backdrop → --pgn-color-modal-backdrop-bg" }
+    }
+  }
+}

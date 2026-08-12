@@ -1,0 +1,146 @@
+// LAYER 3 — Shared site headers (all MFEs)
+// Width tokens: core/components/container/max-width.json + core/global/spacing.json
+// Applied via tels-content-width mixin from overrides/_layout.scss
+// .site-header-desktop / .site-header-mobile come from the ONE shared
+// @edx/frontend-component-header package — Catalog, Learner Dashboard,
+// Gradebook, Account, Authn, and Learning (wrapped in its own
+// .learning-header for width purposes below) all render the exact same
+// header markup, so a single rule here reaches every one of them. Studio
+// doesn't use this package (its own .studio-header, different markup
+// entirely) — matching logo size lives in _authoring.scss instead.
+
+// Catalog / learner-dashboard / authn desktop header
+.site-header-desktop > .container-fluid,
+.site-header-mobile > .container-fluid {
+  @include tels-content-width;
+}
+
+// Learning MFE header
+.learning-header > .container-xl {
+  @include tels-content-width;
+}
+
+// Logo — same rendered size everywhere the shared header appears, so the
+// header doesn't visibly resize when navigating between MFEs that each load
+// their own copy of it.
+//
+// Learning MFE included here too: @edx/frontend-component-header's own
+// stock CSS ships `.logo img { display: block; height: 100%; }`, sized for
+// whatever height its wrapper happens to have — that stock rule was only
+// being beaten for .site-header-desktop / .site-header-mobile above, so
+// .learning-header's logo (the light/dark logo-image swap pair rendered
+// inline by the Learning MFE) was still falling back to it and rendering at
+// the wrong size. Same fix, same three vars, one more selector.
+#root header.site-header-desktop .logo img,
+#root header.site-header-mobile .logo img,
+#root header.learning-header .logo img {
+  height: auto !important;
+  width: 135px !important;
+}
+
+// @edx/frontend-component-header's own stock CSS hardcodes a fixed height
+// on the .logo <a> wrapper in more than one place (.site-header-desktop
+// .logo { height: 1.75rem; ...; top: -.05em; } AND the more general
+// `#root header .logo { height: 1.75rem; ...; top: .1em; }`, likely a
+// different header/theme state) — sized for its own default (small) logo
+// image. Now that the img inside is 135px wide with height: auto (above),
+// that image can easily render taller than 1.75rem, so every hardcoded
+// wrapper height needs to go too, or the logo gets clipped/cramped inside
+// it. Broad selector so any current or future variant of this is covered.
+#root header .logo {
+  height: auto !important;
+}
+
+// Logo's own vertical padding, and nav-links matched to the same figure —
+// same rhythm as the logo means the header's total height can't drift
+// between MFEs even if their surrounding layout differs.
+#root .site-header-desktop .container-fluid .nav-container .logo,
+#root .site-header-mobile .container-fluid .nav-container .logo {
+  padding: .6rem 0 !important;
+}
+
+#root .site-header-desktop .nav-container .nav .nav-link,
+#root .site-header-mobile .nav-container .nav .nav-link {
+  padding-top: .6rem !important;
+  padding-bottom: .6rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+
+// Main nav (Courses / Discover / …): stock header fills
+// `.nav-link.active` / hover with `--pgn-color-bg-active` but leaves square
+// corners and no gap, so adjacent items read as one block. Radius token +
+// flex gap on every shared header that uses this markup.
+#root header.site-header-desktop .main-nav,
+#root header.site-header-mobile .main-nav,
+#root header.learning-header .main-nav {
+  gap: var(--pgn-spacing-spacer-2);
+
+  .nav-link {
+    border-radius: var(--pgn-size-border-radius-base) !important;
+
+    &:hover,
+    &:focus,
+    &.active {
+      border-radius: var(--pgn-size-border-radius-base) !important;
+    }
+  }
+}
+
+// Secondary header nav links (when present) share the same active fill —
+// keep the same radius so hover/active don't go square there either.
+#root header.site-header-desktop .secondary-menu-container .nav-link,
+#root header.site-header-mobile .secondary-menu-container .nav-link {
+  border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+// Studio header uses a different DOM (`.studio-header` + `pgn__action-row`,
+// not `.site-header-desktop .main-nav`). Content / Settings / Tools are
+// `DropdownButton`s with Bootstrap `mr-2` on each `.dropdown` — same visual
+// job as site-header main-nav spacing. Prefer flex gap (same spacer-2 token
+// as site-header) and zero the per-item mr so spacing is one system, not
+// mr + gap stacked.
+#root .studio-header [data-testid="desktop-menu"].nav,
+#root .studio-header .pgn__action-row > .nav {
+  display: flex;
+  align-items: center;
+  gap: var(--pgn-spacing-spacer-2);
+
+  > .dropdown.mr-2,
+  > .mr-2.dropdown,
+  > .dropdown {
+    margin-right: 0 !important;
+  }
+
+  .btn,
+  .dropdown-toggle {
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+}
+
+// Studio home header (isHiddenMainMenu) wraps the logo in
+// `Row.flex-nowrap.ml-4` (HeaderBody.tsx) — extra left inset other MFEs
+// never apply. Course context already uses `m-0`. Zero ml-4 so logo L edge
+// matches site-header / learning-header under the same content gutter.
+#root .studio-header .row.flex-nowrap.ml-4 {
+  margin-left: 0 !important;
+}
+
+// Studio Container ships `px-2.5` + container-mw-xl; other headers use
+// tels-content-width (max-width xl + half gutter). Same shell here.
+#root .studio-header > .container-fluid,
+#root .studio-header > .container-mw-xl {
+  @include tels-content-width;
+}
+
+// Account menu trigger (avatar + name) sits in its own .nav.secondary-menu-
+// container — same vertical rhythm and text size as the main nav so nothing
+// in the header bar sits taller/shorter or reads at a different scale.
+#root .site-header-desktop .secondary-menu-container .menu-trigger,
+#root .site-header-mobile .secondary-menu-container .menu-trigger {
+  padding-top: .6rem !important;
+  padding-bottom: .6rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}

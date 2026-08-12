@@ -1,0 +1,27 @@
+{
+  "$description": "BADGE (light) — component-level color tokens (class: .badge). bg per variant links to our semantic roots (primary/secondary/success/warning/danger/info/light/dark), so changing those at Layer 1 still cascades here; each is also independently overridable.",
+  "color": {
+    "badge": {
+      "bg": {
+        "primary": { "$value": "{color.primary.base}", "$description": "Primary badge bg → --pgn-color-badge-bg-primary" },
+        "secondary": { "$value": "{color.secondary.base}", "$description": "Secondary badge bg → --pgn-color-badge-bg-secondary" },
+        "success": { "$value": "{color.success.base}", "$description": "Success badge bg → --pgn-color-badge-bg-success" },
+        "warning": { "$value": "{color.warning.base}", "$description": "Warning badge bg → --pgn-color-badge-bg-warning" },
+        "danger": { "$value": "{color.danger.base}", "$description": "Danger badge bg → --pgn-color-badge-bg-danger" },
+        "info": { "$value": "{color.info.base}", "$description": "Info badge bg → --pgn-color-badge-bg-info" },
+        "light": { "$value": "{color.light.base}", "$description": "Light badge bg → --pgn-color-badge-bg-light" },
+        "dark": { "$value": "{color.dark.base}", "$description": "Dark badge bg → --pgn-color-badge-bg-dark" }
+      },
+      "text": {
+        "primary": { "$value": "{color.primary.base}", "modify": [{ "type": "color-yiq" }], "$description": "Primary badge text (auto light/dark contrast) → --pgn-color-badge-text-primary" },
+        "secondary": { "$value": "{color.secondary.base}", "modify": [{ "type": "color-yiq" }], "$description": "Secondary badge text → --pgn-color-badge-text-secondary" },
+        "success": { "$value": "{color.success.base}", "modify": [{ "type": "color-yiq" }], "$description": "Success badge text → --pgn-color-badge-text-success" },
+        "warning": { "$value": "{color.warning.base}", "modify": [{ "type": "color-yiq" }], "$description": "Warning badge text → --pgn-color-badge-text-warning" },
+        "danger": { "$value": "{color.danger.base}", "modify": [{ "type": "color-yiq" }], "$description": "Danger badge text → --pgn-color-badge-text-danger" },
+        "info": { "$value": "{color.info.base}", "modify": [{ "type": "color-yiq" }], "$description": "Info badge text → --pgn-color-badge-text-info" },
+        "light": { "$value": "{color.light.base}", "modify": [{ "type": "color-yiq" }], "$description": "Light badge text → --pgn-color-badge-text-light" },
+        "dark": { "$value": "{color.dark.base}", "modify": [{ "type": "color-yiq" }], "$description": "Dark badge text → --pgn-color-badge-text-dark" }
+      }
+    }
+  }
+}

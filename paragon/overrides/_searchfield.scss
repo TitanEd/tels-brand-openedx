@@ -1,0 +1,135 @@
+// LAYER 2 — SearchField override
+// Tokens: themes/*/components/form/search-field.json + core/.../search-field-size.json
+//          + button solid-primary (submit)
+// Why: box (.pgn__searchfield_wrapper) ≠ button (.pgn__searchfield__button).
+// Do NOT border the whole .pgn__searchfield when --external (wraps both).
+
+// --- Internal (icon / decorator search): border on the field shell ---
+.pgn__searchfield:not(.pgn__searchfield--external) {
+  border-color: var(--pgn-color-search-field-border-base) !important;
+  border-radius: var(--pgn-size-search-field-border-radius, var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base))) !important;
+  background-color: var(--pgn-color-search-field-form-bg) !important;
+  overflow: hidden;
+
+  &:hover,
+  &:active {
+    border-color: var(--pgn-color-search-field-border-interaction) !important;
+  }
+
+  &:focus-within,
+  &.has-focus {
+    border-color: var(--pgn-color-search-field-border-focus) !important;
+  }
+
+  // Paragon core draws the focus ring as an absolutely-positioned ::after
+  // (a "double" border) that never sets its own border-radius, so it always
+  // renders square corners on top of our rounded field — the rectangular
+  // line seen on click. Force it to match the field's actual radius so it
+  // tracks --pgn-size-search-field-border-radius automatically.
+  &.has-focus::after {
+    border-radius: inherit !important;
+  }
+
+  .pgn__searchfield-form,
+  .pgn__form-control-decorator-group,
+  .pgn__searchfield_wrapper {
+    border-radius: inherit;
+  }
+
+  .form-control {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: var(--pgn-size-search-field-border-radius, var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base))) !important;
+    background-color: var(--pgn-color-search-field-form-bg) !important;
+    color: var(--pgn-color-form-input-base) !important;
+  }
+
+  // Submit icon — search-field tokens only. Do NOT inherit .btn-icon-primary
+  // hover (solid primary fill + white icon). Authoring / Studio filters use
+  // this internal SearchField (e.g. data-testid="input-filter-courses-search").
+  .pgn__searchfield__iconbutton-submit,
+  .pgn__searchfield__iconbutton-submit.btn-icon,
+  .pgn__searchfield__iconbutton-submit.btn-icon-primary,
+  .btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit,
+  button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit {
+    color: var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base)) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+    .pgn__icon,
+    .btn-icon__icon,
+    svg {
+      color: inherit !important;
+      fill: currentColor !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:active {
+      color: var(--pgn-color-search-field-icon-hover, var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base))) !important;
+      background: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+      background-color: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+      box-shadow: none !important;
+    }
+
+    &:active {
+      background: var(--pgn-color-search-field-icon-bg-active, var(--pgn-color-search-field-icon-bg-hover, transparent)) !important;
+      background-color: var(--pgn-color-search-field-icon-bg-active, var(--pgn-color-search-field-icon-bg-hover, transparent)) !important;
+    }
+  }
+}
+
+// --- External (home banner): box and .btn-primary are separate ---
+.pgn__searchfield.pgn__searchfield--external {
+  border: none !important;
+  background-color: transparent !important;
+  overflow: visible !important;
+
+  .pgn__searchfield_wrapper {
+    border: var(--pgn-size-search-field-border-width-base) solid var(--pgn-color-search-field-border-base) !important;
+    border-radius: var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base)) !important;
+    background-color: var(--pgn-color-search-field-form-bg) !important;
+
+    &:hover,
+    &:active {
+      border-color: var(--pgn-color-search-field-border-interaction) !important;
+    }
+  }
+
+  &.has-focus .pgn__searchfield_wrapper,
+  &:focus-within .pgn__searchfield_wrapper {
+    border-color: var(--pgn-color-search-field-border-focus) !important;
+  }
+
+  // Same square-cornered ::after focus ring as the internal variant above,
+  // drawn on .pgn__searchfield_wrapper instead of .pgn__searchfield itself
+  // (external mode splits the box from the submit button). Match the
+  // wrapper's own radius so it stays in sync with the token.
+  &.has-focus .pgn__searchfield_wrapper::after {
+    border-radius: inherit !important;
+  }
+
+  .form-control {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: var(--pgn-color-search-field-form-bg) !important;
+    color: var(--pgn-color-form-input-base) !important;
+  }
+}
+
+// External submit — radius + label only. Do not !important the fill: the
+// button is .btn.btn-primary and must keep Paragon's native hover/active
+// ( --pgn-btn-hover-bg from solid-primary tokens ).
+.pgn__searchfield__button.btn,
+.pgn__searchfield__button.btn.btn-primary {
+  color: var(--pgn-color-btn-text-primary) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+
+// Submit button focus ring — same unrounded ::after bug as above, this time
+// on the search button (keyboard focus-visible, e.g. tabbing to it).
+.pgn__searchfield .btn:focus-visible::after {
+  border-radius: inherit !important;
+}
