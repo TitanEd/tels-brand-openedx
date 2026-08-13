@@ -1,13 +1,502 @@
-// LAYER 3 — Catalog MFE (Explore courses / home / about)
-// Parents: #root .container-mw-xl, .home-banner
-// Width/padding: Layer 1 tokens via overrides/_layout.scss (tels-content-width)
-// Checkbox: Layer 2 overrides/_forms.scss
-// Search: Layer 2 overrides/_searchfield.scss
-// Values only via var(--pgn-*).
+// LAYER 3 — Catalog MFE (home banner / courses list / catalog courses / course about)
+// CSS-only — do not edit frontend-app-catalog JSX.
+// Values via var(--pgn-*). Optional MFE hooks: --catalog-home-page-banner-*
 
 #root {
-  // Courses list — reinforce internal SearchField border from search-field tokens
+  // =========================================================================
+  // Home banner — light primary gradient + wider welcome card
+  // DOM: section.home-banner > .animation-wrapper > h1.display-1 + p.lead + search
+  // =========================================================================
+  .home-banner {
+    min-height: clamp(22rem, 42vh, 32rem);
+    isolation: isolate;
+    padding-block: var(--pgn-spacing-spacer-4, 1.5rem);
+
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image: var(
+        --catalog-home-page-banner-background-image,
+        linear-gradient(
+          145deg,
+          var(--pgn-color-primary-100, var(--pgn-color-primary-light, #f2f7f8)) 0%,
+          color-mix(in srgb, var(--pgn-color-primary-100, #f2f7f8) 55%, var(--pgn-color-white, #fff)) 42%,
+          color-mix(in srgb, var(--pgn-color-primary-200, #f8ebe7) 35%, var(--pgn-color-white, #fff)) 100%
+        )
+      );
+      background-color: var(
+        --catalog-home-page-banner-background-color,
+        var(--pgn-color-primary-100, var(--pgn-color-primary-light, #f2f7f8))
+      );
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    // Soft wash so the light primary gradient reads (not flat gray)
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(
+          ellipse 70% 55% at 8% 20%,
+          color-mix(in srgb, var(--pgn-color-white, #fff) 70%, transparent) 0%,
+          transparent 60%
+        ),
+        radial-gradient(
+          ellipse 55% 45% at 95% 80%,
+          color-mix(in srgb, var(--pgn-color-primary-base) 14%, transparent) 0%,
+          transparent 65%
+        );
+    }
+
+    // Welcome card — style existing .animation-wrapper (no new JSX class)
+    .animation-wrapper {
+      z-index: 1;
+      width: 100%;
+      max-width: min(72rem, calc(100% - 2rem));
+      margin-block: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+      padding: clamp(1.75rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3.5rem) !important;
+      border-radius: var(--pgn-size-card-border-radius-base, var(--pgn-size-border-radius-lg, 0.5rem));
+      background-color: var(--pgn-color-card-bg-base, var(--pgn-color-white, #fff));
+      box-shadow:
+        0 0.75rem 2.25rem color-mix(in srgb, var(--pgn-color-primary-base) 12%, transparent),
+        0 0.125rem 0.5rem color-mix(in srgb, var(--pgn-color-black, #000) 5%, transparent);
+      border: 1px solid color-mix(in srgb, var(--pgn-color-primary-base) 10%, transparent);
+      box-sizing: border-box;
+    }
+
+    // Overlay uses text-white for dark photo banners — override for light hero
+    .display-1,
+    h1.display-1,
+    .text-white {
+      color: var(--pgn-color-headings-base, var(--pgn-color-text-base)) !important;
+    }
+
+    .display-1,
+    h1.display-1 {
+      font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+      font-weight: var(--pgn-typography-font-weight-bold, 700);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      max-width: 48rem;
+    }
+
+    .lead,
+    p.lead {
+      color: var(--pgn-color-text-light, var(--pgn-color-body-base, var(--pgn-color-text-base))) !important;
+      max-width: 40rem;
+      margin-inline: auto;
+    }
+
+    // Promo video CTA (when enabled)
+    .btn.btn-brand,
+    button.btn.btn-brand,
+    a.btn.btn-brand {
+      color: var(--pgn-color-btn-text-brand) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    // Search sits in container-mw-sm — widen within the hero card
+    .container-mw-sm,
+    .container-fluid.container-mw-sm {
+      max-width: min(42rem, 100%) !important;
+      width: 100%;
+    }
+
+    .pgn__searchfield--external {
+      max-width: 42rem;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .pgn__searchfield--external .form-control {
+      border-color: var(--pgn-color-search-field-border-base, var(--pgn-color-form-input-border)) !important;
+      border-radius: var(--pgn-size-form-border-radius, var(--pgn-size-border-radius-base)) !important;
+      background-color: var(--pgn-color-white, #fff) !important;
+    }
+
+    .pgn__searchfield--external .pgn__searchfield__button.btn-primary,
+    .pgn__searchfield--external button.btn.btn-primary {
+      color: var(--pgn-color-btn-text-primary) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+  }
+
+  // =========================================================================
+  // Home courses grid + "View all courses"
+  // =========================================================================
+  [data-testid="courses-list"] {
+    @include tels-content-width;
+
+    .pgn__card-grid {
+      gap: var(--pgn-spacing-spacer-3, 1rem);
+    }
+
+    .btn.btn-brand,
+    button.btn.btn-brand {
+      color: var(--pgn-color-btn-text-brand) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+      margin-top: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+    }
+  }
+
+  // =========================================================================
+  // Course cards (home + /catalog/courses card view)
+  // CourseCard JSX has no footer Button children — only start-date text.
+  // Style footer actions if a plugin/slot adds .btn later.
+  // =========================================================================
+  .course-card {
+    height: 100%;
+    border-color: var(--pgn-color-card-border-base, var(--pgn-color-light-400, #e9e6e4)) !important;
+    border-radius: var(--pgn-size-card-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+    background-color: var(--pgn-color-card-bg-base, var(--pgn-color-white, #fff)) !important;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    text-decoration: none !important;
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--pgn-color-primary-base) 35%, transparent) !important;
+      box-shadow: 0 0.5rem 1.25rem color-mix(in srgb, var(--pgn-color-primary-base) 16%, transparent);
+      transform: translateY(-2px);
+    }
+
+    .pgn__card-header-title {
+      color: var(--pgn-color-headings-base, var(--pgn-color-text-base));
+    }
+
+    .pgn__card-header-subtitle {
+      color: var(--pgn-color-text-light, var(--pgn-color-body-base));
+    }
+
+    .badge.badge-light {
+      color: var(--pgn-color-primary-700, var(--pgn-color-primary-base));
+      background-color: var(--pgn-color-primary-100, var(--pgn-color-primary-light));
+    }
+
+    .pgn__card-footer {
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--pgn-spacing-spacer-2, 0.5rem);
+      color: var(--pgn-color-text-light, var(--pgn-color-body-base));
+    }
+
+    // Enable / show any action buttons present in card footer/header/section
+    .pgn__card-footer .btn,
+    .pgn__card-header-actions .btn,
+    .pgn__card-section-actions .btn,
+    .course-card__action.btn,
+    .btn.btn-primary {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    .btn.btn-primary,
+    a.btn.btn-primary,
+    button.btn.btn-primary {
+      color: var(--pgn-color-btn-text-primary) !important;
+      border-radius: var(--pgn-size-btn-border-radius-sm, var(--pgn-size-btn-border-radius-base)) !important;
+    }
+
+    .btn.btn-outline-primary,
+    a.btn.btn-outline-primary,
+    button.btn.btn-outline-primary {
+      color: var(--pgn-color-btn-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+      border-radius: var(--pgn-size-btn-border-radius-sm, var(--pgn-size-btn-border-radius-base)) !important;
+    }
+  }
+
+  // =========================================================================
+  // /catalog/courses — intro + search + data table card grid
+  // Container has no page class; scope via :has(data-table)
+  // =========================================================================
+  .container-mw-xl:has(.pgn__data-table),
+  .container-mw-xl:has(.pgn__data-table-layout-wrapper) {
+    @include tels-content-width;
+    position: relative;
+
+    > header.mb-5,
+    header.mb-5.d-flex {
+      margin-bottom: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+      padding: var(--pgn-spacing-spacer-3, 1rem) var(--pgn-spacing-spacer-4, 1.5rem);
+      border-radius: var(--pgn-size-border-radius-base);
+      background: linear-gradient(
+        90deg,
+        var(--pgn-color-primary-100, var(--pgn-color-primary-light)) 0%,
+        color-mix(in srgb, var(--pgn-color-primary-100, var(--pgn-color-primary-light)) 35%, var(--pgn-color-white, #fff)) 100%
+      );
+      border: 1px solid color-mix(in srgb, var(--pgn-color-primary-base) 8%, transparent);
+
+      h1 {
+        color: var(--pgn-color-headings-base, var(--pgn-color-text-base));
+        font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+        font-weight: var(--pgn-typography-font-weight-bold, 700);
+        letter-spacing: -0.01em;
+      }
+    }
+
+    // Catalog search is often w-25 — widen for usable UX
+    .pgn__searchfield {
+      width: min(100%, 28rem) !important;
+      max-width: 100%;
+      margin-bottom: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+      border-color: var(--pgn-color-search-field-border-base) !important;
+      border-radius: var(--pgn-size-form-border-radius, var(--pgn-size-border-radius-base)) !important;
+      background-color: var(--pgn-color-card-bg-base, var(--pgn-color-white, #fff));
+      box-shadow: 0 0.125rem 0.5rem color-mix(in srgb, var(--pgn-color-primary-base) 8%, transparent);
+
+      &:focus-within,
+      &:hover {
+        border-color: var(--pgn-color-search-field-border-focus, var(--pgn-color-primary-base)) !important;
+      }
+
+      .form-control {
+        border-color: transparent !important;
+      }
+
+      // External-style text submit only (home banner). Icon submit stays
+      // transparent — handled by overrides/_searchfield.scss tokens.
+      .btn.btn-primary,
+      button.btn.btn-primary {
+        color: var(--pgn-color-btn-text-primary) !important;
+      }
+
+      .pgn__searchfield__iconbutton-submit,
+      .pgn__searchfield__iconbutton-submit.btn-icon-primary,
+      button.btn-icon.btn-icon-primary.pgn__searchfield__iconbutton-submit {
+        color: var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base)) !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+
+        &:hover:not(:disabled),
+        &:focus:not(:disabled),
+        &:focus-visible:not(:disabled),
+        &:active:not(:disabled) {
+          color: var(--pgn-color-search-field-icon-hover, var(--pgn-color-search-field-icon-base, var(--pgn-color-primary-base))) !important;
+          background: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+          background-color: var(--pgn-color-search-field-icon-bg-hover, transparent) !important;
+          box-shadow: none !important;
+        }
+      }
+    }
+
+    .pgn__form-checkbox,
+    .pgn__form-checkbox-input,
+    input[type="checkbox"]:checked {
+      accent-color: var(--pgn-color-primary-base);
+    }
+
+    .pgn__form-label,
+    .form-label {
+      color: var(--pgn-color-body-base, var(--pgn-color-text-base));
+    }
+
+    .btn.btn-outline-primary,
+    a.btn.btn-outline-primary,
+    button.btn.btn-outline-primary {
+      color: var(--pgn-color-btn-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    .btn.btn-primary,
+    a.btn.btn-primary,
+    button.btn.btn-primary {
+      color: var(--pgn-color-btn-text-primary) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    .pagination .page-link,
+    .pgn__data-table-footer .btn {
+      border-radius: var(--pgn-size-btn-border-radius-sm, var(--pgn-size-border-radius-sm)) !important;
+    }
+
+    .pagination .page-item.active .page-link {
+      color: var(--pgn-color-btn-text-primary) !important;
+      background-color: var(--pgn-color-btn-bg-primary) !important;
+      border-color: var(--pgn-color-btn-border-primary) !important;
+    }
+
+    .pagination .page-link {
+      color: var(--pgn-color-link-base, var(--pgn-color-primary-base));
+    }
+
+    // Exclude dropdown items — they are <a class="dropdown-item"> and must keep
+    // Layer 2 dropdown tokens (default text + white on primary hover/active).
+    a:not(.btn):not(.page-link):not(.dropdown-item):not(.pgn__dropdown-item) {
+      color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+
+      &:hover,
+      &:focus {
+        color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+      }
+    }
+  }
+
+  // Fallback when :has() unavailable — still reinforce search in xl containers
   .container-mw-xl .pgn__searchfield:not(.pgn__searchfield--external) {
     border-color: var(--pgn-color-search-field-border-base) !important;
+  }
+
+  // =========================================================================
+  // Course about (detail) — intro / media / sidebar / overview
+  // =========================================================================
+  .course-about-intro {
+    .pgn__card {
+      min-height: var(
+        --catalog-course-about-page-intro-card-min-height,
+        var(--catalog-course-about-page-course-media-image-height, 15.75rem)
+      );
+      border: 0 !important;
+      border-radius: var(--pgn-size-card-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+      background-color: var(--pgn-color-card-bg-base, var(--pgn-color-white, #fff)) !important;
+      box-shadow: 0 0.25rem 1rem color-mix(in srgb, var(--pgn-color-black, #000) 8%, transparent);
+      overflow: hidden;
+    }
+
+    .pgn__card-header-title h1 {
+      color: var(--pgn-color-headings-base, var(--pgn-color-text-base));
+      font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      line-height: 1.25;
+    }
+
+    .pgn__card-header-subtitle {
+      color: var(--pgn-color-primary-base);
+      font-weight: var(--pgn-typography-font-weight-semi-bold, 600);
+    }
+
+    .pgn__card-section {
+      color: var(--pgn-color-body-base, var(--pgn-color-text-base));
+      font-size: var(--pgn-typography-font-size-base);
+      line-height: 1.55;
+    }
+
+    .pgn__card-footer {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: var(--pgn-spacing-spacer-2, 0.5rem);
+      padding-top: var(--pgn-spacing-spacer-3, 1rem);
+    }
+
+    .btn,
+    .pgn__stateful-btn,
+    a.btn {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .btn.btn-primary,
+    .pgn__stateful-btn.btn-primary,
+    a.btn.btn-primary {
+      color: var(--pgn-color-btn-text-primary) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+
+    .btn.btn-outline-primary,
+    .pgn__stateful-btn.btn-outline-primary,
+    a.btn.btn-outline-primary {
+      color: var(--pgn-color-btn-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
+  }
+
+  .course-media-wrapper {
+    .course-media-image {
+      border-radius: var(--pgn-size-card-border-radius-base, var(--pgn-size-border-radius-base));
+      box-shadow: 0 0.25rem 1rem color-mix(in srgb, var(--pgn-color-black, #000) 10%, transparent);
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .pgn__icon {
+      color: var(--pgn-color-white, #fff);
+      filter: drop-shadow(0 0.125rem 0.5rem color-mix(in srgb, var(--pgn-color-black, #000) 35%, transparent));
+    }
+
+    button,
+    .btn {
+      display: inline-flex !important;
+      visibility: visible !important;
+    }
+  }
+
+  // Course about page Container uses py-5.5 — refine nested cards (sidebar / overview)
+  .container-mw-xl.py-5\.5 .pgn__card {
+    border: 0 !important;
+    border-radius: var(--pgn-size-card-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+    background-color: var(--pgn-color-card-bg-base, var(--pgn-color-white, #fff)) !important;
+    box-shadow: 0 0.25rem 1rem color-mix(in srgb, var(--pgn-color-black, #000) 8%, transparent);
+    overflow: hidden;
+  }
+
+  .course-about-overview {
+    .teacher {
+      margin-top: var(--pgn-spacing-spacer-base);
+      margin-bottom: var(--pgn-spacing-spacer-base);
+      padding: var(--pgn-spacing-spacer-3, 1rem);
+      border-radius: var(--pgn-size-border-radius-base);
+      background-color: var(--pgn-color-primary-100, var(--pgn-color-primary-light, #f2f7f8));
+
+      .teacher-image {
+        width: calc(var(--pgn-spacing-spacer-base) * 8);
+
+        img {
+          min-height: 100%;
+          max-width: 100%;
+          margin-inline-end: calc(var(--pgn-spacing-spacer-base) * 0.5);
+          border-radius: var(--pgn-size-border-radius-sm, 0.25rem);
+        }
+      }
+
+      &::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+    a:not(.btn) {
+      color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+
+      &:hover,
+      &:focus {
+        color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+      }
+    }
+  }
+
+  // Overview card header Studio button
+  .pgn__card-header-actions {
+    .btn,
+    a.btn {
+      display: inline-flex !important;
+      visibility: visible !important;
+    }
+
+    .btn.btn-outline-primary,
+    a.btn.btn-outline-primary {
+      color: var(--pgn-color-btn-text-outline-primary) !important;
+      border-color: var(--pgn-color-btn-border-outline-primary) !important;
+      background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+      border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    }
   }
 }

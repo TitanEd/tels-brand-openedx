@@ -57,14 +57,13 @@
       display: none;
     }
 
-    // Remapped .btn-link → solid look. Paint fill with tokens; use hover
-    // tokens so it tracks Paragon solid-primary hover (theme.hover / *-700).
+    // Remapped .btn-link → solid look. Hover uses Paragon theme.hover (same as solid primary).
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--pgn-color-btn-hover-bg-primary) !important;
-      border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-hover-bg-primary)) !important;
-      color: var(--pgn-color-btn-hover-text-primary, var(--pgn-color-btn-text-primary)) !important;
+      background-color: var(--pgn-color-theme-hover-primary, var(--pgn-color-primary-700)) !important;
+      border-color: var(--pgn-color-theme-hover-primary, var(--pgn-color-primary-700)) !important;
+      color: var(--pgn-color-btn-text-primary) !important;
     }
   }
 
