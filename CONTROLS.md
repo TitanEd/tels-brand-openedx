@@ -41,7 +41,10 @@ Each kit = JSON (colors / hover / focus) + thin SCSS that only maps classes → 
 | `.btn-icon.btn-icon-secondary` (Studio drag handles) | `themes/light/components/button/icon-secondary.json` |
 | Padding / radius (all buttons) | `core/components/button/size-padding-radius.json` |
 
-Inside each button JSON you edit: `bg`, `text`, `border`, and under `hover` / `active` the same for those states.  
+Inside each button JSON you edit: `bg`, `text`, `border` for the default state.  
+**Solid buttons:** do **not** set custom `hover` / `active` in `solid-*.json` — leave Paragon defaults (`theme.hover` / `*-700`). Layer 3 must not `!important` solid fills (that flattens hover).  
+Outline kits still own their own hover keys + `_buttons.scss` `!important` for Studio.
+
 SCSS: `overrides/_buttons.scss` — Paragon-equivalent `.btn:hover` (reads `--pgn-btn-hover-bg`) + `button-variant` locals for primary/brand. No `!important` on solid fills. Outline kits keep `!important` for Studio.
 
 **One file = one button type.** Do not put outline keys inside `solid-*.json` (that overwrites `outline-*.json`).  
@@ -131,8 +134,8 @@ Only when a page needs parent alignment. No new colors.
 
 | File | Use when |
 |------|----------|
-| `_header.scss` / `_footer.scss` | Shared chrome width |
-| `_catalog.scss` | Catalog / home |
+| `_header.scss` / `_footer.scss` | Shared chrome width; header language select + dark-mode switch + **user-dropdown size** (`--pgn-*` form/button tokens); Discussions uses LearningHeader slots |
+| `_catalog.scss` | Catalog home hero (light primary gradient + welcome card), `/catalog/courses`, course cards, course about |
 | `_learning.scss` | Learning header, instructor bar, `<main>` tabs/buttons/links |
 | `_discussion.scss` | Discussion + TinyMCE dialogs |
 | `_gradebook.scss` | Gradebook search / selects |
@@ -149,7 +152,7 @@ Only when a page needs parent alignment. No new colors.
 | Bigger H1 everywhere | `typography.json` → `font.size.h1.base` |
 | Wider pages | `max-width.json` → `xl` |
 | More side padding | `spacing.json` → `gutter-width` |
-| Solid primary hover darker | `solid-primary.json` → `color.btn.hover.bg.primary` |
+| Solid primary hover darker | leave Paragon default (`primary-700`); do not edit `solid-primary.json` hover |
 | Brand button only | `solid-brand.json` |
 | Outline button look | `outline-primary.json` or `outline-secondary.json` |
 

@@ -15,9 +15,21 @@
   @include tels-content-width;
 }
 
-// Learning MFE header
-.learning-header > .container-xl {
-  @include tels-content-width;
+// Learning MFE header — width/L-R pad live on the parent `.learning-header`
+// (see _learning.scss). Do NOT also constrain this child or gutters double.
+// Global `.container-xl` padding from _layout.scss must be zeroed here.
+.learning-header > .container-xl,
+.learning-header > .container-xl.py-2 {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  // Bootstrap `py-2` vertical pad — keep header height aligned with site-header
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  box-sizing: border-box;
 }
 
 // Logo — same rendered size everywhere the shared header appears, so the
@@ -54,8 +66,10 @@
 // Logo's own vertical padding, and nav-links matched to the same figure —
 // same rhythm as the logo means the header's total height can't drift
 // between MFEs even if their surrounding layout differs.
+// Learning has no .nav-container — same padding on `.learning-header .logo`.
 #root .site-header-desktop .container-fluid .nav-container .logo,
-#root .site-header-mobile .container-fluid .nav-container .logo {
+#root .site-header-mobile .container-fluid .nav-container .logo,
+#root header.learning-header .logo {
   padding: .6rem 0 !important;
 }
 
@@ -133,14 +147,340 @@
   @include tels-content-width;
 }
 
-// Account menu trigger (avatar + name) sits in its own .nav.secondary-menu-
-// container — same vertical rhythm and text size as the main nav so nothing
-// in the header bar sits taller/shorter or reads at a different scale.
-#root .site-header-desktop .secondary-menu-container .menu-trigger,
-#root .site-header-mobile .secondary-menu-container .menu-trigger {
-  padding-top: .6rem !important;
-  padding-bottom: .6rem !important;
+// Account menu + learning user dropdown — ONE shared size on every MFE.
+// Site header: .menu-trigger.btn.btn-outline-primary (avatar + name)
+// Learning / Discussions: .user-dropdown .dropdown-toggle.btn.btn-outline-primary
+// Must beat: older .6rem padding rules, Bootstrap pl-2/pr-3, fa-lg icon sizing.
+#root header.site-header-desktop .secondary-menu-container .menu-trigger,
+#root header.site-header-mobile .secondary-menu-container .menu-trigger,
+#root header.site-header-desktop .menu .menu-trigger,
+#root header.site-header-mobile .menu .menu-trigger,
+#root header .secondary-menu-container .menu-trigger.btn,
+#root header .menu .menu-trigger.btn.btn-outline-primary,
+#root header.learning-header .user-dropdown .dropdown-toggle.btn,
+#root header.learning-header .user-dropdown .btn.btn-outline-primary,
+#root header .user-dropdown .dropdown-toggle.btn,
+#root header .user-dropdown .btn.btn-outline-primary,
+#root header .pgn__dropdown.user-dropdown .dropdown-toggle,
+#root header .pgn__dropdown .dropdown-toggle.btn.btn-outline-primary {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--pgn-spacing-spacer-2, 0.5rem);
+  min-height: var(--pgn-size-form-input-height-base) !important;
+  height: var(--pgn-size-form-input-height-base) !important;
+  max-height: var(--pgn-size-form-input-height-base) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: var(--pgn-spacing-btn-padding-x-base, 1rem) !important;
+  padding-right: var(--pgn-spacing-btn-padding-x-base, 1rem) !important;
+  font-size: var(--pgn-typography-btn-font-size-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: 1 !important;
+  border-radius: var(--pgn-size-btn-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+  border-width: var(--pgn-size-btn-border-width, 1px) !important;
+}
+
+// ---------------------------------------------------------------------------
+// Header user icon — ONE glyph everywhere (site-header AvatarIcon path).
+// Site header: .menu-trigger .avatar > AvatarIcon SVG
+// Learning / Discussions: FA fa-circle-user (different shape) → mask to AvatarIcon
+// ---------------------------------------------------------------------------
+
+$tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M4.10255106,18.1351061 C4.7170266,16.0581859 8.01891846,14.4720277 12,14.4720277 C15.9810815,14.4720277 19.2829734,16.0581859 19.8974489,18.1351061 C21.215206,16.4412566 22,14.3122775 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,14.3122775 2.78479405,16.4412566 4.10255106,18.1351061 Z M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,13 C9.790861,13 8,11.209139 8,9 C8,6.790861 9.790861,5 12,5 C14.209139,5 16,6.790861 16,9 C16,11.209139 14.209139,13 12,13 Z'/%3E%3C/svg%3E");
+
+@mixin tels-header-user-icon-box {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  margin-right: var(--pgn-spacing-spacer-2, 0.5rem) !important;
+  flex-shrink: 0;
+  color: var(--pgn-color-btn-text-outline-primary, var(--pgn-color-primary-base)) !important;
+}
+
+// Site-header Avatar (+ any .avatar in header)
+#root header .menu-trigger .avatar,
+#root header .secondary-menu-container .menu-trigger .avatar,
+#root header .user-dropdown .avatar,
+#root header.learning-header .user-dropdown .avatar {
+  @include tels-header-user-icon-box;
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+
+  svg {
+    display: block !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+
+  path {
+    fill: currentColor !important;
+  }
+}
+
+// Learning / Discussions FA icon → same AvatarIcon silhouette via mask
+#root header.learning-header .user-dropdown .dropdown-toggle .svg-inline--fa,
+#root header.learning-header .user-dropdown .dropdown-toggle .fa-circle-user,
+#root header.learning-header .user-dropdown .btn .svg-inline--fa,
+#root header.learning-header .user-dropdown .btn .fa-circle-user,
+#root header .user-dropdown .dropdown-toggle .svg-inline--fa.d-md-none,
+#root header .user-dropdown .dropdown-toggle svg.d-md-none,
+#root header .user-dropdown .btn .svg-inline--fa.d-md-none,
+#root header .user-dropdown .dropdown-toggle .svg-inline--fa,
+#root header .user-dropdown .btn .svg-inline--fa {
+  @include tels-header-user-icon-box;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  background-color: currentColor !important;
+  -webkit-mask-image: $tels-header-avatar-icon;
+  mask-image: $tels-header-avatar-icon;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  // Hide FA's own glyph; mask paints the shared AvatarIcon shape
+  path,
+  * {
+    fill: transparent !important;
+    opacity: 0 !important;
+  }
+}
+
+#root header .user-dropdown .dropdown-toggle .fa-lg,
+#root header .user-dropdown .btn .fa-lg {
   font-size: 1rem !important;
-  line-height: 1.5rem !important;
-  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+// Caret on site-header menu-trigger (not the avatar)
+#root header .menu-trigger > svg {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  flex-shrink: 0;
+  color: inherit !important;
+  margin-left: var(--pgn-spacing-spacer-1, 0.25rem);
+}
+
+// Username next to icon stays visible on desktop
+#root header.learning-header .user-dropdown .dropdown-toggle .d-md-inline,
+#root header .user-dropdown .dropdown-toggle span[data-hj-suppress] {
+  display: inline !important;
+}
+
+// ---------------------------------------------------------------------------
+// Indigo header controls — language select + dark-mode switch (all MFEs)
+// DOM (legacy): .theme-toggle-button > .toggle-switch > .switch > input + .slider
+// DOM (current): .indigo-theme-toggle > label.__switch > input + .__slider
+// Language: .indigo-language-menu select / #indigo-header-language-select
+// Values via --pgn-* only (form + primary + radius tokens).
+// ---------------------------------------------------------------------------
+
+#root header .indigo-header-controls {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--pgn-spacing-spacer-3, 1rem);
+  // Space before account / user-dropdown menu (beats zeroed child mr-3)
+  margin-right: var(--pgn-spacing-spacer-3, 1rem) !important;
+}
+
+#root header .user-dropdown,
+#root header .pgn__dropdown.user-dropdown {
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--pgn-spacing-spacer-3, 1rem) !important;
+}
+
+// Learning / Discussions "Help" (when slot not replaced) — same vertical rhythm
+#root header.learning-header > .container-xl > a.text-gray-700,
+#root header.learning-header a.text-gray-700 {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--pgn-size-form-input-height-base);
+  height: var(--pgn-size-form-input-height-base);
+  padding: 0 var(--pgn-spacing-spacer-2, 0.5rem);
+  margin: 0 !important;
+  font-size: var(--pgn-typography-btn-font-size-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: 1 !important;
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+  text-decoration: none !important;
+
+  &:hover,
+  &:focus {
+    color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+  }
+}
+
+// Language — same height token as user menu triggers
+#root header .indigo-language-menu {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0 !important;
+}
+
+#root header .indigo-language-menu select,
+#root header #indigo-header-language-select,
+#root header .indigo-language-menu select.form-control,
+#root header .indigo-language-menu select.form-control-sm {
+  box-sizing: border-box;
+  min-width: 8rem;
+  // Same vertical size as .btn / form-control base (user menu dropdown beside it)
+  height: var(--pgn-size-form-input-height-base) !important;
+  min-height: var(--pgn-size-form-input-height-base) !important;
+  padding-top: var(--pgn-spacing-btn-padding-y-base, var(--pgn-spacing-form-input-padding-y-base, 0.5625rem)) !important;
+  padding-bottom: var(--pgn-spacing-btn-padding-y-base, var(--pgn-spacing-form-input-padding-y-base, 0.5625rem)) !important;
+  padding-left: var(--pgn-spacing-btn-padding-x-base, var(--pgn-spacing-form-input-padding-x-base, 1rem)) !important;
+  padding-right: 2rem !important; // chevron clearance
+  font-size: var(--pgn-typography-btn-font-size-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: var(--pgn-typography-form-input-line-height-base, 1.5) !important;
+  color: var(--pgn-color-form-input-base, var(--pgn-color-text-base)) !important;
+  background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base, var(--pgn-color-white))) !important;
+  border: var(--pgn-size-btn-border-width, var(--pgn-size-form-input-width-border, 1px)) solid var(--pgn-color-form-input-border, var(--pgn-color-light-700, #cbd5e1)) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+  accent-color: var(--pgn-color-primary-base);
+
+  &:focus {
+    border-color: var(--pgn-color-form-input-focus-border, var(--pgn-color-primary-base)) !important;
+    box-shadow: 0 0 0 0.125rem color-mix(in srgb, var(--pgn-color-primary-base) 25%, transparent) !important;
+    outline: none !important;
+  }
+}
+
+// Dark-mode switch — hide native checkbox; paint an iOS-style track + thumb
+#root header .theme-toggle-button,
+#root header .indigo-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pgn-spacing-spacer-2, 0.5rem);
+  margin-right: 0 !important;
+}
+
+#root header .theme-toggle-button .light-theme-icon,
+#root header .theme-toggle-button .dark-theme-icon,
+#root header .indigo-theme-toggle__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--pgn-color-primary-base) !important;
+
+  .pgn__icon,
+  svg {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+    color: inherit !important;
+    fill: currentColor;
+  }
+}
+
+#root header .theme-toggle-button .toggle-switch,
+#root header .theme-toggle-button .switch,
+#root header .indigo-theme-toggle__switch {
+  position: relative;
+  display: inline-block;
+  width: 2.75rem;
+  height: 1.5rem;
+  margin: 0 !important;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+#root header .theme-toggle-button .switch input,
+#root header .theme-toggle-button .toggle-switch input,
+#root header .indigo-theme-toggle__switch input,
+#root header #theme-toggle-checkbox,
+#root header #indigo-theme-toggle-input {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  pointer-events: none;
+}
+
+#root header .theme-toggle-button .slider,
+#root header .theme-toggle-button .slider.round,
+#root header .indigo-theme-toggle__slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background-color: var(--pgn-color-gray-300, #adadad) !important;
+  border-radius: var(--pgn-size-rounded-pill, 50rem) !important;
+  transition: background-color 0.2s ease;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pgn-color-black, #000) 8%, transparent);
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1.15rem;
+    width: 1.15rem;
+    left: 0.175rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--pgn-color-white, #fff) !important;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--pgn-color-black, #000) 25%, transparent);
+    transition: transform 0.2s ease;
+  }
+}
+
+#root header .theme-toggle-button .switch input:checked + .slider,
+#root header .theme-toggle-button .toggle-switch input:checked + .slider,
+#root header .theme-toggle-button input:checked + .slider,
+#root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider {
+  background-color: var(--pgn-color-primary-base) !important;
+}
+
+#root header .theme-toggle-button .switch input:checked + .slider::before,
+#root header .theme-toggle-button .toggle-switch input:checked + .slider::before,
+#root header .theme-toggle-button input:checked + .slider::before,
+#root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider::before {
+  transform: translate(1.2rem, -50%);
+}
+
+#root header .theme-toggle-button .switch input:focus-visible + .slider,
+#root header .theme-toggle-button input:focus-visible + .slider,
+#root header .indigo-theme-toggle__switch input:focus-visible + .indigo-theme-toggle__slider {
+  outline: 2px solid var(--pgn-color-primary-base);
+  outline-offset: 2px;
+}
+
+[data-paragon-theme-variant="dark"] {
+  #root header .indigo-language-menu select,
+  #root header #indigo-header-language-select {
+    color: var(--pgn-color-form-input-base, var(--pgn-color-text-base)) !important;
+    background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+    border-color: var(--pgn-color-form-input-border, var(--pgn-color-light-700)) !important;
+  }
+
+  #root header .theme-toggle-button .light-theme-icon,
+  #root header .theme-toggle-button .dark-theme-icon,
+  #root header .indigo-theme-toggle__icon {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  #root header .theme-toggle-button .slider,
+  #root header .indigo-theme-toggle__slider {
+    background-color: var(--pgn-color-gray-500, #707070) !important;
+  }
+
+  #root header .theme-toggle-button input:checked + .slider,
+  #root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider {
+    background-color: var(--pgn-color-primary-base) !important;
+  }
 }

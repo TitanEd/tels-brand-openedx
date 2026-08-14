@@ -25,9 +25,9 @@
     border-radius: var(--pgn-size-btn-border-radius-base) !important;
 
     &:hover:not(:disabled) {
-      background-color: var(--pgn-color-btn-hover-bg-primary) !important;
-      border-color: var(--pgn-color-btn-hover-border-primary) !important;
-      color: var(--pgn-color-btn-hover-text-primary) !important;
+      background-color: var(--pgn-color-theme-hover-primary, var(--pgn-color-primary-700)) !important;
+      border-color: var(--pgn-color-theme-hover-primary, var(--pgn-color-primary-700)) !important;
+      color: var(--pgn-color-btn-text-primary) !important;
     }
   }
 

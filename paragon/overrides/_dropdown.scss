@@ -2,10 +2,14 @@
 // Tokens: themes/light/components/dropdown/colors.json
 // Menu border: Open edX / Paragon default (we do not override border-color).
 // Native HTML <select>: see _selects.scss.
+// Covers site-header menus, learning/discussions .user-dropdown, Studio, etc.
 
-.dropdown-menu {
+.dropdown-menu,
+.pgn__dropdown .dropdown-menu,
+.user-dropdown .dropdown-menu,
+.dropdown-menu-right {
   background-color: var(--pgn-color-dropdown-bg, var(--pgn-color-white)) !important;
-
+  border-radius: var(--pgn-size-border-radius-base) !important;
   // The menu panel is rounded, but items (incl. their hover/active fill) are
   // square. Without this, the first/last item's highlight is a rectangle that
   // pokes past the panel's rounded corners. Clipping to the panel's own
@@ -20,8 +24,12 @@
 }
 
 .dropdown-item,
+.pgn__dropdown-item,
+.user-dropdown .dropdown-item,
 [role="listbox"] [role="option"] {
   color: var(--pgn-color-dropdown-item-text, var(--pgn-color-text-base)) !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  border-radius: 0 !important;
 }
 
 .dropdown-menu .dropdown-item:hover,
@@ -29,6 +37,14 @@
 .dropdown-menu .dropdown-item:focus-visible,
 .dropdown-menu .dropdown-item.active,
 .dropdown-menu .dropdown-item:active,
+.pgn__dropdown .dropdown-item:hover,
+.pgn__dropdown .dropdown-item:focus,
+.pgn__dropdown .dropdown-item:focus-visible,
+.pgn__dropdown .dropdown-item.active,
+.pgn__dropdown .dropdown-item:active,
+.user-dropdown .dropdown-item:hover,
+.user-dropdown .dropdown-item:focus,
+.user-dropdown .dropdown-item:active,
 [role="listbox"] [role="option"]:hover,
 [role="listbox"] [role="option"]:focus,
 [role="listbox"] [role="option"][aria-selected="true"] {
