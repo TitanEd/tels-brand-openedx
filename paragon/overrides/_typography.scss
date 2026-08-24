@@ -6,13 +6,22 @@
 // Why: one place to change typeface/heading scale for every MFE.
 // Must NOT use `* { font-family }` — that breaks FontAwesome (.fa) icons.
 
+// `html` intentionally does NOT get `font-size: var(--pgn-typography-font-size-base)`
+// here — Paragon's own core.css never sets a font-size on `html` either (see
+// node_modules/@openedx/paragon/dist/core.min.css), leaving it at the browser's
+// native 16px so `rem` stays anchored to a stable, standard baseline everywhere.
+// `--pgn-typography-font-size-base` (1.125rem) is Bootstrap/Paragon's own stock
+// BODY text size — it belongs on `body`, not `html`. Setting it on `html` was
+// compounding a ~12.5% size inflation onto every `rem`-sized value site-wide
+// (headings, spacing, icons, …) across every MFE, not just body copy — e.g. the
+// h1 token (2.5rem) rendered at 45px instead of its intended 40px.
 html {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: var(--pgn-typography-font-size-base);
 }
 
 body {
   font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-base);
   color: var(--pgn-color-body-base, var(--pgn-color-text-base));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

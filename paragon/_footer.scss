@@ -1,8 +1,10 @@
 // LAYER 3 — Shared site footer (all MFEs)
-// Width tokens: max-width.json + spacing.json via tels-content-width
-// Learning / Dashboard: footer.tutor-container IS the constrained element (no inner container)
-// Catalog: footer.footer > .container-fluid
+// Markup: tutor-tels-theme-plugins IndigoFooter (.tels-footer*)
+// Tokens: themes/*/global/color.json → --pgn-color-footer-*, --pgn-color-text-footer
+// Width: max-width.json + spacing.json via tels-content-width
+// Rules: docs/branding/header-footer-rules.md
 
+// Legacy Tutor / Open edX footer shells (width only)
 footer.tutor-container,
 #footer.tutor-container,
 .wrapper-footer > footer.tutor-container,
@@ -11,7 +13,7 @@ footer.tutor-container,
 }
 
 footer.footer,
-footer[role="contentinfo"]:not(.tutor-container) {
+footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
@@ -19,5 +21,133 @@ footer[role="contentinfo"]:not(.tutor-container) {
   > .container,
   > .container-xl {
     @include tels-content-width;
+  }
+}
+
+// --- Lovable-matching marketing footer (.tels-footer) ---
+.tels-footer {
+  background: var(--pgn-color-footer-bg);
+  color: var(--pgn-color-text-footer);
+  padding: 56px 0 24px;
+  margin-top: 0;
+  width: 100%;
+
+  a:not(.tels-btn) {
+    color: var(--pgn-color-footer-link) !important;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--pgn-color-white) !important;
+    }
+  }
+}
+
+.tels-footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--pgn-color-footer-border);
+}
+
+.tels-footer__logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.tels-footer__social {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--pgn-color-footer-border);
+    border-radius: 999px;
+    color: var(--pgn-color-footer-link);
+
+    &:hover {
+      background: var(--pgn-color-primary-base);
+      border-color: var(--pgn-color-primary-base);
+      color: var(--pgn-color-white);
+    }
+  }
+}
+
+.tels-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 40px 0;
+}
+
+.tels-footer__col {
+  h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pgn-color-white);
+    margin: 0 0 0.9rem;
+    font-weight: 700;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+  }
+}
+
+.tels-footer__contact {
+  font-size: 0.9rem;
+  color: var(--pgn-color-footer-link);
+
+  p {
+    margin: 0 0 0.4rem;
+  }
+
+  .tels-footer__contact-note {
+    margin-top: 0.5rem;
+  }
+}
+
+.tels-footer__bottom {
+  border-top: 1px solid var(--pgn-color-footer-bg);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--pgn-color-footer-muted);
+}
+
+@media (max-width: 900px) {
+  .tels-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .tels-footer__cols {
+    grid-template-columns: 1fr;
   }
 }

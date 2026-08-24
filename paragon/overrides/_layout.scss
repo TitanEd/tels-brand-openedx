@@ -22,6 +22,22 @@
   box-sizing: border-box;
 }
 
+// Marketing / public chrome (.tels-container) — Lovable template shell:
+// max-width xl (1240px) + full gutter-width (24px) L/R padding per side.
+@mixin tels-container {
+  max-width: var(--pgn-size-container-max-width-xl);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--pgn-spacing-grid-gutter-width);
+  padding-right: var(--pgn-spacing-grid-gutter-width);
+  box-sizing: border-box;
+}
+
+.tels-container {
+  @include tels-container;
+}
+
 $tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 
 // --- Shared shells (no .container-xl inside, or neutralize nested one) ---

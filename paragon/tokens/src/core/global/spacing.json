@@ -1,5 +1,5 @@
 {
-  "$description": "LAYER 1 — Spacing. Edit spacing.grid.gutter-width for L/R page padding everywhere (pad = gutter / 2). Pairs with container/max-width.json via tels-content-width in paragon/overrides/_layout.scss.",
+  "$description": "LAYER 1 — Spacing. spacing.grid.gutter-width → --pgn-spacing-grid-gutter-width (24px). Bootstrap/MFE shells: L/R pad = half (tels-content-width). Marketing .tels-container: full gutter per side.",
   "spacing": {
     "spacer": {
       "base": {
@@ -10,7 +10,7 @@
     "grid": {
       "gutter-width": {
         "$value": "24px",
-        "$description": "MAIN side padding control (change this) → --pgn-spacing-grid-gutter-width; L/R pad = half"
+        "$description": "MAIN side padding control (change this) → --pgn-spacing-grid-gutter-width; half for MFE shells, full for .tels-container"
       }
     }
   }

@@ -484,3 +484,240 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     background-color: var(--pgn-color-primary-base) !important;
   }
 }
+
+// --- Lovable-matching marketing header (.tels-header) ---
+// Markup: tutor-tels-theme-plugins TelsHeader
+// Tokens: Layer 1 primary / text / bg / border + tels-content-width
+
+// Sizes match the Lovable reference exactly (app.scss .tels-btn / --lg / --sm).
+// core/components/button/size-padding-radius.json's --pgn-typography-btn-*
+// and --pgn-spacing-btn-padding-* tokens reference paths that don't exist
+// anywhere in this token tree, so those CSS vars never get generated —
+// every var() below was silently falling back to its literal fallback value,
+// and that fallback had been copy-pasted from the --sm variant, so the base
+// (unmodified) .tels-btn was rendering at "small" size everywhere, and
+// .tels-btn--lg (used throughout the public MFE's hero/CTA buttons) didn't
+// exist at all. Fixed with the literal values directly, same convention
+// _public.scss already uses for spacing/sizing (colors still go through
+// --pgn-color-btn-* tokens below, which do resolve correctly).
+.tels-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+  // Beat Paragon reboot `a:hover { text-decoration: underline }` when
+  // .tels-btn is an <a> / React Router <Link>.
+  --pgn-typography-link-decoration-base: none;
+  --pgn-typography-link-decoration-hover: none;
+  text-decoration: none;
+  font-family: inherit;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &--primary {
+    background: var(--pgn-color-btn-bg-primary);
+    color: var(--pgn-color-btn-text-primary) !important;
+    border-color: var(--pgn-color-btn-border-primary);
+
+    &:hover {
+      background: var(--pgn-color-btn-hover-bg-primary);
+      border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-hover-bg-primary));
+      color: var(--pgn-color-btn-hover-text-primary) !important;
+      text-decoration: none;
+    }
+  }
+
+  &--ghost,
+  &--outline {
+    background: var(--pgn-color-bg-base, var(--pgn-color-white));
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    border-color: var(--pgn-color-btn-border-outline-primary);
+
+    &:hover {
+      background: var(--pgn-color-btn-bg-primary);
+      color: var(--pgn-color-btn-text-primary) !important;
+      border-color: var(--pgn-color-btn-border-primary);
+      text-decoration: none;
+    }
+  }
+
+  &--sm {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  &--lg {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.tels-header {
+  background: var(--pgn-color-bg-base, var(--pgn-color-white));
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.tels-header__row {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  height: 72px;
+}
+
+.tels-header__logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.tels-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+
+  a,
+  .tels-header__nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--pgn-color-text-base) !important;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+
+    &:hover,
+    &.active {
+      color: var(--pgn-color-primary-base) !important;
+      border-bottom-color: var(--pgn-color-primary-base);
+    }
+  }
+}
+
+.tels-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tels-header__user {
+  position: relative;
+}
+
+.tels-header__user-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1px solid var(--pgn-color-light-500, #E5E5E5);
+  border-radius: var(--pgn-size-border-radius-base, 8px);
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--pgn-color-text-base);
+  cursor: pointer;
+}
+
+.tels-header__user-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 180px;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  background: var(--pgn-color-bg-base, var(--pgn-color-white));
+  border: 1px solid var(--pgn-color-light-500, #E5E5E5);
+  border-radius: var(--pgn-size-border-radius-base, 8px);
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+  z-index: 50;
+
+  a {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    color: var(--pgn-color-text-base);
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      background: var(--pgn-color-light-100, #F9FAFB);
+      color: var(--pgn-color-primary-base);
+    }
+  }
+}
+
+.tels-header__mobile {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: 0;
+  font-size: 1.25rem;
+  color: var(--pgn-color-text-base);
+  cursor: pointer;
+}
+
+.tels-header__mobile-panel {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .tels-header__nav,
+  .tels-header__actions {
+    display: none;
+  }
+
+  .tels-header__mobile {
+    display: inline-flex;
+  }
+
+  .tels-header__mobile-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem var(--pgn-spacing-grid-gutter-width) 1.5rem;
+    border-top: 1px solid var(--pgn-color-chrome-border);
+    background: var(--pgn-color-bg-base, var(--pgn-color-white));
+
+    a:not(.tels-btn) {
+      padding: 0.5rem 0;
+      color: var(--pgn-color-text-base) !important;
+      text-decoration: none;
+      font-weight: 500;
+
+      &.active,
+      &:hover {
+        color: var(--pgn-color-primary-base) !important;
+      }
+    }
+
+    .tels-btn {
+      align-self: flex-start;
+    }
+  }
+}
+
+[data-paragon-theme-variant="dark"] {
+  .tels-header {
+    background: var(--pgn-color-bg-base);
+    border-bottom-color: var(--pgn-color-light-base, #374151);
+  }
+
+  .tels-header__user-menu {
+    background: var(--pgn-color-bg-base);
+    border-color: var(--pgn-color-light-base, #374151);
+  }
+}
