@@ -18,6 +18,8 @@ Then: `make build` → hard-refresh.
 | **Heading color** | `themes/light/components/text/headings.json` | `color.headings.base` |
 | **Page max-width** | `core/components/container/max-width.json` | `size.container.max-width.xl` |
 | **L / R padding** | `core/global/spacing.json` | `spacing.grid.gutter-width` (pad = half) |
+| **Footer bg / link / muted / border** | `themes/light/global/color.json` (+ dark) | `color.footer.*` → `--pgn-color-footer-*` |
+| **Footer text** | same | `color.text.footer` → `--pgn-color-text-footer` |
 
 Applied by: `overrides/_layout.scss` + `overrides/_typography.scss`  
 Icons (`.fa`) stay FontAwesome — never set `* { font-family }`.
@@ -55,8 +57,11 @@ Changing Layer 1 `color.primary.base` updates solid-primary when it links `{colo
 | Class | File |
 |-------|------|
 | `a`, `.btn-link` | `themes/light/components/link/colors.json` → `link.base` |
+| Link underline (reboot `a` / `a:hover`) | `themes/light/components/link/decoration.json` → `--pgn-typography-link-decoration-*` |
 | `.pgn__hyperlink.inline-link` (Authn mailto, etc.) | same → **`link.inline.base`** (Paragon default is info blue) |
 | `.alert-link` / links inside Alert messages | same inline/base tokens via `overrides/_links.scss` + `_authn.scss` |
+
+**Buttons never underline:** keep decoration hover as `underline` for real links. `.btn:not(.btn-link)` and `.tels-btn` scope `--pgn-typography-link-decoration-hover` to `none` in `overrides/_buttons.scss`, `overrides/_links.scss`, and `_header.scss` (Paragon reboot `a:hover` would otherwise underline `<a class="tels-btn">` / `<Link className="tels-btn">`).
 
 SCSS: `overrides/_links.scss` · Authn parent map: `_authn.scss`
 
@@ -87,7 +92,7 @@ SCSS: `overrides/_links.scss` · Authn parent map: `_authn.scss`
 | Kind | Class | File / SCSS |
 |------|-------|-------------|
 | A — Paragon JSX menu | `.dropdown-menu`, `.dropdown-item` | `themes/light/components/dropdown/colors.json` + `overrides/_dropdown.scss` |
-| B — native `<select>` | `select.form-control` + `option` | primary + `form/input.json` + `overrides/_selects.scss` |
+| B — native `<select>` | `select.form-control`, `.tels-form select`, `.tels-discovery select`, `.tels-results-head select`, `select.tels-select` + `option` | primary + `form/input.json` + `overrides/_selects.scss` (`appearance: base-select` + option:checked/hover → `--pgn-color-primary-base`) |
 
 ### Alert / Badge / Chip / Navbar / Modal / Toast
 
@@ -130,11 +135,12 @@ Still present for runtime: TinyMCE (uses primary/button/form vars; `.tox-tinymce
 
 ## Layer 3 — MFE pages (layout only)
 
-Only when a page needs parent alignment. No new colors.
+Only when a page needs parent alignment. Shared site chrome (`.tels-footer`, later `.tels-header`) is styled here from Layer 1 footer tokens — see [`docs/branding/header-footer-rules.md`](../docs/branding/header-footer-rules.md). Markup/i18n live in `tutor-tels-theme-plugins`, not in MFE repos.
 
 | File | Use when |
 |------|----------|
-| `_header.scss` / `_footer.scss` | Shared chrome width; header language select + dark-mode switch + **user-dropdown size** (`--pgn-*` form/button tokens); Discussions uses LearningHeader slots |
+| `_header.scss` / `_footer.scss` | Shared chrome width + `.tels-footer*` (bg/text/links from `--pgn-color-footer-*`); header language select + dark-mode switch + **user-dropdown size** (`--pgn-*` form/button tokens); Discussions uses LearningHeader slots |
+| `_public.scss` | `frontend-app-public` page bodies (Home, Courses, Course About, About, Contact, Privacy, Terms) — hero/card/section/stats/legal classes ported from the Lovable "tels-bright" reference; colors from `color.primary.hover/soft`, `color.chrome.*`, `color.marketing.accent` (+ existing `color.text.*`); see [`docs/branding/TOKEN_MAP.md`](../docs/branding/TOKEN_MAP.md) |
 | `_catalog.scss` | Catalog home hero (light primary gradient + welcome card), `/catalog/courses`, course cards, course about |
 | `_learning.scss` | Learning header, instructor bar, `<main>` tabs/buttons/links |
 | `_discussion.scss` | Discussion + TinyMCE dialogs |

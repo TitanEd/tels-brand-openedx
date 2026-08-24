@@ -5,8 +5,8 @@
       "family": {
         "sans": {
           "serif": {
-            "$value": "Pacifico, cursive",
-            "$description": "★ BRAND FONT STACK — edit this array to change typeface site-wide. NOTE: must be a comma-separated STRING, not a JSON array — style-dictionary deep-merges arrays index-by-index against @openedx/paragon's base token, silently leaking its fallback fonts (Segoe UI, Roboto, sans-serif, ...) back in and defeating the override. A string replaces the base value wholesale."
+            "$value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Inter\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+            "$description": "★ BRAND FONT STACK — edit this string to change typeface site-wide. Must be a comma-separated STRING (not a JSON array)."
           }
         },
         "base": {
@@ -28,8 +28,8 @@
       },
       "size": {
         "base": {
-          "$value": "1.125rem",
-          "$description": "UI label: Body font size → --pgn-typography-font-size-base"
+          "$value": "1rem",
+          "$description": "UI label: Body font size → --pgn-typography-font-size-base. Matches Lovable's body text (16px, no override) — was Paragon's stock 1.125rem/18px, changed platform-wide per product decision, not just for the public MFE."
         },
         "h1": {
           "base": {

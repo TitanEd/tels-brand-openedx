@@ -14,6 +14,14 @@
       "light": {
         "$value": "#2A2220",
         "$description": "Primary-tinted surface for row/trigger hover on dark"
+      },
+      "hover": {
+        "$value": "#FF7A57",
+        "$description": "Marketing primary hover on dark surfaces → --pgn-color-primary-hover (best-effort — no dark Lovable reference)"
+      },
+      "soft": {
+        "$value": "#2A2220",
+        "$description": "Marketing primary tint surface on dark → --pgn-color-primary-soft (best-effort — no dark Lovable reference)"
       }
     },
     "light": {
@@ -28,10 +36,60 @@
         "$description": "Dark mode page background."
       }
     },
+    "chrome": {
+      "border": {
+        "$value": "#344054",
+        "$description": "Marketing chrome + public page borders on dark → --pgn-color-chrome-border (best-effort — no dark Lovable reference)"
+      },
+      "surface-subtle": {
+        "$value": "#1D2939",
+        "$description": "Marketing chrome + public page subtle surface on dark → --pgn-color-chrome-surface-subtle (best-effort)"
+      },
+      "surface-warm": {
+        "$value": "#1D2939",
+        "$description": "Public page warm surface on dark → --pgn-color-chrome-surface-warm (best-effort)"
+      },
+      "text-muted": {
+        "$value": "#98A2B3",
+        "$description": "Marketing chrome muted text/icons on dark → --pgn-color-chrome-text-muted"
+      }
+    },
+    "marketing": {
+      "accent": {
+        "$value": "#818CF8",
+        "$description": "Public page secondary accent on dark → --pgn-color-marketing-accent (best-effort)"
+      }
+    },
     "text": {
       "base": {
         "$value": "#F9FAFB",
         "$description": "Dark mode body text."
+      },
+      "secondary": {
+        "$value": "#D0D5DD",
+        "$description": "Secondary body text on dark → --pgn-color-text-secondary (best-effort)"
+      },
+      "footer": {
+        "$value": "#F9FAFB",
+        "$description": "Footer body text on dark footer band → --pgn-color-text-footer"
+      }
+    },
+    "footer": {
+      "bg": {
+        "$value": "#1D2939",
+        "$description": "Site footer background → --pgn-color-footer-bg"
+      },
+      "link": {
+        "$value": "#D0D5DD",
+        "$description": "Footer link color → --pgn-color-footer-link"
+      },
+      "muted": {
+        "$value": "#98A2B3",
+        "$description": "Footer muted / copyright text → --pgn-color-footer-muted"
+      },
+      "border": {
+        "$value": "#344054",
+        "$description": "Footer dividers and social rings → --pgn-color-footer-border"
       }
     }
   }

@@ -20,7 +20,7 @@
           "$description": "Container max-width lg → --pgn-size-container-max-width-lg"
         },
         "xl": {
-          "$value": "1600px",
+          "$value": "1240px",
           "$description": "MAIN page max-width (change this) → --pgn-size-container-max-width-xl"
         }
       }
