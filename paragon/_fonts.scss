@@ -1,5 +1,8 @@
 // Optional @font-face for self-hosted brand fonts.
-// Example (uncomment + add files under paragon/fonts/):
+// Put files in paragon/fonts/. `make build` copies them to dist/fonts/ so
+// url("./fonts/…") in dist/core.css resolves when MFEs import @edx/brand.
+//
+// Example:
 //
 // @font-face {
 //   font-family: "Inter";

@@ -11,6 +11,7 @@ Then: `make build` → hard-refresh.
 |---------------|------|-----|
 | **Primary color** | `themes/light/global/color.json` | `color.primary.base` |
 | **Font family** | `core/global/typography.json` | `typography.font.family.sans.serif` |
+| **Self-hosted font file** | `paragon/fonts/` + `_fonts.scss` | `@font-face`; `make build` copies → `dist/fonts/` |
 | **Body font size** | same | `typography.font.size.base` |
 | **H1 size** | same | `typography.font.size.h1.base` |
 | **H2 size** | same | `typography.font.size.h2.base` |
