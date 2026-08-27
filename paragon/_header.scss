@@ -484,3 +484,299 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     background-color: var(--pgn-color-primary-base) !important;
   }
 }
+
+// ---------------------------------------------------------------------------
+// LAYER 3 — Marketing chrome (public MFE): .tels-container / .tels-btn* /
+// .tels-header* — Template B (Harvard-PLL / tels-mirror). Markup:
+// tutor-tels-theme-plugins TelsHeader.jsx (tels_header slot). No search bar —
+// tels-mirror's own header form is intentionally not ported (product decision).
+// ---------------------------------------------------------------------------
+
+.tels-container {
+  @include tels-container;
+}
+
+// Buttons — sharp corners, uppercase bold UI-font label (tels-mirror
+// .btn-primary / .btn-outline). Radius/letterspacing kept literal (bespoke
+// marketing display values, not tied to Layer 1's generic --pgn-size-btn-*
+// scale — see docs/branding/TOKEN_MAP.md for the Layer-1-vs-literal split).
+.tels-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.3rem;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+  text-decoration: none;
+
+  &--primary {
+    background: var(--pgn-color-primary-base);
+    color: var(--pgn-color-white) !important;
+    border-color: var(--pgn-color-primary-base);
+
+    &:hover {
+      background: var(--pgn-color-primary-hover);
+      border-color: var(--pgn-color-primary-hover);
+      color: var(--pgn-color-white) !important;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: var(--pgn-color-text-base) !important;
+    border-color: var(--pgn-color-text-base);
+
+    &:hover {
+      background: var(--pgn-color-text-base);
+      color: var(--pgn-color-white) !important;
+    }
+  }
+
+  &--inverse {
+    background: transparent;
+    color: var(--pgn-color-white) !important;
+    border-color: rgba(255, 255, 255, 0.6);
+
+    &:hover {
+      background: var(--pgn-color-white);
+      color: var(--pgn-color-chrome-header-dark) !important;
+    }
+  }
+
+  &--sm {
+    padding: 0.55rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  &--lg {
+    padding: 0.9rem 1.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+.tels-link {
+  color: var(--pgn-color-primary-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--pgn-color-primary-hover);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Header — sticky, scroll/route-reactive (transparent-over-hero on Home →
+// solid dark on scroll; solid dark on Catalog/Subject/School; white
+// elsewhere), centered logo, hamburger → full-bleed dark "Browse by Subject
+// Area" mega-menu, "View all courses" pill. State classes are toggled by
+// TelsHeader.jsx (isDark / scrolled / menuOpen), not by CSS alone.
+// ---------------------------------------------------------------------------
+
+.tels-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background: transparent;
+  color: var(--pgn-color-white);
+  transition: background-color 0.2s, color 0.2s;
+
+  &--light {
+    background: var(--pgn-color-white);
+    color: var(--pgn-color-text-base);
+  }
+
+  &--dark {
+    background: var(--pgn-color-chrome-header-dark);
+    color: var(--pgn-color-white);
+  }
+}
+
+.tels-header__row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  // Matches the live pll.harvard.edu .site-header (padding: 1rem 0, height
+  // driven by content — not a fixed row height like tels-mirror used).
+  padding: 1rem 0;
+}
+
+.tels-header__start {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tels-header__menu-btn {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  // Matches the live pll.harvard.edu .navbar-toggler-icon (35px × 30px).
+  svg {
+    width: 2.1875rem;
+    height: 1.875rem;
+  }
+}
+
+.tels-header__view-all {
+  display: none;
+  align-items: center;
+  height: 44px;
+  padding: 0 1.25rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid currentColor;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+
+  @media (min-width: 768px) {
+    display: inline-flex;
+  }
+
+  .tels-header--light & {
+    &:hover {
+      background: var(--pgn-color-text-base);
+      color: var(--pgn-color-white);
+      border-color: var(--pgn-color-text-base);
+    }
+  }
+
+  .tels-header--dark &,
+  .tels-header:not(.tels-header--light) & {
+    &:hover {
+      background: var(--pgn-color-white);
+      color: var(--pgn-color-chrome-header-dark);
+    }
+  }
+}
+
+.tels-header__logo {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+
+  // Matches the live pll.harvard.edu .navbar-brand img (41px below 64em, 57px
+  // at/above 64em — noticeably bigger than tels-mirror's own 40px/44px).
+  img {
+    height: 41px;
+    width: auto;
+    object-fit: contain;
+
+    @media (min-width: 64em) {
+      height: 57px;
+    }
+  }
+
+  // Light header state: brand logo is a light/transparent PNG designed for
+  // dark backgrounds, so invert it to read on white — same trick tels-mirror
+  // itself uses (style={{ filter: 'invert(1) brightness(0)' }}).
+  .tels-header--light & img {
+    filter: invert(1) brightness(0);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Subject mega-menu — full-bleed dark panel under the header when open.
+// ---------------------------------------------------------------------------
+
+.tels-header__menu {
+  background: var(--pgn-color-chrome-header-dark);
+  color: var(--pgn-color-white);
+}
+
+.tels-header__menu-inner {
+  padding: 1.5rem 0 4rem;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 0 6rem;
+  }
+}
+
+.tels-header__menu-title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--pgn-color-white);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  @media (min-width: 768px) {
+    font-size: 2.75rem;
+  }
+}
+
+.tels-header__subjects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tels-header__subject-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.1rem;
+  color: var(--pgn-color-white) !important;
+
+  // Matches tels-mirror's Header.tsx mega-menu subject Icon (size={20}).
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.9;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Mobile: hide "View all courses" pill (hamburger + logo only); mega-menu
+// subject grid already collapses to 1 column above.
+// ---------------------------------------------------------------------------
+@media (max-width: 767px) {
+  .tels-header__view-all {
+    display: none !important;
+  }
+}

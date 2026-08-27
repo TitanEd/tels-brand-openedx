@@ -1,17 +1,21 @@
 {
-  "$description": "LAYER 1 — GLOBAL FONT. Change brand typeface HERE only. Cascades via --pgn-typography-font-family-* + overrides/_typography.scss. Do not set font-family on * (breaks .fa icons).",
+  "$description": "LAYER 1 — GLOBAL FONT, Template B (Harvard-PLL / tels-mirror). Change brand typeface HERE only. Cascades via --pgn-typography-font-family-* + overrides/_typography.scss. Do not set font-family on * (breaks .fa icons).",
   "typography": {
     "font": {
       "family": {
         "sans": {
           "serif": {
-            "$value": "Pacifico, cursive",
-            "$description": "★ BRAND FONT STACK — edit this array to change typeface site-wide. NOTE: must be a comma-separated STRING, not a JSON array — style-dictionary deep-merges arrays index-by-index against @openedx/paragon's base token, silently leaking its fallback fonts (Segoe UI, Roboto, sans-serif, ...) back in and defeating the override. A string replaces the base value wholesale."
+            "$value": "\"Merriweather\", Georgia, serif",
+            "$description": "★ BRAND FONT STACK — edit this string to change typeface site-wide. Must be a comma-separated STRING (not a JSON array). tels-mirror is serif-first: html/body/h1-h4 all default to Merriweather (key name kept as 'sans.serif' for parity with existing Layer-2 references — it holds whatever the body typeface is, not literally a sans font here)."
           }
         },
         "base": {
           "$value": "{typography.font.family.sans.serif}",
           "$description": "Body / UI font → --pgn-typography-font-family-base (links to sans.serif above)"
+        },
+        "ui": {
+          "$value": "\"Manrope\", \"Inter\", ui-sans-serif, system-ui, sans-serif",
+          "$description": "UI chrome font (buttons, nav, uppercase labels, filter bar) → --pgn-typography-font-family-ui. tels-mirror's second family (--font-sans) — body copy/headings stay serif, only interactive chrome uses this."
         },
         "monospace": {
           "$value": [
@@ -28,8 +32,8 @@
       },
       "size": {
         "base": {
-          "$value": "1.125rem",
-          "$description": "UI label: Body font size → --pgn-typography-font-size-base"
+          "$value": "1rem",
+          "$description": "UI label: Body font size → --pgn-typography-font-size-base. 16px, matches tels-mirror's unstyled body text."
         },
         "h1": {
           "base": {

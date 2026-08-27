@@ -11,7 +11,7 @@ footer.tutor-container,
 }
 
 footer.footer,
-footer[role="contentinfo"]:not(.tutor-container) {
+footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
@@ -19,5 +19,76 @@ footer[role="contentinfo"]:not(.tutor-container) {
   > .container,
   > .container-xl {
     @include tels-content-width;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Marketing footer (public MFE) — Template B (Harvard-PLL / tels-mirror).
+// Markup: tutor-tels-theme-plugins IndigoFooter.jsx (indigo_footer slot).
+// Structure measured directly from the live pll.harvard.edu <footer
+// class="site-footer">, NOT from tels-mirror's own Footer.tsx (which
+// invents a richer CTA+blurb / explore-links+social / logo+tagline+contact
+// footer that the real site doesn't have): 3 asymmetric columns — CTA button
+// only / legal links only (no visible column heading — Drupal's own
+// <h2 class="visually-hidden">) / site logo only. No social icons, no
+// contact block, no bottom copyright bar — the real footer has none.
+// ---------------------------------------------------------------------------
+
+.tels-footer {
+  background: var(--pgn-color-footer-bg);
+  color: var(--pgn-color-text-footer);
+  width: 100%;
+
+  a:not(.tels-btn) {
+    color: var(--pgn-color-footer-link);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--pgn-color-primary-base);
+    }
+  }
+}
+
+.tels-footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+
+  // Foundation's medium-6 large-4 / medium-6 large-4 / medium-12 large-3
+  // large-offset-1 — approximated as 4/4/(1 empty)/3 twelfths.
+  @media (min-width: 40em) {
+    grid-template-columns: repeat(2, 1fr) 3fr;
+  }
+
+  @media (min-width: 64em) {
+    grid-template-columns: 4fr 4fr 1fr 3fr;
+  }
+}
+
+.tels-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.tels-footer__brand {
+  text-align: left;
+  grid-column: -2 / -1;
+
+  @media (min-width: 64em) {
+    text-align: right;
+  }
+}
+
+.tels-footer__logo img {
+  height: 48px;
+
+  @media (min-width: 64em) {
+    margin-left: auto;
   }
 }

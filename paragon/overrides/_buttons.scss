@@ -82,15 +82,26 @@ a.btn.btn-outline-primary,
 // has no :hover rule to apply.
 // ---------------------------------------------------------------------------
 .btn:not(.btn-link) {
+  // Keep solid/outline buttons from inheriting Paragon reboot link underline
+  // (a:hover uses --pgn-typography-link-decoration-hover).
+  --pgn-typography-link-decoration-base: none;
+  --pgn-typography-link-decoration-hover: none;
   color: var(--pgn-btn-color, var(--pgn-color-body-base));
   background-color: var(--pgn-btn-bg, transparent);
   border-color: var(--pgn-btn-border-color, transparent);
+  text-decoration: none;
 
   &:not(:disabled, .disabled) {
     &:hover {
       color: var(--pgn-btn-hover-color, var(--pgn-color-body-base));
       background-color: var(--pgn-btn-hover-bg, transparent);
       border-color: var(--pgn-btn-hover-border-color, transparent);
+      text-decoration: none;
+    }
+
+    &:focus,
+    &:active,
+    &.active {
       text-decoration: none;
     }
 

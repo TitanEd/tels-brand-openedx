@@ -1,5 +1,5 @@
 {
-  "$description": "LAYER 1 — PAGE MAX-WIDTH (all MFEs). Edit size.container.max-width.xl to change main content width everywhere. Applied by tels-content-width in paragon/overrides/_layout.scss + paragon/_header.scss / _footer.scss.",
+  "$description": "LAYER 1 — PAGE MAX-WIDTH (all MFEs), Template B (Harvard-PLL / tels-mirror). Edit size.container.max-width.xl to change main content width everywhere. Applied by tels-content-width in paragon/overrides/_layout.scss + paragon/_header.scss / _footer.scss.",
   "size": {
     "container": {
       "max-width": {
@@ -20,8 +20,12 @@
           "$description": "Container max-width lg → --pgn-size-container-max-width-lg"
         },
         "xl": {
-          "$value": "1600px",
-          "$description": "MAIN page max-width (change this) → --pgn-size-container-max-width-xl"
+          "$value": "1187px",
+          "$description": "MAIN page max-width (change this) → --pgn-size-container-max-width-xl. Drives Learning/Discussion/Catalog/headers/footers platform-wide — do NOT repoint this to Harvard's real-site width, or every non-marketing MFE silently gets wider too. tels-mirror .container-pll (an approximation of pll.harvard.edu, not identical)."
+        },
+        "public": {
+          "$value": "1420px",
+          "$description": "PUBLIC MARKETING SITE ONLY max-width → --pgn-size-container-max-width-public. Measured directly from the live pll.harvard.edu .grid-container (max-width: 88.75rem). Used only by .tels-container (paragon/overrides/_layout.scss tels-container mixin) — the public-site header/footer/page-body shell. Deliberately decoupled from size.container.max-width.xl so this widening doesn't ripple into Learning/Studio/Discussion/etc."
         }
       }
     }

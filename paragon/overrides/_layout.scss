@@ -22,6 +22,36 @@
   box-sizing: border-box;
 }
 
+// Marketing / public chrome (.tels-container) — measured from the live
+// pll.harvard.edu .grid-container: max-width 88.75rem (1420px), responsive
+// L/R padding 1.25rem → 2.5rem (≥40em) → 3.75rem (≥81.25em). Deliberately its
+// own token (size.container.max-width.public), not size.container.max-width.xl
+// — that one drives Learning/Discussion/Catalog/headers/footers platform-wide
+// and must stay untouched by this public-site-only widening.
+@mixin tels-container {
+  max-width: var(--pgn-size-container-max-width-public);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--pgn-spacing-grid-gutter-width);
+  padding-right: var(--pgn-spacing-grid-gutter-width);
+  box-sizing: border-box;
+
+  @media (min-width: 40em) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  @media (min-width: 81.25em) {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+.tels-container {
+  @include tels-container;
+}
+
 $tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 
 // --- Shared shells (no .container-xl inside, or neutralize nested one) ---

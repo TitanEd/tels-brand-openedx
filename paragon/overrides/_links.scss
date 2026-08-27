@@ -39,10 +39,26 @@ button.btn-link,
   }
 }
 
-a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more) {
+// Exclude marketing chrome nav + .tels-btn action links (Register must keep white label).
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link) {
   color: $tels-link;
 
   &:hover {
     color: $tels-link-hover;
+  }
+}
+
+// Action buttons rendered as <a> / <Link> must never pick up reboot link underline.
+a.tels-btn,
+a.btn:not(.btn-link),
+.tels-btn {
+  --pgn-typography-link-decoration-base: none;
+  --pgn-typography-link-decoration-hover: none;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
   }
 }
