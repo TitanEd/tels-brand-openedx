@@ -35,18 +35,16 @@
 // .studio-header layout (pgn__action-row toolbar, course-title-lockup) with
 // a different DOM shape: the logo class lands directly on the <img>, not on
 // a wrapping <a> around it like the standard site-header-desktop markup.
-// Match _header.scss's own 135px figure so the logo doesn't jump size going
+// Match _header.scss's own 60px height so the logo doesn't jump size going
 // into/out of Studio (e.g. "View course in: Studio" / "View live").
 #root .studio-header img.logo {
-  height: auto !important;
-  width: 135px !important;
+  height: 60px !important;
+  width: auto !important;
 }
 
 // .studio-header's own stock CSS hardcodes `height: 3.75rem` (60px) — sized
-// for its own default (small) logo. Our logo.png is a 3:2 image, so at
-// 135px wide it renders 90px tall — taller than that fixed height — and
-// gets clipped instead of the header just growing to fit it. Remove the
-// fixed height so the header sizes itself to its content instead.
+// for its own default (small) logo. Keep height: auto on the header chrome
+// so padding/content can still grow the bar without clipping the logo.
 #root .studio-header {
   height: auto !important;
 }
