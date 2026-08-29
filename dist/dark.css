@@ -2683,15 +2683,6 @@ html {
   font-family: var(--pgn-typography-font-family-base);
 }
 
-body {
-  font-family: var(--pgn-typography-font-family-base);
-  font-size: var(--pgn-typography-font-size-base);
-  color: var(--pgn-color-body-base, var(--pgn-color-text-base));
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
 h1, .h1 {
   font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
   font-size: var(--pgn-typography-font-size-h1-base);
@@ -8898,4 +8889,97 @@ footer#footer ul a:hover,
 
 .textbook-form {
   border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+.pb-3.container > #main-content {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.pb-3.container #main-content > .py-4:has(> .nav.nav-tabs) {
+  border-bottom: solid 1px #eaeaea;
+  padding-bottom: 0 !important;
+}
+
+.pb-3.container #main-content .nav.nav-tabs {
+  border-bottom: none;
+  margin: 0 0 -1px;
+}
+.pb-3.container #main-content .nav.nav-tabs .nav-link {
+  margin-bottom: 0;
+  background: none !important;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  color: var(--pgn-color-nav-tabs-base-link-text, var(--pgn-color-gray-700)) !important;
+}
+.pb-3.container #main-content .nav.nav-tabs .nav-link:hover {
+  background-color: var(--pgn-color-light-400) !important;
+}
+.pb-3.container #main-content .nav.nav-tabs .nav-link:hover:not(.active) {
+  border-bottom: none !important;
+}
+.pb-3.container #main-content .nav.nav-tabs .nav-link:focus, .pb-3.container #main-content .nav.nav-tabs .nav-link.active {
+  font-weight: var(--pgn-typography-font-weight-normal);
+  color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-500)) !important;
+  border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-500)) !important;
+}
+
+.pb-3.container #main-content > .container-mw-md.container-fluid {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.pb-3.container #main-content > .container-mw-md.container-fluid > a.ml-n4\.5 {
+  margin-left: 0 !important;
+}
+
+main[data-testid=main] > .py-4.container-fluid {
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+  padding-bottom: 0 !important;
+}
+
+.review-modal .pgn__modal-body-content {
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+}
+.review-modal .pgn__modal-header {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.review-modal .pgn__modal-header .pgn__modal-title {
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+}
+#paragon-portal-root .review-modal.pgn__modal-fullscreen.pgn__modal-dark .pgn__modal-close-container {
+  inset-inline-end: max(var(--pgn-spacing-modal-header-padding-y), (100% - var(--pgn-size-container-max-width-xl)) / 2 + var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+}
+.review-modal .review-actions.pgn__action-row {
+  padding-left: max(var(--pgn-spacing-grid-gutter-width) * 0.5, (100% - var(--pgn-size-container-max-width-xl)) / 2 + calc(var(--pgn-spacing-grid-gutter-width) * 0.5)) !important;
+  padding-right: max(var(--pgn-spacing-grid-gutter-width) * 0.5, (100% - var(--pgn-size-container-max-width-xl)) / 2 + calc(var(--pgn-spacing-grid-gutter-width) * 0.5)) !important;
+  box-sizing: border-box;
 }

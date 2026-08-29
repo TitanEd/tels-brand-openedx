@@ -1,0 +1,30 @@
+// LAYER 3 — Admin Console MFE (platform AuthZ / admin tooling, staff-only)
+// Values only via var(--pgn-*). No new colors — see CONTROLS.md.
+//
+// Verified against src/authz-module/components/AuthZLayout.tsx:
+//   import { StudioHeader } from '@edx/frontend-component-header';
+//   <StudioHeader number={..} org={..} title={..} isHiddenMainMenu />
+//   <AuthZTitle {...props} /> {children}
+//   (no footer is rendered by this MFE)
+//
+// Already covered, no rules needed here:
+//   Header  → StudioHeader with `isHiddenMainMenu`, the exact same component
+//             + mode Studio's own "home" header uses — covered by the
+//             `.studio-header` rules in _header.scss (logo sizing/padding,
+//             `.row.flex-nowrap.ml-4` left-inset fix, content-width container,
+//             user-dropdown size + avatar icon).
+//   Buttons / permission tables / role cards (PermissionTable, RoleCard,
+//   TableControlBar, TableFooter) are stock Paragon components, themed
+//   automatically via Layer 1/2 `--pgn-*` tokens (card radius, button kits,
+//   Paragon DataTable).
+//
+// NOT yet covered — needs a product decision, not guessed here:
+//   AuthZLayout renders `{children}` with no wrapping `.container`/width
+//   constraint, so page body width isn't run through the shared
+//   `tels-content-width` box (overrides/_layout.scss) the way most other
+//   MFEs' page bodies are. If parent alignment is wanted once real screens
+//   are in front of design/product, scope a selector here the same way
+//   _authoring.scss does for Studio's course-outline cards.
+//
+// Add page-specific rules below once a real screen needs to diverge from the
+// shared chrome above (mirror _account.scss / _gradebook.scss).
