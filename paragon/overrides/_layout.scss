@@ -40,6 +40,23 @@
 
 $tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 
+// Same content column as tels-content-width above, but as PADDING only — for
+// an element with its own full-bleed background (a colored header/toolbar
+// strip) where max-width would clip that background instead of just the
+// content. Element stays 100% wide; only its content is pushed in via padding.
+@mixin tels-content-inset {
+  padding-left: max($tels-gutter-x, calc((100% - var(--pgn-size-container-max-width-xl)) / 2 + #{$tels-gutter-x})) !important;
+  padding-right: max($tels-gutter-x, calc((100% - var(--pgn-size-container-max-width-xl)) / 2 + #{$tels-gutter-x})) !important;
+  box-sizing: border-box;
+}
+
+// Reset the browser default `body { margin: 8px }` (visible before an app's
+// own Bootstrap reboot/CSS loads, or on MFE shells that don't load reboot at
+// all) so no MFE ever shows a stray inset around its full-bleed header/footer.
+body {
+  margin: 0 !important;
+}
+
 // --- Shared shells (no .container-xl inside, or neutralize nested one) ---
 #courseTabsNavigation,
 .header-action-bar + .d-flex.flex-row.position-relative {

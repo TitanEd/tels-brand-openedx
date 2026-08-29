@@ -1,0 +1,98 @@
+// LAYER 3 — ORA Grading MFE (Enhanced Staff Grader, instructor-only)
+// Values only via var(--pgn-*). No new colors — see CONTROLS.md.
+//
+// Verified against src/App.jsx:
+//   import { LearningHeader as Header } from '@edx/frontend-component-header';
+//   import { FooterSlot } from '@edx/frontend-component-footer';
+//   <Header courseTitle=.../> <main data-testid="main"><ListView/></main> <FooterSlot/>
+//
+// Already covered, no rules needed here:
+//   Header  → LearningHeader renders `.learning-header`, same markup/class
+//             as the Learning MFE — covered by _header.scss.
+//   Footer  → shared FooterSlot markup, covered by _footer.scss.
+//   Buttons / forms / cards inside the submission list + grading panel are
+//   stock Paragon components, themed automatically via Layer 1/2 `--pgn-*`
+//   tokens (card radius, button kits, form/search inputs).
+//
+// Content width — corrected after live screenshot comparison (2026-08-29):
+// main's content wrapper is `<div class="py-4 container-fluid">` (real
+// Bootstrap `.container-fluid`, no max-width). Originally left alone here as
+// "edge-to-edge by design", but side-by-side against Learning/Communications
+// it's visibly wrong: the shared `.learning-header` above it IS constrained
+// to the site's standard 1600px content box, so the table content below
+// renders flush against the browser edge while the header stays inset —
+// header and body no longer line up. Constrain it to the same box.
+main[data-testid="main"] > .py-4.container-fluid {
+  @include tels-content-width;
+  // Beats core's `.py-4` padding-bottom !important — no gap needed here.
+  padding-bottom: 0 !important;
+}
+//
+// ---------------------------------------------------------------------------
+// Grading review modal (opened from "Start grading") — verified via DOM:
+//   .pgn__modal.pgn__modal-fullscreen.pgn__modal-dark.review-modal
+//     .pgn__modal-header > h2.pgn__modal-title
+//     .review-actions.pgn__action-row  → .btn-outline-primary "Show Rubric",
+//       .btn-primary "Start grading", .btn-icon-primary prev/next, badge
+//     .pgn__modal-body-content .response-display .pgn__card.pgn__card-light
+// Every element here is a stock Paragon component (Modal / Button / Badge /
+// Card / ActionRow) already reading the same shared --pgn-* tokens as the
+// rest of the site — colors need no page-specific override. `.pgn__modal-
+// fullscreen` intentionally has no max-width on the DIALOG itself (that's
+// the point of "fullscreen": the dark toolbar strip and backdrop should
+// still span the viewport); `.pgn__modal-dark`'s dark chrome is a deliberate
+// always-dark toolbar variant (independent of site light/dark mode), same
+// category as card bg/border staying Paragon-stock — not a themed surface,
+// see CONTROLS.md "Not part of this system".
+//
+// Content width — the toolbar row and the two-card reading content
+// (response + rubric) had no width cap of their own: `.review-actions` sits
+// directly under the dialog, and `.pgn__modal-body-content`'s response card
+// is `.p-0.col` (zeroes its own padding) with the rubric card as a bare
+// sibling div with no grid column class at all — a markup quirk in the MFE
+// itself we can't fix without touching its code. Give both rows the same
+// standard content box (max-width + gutter) every other MFE page uses, so
+// the toolbar buttons and the cards line up under one shared width instead
+// of hugging the raw modal edges.
+//
+// `.pgn__modal-body-content` has no background of its own, so it gets
+// `tels-content-width` directly. `.pgn__modal-header` and `.review-actions
+// .pgn__action-row` DO carry their own full-bleed background — max-width on
+// those would clip it — so only their content is constrained instead: the
+// title + close button are inset to the column's edges, and review-actions
+// gets `tels-content-inset` (padding-only, background stays full-bleed).
+// ---------------------------------------------------------------------------
+.review-modal {
+  .pgn__modal-body-content {
+    @include tels-content-width;
+  }
+
+  .pgn__modal-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    .pgn__modal-title {
+      @include tels-content-width;
+    }
+  }
+
+  // ORA grading's own App.scss sets `right: 1rem !important` via a selector
+  // with `#paragon-portal-root` — an ID, which always beats a class-only
+  // selector. Matching that needs an ID too; stacked with real classes
+  // already on this dialog to clear its specificity outright.
+  #paragon-portal-root &.pgn__modal-fullscreen.pgn__modal-dark .pgn__modal-close-container {
+    // Floor = Paragon's original inset; widens on wide viewports to match
+    // the content column's right edge.
+    inset-inline-end: max(
+      var(--pgn-spacing-modal-header-padding-y),
+      calc((100% - var(--pgn-size-container-max-width-xl)) / 2 + var(--pgn-spacing-grid-gutter-width) * 0.5)
+    ) !important;
+  }
+
+  .review-actions.pgn__action-row {
+    @include tels-content-inset;
+  }
+}
+
+// Add page-specific rules below once a real screen needs to diverge from the
+// shared chrome above (mirror _account.scss / _gradebook.scss).
