@@ -21,7 +21,8 @@ Then: `make build` → hard-refresh.
 | **L / R padding** | `core/global/spacing.json` | `spacing.grid.gutter-width` (pad = half) |
 
 Applied by: `overrides/_layout.scss` + `overrides/_typography.scss`  
-Icons (`.fa`) stay FontAwesome — never set `* { font-family }`.
+Icons (`.fa`) stay FontAwesome — never set `* { font-family }`.  
+`overrides/_layout.scss` also zeroes the browser default `body { margin: 8px }` globally (every MFE/LMS page).
 
 ---
 
@@ -142,6 +143,11 @@ Only when a page needs parent alignment. No new colors.
 | `_gradebook.scss` | Gradebook search / selects |
 | `_learner-dashboard.scss` | My Courses — Refine popover overflow, filter chips, buttons/links |
 | `_account.scss` / `_authn.scss` / `_authoring.scss` | When those shells diverge |
+| `_communications.scss` | Bulk email tool (instructor-only) — shares Learning's header/footer; course-tabs bar flattened to match Learning's underline look (real Paragon `.nav-tabs`, not the underline style); content widened from the MFE's own "md" cap to standard site width |
+| `_ora-grading.scss` | Enhanced Staff Grader (instructor-only) — shares Learning's header/footer; content was a stray edge-to-edge `.container-fluid` (didn't line up under the inset header) — constrained to the standard content width |
+| `_admin-console.scss` | Platform AuthZ / admin tooling (staff-only) — shares Studio's header; no footer; content width not yet constrained (documented, not guessed) |
+
+**Staff-only MFEs** (Gradebook, Communications, ORA Grading, Admin Console) get the exact same Layer 1/2 tokens and shared header/footer chrome as public MFEs — nothing in this system distinguishes public vs. internal. What used to gate them was `tutorindigo`'s `indigo_styled_mfes` list (controls the `@edx/brand` npm install → logo/favicon only, not colors/layout); all four are now included there too.
 
 ---
 

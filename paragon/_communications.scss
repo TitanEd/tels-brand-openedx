@@ -1,0 +1,141 @@
+// LAYER 3 — Communications MFE (bulk email tool, instructor-only)
+// Values only via var(--pgn-*). No new colors — see CONTROLS.md.
+//
+// Verified against src/components/page-container/PageContainer.jsx:
+//   <Header className="learning-header" .../>   from @edx/frontend-component-header
+//   <div className="pb-3 container"><main id="main-content">{children}</main></div>
+//   <FooterSlot />
+//
+// Already covered, no rules needed here:
+//   Header  → `.learning-header` rules in _header.scss (logo size, main-nav
+//             radius/gap, user-dropdown size + avatar icon, language select +
+//             dark-mode toggle) — same component/class as the Learning MFE.
+//   Footer  → shared FooterSlot markup, covered by _footer.scss.
+//   Width   → plain Bootstrap `.container`, already constrained + gutter
+//             padded by the global `.container` rules in
+//             overrides/_layout.scss (Layer 1 max-width/spacing tokens).
+//   Buttons / forms / alerts in the email composer are stock Paragon
+//   components, themed automatically via Layer 1/2 `--pgn-*` tokens.
+//
+// ---------------------------------------------------------------------------
+// Double-container gutter — `overrides/_layout.scss` gives BOTH `.container`
+// (the outer `.pb-3.container`) AND bare `#main-content` (the `<main>` right
+// inside it) their own max-width + gutter padding, since #main-content is
+// matched by that same global rule regardless of class. Nested this way,
+// content gets gutter-padded twice before reaching the tabs/panel — the same
+// "don't double-constrain a nested container" issue _header.scss and
+// _layout.scss already call out and fix for Learning's own `.container-xl`
+// nested inside `.learning-header` / `#courseTabsNavigation`. Same fix here.
+// ---------------------------------------------------------------------------
+.pb-3.container > #main-content {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+// ---------------------------------------------------------------------------
+// Course tabs bar (Course / Progress / Dates / Discussion / Teams / Instructor)
+// Verified DOM: <div class="pb-3 container"><main id="main-content">
+//   <div class="py-4"><div class="nav nav-tabs">…<a class="nav-link …">
+//
+// Communications renders this bar with real Paragon `.nav-tabs` (boxed
+// active-tab fill + top corner radius). Learning renders the identical bar
+// with its own component (`@src/generic/tabs/Tabs`), which outputs plain
+// `<nav class="nav flex-nowrap nav-underline-tabs">` — no `.nav-tabs` class
+// at all, so none of Paragon's stock `.nav-tabs` box CSS ever reaches it.
+// Rules below are copied 1:1 (sizes, not just colors) from Learning's own
+// source so this is a pixel match, not an approximation:
+//   frontend-app-learning/src/index.scss              → `.nav-underline-tabs`
+//   frontend-app-learning/src/course-tabs/course-tabs-navigation.scss
+//     → `.course-tabs-navigation` (border) + `.nav a` hover states
+// Colors are swapped for our nav-tabs tokens (same semantic values Learning
+// itself resolves to — gray-700 / primary — since _learning.scss already
+// re-points Learning's own hardcoded --pgn-color-gray-700 / --pgn-color-
+// primary-500 to these same token names).
+// ---------------------------------------------------------------------------
+
+// Wrapper — Learning's `#courseTabsNavigation.course-tabs-navigation` puts a
+// hardcoded 1px #eaeaea rule here (never tokenized upstream either); Paragon
+// core's stock `.nav-tabs` puts its own 2px border-bottom directly on the bar
+// instead, which is what we're replacing.
+.pb-3.container #main-content > .py-4:has(> .nav.nav-tabs) {
+  border-bottom: solid 1px #eaeaea;
+  // Beats core's `.py-4` padding-bottom !important, same as _ora-grading.scss.
+  padding-bottom: 0 !important;
+}
+
+.pb-3.container #main-content .nav.nav-tabs {
+  // Paragon's own `.nav-tabs` rule (core.css) — must be beaten, not just left
+  // unset, since it's what's currently drawing the boxed look.
+  border-bottom: none;
+  margin: 0 0 -1px;
+
+  .nav-link {
+    // No padding/margin override here on purpose — Learning's own
+    // `.nav-link` doesn't set any either, both fall back to the same
+    // Bootstrap base `.nav-link` padding, so it already matches.
+    margin-bottom: 0; // cancel Paragon core's `calc(border-width * -1)`
+    background: none !important;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    color: var(--pgn-color-nav-tabs-base-link-text, var(--pgn-color-gray-700)) !important;
+
+    &:hover {
+      background-color: var(--pgn-color-light-400) !important;
+    }
+
+    // Learning's `.nav a:not(.active):hover` (course-tabs-navigation.scss)
+    // drops the border entirely on hover — only the truly active tab keeps
+    // a colored underline. Higher specificity than the `.active` rule below
+    // on purpose, so hover on other tabs doesn't paint a second underline.
+    &:hover:not(.active) {
+      border-bottom: none !important;
+    }
+
+    &:focus,
+    &.active {
+      font-weight: var(--pgn-typography-font-weight-normal);
+      color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-500)) !important;
+      border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-500)) !important;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Page body width — BulkEmailTool.jsx wraps its content in a `.container-mw-md
+// .container-fluid` (capped at the "md" token), nested one level inside the
+// already-centered/padded `.pb-3.container` (Layer 1 `.container` rules in
+// overrides/_layout.scss). Neutralize this inner container's own width/gutter
+// instead of stacking a second constrained box inside the outer one — same
+// pattern _header.scss already uses for `.learning-header > .container-xl`.
+// Result: the form/table content fills the standard site content width
+// (same as every other MFE page), not a narrower "md" column.
+//
+// Padding is left alone on purpose: the form inside uses real Bootstrap
+// `.row`/`.col` markup, and `.row`'s own negative margin needs this
+// container's gutter padding (from the global `.container-fluid` rule below)
+// to cancel against — zero it here and every `.row` bleeds past this box.
+// ---------------------------------------------------------------------------
+.pb-3.container #main-content > .container-mw-md.container-fluid {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+// "Back to Instructor Dashboard" link ships with `ml-n4.5` (-2rem), which
+// overshoots this container's 12px gutter padding above and hangs the link
+// past the content column's left edge. Cancel the breakout.
+.pb-3.container #main-content > .container-mw-md.container-fluid > a.ml-n4\.5 {
+  margin-left: 0 !important;
+}
+
+// Add page-specific rules below only when a Communications screen needs to
+// diverge from the shared chrome/layout above (mirror _account.scss /
+// _gradebook.scss for the pattern).
