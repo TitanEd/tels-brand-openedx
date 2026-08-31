@@ -61,15 +61,20 @@
 // it. Broad selector so any current or future variant of this is covered.
 #root header .logo {
   height: auto !important;
+  top: 0 !important;
 }
 
 // Logo's own vertical padding, and nav-links matched to the same figure —
 // same rhythm as the logo means the header's total height can't drift
 // between MFEs even if their surrounding layout differs.
 // Learning has no .nav-container — same padding on `.learning-header .logo`.
+// Studio puts `.logo` on the <img> and stock uses 1rem vertical padding —
+// force the same .6rem (10.8px) top/bottom as site/learning headers.
 #root .site-header-desktop .container-fluid .nav-container .logo,
 #root .site-header-mobile .container-fluid .nav-container .logo,
-#root header.learning-header .logo {
+#root header.learning-header .logo,
+#root .studio-header .logo,
+#root .studio-header img.logo {
   padding: .6rem 0 !important;
 }
 
@@ -132,6 +137,47 @@
   }
 }
 
+// Content / Settings / Tools = Studio's main-nav equivalent (site-header uses
+// borderless `.nav-link`s). Stock StudioHeader.scss painted outline borders
+// white so they vanished on the white bar; Layer 2 outline !important made
+// them look like full outline buttons and no longer match other MFEs.
+// Keep primary label + radius; drop the chrome. User menu stays outline below.
+#root .studio-header [data-testid="desktop-menu"] .dropdown-toggle.btn.btn-outline-primary,
+#root .studio-header [data-testid="desktop-menu"] .btn.btn-outline-primary {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: var(--pgn-size-form-input-height-base) !important;
+  height: var(--pgn-size-form-input-height-base) !important;
+  max-height: var(--pgn-size-form-input-height-base) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: var(--pgn-spacing-btn-padding-x-base, 1rem) !important;
+  padding-right: var(--pgn-spacing-btn-padding-x-base, 1rem) !important;
+  font-size: var(--pgn-typography-btn-font-size-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: 1 !important;
+  color: var(--pgn-color-btn-text-outline-primary, var(--pgn-color-primary-base)) !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-width: var(--pgn-size-btn-border-width, 1px) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+
+  &:hover:not(:disabled):not([aria-disabled="true"]),
+  &:focus:not(:disabled),
+  &[aria-expanded="true"] {
+    color: var(--pgn-color-btn-text-outline-primary, var(--pgn-color-primary-base)) !important;
+    // NOT `--pgn-color-bg-active` — that name looks like a safe custom
+    // property with `light-300` as fallback, but Paragon core already
+    // defines it (`--pgn-color-bg-active: var(--pgn-color-primary-500)`,
+    // used for pagination/checkbox/dropdown-active fills). A defined var's
+    // fallback never applies, so hover bg was resolving to primary — same
+    // color as the text above, making the label invisible on hover/focus.
+    background-color: var(--pgn-color-light-300) !important;
+    border-color: transparent !important;
+  }
+}
+
 // Studio home header (isHiddenMainMenu) wraps the logo in
 // `Row.flex-nowrap.ml-4` (HeaderBody.tsx) — extra left inset other MFEs
 // never apply. Course context already uses `m-0`. Zero ml-4 so logo L edge
@@ -147,10 +193,12 @@
   @include tels-content-width;
 }
 
-// Account menu + learning user dropdown — ONE shared size on every MFE.
+// Account menu + learning / Studio user dropdown — ONE shared size on every MFE.
 // Site header: .menu-trigger.btn.btn-outline-primary (avatar + name)
 // Learning / Discussions: .user-dropdown .dropdown-toggle.btn.btn-outline-primary
-// Must beat: older .6rem padding rules, Bootstrap pl-2/pr-3, fa-lg icon sizing.
+// Studio: #user-dropdown-menu (no .user-dropdown class; stock paints white border)
+// Must beat: older .6rem padding rules, Bootstrap pl-2/pr-3, fa-lg icon sizing,
+// and StudioHeader.scss `.btn-outline-primary { border-color: white }`.
 #root header.site-header-desktop .secondary-menu-container .menu-trigger,
 #root header.site-header-mobile .secondary-menu-container .menu-trigger,
 #root header.site-header-desktop .menu .menu-trigger,
@@ -162,7 +210,10 @@
 #root header .user-dropdown .dropdown-toggle.btn,
 #root header .user-dropdown .btn.btn-outline-primary,
 #root header .pgn__dropdown.user-dropdown .dropdown-toggle,
-#root header .pgn__dropdown .dropdown-toggle.btn.btn-outline-primary {
+#root header .pgn__dropdown .dropdown-toggle.btn.btn-outline-primary,
+#root .studio-header #user-dropdown-menu.btn,
+#root .studio-header #user-dropdown-menu.dropdown-toggle,
+#root .studio-header .pgn__action-row > .nav #user-dropdown-menu {
   box-sizing: border-box !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -179,6 +230,10 @@
   line-height: 1 !important;
   border-radius: var(--pgn-size-btn-border-radius-base, var(--pgn-size-border-radius-base)) !important;
   border-width: var(--pgn-size-btn-border-width, 1px) !important;
+  // Visible primary outline (Learning / site-header account). Beats Studio white.
+  border-color: var(--pgn-color-btn-border-outline-primary, var(--pgn-color-primary-base)) !important;
+  color: var(--pgn-color-btn-text-outline-primary, var(--pgn-color-primary-base)) !important;
+  background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
 }
 
 // ---------------------------------------------------------------------------
@@ -222,6 +277,112 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
   path {
     fill: currentColor !important;
+  }
+}
+
+// Studio user menu Avatar / img — Paragon ships a different default avatar
+// SVG via <img class="pgn__avatar">. Hide that img (do NOT absolute-position it —
+// that let the glyph float outside the button when the menu opened). Paint the
+// shared AvatarIcon on ::before as a normal flex item; caret stays on ::after.
+#root .studio-header #user-dropdown-menu.dropdown-toggle,
+#root .studio-header #user-dropdown-menu.btn {
+  position: relative;
+  // Keep icon + label + caret on one centered row at every viewport
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  // Do not overflow:hidden — it clips Paragon's rotated caret (::after)
+
+  &::before {
+    content: "" !important;
+    // Stay in the flex row — never absolute (Bootstrap/open state can shove abs
+    // pseudos outside the outline).
+    display: block !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    inset: auto !important;
+    transform: none !important;
+    float: none !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    min-width: 1.25rem !important;
+    min-height: 1.25rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 1.25rem !important;
+    align-self: center !important;
+    background-color: currentColor !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    -webkit-mask-image: $tels-header-avatar-icon;
+    mask-image: $tels-header-avatar-icon;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+
+  // Caret — same Paragon `.dropdown-toggle::after` as Content / Settings / Tools.
+  // Do NOT zero `transform` (needs rotate(135deg)) or the arrow looks broken/high.
+  &::after {
+    content: "" !important;
+    display: inline-block !important;
+    position: relative !important;
+    top: -.05rem !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: .45rem !important;
+    height: .45rem !important;
+    margin: 0 0 0 .5em !important;
+    margin-inline-start: .5em !important;
+    padding: 0 !important;
+    flex-shrink: 0;
+    align-self: center !important;
+    vertical-align: middle !important;
+    border: 0 !important;
+    border-style: solid !important;
+    border-width: .15rem .15rem 0 0 !important;
+    border-color: currentColor !important;
+    background: transparent !important;
+    transform: rotate(135deg) !important;
+  }
+}
+
+#root .studio-header #user-dropdown-menu .pgn__avatar,
+#root .studio-header #user-dropdown-menu .avatar,
+#root .studio-header #user-dropdown-menu img[data-testid="avatar-image"],
+#root .studio-header #user-dropdown-menu img[data-testid="avatar-icon"] {
+  // Fully remove Paragon avatar from layout + paint (beats pgn__avatar-sm)
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  position: static !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+// Open must not shove ::before absolute; keep Paragon caret transform intact
+#root .studio-header #user-dropdown-menu.dropdown-toggle[aria-expanded="true"],
+#root .studio-header #user-dropdown-menu.btn.show,
+#root .studio-header .dropdown.show #user-dropdown-menu {
+  &::before {
+    position: static !important;
+  }
+
+  &::after {
+    transform: rotate(135deg) !important;
+    top: -.05rem !important;
   }
 }
 
