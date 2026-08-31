@@ -167,7 +167,13 @@
   &:focus:not(:disabled),
   &[aria-expanded="true"] {
     color: var(--pgn-color-btn-text-outline-primary, var(--pgn-color-primary-base)) !important;
-    background-color: var(--pgn-color-bg-active, var(--pgn-color-light-300)) !important;
+    // NOT `--pgn-color-bg-active` — that name looks like a safe custom
+    // property with `light-300` as fallback, but Paragon core already
+    // defines it (`--pgn-color-bg-active: var(--pgn-color-primary-500)`,
+    // used for pagination/checkbox/dropdown-active fills). A defined var's
+    // fallback never applies, so hover bg was resolving to primary — same
+    // color as the text above, making the label invisible on hover/focus.
+    background-color: var(--pgn-color-light-300) !important;
     border-color: transparent !important;
   }
 }
