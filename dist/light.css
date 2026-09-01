@@ -5299,10 +5299,10 @@ button.btn-link:focus,
   color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
 }
 
-a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link) {
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link):not(.custom-header__nav-link) {
   color: var(--pgn-color-link-base, var(--pgn-color-primary-base));
 }
-a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link):hover {
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link):not(.custom-header__nav-link):hover {
   color: var(--pgn-color-link-hover, var(--pgn-color-primary-700));
 }
 
@@ -6121,7 +6121,8 @@ a.btn:not(.btn-link):active,
   font-size: 1rem;
 }
 
-.tels-header {
+.tels-header,
+.custom-header {
   background: var(--pgn-color-bg-base, var(--pgn-color-white));
   border-bottom: 1px solid var(--pgn-color-chrome-border);
   position: sticky;
@@ -6129,27 +6130,34 @@ a.btn:not(.btn-link):active,
   z-index: 40;
 }
 
-.tels-header__row {
+.tels-header__row,
+.custom-header__row {
   display: flex;
   align-items: center;
   gap: 1.75rem;
   height: 72px;
 }
 
-.tels-header__logo img {
+.tels-header__logo img,
+.custom-header__logo img {
   height: 40px;
   width: auto;
   display: block;
 }
 
-.tels-header__nav {
+.tels-header__nav,
+.custom-header__nav {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   flex: 1;
 }
 .tels-header__nav a,
-.tels-header__nav .tels-header__nav-link {
+.tels-header__nav .tels-header__nav-link,
+.tels-header__nav .custom-header__nav-link,
+.custom-header__nav a,
+.custom-header__nav .tels-header__nav-link,
+.custom-header__nav .custom-header__nav-link {
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--pgn-color-text-base) !important;
@@ -6159,22 +6167,33 @@ a.btn:not(.btn-link):active,
 }
 .tels-header__nav a:hover, .tels-header__nav a.active,
 .tels-header__nav .tels-header__nav-link:hover,
-.tels-header__nav .tels-header__nav-link.active {
+.tels-header__nav .tels-header__nav-link.active,
+.tels-header__nav .custom-header__nav-link:hover,
+.tels-header__nav .custom-header__nav-link.active,
+.custom-header__nav a:hover,
+.custom-header__nav a.active,
+.custom-header__nav .tels-header__nav-link:hover,
+.custom-header__nav .tels-header__nav-link.active,
+.custom-header__nav .custom-header__nav-link:hover,
+.custom-header__nav .custom-header__nav-link.active {
   color: var(--pgn-color-primary-base) !important;
   border-bottom-color: var(--pgn-color-primary-base);
 }
 
-.tels-header__actions {
+.tels-header__actions,
+.custom-header__actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.tels-header__user {
+.tels-header__user,
+.custom-header__user {
   position: relative;
 }
 
-.tels-header__user-toggle {
+.tels-header__user-toggle,
+.custom-header__user-toggle {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -6188,7 +6207,8 @@ a.btn:not(.btn-link):active,
   cursor: pointer;
 }
 
-.tels-header__user-menu {
+.tels-header__user-menu,
+.custom-header__user-menu {
   position: absolute;
   right: 0;
   top: calc(100% + 6px);
@@ -6202,19 +6222,22 @@ a.btn:not(.btn-link):active,
   box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
   z-index: 50;
 }
-.tels-header__user-menu a {
+.tels-header__user-menu a,
+.custom-header__user-menu a {
   display: block;
   padding: 0.5rem 0.9rem;
   color: var(--pgn-color-text-base);
   text-decoration: none;
   font-size: 0.9rem;
 }
-.tels-header__user-menu a:hover {
+.tels-header__user-menu a:hover,
+.custom-header__user-menu a:hover {
   background: var(--pgn-color-light-100, #F9FAFB);
   color: var(--pgn-color-primary-base);
 }
 
-.tels-header__mobile {
+.tels-header__mobile,
+.custom-header__mobile {
   display: none;
   margin-left: auto;
   background: none;
@@ -6224,19 +6247,24 @@ a.btn:not(.btn-link):active,
   cursor: pointer;
 }
 
-.tels-header__mobile-panel {
+.tels-header__mobile-panel,
+.custom-header__mobile-panel {
   display: none;
 }
 
 @media (max-width: 900px) {
   .tels-header__nav,
-  .tels-header__actions {
+  .tels-header__actions,
+  .custom-header__nav,
+  .custom-header__actions {
     display: none;
   }
-  .tels-header__mobile {
+  .tels-header__mobile,
+  .custom-header__mobile {
     display: inline-flex;
   }
-  .tels-header__mobile-panel {
+  .tels-header__mobile-panel,
+  .custom-header__mobile-panel {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -6244,24 +6272,30 @@ a.btn:not(.btn-link):active,
     border-top: 1px solid var(--pgn-color-chrome-border);
     background: var(--pgn-color-bg-base, var(--pgn-color-white));
   }
-  .tels-header__mobile-panel a:not(.tels-btn) {
+  .tels-header__mobile-panel a:not(.tels-btn),
+  .custom-header__mobile-panel a:not(.tels-btn) {
     padding: 0.5rem 0;
     color: var(--pgn-color-text-base) !important;
     text-decoration: none;
     font-weight: 500;
   }
-  .tels-header__mobile-panel a:not(.tels-btn).active, .tels-header__mobile-panel a:not(.tels-btn):hover {
+  .tels-header__mobile-panel a:not(.tels-btn).active, .tels-header__mobile-panel a:not(.tels-btn):hover,
+  .custom-header__mobile-panel a:not(.tels-btn).active,
+  .custom-header__mobile-panel a:not(.tels-btn):hover {
     color: var(--pgn-color-primary-base) !important;
   }
-  .tels-header__mobile-panel .tels-btn {
+  .tels-header__mobile-panel .tels-btn,
+  .custom-header__mobile-panel .tels-btn {
     align-self: flex-start;
   }
 }
-[data-paragon-theme-variant=dark] .tels-header {
+[data-paragon-theme-variant=dark] .tels-header,
+[data-paragon-theme-variant=dark] .custom-header {
   background: var(--pgn-color-bg-base);
   border-bottom-color: var(--pgn-color-light-base, #374151);
 }
-[data-paragon-theme-variant=dark] .tels-header__user-menu {
+[data-paragon-theme-variant=dark] .tels-header__user-menu,
+[data-paragon-theme-variant=dark] .custom-header__user-menu {
   background: var(--pgn-color-bg-base);
   border-color: var(--pgn-color-light-base, #374151);
 }

@@ -1,6 +1,6 @@
 // LAYER 3 — Public marketing MFE page bodies (frontend-app-public)
 // Markup: mfes/frontend-app-public/src/pages/** (page content only — no local
-//   header/footer; those are the shared .tels-header / .tels-footer chrome
+//   header/footer; those are the shared .custom-header / .tels-footer chrome
 //   already styled in _header.scss / _footer.scss, per docs/branding/header-footer-rules.md).
 // Source design: Lovable "tels-bright" project (github.com/Sonu-TitanEd/tels-bright,
 //   src/styles/app.scss). All colors below are ported 1:1 from that file but
@@ -11,7 +11,7 @@
 // gutter, heading scale); these are bespoke "hero/marketing display" classes,
 // distinct from the global <h1>-<h6> elements Layer 1's typography tokens govern.
 //
-// .tels-container, .tels-btn*, .tels-link, .tels-header*, .tels-footer* already
+// .tels-container, .tels-btn*, .tels-link, .custom-header* / .tels-header*, .tels-footer* already
 // exist (overrides/_layout.scss, _header.scss, _footer.scss) — not redefined here.
 
 .tels-eyebrow {

@@ -40,7 +40,7 @@ button.btn-link,
 }
 
 // Exclude marketing chrome nav + .tels-btn action links (Register must keep white label).
-a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link) {
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link):not(.custom-header__nav-link) {
   color: $tels-link;
 
   &:hover {
