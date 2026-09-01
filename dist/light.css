@@ -5497,7 +5497,11 @@ a.btn:not(.btn-link):active,
 }
 
 .site-header-desktop > .container-fluid,
-.site-header-mobile > .container-fluid {
+.site-header-mobile > .container-fluid,
+.custom-header > .tels-container,
+.tels-header > .tels-container,
+.learning-header > .container-xl,
+.learning-header > .container-xl.py-2 {
   max-width: var(--pgn-size-container-max-width-xl) !important;
   width: 100%;
   margin-left: auto !important;
@@ -5507,17 +5511,9 @@ a.btn:not(.btn-link):active,
   box-sizing: border-box;
 }
 
-.learning-header > .container-xl,
 .learning-header > .container-xl.py-2 {
-  max-width: none !important;
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  box-sizing: border-box;
 }
 
 #root header.site-header-desktop .logo img,
@@ -6268,7 +6264,11 @@ a.btn:not(.btn-link):active,
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem var(--pgn-spacing-grid-gutter-width) 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    padding-left: max(var(--pgn-spacing-grid-gutter-width) * 0.5, (100% - var(--pgn-size-container-max-width-xl)) / 2 + calc(var(--pgn-spacing-grid-gutter-width) * 0.5)) !important;
+    padding-right: max(var(--pgn-spacing-grid-gutter-width) * 0.5, (100% - var(--pgn-size-container-max-width-xl)) / 2 + calc(var(--pgn-spacing-grid-gutter-width) * 0.5)) !important;
+    box-sizing: border-box;
     border-top: 1px solid var(--pgn-color-chrome-border);
     background: var(--pgn-color-bg-base, var(--pgn-color-white));
   }
@@ -6357,10 +6357,16 @@ a.btn:not(.btn-link):active,
   transform: rotate(180deg);
 }
 
+.dropdown-toggle:has(.tels-user-menu-toggle-chevron)::after {
+  display: none !important;
+  content: none !important;
+}
+
 footer.tutor-container,
 #footer.tutor-container,
 .wrapper-footer > footer.tutor-container,
-.wrapper-footer > #footer {
+.wrapper-footer > #footer,
+.tels-footer > .tels-container {
   max-width: var(--pgn-size-container-max-width-xl) !important;
   width: 100%;
   margin-left: auto !important;
@@ -9274,15 +9280,6 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   margin-bottom: var(--pgn-spacing-spacer-2);
 }
 
-#root .learning-header {
-  max-width: var(--pgn-size-container-max-width-xl) !important;
-  width: 100%;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
-  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
-  box-sizing: border-box;
-}
 #root .learning-header .logo {
   color: inherit;
 }

@@ -1,35 +1,32 @@
 // LAYER 3 — Shared site headers (all MFEs)
 // Width tokens: core/components/container/max-width.json + core/global/spacing.json
 // Applied via tels-content-width mixin from overrides/_layout.scss
-// .site-header-desktop / .site-header-mobile come from the ONE shared
-// @edx/frontend-component-header package — Catalog, Learner Dashboard,
-// Gradebook, Account, Authn, and Learning (wrapped in its own
-// .learning-header for width purposes below) all render the exact same
-// header markup, so a single rule here reaches every one of them. Studio
-// doesn't use this package (its own .studio-header, different markup
-// entirely) — matching logo size lives in _authoring.scss instead.
+// Native Open edX chrome: .site-header-desktop / .site-header-mobile
+// (Catalog, Authn, and any MFE still on frontend-component-header).
+// Tutor CustomHeader / public TelsHeader: .custom-header / .tels-header >
+// .tels-container — same max-width + half gutter as native.
+// Studio uses .studio-header (different markup) — width + logo in the
+// studio-header rules below and _authoring.scss.
 
-// Catalog / learner-dashboard / authn desktop header
+// Catalog / learner-dashboard / authn desktop header (native Open edX chrome)
 .site-header-desktop > .container-fluid,
-.site-header-mobile > .container-fluid {
+.site-header-mobile > .container-fluid,
+// CustomHeader / public TelsHeader — inner .tels-container is the same shell
+.custom-header > .tels-container,
+.tels-header > .tels-container,
+// LearningHeader fallback (Learning / Discussions / Communications / ORA).
+// Pad the INNER .container-xl, not <header>: Learning MFE CSS can override
+// max-width on the header itself, which left only a 12px viewport inset.
+.learning-header > .container-xl,
+.learning-header > .container-xl.py-2 {
   @include tels-content-width;
 }
 
-// Learning MFE header — width/L-R pad live on the parent `.learning-header`
-// (see _learning.scss). Do NOT also constrain this child or gutters double.
-// Global `.container-xl` padding from _layout.scss must be zeroed here.
-.learning-header > .container-xl,
+// Bootstrap `py-2` vertical pad — keep header height aligned with site-header.
+// L/R stay on tels-content-width above; only zero top/bottom.
 .learning-header > .container-xl.py-2 {
-  max-width: none !important;
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  // Bootstrap `py-2` vertical pad — keep header height aligned with site-header
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  box-sizing: border-box;
 }
 
 // Logo — same rendered size everywhere the shared header appears, so the
@@ -863,7 +860,10 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem var(--pgn-spacing-grid-gutter-width) 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    // Full-bleed panel (border spans the viewport); L/R matches native gutter.
+    @include tels-content-inset;
     border-top: 1px solid var(--pgn-color-chrome-border);
     background: var(--pgn-color-bg-base, var(--pgn-color-white));
 
@@ -976,4 +976,17 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   &.is-open {
     transform: rotate(180deg);
   }
+}
+
+// Bootstrap/Paragon auto-paints a caret via `.dropdown-toggle::after` on any
+// element with that class — this component only replaces the toggle
+// button's inner content (it doesn't own the <button> itself), so that
+// native caret was rendering right alongside this component's own chevron
+// SVG, showing two. Hide it specifically where this chevron is present,
+// rather than globally on every `.dropdown-toggle` (native toggles
+// elsewhere in the header — e.g. the studio user menu above — still need
+// their own `::after` caret).
+.dropdown-toggle:has(.tels-user-menu-toggle-chevron)::after {
+  display: none !important;
+  content: none !important;
 }
