@@ -135,7 +135,7 @@ Still present for runtime: TinyMCE (uses primary/button/form vars; `.tox-tinymce
 
 ## Layer 3 — MFE pages (layout only)
 
-Only when a page needs parent alignment. Shared site chrome (`.tels-footer`, later `.tels-header`) is styled here from Layer 1 footer tokens — see [`docs/branding/header-footer-rules.md`](../docs/branding/header-footer-rules.md). Markup/i18n live in `tutor-tels-theme-plugins`, not in MFE repos.
+Only when a page needs parent alignment. Shared site chrome (`.tels-footer`, `.custom-header`) is styled here from Layer 1 footer tokens — see [`docs/branding/header-footer-rules.md`](../docs/branding/header-footer-rules.md). Markup/i18n live in `tutor-tels-theme-plugins`, not in MFE repos.
 
 | File | Use when |
 |------|----------|
