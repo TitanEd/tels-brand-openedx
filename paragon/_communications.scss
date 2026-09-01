@@ -113,7 +113,7 @@
 // already-centered/padded `.pb-3.container` (Layer 1 `.container` rules in
 // overrides/_layout.scss). Neutralize this inner container's own width/gutter
 // instead of stacking a second constrained box inside the outer one — same
-// pattern _header.scss already uses for `.learning-header > .container-xl`.
+// nested-container rule as Learning's header inner `.container-xl`.
 // Result: the form/table content fills the standard site content width
 // (same as every other MFE page), not a narrower "md" column.
 //

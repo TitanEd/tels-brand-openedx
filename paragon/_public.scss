@@ -6,10 +6,10 @@
 //   src/styles/app.scss). All colors below are ported 1:1 from that file but
 //   read from --pgn-* design tokens instead of Lovable's own :root CSS vars —
 //   see docs/branding/TOKEN_MAP.md for the full Lovable → token mapping.
-// Layout/spacing/radius/shadow numbers are kept as literal px/rem to match the
-// Lovable reference pixel-for-pixel — only Layer 1 owns global sizing (max-width,
-// gutter, heading scale); these are bespoke "hero/marketing display" classes,
-// distinct from the global <h1>-<h6> elements Layer 1's typography tokens govern.
+// Layout/spacing/radius/shadow numbers for hero/marketing display classes are
+// kept as literal px/rem to match the Lovable reference pixel-for-pixel.
+// Page L/R padding is NOT literal — it comes from Layer 1 gutter via
+// `.tels-container` (`tels-content-width`, same half-gutter as native MFE shells).
 //
 // .tels-container, .tels-btn*, .tels-link, .custom-header* / .tels-header*, .tels-footer* already
 // exist (overrides/_layout.scss, _header.scss, _footer.scss) — not redefined here.

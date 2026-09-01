@@ -1,5 +1,5 @@
 {
-  "$description": "LAYER 1 — PAGE MAX-WIDTH (all MFEs). Edit size.container.max-width.xl to change main content width everywhere. Applied by tels-content-width in paragon/overrides/_layout.scss + paragon/_header.scss / _footer.scss.",
+  "$description": "LAYER 1 — PAGE MAX-WIDTH (all MFEs). Edit size.container.max-width.xl to change main content width everywhere. Applied by tels-content-width in paragon/overrides/_layout.scss (.container* + .tels-container) + paragon/_header.scss / _footer.scss.",
   "size": {
     "container": {
       "max-width": {

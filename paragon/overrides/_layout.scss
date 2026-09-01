@@ -2,7 +2,7 @@
 // Tokens defined in:
 //   core/components/container/max-width.json → size.container.max-width.xl
 //   core/global/spacing.json                 → spacing.grid.gutter-width (L/R pad = half)
-// Why: one place drives Learning, Discussion, Catalog, headers, footers.
+// Why: one place drives Learning, Discussion, Catalog, CustomHeader, footer, public.
 // Header/footer shells also call @include tels-content-width from MFE maps (_header/_footer).
 // Do NOT hardcode px for width/padding in MFE SCSS — change tokens above.
 
@@ -22,16 +22,12 @@
   box-sizing: border-box;
 }
 
-// Marketing / public chrome (.tels-container) — Lovable template shell:
-// max-width xl (1240px) + full gutter-width (24px) L/R padding per side.
+// Marketing / public chrome (.tels-container) — same box as native MFE shells.
+// CustomHeader, IndigoFooter, and public pages wrap content in this class.
+// Must be tels-content-width (half gutter + !important), not a second pad model,
+// or changing spacing.grid.gutter-width would miss those surfaces.
 @mixin tels-container {
-  max-width: var(--pgn-size-container-max-width-xl);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--pgn-spacing-grid-gutter-width);
-  padding-right: var(--pgn-spacing-grid-gutter-width);
-  box-sizing: border-box;
+  @include tels-content-width;
 }
 
 .tels-container {

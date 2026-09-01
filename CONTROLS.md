@@ -17,11 +17,11 @@ Then: `make build` → hard-refresh.
 | **H3 … H6** | same | `typography.font.size.h3…h6.base` |
 | **Heading color** | `themes/light/components/text/headings.json` | `color.headings.base` |
 | **Page max-width** | `core/components/container/max-width.json` | `size.container.max-width.xl` |
-| **L / R padding** | `core/global/spacing.json` | `spacing.grid.gutter-width` (pad = half) |
+| **L / R padding** | `core/global/spacing.json` | `spacing.grid.gutter-width` (pad = half via `tels-content-width` / `.tels-container`) |
 | **Footer bg / link / muted / border** | `themes/light/global/color.json` (+ dark) | `color.footer.*` → `--pgn-color-footer-*` |
 | **Footer text** | same | `color.text.footer` → `--pgn-color-text-footer` |
 
-Applied by: `overrides/_layout.scss` + `overrides/_typography.scss`  
+Applied by: `overrides/_layout.scss` (`.container*` + `.tels-container`) + `overrides/_typography.scss`. CustomHeader / IndigoFooter / public pages use the same half-gutter as native MFE shells.  
 Icons (`.fa`) stay FontAwesome — never set `* { font-family }`.
 
 ---

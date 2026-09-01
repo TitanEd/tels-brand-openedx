@@ -4,11 +4,12 @@
 // Width: max-width.json + spacing.json via tels-content-width
 // Rules: docs/branding/header-footer-rules.md
 
-// Legacy Tutor / Open edX footer shells (width only)
+// Legacy Tutor / Open edX footer shells + IndigoFooter inner column (width only)
 footer.tutor-container,
 #footer.tutor-container,
 .wrapper-footer > footer.tutor-container,
-.wrapper-footer > #footer {
+.wrapper-footer > #footer,
+.tels-footer > .tels-container {
   @include tels-content-width;
 }
 
