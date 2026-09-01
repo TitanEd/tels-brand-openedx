@@ -42,7 +42,7 @@
     },
     "primary": {
       "base": {
-        "$value": "#EB5939",
+        "$value": "#008000",
         "$description": "UI label: Primary \u2014 cascades to solid primary button bg and related primary uses"
       },
       "light": {
@@ -52,13 +52,13 @@
     },
     "secondary": {
       "base": {
-        "$value": "#EB5939",
+        "$value": "#008000",
         "$description": "UI label: Secondary"
       }
     },
     "brand": {
       "base": {
-        "$value": "#EB5939",
+        "$value": "#008000",
         "$description": "UI label: Brand"
       }
     },
