@@ -269,8 +269,6 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
   svg {
     display: block !important;
-    width: 1.25rem !important;
-    height: 1.25rem !important;
     color: inherit !important;
     fill: currentColor !important;
   }
@@ -880,5 +878,84 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   .tels-header__user-menu {
     background: var(--pgn-color-bg-base);
     border-color: var(--pgn-color-light-base, #374151);
+  }
+}
+
+// Custom header user-menu toggle (avatar + name + chevron) — inserted via
+// org.openedx.frontend.layout.header_desktop_user_menu_toggle.v1 by
+// tutor-tels-theme-plugins' CustomHeaderUserMenuDropdown.jsx, replacing the
+// native toggle's contents on account/gradebook/learner-dashboard/
+// discussions/communications/learning (see that plugin's plugin.py,
+// HEADER_USER_MENU_SLOTS, for which MFEs get it). It renders *inside* the
+// header package's own native `.dropdown-toggle.btn.btn-outline-primary`
+// button, so that button's own chrome (border, padding, hover state) still
+// comes from the rules above — only the avatar/name/chevron content itself
+// is styled here. Previously injected at runtime via a <style> tag in that
+// component; moved here so it ships with the rest of the header's design
+// tokens instead.
+//
+// Deliberately does NOT reuse the bare `.avatar` class — that already has a
+// `#root header .menu-trigger .avatar` rule above (native <Avatar> icon)
+// which would otherwise clobber this component's own sizing/background
+// regardless of specificity. Same box treatment as that native icon
+// (tels-header-user-icon-box, same 1.25rem — matches every other header
+// icon instead of inventing a separate size), reused here rather than
+// duplicated, so the two stay in sync.
+.tels-user-menu-toggle-avatar {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: cover;
+}
+
+.tels-user-menu-toggle-avatar-container {
+  @include tels-header-user-icon-box;
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  background-color: var(--pgn-color-light-400, #eaeaea) !important;
+
+  // Extra .pgn__icon wrapper span here (Paragon's <Icon> component) that the
+  // native rule above doesn't have to size through. Same explicit-size, all
+  // the way to the svg, !important treatment as that rule's own `svg` block
+  // — needed because Paragon's own core.css ships
+  // `.pgn__icon svg { width: 100%; height: 100%; }`, whose percentage sizing
+  // doesn't resolve reliably through this nested inline-flex chain
+  // (confirmed live in DevTools: the icon rendered outside its circle
+  // instead of filling it).
+  .pgn__icon {
+    display: block !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+
+    svg {
+      display: block !important;
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+      color: inherit !important;
+      fill: currentColor !important;
+    }
+  }
+}
+
+.tels-user-menu-toggle-name {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  color: var(--pgn-color-text-base, #1f2937);
+  text-transform: capitalize;
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tels-user-menu-toggle-chevron {
+  width: 0.85rem;
+  height: 0.85rem;
+  color: currentColor;
+  transform: rotate(0deg);
+  transition: transform 150ms ease;
+
+  &.is-open {
+    transform: rotate(180deg);
   }
 }

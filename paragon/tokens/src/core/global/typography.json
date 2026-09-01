@@ -5,7 +5,7 @@
       "family": {
         "sans": {
           "serif": {
-            "$value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Inter\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+            "$value": "Nunito Sans, sans-serif",
             "$description": "★ BRAND FONT STACK — edit this string to change typeface site-wide. Must be a comma-separated STRING (not a JSON array)."
           }
         },
