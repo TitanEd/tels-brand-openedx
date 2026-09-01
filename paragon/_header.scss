@@ -13,20 +13,27 @@
 .site-header-mobile > .container-fluid,
 // CustomHeader / public TelsHeader — inner .tels-container is the same shell
 .custom-header > .tels-container,
-.tels-header > .tels-container,
-// LearningHeader fallback (Learning / Discussions / Communications / ORA).
-// Pad the INNER .container-xl, not <header>: Learning MFE CSS can override
-// max-width on the header itself, which left only a 12px viewport inset.
-.learning-header > .container-xl,
-.learning-header > .container-xl.py-2 {
+.tels-header > .tels-container {
   @include tels-content-width;
 }
 
-// Bootstrap `py-2` vertical pad — keep header height aligned with site-header.
-// L/R stay on tels-content-width above; only zero top/bottom.
+// LearningHeader fallback (Learning / Discussions / Communications / ORA).
+// Width/L-R pad live on the parent `.learning-header` itself (_learning.scss)
+// — do NOT also constrain this inner child or the gutters double. Only zero
+// out this container's own width/margin/padding so it doesn't fight the
+// parent's box, and keep the vertical `py-2` zeroing for header-height parity
+// with site-header.
+.learning-header > .container-xl,
 .learning-header > .container-xl.py-2 {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  box-sizing: border-box;
 }
 
 // Logo — same rendered size everywhere the shared header appears, so the

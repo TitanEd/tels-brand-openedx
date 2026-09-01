@@ -161,9 +161,9 @@ $tels-learn-link-hover: var(--pgn-color-link-hover, var(--pgn-color-primary-700)
 
 #root {
   // ----- Header: user menu outline-primary -----
-  // Width/L-R pad: inner `.container-xl` in _header.scss (same as site-header).
-  // Do not tels-content-width this <header> — max-width/margin lose to MFE CSS.
   .learning-header {
+    @include tels-content-width;
+
     .logo {
       color: inherit;
     }
