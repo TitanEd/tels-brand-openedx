@@ -3,12 +3,12 @@
   "size": {
     "btn-icon": {
       "sm": {
-        "$value": "1.5rem",
-        "$description": "Icon button sm"
+        "$value": "1.75rem",
+        "$description": "Icon button sm → --pgn-size-btn-icon-sm"
       },
       "md": {
-        "$value": "2rem",
-        "$description": "Icon button md"
+        "$value": "2.25rem",
+        "$description": "Icon button md → --pgn-size-btn-icon-md"
       }
     }
   }

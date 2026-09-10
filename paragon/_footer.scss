@@ -39,12 +39,17 @@ footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
   color: var(--pgn-color-text-footer);
   width: 100%;
 
+  // !important — overrides.scss's global `a:not(.btn):not(.nav-link)...`
+  // link-color rule (overrides/_links.scss) has enough :not() clauses to
+  // out-specificity a plain `.tels-footer a` selector even though it loads
+  // later; same fix already applied to .tels-header__view-all for the same
+  // reason.
   a:not(.tels-btn) {
-    color: var(--pgn-color-footer-link);
-    text-decoration: none;
+    color: var(--pgn-color-footer-link) !important;
+    text-decoration: none !important;
 
     &:hover {
-      color: var(--pgn-color-primary-base);
+      color: var(--pgn-color-primary-base) !important;
     }
   }
 }
@@ -73,7 +78,7 @@ footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: var(--pgn-typography-font-size-base);
 }
 
 .tels-footer__brand {

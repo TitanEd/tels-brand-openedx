@@ -8,15 +8,25 @@
 
 .tels-eyebrow {
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--pgn-color-primary-base);
 }
 
+// Matches the Lovable mock's dominant section spacing (`py-14 md:py-16`,
+// used by Subject Areas / Trending / Featured Topics / Recently Added /
+// Starting Soon / Organizations). "Featured" alone uses a slightly taller
+// `py-16 md:py-[74px]` (4rem/74px) in the mock — close enough to this that
+// it isn't worth its own modifier.
 .tels-section {
-  padding: 4rem 0;
+  padding: 3.5rem 0;
+}
+@media (min-width: 768px) {
+  .tels-section {
+    padding: 4rem 0;
+  }
 }
 
 .tels-section--tight {
@@ -43,7 +53,7 @@
 
 .tels-section-header__title {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 2.5rem;
+  font-size: var(--pgn-typography-font-size-h1-base);
   font-weight: 400;
   line-height: 1.15;
   color: var(--pgn-color-text-base);
@@ -51,7 +61,7 @@
 }
 @media (min-width: 768px) {
   .tels-section-header__title {
-    font-size: 2.95rem;
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.21);
   }
 }
 
@@ -60,31 +70,55 @@
   color: var(--pgn-color-white);
 }
 
+// Matches the Lovable mock exactly — tels-mirror's SectionHeader viewAll
+// link is a solid primary-filled pill (px-6 py-4 text-[12px]), not the
+// outline/invert-on-hover treatment this previously had.
 .tels-view-all {
   display: inline-flex;
   align-items: center;
-  height: 3rem;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-btn-font-size-base);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border: 1px solid var(--pgn-color-text-base);
-  color: var(--pgn-color-text-base);
-  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  color: var(--pgn-color-white);
+  background: var(--pgn-color-primary-base);
+  white-space: nowrap;
 }
 .tels-view-all:hover {
-  background: var(--pgn-color-text-base);
+  background: var(--pgn-color-primary-hover);
   color: var(--pgn-color-white);
 }
 
+// Matches the Lovable mock exactly — tels-mirror's Home hero section
+// (`-mt-16 md:-mt-[70px]`). Correct now that .tels-header__row is a fixed
+// 64px/70px height (paragon/_header.scss) instead of auto-height — the two
+// numbers have to move together.
+// Background image — !important overrides the public MFE's own inline
+// style={{ backgroundImage: ... }} (tels-mirror's index.tsx bundles
+// src/assets/pll/pll-gates.webp, an actual photo of Harvard's campus gates —
+// wrong for a non-Harvard product). A plain inline style loses to an
+// !important rule in an external stylesheet, so this fully replaces it
+// without touching the MFE's own source. --pgn-tels-hero-background-image
+// is a documented override hook (same pattern as the Catalog MFE's
+// --catalog-home-page-banner-background-image) — set it via a comprehensive
+// theme / tutor config to swap the photo without another SCSS edit.
+// Default: a generic, brand-neutral collaborative-learning photo (Unsplash,
+// free to use, no attribution required) — no institution's name, logo, or
+// identifiable campus in the shot.
 .tels-hero {
   position: relative;
   min-height: 430px;
   margin-top: -64px;
   display: flex;
   align-items: center;
+  background-image: var(
+    --pgn-tels-hero-background-image,
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&auto=format&fit=crop')
+  ) !important;
   background-size: cover;
   background-position: center;
   color: var(--pgn-color-white);
@@ -102,48 +136,64 @@
   }
 }
 
+// Matches tels-mirror's Home hero container exactly (`pt-36 pb-12
+// md:pt-44 md:pb-16`) — the negative-margin pull-up above only clears the
+// header; this inner padding is what actually pushes the hero *text* down
+// into view (it's centered text, per the mock's `text-center`).
 .tels-hero__inner {
   position: relative;
   z-index: 1;
-  padding: 7rem 0 3rem;
+  padding: 9rem 0 3rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .tels-hero__inner {
+    padding: 11rem 0 4rem;
+  }
 }
 
 .tels-hero__title {
   font-family: var(--pgn-typography-font-family-base);
   font-weight: 400;
-  font-size: 3.55rem;
+  font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.45);
   line-height: 1.08;
   max-width: 1060px;
-  margin: 0 0 1rem;
+  // mx-auto in the mock — centers the max-width box itself (text-align on
+  // the parent above only centers the *text inside* it).
+  margin: 0 auto;
   color: var(--pgn-color-white);
 }
 @media (min-width: 768px) {
   .tels-hero__title {
-    font-size: 5.65rem;
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 2.31);
   }
 }
 
 .tels-hero__subtitle {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1.35rem;
+  font-size: var(--pgn-typography-font-size-h3-base);
   line-height: 1.4;
-  margin: 0 0 2rem;
+  // mt-6, no bottom margin in the mock — spacing to the CTA row below comes
+  // from .tels-hero__cta's own margin-top, not this element's bottom margin.
+  margin: 1.5rem 0 0;
   color: var(--pgn-color-white);
 }
 @media (min-width: 768px) {
   .tels-hero__subtitle {
-    font-size: 1.85rem;
+    font-size: var(--pgn-typography-font-size-h2-base);
   }
 }
 
 .tels-hero__cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 3.5rem;
 }
 
 .tels-hero__cta .tels-btn {
-  padding: 1.1rem 1.75rem;
+  padding: 1.25rem 1.75rem;
 }
 
 .tels-grid {
@@ -211,7 +261,7 @@
   gap: 0.5rem;
   flex-wrap: wrap;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -219,21 +269,21 @@
   margin-bottom: 0.5rem;
 }
 .tels-course-card__eyebrow a {
-  color: inherit;
+  color: var(--pgn-color-primary-base);
 }
 .tels-course-card__eyebrow a:hover {
-  color: var(--pgn-color-primary-base);
+  color: var(--pgn-color-primary-hover);
 }
 .tels-course-card__eyebrow svg {
   // Matches tels-mirror's CourseCard.tsx BookOpen/modality icons (size={13}).
-  width: 0.8125rem;
-  height: 0.8125rem;
+  width: var(--pgn-size-icon-xs);
+  height: var(--pgn-size-icon-xs);
   flex-shrink: 0;
 }
 
 .tels-course-card__title {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1.36rem;
+  font-size: var(--pgn-typography-font-size-h3-base);
   font-weight: 400;
   line-height: 1.3;
   margin: 0 0 1rem;
@@ -246,7 +296,7 @@
 }
 
 .tels-course-card__desc {
-  font-size: 0.875rem;
+  font-size: var(--pgn-typography-font-size-base);
   color: var(--pgn-color-text-secondary);
   line-height: 1.6;
   margin: 0 0 2rem;
@@ -265,7 +315,7 @@
   justify-content: space-between;
   gap: 0.5rem;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   font-weight: 600;
   text-transform: uppercase;
   color: var(--pgn-color-text-secondary);
@@ -297,7 +347,7 @@
 }
 
 .tels-trending-card__glyph {
-  font-size: 2.5rem;
+  font-size: var(--pgn-typography-font-size-h1-base);
   opacity: 0.9;
   color: var(--pgn-color-white);
 }
@@ -310,13 +360,13 @@
   justify-content: center;
   font-family: var(--pgn-typography-font-family-base);
   font-weight: 900;
-  font-size: 2rem;
+  font-size: var(--pgn-typography-font-size-h2-base);
   line-height: 0.95;
   color: var(--pgn-color-white);
 }
 @media (min-width: 640px) {
   .tels-trending-card__code {
-    font-size: 2.35rem;
+    font-size: var(--pgn-typography-font-size-h1-base);
   }
 }
 
@@ -349,14 +399,14 @@
   gap: 0.6rem;
   padding: 0.5rem 0;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.85rem;
+  font-size: var(--pgn-typography-font-size-h5-base);
   font-weight: 700;
   color: var(--pgn-color-primary-base) !important;
 }
 .tels-subject-grid a svg {
   // Matches tels-mirror's index.tsx home subject list Icon (size={15}).
-  width: 0.9375rem;
-  height: 0.9375rem;
+  width: var(--pgn-size-icon-sm);
+  height: var(--pgn-size-icon-sm);
   flex-shrink: 0;
 }
 .tels-subject-grid a:hover {
@@ -374,7 +424,7 @@
   border: 1px solid var(--pgn-color-chrome-border);
   border-radius: 999px;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.68rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -399,18 +449,18 @@
 
 .tels-stats__n {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 2.5rem;
+  font-size: var(--pgn-typography-font-size-h1-base);
   font-weight: 700;
 }
 @media (min-width: 768px) {
   .tels-stats__n {
-    font-size: 3.8rem;
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.55);
   }
 }
 
 .tels-stats__l {
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -469,7 +519,7 @@
 
 .tels-orgs-grid figcaption {
   margin-top: 0.4rem;
-  font-size: 0.65rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   color: var(--pgn-color-chrome-text-muted);
   text-align: center;
 }
@@ -530,14 +580,14 @@
 
 .tels-cta-photo h2 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 2.25rem;
+  font-size: var(--pgn-typography-font-size-h1-base);
   font-weight: 400;
   color: var(--pgn-color-white);
   margin: 0 0 1.5rem;
 }
 @media (min-width: 768px) {
   .tels-cta-photo h2 {
-    font-size: 3.8rem;
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.55);
   }
 }
 
@@ -561,7 +611,7 @@
 
 .tels-cta-band h2 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 2rem;
+  font-size: var(--pgn-typography-font-size-h2-base);
   font-weight: 700;
   margin: 0 0 1.5rem;
 }
@@ -580,15 +630,27 @@
   text-align: center;
 }
 
+// color: white — set explicitly, not left to inherit from .tels-email-signup.
+// The global `h2 { color: var(--pgn-color-headings-base) }` rule
+// (overrides/_typography.scss) sets color directly on every <h2>; a direct
+// declaration always wins over an inherited one regardless of specificity,
+// so relying on inheritance here rendered the default heading color instead
+// of white. Same underlying issue as the header/footer link-color fixes.
 .tels-email-signup__title {
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.95rem;
+  font-size: var(--pgn-typography-font-size-h3-base);
   font-weight: 700;
-  margin: 0 0 0.25rem;
+  color: var(--pgn-color-white) !important;
+  margin: 0 0 0.5rem;
+}
+@media (min-width: 768px) {
+  .tels-email-signup__title {
+    font-size: var(--pgn-typography-font-size-h2-base);
+  }
 }
 
 .tels-email-signup__subtitle {
-  font-size: 0.7rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   color: rgba(255, 255, 255, 0.9);
   margin: 0 0 1.25rem;
 }
@@ -607,7 +669,7 @@
   background: var(--pgn-color-white);
   color: var(--pgn-color-text-base);
   padding: 0.4rem 0.75rem;
-  font-size: 0.7rem;
+  font-size: var(--pgn-typography-form-input-font-size-base, var(--pgn-typography-font-size-base));
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -617,7 +679,7 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0.4rem 1rem;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.65rem;
+  font-size: var(--pgn-typography-btn-font-size-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -629,29 +691,71 @@
 
 .tels-email-signup__success {
   margin-top: 0.75rem;
-  font-size: 0.875rem;
+  font-size: var(--pgn-typography-font-size-base);
 }
 
-.tels-catalog-header {
-  background: var(--pgn-color-chrome-header-dark);
-  padding: 3.5rem 0 4rem;
+.tels-email-signup--light {
+  background: var(--pgn-color-chrome-surface-subtle);
+  color: var(--pgn-color-text-base);
+}
+.tels-email-signup--light .tels-email-signup__title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 400;
 }
 @media (min-width: 768px) {
-  .tels-catalog-header {
-    padding: 4rem 0 5rem;
+  .tels-email-signup--light .tels-email-signup__title {
+    font-size: var(--pgn-typography-font-size-h1-base);
+  }
+}
+.tels-email-signup--light .tels-email-signup__subtitle {
+  color: var(--pgn-color-text-secondary);
+  font-size: var(--pgn-typography-font-size-base);
+}
+.tels-email-signup--light .tels-email-signup__form input {
+  border: 1px solid var(--pgn-color-chrome-border);
+  padding: 0.75rem 1rem;
+  font-size: var(--pgn-typography-font-size-base);
+}
+.tels-email-signup--light .tels-email-signup__form button {
+  background: var(--pgn-color-primary-base);
+  border-color: var(--pgn-color-primary-base);
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--pgn-typography-btn-font-size-base);
+}
+
+// Matches tels-mirror's catalog.tsx exactly: the vertical padding
+// (pt-14 pb-16 md:pt-16 md:pb-20) belongs to the H1's own inner container,
+// not the outer dark section — .tels-filter-bar is a sibling that follows
+// it and must sit flush against the section's real bottom edge. Padding
+// used to live on .tels-catalog-header itself, which pushed the filter bar
+// up and left a gap of empty dark space below it before the section ended.
+.tels-catalog-header {
+  background: var(--pgn-color-chrome-header-dark);
+}
+
+.tels-catalog-header > .tels-container:first-child {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .tels-catalog-header > .tels-container:first-child {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
   }
 }
 
 .tels-catalog-header h1 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 2.8rem;
+  font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.15);
   font-weight: 400;
   color: var(--pgn-color-white);
   margin: 0;
 }
 @media (min-width: 768px) {
   .tels-catalog-header h1 {
-    font-size: 3.15rem;
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.29);
   }
 }
 
@@ -670,7 +774,7 @@
   height: 44px;
   padding: 0 1.25rem;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-btn-font-size-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -682,8 +786,13 @@
 }
 .tels-filter-trigger svg {
   // Matches tels-mirror's catalog.tsx ChevronDown icon (size={13}).
-  width: 0.8125rem;
-  height: 0.8125rem;
+  width: var(--pgn-size-icon-xs);
+  height: var(--pgn-size-icon-xs);
+  transition: transform var(--pgn-transition-collapse-height-duration, 0.35s)
+    var(--pgn-transition-collapse-height-timing-function, ease);
+}
+.tels-filter-trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
 .tels-filter-trigger:hover {
   color: var(--pgn-color-white);
@@ -698,12 +807,40 @@
   background: var(--pgn-color-primary-base);
 }
 
-.tels-filter-panel {
+// Catalog filter dropdown: clip wrapper stays mounted so open grows
+// top → bottom and close shrinks bottom → top (public MFE only).
+.tels-filter-panel-clip {
   position: absolute;
   top: calc(100% + 2px);
   left: 0;
   z-index: 30;
   min-width: 240px;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+      var(--pgn-transition-collapse-height-timing-function, ease),
+    visibility 0s linear var(--pgn-transition-collapse-height-duration, 0.35s);
+}
+.tels-filter-panel-clip.is-open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+      var(--pgn-transition-collapse-height-timing-function, ease),
+    visibility 0s linear 0s;
+}
+
+.tels-filter-panel {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tels-filter-panel__inner {
   max-height: 340px;
   overflow-y: auto;
   padding: 0.5rem 0;
@@ -712,13 +849,20 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .tels-filter-panel-clip,
+  .tels-filter-trigger svg {
+    transition: none;
+  }
+}
+
 .tels-filter-option {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   width: 100%;
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   color: var(--pgn-color-text-base);
   background: none;
   border: 0;
@@ -754,14 +898,14 @@
 }
 .tels-results-head h2 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1.35rem;
+  font-size: var(--pgn-typography-font-size-h3-base);
   font-weight: 400;
   margin: 0;
 }
 
 .tels-clear-filters {
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.85rem;
+  font-size: var(--pgn-typography-font-size-h5-base);
   font-weight: 700;
   color: var(--pgn-color-primary-base);
   background: none;
@@ -789,7 +933,7 @@
   background: var(--pgn-color-white);
   border: 1px solid rgba(0, 0, 0, 0.15);
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -803,8 +947,8 @@
 }
 .tels-chip svg {
   // Matches tels-mirror's catalog.tsx chip X icon (size={13}).
-  width: 0.8125rem;
-  height: 0.8125rem;
+  width: var(--pgn-size-icon-xs);
+  height: var(--pgn-size-icon-xs);
 }
 
 .tels-empty {
@@ -814,7 +958,7 @@
 }
 
 .tels-breadcrumb {
-  font-size: 0.875rem;
+  font-size: var(--pgn-typography-font-size-base);
   color: var(--pgn-color-text-secondary);
 }
 .tels-breadcrumb a {
@@ -840,22 +984,430 @@
 }
 .tels-page-header h1 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1.85rem;
+  font-size: var(--pgn-typography-font-size-h2-base);
   font-weight: 700;
   line-height: 1.25;
   margin: 0.5rem 0 0.75rem;
 }
 @media (min-width: 768px) {
   .tels-page-header h1 {
-    font-size: 2em;
+    font-size: var(--pgn-typography-font-size-h1-base);
   }
+}
+
+// Course about — Harvard PLL overlapping facts card.
+// One .tels-container grid: hero + extras in column 1, facts card in column 2
+// spanning both the colored band and the white body so it sits ON the hero
+// (no separate full-width facts section, no image/list gap).
+.tels-course-about {
+  overflow-x: clip;
+  // pll.harvard.edu .group-details image is 530px (16_9_medium); the card
+  // is that width so the photo and fact rows share one edge.
+  --tels-course-facts-width: 33.125rem;
+  --tels-course-facts-gap: calc(var(--pgn-spacing-spacer-base) * 2);
+}
+
+.tels-course-about__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  position: relative;
+}
+
+// Matches tels-mirror's course-header exactly: `bg-white border-b
+// border-[var(--border)]` — a plain white block with a hairline bottom
+// rule, not the dark/navy band this previously had (that was matched to
+// the real pll.harvard.edu site's course page, not the mock). Grid
+// placement (spans hero+extras, sits behind .tels-course-facts) is
+// unchanged — only the color.
+.tels-course-about__hero-band {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  z-index: 0;
+  pointer-events: none;
+  justify-self: start;
+  background: var(--pgn-color-white);
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.tels-course-hero {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 1;
+  color: var(--pgn-color-text-base);
+  padding: calc(var(--pgn-spacing-spacer-base) * 2.5) 0 0;
+  background: transparent;
+}
+@media (min-width: 768px) {
+  .tels-course-hero {
+    padding: calc(var(--pgn-spacing-spacer-base) * 2.75) 0 0;
+  }
+}
+// tels-mirror: `font-serif text-3xl md:text-[2em] font-bold` (30px → 32px,
+// no big responsive jump like the marketing hero has).
+.tels-course-hero h1 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--pgn-color-text-base);
+  margin: 0 0 1rem;
+  max-width: 48rem;
+}
+@media (min-width: 768px) {
+  .tels-course-hero h1 {
+    font-size: var(--pgn-typography-font-size-h2-base);
+  }
+}
+.tels-course-hero__teaser {
+  margin: 0;
+  max-width: 42rem;
+  font-size: var(--pgn-typography-font-size-h4-base);
+  line-height: 1.55;
+  color: var(--pgn-color-text-secondary);
+}
+.tels-course-hero__cta {
+  margin-top: calc(var(--pgn-spacing-spacer-base) * 1.5);
+}
+// User request: remove the outline "Learn More" (href="#enroll") CTA from
+// the course-detail hero entirely (it was rendering twice on the page).
+// Page markup is out of scope here (design-tokens/theme repo only), so
+// hidden via CSS by its href instead.
+a.tels-btn.tels-btn--outline[href="#enroll"] {
+  display: none !important;
+}
+
+// tels-mirror doesn't have a separate colored bar here at all — this row
+// (availability / price / modality / "Help me choose") is plain inline
+// text directly under the hero paragraph: `mt-6 flex flex-wrap items-center
+// gap-x-6 gap-y-2 text-sm`. Kept the full-bleed/edge-alignment mechanics
+// (this isn't wrapped in .tels-container) — only the color/background and
+// spacing changed to match.
+.tels-course-extras {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  z-index: 1;
+  color: var(--pgn-color-text-base);
+  background: transparent;
+  width: 100%;
+  max-width: 100%;
+  margin: calc(var(--pgn-spacing-spacer-base) * 1.5) 0 0;
+  padding: 0 0 calc(var(--pgn-spacing-spacer-base) * 1.5);
+  box-sizing: border-box;
+}
+.tels-course-extras__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--pgn-spacing-spacer-base) * 0.5) calc(var(--pgn-spacing-spacer-base) * 1.5);
+  align-items: center;
+  font-size: var(--pgn-typography-font-size-base);
+}
+.tels-course-extras__item {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--pgn-spacing-spacer-base) * 0.5);
+}
+.tels-course-extras__item svg,
+.tels-course-extras__help svg {
+  width: var(--pgn-size-icon-sm);
+  height: var(--pgn-size-icon-sm);
+  flex-shrink: 0;
+}
+.tels-course-extras__item--price {
+  font-weight: 700;
+  color: var(--pgn-color-primary-base);
+}
+.tels-course-extras__help {
+  display: inline-flex;
+  color: var(--pgn-color-primary-base) !important;
+  margin-left: 0.15rem;
+}
+.tels-course-extras__help:hover {
+  color: var(--pgn-color-primary-hover) !important;
+}
+
+.tels-course-facts {
+  grid-column: 1;
+  grid-row: 3;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 0 calc(var(--pgn-spacing-spacer-base) * 2);
+  background: var(--pgn-color-white);
+  // Matches tels-mirror's Details card exactly: `border border-[var(--border)]
+  // bg-white` — a plain 1px outline, no drop shadow.
+  border: 1px solid var(--pgn-color-chrome-border);
+}
+.tels-course-facts__media {
+  background: var(--pgn-color-chrome-surface-subtle);
+}
+.tels-course-facts__media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+}
+// Row layout matches tels-mirror's Details <dl>: `grid-cols-2 gap-2 py-2`,
+// divider between rows (divide-y), label muted/regular weight, value bold
+// and right-aligned (dt/dd below).
+.tels-course-fact {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, auto) minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+  padding: 0.5rem var(--pgn-spacing-grid-gutter-width);
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+  font-size: var(--pgn-typography-font-size-base);
+}
+.tels-course-fact:first-of-type {
+  padding-top: 1.25rem;
+}
+.tels-course-fact:last-child {
+  border-bottom: 0;
+}
+@media (max-width: 639px) {
+  .tels-course-fact {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+.tels-course-fact__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 400;
+  color: var(--pgn-color-text-secondary);
+  white-space: nowrap;
+}
+.tels-course-fact__label svg {
+  width: var(--pgn-size-icon-sm);
+  height: var(--pgn-size-icon-sm);
+  color: var(--pgn-color-text-secondary);
+  flex-shrink: 0;
+}
+.tels-course-fact__value {
+  color: var(--pgn-color-text-base);
+  font-weight: 600;
+  text-align: right;
+}
+.tels-course-fact__value a {
+  color: var(--pgn-color-primary-base);
+}
+// .tels-topic-chip already has its own pill shape (padding/border/
+// background, _public.scss further down) — but nothing was giving the
+// *container* wrap/gap, so the Topics field's chips ran together inline
+// with no spacing instead of wrapping as separate pills.
+.tels-course-fact__value:has(.tels-topic-chip) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+// Topics is a distinct block below the dt/dd rows in the mock (`mt-4 pt-4
+// border-t`, full-width, left-aligned label+chips) — not another right-
+// aligned label/value row like the rest. :has() singles it out since the
+// markup gives it no class of its own to hook.
+.tels-course-fact:has(.tels-topic-chips) {
+  grid-template-columns: 1fr;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pgn-color-chrome-border);
+  border-bottom: 0;
+}
+.tels-course-fact:has(.tels-topic-chips) .tels-course-fact__label {
+  font-size: var(--pgn-typography-font-size-h6-base);
+}
+.tels-course-fact:has(.tels-topic-chips) .tels-course-fact__value {
+  text-align: left;
+}
+// tels-mirror's topic chip has no color override at all — default text
+// color, and only the *border* turns brand-primary on hover (.tels-topic-
+// chip:hover, further down this file). The color/border override here
+// previously fought that; keep only the sizing fix.
+.tels-course-facts .tels-topic-chip {
+  display: inline-flex;
+}
+.tels-course-facts__schools {
+  padding: 1.25rem var(--pgn-spacing-grid-gutter-width) 1.5rem;
+  border-top: 1px solid var(--pgn-color-chrome-border);
+  text-align: center;
+}
+.tels-course-facts__schools-label {
+  margin: 0 0 0.75rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: var(--pgn-typography-font-size-h6-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pgn-color-text-secondary);
+}
+.tels-course-school {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--pgn-color-text-base) !important;
+  font-weight: 600;
+}
+.tels-course-school img {
+  height: 4.5rem;
+  width: auto;
+  max-width: 7.5rem;
+  object-fit: contain;
+}
+
+.tels-course-about__primary {
+  grid-column: 1;
+  grid-row: 4;
+  min-width: 0;
+}
+
+.tels-course-body {
+  padding: 2.5rem 0 0;
+}
+.tels-course-body section {
+  max-width: 48rem;
+  margin-bottom: 2.5rem;
+}
+// tels-mirror: `font-serif text-[1.75rem] font-bold mb-4` for every
+// "What you'll learn" / "Course description" / "Instructors" heading.
+.tels-course-body section h2 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 700;
+  color: var(--pgn-color-text-base);
+  margin: 0 0 1rem;
+}
+
+@media (min-width: 900px) {
+  .tels-course-about__layout {
+    grid-template-columns: minmax(0, 1fr) var(--tels-course-facts-width);
+    column-gap: var(--tels-course-facts-gap);
+  }
+  .tels-course-about__hero-band {
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+  }
+  .tels-course-hero {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .tels-course-extras {
+    grid-column: 1;
+    grid-row: 2;
+    padding-right: 0;
+  }
+  .tels-course-facts {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: start;
+    width: 100%;
+    margin: 3.5rem 0 2.5rem;
+  }
+  .tels-course-about__primary {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+.tels-course-learn {
+  color: var(--pgn-color-text-secondary);
+  padding-left: 1.25rem;
+  margin: 0 0 1.5rem;
+  line-height: 1.55;
+}
+.tels-course-learn li {
+  margin-bottom: 0.5rem;
+}
+.tels-course-body__copy {
+  color: var(--pgn-color-text-secondary);
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+}
+
+.tels-course-faculty {
+  padding: 0 0 3rem;
+}
+// tels-mirror: `grid sm:grid-cols-2 gap-4` of plain horizontal instructor
+// rows — .tels-instructor-card's own base rule (further down this file)
+// already matches that exactly (flex row, avatar+text, border, p-4), so
+// this no longer needs to override it into a centered/borderless column.
+.tels-course-faculty__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 40rem;
+}
+@media (min-width: 640px) {
+  .tels-course-faculty__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.tels-course-faculty .tels-instructor-card h3 {
+  margin: 0;
+  font-size: var(--pgn-typography-font-size-base);
+  font-weight: 700;
+}
+.tels-course-faculty .tels-instructor-card p {
+  margin: 0;
+  font-size: var(--pgn-typography-font-size-h5-base);
+  color: var(--pgn-color-chrome-text-muted);
+}
+
+.tels-enroll-banner {
+  background: var(--pgn-color-primary-base);
+  color: var(--pgn-color-white);
+  padding: 3.5rem 0;
+}
+.tels-enroll-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem 2rem;
+}
+.tels-enroll-banner__stat {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h1-base);
+  font-weight: 400;
+  margin: 0;
+  color: var(--pgn-color-white);
+}
+@media (min-width: 768px) {
+  .tels-enroll-banner__stat {
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.33);
+  }
+}
+
+// tels-mirror: `font-serif text-[1.75rem] font-bold mb-6` for "You may
+// also like".
+.tels-course-related-title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 700;
+  color: var(--pgn-color-text-base);
+  margin-bottom: 1.5rem;
+}
+
+// tels-mirror renders <EmailSignup /> plain at the end of the course page —
+// no surface-subtle wrapper around it (that was course-page-only styling
+// not in the mock).
+.tels-course-about__more {
+  background: transparent;
+}
+.tels-course-about__more .tels-email-signup--light {
+  background: transparent;
 }
 
 .tels-course-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  font-size: 0.875rem;
+  font-size: var(--pgn-typography-font-size-base);
   color: var(--pgn-color-text-secondary);
   margin-top: 0.75rem;
 }
@@ -888,9 +1440,16 @@
 }
 .tels-detail-heading {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 400;
+  line-height: 1.2;
   margin: 0 0 1rem;
+  color: var(--pgn-color-text-base);
+}
+@media (min-width: 768px) {
+  .tels-detail-heading {
+    font-size: var(--pgn-typography-font-size-h1-base);
+  }
 }
 
 .tels-instructor-card {
@@ -920,7 +1479,7 @@
 }
 .tels-details-card dl {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: var(--pgn-typography-font-size-base);
 }
 .tels-details-card .tels-details-row {
   display: grid;
@@ -944,11 +1503,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
 }
 
 .tels-topic-chip {
-  font-size: 0.75rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   padding: 0.25rem 0.6rem;
   background: var(--pgn-color-chrome-surface-subtle);
   border: 1px solid var(--pgn-color-chrome-border);
@@ -976,7 +1534,7 @@
 .tels-field label {
   display: block;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: 0.7rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -989,7 +1547,7 @@
   width: 100%;
   border: 1px solid var(--pgn-color-chrome-border);
   padding: 0.6rem 0.75rem;
-  font-size: 0.9rem;
+  font-size: var(--pgn-typography-font-size-base);
   font-family: inherit;
   color: var(--pgn-color-text-base);
   background: var(--pgn-color-white);
@@ -1003,7 +1561,7 @@
 
 .tels-contact-aside h3 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1.15rem;
+  font-size: var(--pgn-typography-font-size-h4-base);
   font-weight: 700;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--pgn-color-chrome-border);
@@ -1014,14 +1572,14 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.9rem;
+  font-size: var(--pgn-typography-font-size-base);
   margin-bottom: 0.85rem;
   color: var(--pgn-color-text-base) !important;
 }
 .tels-contact-aside .tels-contact-row svg {
   // Matches tels-mirror's contact.tsx Mail/MapPin/Globe/Linkedin icons (size={14}).
-  width: 0.875rem;
-  height: 0.875rem;
+  width: var(--pgn-size-icon-sm);
+  height: var(--pgn-size-icon-sm);
   color: var(--pgn-color-primary-base);
   flex-shrink: 0;
 }
@@ -1037,7 +1595,7 @@
 
 .tels-legal-header h1 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 2.6rem;
+  font-size: var(--pgn-typography-font-size-h1-base);
   font-weight: 400;
   line-height: 1.15;
   color: var(--pgn-color-white);
@@ -1045,14 +1603,14 @@
 }
 @media (min-width: 768px) {
   .tels-legal-header h1 {
-    font-size: 3.15rem;
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.29);
   }
 }
 
 .tels-legal-header p {
   color: rgba(255, 255, 255, 0.8);
   max-width: 40rem;
-  font-size: 0.95rem;
+  font-size: var(--pgn-typography-font-size-base);
 }
 
 .tels-legal-layout {
@@ -1083,7 +1641,7 @@
 .tels-toc a {
   display: block;
   padding: 0.25rem 0 0.25rem 0.75rem;
-  font-size: 0.85rem;
+  font-size: var(--pgn-typography-font-size-h5-base);
   line-height: 1.4;
   color: var(--pgn-color-text-secondary);
   border-left: 2px solid transparent;
@@ -1103,7 +1661,7 @@
 }
 .tels-legal__block h2 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1.15rem;
+  font-size: var(--pgn-typography-font-size-h4-base);
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
@@ -1117,5 +1675,5 @@
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--pgn-color-chrome-border);
-  font-size: 0.9rem;
+  font-size: var(--pgn-typography-font-size-base);
 }

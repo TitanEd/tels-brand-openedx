@@ -24,8 +24,8 @@
           "$description": "MAIN page max-width (change this) → --pgn-size-container-max-width-xl. Drives Learning/Discussion/Catalog/headers/footers platform-wide — do NOT repoint this to Harvard's real-site width, or every non-marketing MFE silently gets wider too. tels-mirror .container-pll (an approximation of pll.harvard.edu, not identical)."
         },
         "public": {
-          "$value": "1420px",
-          "$description": "PUBLIC MARKETING SITE ONLY max-width → --pgn-size-container-max-width-public. Measured directly from the live pll.harvard.edu .grid-container (max-width: 88.75rem). Used only by .tels-container (paragon/overrides/_layout.scss tels-container mixin) — the public-site header/footer/page-body shell. Deliberately decoupled from size.container.max-width.xl so this widening doesn't ripple into Learning/Studio/Discussion/etc."
+          "$value": "1187px",
+          "$description": "PUBLIC MARKETING SITE ONLY max-width → --pgn-size-container-max-width-public. Matches the Lovable mock exactly (tels-mirror source: src/styles.css, .container-pll utility, max-width 1187px, padding-inline 1.25rem) — not the live pll.harvard.edu site (which measures wider, at 1420px); the mock is the design source of truth for this template. Used only by .tels-container (paragon/overrides/_layout.scss tels-container mixin) — the public-site header/footer/page-body shell. Deliberately decoupled from size.container.max-width.xl (same value today, but kept separate per Layer 1's per-surface token architecture) so future changes to one don't ripple into Learning/Studio/Discussion/etc. or vice versa."
         }
       }
     }

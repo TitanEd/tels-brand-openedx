@@ -32,43 +32,63 @@
       },
       "size": {
         "base": {
-          "$value": "1rem",
-          "$description": "UI label: Body font size → --pgn-typography-font-size-base. 16px, matches tels-mirror's unstyled body text."
+          "$value": "1.125rem",
+          "$description": "UI label: Body font size → --pgn-typography-font-size-base. 18px (Paragon stock). Do not put this on html — rem stays anchored to the browser 16px baseline."
         },
         "h1": {
           "base": {
-            "$value": "2.5rem",
+            "$value": "2.75rem",
             "$description": "UI label: H1 → --pgn-typography-font-size-h1-base"
           }
         },
         "h2": {
           "base": {
-            "$value": "2rem",
+            "$value": "2.25rem",
             "$description": "UI label: H2 → --pgn-typography-font-size-h2-base"
           }
         },
         "h3": {
           "base": {
-            "$value": "1.375rem",
+            "$value": "1.5625rem",
             "$description": "UI label: H3 → --pgn-typography-font-size-h3-base"
           }
         },
         "h4": {
           "base": {
-            "$value": "1.125rem",
+            "$value": "1.25rem",
             "$description": "UI label: H4 → --pgn-typography-font-size-h4-base"
           }
         },
         "h5": {
           "base": {
-            "$value": "0.875rem",
+            "$value": "1rem",
             "$description": "UI label: H5 → --pgn-typography-font-size-h5-base"
           }
         },
         "h6": {
           "base": {
-            "$value": "0.75rem",
+            "$value": "0.875rem",
             "$description": "UI label: H6 → --pgn-typography-font-size-h6-base"
+          }
+        }
+      }
+    },
+    "input": {
+      "btn": {
+        "font": {
+          "size": {
+            "base": {
+              "$value": "1.25rem",
+              "$description": "Shared input/button font size → --pgn-typography-input-btn-font-size-base (also --pgn-typography-btn-font-size-base)"
+            },
+            "sm": {
+              "$value": "1.125rem",
+              "$description": "Shared input/button font size sm → --pgn-typography-input-btn-font-size-sm"
+            },
+            "lg": {
+              "$value": "1.5rem",
+              "$description": "Shared input/button font size lg → --pgn-typography-input-btn-font-size-lg"
+            }
           }
         }
       }
