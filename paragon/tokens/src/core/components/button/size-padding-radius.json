@@ -35,6 +35,10 @@
           "sm": {
             "$value": "{spacing.input.btn.padding.sm.x}",
             "$description": "UI: Button padding X sm → --pgn-spacing-btn-padding-x-sm"
+          },
+          "lg": {
+            "$value": "{spacing.input.btn.padding.lg.x}",
+            "$description": "UI: Button padding X lg → --pgn-spacing-btn-padding-x-lg"
           }
         },
         "y": {
@@ -45,6 +49,10 @@
           "sm": {
             "$value": "{spacing.input.btn.padding.sm.y}",
             "$description": "UI: Button padding Y sm → --pgn-spacing-btn-padding-y-sm"
+          },
+          "lg": {
+            "$value": "{spacing.input.btn.padding.lg.y}",
+            "$description": "UI: Button padding Y lg → --pgn-spacing-btn-padding-y-lg"
           }
         }
       }
@@ -61,6 +69,10 @@
           "sm": {
             "$value": "{typography.input.btn.font.size.sm}",
             "$description": "UI: Button font size sm → --pgn-typography-btn-font-size-sm"
+          },
+          "lg": {
+            "$value": "{typography.input.btn.font.size.lg}",
+            "$description": "UI: Button font size lg → --pgn-typography-btn-font-size-lg"
           }
         }
       }

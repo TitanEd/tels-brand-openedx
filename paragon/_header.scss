@@ -77,8 +77,8 @@
 #root .site-header-mobile .nav-container .nav .nav-link {
   padding-top: .6rem !important;
   padding-bottom: .6rem !important;
-  font-size: 1rem !important;
-  line-height: 1.5rem !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  line-height: 1.5 !important;
 }
 
 // Main nav (Courses / Discover / …): stock header fills
@@ -195,8 +195,8 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   justify-content: center;
   visibility: visible !important;
   opacity: 1 !important;
-  width: 1.25rem !important;
-  height: 1.25rem !important;
+  width: var(--pgn-size-icon-sm) !important;
+  height: var(--pgn-size-icon-sm) !important;
   margin-right: var(--pgn-spacing-spacer-2, 0.5rem) !important;
   flex-shrink: 0;
   color: var(--pgn-color-btn-text-outline-primary, var(--pgn-color-primary-base)) !important;
@@ -214,8 +214,8 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
   svg {
     display: block !important;
-    width: 1.25rem !important;
-    height: 1.25rem !important;
+    width: var(--pgn-size-icon-sm) !important;
+    height: var(--pgn-size-icon-sm) !important;
     color: inherit !important;
     fill: currentColor !important;
   }
@@ -258,15 +258,15 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
 #root header .user-dropdown .dropdown-toggle .fa-lg,
 #root header .user-dropdown .btn .fa-lg {
-  font-size: 1rem !important;
+  font-size: var(--pgn-size-icon-sm) !important;
   line-height: 1 !important;
   vertical-align: middle !important;
 }
 
 // Caret on site-header menu-trigger (not the avatar)
 #root header .menu-trigger > svg {
-  width: 0.75rem !important;
-  height: 0.75rem !important;
+  width: var(--pgn-size-icon-xs) !important;
+  height: var(--pgn-size-icon-xs) !important;
   flex-shrink: 0;
   color: inherit !important;
   margin-left: var(--pgn-spacing-spacer-1, 0.25rem);
@@ -482,5 +482,369 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   #root header .theme-toggle-button input:checked + .slider,
   #root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider {
     background-color: var(--pgn-color-primary-base) !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// LAYER 3 — Marketing chrome (public MFE): .tels-container / .tels-btn* /
+// .tels-header* — Template B (Harvard-PLL / tels-mirror). Markup:
+// tutor-tels-theme-plugins TelsHeader.jsx (tels_header slot). No search bar —
+// tels-mirror's own header form is intentionally not ported (product decision).
+// ---------------------------------------------------------------------------
+
+.tels-container {
+  @include tels-container;
+}
+
+// Buttons — sharp corners, uppercase bold UI-font label (tels-mirror
+// .btn-primary / .btn-outline). Radius/letterspacing kept literal (bespoke
+// marketing display values, not tied to Layer 1's generic --pgn-size-btn-*
+// scale — see docs/branding/TOKEN_MAP.md for the Layer-1-vs-literal split).
+.tels-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-weight: 700;
+  font-size: var(--pgn-typography-btn-font-size-base);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base);
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+  text-decoration: none;
+
+  &--primary {
+    background: var(--pgn-color-primary-base);
+    color: var(--pgn-color-white) !important;
+    border-color: var(--pgn-color-primary-base);
+
+    &:hover {
+      background: var(--pgn-color-primary-hover);
+      border-color: var(--pgn-color-primary-hover);
+      color: var(--pgn-color-white) !important;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: var(--pgn-color-text-base) !important;
+    border-color: var(--pgn-color-text-base);
+
+    &:hover {
+      background: var(--pgn-color-text-base);
+      color: var(--pgn-color-white) !important;
+    }
+  }
+
+  &--inverse {
+    background: transparent;
+    color: var(--pgn-color-white) !important;
+    border-color: rgba(255, 255, 255, 0.6);
+
+    &:hover {
+      background: var(--pgn-color-white);
+      color: var(--pgn-color-chrome-header-dark) !important;
+    }
+  }
+
+  &--sm {
+    padding: var(--pgn-spacing-btn-padding-y-sm) var(--pgn-spacing-btn-padding-x-sm);
+    font-size: var(--pgn-typography-btn-font-size-sm);
+  }
+
+  &--lg {
+    padding: var(--pgn-spacing-btn-padding-y-lg) var(--pgn-spacing-btn-padding-x-lg);
+    font-size: var(--pgn-typography-btn-font-size-lg);
+  }
+}
+
+.tels-link {
+  color: var(--pgn-color-primary-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--pgn-color-primary-hover);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Header — sticky. Same chrome on every page: solid dark navy
+// (.tels-header--dark). Home is the only exception — transparent over the
+// hero until scroll. Centered logo, hamburger → "Browse by Subject Area"
+// mega-menu, "View all courses" pill. State classes are toggled by
+// TelsHeader.jsx (scrolled / menuOpen), not by CSS alone.
+// ---------------------------------------------------------------------------
+
+.tels-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background: transparent;
+  color: var(--pgn-color-white);
+  transition: background-color 0.2s, color 0.2s;
+
+  &--light {
+    background: var(--pgn-color-white);
+    color: var(--pgn-color-text-base);
+  }
+
+  &--dark {
+    background: var(--pgn-color-chrome-header-dark);
+    color: var(--pgn-color-white);
+  }
+}
+
+// Matches the Lovable mock exactly — tels-mirror's Header.tsx row is a fixed
+// height (`h-16 md:h-[70px]`, 64px/70px), not padding-driven auto-height.
+// This matters beyond the header itself: the home hero's negative margin-top
+// (.tels-hero, -64px/-70px in tels-mirror's own `-mt-16 md:-mt-[70px]`) only
+// lines up seamlessly under the transparent sticky header when the header is
+// genuinely this exact height — a taller/auto-height header leaves a gap of
+// page background showing above the hero image.
+.tels-header__row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  height: 64px;
+
+  @media (min-width: 768px) {
+    height: 70px;
+  }
+}
+
+.tels-header__start {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tels-header__menu-btn {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  // Matches the Lovable mock exactly — tels-mirror's Header.tsx renders
+  // both the Menu and X (open) icons at lucide size={40}, a square icon
+  // (40x40px). Previously matched the live pll.harvard.edu .navbar-toggler-icon
+  // instead (35px x 30px, non-square) — wrong reference for this template.
+  svg {
+    width: calc(var(--pgn-size-icon-lg) * 1.375);
+    height: calc(var(--pgn-size-icon-lg) * 1.375);
+  }
+}
+
+// Filter-reset control on the catalog listing page (TelsHeader.jsx only
+// renders it there, while a filter is applied) — the header is always the
+// dark/solid variant on catalog pages, so this is a plain white outline
+// button, not adaptive to header state.
+.tels-header__view-all {
+  display: none;
+  align-items: center;
+  height: 44px;
+  padding: 0 1.25rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: var(--pgn-typography-btn-font-size-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--pgn-color-white) !important;
+  color: var(--pgn-color-white) !important;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none !important;
+
+  @media (min-width: 768px) {
+    display: inline-flex;
+  }
+
+  &:hover {
+    background: var(--pgn-color-white);
+    color: var(--pgn-color-chrome-header-dark) !important;
+    border-color: var(--pgn-color-white) !important;
+  }
+}
+
+.tels-header__logo {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+
+  // Matches the Lovable mock exactly — tels-mirror's Header.tsx logo img is
+  // Tailwind `h-10 md:h-11` (40px, 44px at md/768px). Previously matched the
+  // live pll.harvard.edu .navbar-brand img instead (41px/57px at 64em) —
+  // wrong reference for this template.
+  img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+
+    @media (min-width: 48em) {
+      height: 44px;
+    }
+  }
+
+  // Light header state: brand logo is a light/transparent PNG designed for
+  // dark backgrounds, so invert it to read on white — same trick tels-mirror
+  // itself uses (style={{ filter: 'invert(1) brightness(0)' }}).
+  .tels-header--light & img {
+    filter: invert(1) brightness(0);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Subject mega-menu — overlay under the sticky header (does NOT push the
+// hero / main page). TelsHeader.jsx renders this as a sibling after
+// </header>; position: fixed takes it out of flow so the page stays put
+// and the panel layers over it. Open grows top → bottom; close shrinks
+// bottom → top. Duration/easing from Paragon collapse tokens.
+// ---------------------------------------------------------------------------
+.tels-header__menu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 1039;
+  width: 100%;
+  // Content-sized overlay (not full viewport). 0fr / 1fr animates open
+  // height; max-height only caps tall menus so the page can still peek
+  // below the panel.
+  max-height: calc(100vh - 64px);
+  background: var(--pgn-color-chrome-header-dark);
+  color: var(--pgn-color-white);
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+      var(--pgn-transition-collapse-height-timing-function, ease),
+    visibility 0s linear var(--pgn-transition-collapse-height-duration, 0.35s);
+
+  @media (min-width: 768px) {
+    top: 70px;
+    max-height: calc(100vh - 70px);
+  }
+
+  &--open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+        var(--pgn-transition-collapse-height-timing-function, ease),
+      visibility 0s linear 0s;
+  }
+}
+
+.tels-header__menu-clip {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.tels-header__menu--open .tels-header__menu-clip {
+  overflow-y: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tels-header__menu {
+    transition: none;
+  }
+}
+
+.tels-header__menu-inner {
+  padding: 1.5rem 0 2rem;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 0;
+  }
+}
+
+// Matches tels-mirror's Header.tsx mega-menu title exactly
+// (font-serif text-[2.6rem] md:text-[3rem]).
+.tels-header__menu-title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.05);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--pgn-color-white);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.22);
+  }
+}
+
+.tels-header__subjects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tels-header__subject-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-family: var(--pgn-typography-font-family-base);
+  // Matches tels-mirror's Header.tsx mega-menu subject link exactly
+  // (font-serif text-[1.15rem] md:text-[1.25rem]).
+  font-size: var(--pgn-typography-font-size-h4-base);
+  color: var(--pgn-color-white) !important;
+
+  @media (min-width: 768px) {
+    font-size: var(--pgn-typography-font-size-h3-base);
+  }
+
+  svg {
+    width: var(--pgn-size-icon-md);
+    height: var(--pgn-size-icon-md);
+    opacity: 0.9;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Mobile: hide "View all courses" pill (hamburger + logo only); mega-menu
+// subject grid already collapses to 1 column above.
+// ---------------------------------------------------------------------------
+@media (max-width: 767px) {
+  .tels-header__view-all {
+    display: none !important;
   }
 }

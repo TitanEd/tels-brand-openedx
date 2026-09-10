@@ -15,6 +15,8 @@ Then: `make build` → hard-refresh.
 | **H1 size** | same | `typography.font.size.h1.base` |
 | **H2 size** | same | `typography.font.size.h2.base` |
 | **H3 … H6** | same | `typography.font.size.h3…h6.base` |
+| **Button / input font size** | same → `typography.input.btn.font.size` | `base` / `sm` / `lg` |
+| **Icon size** | `core/components/icon/size.json` | `size.icon.xs` … `lg` |
 | **Heading color** | `themes/light/components/text/headings.json` | `color.headings.base` |
 | **Page max-width** | `core/components/container/max-width.json` | `size.container.max-width.xl` |
 | **L / R padding** | `core/global/spacing.json` | `spacing.grid.gutter-width` (pad = half) |
@@ -39,7 +41,8 @@ Each kit = JSON (colors / hover / focus) + thin SCSS that only maps classes → 
 | `.btn.btn-outline-secondary` | `themes/light/components/button/outline-secondary.json` |
 | `.btn-icon.btn-icon-primary` | `themes/light/components/button/icon-primary.json` |
 | `.btn-icon.btn-icon-secondary` (Studio drag handles) | `themes/light/components/button/icon-secondary.json` |
-| Padding / radius (all buttons) | `core/components/button/size-padding-radius.json` |
+| Padding / radius / font size (all buttons) | `core/components/button/size-padding-radius.json` |
+| Icon button hit area | `core/components/button/icon-size.json` + `core/components/icon-button/size.json` |
 
 Inside each button JSON you edit: `bg`, `text`, `border` for the default state.  
 **Solid buttons:** do **not** set custom `hover` / `active` in `solid-*.json` — leave Paragon defaults (`theme.hover` / `*-700`). Layer 3 must not `!important` solid fills (that flattens hover).  

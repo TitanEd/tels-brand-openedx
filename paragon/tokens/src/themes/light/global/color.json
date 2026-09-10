@@ -1,6 +1,6 @@
 {
   "$type": "color",
-  "$description": "LAYER 1 — Global semantic colors (light). Change color.primary.base once → buttons, links, tabs, selects, TinyMCE accents. Applied via CSS vars; bridges only rematch selectors.",
+  "$description": "LAYER 1 — Global semantic colors (light), Template B (Harvard-PLL / tels-mirror). Change color.primary.base once → buttons, links, tabs, selects, TinyMCE accents. Applied via CSS vars; bridges only rematch selectors.",
   "color": {
     "white": {
       "$value": "#FFFFFF",
@@ -15,8 +15,8 @@
       "$description": "Base red (feeds Danger when linked)"
     },
     "green": {
-      "$value": "#178253",
-      "$description": "Base green (feeds Success when linked)"
+      "$value": "#18A300",
+      "$description": "Base green (feeds Success when linked) — tels-mirror --brand-success"
     },
     "blue": {
       "$value": "#23419F",
@@ -42,23 +42,31 @@
     },
     "primary": {
       "base": {
-        "$value": "#EB5939",
-        "$description": "UI label: Primary \u2014 cascades to solid primary button bg and related primary uses"
+        "$value": "#A51C30",
+        "$description": "UI label: Primary — Harvard crimson, cascades to solid primary button bg and related primary uses (tels-mirror --brand-primary)"
       },
       "light": {
-        "$value": "#F2F7F8",
+        "$value": "#F7E7E9",
         "$description": "Primary light surface"
+      },
+      "hover": {
+        "$value": "#861426",
+        "$description": "Marketing primary hover/darker shade → --pgn-color-primary-hover (tels-mirror --brand-primary-hover)"
+      },
+      "soft": {
+        "$value": "#FFF0F2",
+        "$description": "Marketing primary tint surface (badges, icon chips, soft CTAs) → --pgn-color-primary-soft (tels-mirror --brand-primary-soft)"
       }
     },
     "secondary": {
       "base": {
-        "$value": "#EB5939",
+        "$value": "#A51C30",
         "$description": "UI label: Secondary"
       }
     },
     "brand": {
       "base": {
-        "$value": "#EB5939",
+        "$value": "#A51C30",
         "$description": "UI label: Brand"
       }
     },
@@ -104,22 +112,72 @@
         "$description": "UI label: Gray base"
       }
     },
+    "chrome": {
+      "border": {
+        "$value": "#E6E6E6",
+        "$description": "Marketing chrome + public page borders (header/footer, cards, form fields, filter pills) → --pgn-color-chrome-border (tels-mirror --border)"
+      },
+      "surface-subtle": {
+        "$value": "#F7F7F7",
+        "$description": "Marketing chrome + public page subtle surface (search field bg, alternating section bg) → --pgn-color-chrome-surface-subtle (tels-mirror --surface-subtle)"
+      },
+      "surface-warm": {
+        "$value": "#F7F7F7",
+        "$description": "Public page alt-section surface → --pgn-color-chrome-surface-warm. tels-mirror has one subtle off-white, no separate warm tone — same value as surface-subtle here."
+      },
+      "text-muted": {
+        "$value": "#6B6B6B",
+        "$description": "Marketing chrome muted text/icons → --pgn-color-chrome-text-muted (tels-mirror --text-muted)"
+      },
+      "header-dark": {
+        "$value": "#293352",
+        "$description": "Header's scrolled/catalog dark navy state, subject mega-menu bg, catalog/legal page dark title band → --pgn-color-chrome-header-dark. Measured from the live pll.harvard.edu .site-header.scroll background (#293352) — supersedes tels-mirror's own approximation (Tailwind bg-[#263557])."
+      }
+    },
+    "marketing": {
+      "accent": {
+        "$value": "#444CE7",
+        "$description": "Public page secondary accent (insight/tag highlights) → --pgn-color-marketing-accent (tels-mirror --brand-accent)"
+      }
+    },
     "text": {
       "base": {
-        "$value": "#111827",
-        "$description": "UI label: Body text (text-base)"
+        "$value": "#1E1E1E",
+        "$description": "UI label: Body text (text-base) — tels-mirror --text-primary"
+      },
+      "secondary": {
+        "$value": "#414141",
+        "$description": "Secondary body text → --pgn-color-text-secondary (tels-mirror --text-secondary)"
       },
       "light": {
-        "$value": "#515661",
+        "$value": "#414141",
         "$description": "Lighter body text"
       },
       "primary": {
-        "$value": "#515661",
+        "$value": "#414141",
         "$description": "Text primary variant"
       },
       "footer": {
-        "$value": "#374151",
-        "$description": "Footer text"
+        "$value": "#FFFFFF",
+        "$description": "Footer body text on dark footer band → --pgn-color-text-footer (tels-mirror footer uses plain text-white)"
+      }
+    },
+    "footer": {
+      "bg": {
+        "$value": "#1E1E1E",
+        "$description": "Site footer background → --pgn-color-footer-bg (tels-mirror --footer-bg)"
+      },
+      "link": {
+        "$value": "#FFFFFF",
+        "$description": "Footer link color → --pgn-color-footer-link (tels-mirror: plain white, hover → primary)"
+      },
+      "muted": {
+        "$value": "rgba(255, 255, 255, 0.5)",
+        "$description": "Footer muted / copyright text → --pgn-color-footer-muted (tels-mirror text-white/50)"
+      },
+      "border": {
+        "$value": "rgba(255, 255, 255, 0.1)",
+        "$description": "Footer dividers and social rings → --pgn-color-footer-border (tels-mirror border-white/10)"
       }
     }
   }

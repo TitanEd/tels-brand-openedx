@@ -1,0 +1,17 @@
+{
+  "$description": "IconButton hit-area diameters (.btn-icon). CSS: --pgn-size-icon-button-diameter-sm/md.",
+  "size": {
+    "icon-button": {
+      "diameter": {
+        "sm": {
+          "$value": "2.5rem",
+          "$description": "Icon button diameter sm → --pgn-size-icon-button-diameter-sm"
+        },
+        "md": {
+          "$value": "3rem",
+          "$description": "Icon button diameter md → --pgn-size-icon-button-diameter-md"
+        }
+      }
+    }
+  }
+}

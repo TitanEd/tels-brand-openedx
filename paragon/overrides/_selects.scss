@@ -104,6 +104,11 @@
 
 select.form-control,
 select.form-control.has-value,
-.pgn__form-control-decorator-group > select.form-control {
+.pgn__form-control-decorator-group > select.form-control,
+// Public MFE marketing forms (Contact Subject, etc.) — plain <select>, not Paragon form-control
+.tels-form select,
+.tels-discovery select,
+.tels-results-head select,
+select.tels-select {
   @include tels-branded-select;
 }

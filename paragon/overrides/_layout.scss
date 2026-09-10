@@ -22,6 +22,37 @@
   box-sizing: border-box;
 }
 
+// Marketing / public chrome (.tels-container) — matches the Lovable mock
+// exactly: tels-mirror/src/styles.css `.container-pll { max-width: 1187px;
+// padding-inline: 1.25rem }` — flat 20px L/R padding at every breakpoint, no
+// responsive step-up (this repo previously tried to match the live
+// pll.harvard.edu site instead — 1420px max-width, padding scaling to 2.5rem/
+// 3.75rem — which is a different, wider design than the mock this template
+// is actually built from). Deliberately its own token
+// (size.container.max-width.public, same 1187px value as
+// size.container.max-width.xl today, kept separate per Layer 1's per-surface
+// architecture) — not size.container.max-width.xl directly — so this and
+// Learning/Discussion/Catalog/headers/footers can diverge again later
+// without coupling them.
+@mixin tels-container {
+  // !important on every width property, matching tels-content-width above —
+  // .tels-container sits on plain <div>s (e.g. IndigoFooter.jsx's combined
+  // `tels-container tels-footer__top`) that MFE-bundled Bootstrap/base CSS
+  // also targets; without !important those rules win the cascade and the
+  // footer/header/page-body render edge-to-edge instead of capped width.
+  max-width: var(--pgn-size-container-max-width-public) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--pgn-spacing-grid-gutter-width) !important;
+  padding-right: var(--pgn-spacing-grid-gutter-width) !important;
+  box-sizing: border-box;
+}
+
+.tels-container {
+  @include tels-container;
+}
+
 $tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 
 // --- Shared shells (no .container-xl inside, or neutralize nested one) ---

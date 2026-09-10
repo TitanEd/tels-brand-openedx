@@ -1,0 +1,28 @@
+{
+  "$description": "LAYER 2 — Link text-decoration (Paragon reboot a / a:hover). Keep underline on real links. Action buttons (.btn / .tels-btn) scope these vars to none in overrides/_buttons.scss, overrides/_links.scss, and _header.scss so button labels never underline on hover.",
+  "typography": {
+    "link": {
+      "decoration": {
+        "$type": "textDecoration",
+        "base": {
+          "$value": "none",
+          "$description": "Default link → --pgn-typography-link-decoration-base"
+        },
+        "hover": {
+          "$value": "underline",
+          "$description": "Default link hover → --pgn-typography-link-decoration-hover (buttons override this locally to none)"
+        },
+        "inline": {
+          "base": {
+            "$value": "underline",
+            "$description": "Inline link → --pgn-typography-link-decoration-inline-base"
+          },
+          "hover": {
+            "$value": "underline",
+            "$description": "Inline link hover → --pgn-typography-link-decoration-inline-hover"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$description": "Dark — link text-decoration. Same contract as light: real links underline on hover; .btn / .tels-btn scope decoration vars to none in brand SCSS.",
+  "typography": {
+    "link": {
+      "decoration": {
+        "$type": "textDecoration",
+        "base": {
+          "$value": "none",
+          "$description": "Default link → --pgn-typography-link-decoration-base"
+        },
+        "hover": {
+          "$value": "underline",
+          "$description": "Default link hover → --pgn-typography-link-decoration-hover (buttons override locally to none)"
+        },
+        "inline": {
+          "base": {
+            "$value": "underline",
+            "$description": "Inline link → --pgn-typography-link-decoration-inline-base"
+          },
+          "hover": {
+            "$value": "underline",
+            "$description": "Inline link hover → --pgn-typography-link-decoration-inline-hover"
+          }
+        }
+      }
+    }
+  }
+}

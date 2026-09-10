@@ -1,5 +1,5 @@
 {
-  "$description": "Headings use the same brand font as body (inherit). Change typeface only in core/global/typography.json.",
+  "$description": "Headings use the same brand font as body (inherit). Change typeface only in core/global/typography.json. Template B (Harvard-PLL / tels-mirror): headings are serif at normal weight, not bold — tels-mirror's own `h1,h2,h3,h4 { font-weight: 400 }`.",
   "typography": {
     "headings": {
       "font": {
@@ -9,9 +9,9 @@
           "$description": "Heading font → same as body (--pgn-typography-font-family-base)"
         },
         "weight": {
-          "$value": "{typography.font.weight.bold}",
+          "$value": "400",
           "$type": "fontWeight",
-          "$description": "Heading font weight"
+          "$description": "Heading font weight — normal, not bold, per tels-mirror"
         }
       },
       "line-height": {

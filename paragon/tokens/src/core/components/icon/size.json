@@ -1,0 +1,23 @@
+{
+  "$description": "Paragon Icon sizes (.pgn__icon). CSS: --pgn-size-icon-xs/sm/md/lg. Do not invent names outside this set.",
+  "size": {
+    "icon": {
+      "xs": {
+        "$value": "1.125rem",
+        "$description": "Icon xs → --pgn-size-icon-xs"
+      },
+      "sm": {
+        "$value": "1.5rem",
+        "$description": "Icon sm → --pgn-size-icon-sm"
+      },
+      "md": {
+        "$value": "1.75rem",
+        "$description": "Icon md → --pgn-size-icon-md"
+      },
+      "lg": {
+        "$value": "2rem",
+        "$description": "Icon lg → --pgn-size-icon-lg"
+      }
+    }
+  }
+}
