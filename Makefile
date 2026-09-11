@@ -1,4 +1,4 @@
-.PHONY: build clean append-overrides
+.PHONY: build clean append-overrides copy-fonts
 
 clean:
 	rm -rf dist paragon/build
@@ -11,7 +11,16 @@ clean:
 append-overrides:
 	@python3 scripts/append-overrides-to-themes.py
 
+# @font-face in dist/core.css uses url("./fonts/…") relative to dist/.
+# Webpack (MFE @edx/brand) resolves from node_modules/@edx/brand/dist — so
+# font files must ship beside the CSS, not only under paragon/fonts/.
+copy-fonts:
+	@mkdir -p dist/fonts
+	@cp -a paragon/fonts/. dist/fonts/
+	@echo "Copied paragon/fonts → dist/fonts"
+
 build: clean
 	npm run build-tokens
 	npm run build-scss
 	$(MAKE) append-overrides
+	$(MAKE) copy-fonts
