@@ -1229,6 +1229,21 @@
   border-top: 1px solid var(--pgn-color-chrome-border);
   text-align: center;
 }
+
+.tels-course-facts__enroll {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem var(--pgn-spacing-grid-gutter-width);
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--pgn-color-chrome-border);
+}
+
+.tels-course-facts__enroll .tels-btn {
+  display: inline-flex;
+  width: auto;
+  min-width: 10rem;
+  justify-content: center;
+}
 .tels-course-facts__schools-label {
   margin: 0 0 0.75rem;
   font-family: var(--pgn-typography-font-family-ui);
