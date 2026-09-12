@@ -4098,13 +4098,18 @@ a.btn:not(.btn-link):active,
   padding: 0;
   cursor: pointer;
   color: inherit;
+  font-size: 40px;
+  line-height: 1;
 }
 .tels-header__menu-btn:hover {
   opacity: 0.75;
 }
-.tels-header__menu-btn svg {
-  width: calc(var(--pgn-size-icon-lg) * 1.375);
-  height: calc(var(--pgn-size-icon-lg) * 1.375);
+.tels-header__menu-btn svg,
+.tels-header__menu-btn .svg-inline--fa {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 .tels-header__view-all {
@@ -4140,15 +4145,19 @@ a.btn:not(.btn-link):active,
   display: inline-flex;
   align-items: center;
   line-height: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 .tels-header__logo img {
-  height: 40px;
-  width: auto;
+  height: 40px !important;
+  width: auto !important;
+  max-height: 44px;
   object-fit: contain;
 }
 @media (min-width: 48em) {
   .tels-header__logo img {
-    height: 44px;
+    height: 44px !important;
   }
 }
 .tels-header--light .tels-header__logo img {
@@ -4309,8 +4318,8 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   color: var(--pgn-color-footer-link) !important;
   text-decoration: none !important;
 }
-.tels-footer a:not(.tels-btn):hover {
-  color: var(--pgn-color-primary-base) !important;
+.tels-footer a:not(.tels-btn):hover, .tels-footer a:not(.tels-btn):focus {
+  color: var(--pgn-color-footer-link-hover, var(--pgn-color-footer-link)) !important;
 }
 
 .tels-footer__top {
@@ -4348,6 +4357,11 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   .tels-footer__brand {
     text-align: right;
   }
+}
+
+.tels-footer__logo a {
+  display: inline-block;
+  line-height: 0;
 }
 
 .tels-footer__logo img {
@@ -4556,6 +4570,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   display: block;
   aspect-ratio: 16/9;
   overflow: hidden;
+  background: var(--pgn-color-chrome-surface-subtle);
 }
 
 .tels-course-card__img img {
@@ -4844,6 +4859,9 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 .tels-orgs-grid img {
   max-height: 48px;
   object-fit: contain;
+  padding: 0.35rem 0.5rem;
+  background: var(--pgn-color-chrome-surface-subtle);
+  border-radius: 0.375rem;
 }
 
 .tels-orgs-grid figcaption {
@@ -5057,22 +5075,22 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   font-size: var(--pgn-typography-btn-font-size-base);
 }
 
-.tels-catalog-header {
+.tels-courses-header {
   background: var(--pgn-color-chrome-header-dark);
 }
 
-.tels-catalog-header > .tels-container:first-child {
+.tels-courses-header > .tels-container:first-child {
   padding-top: 3.5rem;
   padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
-  .tels-catalog-header > .tels-container:first-child {
+  .tels-courses-header > .tels-container:first-child {
     padding-top: 4rem;
     padding-bottom: 5rem;
   }
 }
-.tels-catalog-header h1 {
+.tels-courses-header h1 {
   font-family: var(--pgn-typography-font-family-base);
   font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.15);
   font-weight: 400;
@@ -5081,7 +5099,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 
 @media (min-width: 768px) {
-  .tels-catalog-header h1 {
+  .tels-courses-header h1 {
     font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.29);
   }
 }
@@ -5200,13 +5218,13 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   height: 1rem;
 }
 
-.tels-catalog-results {
+.tels-courses-results {
   background: var(--pgn-color-chrome-surface-subtle);
   padding: 4rem 0;
 }
 
 @media (min-width: 768px) {
-  .tels-catalog-results {
+  .tels-courses-results {
     padding: 4.4rem 0;
   }
 }
@@ -5392,10 +5410,6 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   margin-top: calc(var(--pgn-spacing-spacer-base) * 1.5);
 }
 
-a.tels-btn.tels-btn--outline[href="#enroll"] {
-  display: none !important;
-}
-
 .tels-course-extras {
   grid-column: 1;
   grid-row: 2;
@@ -5551,6 +5565,21 @@ a.tels-btn.tels-btn--outline[href="#enroll"] {
   text-align: center;
 }
 
+.tels-course-facts__enroll {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem var(--pgn-spacing-grid-gutter-width);
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--pgn-color-chrome-border);
+}
+
+.tels-course-facts__enroll .tels-btn {
+  display: inline-flex;
+  width: auto;
+  min-width: 10rem;
+  justify-content: center;
+}
+
 .tels-course-facts__schools-label {
   margin: 0 0 0.75rem;
   font-family: var(--pgn-typography-font-family-ui);
@@ -5575,6 +5604,9 @@ a.tels-btn.tels-btn--outline[href="#enroll"] {
   width: auto;
   max-width: 7.5rem;
   object-fit: contain;
+  padding: 0.35rem 0.5rem;
+  background: var(--pgn-color-chrome-surface-subtle);
+  border-radius: 0.375rem;
 }
 
 .tels-course-about__primary {

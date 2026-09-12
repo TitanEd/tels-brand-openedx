@@ -131,7 +131,7 @@
       },
       "header-dark": {
         "$value": "#293352",
-        "$description": "Header's scrolled/catalog dark navy state, subject mega-menu bg, catalog/legal page dark title band → --pgn-color-chrome-header-dark. Measured from the live pll.harvard.edu .site-header.scroll background (#293352) — supersedes tels-mirror's own approximation (Tailwind bg-[#263557])."
+        "$description": "Header scrolled dark navy, subject mega-menu bg, courses/legal page dark title band → --pgn-color-chrome-header-dark. Measured from the live pll.harvard.edu .site-header.scroll background (#293352) — supersedes tels-mirror's own approximation (Tailwind bg-[#263557])."
       }
     },
     "marketing": {
@@ -169,7 +169,11 @@
       },
       "link": {
         "$value": "#FFFFFF",
-        "$description": "Footer link color → --pgn-color-footer-link (tels-mirror: plain white, hover → primary)"
+        "$description": "Footer link color → --pgn-color-footer-link (white on dark footer band)",
+        "hover": {
+          "$value": "#FFFFFF",
+          "$description": "Footer link hover → --pgn-color-footer-link-hover. Stay white — primary crimson is not readable on --pgn-color-footer-bg."
+        }
       },
       "muted": {
         "$value": "rgba(255, 255, 255, 0.5)",

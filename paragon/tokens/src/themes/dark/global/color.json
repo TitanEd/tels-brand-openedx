@@ -85,7 +85,11 @@
       },
       "link": {
         "$value": "#FFFFFF",
-        "$description": "Footer link color → --pgn-color-footer-link"
+        "$description": "Footer link color → --pgn-color-footer-link",
+        "hover": {
+          "$value": "#FFFFFF",
+          "$description": "Footer link hover → --pgn-color-footer-link-hover (stay white on dark footer)"
+        }
       },
       "muted": {
         "$value": "rgba(255, 255, 255, 0.5)",
