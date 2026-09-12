@@ -46,20 +46,21 @@
 #root header.site-header-desktop .logo img,
 #root header.site-header-mobile .logo img,
 #root header.learning-header .logo img {
-  height: auto !important;
-  width: 135px !important;
+  height: 40px !important;
+  width: auto !important;
+  max-height: 44px;
+  object-fit: contain;
+
+  @media (min-width: 48em) {
+    height: 44px !important;
+  }
 }
 
-// @edx/frontend-component-header's own stock CSS hardcodes a fixed height
-// on the .logo <a> wrapper in more than one place (.site-header-desktop
-// .logo { height: 1.75rem; ...; top: -.05em; } AND the more general
-// `#root header .logo { height: 1.75rem; ...; top: .1em; }`, likely a
-// different header/theme state) — sized for its own default (small) logo
-// image. Now that the img inside is 135px wide with height: auto (above),
-// that image can easily render taller than 1.75rem, so every hardcoded
-// wrapper height needs to go too, or the logo gets clipped/cramped inside
-// it. Broad selector so any current or future variant of this is covered.
-#root header .logo {
+// Stock header hardcodes height on the .logo <a> wrapper (1.75rem). Studio
+// home puts class="logo" on the <img> — do not force height: auto on that
+// img or it overrides the fixed height above. Wrappers only.
+#root header a.logo,
+#root header .logo:not(img) {
   height: auto !important;
 }
 

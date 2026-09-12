@@ -3569,11 +3569,21 @@ a.btn:not(.btn-link):active,
 #root header.site-header-desktop .logo img,
 #root header.site-header-mobile .logo img,
 #root header.learning-header .logo img {
-  height: auto !important;
-  width: 135px !important;
+  height: 40px !important;
+  width: auto !important;
+  max-height: 44px;
+  object-fit: contain;
+}
+@media (min-width: 48em) {
+  #root header.site-header-desktop .logo img,
+  #root header.site-header-mobile .logo img,
+  #root header.learning-header .logo img {
+    height: 44px !important;
+  }
 }
 
-#root header .logo {
+#root header a.logo,
+#root header .logo:not(img) {
   height: auto !important;
 }
 
@@ -8364,9 +8374,18 @@ footer#footer ul a:hover,
   border-left-color: var(--pgn-color-primary-base) !important;
 }
 
-#root .studio-header img.logo {
-  height: auto !important;
-  width: 135px !important;
+#root .studio-header img.logo,
+#root header.pgn__action-row img.logo {
+  height: 40px !important;
+  width: auto !important;
+  max-height: 44px;
+  object-fit: contain;
+}
+@media (min-width: 48em) {
+  #root .studio-header img.logo,
+  #root header.pgn__action-row img.logo {
+    height: 44px !important;
+  }
 }
 
 #root .studio-header {
