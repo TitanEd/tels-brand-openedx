@@ -2,14 +2,14 @@
 // Width tokens: core/components/container/max-width.json + core/global/spacing.json
 // Applied via tels-content-width mixin from overrides/_layout.scss
 // .site-header-desktop / .site-header-mobile come from the ONE shared
-// @edx/frontend-component-header package — Catalog, Learner Dashboard,
+// @edx/frontend-component-header package — Learner Dashboard,
 // Gradebook, Account, Authn, and Learning (wrapped in its own
 // .learning-header for width purposes below) all render the exact same
 // header markup, so a single rule here reaches every one of them. Studio
 // doesn't use this package (its own .studio-header, different markup
 // entirely) — matching logo size lives in _authoring.scss instead.
 
-// Catalog / learner-dashboard / authn desktop header
+// Learner-dashboard / authn desktop header
 .site-header-desktop > .container-fluid,
 .site-header-mobile > .container-fluid {
   @include tels-content-width;
@@ -643,19 +643,23 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     opacity: 0.75;
   }
 
-  // Matches the Lovable mock exactly — tels-mirror's Header.tsx renders
-  // both the Menu and X (open) icons at lucide size={40}, a square icon
-  // (40x40px). Previously matched the live pll.harvard.edu .navbar-toggler-icon
-  // instead (35px x 30px, non-square) — wrong reference for this template.
-  svg {
-    width: calc(var(--pgn-size-icon-lg) * 1.375);
-    height: calc(var(--pgn-size-icon-lg) * 1.375);
+  // 40×40 — same as local lucide Menu. Font Awesome .svg-inline--fa defaults
+  // to 1em, which is why the deployed hamburger looked tiny.
+  font-size: 40px;
+  line-height: 1;
+
+  svg,
+  .svg-inline--fa {
+    width: 40px !important;
+    height: 40px !important;
+    max-width: 40px;
+    max-height: 40px;
   }
 }
 
-// Filter-reset control on the catalog listing page (TelsHeader.jsx only
-// renders it there, while a filter is applied) — the header is always the
-// dark/solid variant on catalog pages, so this is a plain white outline
+// Filter-reset control on the courses listing page (header only renders
+// it there, while a filter is applied) — the header is always the
+// dark/solid variant on courses pages, so this is a plain white outline
 // button, not adaptive to header state.
 .tels-header__view-all {
   display: none;
@@ -690,18 +694,22 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   display: inline-flex;
   align-items: center;
   line-height: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
 
   // Matches the Lovable mock exactly — tels-mirror's Header.tsx logo img is
   // Tailwind `h-10 md:h-11` (40px, 44px at md/768px). Previously matched the
   // live pll.harvard.edu .navbar-brand img instead (41px/57px at 64em) —
   // wrong reference for this template.
   img {
-    height: 40px;
-    width: auto;
+    height: 40px !important;
+    width: auto !important;
+    max-height: 44px;
     object-fit: contain;
 
     @media (min-width: 48em) {
-      height: 44px;
+      height: 44px !important;
     }
   }
 
