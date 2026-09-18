@@ -3188,6 +3188,9 @@ a.btn.btn-brand {
 
 .btn-icon.btn-icon-primary,
 button.btn-icon.btn-icon-primary {
+  --btn-icon-color: var(--pgn-color-icon-button-text-primary-base);
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff));
+  --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-hover);
   color: var(--pgn-color-icon-button-text-primary-base) !important;
 }
 .btn-icon.btn-icon-primary:hover:not(:disabled), .btn-icon.btn-icon-primary:focus:not(:disabled),
@@ -3202,8 +3205,54 @@ button.btn-icon.btn-icon-primary:active:not(:disabled) {
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 
+.btn-icon.btn-icon-primary.btn-icon-primary-active,
+button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+.btn-icon.btn-icon-primary[aria-selected=true],
+button.btn-icon.btn-icon-primary[aria-selected=true] {
+  --btn-icon-color: var(--pgn-color-icon-button-text-primary-active-base, #fff);
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-active-hover, #fff);
+  --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-active-focus, #fff);
+  --btn-icon-bg-color: var(--pgn-color-icon-button-bg-primary-active-base);
+  --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-active-hover, var(--pgn-color-icon-button-bg-primary-active-base));
+  --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-primary-active-focus, var(--pgn-color-icon-button-bg-primary-active-base));
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-primary-base)) !important;
+}
+.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+.btn-icon.btn-icon-primary[aria-selected=true] svg,
+.btn-icon.btn-icon-primary[aria-selected=true] svg path,
+button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+.btn-icon.btn-icon-primary.btn-icon-primary-active:hover:not(:disabled), .btn-icon.btn-icon-primary.btn-icon-primary-active:focus:not(:disabled),
+button.btn-icon.btn-icon-primary.btn-icon-primary-active:hover:not(:disabled),
+button.btn-icon.btn-icon-primary.btn-icon-primary-active:focus:not(:disabled),
+.btn-icon.btn-icon-primary[aria-selected=true]:hover:not(:disabled),
+.btn-icon.btn-icon-primary[aria-selected=true]:focus:not(:disabled),
+button.btn-icon.btn-icon-primary[aria-selected=true]:hover:not(:disabled),
+button.btn-icon.btn-icon-primary[aria-selected=true]:focus:not(:disabled) {
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-hover, var(--pgn-color-icon-button-bg-primary-active-base)) !important;
+}
+
 .btn-icon.btn-icon-secondary,
 button.btn-icon.btn-icon-secondary {
+  --btn-icon-color: var(--pgn-color-icon-button-text-secondary-base);
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, #fff));
+  --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-hover);
   color: var(--pgn-color-icon-button-text-secondary-base) !important;
 }
 .btn-icon.btn-icon-secondary:hover:not(:disabled), .btn-icon.btn-icon-secondary:focus:not(:disabled),
@@ -3216,6 +3265,48 @@ button.btn-icon.btn-icon-secondary:focus:not(:disabled) {
 button.btn-icon.btn-icon-secondary:active:not(:disabled) {
   color: var(--pgn-color-icon-button-text-secondary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
   background-color: var(--pgn-color-icon-button-bg-secondary-active-base, var(--pgn-color-icon-button-bg-secondary-hover)) !important;
+}
+
+.btn-icon.btn-icon-secondary.btn-icon-secondary-active,
+button.btn-icon.btn-icon-secondary.btn-icon-secondary-active,
+.btn-icon.btn-icon-secondary[aria-selected=true],
+button.btn-icon.btn-icon-secondary[aria-selected=true] {
+  --btn-icon-color: var(--pgn-color-icon-button-text-secondary-active-base, #fff);
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-active-hover, #fff);
+  --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-active-focus, #fff);
+  --btn-icon-bg-color: var(--pgn-color-icon-button-bg-secondary-active-base);
+  --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-active-hover, var(--pgn-color-icon-button-bg-secondary-active-base));
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-secondary-active-base, var(--pgn-color-secondary-base)) !important;
+}
+.btn-icon.btn-icon-secondary.btn-icon-secondary-active .pgn__icon,
+.btn-icon.btn-icon-secondary.btn-icon-secondary-active .btn-icon__icon,
+.btn-icon.btn-icon-secondary.btn-icon-secondary-active svg,
+.btn-icon.btn-icon-secondary.btn-icon-secondary-active svg path,
+button.btn-icon.btn-icon-secondary.btn-icon-secondary-active .pgn__icon,
+button.btn-icon.btn-icon-secondary.btn-icon-secondary-active .btn-icon__icon,
+button.btn-icon.btn-icon-secondary.btn-icon-secondary-active svg,
+button.btn-icon.btn-icon-secondary.btn-icon-secondary-active svg path,
+.btn-icon.btn-icon-secondary[aria-selected=true] .pgn__icon,
+.btn-icon.btn-icon-secondary[aria-selected=true] .btn-icon__icon,
+.btn-icon.btn-icon-secondary[aria-selected=true] svg,
+.btn-icon.btn-icon-secondary[aria-selected=true] svg path,
+button.btn-icon.btn-icon-secondary[aria-selected=true] .pgn__icon,
+button.btn-icon.btn-icon-secondary[aria-selected=true] .btn-icon__icon,
+button.btn-icon.btn-icon-secondary[aria-selected=true] svg,
+button.btn-icon.btn-icon-secondary[aria-selected=true] svg path {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+.btn-icon.btn-icon-secondary.btn-icon-secondary-active:hover:not(:disabled), .btn-icon.btn-icon-secondary.btn-icon-secondary-active:focus:not(:disabled),
+button.btn-icon.btn-icon-secondary.btn-icon-secondary-active:hover:not(:disabled),
+button.btn-icon.btn-icon-secondary.btn-icon-secondary-active:focus:not(:disabled),
+.btn-icon.btn-icon-secondary[aria-selected=true]:hover:not(:disabled),
+.btn-icon.btn-icon-secondary[aria-selected=true]:focus:not(:disabled),
+button.btn-icon.btn-icon-secondary[aria-selected=true]:hover:not(:disabled),
+button.btn-icon.btn-icon-secondary[aria-selected=true]:focus:not(:disabled) {
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-secondary-active-hover, var(--pgn-color-icon-button-bg-secondary-active-base)) !important;
 }
 
 a.inline-link,
@@ -4785,8 +4876,41 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root .learning-header .btn-icon.btn-icon-primary:hover:not(:disabled), #root .learning-header .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root .learning-header button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root .learning-header button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-text-primary-base)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
+}
+#root .learning-header .btn-icon.btn-icon-primary:active:not(:disabled),
+#root .learning-header button.btn-icon.btn-icon-primary:active:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root .learning-header .btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root .learning-header button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root .learning-header .btn-icon.btn-icon-primary[aria-selected=true],
+#root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] {
+  --btn-icon-color: #fff;
+  --btn-icon-hover-color: #fff;
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root .learning-header .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root .learning-header .btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root .learning-header .btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root .learning-header .btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root .learning-header button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root .learning-header button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root .learning-header button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root .learning-header button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root .learning-header .btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root .learning-header .btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root .learning-header .btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root .learning-header .btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
+  color: #fff !important;
+  fill: currentColor !important;
 }
 #root .learning-header a:not(.btn):not(.nav-link):not(.dropdown-item),
 #root .learning-header a.pgn__hyperlink,
@@ -4925,8 +5049,41 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary:hover:not(:disabled), #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-text-primary-base)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
+}
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary:active:not(:disabled),
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary:active:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary[aria-selected=true],
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] {
+  --btn-icon-color: #fff;
+  --btn-icon-hover-color: #fff;
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
+  color: #fff !important;
+  fill: currentColor !important;
 }
 #root [data-testid=instructor-toolbar] a:not(.btn):not(.nav-link):not(.dropdown-item),
 #root [data-testid=instructor-toolbar] a.pgn__hyperlink,
@@ -5055,8 +5212,41 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .btn-icon.btn-icon-primary:hover:not(:disabled), #root:has(.learning-header) main .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-text-primary-base)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
+}
+#root:has(.learning-header) main .btn-icon.btn-icon-primary:active:not(:disabled),
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary:active:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root:has(.learning-header) main .btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary[aria-selected=true],
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] {
+  --btn-icon-color: #fff;
+  --btn-icon-hover-color: #fff;
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root:has(.learning-header) main .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root:has(.learning-header) main .btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
+  color: #fff !important;
+  fill: currentColor !important;
 }
 #root:has(.learning-header) main a:not(.btn):not(.nav-link):not(.dropdown-item),
 #root:has(.learning-header) main a.pgn__hyperlink,
@@ -5267,8 +5457,63 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-text-primary-base)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
+}
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary:active:not(:disabled),
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary:active:not(:disabled),
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary:active:not(:disabled),
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary:active:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary[aria-selected=true],
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true],
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary[aria-selected=true],
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] {
+  --btn-icon-color: #fff;
+  --btn-icon-hover-color: #fff;
+  color: #fff !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
+  color: #fff !important;
+  fill: currentColor !important;
 }
 #root:has(.learning-header) main .unit-navigation a.previous-button.btn.btn-outline-secondary,
 #root:has(.learning-header) main .unit-navigation button.previous-button.btn.btn-outline-secondary {
