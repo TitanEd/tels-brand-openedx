@@ -10,7 +10,9 @@ Then: `make build` → hard-refresh.
 | What you want | File | Key |
 |---------------|------|-----|
 | **Primary color** | `themes/light/global/color.json` | `color.primary.base` |
-| **Font family** | `core/global/typography.json` | `typography.font.family.sans.serif` |
+| **Body / display font** | `core/global/typography.json` | `typography.font.family.sans.serif` → `--pgn-typography-font-family-base` (Merriweather) |
+| **UI chrome font** | same | `typography.font.family.ui` → `--pgn-typography-font-family-ui` (Merriweather Sans) |
+| **Newsletter font** | same | `typography.font.family.manrope` → `--pgn-typography-font-family-manrope` (Manrope) |
 | **Body font size** | same | `typography.font.size.base` |
 | **H1 size** | same | `typography.font.size.h1.base` |
 | **H2 size** | same | `typography.font.size.h2.base` |
@@ -40,6 +42,7 @@ Each kit = JSON (colors / hover / focus) + thin SCSS that only maps classes → 
 | `.btn.btn-outline-primary` | `themes/light/components/button/outline-primary.json` |
 | `.btn.btn-outline-secondary` | `themes/light/components/button/outline-secondary.json` |
 | `.btn-icon.btn-icon-primary` | `themes/light/components/button/icon-primary.json` |
+| `.btn-icon.btn-icon-primary-active` (DataTable Card/List, etc.) | same — white icon on primary fill (`modify: null`) |
 | `.btn-icon.btn-icon-secondary` (Studio drag handles) | `themes/light/components/button/icon-secondary.json` |
 | Padding / radius / font size (all buttons) | `core/components/button/size-padding-radius.json` |
 | Icon button hit area | `core/components/button/icon-size.json` + `core/components/icon-button/size.json` |
@@ -83,7 +86,9 @@ SCSS: `overrides/_links.scss` · Authn parent map: `_authn.scss`
 | `.pgn__searchfield` (internal) | `themes/light/components/form/search-field.json` | `overrides/_searchfield.scss` |
 | `.pgn__searchfield__iconbutton-submit` (Authoring / Studio icon search) | same → `icon.base` / `icon.hover` / `icon.bg.hover` (not icon-primary fill) | same |
 | `.pgn__searchfield--external` (box ≠ button) | same | same |
+| **Header catalog search** (`.tels-header__search` / input / submit) | same → `form-bg`, `header.icon`, `header.icon-on-light` + `core/.../search-field-size.json` → `header.input.*` / `header.icon.size` | `_header.scss` |
 | Search radius | `core/components/form/search-field-size.json` | — |
+| Input text / placeholder (header box) | `themes/light/components/form/input.json` → `form.input.base` / `placeholder` | `_header.scss` |
 
 ### Dropdown (two kinds, same brand colors)
 
@@ -153,6 +158,7 @@ Only when a page needs parent alignment. No new colors.
 |------|---------|
 | Everything orange → yellow | `color.json` → `primary.base` → `make build` |
 | Bigger H1 everywhere | `typography.json` → `font.size.h1.base` |
+| Public hero / card / section type sizes (PLL) | `_public.scss` only — see `docs/branding/pll-size-audit.md` (do **not** shrink global H1) |
 | Wider pages | `max-width.json` → `xl` |
 | More side padding | `spacing.json` → `gutter-width` |
 | Solid primary hover darker | leave Paragon default (`primary-700`); do not edit `solid-primary.json` hover |

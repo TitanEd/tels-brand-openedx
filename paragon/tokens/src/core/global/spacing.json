@@ -1,5 +1,5 @@
 {
-  "$description": "LAYER 1 — Spacing, Template B (Harvard-PLL / tels-mirror). spacing.grid.gutter-width → --pgn-spacing-grid-gutter-width (20px). Bootstrap/MFE shells: L/R pad = half (tels-content-width). Marketing .tels-container: full gutter per side.",
+  "$description": "LAYER 1 — Spacing, Template B (Harvard-PLL / tels-mirror). spacing.grid.gutter-width → --pgn-spacing-grid-gutter-width. Bootstrap/MFE shells: L/R pad = half (tels-content-width). Marketing .tels-container: full gutter per side.",
   "spacing": {
     "spacer": {
       "base": {
@@ -9,8 +9,8 @@
     },
     "grid": {
       "gutter-width": {
-        "$value": "20px",
-        "$description": "MAIN side padding control (change this) → --pgn-spacing-grid-gutter-width; half for MFE shells, full for .tels-container. tels-mirror .container-pll padding-inline: 1.25rem."
+        "$value": "60px",
+        "$description": "MAIN side padding control (change this) → --pgn-spacing-grid-gutter-width; half for MFE shells, full for .tels-container (60px L/R)."
       }
     }
   }

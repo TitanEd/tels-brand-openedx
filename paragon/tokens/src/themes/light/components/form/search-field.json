@@ -1,5 +1,5 @@
 {
-  "$description": "SEARCH FIELD — values only. External: style .pgn__searchfield_wrapper (box) and .pgn__searchfield__button separately. Internal: outer .pgn__searchfield border + icon button.",
+  "$description": "SEARCH FIELD — values only. External: style .pgn__searchfield_wrapper (box) and .pgn__searchfield__button separately. Internal: outer .pgn__searchfield border + icon button. Header catalog search (.tels-header__search) also reads form-bg / header.icon + size tokens.",
   "color": {
     "search-field": {
       "border": {
@@ -46,7 +46,17 @@
       },
       "form-bg": {
         "$value": "{color.white}",
-        "$description": "Search box background"
+        "$description": "Search box background (Paragon SearchField + header catalog input) → --pgn-color-search-field-form-bg"
+      },
+      "header": {
+        "icon": {
+          "$value": "{color.white}",
+          "$description": "Header catalog search icon on dark chrome (outside the white box, PLL) → --pgn-color-search-field-header-icon"
+        },
+        "icon-on-light": {
+          "$value": "{color.gray.700}",
+          "$description": "Header catalog search icon when header is light → --pgn-color-search-field-header-icon-on-light"
+        }
       }
     }
   }

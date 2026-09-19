@@ -489,55 +489,77 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 // ---------------------------------------------------------------------------
 // LAYER 3 — Marketing chrome (public MFE): .tels-container / .tels-btn* /
 // .tels-header* — Template B (Harvard-PLL / tels-mirror). Markup:
-// tutor-tels-theme-plugins TelsHeader.jsx (tels_header slot). No search bar —
-// tels-mirror's own header form is intentionally not ported (product decision).
+// frontend-app-public TelsHeader.jsx (tels_header slot). Catalog search in
+// the header submits to /courses?keywords=… (CoursesPage filter).
 // ---------------------------------------------------------------------------
 
 .tels-container {
   @include tels-container;
 }
 
-// Buttons — sharp corners, uppercase bold UI-font label (tels-mirror
-// .btn-primary / .btn-outline). Radius/letterspacing kept literal (bespoke
-// marketing display values, not tied to Layer 1's generic --pgn-size-btn-*
-// scale — see docs/branding/TOKEN_MAP.md for the Layer-1-vs-literal split).
+// Buttons — PLL marketing CTAs: 16px / pad 20px / weight 400 / radius 3px /
+// uppercase UI font. Kept on .tels-btn (Layer 3) so Paragon .btn in LMS/Studio
+// is unchanged.
 .tels-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--pgn-typography-font-family-ui);
-  font-weight: 700;
-  font-size: var(--pgn-typography-btn-font-size-base);
-  letter-spacing: 0.06em;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: normal;
   text-transform: uppercase;
-  padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base);
-  border-radius: 2px;
+  padding: 1.25rem;
+  border-radius: 3px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
   line-height: 1;
   text-decoration: none;
 
+  &:focus-visible {
+    outline: 2px solid var(--pgn-color-primary-base);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
   &--primary {
     background: var(--pgn-color-primary-base);
     color: var(--pgn-color-white) !important;
     border-color: var(--pgn-color-primary-base);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: var(--pgn-color-primary-hover);
       border-color: var(--pgn-color-primary-hover);
+      color: var(--pgn-color-white) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--pgn-color-primary-active, var(--pgn-color-primary-hover));
+      border-color: var(--pgn-color-primary-active, var(--pgn-color-primary-hover));
       color: var(--pgn-color-white) !important;
     }
   }
 
   &--outline {
+    // PLL outline "VIEW ALL TRENDING" etc.: crimson border + text, pad 20px.
     background: transparent;
-    color: var(--pgn-color-text-base) !important;
-    border-color: var(--pgn-color-text-base);
+    color: var(--pgn-color-primary-base) !important;
+    border-color: var(--pgn-color-primary-base);
 
-    &:hover {
-      background: var(--pgn-color-text-base);
+    &:hover:not(:disabled) {
+      background: var(--pgn-color-primary-base);
+      color: var(--pgn-color-white) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--pgn-color-primary-hover);
+      border-color: var(--pgn-color-primary-hover);
       color: var(--pgn-color-white) !important;
     }
   }
@@ -547,9 +569,15 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     color: var(--pgn-color-white) !important;
     border-color: rgba(255, 255, 255, 0.6);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: var(--pgn-color-white);
       color: var(--pgn-color-chrome-header-dark) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--pgn-color-white);
+      color: var(--pgn-color-chrome-header-dark) !important;
+      opacity: 0.92;
     }
   }
 
@@ -579,9 +607,8 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 // ---------------------------------------------------------------------------
 // Header — sticky. Same chrome on every page: solid dark navy
 // (.tels-header--dark). Home is the only exception — transparent over the
-// hero until scroll. Centered logo, hamburger → "Browse by Subject Area"
-// mega-menu, "View all courses" pill. State classes are toggled by
-// TelsHeader.jsx (scrolled / menuOpen), not by CSS alone.
+// hero until scroll. Centered logo (57px, PLL), 3-span hamburger, right-side
+// catalog search. State classes toggled by TelsHeader.jsx.
 // ---------------------------------------------------------------------------
 
 .tels-header {
@@ -605,23 +632,23 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   }
 }
 
-// Matches the Lovable mock exactly — tels-mirror's Header.tsx row is a fixed
-// height (`h-16 md:h-[70px]`, 64px/70px), not padding-driven auto-height.
-// This matters beyond the header itself: the home hero's negative margin-top
-// (.tels-hero, -64px/-70px in tels-mirror's own `-mt-16 md:-mt-[70px]`) only
-// lines up seamlessly under the transparent sticky header when the header is
-// genuinely this exact height — a taller/auto-height header leaves a gap of
-// page background showing above the hero image.
+// Header row height tracks pll.harvard.edu (~90px with 57px logo). Home hero
+// negative margin (.tels-hero) and mega-menu `top` must stay in lockstep.
+:root {
+  --tels-header-height: 74px;
+}
+@media (min-width: 768px) {
+  :root {
+    --tels-header-height: 90px;
+  }
+}
+
 .tels-header__row {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 0.75rem;
-  height: 64px;
-
-  @media (min-width: 768px) {
-    height: 70px;
-  }
+  height: var(--tels-header-height);
 }
 
 .tels-header__start {
@@ -631,30 +658,77 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   gap: 1rem;
 }
 
-.tels-header__menu-btn {
+.tels-header__end {
+  justify-self: end;
   display: inline-flex;
   align-items: center;
+  min-width: 0;
+}
+
+// Harvard PLL-style hamburger: 35×30 box, 6px-thick bars
+// (.site-header .navbar-toggler-icon on pll.harvard.edu).
+.tels-header__menu-btn {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
   background: none;
   border: 0;
-  padding: 0;
+  outline: 0;
   cursor: pointer;
   color: inherit;
+  appearance: none;
 
   &:hover {
-    opacity: 0.75;
+    opacity: 0.85;
   }
 
-  // 40×40 — same as local lucide Menu. Font Awesome .svg-inline--fa defaults
-  // to 1em, which is why the deployed hamburger looked tiny.
-  font-size: 40px;
-  line-height: 1;
+  span {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 35px;
+    height: 6px;
+    border-radius: 1.5px;
+    background: currentColor;
+    transition: all 0.5s ease-in-out;
+  }
 
-  svg,
-  .svg-inline--fa {
-    width: 40px !important;
-    height: 40px !important;
-    max-width: 40px;
-    max-height: 40px;
+  span:nth-child(1) {
+    top: 0;
+  }
+
+  span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+
+  span:nth-child(3) {
+    bottom: 0;
+  }
+
+  &.is-open {
+    span {
+      border-radius: 2.5px;
+    }
+
+    span:nth-child(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%) rotate(45deg);
+    }
   }
 }
 
@@ -665,14 +739,15 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 .tels-header__view-all {
   display: none;
   align-items: center;
-  height: 44px;
-  padding: 0 1.25rem;
+  height: 58px;
+  padding: 1.25rem;
   font-family: var(--pgn-typography-font-family-ui);
-  font-size: var(--pgn-typography-btn-font-size-base);
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: normal;
   border: 1px solid var(--pgn-color-white) !important;
+  border-radius: 3px;
   color: var(--pgn-color-white) !important;
   background: transparent;
   cursor: pointer;
@@ -699,19 +774,12 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   position: relative;
   z-index: 2;
 
-  // Matches the Lovable mock exactly — tels-mirror's Header.tsx logo img is
-  // Tailwind `h-10 md:h-11` (40px, 44px at md/768px). Previously matched the
-  // live pll.harvard.edu .navbar-brand img instead (41px/57px at 64em) —
-  // wrong reference for this template.
+  // pll.harvard.edu .navbar-brand img — 57px tall, width auto.
   img {
-    height: 40px !important;
+    height: 57px !important;
     width: auto !important;
-    max-height: 44px;
+    max-height: 57px;
     object-fit: contain;
-
-    @media (min-width: 48em) {
-      height: 44px !important;
-    }
   }
 
   // Light header state: brand logo is a light/transparent PNG designed for
@@ -719,6 +787,132 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   // itself uses (style={{ filter: 'invert(1) brightness(0)' }}).
   .tels-header--light & img {
     filter: invert(1) brightness(0);
+  }
+}
+
+// Catalog search — pll.harvard.edu .catalog-search: white input + transparent
+// 58×58 submit with bold white glyph outside the box (icon font ~2.1875rem).
+// Colors/sizes: search-field + form-input tokens.
+.tels-header__search {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 0;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+
+  @media (max-width: 575px) {
+    width: auto;
+  }
+}
+
+.tels-header__search-input {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  width: var(--pgn-size-search-field-header-input-max-width, 180px);
+  max-width: var(--pgn-size-search-field-header-input-max-width, 180px);
+  height: var(--pgn-size-search-field-header-input-height, 58px);
+  max-height: var(--pgn-size-search-field-header-input-height, 58px);
+  margin: 0;
+  // PLL header .form-text: padding 14px 20px — centers placeholder vertically
+  // and insets it ~20px from the left edge (not the old 35px catalog filter pad).
+  padding: var(--pgn-size-search-field-header-input-padding-y, 14px)
+    var(--pgn-size-search-field-header-input-padding-x, 20px);
+  border: 0 solid transparent;
+  border-radius: var(--pgn-size-search-field-header-input-border-radius, 3px);
+  background: var(--pgn-color-search-field-form-bg, var(--pgn-color-white));
+  color: var(--pgn-color-form-input-base);
+  font-family: var(--pgn-typography-font-family-base);
+  // PLL computed 16px / 300 — keep independent of global body 1.125rem.
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.95;
+  outline: none;
+  appearance: none;
+  box-shadow: none;
+
+  &::placeholder {
+    color: var(--pgn-color-form-input-placeholder);
+    opacity: 1;
+    // Match typed text inset; some UAs shift placeholder otherwise.
+    text-align: start;
+    line-height: inherit;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  @media (max-width: 575px) {
+    display: none;
+  }
+}
+
+.tels-header__search-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: var(--pgn-size-search-field-header-icon-size, 58px);
+  height: var(--pgn-size-search-field-header-input-height, 58px);
+  max-height: var(--pgn-size-search-field-header-input-height, 58px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--pgn-color-search-field-header-icon, var(--pgn-color-white));
+  cursor: pointer;
+  appearance: none;
+
+  // No hover/focus color shift — stays white like PLL default chrome.
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--pgn-color-search-field-header-icon, var(--pgn-color-white));
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  svg {
+    width: var(--pgn-size-search-field-header-icon-glyph, 2.1875rem);
+    height: var(--pgn-size-search-field-header-icon-glyph, 2.1875rem);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 3.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.tels-header--light {
+  .tels-header__search-input {
+    background: var(--pgn-color-search-field-form-bg, var(--pgn-color-form-input-bg-base));
+    color: var(--pgn-color-form-input-base);
+
+    &::placeholder {
+      color: var(--pgn-color-form-input-placeholder);
+    }
+  }
+
+  .tels-header__search-submit {
+    color: var(--pgn-color-search-field-header-icon-on-light, var(--pgn-color-form-input-base));
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--pgn-color-search-field-header-icon-on-light, var(--pgn-color-form-input-base));
+      background-color: transparent;
+    }
   }
 }
 
@@ -731,7 +925,7 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 // ---------------------------------------------------------------------------
 .tels-header__menu {
   position: fixed;
-  top: 64px;
+  top: 74px;
   left: 0;
   right: 0;
   z-index: 1039;
@@ -739,7 +933,7 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   // Content-sized overlay (not full viewport). 0fr / 1fr animates open
   // height; max-height only caps tall menus so the page can still peek
   // below the panel.
-  max-height: calc(100vh - 64px);
+  max-height: calc(100vh - 74px);
   background: var(--pgn-color-chrome-header-dark);
   color: var(--pgn-color-white);
   display: grid;
@@ -753,8 +947,8 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     visibility 0s linear var(--pgn-transition-collapse-height-duration, 0.35s);
 
   @media (min-width: 768px) {
-    top: 70px;
-    max-height: calc(100vh - 70px);
+    top: 90px;
+    max-height: calc(100vh - 90px);
   }
 
   &--open {

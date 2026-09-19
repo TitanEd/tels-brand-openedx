@@ -61,14 +61,14 @@ footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
   gap: 2rem;
   padding: 2.5rem 0;
 
-  // Foundation's medium-6 large-4 / medium-6 large-4 / medium-12 large-3
-  // large-offset-1 — approximated as 4/4/(1 empty)/3 twelfths.
+  // 3 parts: CTA | links | logo (no empty spacer column).
   @media (min-width: 40em) {
-    grid-template-columns: repeat(2, 1fr) 3fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   @media (min-width: 64em) {
-    grid-template-columns: 4fr 4fr 1fr 3fr;
+    grid-template-columns: 4fr 4fr 3fr;
+    align-items: start;
   }
 }
 
@@ -83,11 +83,14 @@ footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
 }
 
 .tels-footer__brand {
-  text-align: left;
-  grid-column: -2 / -1;
+  text-align: start;
+
+  @media (min-width: 40em) and (max-width: 63.98em) {
+    grid-column: 1 / -1;
+  }
 
   @media (min-width: 64em) {
-    text-align: right;
+    text-align: end;
   }
 }
 
@@ -100,6 +103,6 @@ footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
   height: 48px;
 
   @media (min-width: 64em) {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 }
