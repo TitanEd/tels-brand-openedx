@@ -10,7 +10,7 @@
     "build-scss": "paragon build-scss --corePath ./paragon/core.scss --themesPath ./paragon/build/themes",
     "build": "make build",
     "build:watch": "nodemon --ignore dist --ignore paragon/build -x \"make build\"",
-    "serve": "paragon serve-theme-css -h 0.0.0.0",
+    "serve": "node scripts/serve-theme.js",
     "paragon:help": "paragon help"
   },
   "license": "GPL-3.0-or-later",

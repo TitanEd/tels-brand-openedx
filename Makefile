@@ -1,4 +1,4 @@
-.PHONY: build clean append-overrides copy-fonts
+.PHONY: build clean append-overrides copy-fonts copy-assets
 
 clean:
 	rm -rf dist paragon/build
@@ -19,8 +19,16 @@ copy-fonts:
 	@cp -a paragon/fonts/. dist/fonts/
 	@echo "Copied paragon/fonts → dist/fonts"
 
+# Hero / marketing images referenced as url("./assets/…") from dist CSS
+# (PARAGON_THEME_URLS or webpack @edx/brand). Keep beside the CSS output.
+copy-assets:
+	@mkdir -p dist/assets
+	@if [ -d paragon/assets ]; then cp -a paragon/assets/. dist/assets/; fi
+	@echo "Copied paragon/assets → dist/assets"
+
 build: clean
 	npm run build-tokens
 	npm run build-scss
 	$(MAKE) append-overrides
 	$(MAKE) copy-fonts
+	$(MAKE) copy-assets

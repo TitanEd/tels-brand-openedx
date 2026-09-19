@@ -1,10 +1,14 @@
 // LAYER 1 — Global typography override
 // Tokens defined in:
-//   core/global/typography.json          → font family + H1–H6 sizes
+//   core/global/typography.json          → THREE font stacks + H1–H6 sizes
+//     --pgn-typography-font-family-base     → Merriweather (body/headings)
+//     --pgn-typography-font-family-ui       → Merriweather Sans (buttons/chrome)
+//     --pgn-typography-font-family-manrope  → Manrope (newsletter only)
 //   core/components/text/headings-font.json → headings font-family (inherits body)
 //   themes/*/components/text/headings.json  → heading color
 // Why: one place to change typeface/heading scale for every MFE.
 // Must NOT use `* { font-family }` — that breaks FontAwesome (.fa) icons.
+// Must NOT collapse UI into base — PLL renders Merriweather + Merriweather Sans.
 
 // `html` intentionally does NOT get `font-size: var(--pgn-typography-font-size-base)`
 // here — Paragon's own core.css never sets a font-size on `html` either (see
@@ -21,10 +25,21 @@ html {
 body {
   font-family: var(--pgn-typography-font-family-base);
   font-size: var(--pgn-typography-font-size-base);
+  // PLL body is Merriweather Light (300), not Paragon "normal" 400.
+  font-weight: 300;
   color: var(--pgn-color-body-base, var(--pgn-color-text-base));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+// PLL remaps Bootstrap-style utility names onto Merriweather Light / Bold.
+.font-normal {
+  font-weight: 300;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 // Headings — family + size + color from Layer 1 tokens (all MFEs)
@@ -32,7 +47,8 @@ h1, .h1 {
   font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
   font-size: var(--pgn-typography-font-size-h1-base);
   color: var(--pgn-color-headings-base);
-  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  // Fallback 300 (not Paragon 700) so missing core vars still match PLL Light.
+  font-weight: var(--pgn-typography-headings-font-weight, 300);
   line-height: var(--pgn-typography-headings-line-height, 1.25);
 }
 
@@ -40,7 +56,7 @@ h2, .h2 {
   font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
   font-size: var(--pgn-typography-font-size-h2-base);
   color: var(--pgn-color-headings-base);
-  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  font-weight: var(--pgn-typography-headings-font-weight, 300);
   line-height: var(--pgn-typography-headings-line-height, 1.25);
 }
 
@@ -48,7 +64,7 @@ h3, .h3 {
   font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
   font-size: var(--pgn-typography-font-size-h3-base);
   color: var(--pgn-color-headings-base);
-  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  font-weight: var(--pgn-typography-headings-font-weight, 300);
   line-height: var(--pgn-typography-headings-line-height, 1.25);
 }
 
@@ -56,7 +72,7 @@ h4, .h4 {
   font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
   font-size: var(--pgn-typography-font-size-h4-base);
   color: var(--pgn-color-headings-base);
-  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  font-weight: var(--pgn-typography-headings-font-weight, 300);
   line-height: var(--pgn-typography-headings-line-height, 1.25);
 }
 
@@ -64,7 +80,7 @@ h5, .h5 {
   font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
   font-size: var(--pgn-typography-font-size-h5-base);
   color: var(--pgn-color-headings-base);
-  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  font-weight: var(--pgn-typography-headings-font-weight, 300);
   line-height: var(--pgn-typography-headings-line-height, 1.25);
 }
 
@@ -72,7 +88,7 @@ h6, .h6 {
   font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
   font-size: var(--pgn-typography-font-size-h6-base);
   color: var(--pgn-color-headings-base);
-  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  font-weight: var(--pgn-typography-headings-font-weight, 300);
   line-height: var(--pgn-typography-headings-line-height, 1.25);
 }
 

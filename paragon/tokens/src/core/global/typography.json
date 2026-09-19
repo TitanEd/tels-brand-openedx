@@ -1,21 +1,29 @@
 {
-  "$description": "LAYER 1 — GLOBAL FONT, Template B (Harvard-PLL / tels-mirror). Change brand typeface HERE only. Cascades via --pgn-typography-font-family-* + overrides/_typography.scss. Do not set font-family on * (breaks .fa icons).",
+  "$description": "LAYER 1 — GLOBAL FONTS, Template B (Harvard-PLL). Three roles — do not collapse to one family. Applied via --pgn-typography-font-family-* + overrides/_typography.scss / _buttons.scss. Do not set font-family on * (breaks .fa icons).",
   "typography": {
     "font": {
       "family": {
         "sans": {
           "serif": {
-            "$value": "\"Merriweather\", Georgia, serif",
-            "$description": "★ BRAND FONT STACK — edit this string to change typeface site-wide. Must be a comma-separated STRING (not a JSON array). tels-mirror is serif-first: html/body/h1-h4 all default to Merriweather (key name kept as 'sans.serif' for parity with existing Layer-2 references — it holds whatever the body typeface is, not literally a sans font here)."
+            "$value": "Merriweather, serif",
+            "$description": "★ BODY / DISPLAY stack → used by base. Must be a comma-separated STRING. PLL: Merriweather, serif (key name kept as 'sans.serif' for Layer-2 parity)."
           }
         },
         "base": {
           "$value": "{typography.font.family.sans.serif}",
-          "$description": "Body / UI font → --pgn-typography-font-family-base (links to sans.serif above)"
+          "$description": "Body + headings → --pgn-typography-font-family-base. PLL: Merriweather, serif."
         },
         "ui": {
-          "$value": "\"Manrope\", \"Inter\", ui-sans-serif, system-ui, sans-serif",
-          "$description": "UI chrome font (buttons, nav, uppercase labels, filter bar) → --pgn-typography-font-family-ui. tels-mirror's second family (--font-sans) — body copy/headings stay serif, only interactive chrome uses this."
+          "$value": [
+            "Merriweather Sans",
+            "sans-serif"
+          ],
+          "$type": "fontFamily",
+          "$description": "UI chrome (buttons, nav, uppercase labels, filter bar, card titles) → --pgn-typography-font-family-ui. PLL: \"Merriweather Sans\", sans-serif — separate from body Merriweather."
+        },
+        "manrope": {
+          "$value": "Manrope, Helvetica, Arial, sans-serif",
+          "$description": "Newsletter / heavy marketing labels only → --pgn-typography-font-family-manrope. PLL webform uses Manrope; do not put Manrope in the UI stack."
         },
         "monospace": {
           "$value": [

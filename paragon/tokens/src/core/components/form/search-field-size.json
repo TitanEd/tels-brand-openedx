@@ -1,11 +1,49 @@
 {
-  "$description": "SEARCH FIELD size — radius follows global form/input radius (Paragon default is 0).",
+  "$description": "SEARCH FIELD size — radius follows global form/input radius (Paragon default is 0). Header catalog sizes match pll.harvard.edu (.catalog-search).",
   "size": {
     "search-field": {
       "border": {
         "radius": {
           "$value": "{size.border.radius.base}",
           "$description": "SearchField shell + input radius → --pgn-size-search-field-border-radius"
+        }
+      },
+      "header": {
+        "input": {
+          "max-width": {
+            "$value": "180px",
+            "$description": "Header catalog search input max-width (PLL) → --pgn-size-search-field-header-input-max-width"
+          },
+          "height": {
+            "$value": "58px",
+            "$description": "Header catalog search input height (PLL) → --pgn-size-search-field-header-input-height"
+          },
+          "border-radius": {
+            "$value": "3px",
+            "$description": "Header catalog search input radius (PLL .form-text computed) → --pgn-size-search-field-header-input-border-radius"
+          },
+          "padding-y": {
+            "$value": "14px",
+            "$description": "Header catalog search vertical pad (PLL padding 14px 20px) → --pgn-size-search-field-header-input-padding-y"
+          },
+          "padding-x": {
+            "$value": "20px",
+            "$description": "Header catalog search horizontal pad / placeholder inset (PLL) → --pgn-size-search-field-header-input-padding-x"
+          },
+          "padding-left": {
+            "$value": "20px",
+            "$description": "Alias of padding-x for SCSS that only sets left → --pgn-size-search-field-header-input-padding-left"
+          }
+        },
+        "icon": {
+          "size": {
+            "$value": "58px",
+            "$description": "Header catalog search submit hit area (PLL .form-submit) → --pgn-size-search-field-header-icon-size"
+          },
+          "glyph": {
+            "$value": "2.1875rem",
+            "$description": "Header catalog search glyph size (PLL .icon-search::before font-size) → --pgn-size-search-field-header-icon-glyph"
+          }
         }
       }
     }
