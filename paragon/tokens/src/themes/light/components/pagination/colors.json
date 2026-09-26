@@ -1,0 +1,28 @@
+{
+  "$description": "PAGINATION (light) — .pagination / Paragon Pagination (DataTable footers, catalog, discussions). Paragon component CSS reads these --pgn-* names directly. Text follows link tokens; active follows primary (via color.bg.active). Defaults = Paragon stock.",
+  "color": {
+    "pagination": {
+      "text": {
+        "base": { "$value": "{color.link.base}", "$description": "Page link text → --pgn-color-pagination-text-base" },
+        "hover": { "$value": "{color.link.hover}", "$description": "Hover text → --pgn-color-pagination-text-hover" },
+        "active": { "$value": "{color.active}", "$description": "Current page text → --pgn-color-pagination-text-active" },
+        "disabled": { "$value": "{color.disabled}", "$description": "Disabled text → --pgn-color-pagination-text-disabled" }
+      },
+      "bg": {
+        "base": { "$value": "{color.bg.base}", "$description": "Page link bg → --pgn-color-pagination-bg-base" },
+        "hover": { "$value": "{color.gray.100}", "$description": "Hover bg → --pgn-color-pagination-bg-hover" },
+        "active": { "$value": "{color.primary.base}", "$description": "Current page bg → --pgn-color-pagination-bg-active" },
+        "disabled": { "$value": "{color.white}", "$description": "Disabled bg → --pgn-color-pagination-bg-disabled" }
+      },
+      "border": {
+        "base": { "$value": "{color.gray.200}", "$description": "Border → --pgn-color-pagination-border-base" },
+        "hover": { "$value": "{color.gray.200}", "$description": "Hover border → --pgn-color-pagination-border-hover" },
+        "active": { "$value": "{color.pagination.bg.active}", "$description": "Current page border → --pgn-color-pagination-border-active" },
+        "disabled": { "$value": "{color.gray.100}", "$description": "Disabled border → --pgn-color-pagination-border-disabled" }
+      },
+      "focus": {
+        "base": { "$value": "{color.primary.base}", "$description": "Focus ring → --pgn-color-pagination-focus-base" }
+      }
+    }
+  }
+}

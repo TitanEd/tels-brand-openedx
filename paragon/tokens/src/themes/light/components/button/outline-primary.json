@@ -61,6 +61,26 @@
             "$description": "Active border → --pgn-color-btn-active-border-outline-primary"
           }
         }
+      },
+      "disabled": {
+        "bg": {
+          "outline-primary": {
+            "$value": "transparent",
+            "$description": "Disabled bg → --pgn-color-btn-disabled-bg-outline-primary"
+          }
+        },
+        "text": {
+          "outline-primary": {
+            "$value": "{color.btn.text.outline-primary}",
+            "$description": "Disabled text → --pgn-color-btn-disabled-text-outline-primary"
+          }
+        },
+        "border": {
+          "outline-primary": {
+            "$value": "{color.btn.border.outline-primary}",
+            "$description": "Disabled border → --pgn-color-btn-disabled-border-outline-primary"
+          }
+        }
       }
     }
   }

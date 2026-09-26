@@ -1,0 +1,13 @@
+{
+  "$description": "Dark — form label text. Defaults to dark body.",
+  "color": {
+    "form": {
+      "label": {
+        "base": {
+          "$value": "{color.body.base}",
+          "$description": "Dark form label → --pgn-color-form-label-base"
+        }
+      }
+    }
+  }
+}

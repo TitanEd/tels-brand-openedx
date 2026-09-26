@@ -1,18 +1,81 @@
 {
-  "$description": "Dark — solid primary button contrast. Hover: Paragon defaults — do not override here.",
+  "$description": "Dark — solid primary. Default / Hover / Active / Disabled. White labels use modify:null.",
   "color": {
     "btn": {
       "bg": {
         "primary": {
           "$value": "{color.primary.base}",
-          "$description": "Solid primary bg (dark)"
+          "$description": "Solid primary bg (dark) → --pgn-color-btn-bg-primary"
         }
       },
       "text": {
         "primary": {
           "$value": "#FFFFFF",
           "modify": null,
-          "$description": "UI label: Solid primary text (dark) → --pgn-color-btn-text-primary"
+          "$description": "Solid primary text (dark) → --pgn-color-btn-text-primary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "primary": {
+            "$value": "{color.theme.hover.primary}",
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-primary"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Hover text (dark)"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.theme.hover.primary}",
+            "$description": "Hover border (dark)"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "primary": {
+            "$value": "{color.theme.active.primary}",
+            "$description": "Active bg (dark)"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Active text (dark)"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.theme.active.primary}",
+            "$description": "Active border (dark)"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "primary": {
+            "$value": "{color.btn.bg.primary}",
+            "$description": "Disabled bg (dark)"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "{color.btn.text.primary}",
+            "modify": null,
+            "$description": "Disabled text (dark)"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.btn.border.primary}",
+            "$description": "Disabled border (dark)"
+          }
         }
       }
     }

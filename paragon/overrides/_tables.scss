@@ -1,0 +1,22 @@
+// LAYER 2 — Table override (Paragon DataTable, all MFEs)
+// Tokens: themes/light/components/table/colors.json
+// Why: Paragon DataTable hardcodes header / striped / selected colors to
+// light-300 / light-200 / info-100. Route them through tokens; fallbacks are
+// the same stock values so dark (no table tokens) renders like Paragon.
+
+.pgn__data-table {
+  color: var(--pgn-color-data-table-text, inherit);
+
+  th {
+    background-color: var(--pgn-color-data-table-header-bg, var(--pgn-color-light-300));
+    color: var(--pgn-color-data-table-header-text, inherit);
+  }
+
+  &.is-striped tr:nth-child(even) {
+    background-color: var(--pgn-color-data-table-row-striped-bg, var(--pgn-color-light-200));
+  }
+
+  tr.is-selected {
+    background-color: var(--pgn-color-data-table-row-selected-bg, var(--pgn-color-info-100)) !important;
+  }
+}

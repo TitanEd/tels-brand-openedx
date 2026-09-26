@@ -1,0 +1,14 @@
+{
+  "$description": "BREADCRUMB (light) — .pgn__breadcrumb (Learning unit nav, Studio). Paragon component CSS reads these --pgn-* names directly. Links follow primary; current page is muted. Defaults = Paragon stock. Focus radius: core/components/breadcrumb/size.json.",
+  "color": {
+    "breadcrumb": {
+      "base": { "$value": "{color.primary.base}", "$description": "Breadcrumb link → --pgn-color-breadcrumb-base" },
+      "active": { "$value": "{color.gray.500}", "$description": "Current page → --pgn-color-breadcrumb-active" },
+      "inverse": {
+        "base": { "$value": "{color.white}", "$description": "Inverse (on dark) link → --pgn-color-breadcrumb-inverse-base" },
+        "active": { "$value": "{color.light.500}", "$description": "Inverse current page → --pgn-color-breadcrumb-inverse-active" },
+        "spacer": { "$value": "{color.light.700}", "$description": "Inverse separator → --pgn-color-breadcrumb-inverse-spacer" }
+      }
+    }
+  }
+}

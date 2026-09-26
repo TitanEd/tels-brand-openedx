@@ -1,5 +1,5 @@
 {
-  "$description": "SOLID PRIMARY only — class: .btn.btn-primary. Outline lives in outline-primary.json (do not duplicate here). Hover/active: Paragon defaults (theme.hover / primary-700) — do not override here.",
+  "$description": "SOLID PRIMARY only — class: .btn.btn-primary. Outline lives in outline-primary.json. Default / Hover / Active / Disabled. White labels use modify:null so color-yiq does not rewrite them.",
   "color": {
     "btn": {
       "bg": {
@@ -19,6 +19,69 @@
         "primary": {
           "$value": "{color.btn.bg.primary}",
           "$description": "Solid primary border → --pgn-color-btn-border-primary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "primary": {
+            "$value": "{color.theme.hover.primary}",
+            "$description": "Hover bg → --pgn-color-btn-hover-bg-primary"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Hover text → --pgn-color-btn-hover-text-primary"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.theme.hover.primary}",
+            "$description": "Hover border → --pgn-color-btn-hover-border-primary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "primary": {
+            "$value": "{color.theme.active.primary}",
+            "$description": "Active bg → --pgn-color-btn-active-bg-primary"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Active text → --pgn-color-btn-active-text-primary"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.theme.active.primary}",
+            "$description": "Active border → --pgn-color-btn-active-border-primary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "primary": {
+            "$value": "{color.btn.bg.primary}",
+            "$description": "Disabled bg → --pgn-color-btn-disabled-bg-primary"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "{color.btn.text.primary}",
+            "modify": null,
+            "$description": "Disabled text → --pgn-color-btn-disabled-text-primary"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.btn.border.primary}",
+            "$description": "Disabled border → --pgn-color-btn-disabled-border-primary"
+          }
         }
       }
     }

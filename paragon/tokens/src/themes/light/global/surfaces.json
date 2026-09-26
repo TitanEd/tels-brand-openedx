@@ -1,11 +1,15 @@
 {
-  "$description": "LAYER 1 — page background (light). Do NOT set color.border here — leave Open edX/Paragon default component borders (cards, collapsibles, etc.). Buttons keep their own border tokens.",
+  "$description": "LAYER 1 — page background + global border (light). color.border is set to the Paragon stock value ({color.gray.200}); changing it affects every component that reads --pgn-color-border (cards, collapsibles, tables). Buttons keep their own border tokens.",
   "color": {
     "bg": {
       "base": {
         "$value": "{color.white}",
         "$description": "Page background → --pgn-color-bg-base"
       }
+    },
+    "border": {
+      "$value": "{color.gray.200}",
+      "$description": "Global border → --pgn-color-border (Paragon stock default)"
     },
     "input": {
       "focus": {

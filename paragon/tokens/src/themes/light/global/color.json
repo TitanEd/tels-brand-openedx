@@ -42,8 +42,8 @@
     },
     "primary": {
       "base": {
-        "$value": "#008000",
-        "$description": "UI label: Primary \u2014 cascades to solid primary button bg and related primary uses"
+        "$value": "#EB5939",
+        "$description": "LAYER 1 color 1 — Primary. Change once → solid/outline/inverse primary buttons, brand (linked), links, tabs."
       },
       "light": {
         "$value": "#F2F7F8",
@@ -52,14 +52,24 @@
     },
     "secondary": {
       "base": {
-        "$value": "#008000",
-        "$description": "UI label: Secondary"
+        "$value": "#273F2F",
+        "$description": "LAYER 1 color 2 — Secondary. Change once → solid/outline/inverse secondary buttons and icon-secondary."
+      },
+      "light": {
+        "$value": "#F3F5F4",
+        "$description": "Secondary light surface"
       }
     },
     "brand": {
       "base": {
-        "$value": "#008000",
-        "$description": "UI label: Brand"
+        "$value": "{color.primary.base}",
+        "$description": "Brand hue follows Layer 1 Primary. Override here only if brand must diverge from primary."
+      }
+    },
+    "surface": {
+      "base": {
+        "$value": "{color.white}",
+        "$description": "LAYER 1 — Surface (raised containers on the page bg). → --pgn-color-surface-base. Feeds modal content, dropdown menu and DataTable backgrounds."
       }
     },
     "success": {

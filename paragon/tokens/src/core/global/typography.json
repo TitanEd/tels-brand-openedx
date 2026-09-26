@@ -26,6 +26,23 @@
           "$description": "Code / mono → --pgn-typography-font-family-monospace"
         }
       },
+      "weight": {
+        "base": {
+          "$value": "{typography.font.weight.normal}",
+          "$type": "fontWeight",
+          "$description": "UI label: Body font weight → --pgn-typography-font-weight-base"
+        },
+        "bold": {
+          "$value": "700",
+          "$type": "fontWeight",
+          "$description": "UI label: Bold weight (headings, table th) → --pgn-typography-font-weight-bold"
+        }
+      },
+      "scale": {
+        "$value": "1",
+        "$type": "number",
+        "$description": "★ GLOBAL FONT SCALE — unitless multiplier on html rem root (1 = 100%, 1.2 = +20%). → --pgn-typography-font-scale. Applied by overrides/_typography.scss as calc(100% * scale). Independent of Body size (font.size.base)."
+      },
       "size": {
         "base": {
           "$value": "1.125rem",
@@ -67,6 +84,19 @@
             "$description": "UI label: H6 → --pgn-typography-font-size-h6-base"
           }
         }
+      }
+    },
+    "line-height": {
+      "base": {
+        "$value": "1.5556",
+        "$type": "number",
+        "$description": "UI label: Body line height (unitless) → --pgn-typography-line-height-base"
+      }
+    },
+    "letter-spacing": {
+      "base": {
+        "$value": "normal",
+        "$description": "UI label: Letter spacing (e.g. normal, 0.01em) → --pgn-typography-letter-spacing-base. Set on body in overrides/_typography.scss; headings, buttons and labels inherit."
       }
     }
   }

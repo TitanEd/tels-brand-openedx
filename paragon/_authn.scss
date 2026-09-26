@@ -159,7 +159,7 @@ $tels-authn-glow: color-mix(in srgb, var(--pgn-color-primary-base) 45%, transpar
 
           &:hover,
           &:focus {
-            color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base)) !important;
+            color: var(--pgn-color-nav-tabs-base-link-hover-text, var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base))) !important;
             border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-base)) !important;
             background: none !important;
           }

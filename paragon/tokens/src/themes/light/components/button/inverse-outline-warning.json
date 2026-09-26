@@ -1,0 +1,85 @@
+{
+  "$description": "INVERSE OUTLINE WARNING \u2014 class: .btn.btn-inverse-outline-warning.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-outline-warning": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-inverse-outline-warning"
+        }
+      },
+      "text": {
+        "inverse-outline-warning": {
+          "$value": "{color.white}",
+          "$description": "Text \u2192 --pgn-color-btn-text-inverse-outline-warning"
+        }
+      },
+      "border": {
+        "inverse-outline-warning": {
+          "$value": "{color.white}",
+          "$description": "Border \u2192 --pgn-color-btn-border-inverse-outline-warning"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-outline-warning": {
+            "$value": "{color.white}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-outline-warning"
+          }
+        },
+        "text": {
+          "inverse-outline-warning": {
+            "$value": "{color.warning.base}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-outline-warning"
+          }
+        },
+        "border": {
+          "inverse-outline-warning": {
+            "$value": "{color.white}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-inverse-outline-warning"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-outline-warning": {
+            "$value": "{color.white}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-outline-warning"
+          }
+        },
+        "text": {
+          "inverse-outline-warning": {
+            "$value": "{color.warning.base}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-outline-warning"
+          }
+        },
+        "border": {
+          "inverse-outline-warning": {
+            "$value": "{color.white}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-inverse-outline-warning"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-outline-warning": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-inverse-outline-warning"
+          }
+        },
+        "text": {
+          "inverse-outline-warning": {
+            "$value": "{color.white}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-inverse-outline-warning"
+          }
+        },
+        "border": {
+          "inverse-outline-warning": {
+            "$value": "{color.white}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-outline-warning"
+          }
+        }
+      }
+    }
+  }
+}

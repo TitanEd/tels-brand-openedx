@@ -2,7 +2,7 @@
 //
 // Edit guide: CONTROLS.md
 //   Layer 1 — tokens (primary, font, width, pad)
-//   Layer 2 — tokens + overrides/* (buttons, link, tabs, form, search, dropdown)
+//   Layer 2 — tokens + overrides/* (buttons, link, tabs, form, search, dropdown, table)
 //   Layer 3 — paragon/_*.scss (MFE parents only)
 // Values only in JSON. SCSS maps class → var(--pgn-*).
 
@@ -17,6 +17,7 @@
 @import "./overrides/dropdown";
 @import "./overrides/tinymce";
 @import "./overrides/cards";
+@import "./overrides/tables";
 
 // Layer 3 — chrome + per-MFE
 @import "./header";

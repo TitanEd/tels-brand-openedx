@@ -1,0 +1,55 @@
+{
+  "$description": "LAYER 2 — Table (Paragon DataTable .pgn__data-table, used by Gradebook, Studio, Admin Console). Defaults equal Paragon stock. bg.base / border / table.* are Paragon tokens; header.* / text / row.* are TitanEd tokens read by overrides/_tables.scss (Paragon hardcodes those to light-300 / light-200 / info-100). DataTable has no row-hover state, so none is defined.",
+  "color": {
+    "table": {
+      "border": {
+        "$value": "{color.border}",
+        "$description": "Bootstrap table border → --pgn-color-table-border"
+      },
+      "caption": {
+        "$value": "{color.text.muted}",
+        "$description": "Table caption → --pgn-color-table-caption"
+      }
+    },
+    "data-table": {
+      "bg": {
+        "base": {
+          "$value": "{color.surface.base}",
+          "$description": "DataTable background → --pgn-color-data-table-bg-base (follows Layer 1 surface)"
+        }
+      },
+      "border": {
+        "$value": "{color.light.300}",
+        "$description": "DataTable border → --pgn-color-data-table-border"
+      },
+      "text": {
+        "$value": "{color.body.base}",
+        "$description": "Cell text → --pgn-color-data-table-text"
+      },
+      "header": {
+        "bg": {
+          "$value": "{color.light.300}",
+          "$description": "Header row (th) background → --pgn-color-data-table-header-bg"
+        },
+        "text": {
+          "$value": "{color.body.base}",
+          "$description": "Header row (th) text → --pgn-color-data-table-header-text"
+        }
+      },
+      "row": {
+        "striped": {
+          "bg": {
+            "$value": "{color.light.200}",
+            "$description": "Even row bg when .is-striped → --pgn-color-data-table-row-striped-bg"
+          }
+        },
+        "selected": {
+          "bg": {
+            "$value": "{color.info.100}",
+            "$description": "Selected row (tr.is-selected) bg → --pgn-color-data-table-row-selected-bg"
+          }
+        }
+      }
+    }
+  }
+}

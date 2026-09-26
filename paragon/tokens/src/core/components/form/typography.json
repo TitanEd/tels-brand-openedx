@@ -1,0 +1,25 @@
+{
+  "$description": "LAYER 2 — Form / Label font sizes. Paragon .pgn__form-label uses --pgn-typography-form-input-font-size-*. Independent of Button sizes so Label can diverge.",
+  "typography": {
+    "form": {
+      "input": {
+        "font": {
+          "size": {
+            "base": {
+              "$value": "1.125rem",
+              "$description": "UI: Label / form input font size → --pgn-typography-form-input-font-size-base"
+            },
+            "sm": {
+              "$value": "0.875rem",
+              "$description": "UI: Label / form input font size sm → --pgn-typography-form-input-font-size-sm"
+            },
+            "lg": {
+              "$value": "1.325rem",
+              "$description": "UI: Label / form input font size lg → --pgn-typography-form-input-font-size-lg"
+            }
+          }
+        }
+      }
+    }
+  }
+}

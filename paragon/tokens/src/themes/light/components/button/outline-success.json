@@ -1,0 +1,85 @@
+{
+  "$description": "OUTLINE SUCCESS \u2014 class: .btn.btn-outline-success.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-success": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-outline-success"
+        }
+      },
+      "text": {
+        "outline-success": {
+          "$value": "{color.success.base}",
+          "$description": "Text \u2192 --pgn-color-btn-text-outline-success"
+        }
+      },
+      "border": {
+        "outline-success": {
+          "$value": "{color.success.base}",
+          "$description": "Border \u2192 --pgn-color-btn-border-outline-success"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-success": {
+            "$value": "transparent",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-outline-success"
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.theme.hover.success}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-outline-success"
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.success.700}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-outline-success"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-success": {
+            "$value": "transparent",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-outline-success"
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.theme.active.success}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-success"
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.theme.active.success}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-outline-success"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-success": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-outline-success"
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.btn.text.outline-success}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-outline-success"
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.btn.border.outline-success}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-success"
+          }
+        }
+      }
+    }
+  }
+}

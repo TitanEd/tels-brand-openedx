@@ -3,7 +3,7 @@
   "color": {
     "modal": {
       "content": {
-        "bg": { "$value": "{color.bg.base}", "$description": "Modal content bg → --pgn-color-modal-content-bg" },
+        "bg": { "$value": "{color.surface.base}", "$description": "Modal content bg → --pgn-color-modal-content-bg (follows Layer 1 surface)" },
         "border": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.2 }], "$description": "Modal content border → --pgn-color-modal-content-border" }
       },
       "backdrop-bg": { "$value": "{color.black}", "$description": "Modal backdrop → --pgn-color-modal-backdrop-bg" }

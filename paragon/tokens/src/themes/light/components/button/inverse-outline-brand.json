@@ -1,0 +1,85 @@
+{
+  "$description": "INVERSE OUTLINE BRAND \u2014 class: .btn.btn-inverse-outline-brand. White outline on dark chrome.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-outline-brand": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-inverse-outline-brand"
+        }
+      },
+      "text": {
+        "inverse-outline-brand": {
+          "$value": "{color.white}",
+          "$description": "Text \u2192 --pgn-color-btn-text-inverse-outline-brand"
+        }
+      },
+      "border": {
+        "inverse-outline-brand": {
+          "$value": "{color.white}",
+          "$description": "Border \u2192 --pgn-color-btn-border-inverse-outline-brand"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-outline-brand": {
+            "$value": "{color.white}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-outline-brand"
+          }
+        },
+        "text": {
+          "inverse-outline-brand": {
+            "$value": "{color.brand.base}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-outline-brand"
+          }
+        },
+        "border": {
+          "inverse-outline-brand": {
+            "$value": "{color.white}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-inverse-outline-brand"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-outline-brand": {
+            "$value": "{color.white}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-outline-brand"
+          }
+        },
+        "text": {
+          "inverse-outline-brand": {
+            "$value": "{color.brand.base}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-outline-brand"
+          }
+        },
+        "border": {
+          "inverse-outline-brand": {
+            "$value": "{color.white}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-inverse-outline-brand"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-outline-brand": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-inverse-outline-brand"
+          }
+        },
+        "text": {
+          "inverse-outline-brand": {
+            "$value": "{color.white}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-inverse-outline-brand"
+          }
+        },
+        "border": {
+          "inverse-outline-brand": {
+            "$value": "{color.white}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-outline-brand"
+          }
+        }
+      }
+    }
+  }
+}

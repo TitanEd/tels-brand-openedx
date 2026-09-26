@@ -1,0 +1,86 @@
+{
+  "$description": "INVERSE LIGHT \u2014 class: .btn.btn-inverse-light.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-light": {
+          "$value": "#FFFFFF",
+          "$description": "Inverse solid bg \u2192 --pgn-color-btn-bg-inverse-light",
+          "modify": null
+        }
+      },
+      "text": {
+        "inverse-light": {
+          "$value": "{color.light.base}",
+          "$description": "Inverse solid text \u2192 --pgn-color-btn-text-inverse-light"
+        }
+      },
+      "border": {
+        "inverse-light": {
+          "$value": "transparent",
+          "$description": "Inverse solid border \u2192 --pgn-color-btn-border-inverse-light"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-light": {
+            "$value": "{color.gray.100}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-light"
+          }
+        },
+        "text": {
+          "inverse-light": {
+            "$value": "{color.light.base}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-light"
+          }
+        },
+        "border": {
+          "inverse-light": {
+            "$value": "transparent",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-inverse-light"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-light": {
+            "$value": "{color.gray.100}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-light"
+          }
+        },
+        "text": {
+          "inverse-light": {
+            "$value": "{color.light.base}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-light"
+          }
+        },
+        "border": {
+          "inverse-light": {
+            "$value": "transparent",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-inverse-light"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-light": {
+            "$value": "{color.btn.bg.inverse-light}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-inverse-light"
+          }
+        },
+        "text": {
+          "inverse-light": {
+            "$value": "{color.btn.text.inverse-light}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-inverse-light"
+          }
+        },
+        "border": {
+          "inverse-light": {
+            "$value": "transparent",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-light"
+          }
+        }
+      }
+    }
+  }
+}

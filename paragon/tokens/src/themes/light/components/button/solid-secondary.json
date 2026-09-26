@@ -1,5 +1,5 @@
 {
-  "$description": "SOLID SECONDARY only — class: .btn.btn-secondary. Outline lives in outline-secondary.json (do not duplicate here). Hover/active: Paragon defaults — do not override here.",
+  "$description": "SOLID SECONDARY only — class: .btn.btn-secondary. Outline lives in outline-secondary.json. Default / Hover / Active / Disabled.",
   "color": {
     "btn": {
       "bg": {
@@ -19,6 +19,69 @@
         "secondary": {
           "$value": "{color.btn.bg.secondary}",
           "$description": "Solid secondary border → --pgn-color-btn-border-secondary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Hover bg → --pgn-color-btn-hover-bg-secondary"
+          }
+        },
+        "text": {
+          "secondary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Hover text → --pgn-color-btn-hover-text-secondary"
+          }
+        },
+        "border": {
+          "secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Hover border → --pgn-color-btn-hover-border-secondary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "secondary": {
+            "$value": "{color.theme.active.secondary}",
+            "$description": "Active bg → --pgn-color-btn-active-bg-secondary"
+          }
+        },
+        "text": {
+          "secondary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Active text → --pgn-color-btn-active-text-secondary"
+          }
+        },
+        "border": {
+          "secondary": {
+            "$value": "{color.theme.active.secondary}",
+            "$description": "Active border → --pgn-color-btn-active-border-secondary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "secondary": {
+            "$value": "{color.btn.bg.secondary}",
+            "$description": "Disabled bg → --pgn-color-btn-disabled-bg-secondary"
+          }
+        },
+        "text": {
+          "secondary": {
+            "$value": "{color.btn.text.secondary}",
+            "modify": null,
+            "$description": "Disabled text → --pgn-color-btn-disabled-text-secondary"
+          }
+        },
+        "border": {
+          "secondary": {
+            "$value": "{color.btn.border.secondary}",
+            "$description": "Disabled border → --pgn-color-btn-disabled-border-secondary"
+          }
         }
       }
     }

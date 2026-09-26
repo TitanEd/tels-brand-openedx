@@ -1,22 +1,74 @@
 {
-  "$description": "COURSE / NAV UNDERLINE TABS \u2014 .nav-underline-tabs .nav-link (Learning MFE course tabs).",
+  "$description": "LAYER 2 — Tabs (Paragon Tabs → .nav-tabs, plus Learning .nav-underline-tabs). Keys follow Paragon's own color.nav.* / border-color.nav.* paths so each value overrides the stock token instead of emitting a duplicate. link.text, link.hover.text and link.active.border are TitanEd additions read by Layer 3 tab maps (_learning, _authn, _communications).",
   "color": {
-    "nav-tabs": {
-      "base": {
-        "link": {
-          "active": {
-            "text": {
-              "$value": "{color.primary.base}",
-              "$description": "Active tab text color"
-            },
-            "border": {
-              "$value": "{color.primary.base}",
-              "$description": "Active tab underline"
+    "nav": {
+      "link": {
+        "text": {
+          "base": {
+            "$value": "{color.gray.700}",
+            "$description": "Tab / nav link text (default) → --pgn-color-nav-link-text-base"
+          },
+          "disabled": {
+            "$value": "{color.gray.300}",
+            "$description": "Disabled tab text → --pgn-color-nav-link-text-disabled"
+          }
+        }
+      },
+      "tabs": {
+        "base": {
+          "border": {
+            "base": {
+              "$value": "{color.light.400}",
+              "$description": "Tab bar bottom border → --pgn-color-nav-tabs-base-border-base"
             }
           },
-          "text": {
-            "$value": "{color.gray.700}",
-            "$description": "Inactive tab text"
+          "link": {
+            "text": {
+              "$value": "{color.nav.link.text.base}",
+              "$description": "Inactive tab text (Layer 3 maps) → --pgn-color-nav-tabs-base-link-text"
+            },
+            "hover": {
+              "bg": {
+                "$value": "{color.light.400}",
+                "$description": "Tab hover background → --pgn-color-nav-tabs-base-link-hover-bg"
+              },
+              "text": {
+                "$value": "{color.nav.tabs.base.link.active.text}",
+                "$description": "Tab hover text (Layer 3 maps) → --pgn-color-nav-tabs-base-link-hover-text"
+              }
+            },
+            "active": {
+              "text": {
+                "$value": "{color.primary.base}",
+                "$description": "Active tab text → --pgn-color-nav-tabs-base-link-active-text"
+              },
+              "bg": {
+                "$value": "transparent",
+                "$description": "Active tab background → --pgn-color-nav-tabs-base-link-active-bg"
+              },
+              "border": {
+                "$value": "{color.primary.base}",
+                "$description": "Active tab underline (Layer 3 maps) → --pgn-color-nav-tabs-base-link-active-border"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "border-color": {
+    "nav": {
+      "tabs-link": {
+        "border": {
+          "active": {
+            "$value": "{color.primary.base}",
+            "$type": "color",
+            "$description": "Active tab underline (Paragon .nav-tabs) → --pgn-border-color-nav-tabs-link-border-active"
+          },
+          "focus": {
+            "$value": "{color.nav.tabs.base.link.active.text}",
+            "$type": "color",
+            "$description": "Tab focus ring → --pgn-border-color-nav-tabs-link-border-focus"
           }
         }
       }

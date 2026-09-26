@@ -39,6 +39,47 @@
             "$description": "Hover border"
           }
         }
+      },
+      "active": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "transparent",
+            "$description": "Active bg → --pgn-color-btn-active-bg-outline-secondary"
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.theme.active.secondary}",
+            "modify": null,
+            "$description": "Active text → --pgn-color-btn-active-text-outline-secondary"
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.theme.active.secondary}",
+            "$description": "Active border → --pgn-color-btn-active-border-outline-secondary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "transparent",
+            "$description": "Disabled bg → --pgn-color-btn-disabled-bg-outline-secondary"
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.btn.text.outline-secondary}",
+            "$description": "Disabled text → --pgn-color-btn-disabled-text-outline-secondary"
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.btn.border.outline-secondary}",
+            "$description": "Disabled border → --pgn-color-btn-disabled-border-outline-secondary"
+          }
+        }
       }
     }
   }

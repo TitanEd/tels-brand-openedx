@@ -1,0 +1,11 @@
+{
+  "$description": "LINK BUTTON \u2014 class: .btn.btn-link. Looks like a text link; colors follow Layer 2 link tokens. Disabled uses Paragon --pgn-color-btn-disabled-link.",
+  "color": {
+    "btn": {
+      "disabled-link": {
+        "$value": "{color.disabled}",
+        "$description": "Disabled link-button \u2192 --pgn-color-btn-disabled-link"
+      }
+    }
+  }
+}

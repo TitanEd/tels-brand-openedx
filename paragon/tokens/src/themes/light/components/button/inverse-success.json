@@ -1,0 +1,86 @@
+{
+  "$description": "INVERSE SUCCESS \u2014 class: .btn.btn-inverse-success.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-success": {
+          "$value": "#FFFFFF",
+          "$description": "Inverse solid bg \u2192 --pgn-color-btn-bg-inverse-success",
+          "modify": null
+        }
+      },
+      "text": {
+        "inverse-success": {
+          "$value": "{color.success.base}",
+          "$description": "Inverse solid text \u2192 --pgn-color-btn-text-inverse-success"
+        }
+      },
+      "border": {
+        "inverse-success": {
+          "$value": "transparent",
+          "$description": "Inverse solid border \u2192 --pgn-color-btn-border-inverse-success"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-success": {
+            "$value": "{color.gray.100}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-success"
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.success.base}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-success"
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "transparent",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-inverse-success"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-success": {
+            "$value": "{color.gray.100}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-success"
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.success.base}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-success"
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "transparent",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-inverse-success"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-success": {
+            "$value": "{color.btn.bg.inverse-success}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-inverse-success"
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.btn.text.inverse-success}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-inverse-success"
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "transparent",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-success"
+          }
+        }
+      }
+    }
+  }
+}

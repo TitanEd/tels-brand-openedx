@@ -1,0 +1,21 @@
+{
+  "$description": "CARD (light) — .pgn__card (catalog, dashboard, Studio). Paragon component CSS reads these --pgn-* names directly. Defaults = Paragon stock; bg follows Layer 1 surface. Radius stays on Layer 1 radius (Paragon --pgn-size-card-border-radius-base).",
+  "color": {
+    "card": {
+      "base": { "$value": "inherit", "$description": "Card text → --pgn-color-card-base" },
+      "bg": {
+        "base": { "$value": "{color.surface.base}", "$description": "Card bg → --pgn-color-card-bg-base (follows Layer 1 surface)" },
+        "dark": { "$value": "{color.primary.base}", "$description": "Dark card bg (variant=\"dark\") → --pgn-color-card-bg-dark" },
+        "muted": { "$value": "{color.light.200}", "$description": "Muted card bg (variant=\"muted\") → --pgn-color-card-bg-muted" }
+      },
+      "border": {
+        "base": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.125 }], "$description": "Card border → --pgn-color-card-border-base" },
+        "focus": {
+          "base": { "$value": "{color.primary.base}", "$description": "Clickable card focus ring → --pgn-color-card-border-focus-base" },
+          "dark": { "$value": "{color.theme.focus.primary}", "$description": "Dark card focus ring → --pgn-color-card-border-focus-dark" }
+        }
+      },
+      "divider-bg": { "$value": "{color.light.400}", "$description": "Card divider → --pgn-color-card-divider-bg" }
+    }
+  }
+}

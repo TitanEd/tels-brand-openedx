@@ -1,0 +1,89 @@
+{
+  "$description": "SOLID DARK \u2014 class: .btn.btn-dark.",
+  "color": {
+    "btn": {
+      "bg": {
+        "dark": {
+          "$value": "{color.dark.base}",
+          "$description": "Solid dark bg \u2192 --pgn-color-btn-bg-dark"
+        }
+      },
+      "text": {
+        "dark": {
+          "$value": "#FFFFFF",
+          "$description": "Solid dark text \u2192 --pgn-color-btn-text-dark",
+          "modify": null
+        }
+      },
+      "border": {
+        "dark": {
+          "$value": "{color.btn.bg.dark}",
+          "$description": "Solid dark border \u2192 --pgn-color-btn-border-dark"
+        }
+      },
+      "hover": {
+        "bg": {
+          "dark": {
+            "$value": "{color.theme.hover.dark}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-dark"
+          }
+        },
+        "text": {
+          "dark": {
+            "$value": "#FFFFFF",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-dark",
+            "modify": null
+          }
+        },
+        "border": {
+          "dark": {
+            "$value": "{color.theme.hover.dark}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-dark"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "dark": {
+            "$value": "{color.theme.active.dark}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-dark"
+          }
+        },
+        "text": {
+          "dark": {
+            "$value": "#FFFFFF",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-dark",
+            "modify": null
+          }
+        },
+        "border": {
+          "dark": {
+            "$value": "{color.theme.active.dark}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-dark"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "dark": {
+            "$value": "{color.btn.bg.dark}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-dark"
+          }
+        },
+        "text": {
+          "dark": {
+            "$value": "{color.btn.text.dark}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-dark",
+            "modify": null
+          }
+        },
+        "border": {
+          "dark": {
+            "$value": "{color.btn.border.dark}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-dark"
+          }
+        }
+      }
+    }
+  }
+}

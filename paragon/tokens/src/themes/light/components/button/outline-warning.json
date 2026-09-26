@@ -1,0 +1,85 @@
+{
+  "$description": "OUTLINE WARNING \u2014 class: .btn.btn-outline-warning.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-warning": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-outline-warning"
+        }
+      },
+      "text": {
+        "outline-warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Text \u2192 --pgn-color-btn-text-outline-warning"
+        }
+      },
+      "border": {
+        "outline-warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Border \u2192 --pgn-color-btn-border-outline-warning"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-warning": {
+            "$value": "transparent",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-outline-warning"
+          }
+        },
+        "text": {
+          "outline-warning": {
+            "$value": "{color.theme.hover.warning}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-outline-warning"
+          }
+        },
+        "border": {
+          "outline-warning": {
+            "$value": "{color.warning.700}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-outline-warning"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-warning": {
+            "$value": "transparent",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-outline-warning"
+          }
+        },
+        "text": {
+          "outline-warning": {
+            "$value": "{color.theme.active.warning}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-warning"
+          }
+        },
+        "border": {
+          "outline-warning": {
+            "$value": "{color.theme.active.warning}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-outline-warning"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-warning": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-outline-warning"
+          }
+        },
+        "text": {
+          "outline-warning": {
+            "$value": "{color.btn.text.outline-warning}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-outline-warning"
+          }
+        },
+        "border": {
+          "outline-warning": {
+            "$value": "{color.btn.border.outline-warning}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-warning"
+          }
+        }
+      }
+    }
+  }
+}

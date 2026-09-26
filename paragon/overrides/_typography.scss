@@ -1,18 +1,27 @@
 // LAYER 1 — Global typography override
 // Tokens defined in:
-//   core/global/typography.json          → font family + H1–H6 sizes
+//   core/global/typography.json             → font family, weight, font.scale, Body + H1–H6 sizes,
+//                                             line-height, letter-spacing
 //   core/components/text/headings-font.json → headings font-family (inherits body)
 //   themes/*/components/text/headings.json  → heading color
 // Why: one place to change typeface/heading scale for every MFE.
 // Must NOT use `* { font-family }` — that breaks FontAwesome (.fa) icons.
+//
+// Font scale vs Body size (Option A):
+//   html  → rem root = browser 100% × --pgn-typography-font-scale  (global +N%)
+//   body  → --pgn-typography-font-size-base                       (Body only)
 
 html {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: var(--pgn-typography-font-size-base);
+  font-size: calc(100% * var(--pgn-typography-font-scale, 1));
 }
 
 body {
   font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-base);
+  font-weight: var(--pgn-typography-font-weight-base);
+  line-height: var(--pgn-typography-line-height-base);
+  letter-spacing: var(--pgn-typography-letter-spacing-base, normal);
   color: var(--pgn-color-body-base, var(--pgn-color-text-base));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

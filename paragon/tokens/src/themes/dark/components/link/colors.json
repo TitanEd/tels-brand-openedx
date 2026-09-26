@@ -10,6 +10,18 @@
         "$value": "{color.primary.base}",
         "$description": "Link hover on dark"
       },
+      "active": {
+        "$value": "{color.link.hover}",
+        "$description": "Link pressed on dark → --pgn-color-link-active"
+      },
+      "visited": {
+        "$value": "{color.link.base}",
+        "$description": "Visited link on dark → --pgn-color-link-visited"
+      },
+      "focus": {
+        "$value": "{color.link.hover}",
+        "$description": "Focused link on dark → --pgn-color-link-focus"
+      },
       "inline": {
         "base": {
           "$value": "{color.primary.base}",

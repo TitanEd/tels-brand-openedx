@@ -1,0 +1,100 @@
+{
+  "$description": "SOLID LIGHT \u2014 class: .btn.btn-light. Contrast on photos / dark cards.",
+  "color": {
+    "btn": {
+      "bg": {
+        "light": {
+          "$value": "{color.light.base}",
+          "$description": "Solid light bg \u2192 --pgn-color-btn-bg-light"
+        }
+      },
+      "text": {
+        "light": {
+          "$value": "{color.btn.bg.light}",
+          "$description": "Solid light text \u2192 --pgn-color-btn-text-light",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ]
+        }
+      },
+      "border": {
+        "light": {
+          "$value": "{color.btn.bg.light}",
+          "$description": "Solid light border \u2192 --pgn-color-btn-border-light"
+        }
+      },
+      "hover": {
+        "bg": {
+          "light": {
+            "$value": "{color.theme.hover.light}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-light"
+          }
+        },
+        "text": {
+          "light": {
+            "$value": "{color.btn.bg.light}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-light",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ]
+          }
+        },
+        "border": {
+          "light": {
+            "$value": "{color.theme.hover.light}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-light"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "light": {
+            "$value": "{color.theme.active.light}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-light"
+          }
+        },
+        "text": {
+          "light": {
+            "$value": "{color.btn.bg.light}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-light",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ]
+          }
+        },
+        "border": {
+          "light": {
+            "$value": "{color.theme.active.light}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-light"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "light": {
+            "$value": "{color.btn.bg.light}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-light"
+          }
+        },
+        "text": {
+          "light": {
+            "$value": "{color.btn.text.light}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-light"
+          }
+        },
+        "border": {
+          "light": {
+            "$value": "{color.btn.border.light}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-light"
+          }
+        }
+      }
+    }
+  }
+}

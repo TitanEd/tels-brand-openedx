@@ -3,8 +3,8 @@
   "color": {
     "dropdown": {
       "bg": {
-        "$value": "{color.white}",
-        "$description": "Menu background → --pgn-color-dropdown-bg"
+        "$value": "{color.surface.base}",
+        "$description": "Menu background → --pgn-color-dropdown-bg (follows Layer 1 surface)"
       },
       "item": {
         "text": {

@@ -1,0 +1,91 @@
+{
+  "$description": "INVERSE TERTIARY — class: .btn.btn-inverse-tertiary. Ghost action on a dark bar.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-tertiary": {
+          "$value": "transparent",
+          "$description": "Background → --pgn-color-btn-bg-inverse-tertiary"
+        }
+      },
+      "text": {
+        "inverse-tertiary": {
+          "$value": "{color.white}",
+          "modify": null,
+          "$description": "Text → --pgn-color-btn-text-inverse-tertiary"
+        }
+      },
+      "border": {
+        "inverse-tertiary": {
+          "$value": "transparent",
+          "$description": "Border → --pgn-color-btn-border-inverse-tertiary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-tertiary": {
+            "$value": "{color.white}",
+            "modify": [{ "type": "alpha", "amount": 0.1 }],
+            "$description": "Hover bg → --pgn-color-btn-hover-bg-inverse-tertiary"
+          }
+        },
+        "text": {
+          "inverse-tertiary": {
+            "$value": "{color.white}",
+            "modify": null,
+            "$description": "Hover text → --pgn-color-btn-hover-text-inverse-tertiary"
+          }
+        },
+        "border": {
+          "inverse-tertiary": {
+            "$value": "transparent",
+            "$description": "Hover border → --pgn-color-btn-hover-border-inverse-tertiary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-tertiary": {
+            "$value": "{color.white}",
+            "modify": [{ "type": "alpha", "amount": 0.1 }],
+            "$description": "Active bg → --pgn-color-btn-active-bg-inverse-tertiary"
+          }
+        },
+        "text": {
+          "inverse-tertiary": {
+            "$value": "{color.white}",
+            "modify": null,
+            "$description": "Active text → --pgn-color-btn-active-text-inverse-tertiary"
+          }
+        },
+        "border": {
+          "inverse-tertiary": {
+            "$value": "transparent",
+            "$description": "Active border → --pgn-color-btn-active-border-inverse-tertiary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled bg → --pgn-color-btn-disabled-bg-inverse-tertiary"
+          }
+        },
+        "text": {
+          "inverse-tertiary": {
+            "$value": "{color.white}",
+            "modify": null,
+            "$description": "Disabled text → --pgn-color-btn-disabled-text-inverse-tertiary"
+          }
+        },
+        "border": {
+          "inverse-tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled border → --pgn-color-btn-disabled-border-inverse-tertiary"
+          }
+        }
+      }
+    }
+  }
+}

@@ -87,7 +87,7 @@
     color: var(--pgn-color-nav-tabs-base-link-text, var(--pgn-color-gray-700)) !important;
 
     &:hover {
-      background-color: var(--pgn-color-light-400) !important;
+      background-color: var(--pgn-color-nav-tabs-base-link-hover-bg, var(--pgn-color-light-400)) !important;
     }
 
     // Learning's `.nav a:not(.active):hover` (course-tabs-navigation.scss)

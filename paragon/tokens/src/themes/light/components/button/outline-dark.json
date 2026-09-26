@@ -1,0 +1,85 @@
+{
+  "$description": "OUTLINE DARK \u2014 class: .btn.btn-outline-dark.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-dark": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-outline-dark"
+        }
+      },
+      "text": {
+        "outline-dark": {
+          "$value": "{color.dark.base}",
+          "$description": "Text \u2192 --pgn-color-btn-text-outline-dark"
+        }
+      },
+      "border": {
+        "outline-dark": {
+          "$value": "{color.dark.base}",
+          "$description": "Border \u2192 --pgn-color-btn-border-outline-dark"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-dark": {
+            "$value": "transparent",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-outline-dark"
+          }
+        },
+        "text": {
+          "outline-dark": {
+            "$value": "{color.theme.hover.dark}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-outline-dark"
+          }
+        },
+        "border": {
+          "outline-dark": {
+            "$value": "{color.dark.700}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-outline-dark"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-dark": {
+            "$value": "transparent",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-outline-dark"
+          }
+        },
+        "text": {
+          "outline-dark": {
+            "$value": "{color.theme.active.dark}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-dark"
+          }
+        },
+        "border": {
+          "outline-dark": {
+            "$value": "{color.theme.active.dark}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-outline-dark"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-dark": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-outline-dark"
+          }
+        },
+        "text": {
+          "outline-dark": {
+            "$value": "{color.btn.text.outline-dark}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-outline-dark"
+          }
+        },
+        "border": {
+          "outline-dark": {
+            "$value": "{color.btn.border.outline-dark}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-dark"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$description": "Dark — solid secondary. Cascades from Layer 1 color.secondary.base. White labels use modify:null.",
+  "color": {
+    "btn": {
+      "bg": {
+        "secondary": {
+          "$value": "{color.secondary.base}",
+          "$description": "Solid secondary bg (dark) → --pgn-color-btn-bg-secondary"
+        }
+      },
+      "text": {
+        "secondary": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Solid secondary text (dark) → --pgn-color-btn-text-secondary"
+        }
+      },
+      "border": {
+        "secondary": {
+          "$value": "{color.btn.bg.secondary}",
+          "$description": "Solid secondary border (dark)"
+        }
+      },
+      "hover": {
+        "bg": {
+          "secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-secondary"
+          }
+        },
+        "text": {
+          "secondary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Hover text (dark)"
+          }
+        },
+        "border": {
+          "secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Hover border (dark)"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "secondary": {
+            "$value": "{color.theme.active.secondary}",
+            "$description": "Active bg (dark)"
+          }
+        },
+        "text": {
+          "secondary": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Active text (dark)"
+          }
+        },
+        "border": {
+          "secondary": {
+            "$value": "{color.theme.active.secondary}",
+            "$description": "Active border (dark)"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "secondary": {
+            "$value": "{color.btn.bg.secondary}",
+            "$description": "Disabled bg (dark)"
+          }
+        },
+        "text": {
+          "secondary": {
+            "$value": "{color.btn.text.secondary}",
+            "modify": null,
+            "$description": "Disabled text (dark)"
+          }
+        },
+        "border": {
+          "secondary": {
+            "$value": "{color.btn.border.secondary}",
+            "$description": "Disabled border (dark)"
+          }
+        }
+      }
+    }
+  }
+}
