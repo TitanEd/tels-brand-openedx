@@ -1,0 +1,91 @@
+{
+  "$description": "Dark \u2014 inverse danger (white fill). Labels use modify:null.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-danger": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-inverse-danger"
+        }
+      },
+      "text": {
+        "inverse-danger": {
+          "$value": "{color.danger.base}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-inverse-danger"
+        }
+      },
+      "border": {
+        "inverse-danger": {
+          "$value": "transparent",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-inverse-danger"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-danger": {
+            "$value": "#EBEBEB",
+            "modify": null,
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-inverse-danger"
+          }
+        },
+        "text": {
+          "inverse-danger": {
+            "$value": "{color.danger.800}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-inverse-danger"
+          }
+        },
+        "border": {
+          "inverse-danger": {
+            "$value": "transparent",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-inverse-danger"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-danger": {
+            "$value": "#EBEBEB",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-inverse-danger"
+          }
+        },
+        "text": {
+          "inverse-danger": {
+            "$value": "{color.danger.800}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-inverse-danger"
+          }
+        },
+        "border": {
+          "inverse-danger": {
+            "$value": "transparent",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-inverse-danger"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-danger": {
+            "$value": "{color.btn.bg.inverse-danger}",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-inverse-danger"
+          }
+        },
+        "text": {
+          "inverse-danger": {
+            "$value": "{color.btn.text.inverse-danger}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-inverse-danger"
+          }
+        },
+        "border": {
+          "inverse-danger": {
+            "$value": "transparent",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-inverse-danger"
+          }
+        }
+      }
+    }
+  }
+}

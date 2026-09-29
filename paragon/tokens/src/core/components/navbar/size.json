@@ -1,0 +1,24 @@
+{
+  "$description": "navbar — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "spacing": {
+    "$type": "dimension",
+    "navbar": {
+      "padding": {
+        "x": {
+          "base": {
+            "$value": "{spacing.spacer.base}",
+            "$description": "Paragon default → --pgn-spacing-navbar-padding-x-base"
+          },
+          "nav-link": {
+            "$value": ".5rem",
+            "$description": "Paragon default → --pgn-spacing-navbar-padding-x-nav-link"
+          }
+        },
+        "y": {
+          "$value": "calc({spacing.spacer.base} / 2)",
+          "$description": "Paragon default → --pgn-spacing-navbar-padding-y"
+        }
+      }
+    }
+  }
+}

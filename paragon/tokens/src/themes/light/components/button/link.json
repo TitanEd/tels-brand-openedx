@@ -7,5 +7,13 @@
         "$description": "Disabled link-button \u2192 --pgn-color-btn-disabled-link"
       }
     }
+  },
+  "other": {
+    "btn": {
+      "disabled-opacity": {
+        "$value": ".65",
+        "$description": "Paragon default \u2192 --pgn-other-btn-disabled-opacity"
+      }
+    }
   }
 }

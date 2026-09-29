@@ -85,6 +85,32 @@
             "$description": "Disabled border → --pgn-color-btn-disabled-border-inverse-tertiary"
           }
         }
+      },
+      "focus": {
+        "bg": {
+          "inverse-tertiary": {
+            "$value": "inherit",
+            "$description": "Paragon default → --pgn-color-btn-focus-bg-inverse-tertiary"
+          }
+        },
+        "border": {
+          "inverse-tertiary": {
+            "$value": "transparent",
+            "$description": "Paragon default → --pgn-color-btn-focus-border-inverse-tertiary"
+          }
+        },
+        "outline": {
+          "inverse-tertiary": {
+            "$value": "{color.white}",
+            "$description": "Paragon default → --pgn-color-btn-focus-outline-inverse-tertiary"
+          }
+        },
+        "text": {
+          "inverse-tertiary": {
+            "$value": "{color.btn.text.inverse-tertiary}",
+            "$description": "Paragon default → --pgn-color-btn-focus-text-inverse-tertiary"
+          }
+        }
       }
     }
   }

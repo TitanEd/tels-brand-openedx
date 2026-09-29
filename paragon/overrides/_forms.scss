@@ -105,6 +105,13 @@ input.form-control:disabled {
   border-color: var(--pgn-color-form-control-indicator-checked-border-base, var(--pgn-color-primary-base)) !important;
 }
 
+// SelectableBox — Paragon hardcodes the box to white (text inherits body, so it
+// vanishes in dark). Token: themes/*/components/form/selectable-box.json
+.pgn__selectable_box-set .pgn__selectable_box,
+.pgn__selectable_box {
+  background: var(--pgn-color-selectable-box-bg, var(--pgn-color-white));
+}
+
 // Info badges / filter chips (Track: Audit) — were Bootstrap blue
 .badge.badge-info,
 .badge-info {

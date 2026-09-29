@@ -5,6 +5,14 @@
       "border-radius": {
         "$value": "{size.border.radius.base}",
         "$description": "SelectableBox radius → --pgn-spacing-selectable-box-border-radius"
+      },
+      "box-space": {
+        "$value": ".75rem",
+        "$description": "Paragon default → --pgn-spacing-selectable-box-box-space"
+      },
+      "padding": {
+        "$value": "1rem",
+        "$description": "Paragon default → --pgn-spacing-selectable-box-padding"
       }
     }
   }

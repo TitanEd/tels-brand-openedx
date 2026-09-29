@@ -1,0 +1,62 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Table / DataTable.",
+  "color": {
+    "table": {
+      "border": {
+        "$value": "{color.border}",
+        "$description": "Table border (dark) \u2192 --pgn-color-table-border"
+      },
+      "caption": {
+        "$value": "{color.text.muted}",
+        "$description": "Table caption (dark) \u2192 --pgn-color-table-caption"
+      }
+    },
+    "data-table": {
+      "bg": {
+        "base": {
+          "$value": "{color.surface.base}",
+          "$description": "DataTable background (dark) \u2192 --pgn-color-data-table-bg-base"
+        }
+      },
+      "border": {
+        "$value": "{color.light.300}",
+        "$description": "DataTable border (dark) \u2192 --pgn-color-data-table-border"
+      },
+      "text": {
+        "$value": "{color.body.base}",
+        "$description": "DataTable text (dark) \u2192 --pgn-color-data-table-text"
+      },
+      "header": {
+        "bg": {
+          "$value": "{color.light.300}",
+          "$description": "DataTable header background (dark) \u2192 --pgn-color-data-table-header-bg"
+        },
+        "text": {
+          "$value": "{color.body.base}",
+          "$description": "DataTable header text (dark) \u2192 --pgn-color-data-table-header-text"
+        }
+      },
+      "row": {
+        "striped": {
+          "bg": {
+            "$value": "{color.light.200}",
+            "$description": "Striped row (dark) \u2192 --pgn-color-data-table-row-striped-bg"
+          }
+        },
+        "selected": {
+          "bg": {
+            "$value": "{color.info.base}",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "#111827",
+                "amount": "0.75"
+              }
+            ],
+            "$description": "Selected row (dark): info mixed 75% into the page color \u2192 --pgn-color-data-table-row-selected-bg"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Inputs. Same references as light; the dark gray scale makes them light-on-dark.",
+  "color": {
+    "form": {
+      "input": {
+        "base": {
+          "$value": "{color.gray.700}",
+          "$description": "Input text (dark) \u2192 --pgn-color-form-input-base"
+        },
+        "border": {
+          "$value": "{color.gray.500}",
+          "$description": "Input border (dark) \u2192 --pgn-color-form-input-border"
+        },
+        "bg": {
+          "base": {
+            "$value": "{color.bg.base}",
+            "$description": "Input background (dark) \u2192 --pgn-color-form-input-bg-base"
+          },
+          "disabled": {
+            "$value": "{color.gray.100}",
+            "$description": "Disabled input background (dark) \u2192 --pgn-color-form-input-bg-disabled"
+          }
+        },
+        "focus": {
+          "border": {
+            "$value": "{color.primary.base}",
+            "$description": "Input focus border (dark) \u2192 --pgn-color-form-input-focus-border"
+          }
+        },
+        "placeholder": {
+          "$value": "{color.gray.500}",
+          "$description": "Placeholder (dark) \u2192 --pgn-color-form-input-placeholder"
+        }
+      },
+      "control": {
+        "indicator": {
+          "border": {
+            "$value": "{color.gray.700}",
+            "$description": "Checkbox/radio border (dark) \u2192 --pgn-color-form-control-indicator-border"
+          },
+          "checked": {
+            "bg": {
+              "base": {
+                "$value": "{color.primary.base}",
+                "$description": "Checked checkbox/radio fill (dark) \u2192 --pgn-color-form-control-indicator-checked-bg-base"
+              }
+            },
+            "border": {
+              "base": {
+                "$value": "{color.primary.base}",
+                "$description": "Checked checkbox/radio border (dark) \u2192 --pgn-color-form-control-indicator-checked-border-base"
+              }
+            }
+          }
+        }
+      },
+      "feedback": {
+        "invalid": {
+          "$value": "{color.danger.400}",
+          "$description": "Error message text (dark): lighter red, readable on the dark page \u2192 --pgn-color-form-feedback-invalid"
+        }
+      }
+    },
+    "input": {
+      "focus": {
+        "$value": "{color.primary.base}",
+        "$description": "Global input focus (dark) \u2192 --pgn-color-input-focus"
+      }
+    }
+  }
+}

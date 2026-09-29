@@ -1,0 +1,56 @@
+{
+  "$description": "page-banner — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "$type": "color",
+    "page-banner": {
+      "bg": {
+        "accent": {
+          "a": {
+            "$value": "{color.accent.a}",
+            "$description": "Paragon default → --pgn-color-page-banner-bg-accent-a"
+          },
+          "b": {
+            "$value": "{color.accent.b}",
+            "$description": "Paragon default → --pgn-color-page-banner-bg-accent-b"
+          }
+        },
+        "dark": {
+          "$value": "{color.dark.500}",
+          "$description": "Paragon default → --pgn-color-page-banner-bg-dark"
+        },
+        "light": {
+          "$value": "{color.light.400}",
+          "$description": "Paragon default → --pgn-color-page-banner-bg-light"
+        },
+        "warning": {
+          "$value": "{color.warning.100}",
+          "$description": "Paragon default → --pgn-color-page-banner-bg-warning"
+        }
+      },
+      "text": {
+        "accent": {
+          "a": {
+            "$value": "{color.black}",
+            "$description": "Paragon default → --pgn-color-page-banner-text-accent-a"
+          },
+          "b": {
+            "$value": "{color.black}",
+            "$description": "Paragon default → --pgn-color-page-banner-text-accent-b"
+          }
+        },
+        "dark": {
+          "$value": "{color.white}",
+          "$description": "Paragon default → --pgn-color-page-banner-text-dark"
+        },
+        "light": {
+          "$value": "{color.black}",
+          "$description": "Paragon default → --pgn-color-page-banner-text-light"
+        },
+        "warning": {
+          "$value": "{color.black}",
+          "$description": "Paragon default → --pgn-color-page-banner-text-warning"
+        }
+      }
+    }
+  }
+}

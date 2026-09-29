@@ -1,0 +1,83 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Badge. Explicit label colors (modify: null) so color-yiq does not pick them.",
+  "color": {
+    "badge": {
+      "bg": {
+        "primary": {
+          "$value": "{color.primary.base}",
+          "$description": "Badge primary background (dark) \u2192 --pgn-color-badge-bg-primary"
+        },
+        "secondary": {
+          "$value": "{color.secondary.base}",
+          "$description": "Badge secondary background (dark) \u2192 --pgn-color-badge-bg-secondary"
+        },
+        "success": {
+          "$value": "{color.success.base}",
+          "$description": "Badge success background (dark) \u2192 --pgn-color-badge-bg-success"
+        },
+        "warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Badge warning background (dark) \u2192 --pgn-color-badge-bg-warning"
+        },
+        "danger": {
+          "$value": "{color.danger.base}",
+          "$description": "Badge danger background (dark) \u2192 --pgn-color-badge-bg-danger"
+        },
+        "info": {
+          "$value": "{color.info.base}",
+          "$description": "Badge info background (dark) \u2192 --pgn-color-badge-bg-info"
+        },
+        "light": {
+          "$value": "{color.light.base}",
+          "$description": "Badge light background (dark) \u2192 --pgn-color-badge-bg-light"
+        },
+        "dark": {
+          "$value": "{color.dark.base}",
+          "$description": "Badge dark background (dark) \u2192 --pgn-color-badge-bg-dark"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Badge primary text (dark) \u2192 --pgn-color-badge-text-primary"
+        },
+        "secondary": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Badge secondary text (dark) \u2192 --pgn-color-badge-text-secondary"
+        },
+        "success": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Badge success text (dark) \u2192 --pgn-color-badge-text-success"
+        },
+        "warning": {
+          "$value": "#111827",
+          "modify": null,
+          "$description": "Badge warning text (dark): dark label on yellow \u2192 --pgn-color-badge-text-warning"
+        },
+        "danger": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Badge danger text (dark) \u2192 --pgn-color-badge-text-danger"
+        },
+        "info": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Badge info text (dark) \u2192 --pgn-color-badge-text-info"
+        },
+        "light": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Badge light text (dark) \u2192 --pgn-color-badge-text-light"
+        },
+        "dark": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Badge dark text (dark) \u2192 --pgn-color-badge-text-dark"
+        }
+      }
+    }
+  }
+}

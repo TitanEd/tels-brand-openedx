@@ -54,6 +54,18 @@
       "base": {
         "$value": "#F9FAFB",
         "$description": "Dark mode body text."
+      },
+      "light": {
+        "$value": "{color.gray.600}",
+        "$description": "Secondary text on dark (catalog meta, course card details) → --pgn-color-text-light"
+      },
+      "primary": {
+        "$value": "{color.gray.600}",
+        "$description": "Secondary text on dark (authn tabs fallback) → --pgn-color-text-primary"
+      },
+      "footer": {
+        "$value": "{color.gray.600}",
+        "$description": "Footer text on dark → --pgn-color-text-footer"
       }
     }
   }

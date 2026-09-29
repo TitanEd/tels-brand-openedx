@@ -1,0 +1,86 @@
+{
+  "$description": "carousel — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "size": {
+    "carousel": {
+      "caption-width": {
+        "$value": "70%",
+        "$type": "percentage",
+        "$description": "Paragon default → --pgn-size-carousel-caption-width"
+      },
+      "control": {
+        "width": {
+          "base": {
+            "$value": "15%",
+            "$type": "percentage",
+            "$description": "Paragon default → --pgn-size-carousel-control-width-base"
+          },
+          "icon": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$description": "Paragon default → --pgn-size-carousel-control-width-icon"
+          }
+        }
+      },
+      "indicator": {
+        "height": {
+          "area-hit": {
+            "$value": "10px",
+            "$description": "Paragon default → --pgn-size-carousel-indicator-height-area-hit"
+          },
+          "base": {
+            "$value": "3px",
+            "$description": "Paragon default → --pgn-size-carousel-indicator-height-base"
+          }
+        },
+        "width": {
+          "$value": "30px",
+          "$description": "Paragon default → --pgn-size-carousel-indicator-width"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "carousel": {
+      "indicator-spacer": {
+        "$value": "3px",
+        "$description": "Paragon default → --pgn-spacing-carousel-indicator-spacer"
+      }
+    }
+  },
+  "transition": {
+    "$type": "transition",
+    "carousel": {
+      "base": {
+        "$value": {
+          "property": "transform",
+          "duration": "{transition.carousel.duration}",
+          "timingFunction": "ease-in-out",
+          "delay": "0ms",
+          "behavior": "normal"
+        },
+        "$description": "Paragon default → --pgn-transition-carousel-base"
+      },
+      "control": {
+        "$value": {
+          "property": "opacity",
+          "duration": ".15s",
+          "timingFunction": "ease",
+          "delay": "0ms",
+          "behavior": "normal"
+        },
+        "$description": "Paragon default → --pgn-transition-carousel-control"
+      },
+      "indicator": {
+        "$value": {
+          "property": "opacity",
+          "duration": "{transition.carousel.duration}",
+          "timingFunction": "ease",
+          "delay": "0ms",
+          "behavior": "normal"
+        },
+        "$description": "Paragon default → --pgn-transition-carousel-indicator"
+      }
+    }
+  }
+}

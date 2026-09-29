@@ -1,0 +1,51 @@
+{
+  "$description": "Dark \u2014 IconButton primary. White icon on the filled hover / pressed state (modify:null).",
+  "color": {
+    "icon-button": {
+      "text": {
+        "primary": {
+          "base": {
+            "$value": "{color.primary.base}",
+            "$description": "Icon (dark) \u2192 --pgn-color-icon-button-text-primary-base"
+          },
+          "hover": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Icon on hover (dark) \u2192 --pgn-color-icon-button-text-primary-hover"
+          },
+          "active": {
+            "base": {
+              "$value": "#FFFFFF",
+              "modify": null,
+              "$description": "Icon pressed (dark) \u2192 --pgn-color-icon-button-text-primary-active-base"
+            },
+            "hover": {
+              "$value": "#FFFFFF",
+              "modify": null,
+              "$description": "Icon pressed + hover (dark) \u2192 --pgn-color-icon-button-text-primary-active-hover"
+            },
+            "focus": {
+              "$value": "#FFFFFF",
+              "modify": null,
+              "$description": "Icon pressed + focus (dark) \u2192 --pgn-color-icon-button-text-primary-active-focus"
+            }
+          }
+        }
+      },
+      "bg": {
+        "primary": {
+          "hover": {
+            "$value": "{color.primary.base}",
+            "$description": "Hover fill (dark) \u2192 --pgn-color-icon-button-bg-primary-hover"
+          },
+          "active": {
+            "base": {
+              "$value": "{color.primary.base}",
+              "$description": "Pressed fill (dark) \u2192 --pgn-color-icon-button-bg-primary-active-base"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -94,6 +94,32 @@
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-warning"
           }
         }
+      },
+      "focus": {
+        "bg": {
+          "warning": {
+            "$value": "{color.btn.bg.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-warning"
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.btn.border.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-warning"
+          }
+        },
+        "outline": {
+          "warning": {
+            "$value": "{color.theme.focus.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "{color.btn.text.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-warning"
+          }
+        }
       }
     }
   }

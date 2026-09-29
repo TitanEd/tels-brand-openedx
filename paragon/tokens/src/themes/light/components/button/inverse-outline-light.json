@@ -23,7 +23,8 @@
       "hover": {
         "bg": {
           "inverse-outline-light": {
-            "$value": "transparent",
+            "$value": "{color.white}",
+            "modify": [{ "type": "alpha", "amount": 0.1 }],
             "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-outline-light"
           }
         },
@@ -43,13 +44,15 @@
       "active": {
         "bg": {
           "inverse-outline-light": {
-            "$value": "transparent",
+            "$value": "{color.white}",
+            "modify": [{ "type": "alpha", "amount": 0.2 }],
             "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-outline-light"
           }
         },
         "text": {
           "inverse-outline-light": {
             "$value": "{color.white}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-outline-light"
           }
         },
@@ -77,6 +80,32 @@
           "inverse-outline-light": {
             "$value": "{color.white}",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-outline-light"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-outline-light": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-outline-light"
+          }
+        },
+        "border": {
+          "inverse-outline-light": {
+            "$value": "{color.btn.border.inverse-outline-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-outline-light"
+          }
+        },
+        "outline": {
+          "inverse-outline-light": {
+            "$value": "{color.btn.focus.border.inverse-outline-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-outline-light"
+          }
+        },
+        "text": {
+          "inverse-outline-light": {
+            "$value": "{color.btn.text.inverse-outline-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-outline-light"
           }
         }
       }

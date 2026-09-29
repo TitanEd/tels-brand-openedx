@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 outline tertiary (neutral). Uses the dark gray scale.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-tertiary": {
+          "$value": "transparent",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-tertiary"
+        }
+      },
+      "text": {
+        "outline-tertiary": {
+          "$value": "{color.gray.700}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-tertiary"
+        }
+      },
+      "border": {
+        "outline-tertiary": {
+          "$value": "{color.gray.500}",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-tertiary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-tertiary": {
+            "$value": "transparent",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-tertiary"
+          }
+        },
+        "text": {
+          "outline-tertiary": {
+            "$value": "{color.gray.800}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-tertiary"
+          }
+        },
+        "border": {
+          "outline-tertiary": {
+            "$value": "{color.gray.700}",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-tertiary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-tertiary": {
+            "$value": "transparent",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-tertiary"
+          }
+        },
+        "text": {
+          "outline-tertiary": {
+            "$value": "{color.gray.900}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-tertiary"
+          }
+        },
+        "border": {
+          "outline-tertiary": {
+            "$value": "{color.gray.800}",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-tertiary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-tertiary"
+          }
+        },
+        "text": {
+          "outline-tertiary": {
+            "$value": "{color.btn.text.outline-tertiary}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-tertiary"
+          }
+        },
+        "border": {
+          "outline-tertiary": {
+            "$value": "{color.btn.border.outline-tertiary}",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-tertiary"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 outline success. Labels readable on the dark page (modify:null).",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-success": {
+          "$value": "transparent",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-success"
+        }
+      },
+      "text": {
+        "outline-success": {
+          "$value": "{color.success.400}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-success"
+        }
+      },
+      "border": {
+        "outline-success": {
+          "$value": "{color.success.400}",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-success"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-success": {
+            "$value": "transparent",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-success"
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.success.300}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-success"
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.success.300}",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-success"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-success": {
+            "$value": "transparent",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-success"
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.success.200}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-success"
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.success.200}",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-success"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-success": {
+            "$value": "transparent",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-success"
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.btn.text.outline-success}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-success"
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.btn.border.outline-success}",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-success"
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,8 @@ Branch: `sonu-change-native-tels-brand-openedx` (do not put feature work on `mas
 ```bash
 npm install
 make build
-npm run serve
+npm run serve     # dist/ for Tutor brandOverride
+npm run preview   # global + component token cards with Edit + History/Revert + Download/Import (saved in the browser), translatable, RTL: http://127.0.0.1:8765/light.html and /dark.html
 ```
 
 | Folder | Purpose |

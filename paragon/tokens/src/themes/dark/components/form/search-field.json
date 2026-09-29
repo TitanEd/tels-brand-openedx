@@ -1,0 +1,53 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 SearchField. Applied by overrides/_searchfield.scss.",
+  "color": {
+    "search-field": {
+      "border": {
+        "base": {
+          "$value": "{color.gray.500}",
+          "$description": "Search border (dark) \u2192 --pgn-color-search-field-border-base"
+        },
+        "interaction": {
+          "$value": "{color.primary.base}",
+          "$description": "Search border hover (dark) \u2192 --pgn-color-search-field-border-interaction"
+        },
+        "focus": {
+          "$value": "{color.primary.base}",
+          "$description": "Search border focus (dark) \u2192 --pgn-color-search-field-border-focus"
+        }
+      },
+      "button": {
+        "bg": {
+          "primary": {
+            "$value": "{color.primary.base}",
+            "$description": "Search submit button (dark) \u2192 --pgn-color-search-field-button-bg-primary"
+          }
+        }
+      },
+      "icon": {
+        "base": {
+          "$value": "{color.primary.base}",
+          "$description": "Search icon (dark) \u2192 --pgn-color-search-field-icon-base"
+        },
+        "hover": {
+          "$value": "{color.primary.400}",
+          "$description": "Search icon hover (dark): lighter primary \u2192 --pgn-color-search-field-icon-hover"
+        },
+        "bg": {
+          "hover": {
+            "$value": "transparent",
+            "$description": "Search icon hover background (dark) \u2192 --pgn-color-search-field-icon-bg-hover"
+          },
+          "active": {
+            "$value": "transparent",
+            "$description": "Search icon pressed background (dark) \u2192 --pgn-color-search-field-icon-bg-active"
+          }
+        }
+      },
+      "form-bg": {
+        "$value": "{color.bg.base}",
+        "$description": "Search field background (dark) \u2192 --pgn-color-search-field-form-bg"
+      }
+    }
+  }
+}

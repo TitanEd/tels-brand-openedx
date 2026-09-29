@@ -49,7 +49,8 @@
         },
         "text": {
           "outline-warning": {
-            "$value": "{color.theme.active.warning}",
+            "$value": "{color.warning.base}",
+            "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.55" }],
             "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-warning"
           }
         },
@@ -77,6 +78,32 @@
           "outline-warning": {
             "$value": "{color.btn.border.outline-warning}",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-warning"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-warning": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-outline-warning"
+          }
+        },
+        "border": {
+          "outline-warning": {
+            "$value": "{color.btn.border.outline-warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-outline-warning"
+          }
+        },
+        "outline": {
+          "outline-warning": {
+            "$value": "{color.theme.focus.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-outline-warning"
+          }
+        },
+        "text": {
+          "outline-warning": {
+            "$value": "{color.btn.text.outline-warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-outline-warning"
           }
         }
       }

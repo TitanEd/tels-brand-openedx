@@ -1,0 +1,206 @@
+{
+  "$description": "Known issues recorded by \"npm run validate:baseline\". They are reported as warnings until fixed. Remove an entry once it is fixed so it can never come back unnoticed.",
+  "updated": "2026-09-26",
+  "knownIssues": [
+    {
+      "key": "#11 light: Button \"brand\" normal label contrast",
+      "message": "light: Button \"brand\" normal label — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: Button \"brand\" normal label contrast",
+      "message": "dark: Button \"brand\" normal label — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-brand\" normal label contrast",
+      "message": "light: Button \"inverse-brand\" normal label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-brand\" hover label contrast",
+      "message": "light: Button \"inverse-brand\" hover label — #EB5939 on #D8D8D8 = 2.45:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-brand\" active label contrast",
+      "message": "light: Button \"inverse-brand\" active label — #EB5939 on #EBEBEB = 2.93:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: Button \"inverse-brand\" normal label contrast",
+      "message": "dark: Button \"inverse-brand\" normal label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-light\" normal label contrast",
+      "message": "light: Button \"inverse-light\" normal label — #E1DDDB on #FFFFFF = 1.35:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-light\" hover label contrast",
+      "message": "light: Button \"inverse-light\" hover label — #E1DDDB on #D8D8D8 = 1.06:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-light\" active label contrast",
+      "message": "light: Button \"inverse-light\" active label — #E1DDDB on #EBEBEB = 1.13:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-outline-brand\" hover label contrast",
+      "message": "light: Button \"inverse-outline-brand\" hover label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-outline-primary\" hover label contrast",
+      "message": "light: Button \"inverse-outline-primary\" hover label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-outline-tertiary\" hover label contrast",
+      "message": "light: Button \"inverse-outline-tertiary\" hover label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-outline-tertiary\" active label contrast",
+      "message": "light: Button \"inverse-outline-tertiary\" active label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-outline-warning\" hover label contrast",
+      "message": "light: Button \"inverse-outline-warning\" hover label — #FFD900 on #FFFFFF = 1.38:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-primary\" normal label contrast",
+      "message": "light: Button \"inverse-primary\" normal label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-primary\" hover label contrast",
+      "message": "light: Button \"inverse-primary\" hover label — #EB5939 on #D8D8D8 = 2.45:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-primary\" active label contrast",
+      "message": "light: Button \"inverse-primary\" active label — #EB5939 on #EBEBEB = 2.93:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: Button \"inverse-primary\" normal label contrast",
+      "message": "dark: Button \"inverse-primary\" normal label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-warning\" normal label contrast",
+      "message": "light: Button \"inverse-warning\" normal label — #FFD900 on #FFFFFF = 1.38:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-warning\" hover label contrast",
+      "message": "light: Button \"inverse-warning\" hover label — #FFD900 on #D8D8D8 = 1.03:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"inverse-warning\" active label contrast",
+      "message": "light: Button \"inverse-warning\" active label — #FFD900 on #EBEBEB = 1.16:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#9 light: Button \"light\" focus ring contrast",
+      "message": "light: Button \"light\" focus ring — #F5AC9C on #FFFFFF = 1.86:1 (needs 3:1)"
+    },
+    {
+      "key": "#11 light: Button \"light\" hover label contrast",
+      "message": "light: Button \"light\" hover label — #454545 on #B4B1AF = 4.50:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"light\" active label contrast",
+      "message": "light: Button \"light\" active label — #454545 on #9E9B99 = 3.47:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"outline-brand\" normal label contrast",
+      "message": "light: Button \"outline-brand\" normal label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#9 light: Button \"outline-light\" focus ring contrast",
+      "message": "light: Button \"outline-light\" focus ring — #E1DDDB on #FFFFFF = 1.35:1 (needs 3:1)"
+    },
+    {
+      "key": "#11 light: Button \"outline-light\" normal label contrast",
+      "message": "light: Button \"outline-light\" normal label — #E1DDDB on #FFFFFF = 1.35:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"outline-light\" hover label contrast",
+      "message": "light: Button \"outline-light\" hover label — #B4B1AF on #FFFFFF = 2.13:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"outline-primary\" normal label contrast",
+      "message": "light: Button \"outline-primary\" normal label — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#9 light: Button \"outline-warning\" focus ring contrast",
+      "message": "light: Button \"outline-warning\" focus ring — #FFD900 on #FFFFFF = 1.38:1 (needs 3:1)"
+    },
+    {
+      "key": "#11 light: Button \"outline-warning\" normal label contrast",
+      "message": "light: Button \"outline-warning\" normal label — #FFD900 on #FFFFFF = 1.38:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"outline-warning\" hover label contrast",
+      "message": "light: Button \"outline-warning\" hover label — #CCAE00 on #FFFFFF = 2.18:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"primary\" normal label contrast",
+      "message": "light: Button \"primary\" normal label — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: Button \"primary\" normal label contrast",
+      "message": "dark: Button \"primary\" normal label — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#9 light: Button \"warning\" focus ring contrast",
+      "message": "light: Button \"warning\" focus ring — #FFD900 on #FFFFFF = 1.38:1 (needs 3:1)"
+    },
+    {
+      "key": "#11 light: Button \"warning\" hover label contrast",
+      "message": "light: Button \"warning\" hover label — #454545 on #CCAE00 = 4.39:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Button \"warning\" active label contrast",
+      "message": "light: Button \"warning\" active label — #454545 on #B39800 = 3.38:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Link contrast",
+      "message": "light: Link — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Inline link contrast",
+      "message": "light: Inline link — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Tab hover text contrast",
+      "message": "light: Tab hover text — #EB5939 on #E9E6E4 = 2.81:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Dropdown item hover contrast",
+      "message": "light: Dropdown item hover — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Pagination number contrast",
+      "message": "light: Pagination number — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Pagination current page contrast",
+      "message": "light: Pagination current page — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: Breadcrumb link contrast",
+      "message": "light: Breadcrumb link — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 light: List item selected contrast",
+      "message": "light: List item selected — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#14 light: Selected tab text contrast",
+      "message": "light: Selected tab text — #EB5939 on #FFFFFF = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: Badge primary contrast",
+      "message": "dark: Badge primary — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: Dropdown item hover contrast",
+      "message": "dark: Dropdown item hover — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: Pagination current page contrast",
+      "message": "dark: Pagination current page — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    },
+    {
+      "key": "#11 dark: List item selected contrast",
+      "message": "dark: List item selected — #FFFFFF on #EB5939 = 3.49:1 (needs 4.5:1)"
+    }
+  ]
+}

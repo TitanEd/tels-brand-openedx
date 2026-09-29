@@ -1,0 +1,46 @@
+{
+  "$description": "pagination — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "size": {
+    "$type": "dimension",
+    "pagination": {
+      "secondary": {
+        "height": {
+          "base": {
+            "$value": "2.75rem",
+            "$description": "Paragon default → --pgn-size-pagination-secondary-height-base"
+          }
+        }
+      },
+      "toggle": {
+        "border": {
+          "base": {
+            "$value": ".3125rem",
+            "$description": "Paragon default → --pgn-size-pagination-toggle-border-base"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "pagination": {
+      "padding": {
+        "y": {
+          "base": {
+            "$value": ".625rem",
+            "$description": "Paragon default → --pgn-spacing-pagination-padding-y-base"
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "pagination": {
+      "line-height": {
+        "$value": "1.5rem",
+        "$type": "number",
+        "$description": "Paragon default → --pgn-typography-pagination-line-height"
+      }
+    }
+  }
+}

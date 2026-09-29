@@ -1,0 +1,113 @@
+{
+  "$description": "tabs — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "size": {
+    "$type": "dimension",
+    "nav": {
+      "pills": {
+        "border-radius": {
+          "$value": "{size.border.radius.base}",
+          "$description": "Paragon default → --pgn-size-nav-pills-border-radius"
+        },
+        "inverse-link": {
+          "border-width": {
+            "$value": "{size.nav.pills.link.border-width}",
+            "$description": "Paragon default → --pgn-size-nav-pills-inverse-link-border-width"
+          }
+        },
+        "link": {
+          "border-width": {
+            "$value": "1px",
+            "$description": "Paragon default → --pgn-size-nav-pills-link-border-width"
+          }
+        }
+      },
+      "tabs": {
+        "border": {
+          "radius": {
+            "$value": "0",
+            "$description": "Paragon default → --pgn-size-nav-tabs-border-radius"
+          },
+          "width": {
+            "$value": "2px",
+            "$description": "Paragon default → --pgn-size-nav-tabs-border-width"
+          }
+        },
+        "inverse-link": {
+          "active-border-bottom-width": {
+            "$value": "{size.nav.tabs.link.border-bottom.width}",
+            "$description": "Paragon default → --pgn-size-nav-tabs-inverse-link-active-border-bottom-width"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "nav": {
+      "link": {
+        "distance-to-border": {
+          "$value": "4px",
+          "$description": "Paragon default → --pgn-spacing-nav-link-distance-to-border"
+        },
+        "padding": {
+          "x": {
+            "$value": "1rem",
+            "$description": "Paragon default → --pgn-spacing-nav-link-padding-x"
+          },
+          "y": {
+            "$value": ".5rem",
+            "$description": "Paragon default → --pgn-spacing-nav-link-padding-y"
+          }
+        }
+      }
+    },
+    "tab": {
+      "inverse-pills-link-dropdown-toggle": {
+        "padding-x": {
+          "$value": ".625rem",
+          "$description": "Paragon default → --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-x"
+        },
+        "padding-y": {
+          "$value": "{spacing.spacer.base}",
+          "$description": "Paragon default → --pgn-spacing-tab-inverse-pills-link-dropdown-toggle-padding-y"
+        }
+      },
+      "inverse-tabs-link-dropdown-toggle": {
+        "padding-x": {
+          "$value": ".625rem",
+          "$description": "Paragon default → --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-x"
+        },
+        "padding-y": {
+          "$value": "{spacing.spacer.base}",
+          "$description": "Paragon default → --pgn-spacing-tab-inverse-tabs-link-dropdown-toggle-padding-y"
+        }
+      },
+      "more-link-dropdown-toggle": {
+        "padding-x": {
+          "$value": ".7rem",
+          "$description": "Paragon default → --pgn-spacing-tab-more-link-dropdown-toggle-padding-x"
+        },
+        "padding-y": {
+          "$value": "{spacing.spacer.base}",
+          "$description": "Paragon default → --pgn-spacing-tab-more-link-dropdown-toggle-padding-y"
+        }
+      }
+    }
+  },
+  "typography": {
+    "nav": {
+      "link": {
+        "font-weight": {
+          "$value": "500",
+          "$type": "fontWeight",
+          "$description": "Paragon default → --pgn-typography-nav-link-font-weight"
+        },
+        "text-decoration": {
+          "$value": "none",
+          "$type": "textDecoration",
+          "$description": "Paragon default → --pgn-typography-nav-link-text-decoration"
+        }
+      }
+    }
+  }
+}

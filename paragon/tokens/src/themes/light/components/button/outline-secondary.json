@@ -80,6 +80,32 @@
             "$description": "Disabled border → --pgn-color-btn-disabled-border-outline-secondary"
           }
         }
+      },
+      "focus": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "transparent",
+            "$description": "Paragon default → --pgn-color-btn-focus-bg-outline-secondary"
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.btn.border.outline-secondary}",
+            "$description": "Paragon default → --pgn-color-btn-focus-border-outline-secondary"
+          }
+        },
+        "outline": {
+          "outline-secondary": {
+            "$value": "{color.theme.focus.secondary}",
+            "$description": "Paragon default → --pgn-color-btn-focus-outline-outline-secondary"
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.btn.text.outline-secondary}",
+            "$description": "Paragon default → --pgn-color-btn-focus-text-outline-secondary"
+          }
+        }
       }
     }
   }

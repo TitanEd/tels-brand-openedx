@@ -23,6 +23,20 @@
           "border": {
             "$value": "1px",
             "$description": "Input border width → --pgn-size-form-input-width-border"
+          },
+          "focus": {
+            "$value": "0.063rem",
+            "$description": "Paragon default → --pgn-size-form-input-width-focus"
+          },
+          "hover": {
+            "$value": "0.063rem",
+            "$description": "Paragon default → --pgn-size-form-input-width-hover"
+          }
+        },
+        "height": {
+          "base": {
+            "$value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2 + {size.form.input.height.border})",
+            "$description": "Paragon default → --pgn-size-form-input-height-base"
           }
         }
       },
@@ -33,6 +47,83 @@
               "$value": "{size.border.radius.base}",
               "$description": "Select radius → --pgn-size-form-control-select-radius-border"
             }
+          }
+        },
+        "border": {
+          "checkbox": {
+            "indicator": {
+              "radius": {
+                "$value": "0",
+                "$description": "Paragon default → --pgn-size-form-control-border-checkbox-indicator-radius"
+              }
+            }
+          },
+          "radio": {
+            "indicator": {
+              "radius": {
+                "$value": "50%",
+                "$description": "Paragon default → --pgn-size-form-control-border-radio-indicator-radius"
+              }
+            }
+          }
+        },
+        "icon": {
+          "width": {
+            "$value": "2rem",
+            "$description": "Paragon default → --pgn-size-form-control-icon-width"
+          }
+        },
+        "indicator": {
+          "base": {
+            "$value": "1.25rem",
+            "$type": "dimension",
+            "$description": "Paragon default → --pgn-size-form-control-indicator-base"
+          },
+          "border": {
+            "width": {
+              "$value": "0.125rem",
+              "$description": "Paragon default → --pgn-size-form-control-indicator-border-width"
+            }
+          }
+        },
+        "switch": {
+          "indicator": {
+            "border": {
+              "radius": {
+                "$value": "calc({size.form.control.indicator.base} / 2)",
+                "$description": "Paragon default → --pgn-size-form-control-switch-indicator-border-radius"
+              }
+            }
+          },
+          "width": {
+            "$value": "calc({size.form.control.indicator.base} * 1.75)",
+            "$description": "Paragon default → --pgn-size-form-control-switch-width"
+          }
+        }
+      },
+      "autosuggest": {
+        "icon": {
+          "height": {
+            "$value": "{size.form.autosuggest.icon.width}",
+            "$description": "Paragon default → --pgn-size-form-autosuggest-icon-height"
+          },
+          "width": {
+            "$value": "2.4rem",
+            "$description": "Paragon default → --pgn-size-form-autosuggest-icon-width"
+          }
+        }
+      },
+      "border": {
+        "radius": {
+          "check": {
+            "focus": {
+              "$value": ".0625rem",
+              "$description": "Paragon default → --pgn-size-form-border-radius-check-focus"
+            }
+          },
+          "width": {
+            "$value": ".125rem",
+            "$description": "Paragon default → --pgn-size-form-border-radius-width"
           }
         }
       }

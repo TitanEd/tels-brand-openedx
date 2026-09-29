@@ -2,7 +2,7 @@
   "name": "@titaned/tels-brand-openedx",
   "version": "0.1.0",
   "private": true,
-  "description": "TitanEd Open edX Ulmo brand package \u2014 global design tokens + component overrides (light/dark). Built on base Open edX brand-openedx.",
+  "description": "TitanEd Open edX Ulmo brand package — global design tokens + component overrides (light/dark). Built on base Open edX brand-openedx.",
   "scripts": {
     "build-tokens": "npm run build-tokens:light && npm run build-tokens:dark",
     "build-tokens:light": "paragon build-tokens --source ./paragon/tokens/src/ --build-dir ./paragon/build -t light --verbose",
@@ -11,12 +11,22 @@
     "build": "make build",
     "build:watch": "nodemon --ignore dist --ignore paragon/build -x \"make build\"",
     "serve": "paragon serve-theme-css -h 0.0.0.0",
-    "paragon:help": "paragon help"
+    "preview": "node scripts/preview-server.js",
+    "paragon:help": "paragon help",
+    "validate": "node scripts/validate-tokens.js",
+    "validate:strict": "node scripts/validate-tokens.js --strict",
+    "validate:baseline": "node scripts/validate-tokens.js --update-baseline",
+    "hooks:install": "node scripts/install-git-hooks.js",
+    "prepare": "node scripts/install-git-hooks.js"
   },
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@openedx/paragon": "^23.0.0",
-    "nodemon": "^3.1.10"
+    "esbuild": "^0.25.12",
+    "nodemon": "^3.1.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intl": "^6.8.9"
   },
   "repository": {
     "type": "git",

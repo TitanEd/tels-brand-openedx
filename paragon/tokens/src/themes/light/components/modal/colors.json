@@ -8,5 +8,19 @@
       },
       "backdrop-bg": { "$value": "{color.black}", "$description": "Modal backdrop → --pgn-color-modal-backdrop-bg" }
     }
+  },
+  "elevation": {
+    "modal": {
+      "content": {
+        "box-shadow": {
+          "sm-up": { "$value": [{ "color": "rgba(0, 0, 0, .15)", "offsetX": "0", "offsetY": "10px", "blur": "20px" }, { "color": "rgba(0, 0, 0, .15)", "offsetX": "0", "offsetY": "8px", "blur": "20px" }], "$description": "Paragon default → --pgn-elevation-modal-content-box-shadow-sm-up" }
+        }
+      }
+    }
+  },
+  "other": {
+    "modal": {
+      "opacity": { "$value": ".5", "$description": "Paragon default → --pgn-other-modal-opacity" }
+    }
   }
 }

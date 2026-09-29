@@ -50,6 +50,7 @@
         "text": {
           "inverse-outline-warning": {
             "$value": "{color.warning.base}",
+            "modify": [{ "type": "mix", "otherColor": "black", "amount": "0.55" }],
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-outline-warning"
           }
         },
@@ -77,6 +78,32 @@
           "inverse-outline-warning": {
             "$value": "{color.white}",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-outline-warning"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-outline-warning": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-outline-warning"
+          }
+        },
+        "border": {
+          "inverse-outline-warning": {
+            "$value": "{color.btn.border.inverse-outline-warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-outline-warning"
+          }
+        },
+        "outline": {
+          "inverse-outline-warning": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-outline-warning"
+          }
+        },
+        "text": {
+          "inverse-outline-warning": {
+            "$value": "{color.btn.text.inverse-outline-warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-outline-warning"
           }
         }
       }

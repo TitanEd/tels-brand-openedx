@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 inverse outline tertiary: white outline, white fill on hover / press. Labels use modify:null.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-outline-tertiary": {
+          "$value": "transparent",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-inverse-outline-tertiary"
+        }
+      },
+      "text": {
+        "inverse-outline-tertiary": {
+          "$value": "{color.white}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-inverse-outline-tertiary"
+        }
+      },
+      "border": {
+        "inverse-outline-tertiary": {
+          "$value": "{color.white}",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-inverse-outline-tertiary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.white}",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-inverse-outline-tertiary"
+          }
+        },
+        "text": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.primary.800}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-inverse-outline-tertiary"
+          }
+        },
+        "border": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.white}",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-inverse-outline-tertiary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.white}",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-inverse-outline-tertiary"
+          }
+        },
+        "text": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.primary.800}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-inverse-outline-tertiary"
+          }
+        },
+        "border": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.white}",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-inverse-outline-tertiary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-outline-tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-inverse-outline-tertiary"
+          }
+        },
+        "text": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.white}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-inverse-outline-tertiary"
+          }
+        },
+        "border": {
+          "inverse-outline-tertiary": {
+            "$value": "{color.white}",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-inverse-outline-tertiary"
+          }
+        }
+      }
+    }
+  }
+}

@@ -30,7 +30,8 @@
         },
         "text": {
           "inverse-success": {
-            "$value": "{color.success.base}",
+            "$value": "{color.success.800}",
+            "modify": null,
             "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-success"
           }
         },
@@ -50,7 +51,8 @@
         },
         "text": {
           "inverse-success": {
-            "$value": "{color.success.base}",
+            "$value": "{color.success.800}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-success"
           }
         },
@@ -78,6 +80,32 @@
           "inverse-success": {
             "$value": "transparent",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-success"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-success": {
+            "$value": "{color.btn.bg.inverse-success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-success"
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-success"
+          }
+        },
+        "outline": {
+          "inverse-success": {
+            "$value": "{color.btn.focus.border.inverse-success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-success"
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.btn.text.inverse-success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-success"
           }
         }
       }

@@ -30,7 +30,8 @@
         },
         "text": {
           "inverse-danger": {
-            "$value": "{color.danger.base}",
+            "$value": "{color.danger.800}",
+            "modify": null,
             "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-danger"
           }
         },
@@ -50,7 +51,8 @@
         },
         "text": {
           "inverse-danger": {
-            "$value": "{color.danger.base}",
+            "$value": "{color.danger.800}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-danger"
           }
         },
@@ -78,6 +80,32 @@
           "inverse-danger": {
             "$value": "transparent",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-danger"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-danger": {
+            "$value": "{color.btn.bg.inverse-danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-danger"
+          }
+        },
+        "border": {
+          "inverse-danger": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-danger"
+          }
+        },
+        "outline": {
+          "inverse-danger": {
+            "$value": "{color.btn.focus.border.inverse-danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-danger"
+          }
+        },
+        "text": {
+          "inverse-danger": {
+            "$value": "{color.btn.text.inverse-danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-danger"
           }
         }
       }

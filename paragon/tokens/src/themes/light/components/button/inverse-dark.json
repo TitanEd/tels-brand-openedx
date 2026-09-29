@@ -31,6 +31,7 @@
         "text": {
           "inverse-dark": {
             "$value": "{color.dark.base}",
+            "modify": null,
             "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-dark"
           }
         },
@@ -51,6 +52,7 @@
         "text": {
           "inverse-dark": {
             "$value": "{color.dark.base}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-dark"
           }
         },
@@ -78,6 +80,32 @@
           "inverse-dark": {
             "$value": "transparent",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-dark"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-dark": {
+            "$value": "{color.btn.bg.inverse-dark}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-dark"
+          }
+        },
+        "border": {
+          "inverse-dark": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-dark"
+          }
+        },
+        "outline": {
+          "inverse-dark": {
+            "$value": "{color.btn.focus.border.inverse-dark}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-dark"
+          }
+        },
+        "text": {
+          "inverse-dark": {
+            "$value": "{color.btn.text.inverse-dark}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-dark"
           }
         }
       }

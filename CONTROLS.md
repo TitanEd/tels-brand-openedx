@@ -3,7 +3,14 @@
 Step-by-step guide (all three levels, every component): [`docs/branding/configure-design-tokens.md`](../docs/branding/configure-design-tokens.md)
 
 Package: `tels-brand-openedx/` · always edit under `paragon/tokens/src/`  
-Then: `make build` → hard-refresh.
+Then: `make build` → hard-refresh.  
+See the result without Tutor: `npm run preview` → http://127.0.0.1:8765/light.html and http://127.0.0.1:8765/dark.html (step 1 global tokens, step 2 one card per Paragon component the MFEs use, each with a plain-language description and an **Edit** form with readable token names and a description of what each value changes, that saves values in this browser and applies them to the page at once, **Download saved values** / **Import values** to move them between browsers as a JSON file, plus a **History** of changes (all, per component, per token) with **Revert** — to make a change permanent, find the token file in the tables below, set the value and `make build`. The page follows the Open edX language cookie and mirrors for right-to-left languages.)
+
+**Validation:** `make build` ends with the design token checks (UI checklist: contrast, button states, font, container, breakpoints, dark mode, …). `make validate` runs them alone. A ✗ result means a new problem: fix it before committing. The pre-commit hook and the GitHub Action run the same checks. No brand value is fixed by the checks: you can change the font, colors and widths freely, as long as they stay consistent and accessible. Every token key must have a value, though: an empty `"$value"` (or a key with no `$value`) fails. Thresholds are in `validation/settings.json`; details are in [`docs/branding/token-validation.md`](../docs/branding/token-validation.md).
+
+**Every token a Paragon component uses is in a TitanEd file.** Tokens TitanEd has not customised yet hold Paragon's own value, copied unchanged, with the description `Paragon default → --pgn-…`: edit the value there to change it. Folders that contain only such defaults (annotation, avatar, bubble, carousel, close-button, code, dropzone, image, product-tour, progress-bar, scrollable, sheet, stepper, and `button/icon-{black,brand,danger,dark,light,success,warning}.json`) change nothing in the built CSS until you edit them.
+
+**Dark mode:** every light component folder that changes a Paragon value has a dark twin with the same name under `themes/dark/components/` (all customised button types included). When you add or change a light token, set the dark one too: a variable that exists only in light mode has no value in dark mode and fails validation. When you edit a token in a defaults-only folder, add the dark file as well — validation warns (#20) until you do. Dark gray/light scales, tinted surfaces and focus colors: `themes/dark/global/palette.json`.
 
 ---
 
@@ -229,7 +236,9 @@ No thin SCSS bridge needed — Paragon's own component CSS already reads these `
 | Navbar | `.navbar` | `themes/light/components/navbar/colors.json` |
 | Modal | `.modal-content` | `themes/light/components/modal/colors.json` + `core/components/modal/size.json` |
 | Toast | `.toast` | `themes/light/components/toast/colors.json` + `core/components/toast/size.json` |
-| Card | `.pgn__card` | `themes/light/components/card/colors.json` (bg → surface, border, focus, divider) |
+| Card | `.pgn__card` | `themes/light/components/card/colors.json` (bg → surface, border, focus, divider; plus TitanEd `header-title` and `status-text`, read by `overrides/_cards.scss` because Paragon hardcodes the title to black) |
+| SelectableBox | `.pgn__selectable_box` | `themes/*/components/form/selectable-box.json` (TitanEd `selectable-box.bg`, read by `overrides/_forms.scss`; Paragon hardcodes white) |
+| Popover / Menu / PageBanner | `.popover`, `.pgn__menu`, `.pgn__pageBanner-component` | Paragon stock in light; dark: `themes/dark/components/{popover,menu,page-banner}/colors.json` |
 | List group | `.list-group-item` | `themes/light/components/list/colors.json` |
 | Tooltip | `.tooltip` | `themes/light/components/tooltip/colors.json` |
 | Pagination | `.pagination`, `.page-link` | `themes/light/components/pagination/colors.json` (text → link, current → primary) |

@@ -1,0 +1,69 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Alert. Light text on tinted dark surfaces (color.theme.bg.* in global/palette.json).",
+  "color": {
+    "alert": {
+      "title": {
+        "$value": "{color.white}",
+        "$description": "Alert title (dark) \u2192 --pgn-color-alert-title"
+      },
+      "content": {
+        "$value": "{color.text.base}",
+        "$description": "Alert body text (dark) \u2192 --pgn-color-alert-content"
+      },
+      "icon": {
+        "success": {
+          "$value": "{color.success.400}",
+          "$description": "Alert success icon (dark) \u2192 --pgn-color-alert-icon-success"
+        },
+        "info": {
+          "$value": "{color.info.400}",
+          "$description": "Alert info icon (dark) \u2192 --pgn-color-alert-icon-info"
+        },
+        "danger": {
+          "$value": "{color.danger.400}",
+          "$description": "Alert danger icon (dark) \u2192 --pgn-color-alert-icon-danger"
+        },
+        "warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Alert warning icon (dark) \u2192 --pgn-color-alert-icon-warning"
+        }
+      },
+      "bg": {
+        "success": {
+          "$value": "{color.theme.bg.success}",
+          "$description": "Alert success background (dark) \u2192 --pgn-color-alert-bg-success"
+        },
+        "info": {
+          "$value": "{color.theme.bg.info}",
+          "$description": "Alert info background (dark) \u2192 --pgn-color-alert-bg-info"
+        },
+        "danger": {
+          "$value": "{color.theme.bg.danger}",
+          "$description": "Alert danger background (dark) \u2192 --pgn-color-alert-bg-danger"
+        },
+        "warning": {
+          "$value": "{color.theme.bg.warning}",
+          "$description": "Alert warning background (dark) \u2192 --pgn-color-alert-bg-warning"
+        }
+      },
+      "border": {
+        "success": {
+          "$value": "{color.success.base}",
+          "$description": "Alert success border (dark) \u2192 --pgn-color-alert-border-success"
+        },
+        "info": {
+          "$value": "{color.info.base}",
+          "$description": "Alert info border (dark) \u2192 --pgn-color-alert-border-info"
+        },
+        "danger": {
+          "$value": "{color.danger.base}",
+          "$description": "Alert danger border (dark) \u2192 --pgn-color-alert-border-danger"
+        },
+        "warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Alert warning border (dark) \u2192 --pgn-color-alert-border-warning"
+        }
+      }
+    }
+  }
+}

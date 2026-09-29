@@ -25,6 +25,39 @@
           "$value": "1.5rem",
           "$description": "Alert padding Y → --pgn-spacing-alert-padding-y"
         }
+      },
+      "actions-gap": {
+        "$value": "{spacing.spacer.3}",
+        "$description": "Paragon default → --pgn-spacing-alert-actions-gap"
+      },
+      "icon-space": {
+        "$value": ".8rem",
+        "$description": "Paragon default → --pgn-spacing-alert-icon-space"
+      },
+      "margin-bottom": {
+        "$value": "1rem",
+        "$description": "Paragon default → --pgn-spacing-alert-margin-bottom"
+      }
+    }
+  },
+  "typography": {
+    "alert": {
+      "font": {
+        "size": {
+          "$value": ".875rem",
+          "$type": "dimension",
+          "$description": "Paragon default → --pgn-typography-alert-font-size"
+        },
+        "weight-link": {
+          "$value": "{typography.font.weight.normal}",
+          "$type": "fontWeight",
+          "$description": "Paragon default → --pgn-typography-alert-font-weight-link"
+        }
+      },
+      "line-height": {
+        "$value": "1.5rem",
+        "$type": "number",
+        "$description": "Paragon default → --pgn-typography-alert-line-height"
       }
     }
   }

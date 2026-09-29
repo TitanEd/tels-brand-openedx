@@ -50,6 +50,7 @@
         "text": {
           "inverse-outline-danger": {
             "$value": "{color.danger.base}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-outline-danger"
           }
         },
@@ -77,6 +78,32 @@
           "inverse-outline-danger": {
             "$value": "{color.white}",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-outline-danger"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-outline-danger": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-outline-danger"
+          }
+        },
+        "border": {
+          "inverse-outline-danger": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-outline-danger"
+          }
+        },
+        "outline": {
+          "inverse-outline-danger": {
+            "$value": "{color.btn.focus.border.inverse-danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-outline-danger"
+          }
+        },
+        "text": {
+          "inverse-outline-danger": {
+            "$value": "{color.btn.text.inverse-outline-danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-outline-danger"
           }
         }
       }

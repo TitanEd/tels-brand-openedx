@@ -1,0 +1,11 @@
+{
+  "$description": "Dark \u2014 Button variant=\"link\" disabled color.",
+  "color": {
+    "btn": {
+      "disabled-link": {
+        "$value": "{color.disabled}",
+        "$description": "Disabled link button (dark) \u2192 --pgn-color-btn-disabled-link"
+      }
+    }
+  }
+}

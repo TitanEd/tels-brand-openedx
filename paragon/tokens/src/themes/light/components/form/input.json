@@ -25,11 +25,35 @@
           "border": {
             "$value": "{color.primary.base}",
             "$description": "Focus border → --pgn-color-form-input-focus-border"
+          },
+          "base": {
+            "$value": "{color.form.input.base}",
+            "$description": "Paragon default → --pgn-color-form-input-focus-base"
+          },
+          "bg": {
+            "$value": "{color.form.input.bg.base}",
+            "$description": "Paragon default → --pgn-color-form-input-focus-bg"
           }
         },
         "placeholder": {
           "$value": "{color.gray.500}",
           "$description": "Placeholder text"
+        },
+        "group": {
+          "addon": {
+            "base": {
+              "$value": "{color.form.input.base}",
+              "$description": "Paragon default → --pgn-color-form-input-group-addon-base"
+            },
+            "bg": {
+              "$value": "{color.gray.100}",
+              "$description": "Paragon default → --pgn-color-form-input-group-addon-bg"
+            },
+            "border": {
+              "$value": "{color.form.input.border}",
+              "$description": "Paragon default → --pgn-color-form-input-group-addon-border"
+            }
+          }
         }
       },
       "control": {
@@ -51,7 +75,73 @@
                 "$description": "Checked checkbox/radio border"
               }
             }
+          },
+          "bg": {
+            "base": {
+              "$value": "{color.form.input.bg.base}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-bg-base"
+            }
           }
+        },
+        "label": {
+          "floating": {
+            "text": {
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 0.1
+                }
+              ],
+              "$value": "{color.form.input.bg.base}",
+              "$description": "Paragon default → --pgn-color-form-control-label-floating-text"
+            }
+          }
+        },
+        "switch": {
+          "indicator": {
+            "checked": {
+              "bg": {
+                "$value": "{color.success.base}",
+                "$description": "Paragon default → --pgn-color-form-control-switch-indicator-checked-bg"
+              }
+            }
+          }
+        }
+      },
+      "feedback": {
+        "invalid": {
+          "$value": "{color.danger.base}",
+          "$description": "Paragon default → --pgn-color-form-feedback-invalid"
+        },
+        "tooltip": {
+          "box-shadow": {
+            "focus": {
+              "invalid": {
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.25
+                  }
+                ],
+                "$value": "{color.form.feedback.invalid}",
+                "$description": "Paragon default → --pgn-color-form-feedback-tooltip-box-shadow-focus-invalid"
+              },
+              "valid": {
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.25
+                  }
+                ],
+                "$value": "{color.form.feedback.valid}",
+                "$description": "Paragon default → --pgn-color-form-feedback-tooltip-box-shadow-focus-valid"
+              }
+            }
+          }
+        },
+        "valid": {
+          "$value": "{color.success.base}",
+          "$description": "Paragon default → --pgn-color-form-feedback-valid"
         }
       }
     },

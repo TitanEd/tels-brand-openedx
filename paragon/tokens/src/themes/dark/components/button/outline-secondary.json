@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 outline secondary. Labels readable on the dark page (modify:null).",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-secondary": {
+          "$value": "transparent",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-secondary"
+        }
+      },
+      "text": {
+        "outline-secondary": {
+          "$value": "{color.secondary.300}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-secondary"
+        }
+      },
+      "border": {
+        "outline-secondary": {
+          "$value": "{color.secondary.300}",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-secondary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "transparent",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-secondary"
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.secondary.200}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-secondary"
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.secondary.200}",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-secondary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "transparent",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-secondary"
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.secondary.100}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-secondary"
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.secondary.100}",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-secondary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "transparent",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-secondary"
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.btn.text.outline-secondary}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-secondary"
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.btn.border.outline-secondary}",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-secondary"
+          }
+        }
+      }
+    }
+  }
+}

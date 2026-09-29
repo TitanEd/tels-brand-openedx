@@ -1,0 +1,67 @@
+{
+  "$description": "progress-bar — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "size": {
+    "$type": "dimension",
+    "progress-bar": {
+      "border": {
+        "radius": {
+          "$value": "0",
+          "$description": "Paragon default → --pgn-size-progress-bar-border-radius"
+        },
+        "width": {
+          "$value": "1px",
+          "$description": "Paragon default → --pgn-size-progress-bar-border-width"
+        }
+      },
+      "height": {
+        "annotated": {
+          "$value": ".3125rem",
+          "$description": "Paragon default → --pgn-size-progress-bar-height-annotated"
+        },
+        "base": {
+          "$value": "1rem",
+          "$description": "Paragon default → --pgn-size-progress-bar-height-base"
+        }
+      },
+      "threshold-circle": {
+        "$value": ".5625rem",
+        "$description": "Paragon default → --pgn-size-progress-bar-threshold-circle"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "progress-bar": {
+      "hint": {
+        "annotation-gap": {
+          "$value": ".5rem",
+          "$description": "Paragon default → --pgn-spacing-progress-bar-hint-annotation-gap"
+        }
+      }
+    }
+  },
+  "transition": {
+    "$type": "transition",
+    "progress-bar": {
+      "transition": {
+        "$value": {
+          "property": "width",
+          "duration": ".6s",
+          "timing-function": "ease",
+          "delay": "0s",
+          "behavior": "normal"
+        },
+        "$description": "Paragon default → --pgn-transition-progress-bar-transition"
+      }
+    }
+  },
+  "typography": {
+    "$type": "dimension",
+    "progress-bar": {
+      "font-size": {
+        "$value": "calc({typography.font.size.base} * .75)",
+        "$description": "Paragon default → --pgn-typography-progress-bar-font-size"
+      }
+    }
+  }
+}

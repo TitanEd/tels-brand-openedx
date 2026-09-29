@@ -50,6 +50,7 @@
         "text": {
           "outline-success": {
             "$value": "{color.theme.active.success}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-success"
           }
         },
@@ -77,6 +78,32 @@
           "outline-success": {
             "$value": "{color.btn.border.outline-success}",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-success"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-success": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-outline-success"
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.btn.border.outline-success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-outline-success"
+          }
+        },
+        "outline": {
+          "outline-success": {
+            "$value": "{color.theme.focus.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-outline-success"
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.btn.text.outline-success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-outline-success"
           }
         }
       }

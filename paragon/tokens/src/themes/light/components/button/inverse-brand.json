@@ -31,6 +31,7 @@
         "text": {
           "inverse-brand": {
             "$value": "{color.brand.base}",
+            "modify": null,
             "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-brand"
           }
         },
@@ -51,6 +52,7 @@
         "text": {
           "inverse-brand": {
             "$value": "{color.brand.base}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-brand"
           }
         },
@@ -78,6 +80,32 @@
           "inverse-brand": {
             "$value": "transparent",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-brand"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-brand": {
+            "$value": "{color.btn.bg.inverse-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-brand"
+          }
+        },
+        "border": {
+          "inverse-brand": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-brand"
+          }
+        },
+        "outline": {
+          "inverse-brand": {
+            "$value": "{color.btn.focus.border.inverse-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-brand"
+          }
+        },
+        "text": {
+          "inverse-brand": {
+            "$value": "{color.btn.text.inverse-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-brand"
           }
         }
       }

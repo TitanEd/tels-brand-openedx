@@ -94,6 +94,32 @@
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-light"
           }
         }
+      },
+      "focus": {
+        "bg": {
+          "light": {
+            "$value": "{color.btn.bg.light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-light"
+          }
+        },
+        "border": {
+          "light": {
+            "$value": "{color.btn.border.light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-light"
+          }
+        },
+        "outline": {
+          "light": {
+            "$value": "{color.primary.300}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-light"
+          }
+        },
+        "text": {
+          "light": {
+            "$value": "{color.btn.text.light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-light"
+          }
+        }
       }
     }
   }

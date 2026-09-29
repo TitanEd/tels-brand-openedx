@@ -1,0 +1,55 @@
+{
+  "$description": "menu — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "$type": "color",
+    "menu": {
+      "bg": {
+        "$value": "{color.white}",
+        "$description": "Paragon default → --pgn-color-menu-bg"
+      },
+      "item": {
+        "bg": {
+          "$value": "transparent",
+          "$description": "Paragon default → --pgn-color-menu-item-bg"
+        },
+        "border": {
+          "$value": "{color.menu.item.bg}",
+          "$description": "Paragon default → --pgn-color-menu-item-border"
+        },
+        "color": {
+          "$value": "{color.body.base}",
+          "$description": "Paragon default → --pgn-color-menu-item-color"
+        },
+        "focus": {
+          "bg": {
+            "$value": "{color.light.500}",
+            "$description": "Paragon default → --pgn-color-menu-item-focus-bg"
+          }
+        },
+        "hover": {
+          "bg": {
+            "$value": "{color.btn.hover.bg.tertiary}",
+            "$description": "Paragon default → --pgn-color-menu-item-hover-bg"
+          },
+          "border": {
+            "$value": "{color.menu.item.bg}",
+            "$description": "Paragon default → --pgn-color-menu-item-hover-border"
+          },
+          "color": {
+            "$value": "{color.btn.hover.text.tertiary}",
+            "$description": "Paragon default → --pgn-color-menu-item-hover-color"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "menu": {
+      "box-shadow": {
+        "$value": "{elevation.box-shadow.base}",
+        "$description": "Paragon default → --pgn-elevation-menu-box-shadow"
+      }
+    }
+  }
+}

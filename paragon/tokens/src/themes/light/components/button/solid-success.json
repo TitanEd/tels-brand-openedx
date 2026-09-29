@@ -83,6 +83,32 @@
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-success"
           }
         }
+      },
+      "focus": {
+        "bg": {
+          "success": {
+            "$value": "{color.btn.bg.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-success"
+          }
+        },
+        "border": {
+          "success": {
+            "$value": "{color.btn.border.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-success"
+          }
+        },
+        "outline": {
+          "success": {
+            "$value": "{color.theme.focus.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-success"
+          }
+        },
+        "text": {
+          "success": {
+            "$value": "{color.btn.text.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-success"
+          }
+        }
       }
     }
   }

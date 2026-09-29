@@ -83,6 +83,32 @@
             "$description": "Disabled border → --pgn-color-btn-disabled-border-brand"
           }
         }
+      },
+      "focus": {
+        "bg": {
+          "brand": {
+            "$value": "{color.btn.bg.brand}",
+            "$description": "Paragon default → --pgn-color-btn-focus-bg-brand"
+          }
+        },
+        "border": {
+          "brand": {
+            "$value": "{color.btn.border.brand}",
+            "$description": "Paragon default → --pgn-color-btn-focus-border-brand"
+          }
+        },
+        "outline": {
+          "brand": {
+            "$value": "{color.theme.focus.brand}",
+            "$description": "Paragon default → --pgn-color-btn-focus-outline-brand"
+          }
+        },
+        "text": {
+          "brand": {
+            "$value": "{color.btn.text.brand}",
+            "$description": "Paragon default → --pgn-color-btn-focus-text-brand"
+          }
+        }
       }
     }
   }

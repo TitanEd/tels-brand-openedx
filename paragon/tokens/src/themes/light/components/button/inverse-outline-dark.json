@@ -50,6 +50,7 @@
         "text": {
           "inverse-outline-dark": {
             "$value": "{color.dark.base}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-outline-dark"
           }
         },
@@ -77,6 +78,32 @@
           "inverse-outline-dark": {
             "$value": "{color.white}",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-outline-dark"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-outline-dark": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-outline-dark"
+          }
+        },
+        "border": {
+          "inverse-outline-dark": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-outline-dark"
+          }
+        },
+        "outline": {
+          "inverse-outline-dark": {
+            "$value": "{color.btn.focus.border.inverse-outline-dark}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-outline-dark"
+          }
+        },
+        "text": {
+          "inverse-outline-dark": {
+            "$value": "{color.btn.text.inverse-outline-dark}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-outline-dark"
           }
         }
       }

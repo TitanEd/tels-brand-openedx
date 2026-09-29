@@ -1,0 +1,75 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Tabs (nav-underline and course tabs).",
+  "color": {
+    "nav": {
+      "link": {
+        "text": {
+          "base": {
+            "$value": "{color.gray.700}",
+            "$description": "Tab text (dark) \u2192 --pgn-color-nav-link-text-base"
+          },
+          "disabled": {
+            "$value": "{color.gray.400}",
+            "$description": "Disabled tab (dark) \u2192 --pgn-color-nav-link-text-disabled"
+          }
+        }
+      },
+      "tabs": {
+        "base": {
+          "border": {
+            "base": {
+              "$value": "{color.light.400}",
+              "$description": "Tab bar bottom border (dark) \u2192 --pgn-color-nav-tabs-base-border-base"
+            }
+          },
+          "link": {
+            "text": {
+              "$value": "{color.nav.link.text.base}",
+              "$description": "Course tab text (dark) \u2192 --pgn-color-nav-tabs-base-link-text"
+            },
+            "hover": {
+              "bg": {
+                "$value": "{color.light.200}",
+                "$description": "Tab hover background (dark) \u2192 --pgn-color-nav-tabs-base-link-hover-bg"
+              },
+              "text": {
+                "$value": "{color.primary.400}",
+                "$description": "Tab hover text (dark): lighter primary \u2192 --pgn-color-nav-tabs-base-link-hover-text"
+              }
+            },
+            "active": {
+              "text": {
+                "$value": "{color.primary.base}",
+                "$description": "Selected tab text (dark) \u2192 --pgn-color-nav-tabs-base-link-active-text"
+              },
+              "bg": {
+                "$value": "transparent",
+                "$description": "Selected tab background (dark) \u2192 --pgn-color-nav-tabs-base-link-active-bg"
+              },
+              "border": {
+                "$value": "{color.primary.base}",
+                "$description": "Selected course tab underline (dark) \u2192 --pgn-color-nav-tabs-base-link-active-border"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "border-color": {
+    "nav": {
+      "tabs-link": {
+        "border": {
+          "active": {
+            "$value": "{color.primary.base}",
+            "$description": "Selected tab underline (dark) \u2192 --pgn-border-color-nav-tabs-link-border-active"
+          },
+          "focus": {
+            "$value": "{color.nav.tabs.base.link.active.text}",
+            "$description": "Tab focus ring (dark) \u2192 --pgn-border-color-nav-tabs-link-border-focus"
+          }
+        }
+      }
+    }
+  }
+}

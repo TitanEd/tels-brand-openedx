@@ -15,7 +15,9 @@
           "dark": { "$value": "{color.theme.focus.primary}", "$description": "Dark card focus ring → --pgn-color-card-border-focus-dark" }
         }
       },
-      "divider-bg": { "$value": "{color.light.400}", "$description": "Card divider → --pgn-color-card-divider-bg" }
+      "divider-bg": { "$value": "{color.light.400}", "$description": "Card divider → --pgn-color-card-divider-bg" },
+      "header-title": { "$value": "{color.black}", "$description": "TitanEd: Card.Header title → --pgn-color-card-header-title (read by overrides/_cards.scss; Paragon hardcodes black)" },
+      "status-text": { "$value": "inherit", "$description": "TitanEd: Card.Status message on the pale success/danger/warning tint → --pgn-color-card-status-text (read by overrides/_cards.scss; Paragon inherits body text)" }
     }
   }
 }

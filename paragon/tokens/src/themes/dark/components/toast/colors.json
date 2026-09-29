@@ -1,0 +1,45 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Toast. One step lighter than the page so it stands out.",
+  "color": {
+    "toast": {
+      "base": {
+        "$value": "inherit",
+        "$description": "Toast text (dark) \u2192 --pgn-color-toast-base"
+      },
+      "bg": {
+        "$value": "{color.gray.100}",
+        "$description": "Toast background (dark) \u2192 --pgn-color-toast-bg"
+      },
+      "border": {
+        "$value": "{color.white}",
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.1
+          }
+        ],
+        "$description": "Toast border (dark): white at 10% \u2192 --pgn-color-toast-border"
+      },
+      "header": {
+        "text": {
+          "$value": "{color.white}",
+          "$description": "Toast header text (dark) \u2192 --pgn-color-toast-header-text"
+        },
+        "bg": {
+          "$value": "{color.gray.200}",
+          "$description": "Toast header background (dark) \u2192 --pgn-color-toast-header-bg"
+        },
+        "border": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.15
+            }
+          ],
+          "$description": "Toast header border (dark): white at 15% \u2192 --pgn-color-toast-header-border"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 solid warning. Dark label on yellow (modify:null).",
+  "color": {
+    "btn": {
+      "bg": {
+        "warning": {
+          "$value": "{color.warning.base}",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-warning"
+        }
+      },
+      "text": {
+        "warning": {
+          "$value": "#111827",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-warning"
+        }
+      },
+      "border": {
+        "warning": {
+          "$value": "{color.btn.bg.warning}",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-warning"
+        }
+      },
+      "hover": {
+        "bg": {
+          "warning": {
+            "$value": "{color.theme.hover.warning}",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "#111827",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-warning"
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.theme.hover.warning}",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-warning"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "warning": {
+            "$value": "{color.theme.active.warning}",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "#111827",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-warning"
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.theme.active.warning}",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-warning"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "warning": {
+            "$value": "{color.btn.bg.warning}",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "{color.btn.text.warning}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-warning"
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.btn.border.warning}",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-warning"
+          }
+        }
+      }
+    }
+  }
+}

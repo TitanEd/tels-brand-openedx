@@ -21,6 +21,26 @@
             "$description": "UI: Button radius lg → --pgn-size-btn-border-radius-lg"
           }
         }
+      },
+      "focus": {
+        "border-radius": {
+          "base": {
+            "$value": "calc({size.btn.border.radius.base} + {spacing.btn.focus.border-gap})",
+            "$description": "Paragon default → --pgn-size-btn-focus-border-radius-base"
+          },
+          "lg": {
+            "$value": "{size.btn.focus.border-radius.base}",
+            "$description": "Paragon default → --pgn-size-btn-focus-border-radius-lg"
+          },
+          "sm": {
+            "$value": "{size.btn.border.radius.base}",
+            "$description": "Paragon default → --pgn-size-btn-focus-border-radius-sm"
+          }
+        },
+        "width": {
+          "$value": "2px",
+          "$description": "Paragon default → --pgn-size-btn-focus-width"
+        }
       }
     }
   },
@@ -62,6 +82,12 @@
           "$type": "dimension",
           "$description": "UI: Space between button label and iconBefore / iconAfter → --pgn-spacing-btn-icon-gap (Paragon stock .5rem). Applied by overrides/_buttons.scss."
         }
+      },
+      "focus": {
+        "distance-to-border": {
+          "$value": "calc({spacing.btn.focus.border-gap} + {size.btn.border.width})",
+          "$description": "Paragon default → --pgn-spacing-btn-focus-distance-to-border"
+        }
       }
     }
   },
@@ -86,8 +112,33 @@
           "$value": "{typography.font.weight.normal}",
           "$type": "fontWeight",
           "$description": "UI: Button font weight (all variants) → --pgn-typography-btn-font-weight"
+        },
+        "family": {
+          "$value": "{typography.input.btn.font.family}",
+          "$type": "fontFamily",
+          "$description": "Paragon default → --pgn-typography-btn-font-family"
+        }
+      },
+      "line-height": {
+        "base": {
+          "$value": "{typography.input.btn.line-height.base}",
+          "$description": "Paragon default → --pgn-typography-btn-line-height-base"
+        },
+        "lg": {
+          "$value": "{typography.input.btn.line-height.lg}",
+          "$description": "Paragon default → --pgn-typography-btn-line-height-lg"
+        },
+        "sm": {
+          "$value": "{typography.input.btn.line-height.sm}",
+          "$description": "Paragon default → --pgn-typography-btn-line-height-sm"
         }
       }
+    }
+  },
+  "transition": {
+    "btn": {
+      "$value": "none",
+      "$description": "Paragon default → --pgn-transition-btn"
     }
   }
 }

@@ -1,0 +1,11 @@
+{
+  "$description": "Dark \u2014 muted text.",
+  "color": {
+    "text": {
+      "muted": {
+        "$value": "{color.gray.500}",
+        "$description": "Muted text (dark) \u2192 --pgn-color-text-muted"
+      }
+    }
+  }
+}

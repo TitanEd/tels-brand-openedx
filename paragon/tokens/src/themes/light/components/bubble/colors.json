@@ -1,0 +1,44 @@
+{
+  "$description": "bubble — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "$type": "color",
+    "bubble": {
+      "bg": {
+        "error": {
+          "$value": "{color.danger.base}",
+          "$description": "Paragon default → --pgn-color-bubble-bg-error"
+        },
+        "primary": {
+          "$value": "{color.primary.base}",
+          "$description": "Paragon default → --pgn-color-bubble-bg-primary"
+        },
+        "success": {
+          "$value": "{color.success.base}",
+          "$description": "Paragon default → --pgn-color-bubble-bg-success"
+        },
+        "warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Paragon default → --pgn-color-bubble-bg-warning"
+        }
+      },
+      "text": {
+        "error": {
+          "$value": "{color.white}",
+          "$description": "Paragon default → --pgn-color-bubble-text-error"
+        },
+        "primary": {
+          "$value": "{color.white}",
+          "$description": "Paragon default → --pgn-color-bubble-text-primary"
+        },
+        "success": {
+          "$value": "{color.white}",
+          "$description": "Paragon default → --pgn-color-bubble-text-success"
+        },
+        "warning": {
+          "$value": "{color.white}",
+          "$description": "Paragon default → --pgn-color-bubble-text-warning"
+        }
+      }
+    }
+  }
+}

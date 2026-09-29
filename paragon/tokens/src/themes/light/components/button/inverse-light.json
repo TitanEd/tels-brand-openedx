@@ -31,6 +31,7 @@
         "text": {
           "inverse-light": {
             "$value": "{color.light.base}",
+            "modify": null,
             "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-light"
           }
         },
@@ -51,6 +52,7 @@
         "text": {
           "inverse-light": {
             "$value": "{color.light.base}",
+            "modify": null,
             "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-light"
           }
         },
@@ -78,6 +80,32 @@
           "inverse-light": {
             "$value": "transparent",
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-light"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-light": {
+            "$value": "{color.btn.bg.inverse-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-light"
+          }
+        },
+        "border": {
+          "inverse-light": {
+            "$value": "{color.btn.border.inverse-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-light"
+          }
+        },
+        "outline": {
+          "inverse-light": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-light"
+          }
+        },
+        "text": {
+          "inverse-light": {
+            "$value": "{color.btn.text.inverse-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-light"
           }
         }
       }

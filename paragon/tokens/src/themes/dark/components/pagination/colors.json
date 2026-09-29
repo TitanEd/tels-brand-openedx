@@ -1,0 +1,67 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Pagination.",
+  "color": {
+    "pagination": {
+      "text": {
+        "base": {
+          "$value": "{color.link.base}",
+          "$description": "Page number (dark) \u2192 --pgn-color-pagination-text-base"
+        },
+        "hover": {
+          "$value": "{color.link.hover}",
+          "$description": "Page number hover (dark) \u2192 --pgn-color-pagination-text-hover"
+        },
+        "active": {
+          "$value": "{color.active}",
+          "$description": "Current page text (dark) \u2192 --pgn-color-pagination-text-active"
+        },
+        "disabled": {
+          "$value": "{color.disabled}",
+          "$description": "Disabled page text (dark) \u2192 --pgn-color-pagination-text-disabled"
+        }
+      },
+      "bg": {
+        "base": {
+          "$value": "{color.bg.base}",
+          "$description": "Page background (dark) \u2192 --pgn-color-pagination-bg-base"
+        },
+        "hover": {
+          "$value": "{color.gray.100}",
+          "$description": "Page hover background (dark) \u2192 --pgn-color-pagination-bg-hover"
+        },
+        "active": {
+          "$value": "{color.primary.base}",
+          "$description": "Current page background (dark) \u2192 --pgn-color-pagination-bg-active"
+        },
+        "disabled": {
+          "$value": "{color.bg.base}",
+          "$description": "Disabled page background (dark) \u2192 --pgn-color-pagination-bg-disabled"
+        }
+      },
+      "border": {
+        "base": {
+          "$value": "{color.gray.200}",
+          "$description": "Page border (dark) \u2192 --pgn-color-pagination-border-base"
+        },
+        "hover": {
+          "$value": "{color.gray.300}",
+          "$description": "Page border hover (dark) \u2192 --pgn-color-pagination-border-hover"
+        },
+        "active": {
+          "$value": "{color.pagination.bg.active}",
+          "$description": "Current page border (dark) \u2192 --pgn-color-pagination-border-active"
+        },
+        "disabled": {
+          "$value": "{color.gray.100}",
+          "$description": "Disabled page border (dark) \u2192 --pgn-color-pagination-border-disabled"
+        }
+      },
+      "focus": {
+        "base": {
+          "$value": "{color.primary.base}",
+          "$description": "Pagination focus ring (dark) \u2192 --pgn-color-pagination-focus-base"
+        }
+      }
+    }
+  }
+}

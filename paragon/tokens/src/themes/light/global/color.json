@@ -41,6 +41,27 @@
       }
     },
     "primary": {
+      "500": {
+        "actions": {
+          "default": "{color.action.default.primary.500}"
+        },
+        "$value": "{color.primary.base}",
+        "$description": "Paragon default → --pgn-color-primary-500"
+      },
+      "700": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.20"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.primary.700}"
+        },
+        "$value": "{color.primary.base}",
+        "$description": "Paragon default → --pgn-color-primary-700"
+      },
       "base": {
         "$value": "#EB5939",
         "$description": "LAYER 1 color 1 — Primary. Change once → solid/outline/inverse primary buttons, brand (linked), links, tabs."
@@ -73,6 +94,20 @@
       }
     },
     "success": {
+      "100": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.94"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.success.100}"
+        },
+        "$value": "{color.success.base}",
+        "$description": "Paragon default → --pgn-color-success-100"
+      },
       "base": {
         "$value": "{color.green}",
         "$description": "UI label: Success"
@@ -85,30 +120,149 @@
       }
     },
     "warning": {
+      "100": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.94"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.warning.100}"
+        },
+        "$value": "{color.warning.base}",
+        "$description": "Paragon default → --pgn-color-warning-100"
+      },
+      "200": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.75"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.warning.200}"
+        },
+        "$value": "{color.warning.base}",
+        "$description": "Paragon default → --pgn-color-warning-200"
+      },
+      "500": {
+        "actions": {
+          "default": "{color.action.default.warning.500}"
+        },
+        "$value": "{color.warning.base}",
+        "$description": "Paragon default → --pgn-color-warning-500"
+      },
       "base": {
         "$value": "{color.yellow}",
         "$description": "UI label: Warning"
       }
     },
     "danger": {
+      "100": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.94"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.danger.100}"
+        },
+        "$value": "{color.danger.base}",
+        "$description": "Paragon default → --pgn-color-danger-100"
+      },
       "base": {
         "$value": "{color.red}",
         "$description": "UI label: Danger"
       }
     },
     "light": {
+      "200": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.75"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.light.200}"
+        },
+        "$value": "{color.light.base}",
+        "$description": "Paragon default → --pgn-color-light-200"
+      },
+      "300": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "white",
+            "amount": "0.50"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.light.300}"
+        },
+        "$value": "{color.light.base}",
+        "$description": "Paragon default → --pgn-color-light-300"
+      },
       "base": {
         "$value": "#E1DDDB",
         "$description": "UI label: Light base"
       }
     },
     "dark": {
+      "700": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.20"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.dark.700}"
+        },
+        "$value": "{color.dark.base}",
+        "$description": "Paragon default → --pgn-color-dark-700"
+      },
       "base": {
         "$value": "#273F2F",
         "$description": "UI label: Dark base"
       }
     },
     "gray": {
+      "100": {
+        "actions": {
+          "default": "{color.action.default.gray.100}"
+        },
+        "$value": "#EBEBEB",
+        "$description": "Paragon default → --pgn-color-gray-100"
+      },
+      "300": {
+        "actions": {
+          "default": "{color.action.default.gray.300}"
+        },
+        "$value": "#ADADAD",
+        "$description": "Paragon default → --pgn-color-gray-300"
+      },
+      "500": {
+        "actions": {
+          "default": "{color.action.default.gray.500}"
+        },
+        "$value": "{color.gray.base}",
+        "$description": "Paragon default → --pgn-color-gray-500"
+      },
+      "700": {
+        "actions": {
+          "default": "{color.action.default.gray.700}"
+        },
+        "$value": "#454545",
+        "$description": "Paragon default → --pgn-color-gray-700"
+      },
       "base": {
         "$value": "#707070",
         "$description": "UI label: Gray base"

@@ -1293,6 +1293,11 @@ input.form-control:disabled {
   border-color: var(--pgn-color-form-control-indicator-checked-border-base, var(--pgn-color-primary-base)) !important;
 }
 
+.pgn__selectable_box-set .pgn__selectable_box,
+.pgn__selectable_box {
+  background: var(--pgn-color-selectable-box-bg, var(--pgn-color-white));
+}
+
 .badge.badge-info,
 .badge-info {
   background-color: var(--pgn-color-primary-base) !important;
@@ -3446,6 +3451,16 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 .collapsible-card-lg {
   border-radius: var(--pgn-size-card-border-radius-base) !important;
   overflow: hidden;
+}
+
+.pgn__card:not(.pgn__card-dark) .pgn__card-header .pgn__card-header-title,
+.pgn__card:not(.pgn__card-dark) .pgn__card-header .pgn__card-header-title-sm,
+.pgn__card:not(.pgn__card-dark) .pgn__card-header .pgn__card-header-title-md {
+  color: var(--pgn-color-card-header-title, var(--pgn-color-black));
+}
+
+.pgn__card .pgn__card-status:not(.pgn__card-status__primary) .pgn__card-status__message-content {
+  color: var(--pgn-color-card-status-text, inherit);
 }
 
 .pgn__data-table {

@@ -1,0 +1,8 @@
+{
+  "$description": "SELECTABLE BOX (light) — SelectableBox / SelectableBox.Set (.pgn__selectable_box). TitanEd token read by overrides/_forms.scss; Paragon hardcodes the box to white.",
+  "color": {
+    "selectable-box": {
+      "bg": { "$value": "{color.white}", "$description": "TitanEd: box background → --pgn-color-selectable-box-bg" }
+    }
+  }
+}

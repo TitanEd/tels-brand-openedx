@@ -79,6 +79,32 @@
             "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-tertiary"
           }
         }
+      },
+      "focus": {
+        "bg": {
+          "tertiary": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "{color.btn.border.tertiary}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-tertiary"
+          }
+        },
+        "outline": {
+          "tertiary": {
+            "$value": "{color.theme.focus.primary}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.btn.text.tertiary}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-tertiary"
+          }
+        }
       }
     }
   }

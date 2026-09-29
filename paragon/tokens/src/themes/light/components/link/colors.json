@@ -31,7 +31,27 @@
           "base": {
             "$value": "{color.primary.700}",
             "$description": "Inline link hover → --pgn-color-link-inline-hover-base"
+          },
+          "decoration": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 1
+              }
+            ],
+            "$value": "{color.link.inline.hover.base}",
+            "$description": "Paragon default → --pgn-color-link-inline-hover-decoration"
           }
+        },
+        "decoration": {
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.3
+            }
+          ],
+          "$value": "{color.link.inline.base}",
+          "$description": "Paragon default → --pgn-color-link-inline-decoration"
         }
       },
       "brand": {

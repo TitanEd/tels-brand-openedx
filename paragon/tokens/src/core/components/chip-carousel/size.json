@@ -1,0 +1,20 @@
+{
+  "$description": "chip-carousel — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "spacing": {
+    "$type": "dimension",
+    "chip-carousel": {
+      "container": {
+        "padding": {
+          "x": {
+            "$value": ".625rem",
+            "$description": "Paragon default → --pgn-spacing-chip-carousel-container-padding-x"
+          },
+          "y": {
+            "$value": ".313rem",
+            "$description": "Paragon default → --pgn-spacing-chip-carousel-container-padding-y"
+          }
+        }
+      }
+    }
+  }
+}

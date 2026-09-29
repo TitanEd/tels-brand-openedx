@@ -1,0 +1,15 @@
+{
+  "$description": "Settings for scripts/validate-tokens.js. No brand values here (font, colors, widths are free to change in the tokens); only accessibility thresholds, limits and exceptions.",
+  "contrast": {
+    "text": 4.5,
+    "nonText": 3,
+    "stateDifference": 1.1
+  },
+  "inverseBackdrop": "--pgn-color-dark-base",
+  "cssBudgetKb": {
+    "core.min.css": 410,
+    "light.min.css": 560,
+    "dark.min.css": 410
+  },
+  "exceptions": []
+}

@@ -1,37 +1,66 @@
 {
-  "$description": "Dark — links (including .inline-link / mailto)",
+  "$description": "Dark \u2014 links (including .inline-link / mailto). Hover is a lighter primary (modify: null so Paragon does not darken it on the dark page).",
   "color": {
     "link": {
       "base": {
         "$value": "{color.primary.base}",
-        "$description": "Link on dark"
+        "$description": "Link on dark \u2192 --pgn-color-link-base"
       },
       "hover": {
-        "$value": "{color.primary.base}",
-        "$description": "Link hover on dark"
+        "$value": "{color.primary.400}",
+        "modify": null,
+        "$description": "Link hover on dark \u2192 --pgn-color-link-hover"
       },
       "active": {
         "$value": "{color.link.hover}",
-        "$description": "Link pressed on dark → --pgn-color-link-active"
+        "$description": "Link pressed on dark \u2192 --pgn-color-link-active"
       },
       "visited": {
         "$value": "{color.link.base}",
-        "$description": "Visited link on dark → --pgn-color-link-visited"
+        "$description": "Visited link on dark \u2192 --pgn-color-link-visited"
       },
       "focus": {
         "$value": "{color.link.hover}",
-        "$description": "Focused link on dark → --pgn-color-link-focus"
+        "$description": "Focused link on dark \u2192 --pgn-color-link-focus"
       },
       "inline": {
         "base": {
           "$value": "{color.primary.base}",
-          "$description": "Inline / mailto on dark → --pgn-color-link-inline-base"
+          "$description": "Inline / mailto on dark \u2192 --pgn-color-link-inline-base"
         },
         "hover": {
           "base": {
-            "$value": "{color.primary.base}",
-            "$description": "Inline link hover on dark"
+            "$value": "{color.primary.400}",
+            "modify": null,
+            "$description": "Inline link hover on dark \u2192 --pgn-color-link-inline-hover-base"
           }
+        }
+      },
+      "brand": {
+        "base": {
+          "$value": "{color.brand.base}",
+          "$description": "Brand link on dark \u2192 --pgn-color-link-brand-base"
+        },
+        "hover": {
+          "$value": "{color.brand.400}",
+          "modify": null,
+          "$description": "Brand link hover on dark \u2192 --pgn-color-link-brand-hover"
+        },
+        "inline": {
+          "base": {
+            "$value": "{color.brand.base}",
+            "$description": "Brand inline link on dark \u2192 --pgn-color-link-brand-inline-base"
+          }
+        }
+      },
+      "muted": {
+        "base": {
+          "$value": "{color.gray.base}",
+          "$description": "Muted link on dark \u2192 --pgn-color-link-muted-base"
+        },
+        "hover": {
+          "$value": "{color.primary.base}",
+          "$description": "Muted link hover on dark \u2192 --pgn-color-link-muted-hover"
         }
       }
     }
