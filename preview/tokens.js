@@ -52,8 +52,9 @@ export const isColor = (v) => Boolean(v) && !/^(inherit|initial|unset|currentcol
   && CSS.supports('color', v);
 export const isLength = (v) => Boolean(v) && /^-?[\d.]+(px|rem|em|%|vw|vh)$|^calc\(/.test(v);
 
-// { sources } from paragon/tokens/src, served by scripts/preview-server.js.
+// { sources, derived } from paragon/tokens/src, served by scripts/preview-server.js.
 const metaPromise = fetch('/token-meta.json').then((r) => r.json()).catch(() => ({ sources: {} }));
+export const tokenMeta = () => metaPromise;
 export function useTokenMeta() {
   const [meta, setMeta] = useState(null);
   useEffect(() => { metaPromise.then(setMeta); }, []);

@@ -122,7 +122,7 @@ export function CodeDemo() {
     <p>
       {t(m.code, {
         code: <code dir="ltr">print(&quot;Hello&quot;)</code>,
-        keys: <bdi dir="ltr"><kbd>Ctrl</kbd> + <kbd>S</kbd></bdi>,
+        keys: <bdi dir="ltr"><kbd>{t(m.ctrlKey)}</kbd> + <kbd>S</kbd></bdi>,
       })}
     </p>
   );

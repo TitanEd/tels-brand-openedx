@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import {
   ActionRow, Badge, Button, Form, Icon, ModalDialog,
 } from '@openedx/paragon';
-import { History as HistoryIcon, Search } from '@openedx/paragon/icons';
+import { History as HistoryIcon, Search, Visibility } from '@openedx/paragon/icons';
 import {
   dependentsOf, fileOf, isColor, rawTokenValues, shortPath,
 } from './tokens';
@@ -13,6 +13,7 @@ import {
   modeName, parseColor, readBaseValues, useSavedTokens, valueError as validate,
 } from './saved';
 import { HistoryList, useHistoryCount } from './history';
+import { FontPicker } from './fonts';
 import m from './page.messages';
 import describe from './describe.messages';
 
@@ -37,6 +38,7 @@ function TokenRow({
   const [showHistory, setShowHistory] = useState(false);
   const current = draft !== undefined ? (draft ?? base) : (saved ?? base);
   const color = isColor(base);
+  const font = /font-family/.test(row.name);
   const error = draft ? validate(draft, base) : null;
   const parsed = color && !error ? parseColor(current) : null;
   let status = null;
@@ -49,7 +51,7 @@ function TokenRow({
         {row.impact && <div className="small text-muted">{row.impact}</div>}
         {row.follows && saved === undefined && draft === undefined && <div className="small text-muted">{row.follows}</div>}
       </div>
-      <div className="preview-edit-input">
+      <div className={`preview-edit-input${font ? ' is-font' : ''}`}>
         {color && (
           <input
             type="color" className="preview-color-input" aria-label={intl.formatMessage(m.pickColor, { name: row.label })}
@@ -61,6 +63,7 @@ function TokenRow({
           size="sm" dir="ltr" value={current} aria-label={row.label} isInvalid={Boolean(error)}
           onChange={(e) => onChange(row.name, e.target.value)}
         />
+        {font && <FontPicker value={current} label={row.label} onChange={(value) => onChange(row.name, value)} />}
       </div>
       <div className="preview-edit-status">
         {status && <Badge variant={draft !== undefined ? 'warning' : 'info'}>{intl.formatMessage(status)}</Badge>}
@@ -97,21 +100,30 @@ function TokenRow({
  * them with a history entry and applies them to the page.
  */
 export function TokenEditor({
-  scope, kind, names, meta, scopeOf, onClose, onSaved,
+  scope, kind, names, meta, scopeOf, onClose, onSaved, onPreviewed,
 }) {
   const intl = useIntl();
   const labels = useTokenLabels();
   const {
-    saved, commit, revert,
+    saved, preview, derived, commit, revert, showPreview,
   } = useSavedTokens();
-  const [draft, setDraft] = useState({});
+  // Values being previewed start as unsaved changes, so Save keeps them and Preview updates them.
+  const [draft, setDraft] = useState(() => Object.fromEntries(names
+    .filter((n) => preview && preview[n] !== saved[n])
+    .map((n) => [n, preview[n] ?? null])));
   const [query, setQuery] = useState('');
   const [onlyChanged, setOnlyChanged] = useState(false);
   const [openFiles, setOpenFiles] = useState(() => new Set());
   const [saving, setSaving] = useState(false);
   const scopeName = intl.formatMessage(scope.name);
 
-  const base = useMemo(() => readBaseValues(names), [names]);
+  // The value each token has without a saved value of its own: the built one, or the color worked out from a
+  // saved color it is made from (Primary 700 from Primary).
+  const base = useMemo(() => {
+    const built = readBaseValues(names);
+    names.forEach((n) => { if (derived[n]) { built[n] = derived[n]; } });
+    return built;
+  }, [names, derived]);
   const groups = useMemo(() => {
     const own = scopeWords(scope);
     const firstFolder = new Set((scope.paths[0] || '').replace(/^(components|global)\//, '').split(/[/-]/));
@@ -179,15 +191,29 @@ export function TokenEditor({
     && (!q || label.toLocaleLowerCase(intl.locale).includes(q) || description.toLocaleLowerCase(intl.locale).includes(q)
       || (saved[name] ?? base[name] ?? '').toLowerCase().includes(q));
 
-  const save = async () => {
-    setSaving(true);
-    const next = { ...saved };
+  const previewedInScope = names.some((n) => preview && preview[n] !== saved[n]);
+  /** `values` with the draft of this form applied. */
+  const withDraft = (values) => {
+    const next = { ...values };
     for (const [name, value] of Object.entries(draft)) {
       if (value === null || value.trim() === base[name]) { delete next[name]; } else { next[name] = value.trim(); }
     }
-    const count = await commit(next, { scopeId: scope.id });
+    return next;
+  };
+  const save = async () => {
+    setSaving(true);
+    const count = await commit(withDraft(saved), { scopeId: scope.id, names });
     setSaving(false);
+    if (count === null) { return; }
     onSaved(intl.formatMessage(m.savedToast, { name: scopeName, count }));
+  };
+  const startPreview = async () => {
+    setSaving(true);
+    const others = { ...(preview || saved) };
+    names.forEach((n) => { if (saved[n] === undefined) { delete others[n]; } else { others[n] = saved[n]; } });
+    const shown = await showPreview(withDraft(others));
+    setSaving(false);
+    if (shown) { onPreviewed(); }
   };
   const resetScope = () => setDraft(Object.fromEntries(savedInScope.map((n) => [n, null])));
   const title = intl.formatMessage(m.editTitle, { name: scopeName });
@@ -246,6 +272,12 @@ export function TokenEditor({
           </Button>
           <ActionRow.Spacer />
           <Button variant="tertiary" onClick={onClose}>{intl.formatMessage(m.cancel)}</Button>
+          <Button
+            variant="outline-primary" iconBefore={Visibility} onClick={startPreview}
+            disabled={(!pending.length && !previewedInScope) || errors.length > 0 || saving}
+          >
+            {intl.formatMessage(m.previewInApps)}
+          </Button>
           <Button onClick={save} disabled={!pending.length || errors.length > 0 || saving}>
             {pending.length ? intl.formatMessage(m.saveCount, { count: pending.length }) : intl.formatMessage(m.save)}
           </Button>

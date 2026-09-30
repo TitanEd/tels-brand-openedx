@@ -83,6 +83,7 @@ export function ImportDialog({
   const save = async () => {
     setState('pending');
     const count = await commit(next, { action: 'import', source: file.name });
+    if (count === null) { setState('default'); return; }
     onImported(count);
   };
 

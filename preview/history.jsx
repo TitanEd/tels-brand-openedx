@@ -37,6 +37,8 @@ function useActionText() {
       case 'reset-all': return intl.formatMessage(m.actionResetAll);
       case 'import': return entry.source
         ? intl.formatMessage(m.actionImport, { file: entry.source }) : intl.formatMessage(m.actionImportUnknown);
+      case 'theme': return intl.formatMessage(m.actionTheme, { name: entry.source || '' });
+      case 'theme-code': return intl.formatMessage(m.actionThemeCode);
       case 'revert': {
         const original = history.find((e) => e.id === entry.revertOf);
         return original

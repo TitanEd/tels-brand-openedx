@@ -5,24 +5,28 @@ import React, {
 import { createRoot } from 'react-dom/client';
 import { FormattedMessage, IntlProvider, useIntl } from 'react-intl';
 import {
-  Badge, Button, Icon, Nav, Toast,
+  Alert, Badge, Button, Icon, Nav, Toast,
 } from '@openedx/paragon';
 import {
-  Download, Edit, ExpandLess, ExpandMore, History as HistoryIcon, Upload,
+  Download, Edit, ExpandLess, ExpandMore, History as HistoryIcon, Upload, Visibility,
 } from '@openedx/paragon/icons';
+import { APPS } from './apps';
 import {
   COMPONENTS, GLOBAL_GROUPS, OTHER_COMPONENTS, OTHER_GLOBALS,
 } from './catalog';
 import { TokenEditor } from './editor';
 import { HistoryDialog, useHistoryCount } from './history';
 import {
-  SavedTokensProvider, modeName, parseColor, useSavedTokens,
+  SavedTokensProvider, diff, modeName, parseColor, useSavedTokens,
 } from './saved';
 import {
   applyLocaleToDocument, getLocale, getMessages,
 } from './i18n';
 import { scopeWords, useTokenLabels } from './labels';
 import { ImportDialog, download, readFile } from './transfer';
+import { DialogsProvider, useDialogs } from './dialogs';
+import { FontsProvider } from './fonts';
+import { ThemeSection } from './themes';
 import {
   MODE, assignTokens, isColor, isLength, useTokenMeta,
 } from './tokens';
@@ -90,11 +94,11 @@ function TokenTiles({ scope, names }) {
         } else if (/shadow/.test(name)) {
           visual = <span className="preview-tile-shadow" style={{ boxShadow: `var(${name})` }} />;
         } else if (/font-family/.test(name)) {
-          visual = <span className="preview-tile-text" style={{ fontFamily: `var(${name})` }}>Aa</span>;
+          visual = <span className="preview-tile-text" style={{ fontFamily: `var(${name})` }}>{intl.formatMessage(m.tileSample)}</span>;
         } else if (/font-size/.test(name)) {
-          visual = <span className="preview-tile-text" style={{ fontSize: `min(var(${name}), 2.5rem)` }}>Aa</span>;
+          visual = <span className="preview-tile-text" style={{ fontSize: `min(var(${name}), 2.5rem)` }}>{intl.formatMessage(m.tileSample)}</span>;
         } else if (/font-weight/.test(name)) {
-          visual = <span className="preview-tile-text" style={{ fontWeight: `var(${name})` }}>Aa</span>;
+          visual = <span className="preview-tile-text" style={{ fontWeight: `var(${name})` }}>{intl.formatMessage(m.tileSample)}</span>;
         } else if (/radius/.test(name)) {
           visual = <span className="preview-tile-radius" style={{ borderRadius: `var(${name})` }} />;
         } else if (/border-width/.test(name)) {
@@ -112,6 +116,47 @@ function TokenTiles({ scope, names }) {
         );
       })}
     </div>
+  );
+}
+
+/** While a preview is on: what it shows, links to the apps, and Save / Discard. `onDone(message)` after either. */
+function PreviewBar({ onDone }) {
+  const intl = useIntl();
+  const {
+    saved, preview, commit, stopPreview,
+  } = useSavedTokens();
+  const [busy, setBusy] = useState(false);
+  if (!preview) { return null; }
+  const count = diff(saved, preview).length;
+  const save = async () => {
+    setBusy(true);
+    const saveCount = await commit(preview, { action: 'save' });
+    setBusy(false);
+    if (saveCount !== null) { onDone(intl.formatMessage(m.previewSaved, { count: saveCount })); }
+  };
+  const discard = async () => {
+    setBusy(true);
+    const stopped = await stopPreview();
+    setBusy(false);
+    if (stopped) { onDone(intl.formatMessage(m.previewDiscarded)); }
+  };
+  return (
+    <Alert
+      variant="warning" icon={Visibility} className="preview-bar"
+      actions={[
+        <Button key="discard" variant="tertiary" onClick={discard} disabled={busy}>{intl.formatMessage(m.previewDiscard)}</Button>,
+        <Button key="save" onClick={save} disabled={busy}>{intl.formatMessage(m.previewSave, { count })}</Button>,
+      ]}
+    >
+      <Alert.Heading>{intl.formatMessage(m.previewTitle, { count })}</Alert.Heading>
+      <p className="mb-2">{intl.formatMessage(m.previewText, { mode: modeName(intl) })}</p>
+      <div className="preview-bar-apps">
+        <span>{intl.formatMessage(m.previewApps)}</span>
+        {APPS.map((app) => (
+          <a key={app.url} href={app.url} target="_blank" rel="noopener noreferrer">{intl.formatMessage(m[app.name])}</a>
+        ))}
+      </div>
+    </Alert>
   );
 }
 
@@ -204,11 +249,13 @@ function Page() {
   const meta = useTokenMeta();
   const labels = useTokenLabels();
   const { saved, commit, revert } = useSavedTokens();
+  const dialogs = useDialogs();
   const historyCount = useHistoryCount();
   const [editing, setEditing] = useState(null);
   const [historyOf, setHistoryOf] = useState(null);
   const [importing, setImporting] = useState(null);
   const [message, setMessage] = useState(null);
+  const [themePreviewing, setThemePreviewing] = useState(false);
   const fileInput = useRef(null);
   const title = intl.formatMessage(m.pageTitle);
   const mode = modeName(intl);
@@ -238,10 +285,16 @@ function Page() {
   }, [meta]);
 
   const savedCount = Object.keys(saved).length;
-  const resetAll = () => {
-    if (window.confirm(intl.formatMessage(m.resetAllConfirm, { count: savedCount, mode }))) {
-      commit({}, { action: 'reset-all' }).then(() => setMessage(intl.formatMessage(m.resetAllDone)));
-    }
+  const resetAll = async () => {
+    const confirmed = await dialogs.confirm({
+      title: intl.formatMessage(m.resetAllConfirm, { count: savedCount, mode }),
+      text: intl.formatMessage(m.resetAllConfirmText),
+      confirmLabel: intl.formatMessage(m.resetAll),
+      danger: true,
+    });
+    if (!confirmed) { return; }
+    const count = await commit({}, { action: 'reset-all' });
+    if (count !== null) { setMessage(intl.formatMessage(m.resetAllDone)); }
   };
   const scopeName = (id) => {
     const scope = id && scopes.scopeById.get(id);
@@ -262,7 +315,7 @@ function Page() {
   const onRevert = async (entry, changes) => {
     const scopeId = historyOf && historyOf !== 'all' ? historyOf.id : undefined;
     const count = await revert(entry, changes.map((c) => c.name), scopeId);
-    setMessage(intl.formatMessage(m.revertedToast, { count }));
+    if (count !== null) { setMessage(intl.formatMessage(m.revertedToast, { count })); }
   };
 
   return (
@@ -289,6 +342,7 @@ function Page() {
           {savedCount > 0 && <Button variant="outline-danger" onClick={resetAll}>{intl.formatMessage(m.resetAll)}</Button>}
         </div>
       </div>
+      <ThemeSection onMessage={setMessage} onPreviewing={setThemePreviewing} />
       <Nav variant="tabs" activeKey={MODE} className="preview-mode-tabs" aria-label={intl.formatMessage(m.modeSwitch)}>
         {[['light', m.lightMode], ['dark', m.darkMode]].map(([key, label]) => (
           <Nav.Item key={key}>
@@ -298,6 +352,7 @@ function Page() {
           </Nav.Item>
         ))}
       </Nav>
+      {!themePreviewing && <PreviewBar onDone={setMessage} />}
 
       {!scopes && <p>{intl.formatMessage(m.loading)}</p>}
       {scopes && (
@@ -334,6 +389,7 @@ function Page() {
           scope={editing.scope} kind={editing.kind} names={scopes.byScope.get(editing.scope.id) || []} meta={meta}
           scopeOf={scopes.scopeOf} onClose={() => setEditing(null)}
           onSaved={(text) => { setEditing(null); setMessage(text); }}
+          onPreviewed={() => { setEditing(null); setMessage(intl.formatMessage(m.previewStarted)); }}
         />
       )}
       {historyOf && (
@@ -367,9 +423,13 @@ function App() {
   };
   return (
     <IntlProvider locale={locale} messages={getMessages(locale)} defaultLocale="en" onError={onError}>
-      <SavedTokensProvider>
-        <Page />
-      </SavedTokensProvider>
+      <DialogsProvider>
+        <SavedTokensProvider>
+          <FontsProvider>
+            <Page />
+          </FontsProvider>
+        </SavedTokensProvider>
+      </DialogsProvider>
     </IntlProvider>
   );
 }

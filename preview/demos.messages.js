@@ -56,6 +56,7 @@ const messages = defineMessages({
   inlineLink: { id: 'design-tokens.demo.link.inline', defaultMessage: 'Link inside text', description: D },
 
   code: { id: 'design-tokens.demo.code.text', defaultMessage: 'Code: {code}, keyboard keys: {keys}', description: D },
+  ctrlKey: { id: 'design-tokens.demo.code.ctrl-key', defaultMessage: 'Ctrl', description: 'Label of the Control key on a keyboard, as printed on the key.' },
 
   solid: { id: 'design-tokens.demo.button.solid', defaultMessage: 'Solid', description: 'Heading above solid buttons.' },
   outline: { id: 'design-tokens.demo.button.outline', defaultMessage: 'Outline', description: 'Heading above outline buttons.' },

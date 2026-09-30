@@ -15,15 +15,54 @@ const messages = defineMessages({
   resetAll: { id: 'design-tokens.page.saved.reset', defaultMessage: 'Reset all', description: 'Button that removes every saved value.' },
   resetAllConfirm: {
     id: 'design-tokens.page.saved.reset.confirm',
-    defaultMessage: 'Remove all {count, plural, one {# saved value} other {# saved values}} for {mode}?',
+    defaultMessage: 'Remove {count, plural, one {the # saved value} other {all # saved values}} for {mode}?',
     description: 'Confirmation before removing every saved value.',
   },
+  resetAllConfirmText: {
+    id: 'design-tokens.page.saved.reset.confirm.text',
+    defaultMessage: 'The design tokens of this mode go back to the values of the token files. The change stays in History, so you can undo it.',
+    description: 'Text of the confirmation before removing every saved value.',
+  },
   resetAllDone: { id: 'design-tokens.page.saved.reset.done', defaultMessage: 'All saved values removed.', description: 'Message after Reset all.' },
+
+  previewInApps: { id: 'design-tokens.preview.button', defaultMessage: 'Preview in apps', description: 'Edit form button that shows the changes in the Open edX apps without saving them.' },
+  previewTitle: {
+    id: 'design-tokens.preview.title',
+    defaultMessage: 'Preview of {count, plural, one {# unsaved change} other {# unsaved changes}}',
+    description: 'Title of the bar shown while a preview is on.',
+  },
+  previewText: {
+    id: 'design-tokens.preview.text',
+    defaultMessage: 'This page and every Open edX app now show these values for {mode}. Open an app and move around it; reload app pages that are already open. Save the changes if you like them, or discard them.',
+    description: 'Text of the bar shown while a preview is on.',
+  },
+  previewApps: { id: 'design-tokens.preview.apps', defaultMessage: 'Open an app:', description: 'Label before the links to the Open edX apps.' },
+  previewSave: {
+    id: 'design-tokens.preview.save',
+    defaultMessage: 'Save {count, plural, one {# change} other {# changes}}',
+    description: 'Button that saves the previewed changes.',
+  },
+  previewDiscard: { id: 'design-tokens.preview.discard', defaultMessage: 'Discard', description: 'Button that ends the preview without saving.' },
+  previewSaved: {
+    id: 'design-tokens.preview.saved',
+    defaultMessage: '{count, plural, one {# change} other {# changes}} saved.',
+    description: 'Message after saving the previewed changes.',
+  },
+  previewDiscarded: { id: 'design-tokens.preview.discarded', defaultMessage: 'Preview discarded. The apps show the saved values again.', description: 'Message after discarding the preview.' },
+  previewStarted: { id: 'design-tokens.preview.started', defaultMessage: 'The apps now show your changes.', description: 'Message after starting a preview.' },
+  previewFailed: {
+    id: 'design-tokens.preview.failed',
+    defaultMessage: 'The preview could not be updated. Try again in a moment.',
+    description: 'Alert when starting or ending a preview fails.',
+  },
+  appCatalog: { id: 'design-tokens.app.catalog', defaultMessage: 'Catalog', description: 'Link to the course catalog app.' },
+  appLearnerDashboard: { id: 'design-tokens.app.learner-dashboard', defaultMessage: 'Learner dashboard', description: 'Link to the learner dashboard app.' },
+  appAuthoring: { id: 'design-tokens.app.authoring', defaultMessage: 'Studio', description: 'Link to the course authoring app.' },
   import: { id: 'design-tokens.import.button', defaultMessage: 'Import values', description: 'Button that imports saved values from a downloaded file.' },
   importTitle: { id: 'design-tokens.import.title', defaultMessage: 'Import values', description: 'Title of the import dialog.' },
   importIntro: {
     id: 'design-tokens.import.intro',
-    defaultMessage: 'Values from {file} are checked before anything is saved. They are saved in this browser for {mode} and added to the history, so you can revert the import.',
+    defaultMessage: 'Values from {file} are checked before anything is saved. They are saved for {mode} and added to the history, so you can revert the import.',
     description: 'Line under the import dialog title. {file} is the file name.',
   },
   importModeWarning: {
@@ -98,6 +137,11 @@ const messages = defineMessages({
     defaultMessage: '{count, plural, one {# design token} other {# design tokens}}',
     description: 'Number of design tokens a component or group has.',
   },
+  tileSample: {
+    id: 'design-tokens.page.tile.sample',
+    defaultMessage: 'Aa',
+    description: 'Letters shown in the font family, size or weight of a design token, to preview it.',
+  },
   noTokens: {
     id: 'design-tokens.page.card.none',
     defaultMessage: 'No design tokens of its own: it follows the global design tokens.',
@@ -120,7 +164,7 @@ const messages = defineMessages({
   editTitle: { id: 'design-tokens.editor.title', defaultMessage: 'Edit {name}', description: 'Title of the edit form.' },
   editIntro: {
     id: 'design-tokens.editor.intro',
-    defaultMessage: '{count, plural, one {# design token} other {# design tokens}} for {mode}. Saved values apply only in this browser and show on the page right away.',
+    defaultMessage: '{count, plural, one {# design token} other {# design tokens}} for {mode}. Saved values show on the page right away.',
     description: 'Line under the edit form title.',
   },
   search: { id: 'design-tokens.editor.search', defaultMessage: 'Search', description: 'Search box in the edit form.' },
@@ -138,7 +182,7 @@ const messages = defineMessages({
   },
   pickColor: { id: 'design-tokens.editor.pick-color', defaultMessage: 'Pick a color for {name}', description: 'Accessible name of the color picker.' },
   statusChanged: { id: 'design-tokens.editor.status.changed', defaultMessage: 'Not saved yet', description: 'Badge next to a changed value.' },
-  statusSaved: { id: 'design-tokens.editor.status.saved', defaultMessage: 'Saved in this browser', description: 'Badge next to a saved value.' },
+  statusSaved: { id: 'design-tokens.editor.status.saved', defaultMessage: 'Saved', description: 'Badge next to a saved value.' },
   reset: { id: 'design-tokens.editor.reset', defaultMessage: 'Reset', description: 'Link that goes back to the original value.' },
   resetScope: {
     id: 'design-tokens.editor.reset.scope',
@@ -153,7 +197,22 @@ const messages = defineMessages({
     description: 'Save button with the number of changes.',
   },
   errorEmpty: { id: 'design-tokens.editor.error.empty', defaultMessage: 'Enter a value, or use Reset.', description: 'Error for an empty value.' },
-  errorCharacters: { id: 'design-tokens.editor.error.characters', defaultMessage: 'This value contains characters that are not allowed.', description: 'Error for a value with ; { } < or >.' },
+  errorCharacters: { id: 'design-tokens.editor.error.characters', defaultMessage: 'This value contains characters that are not allowed.', description: 'Error for a value with ; { } < > \\ /* */ or a line break.' },
+  errorUnbalanced: {
+    id: 'design-tokens.editor.error.unbalanced',
+    defaultMessage: 'Close every quote and bracket that this value opens.',
+    description: 'Error for a value with an unclosed quote or bracket.',
+  },
+  saveFailed: {
+    id: 'design-tokens.save-failed',
+    defaultMessage: 'The change could not be saved. Try again in a moment.',
+    description: 'Alert when saving values fails.',
+  },
+  loadFailed: {
+    id: 'design-tokens.load-failed',
+    defaultMessage: 'The saved values could not be loaded. Reload the page to try again.',
+    description: 'Alert when loading the saved values fails.',
+  },
   errorColor: { id: 'design-tokens.editor.error.color', defaultMessage: 'Enter a valid color, for example #EB5939.', description: 'Error for an invalid color.' },
 
   history: { id: 'design-tokens.history.button', defaultMessage: 'History', description: 'Button that opens the history of changes.' },
@@ -166,7 +225,7 @@ const messages = defineMessages({
   historyScopeTitle: { id: 'design-tokens.history.title.scope', defaultMessage: 'History of {name}', description: 'Title of the history of one component.' },
   historyIntro: {
     id: 'design-tokens.history.intro',
-    defaultMessage: 'Changes saved in this browser for {mode}, newest first. Reverting a change adds a new entry at the top and keeps every entry below it.',
+    defaultMessage: 'Changes saved for {mode}, newest first. Reverting a change adds a new entry at the top and keeps every entry below it.',
     description: 'Line under the history title.',
   },
   historyEmpty: {
@@ -186,6 +245,12 @@ const messages = defineMessages({
   actionRevertUnknown: { id: 'design-tokens.history.action.revert.unknown', defaultMessage: 'Reverted a change', description: 'Kind of history entry.' },
   actionImport: { id: 'design-tokens.history.action.import', defaultMessage: 'Imported {file}', description: 'Kind of history entry. {file} is the imported file name.' },
   actionImportUnknown: { id: 'design-tokens.history.action.import.unknown', defaultMessage: 'Imported from a file', description: 'Kind of history entry.' },
+  actionTheme: { id: 'design-tokens.history.action.theme', defaultMessage: 'Applied the theme “{name}”', description: 'Kind of history entry. {name} is the name of a theme template.' },
+  actionThemeCode: {
+    id: 'design-tokens.history.action.theme-code',
+    defaultMessage: 'Went back to the theme of the token files',
+    description: 'Kind of history entry: the theme with the values of the token files (no saved values) was chosen.',
+  },
   changeCount: {
     id: 'design-tokens.history.count',
     defaultMessage: '{count, plural, one {# value} other {# values}}',
