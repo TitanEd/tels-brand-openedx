@@ -1,5 +1,5 @@
 {
-  "$description": "LAYER 2 — Links. Standalone + inline (.pgn__hyperlink.inline-link, e.g. Authn reset-password mailto). Inline defaults to info blue in Paragon — must set link.inline here or it stays blue.",
+  "$description": "LAYER 2 — Links. Standalone + inline (.pgn__hyperlink.inline-link, e.g. Authn reset-password mailto). Inline defaults to info blue in Paragon — must set link.inline here or it stays blue. active / visited / focus are TitanEd tokens read by overrides/_links.scss (Paragon only ships base + hover).",
   "color": {
     "link": {
       "base": {
@@ -10,6 +10,18 @@
         "$value": "{color.primary.700}",
         "$description": "Standalone link hover → --pgn-color-link-hover"
       },
+      "active": {
+        "$value": "{color.link.hover}",
+        "$description": "Link pressed (:active) → --pgn-color-link-active"
+      },
+      "visited": {
+        "$value": "{color.link.base}",
+        "$description": "Visited link → --pgn-color-link-visited (same as base by default)"
+      },
+      "focus": {
+        "$value": "{color.link.hover}",
+        "$description": "Keyboard focus link color → --pgn-color-link-focus (focus ring stays Paragon)"
+      },
       "inline": {
         "base": {
           "$value": "{color.primary.base}",
@@ -19,7 +31,27 @@
           "base": {
             "$value": "{color.primary.700}",
             "$description": "Inline link hover → --pgn-color-link-inline-hover-base"
+          },
+          "decoration": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 1
+              }
+            ],
+            "$value": "{color.link.inline.hover.base}",
+            "$description": "Paragon default → --pgn-color-link-inline-hover-decoration"
           }
+        },
+        "decoration": {
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.3
+            }
+          ],
+          "$value": "{color.link.inline.base}",
+          "$description": "Paragon default → --pgn-color-link-inline-decoration"
         }
       },
       "brand": {

@@ -1,0 +1,40 @@
+{
+  "$description": "LAYER 2 (dark) — Popover. Floats one step lighter than the page, like the modal; status headers use the alert tints (color.theme.bg.*).",
+  "color": {
+    "popover": {
+      "bg": {
+        "$value": "{color.gray.100}",
+        "$description": "Popover background (dark) → --pgn-color-popover-bg"
+      },
+      "border": {
+        "$value": "{color.white}",
+        "modify": [{ "type": "alpha", "amount": 0.2 }],
+        "$description": "Popover border (dark): white at 20% → --pgn-color-popover-border"
+      },
+      "header": {
+        "bg": {
+          "$value": "{color.gray.100}",
+          "$description": "Popover title background (dark) → --pgn-color-popover-header-bg"
+        }
+      },
+      "success": {
+        "bg": {
+          "$value": "{color.theme.bg.success}",
+          "$description": "Success popover title background (dark) → --pgn-color-popover-success-bg"
+        }
+      },
+      "warning": {
+        "bg": {
+          "$value": "{color.theme.bg.warning}",
+          "$description": "Warning popover title background (dark) → --pgn-color-popover-warning-bg"
+        }
+      },
+      "danger": {
+        "bg": {
+          "$value": "{color.theme.bg.danger}",
+          "$description": "Danger popover title background (dark) → --pgn-color-popover-danger-bg"
+        }
+      }
+    }
+  }
+}

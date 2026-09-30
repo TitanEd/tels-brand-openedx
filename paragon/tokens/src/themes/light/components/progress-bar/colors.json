@@ -1,0 +1,41 @@
+{
+  "$description": "progress-bar — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "$type": "color",
+    "progress-bar": {
+      "base": {
+        "$value": "{color.white}",
+        "$description": "Paragon default → --pgn-color-progress-bar-base"
+      },
+      "bg": {
+        "annotated": {
+          "$value": "{color.dark.500}",
+          "$description": "Paragon default → --pgn-color-progress-bar-bg-annotated"
+        },
+        "base": {
+          "$value": "{color.accent.a}",
+          "$description": "Paragon default → --pgn-color-progress-bar-bg-base"
+        }
+      },
+      "border": {
+        "$value": "{color.gray.500}",
+        "$description": "Paragon default → --pgn-color-progress-bar-border"
+      }
+    },
+    "progress": {
+      "bg": {
+        "$value": "transparent",
+        "$description": "Paragon default → --pgn-color-progress-bg"
+      }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "progress-bar": {
+      "box-shadow": {
+        "$value": "none",
+        "$description": "Paragon default → --pgn-elevation-progress-bar-box-shadow"
+      }
+    }
+  }
+}

@@ -11,6 +11,10 @@
           "$value": "{size.border.width}",
           "$description": "Toast border width → --pgn-size-toast-border-width"
         }
+      },
+      "max-width": {
+        "$value": "400px",
+        "$description": "Paragon default → --pgn-size-toast-max-width"
       }
     }
   },
@@ -25,6 +29,26 @@
           "$value": ".25rem",
           "$description": "Toast padding Y → --pgn-spacing-toast-padding-y"
         }
+      },
+      "container": {
+        "gutter": {
+          "lg": {
+            "$value": "1.25rem",
+            "$description": "Paragon default → --pgn-spacing-toast-container-gutter-lg"
+          },
+          "sm": {
+            "$value": ".625rem",
+            "$description": "Paragon default → --pgn-spacing-toast-container-gutter-sm"
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "toast": {
+      "font-size": {
+        "$value": ".875rem",
+        "$description": "Paragon default → --pgn-typography-toast-font-size"
       }
     }
   }

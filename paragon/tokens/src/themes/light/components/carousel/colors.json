@@ -1,0 +1,74 @@
+{
+  "$description": "carousel — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "$type": "color",
+    "carousel": {
+      "caption": {
+        "$value": "{color.white}",
+        "$description": "Paragon default → --pgn-color-carousel-caption"
+      },
+      "control": {
+        "base": {
+          "$value": "{color.white}",
+          "$description": "Paragon default → --pgn-color-carousel-control-base"
+        }
+      },
+      "indicator": {
+        "active-bg": {
+          "$value": "{color.white}",
+          "$description": "Paragon default → --pgn-color-carousel-indicator-active-bg"
+        }
+      }
+    }
+  },
+  "content": {
+    "$type": "file",
+    "carousel": {
+      "control": {
+        "bg": {
+          "next-icon": {
+            "outputReferences": false,
+            "modify": [
+              {
+                "type": "str-replace",
+                "toReplace": "#",
+                "replaceWith": "%23"
+              }
+            ],
+            "$value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e\")",
+            "$description": "Paragon default → --pgn-content-carousel-control-bg-next-icon"
+          },
+          "prev-icon": {
+            "outputReferences": false,
+            "modify": [
+              {
+                "type": "str-replace",
+                "toReplace": "#",
+                "replaceWith": "%23"
+              }
+            ],
+            "$value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='{color.carousel.control.base}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e\")",
+            "$description": "Paragon default → --pgn-content-carousel-control-bg-prev-icon"
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "$type": "number",
+    "carousel": {
+      "control": {
+        "opacity": {
+          "base": {
+            "$value": ".5",
+            "$description": "Paragon default → --pgn-other-carousel-control-opacity-base"
+          },
+          "hover": {
+            "$value": ".9",
+            "$description": "Paragon default → --pgn-other-carousel-control-opacity-hover"
+          }
+        }
+      }
+    }
+  }
+}

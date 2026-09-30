@@ -1,0 +1,79 @@
+{
+  "$description": "popover — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "elevation": {
+    "$type": "number",
+    "popover": {
+      "zindex": {
+        "$value": "1060",
+        "$description": "Paragon default → --pgn-elevation-popover-zindex"
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "popover": {
+      "arrow": {
+        "height": {
+          "$value": ".5rem",
+          "$description": "Paragon default → --pgn-size-popover-arrow-height"
+        },
+        "width": {
+          "$value": "1rem",
+          "$description": "Paragon default → --pgn-size-popover-arrow-width"
+        }
+      },
+      "border": {
+        "radius": {
+          "$value": "{size.border.radius.sm}",
+          "$description": "Paragon default → --pgn-size-popover-border-radius"
+        },
+        "width": {
+          "$value": "{size.border.width}",
+          "$description": "Paragon default → --pgn-size-popover-border-width"
+        }
+      },
+      "max-width": {
+        "$value": "480px",
+        "$description": "Paragon default → --pgn-size-popover-max-width"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "popover": {
+      "body": {
+        "padding": {
+          "x": {
+            "$value": "{spacing.popover.header.padding.x}",
+            "$description": "Paragon default → --pgn-spacing-popover-body-padding-x"
+          },
+          "y": {
+            "$value": "{spacing.popover.header.padding.y}",
+            "$description": "Paragon default → --pgn-spacing-popover-body-padding-y"
+          }
+        }
+      },
+      "header": {
+        "padding": {
+          "x": {
+            "$value": "1rem",
+            "$description": "Paragon default → --pgn-spacing-popover-header-padding-x"
+          },
+          "y": {
+            "$value": ".5rem",
+            "$description": "Paragon default → --pgn-spacing-popover-header-padding-y"
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "$type": "dimension",
+    "popover": {
+      "font-size": {
+        "$value": "{typography.font.size.sm}",
+        "$description": "Paragon default → --pgn-typography-popover-font-size"
+      }
+    }
+  }
+}

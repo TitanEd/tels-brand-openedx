@@ -19,3 +19,20 @@
   border-radius: var(--pgn-size-card-border-radius-base) !important;
   overflow: hidden;
 }
+
+// Tokens: themes/*/components/card/colors.json (header-title, status-text)
+// Paragon hardcodes Card.Header titles to black and lets the Card.Status message
+// inherit body text over a pale tint; both are unreadable in dark. Fallbacks are
+// the stock values. `:not(.pgn__card-dark)` keeps the dark variant's white title;
+// primary status is solid primary with white text, so it is left alone.
+.pgn__card:not(.pgn__card-dark) .pgn__card-header {
+  .pgn__card-header-title,
+  .pgn__card-header-title-sm,
+  .pgn__card-header-title-md {
+    color: var(--pgn-color-card-header-title, var(--pgn-color-black));
+  }
+}
+
+.pgn__card .pgn__card-status:not(.pgn__card-status__primary) .pgn__card-status__message-content {
+  color: var(--pgn-color-card-status-text, inherit);
+}

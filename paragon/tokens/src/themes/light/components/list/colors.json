@@ -1,0 +1,30 @@
+{
+  "$description": "LIST GROUP (light) — .list-group / .list-group-item. Paragon component CSS reads these --pgn-* names directly. Active item follows primary (via color.bg.active). Defaults = Paragon stock.",
+  "color": {
+    "list-group": {
+      "base": { "$value": "inherit", "$description": "Item text → --pgn-color-list-group-base" },
+      "bg": {
+        "base": { "$value": "{color.surface.base}", "$description": "Item bg → --pgn-color-list-group-bg-base (follows Layer 1 surface)" },
+        "hover": { "$value": "{color.gray.100}", "$description": "Item hover bg → --pgn-color-list-group-bg-hover" }
+      },
+      "border": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.125 }], "$description": "Item border → --pgn-color-list-group-border" },
+      "active": {
+        "base": { "$value": "{color.active}", "$description": "Active item text → --pgn-color-list-group-active-base" },
+        "bg": { "$value": "{color.bg.active}", "$description": "Active item bg → --pgn-color-list-group-active-bg" },
+        "border": { "$value": "{color.list-group.active.bg}", "$description": "Active item border → --pgn-color-list-group-active-border" }
+      },
+      "disabled": {
+        "base": { "$value": "{color.gray.600}", "$description": "Disabled item text → --pgn-color-list-group-disabled-base" },
+        "bg": { "$value": "{color.list-group.bg.base}", "$description": "Disabled item bg → --pgn-color-list-group-disabled-bg" }
+      },
+      "action": {
+        "base": { "$value": "{color.gray.700}", "$description": "Action item text → --pgn-color-list-group-action-base" },
+        "hover": { "$value": "{color.list-group.action.base}", "$description": "Action item hover text → --pgn-color-list-group-action-hover" },
+        "active": {
+          "base": { "$value": "{color.body.base}", "$description": "Action item pressed text → --pgn-color-list-group-action-active-base" },
+          "bg": { "$value": "{color.gray.200}", "$description": "Action item pressed bg → --pgn-color-list-group-action-active-bg" }
+        }
+      }
+    }
+  }
+}

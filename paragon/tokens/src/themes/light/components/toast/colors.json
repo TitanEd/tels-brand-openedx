@@ -11,5 +11,10 @@
         "border": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.5 }], "$description": "Toast header border → --pgn-color-toast-header-border" }
       }
     }
+  },
+  "elevation": {
+    "toast": {
+      "box-shadow": { "$value": [{ "color": "rgba(0, 0, 0, .15)", "offsetX": "0", "offsetY": "1.25rem", "blur": "2.5rem" }, { "color": "rgba(0, 0, 0, .15)", "offsetX": "0", "offsetY": ".5rem", "blur": "3rem" }], "$description": "Paragon default → --pgn-elevation-toast-box-shadow" }
+    }
   }
 }

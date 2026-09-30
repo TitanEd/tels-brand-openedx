@@ -1,7 +1,9 @@
 // LAYER 2 — Form kit override (all MFEs)
 // Tokens defined in:
 //   themes/light/components/form/input.json       → colors (input, indicator, checkbox icon)
+//   themes/*/components/form/label.json           → label color (--pgn-color-form-label-base)
 //   core/components/form/size-radius.json         → radius / border width
+//   core/components/form/typography.json          → label / input font sizes
 // Why: Gradebook filters, Authn, Discussion, Catalog filters share one control look.
 // Use !important so MFE/local SCSS cannot keep Bootstrap/Indigo defaults.
 // Checkbox: do NOT set primary bg on :checked — SVG check icon is already primary-colored.
@@ -10,16 +12,17 @@
   accent-color: var(--pgn-color-primary-base);
 }
 
-.page-gradebook,
-.sidebar-container,
-.student-filters,
-.grade-filter-inputs,
-.gradebook-content,
-.pgn__form-group,
-.form-group {
-  .pgn__form-label,
-  label.pgn__form-label {
-    color: var(--pgn-color-body-base, var(--pgn-color-text-base));
+.pgn__form-label,
+label.pgn__form-label {
+  color: var(--pgn-color-form-label-base, var(--pgn-color-body-base, var(--pgn-color-text-base)));
+  font-size: var(--pgn-typography-form-input-font-size-base);
+
+  &.pgn__form-label-sm {
+    font-size: var(--pgn-typography-form-input-font-size-sm);
+  }
+
+  &.pgn__form-label-lg {
+    font-size: var(--pgn-typography-form-input-font-size-lg);
   }
 }
 
@@ -100,6 +103,13 @@ input.form-control:disabled {
 .form-check-input:checked {
   background-color: var(--pgn-color-form-control-indicator-checked-bg-base, var(--pgn-color-primary-base)) !important;
   border-color: var(--pgn-color-form-control-indicator-checked-border-base, var(--pgn-color-primary-base)) !important;
+}
+
+// SelectableBox — Paragon hardcodes the box to white (text inherits body, so it
+// vanishes in dark). Token: themes/*/components/form/selectable-box.json
+.pgn__selectable_box-set .pgn__selectable_box,
+.pgn__selectable_box {
+  background: var(--pgn-color-selectable-box-bg, var(--pgn-color-white));
 }
 
 // Info badges / filter chips (Track: Audit) — were Bootstrap blue

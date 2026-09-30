@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 tertiary (text button). Uses the dark gray scale.",
+  "color": {
+    "btn": {
+      "bg": {
+        "tertiary": {
+          "$value": "transparent",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-tertiary"
+        }
+      },
+      "text": {
+        "tertiary": {
+          "$value": "{color.gray.700}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-tertiary"
+        }
+      },
+      "border": {
+        "tertiary": {
+          "$value": "transparent",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-tertiary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "tertiary": {
+            "$value": "{color.light.500}",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.gray.700}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-tertiary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "tertiary": {
+            "$value": "{color.light.500}",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.gray.700}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-tertiary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.btn.text.tertiary}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-tertiary"
+          }
+        }
+      }
+    }
+  }
+}

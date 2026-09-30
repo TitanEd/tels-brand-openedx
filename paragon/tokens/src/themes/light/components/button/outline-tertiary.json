@@ -1,0 +1,85 @@
+{
+  "$description": "OUTLINE TERTIARY — class: .btn.btn-outline-tertiary. Quiet bordered ghost (API variant; not on the Paragon docs Core row).",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-tertiary": {
+          "$value": "transparent",
+          "$description": "Background → --pgn-color-btn-bg-outline-tertiary"
+        }
+      },
+      "text": {
+        "outline-tertiary": {
+          "$value": "{color.gray.700}",
+          "$description": "Text → --pgn-color-btn-text-outline-tertiary"
+        }
+      },
+      "border": {
+        "outline-tertiary": {
+          "$value": "{color.gray.500}",
+          "$description": "Border → --pgn-color-btn-border-outline-tertiary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-tertiary": {
+            "$value": "transparent",
+            "$description": "Hover bg → --pgn-color-btn-hover-bg-outline-tertiary"
+          }
+        },
+        "text": {
+          "outline-tertiary": {
+            "$value": "{color.gray.700}",
+            "$description": "Hover text → --pgn-color-btn-hover-text-outline-tertiary"
+          }
+        },
+        "border": {
+          "outline-tertiary": {
+            "$value": "{color.gray.700}",
+            "$description": "Hover border → --pgn-color-btn-hover-border-outline-tertiary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-tertiary": {
+            "$value": "transparent",
+            "$description": "Active bg → --pgn-color-btn-active-bg-outline-tertiary"
+          }
+        },
+        "text": {
+          "outline-tertiary": {
+            "$value": "{color.gray.700}",
+            "$description": "Active text → --pgn-color-btn-active-text-outline-tertiary"
+          }
+        },
+        "border": {
+          "outline-tertiary": {
+            "$value": "{color.gray.700}",
+            "$description": "Active border → --pgn-color-btn-active-border-outline-tertiary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled bg → --pgn-color-btn-disabled-bg-outline-tertiary"
+          }
+        },
+        "text": {
+          "outline-tertiary": {
+            "$value": "{color.btn.text.outline-tertiary}",
+            "$description": "Disabled text → --pgn-color-btn-disabled-text-outline-tertiary"
+          }
+        },
+        "border": {
+          "outline-tertiary": {
+            "$value": "{color.btn.border.outline-tertiary}",
+            "$description": "Disabled border → --pgn-color-btn-disabled-border-outline-tertiary"
+          }
+        }
+      }
+    }
+  }
+}

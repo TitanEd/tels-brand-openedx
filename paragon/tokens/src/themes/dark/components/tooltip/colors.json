@@ -1,0 +1,35 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Tooltip. Light tooltip on the dark page (a black tooltip would disappear).",
+  "color": {
+    "tooltip": {
+      "text": {
+        "$value": "{color.bg.base}",
+        "$description": "Tooltip text (dark) \u2192 --pgn-color-tooltip-text"
+      },
+      "light": {
+        "$value": "{color.text.base}",
+        "$description": "Light-variant tooltip text (dark) \u2192 --pgn-color-tooltip-light"
+      },
+      "bg": {
+        "base": {
+          "$value": "{color.text.base}",
+          "$description": "Tooltip background (dark) \u2192 --pgn-color-tooltip-bg-base"
+        },
+        "light": {
+          "$value": "{color.gray.100}",
+          "$description": "Light-variant tooltip background (dark) \u2192 --pgn-color-tooltip-bg-light"
+        }
+      },
+      "arrow": {
+        "base": {
+          "$value": "{color.tooltip.bg.base}",
+          "$description": "Tooltip arrow (dark) \u2192 --pgn-color-tooltip-arrow-base"
+        },
+        "light": {
+          "$value": "{color.tooltip.bg.light}",
+          "$description": "Light-variant tooltip arrow (dark) \u2192 --pgn-color-tooltip-arrow-light"
+        }
+      }
+    }
+  }
+}

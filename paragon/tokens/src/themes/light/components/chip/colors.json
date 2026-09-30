@@ -11,11 +11,27 @@
         "dark": { "$value": "{color.primary.300}", "$description": "Dark chip bg → --pgn-color-chip-bg-dark" }
       },
       "border": {
-        "base": { "$value": "{color.light.800}", "$description": "Chip border → --pgn-color-chip-border-base" }
+        "base": { "$value": "{color.light.800}", "$description": "Chip border → --pgn-color-chip-border-base" },
+        "focus": {
+          "selected": {
+            "dark": { "$value": "{color.chip.outline.dark}", "$description": "Paragon default → --pgn-color-chip-border-focus-selected-dark" },
+            "light": { "$value": "{color.dark.500}", "$description": "Paragon default → --pgn-color-chip-border-focus-selected-light" }
+          }
+        }
       },
       "label": {
-        "base": { "$value": "{color.primary.700}", "$description": "Chip label text → --pgn-color-chip-label-base" }
+        "base": { "$value": "{color.primary.700}", "$description": "Chip label text → --pgn-color-chip-label-base" },
+        "dark": { "$value": "{color.chip.outline.dark}", "$description": "Paragon default → --pgn-color-chip-label-dark" }
+      },
+      "outline": {
+        "dark": { "$value": "{color.white}", "$description": "Paragon default → --pgn-color-chip-outline-dark" },
+        "light": { "$value": "{color.chip.label.base}", "$description": "Paragon default → --pgn-color-chip-outline-light" }
       }
+    }
+  },
+  "other": {
+    "chip": {
+      "opacity-disabled": { "$value": ".3", "$description": "Paragon default → --pgn-other-chip-opacity-disabled" }
     }
   }
 }

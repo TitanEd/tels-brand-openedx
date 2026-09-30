@@ -26,6 +26,45 @@
           "$description": "Code / mono → --pgn-typography-font-family-monospace"
         }
       },
+      "weight": {
+        "base": {
+          "$value": "{typography.font.weight.normal}",
+          "$type": "fontWeight",
+          "$description": "UI label: Body font weight → --pgn-typography-font-weight-base"
+        },
+        "bold": {
+          "$value": "700",
+          "$type": "fontWeight",
+          "$description": "UI label: Bold weight (headings, table th) → --pgn-typography-font-weight-bold"
+        },
+        "bolder": {
+          "$value": "bolder",
+          "$description": "Paragon default → --pgn-typography-font-weight-bolder"
+        },
+        "display": {
+          "1": {
+            "$value": "{typography.font.weight.bold}",
+            "$description": "Paragon default → --pgn-typography-font-weight-display-1"
+          }
+        },
+        "lead": {
+          "$value": "inherit",
+          "$description": "Paragon default → --pgn-typography-font-weight-lead"
+        },
+        "normal": {
+          "$value": "400",
+          "$description": "Paragon default → --pgn-typography-font-weight-normal"
+        },
+        "table-th": {
+          "$value": "bold",
+          "$description": "Paragon default → --pgn-typography-font-weight-table-th"
+        }
+      },
+      "scale": {
+        "$value": "1",
+        "$type": "number",
+        "$description": "★ GLOBAL FONT SCALE — unitless multiplier on html rem root (1 = 100%, 1.2 = +20%). → --pgn-typography-font-scale. Applied by overrides/_typography.scss as calc(100% * scale). Independent of Body size (font.size.base)."
+      },
       "size": {
         "base": {
           "$value": "1.125rem",
@@ -35,38 +74,109 @@
           "base": {
             "$value": "2.5rem",
             "$description": "UI label: H1 → --pgn-typography-font-size-h1-base"
+          },
+          "mobile": {
+            "$value": "2.25rem",
+            "$description": "Paragon default → --pgn-typography-font-size-h1-mobile"
           }
         },
         "h2": {
           "base": {
             "$value": "2rem",
             "$description": "UI label: H2 → --pgn-typography-font-size-h2-base"
+          },
+          "mobile": {
+            "$value": "{typography.font.size.h2.base}",
+            "$description": "Paragon default → --pgn-typography-font-size-h2-mobile"
           }
         },
         "h3": {
           "base": {
             "$value": "1.375rem",
             "$description": "UI label: H3 → --pgn-typography-font-size-h3-base"
+          },
+          "mobile": {
+            "$value": "{typography.font.size.h3.base}",
+            "$description": "Paragon default → --pgn-typography-font-size-h3-mobile"
           }
         },
         "h4": {
           "base": {
             "$value": "1.125rem",
             "$description": "UI label: H4 → --pgn-typography-font-size-h4-base"
+          },
+          "mobile": {
+            "$value": "{typography.font.size.h4.base}",
+            "$description": "Paragon default → --pgn-typography-font-size-h4-mobile"
           }
         },
         "h5": {
           "base": {
             "$value": "0.875rem",
             "$description": "UI label: H5 → --pgn-typography-font-size-h5-base"
+          },
+          "mobile": {
+            "$value": "{typography.font.size.h5.base}",
+            "$description": "Paragon default → --pgn-typography-font-size-h5-mobile"
           }
         },
         "h6": {
           "base": {
             "$value": "0.75rem",
             "$description": "UI label: H6 → --pgn-typography-font-size-h6-base"
+          },
+          "mobile": {
+            "$value": "{typography.font.size.h6.base}",
+            "$description": "Paragon default → --pgn-typography-font-size-h6-mobile"
           }
+        },
+        "display": {
+          "1": {
+            "$value": "3.75rem",
+            "$description": "Paragon default → --pgn-typography-font-size-display-1"
+          },
+          "mobile": {
+            "1": {
+              "$value": "3.25rem",
+              "$description": "Paragon default → --pgn-typography-font-size-display-mobile-1"
+            }
+          }
+        },
+        "lg": {
+          "$value": "calc({typography.font.size.base} * 1.25)",
+          "$description": "Paragon default → --pgn-typography-font-size-lg"
+        },
+        "sm": {
+          "$value": "87.5%",
+          "$description": "Paragon default → --pgn-typography-font-size-sm"
+        },
+        "xs": {
+          "$value": "75%",
+          "$description": "Paragon default → --pgn-typography-font-size-xs"
         }
+      }
+    },
+    "line-height": {
+      "base": {
+        "$value": "1.5556",
+        "$type": "number",
+        "$description": "UI label: Body line height (unitless) → --pgn-typography-line-height-base"
+      },
+      "display": {
+        "base": {
+          "$value": "1",
+          "$description": "Paragon default → --pgn-typography-line-height-display-base"
+        },
+        "mobile": {
+          "$value": "3.5rem",
+          "$description": "Paragon default → --pgn-typography-line-height-display-mobile"
+        }
+      }
+    },
+    "letter-spacing": {
+      "base": {
+        "$value": "normal",
+        "$description": "UI label: Letter spacing (e.g. normal, 0.01em) → --pgn-typography-letter-spacing-base. Set on body in overrides/_typography.scss; headings, buttons and labels inherit."
       }
     }
   }

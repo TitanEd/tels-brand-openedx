@@ -1,0 +1,114 @@
+{
+  "$description": "INVERSE SECONDARY \u2014 class: .btn.btn-inverse-secondary.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-secondary": {
+          "$value": "#FFFFFF",
+          "$description": "Inverse solid bg \u2192 --pgn-color-btn-bg-inverse-secondary",
+          "modify": null
+        }
+      },
+      "text": {
+        "inverse-secondary": {
+          "$value": "{color.secondary.base}",
+          "$description": "Inverse solid text \u2192 --pgn-color-btn-text-inverse-secondary"
+        }
+      },
+      "border": {
+        "inverse-secondary": {
+          "$value": "transparent",
+          "$description": "Inverse solid border \u2192 --pgn-color-btn-border-inverse-secondary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-secondary": {
+            "$value": "{color.gray.100}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-secondary"
+          }
+        },
+        "text": {
+          "inverse-secondary": {
+            "$value": "{color.secondary.base}",
+            "modify": null,
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-secondary"
+          }
+        },
+        "border": {
+          "inverse-secondary": {
+            "$value": "transparent",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-inverse-secondary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-secondary": {
+            "$value": "{color.gray.100}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-secondary"
+          }
+        },
+        "text": {
+          "inverse-secondary": {
+            "$value": "{color.secondary.base}",
+            "modify": null,
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-secondary"
+          }
+        },
+        "border": {
+          "inverse-secondary": {
+            "$value": "transparent",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-inverse-secondary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-secondary": {
+            "$value": "{color.btn.bg.inverse-secondary}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-inverse-secondary"
+          }
+        },
+        "text": {
+          "inverse-secondary": {
+            "$value": "{color.btn.text.inverse-secondary}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-inverse-secondary"
+          }
+        },
+        "border": {
+          "inverse-secondary": {
+            "$value": "transparent",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-secondary"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-secondary": {
+            "$value": "{color.btn.bg.inverse-secondary}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-secondary"
+          }
+        },
+        "border": {
+          "inverse-secondary": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-secondary"
+          }
+        },
+        "outline": {
+          "inverse-secondary": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-secondary"
+          }
+        },
+        "text": {
+          "inverse-secondary": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-secondary"
+          }
+        }
+      }
+    }
+  }
+}

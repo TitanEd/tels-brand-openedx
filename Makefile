@@ -1,4 +1,4 @@
-.PHONY: build clean append-overrides copy-fonts
+.PHONY: build clean append-overrides copy-fonts validate preview
 
 clean:
 	rm -rf dist paragon/build
@@ -19,8 +19,18 @@ copy-fonts:
 	@cp -a paragon/fonts/. dist/fonts/
 	@echo "Copied paragon/fonts → dist/fonts"
 
+# Design token checklist (validation/settings.json, validation/baseline.json).
+# Fails on any new problem; dist/ is already written when it runs.
+validate:
+	@node scripts/validate-tokens.js
+
+# Local page with Paragon components on the built CSS: /light.html and /dark.html
+preview:
+	@node scripts/preview-server.js
+
 build: clean
 	npm run build-tokens
 	npm run build-scss
 	$(MAKE) append-overrides
 	$(MAKE) copy-fonts
+	$(MAKE) validate

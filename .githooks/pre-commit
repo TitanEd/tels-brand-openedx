@@ -1,0 +1,18 @@
+#!/bin/sh
+# Design token validation before each commit (installed by "npm install" / "npm run hooks:install").
+# Skip once with: git commit --no-verify
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+
+echo "$staged" | grep -qE '^(paragon/|validation/|scripts/validate-tokens\.js|dist/)' || exit 0
+
+if echo "$staged" | grep -qE '^paragon/' && ! echo "$staged" | grep -qE '^dist/'; then
+  echo "pre-commit: paragon/ changed but dist/ is not staged."
+  echo "            Run \"make build\" and \"git add dist\" so the published CSS matches your tokens."
+  exit 1
+fi
+
+node scripts/validate-tokens.js || {
+  echo "pre-commit: design token validation failed — fix the ✗ items above (or git commit --no-verify)."
+  exit 1
+}

@@ -1,0 +1,27 @@
+{
+  "$description": "TOOLTIP (light) — .tooltip / Paragon OverlayTrigger. Paragon component CSS reads these --pgn-* names directly. Defaults = Paragon stock (dark tooltip; light variant for dark backgrounds).",
+  "color": {
+    "tooltip": {
+      "text": { "$value": "{color.white}", "$description": "Tooltip text → --pgn-color-tooltip-text" },
+      "light": { "$value": "{color.black}", "$description": "Light tooltip text (variant=\"light\") → --pgn-color-tooltip-light" },
+      "bg": {
+        "base": { "$value": "{color.black}", "$description": "Tooltip bg → --pgn-color-tooltip-bg-base" },
+        "light": { "$value": "{color.white}", "$description": "Light tooltip bg → --pgn-color-tooltip-bg-light" }
+      },
+      "arrow": {
+        "base": { "$value": "{color.tooltip.bg.base}", "$description": "Tooltip arrow → --pgn-color-tooltip-arrow-base" },
+        "light": { "$value": "{color.tooltip.bg.light}", "$description": "Light tooltip arrow → --pgn-color-tooltip-arrow-light" }
+      }
+    }
+  },
+  "elevation": {
+    "tooltip": {
+      "box-shadow": { "$value": [{ "color": "rgba(0, 0, 0, .15)", "offsetX": "0", "offsetY": "2px", "blur": "4px" }, { "color": "rgba(0, 0, 0, .15)", "offsetX": "0", "offsetY": "2px", "blur": "8px" }], "$description": "Paragon default → --pgn-elevation-tooltip-box-shadow" }
+    }
+  },
+  "other": {
+    "tooltip": {
+      "opacity": { "$value": "1", "$description": "Paragon default → --pgn-other-tooltip-opacity" }
+    }
+  }
+}

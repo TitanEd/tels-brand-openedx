@@ -1,0 +1,14 @@
+{
+  "$description": "action-row — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "spacing": {
+    "$type": "dimension",
+    "action-row": {
+      "gap": {
+        "x": {
+          "$value": ".5rem",
+          "$description": "Paragon default → --pgn-spacing-action-row-gap-x"
+        }
+      }
+    }
+  }
+}

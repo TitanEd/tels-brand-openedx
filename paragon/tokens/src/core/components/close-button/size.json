@@ -1,0 +1,19 @@
+{
+  "$description": "close-button — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "typography": {
+    "close-button": {
+      "font": {
+        "size": {
+          "$value": "calc({typography.font.size.base} * 1.5)",
+          "$type": "dimension",
+          "$description": "Paragon default → --pgn-typography-close-button-font-size"
+        },
+        "weight": {
+          "$value": "{typography.font.weight.bold}",
+          "$type": "fontWeight",
+          "$description": "Paragon default → --pgn-typography-close-button-font-weight"
+        }
+      }
+    }
+  }
+}

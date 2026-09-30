@@ -1,12 +1,6 @@
 {
-  "$description": "Dark \u2014 body / headings text",
+  "$description": "Dark \u2014 body / headings text (page text color itself is color.text.base in global/color.json)",
   "color": {
-    "text": {
-      "base": {
-        "$value": "#F9FAFB",
-        "$description": "Dark mode body text."
-      }
-    },
     "headings": {
       "base": {
         "$value": "#FFFFFF",
@@ -17,6 +11,10 @@
       "base": {
         "$value": "#F9FAFB",
         "$description": "Dark body"
+      },
+      "bg": {
+        "$value": "{color.bg.base}",
+        "$description": "Dark body background → --pgn-color-body-bg"
       }
     }
   }

@@ -29,6 +29,24 @@
               "modify": null,
               "$description": "Active+focus icon → --pgn-color-icon-button-text-primary-active-focus"
             }
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.primary.base}",
+            "$description": "Paragon default → --pgn-color-icon-button-text-primary-focus"
+          },
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default → --pgn-color-icon-button-text-primary-inverse-base"
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default → --pgn-color-icon-button-text-primary-inverse-focus"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.primary.base}",
+              "$description": "Paragon default → --pgn-color-icon-button-text-primary-inverse-hover"
+            }
           }
         }
       },
@@ -42,7 +60,75 @@
             "base": {
               "$value": "{color.primary.base}",
               "$description": "Active background (.btn-icon-primary-active)"
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.primary.base}",
+              "$description": "Paragon default → --pgn-color-icon-button-bg-primary-active-focus"
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.primary.base}",
+              "$description": "Paragon default → --pgn-color-icon-button-bg-primary-active-hover"
             }
+          },
+          "base": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Paragon default → --pgn-color-icon-button-bg-primary-base"
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Paragon default → --pgn-color-icon-button-bg-primary-focus"
+          },
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default → --pgn-color-icon-button-bg-primary-inverse-base"
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default → --pgn-color-icon-button-bg-primary-inverse-focus"
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default → --pgn-color-icon-button-bg-primary-inverse-hover"
+            }
+          }
+        }
+      },
+      "accent": {
+        "$value": "{color.white}",
+        "$description": "Paragon default → --pgn-color-icon-button-accent"
+      }
+    }
+  },
+  "elevation": {
+    "icon-button": {
+      "box-shadow": {
+        "primary": {
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default → --pgn-elevation-icon-button-box-shadow-primary-active"
+          },
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.primary.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Paragon default → --pgn-elevation-icon-button-box-shadow-primary-base"
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Paragon default → --pgn-elevation-icon-button-box-shadow-primary-inverse"
           }
         }
       }

@@ -9,11 +9,27 @@
     "primary": {
       "base": {
         "$value": "#EB5939",
-        "$description": "Primary on dark surfaces."
+        "$description": "LAYER 1 color 1 — Primary on dark surfaces."
       },
       "light": {
         "$value": "#2A2220",
         "$description": "Primary-tinted surface for row/trigger hover on dark"
+      }
+    },
+    "secondary": {
+      "base": {
+        "$value": "#273F2F",
+        "$description": "LAYER 1 color 2 — Secondary on dark surfaces."
+      },
+      "light": {
+        "$value": "#1C2A22",
+        "$description": "Secondary-tinted surface on dark"
+      }
+    },
+    "brand": {
+      "base": {
+        "$value": "{color.primary.base}",
+        "$description": "Brand follows Layer 1 Primary on dark."
       }
     },
     "light": {
@@ -28,10 +44,28 @@
         "$description": "Dark mode page background."
       }
     },
+    "surface": {
+      "base": {
+        "$value": "{color.bg.base}",
+        "$description": "Dark surface → --pgn-color-surface-base (follows dark page bg)."
+      }
+    },
     "text": {
       "base": {
         "$value": "#F9FAFB",
         "$description": "Dark mode body text."
+      },
+      "light": {
+        "$value": "{color.gray.600}",
+        "$description": "Secondary text on dark (catalog meta, course card details) → --pgn-color-text-light"
+      },
+      "primary": {
+        "$value": "{color.gray.600}",
+        "$description": "Secondary text on dark (authn tabs fallback) → --pgn-color-text-primary"
+      },
+      "footer": {
+        "$value": "{color.gray.600}",
+        "$description": "Footer text on dark → --pgn-color-text-footer"
       }
     }
   }

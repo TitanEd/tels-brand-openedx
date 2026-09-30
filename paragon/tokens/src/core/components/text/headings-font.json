@@ -20,5 +20,13 @@
         "$description": "Headings line-height → --pgn-typography-headings-line-height"
       }
     }
+  },
+  "spacing": {
+    "headings": {
+      "margin-bottom": {
+        "$value": ".5rem",
+        "$description": "Paragon default → --pgn-spacing-headings-margin-bottom"
+      }
+    }
   }
 }

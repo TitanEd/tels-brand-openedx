@@ -1,0 +1,47 @@
+name: Validate design tokens
+
+on:
+  push:
+    branches:
+      - 'sonu-change-native-*'
+      - 'native-*'
+    paths:
+      - 'paragon/**'
+      - 'dist/**'
+      - 'validation/**'
+      - 'scripts/validate-tokens.js'
+      - 'package.json'
+      - 'Makefile'
+      - '.github/workflows/validate-tokens.yml'
+  pull_request:
+    branches:
+      - 'sonu-change-native-*'
+      - 'native-*'
+      - master
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Build and validate tokens
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build tokens and CSS (runs the validation at the end)
+        run: make build
+      - name: Save validation report
+        if: always()
+        run: node scripts/validate-tokens.js --json > validation-report.json || true
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-token-validation-report
+          path: validation-report.json

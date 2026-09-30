@@ -8,6 +8,20 @@
             "$value": "{size.border.radius.sm}",
             "$description": "Breadcrumb focus ring radius → --pgn-size-breadcrumb-border-radius-focus"
           }
+        },
+        "axis": {
+          "x-focus": {
+            "$value": ".25rem",
+            "$description": "Paragon default → --pgn-size-breadcrumb-border-axis-x-focus"
+          },
+          "y-focus": {
+            "$value": ".5rem",
+            "$description": "Paragon default → --pgn-size-breadcrumb-border-axis-y-focus"
+          }
+        },
+        "width-focus": {
+          "$value": ".0625rem",
+          "$description": "Paragon default → --pgn-size-breadcrumb-border-width-focus"
         }
       }
     }

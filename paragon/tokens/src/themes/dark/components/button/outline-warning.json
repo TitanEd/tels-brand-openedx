@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 outline warning. Labels readable on the dark page (modify:null).",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-warning": {
+          "$value": "transparent",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-warning"
+        }
+      },
+      "text": {
+        "outline-warning": {
+          "$value": "{color.warning.base}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-warning"
+        }
+      },
+      "border": {
+        "outline-warning": {
+          "$value": "{color.warning.base}",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-warning"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-warning": {
+            "$value": "transparent",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-warning"
+          }
+        },
+        "text": {
+          "outline-warning": {
+            "$value": "{color.warning.300}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-warning"
+          }
+        },
+        "border": {
+          "outline-warning": {
+            "$value": "{color.warning.300}",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-warning"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-warning": {
+            "$value": "transparent",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-warning"
+          }
+        },
+        "text": {
+          "outline-warning": {
+            "$value": "{color.warning.200}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-warning"
+          }
+        },
+        "border": {
+          "outline-warning": {
+            "$value": "{color.warning.200}",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-warning"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-warning": {
+            "$value": "transparent",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-warning"
+          }
+        },
+        "text": {
+          "outline-warning": {
+            "$value": "{color.btn.text.outline-warning}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-warning"
+          }
+        },
+        "border": {
+          "outline-warning": {
+            "$value": "{color.btn.border.outline-warning}",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-warning"
+          }
+        }
+      }
+    }
+  }
+}

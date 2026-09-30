@@ -1,0 +1,16 @@
+{
+  "$description": "caret — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "spacing": {
+    "$type": "dimension",
+    "caret": {
+      "base": {
+        "$value": ".255em",
+        "$description": "Paragon default → --pgn-spacing-caret-base"
+      },
+      "vertical-align": {
+        "$value": ".255em",
+        "$description": "Paragon default → --pgn-spacing-caret-vertical-align"
+      }
+    }
+  }
+}

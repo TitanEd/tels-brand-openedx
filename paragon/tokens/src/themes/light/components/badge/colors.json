@@ -21,6 +21,36 @@
         "info": { "$value": "{color.info.base}", "modify": [{ "type": "color-yiq" }], "$description": "Info badge text → --pgn-color-badge-text-info" },
         "light": { "$value": "{color.light.base}", "modify": [{ "type": "color-yiq" }], "$description": "Light badge text → --pgn-color-badge-text-light" },
         "dark": { "$value": "{color.dark.base}", "modify": [{ "type": "color-yiq" }], "$description": "Dark badge text → --pgn-color-badge-text-dark" }
+      },
+      "focus": {
+        "bg": {
+          "danger": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.danger}", "$description": "Paragon default → --pgn-color-badge-focus-bg-danger" },
+          "dark": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.dark}", "$description": "Paragon default → --pgn-color-badge-focus-bg-dark" },
+          "info": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.info}", "$description": "Paragon default → --pgn-color-badge-focus-bg-info" },
+          "light": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.light}", "$description": "Paragon default → --pgn-color-badge-focus-bg-light" },
+          "primary": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.primary}", "$description": "Paragon default → --pgn-color-badge-focus-bg-primary" },
+          "secondary": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.secondary}", "$description": "Paragon default → --pgn-color-badge-focus-bg-secondary" },
+          "success": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.success}", "$description": "Paragon default → --pgn-color-badge-focus-bg-success" },
+          "warning": { "modify": [{ "type": "darken", "amount": 0.1 }], "$value": "{color.badge.bg.warning}", "$description": "Paragon default → --pgn-color-badge-focus-bg-warning" }
+        },
+        "box-shadow": {
+          "danger": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.danger}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-danger" },
+          "dark": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.dark}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-dark" },
+          "info": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.info}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-info" },
+          "light": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.light}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-light" },
+          "primary": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.primary}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-primary" },
+          "secondary": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.secondary}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-secondary" },
+          "success": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.success}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-success" },
+          "warning": { "modify": [{ "type": "alpha", "amount": 0.05 }], "$value": "{color.badge.bg.warning}", "$description": "Paragon default → --pgn-color-badge-focus-box-shadow-warning" }
+        },
+        "danger": { "$value": "{color.badge.text.danger}", "$description": "Paragon default → --pgn-color-badge-focus-danger" },
+        "dark": { "$value": "{color.badge.text.dark}", "$description": "Paragon default → --pgn-color-badge-focus-dark" },
+        "info": { "$value": "{color.badge.text.info}", "$description": "Paragon default → --pgn-color-badge-focus-info" },
+        "light": { "$value": "{color.badge.text.light}", "$description": "Paragon default → --pgn-color-badge-focus-light" },
+        "primary": { "$value": "{color.badge.text.primary}", "$description": "Paragon default → --pgn-color-badge-focus-primary" },
+        "secondary": { "$value": "{color.badge.text.secondary}", "$description": "Paragon default → --pgn-color-badge-focus-secondary" },
+        "success": { "$value": "{color.badge.text.success}", "$description": "Paragon default → --pgn-color-badge-focus-success" },
+        "warning": { "$value": "{color.badge.text.warning}", "$description": "Paragon default → --pgn-color-badge-focus-warning" }
       }
     }
   }

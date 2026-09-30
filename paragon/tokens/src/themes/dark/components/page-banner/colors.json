@@ -1,0 +1,13 @@
+{
+  "$description": "LAYER 2 (dark) — PageBanner. The light variant's background (light-400) is a dark gray in dark mode, so its text turns white.",
+  "color": {
+    "page-banner": {
+      "text": {
+        "light": {
+          "$value": "{color.white}",
+          "$description": "Light banner text (dark) → --pgn-color-page-banner-text-light"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "$description": "card — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "size": {
+    "$type": "dimension",
+    "card": {
+      "border": {
+        "radius": {
+          "base": {
+            "$value": "{size.border.radius.base}",
+            "$description": "Paragon default → --pgn-size-card-border-radius-base"
+          },
+          "inner": {
+            "$value": "calc({size.card.border.radius.base} - {size.card.border.width})",
+            "$description": "Paragon default → --pgn-size-card-border-radius-inner"
+          },
+          "logo": {
+            "$value": ".25rem",
+            "$description": "Paragon default → --pgn-size-card-border-radius-logo"
+          }
+        },
+        "width": {
+          "$value": "{size.border.width}",
+          "$description": "Paragon default → --pgn-size-card-border-width"
+        }
+      },
+      "focus": {
+        "border": {
+          "radius": {
+            "$value": "calc({spacing.card.focus.border-offset} + {size.card.border.radius.base})",
+            "$description": "Paragon default → --pgn-size-card-focus-border-radius"
+          },
+          "width": {
+            "$value": "2px",
+            "$description": "Paragon default → --pgn-size-card-focus-border-width"
+          }
+        }
+      },
+      "image": {
+        "border-radius": {
+          "$value": "{size.card.border.radius.base}",
+          "$description": "Paragon default → --pgn-size-card-image-border-radius"
+        },
+        "horizontal": {
+          "width": {
+            "max": {
+              "$value": "240px",
+              "$description": "Paragon default → --pgn-size-card-image-horizontal-width-max"
+            },
+            "min": {
+              "$value": "{size.card.image.horizontal.width.max}",
+              "$description": "Paragon default → --pgn-size-card-image-horizontal-width-min"
+            }
+          }
+        },
+        "vertical": {
+          "max-height": {
+            "$value": "140px",
+            "$description": "Paragon default → --pgn-size-card-image-vertical-max-height"
+          }
+        }
+      },
+      "logo": {
+        "height": {
+          "$value": "4.125rem",
+          "$description": "Paragon default → --pgn-size-card-logo-height"
+        },
+        "width": {
+          "$value": "7.25rem",
+          "$description": "Paragon default → --pgn-size-card-logo-width"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "card": {
+      "focus": {
+        "border-offset": {
+          "$value": "5px",
+          "$description": "Paragon default → --pgn-spacing-card-focus-border-offset"
+        }
+      },
+      "footer": {
+        "action-gap": {
+          "$value": ".5rem",
+          "$description": "Paragon default → --pgn-spacing-card-footer-action-gap"
+        }
+      },
+      "logo": {
+        "bottom-offset": {
+          "base": {
+            "$value": "1rem",
+            "$description": "Paragon default → --pgn-spacing-card-logo-bottom-offset-base"
+          }
+        },
+        "left-offset": {
+          "base": {
+            "$value": "1.5rem",
+            "$description": "Paragon default → --pgn-spacing-card-logo-left-offset-base"
+          }
+        }
+      },
+      "margin": {
+        "grid-bottom": {
+          "$value": "{spacing.spacer.3}",
+          "$description": "Paragon default → --pgn-spacing-card-margin-grid-bottom"
+        }
+      },
+      "spacer": {
+        "x": {
+          "$value": "1.25rem",
+          "$description": "Paragon default → --pgn-spacing-card-spacer-x"
+        },
+        "y": {
+          "$value": ".75rem",
+          "$description": "Paragon default → --pgn-spacing-card-spacer-y"
+        }
+      }
+    }
+  }
+}

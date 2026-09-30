@@ -1,0 +1,27 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Modal. The dialog sits one step lighter than the page.",
+  "color": {
+    "modal": {
+      "content": {
+        "bg": {
+          "$value": "{color.gray.100}",
+          "$description": "Dialog background (dark) \u2192 --pgn-color-modal-content-bg"
+        },
+        "border": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.2
+            }
+          ],
+          "$description": "Dialog border (dark): white at 20% \u2192 --pgn-color-modal-content-border"
+        }
+      },
+      "backdrop-bg": {
+        "$value": "{color.black}",
+        "$description": "Backdrop (dark) \u2192 --pgn-color-modal-backdrop-bg"
+      }
+    }
+  }
+}

@@ -6,7 +6,29 @@
         "radius": {
           "$value": "{size.border.radius.base}",
           "$description": "SearchField shell + input radius → --pgn-size-search-field-border-radius"
+        },
+        "width": {
+          "base": {
+            "$value": ".0625rem",
+            "$description": "Paragon default → --pgn-size-search-field-border-width-base"
+          },
+          "focus": {
+            "$value": ".3125rem",
+            "$description": "Paragon default → --pgn-size-search-field-border-width-focus"
+          }
         }
+      },
+      "search-input-height": {
+        "$value": "calc({typography.form.input.line-height.base} * 1em + {spacing.form.input.padding.y.base} * 2)",
+        "$description": "Paragon default → --pgn-size-search-field-search-input-height"
+      }
+    }
+  },
+  "spacing": {
+    "search-field": {
+      "margin-button": {
+        "$value": ".5rem",
+        "$description": "Paragon default → --pgn-spacing-search-field-margin-button"
       }
     }
   }

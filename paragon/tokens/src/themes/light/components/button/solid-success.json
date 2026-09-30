@@ -1,0 +1,115 @@
+{
+  "$description": "SOLID SUCCESS \u2014 class: .btn.btn-success. Confirm / enroll success.",
+  "color": {
+    "btn": {
+      "bg": {
+        "success": {
+          "$value": "{color.success.base}",
+          "$description": "Solid success bg \u2192 --pgn-color-btn-bg-success"
+        }
+      },
+      "text": {
+        "success": {
+          "$value": "#FFFFFF",
+          "$description": "Solid success text \u2192 --pgn-color-btn-text-success",
+          "modify": null
+        }
+      },
+      "border": {
+        "success": {
+          "$value": "{color.btn.bg.success}",
+          "$description": "Solid success border \u2192 --pgn-color-btn-border-success"
+        }
+      },
+      "hover": {
+        "bg": {
+          "success": {
+            "$value": "{color.theme.hover.success}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-success"
+          }
+        },
+        "text": {
+          "success": {
+            "$value": "#FFFFFF",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-success",
+            "modify": null
+          }
+        },
+        "border": {
+          "success": {
+            "$value": "{color.theme.hover.success}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-success"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "success": {
+            "$value": "{color.theme.active.success}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-success"
+          }
+        },
+        "text": {
+          "success": {
+            "$value": "#FFFFFF",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-success",
+            "modify": null
+          }
+        },
+        "border": {
+          "success": {
+            "$value": "{color.theme.active.success}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-success"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "success": {
+            "$value": "{color.btn.bg.success}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-success"
+          }
+        },
+        "text": {
+          "success": {
+            "$value": "{color.btn.text.success}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-success",
+            "modify": null
+          }
+        },
+        "border": {
+          "success": {
+            "$value": "{color.btn.border.success}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-success"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "success": {
+            "$value": "{color.btn.bg.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-success"
+          }
+        },
+        "border": {
+          "success": {
+            "$value": "{color.btn.border.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-success"
+          }
+        },
+        "outline": {
+          "success": {
+            "$value": "{color.theme.focus.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-success"
+          }
+        },
+        "text": {
+          "success": {
+            "$value": "{color.btn.text.success}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-success"
+          }
+        }
+      }
+    }
+  }
+}

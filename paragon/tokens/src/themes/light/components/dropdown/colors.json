@@ -3,8 +3,8 @@
   "color": {
     "dropdown": {
       "bg": {
-        "$value": "{color.white}",
-        "$description": "Menu background → --pgn-color-dropdown-bg"
+        "$value": "{color.surface.base}",
+        "$description": "Menu background → --pgn-color-dropdown-bg (follows Layer 1 surface)"
       },
       "item": {
         "text": {
@@ -21,6 +21,68 @@
             "$description": "Item hover text → --pgn-color-dropdown-item-hover-text"
           }
         }
+      },
+      "border": {
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.15
+          }
+        ],
+        "$value": "{color.black}",
+        "$description": "Paragon default → --pgn-color-dropdown-border"
+      },
+      "header": {
+        "$value": "{color.gray.500}",
+        "$description": "Paragon default → --pgn-color-dropdown-header"
+      },
+      "link": {
+        "active": {
+          "base": {
+            "$value": "{color.active}",
+            "$description": "Paragon default → --pgn-color-dropdown-link-active-base"
+          },
+          "bg": {
+            "$value": "{color.bg.active}",
+            "$description": "Paragon default → --pgn-color-dropdown-link-active-bg"
+          }
+        },
+        "base": {
+          "$value": "{color.gray.900}",
+          "$description": "Paragon default → --pgn-color-dropdown-link-base"
+        },
+        "disabled": {
+          "$value": "{color.disabled}",
+          "$description": "Paragon default → --pgn-color-dropdown-link-disabled"
+        },
+        "hover": {
+          "base": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.5
+              }
+            ],
+            "$value": "{color.gray.900}",
+            "$description": "Paragon default → --pgn-color-dropdown-link-hover-base"
+          },
+          "bg": {
+            "$value": "{color.light.300}",
+            "$description": "Paragon default → --pgn-color-dropdown-link-hover-bg"
+          }
+        }
+      },
+      "text": {
+        "$value": "{color.body.base}",
+        "$description": "Paragon default → --pgn-color-dropdown-text"
+      }
+    }
+  },
+  "elevation": {
+    "dropdown": {
+      "box-shadow": {
+        "$value": "none",
+        "$description": "Paragon default → --pgn-elevation-dropdown-box-shadow"
       }
     }
   }

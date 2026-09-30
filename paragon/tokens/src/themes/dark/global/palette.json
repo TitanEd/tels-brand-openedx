@@ -1,0 +1,208 @@
+{
+  "$type": "color",
+  "$description": "LAYER 1 \u2014 Dark neutral scales. Paragon only ships light scales (gray-700 = dark text, gray-100 = light surface), so on the dark page the scales run the other way: low numbers are dark surfaces, high numbers are light text. Components that use var(--pgn-color-gray-*) / light-* follow automatically.",
+  "color": {
+    "gray": {
+      "100": {
+        "$value": "#1F2937",
+        "$description": "Dark gray 100 \u2014 subtle surface (hover rows, disabled inputs) \u2192 --pgn-color-gray-100"
+      },
+      "200": {
+        "$value": "#374151",
+        "$description": "Dark gray 200 \u2014 borders and dividers \u2192 --pgn-color-gray-200"
+      },
+      "300": {
+        "$value": "#4B5563",
+        "$description": "Dark gray 300 \u2014 strong borders \u2192 --pgn-color-gray-300"
+      },
+      "400": {
+        "$value": "#6B7280",
+        "$description": "Dark gray 400 \u2014 disabled text \u2192 --pgn-color-gray-400"
+      },
+      "500": {
+        "$value": "{color.gray.base}",
+        "$description": "Dark gray 500 \u2014 muted text, placeholders, input borders \u2192 --pgn-color-gray-500"
+      },
+      "600": {
+        "$value": "#B7BDC6",
+        "$description": "Dark gray 600 \u2014 secondary text \u2192 --pgn-color-gray-600"
+      },
+      "700": {
+        "$value": "#D1D5DB",
+        "$description": "Dark gray 700 \u2014 input text, tab text, tertiary labels \u2192 --pgn-color-gray-700"
+      },
+      "800": {
+        "$value": "#E5E7EB",
+        "$description": "Dark gray 800 \u2014 strong text \u2192 --pgn-color-gray-800"
+      },
+      "900": {
+        "$value": "#F3F4F6",
+        "$description": "Dark gray 900 \u2014 strongest text \u2192 --pgn-color-gray-900"
+      },
+      "base": {
+        "$value": "#9CA3AF",
+        "$description": "Dark gray base \u2014 basic gray on dark \u2192 --pgn-color-gray-base"
+      }
+    },
+    "light": {
+      "100": {
+        "$value": "#172030",
+        "modify": null,
+        "$description": "Dark \"light\" 100 (muted surface scale) \u2192 --pgn-color-light-100"
+      },
+      "200": {
+        "$value": "#1F2937",
+        "modify": null,
+        "$description": "Dark \"light\" 200 (muted surface scale) \u2192 --pgn-color-light-200"
+      },
+      "300": {
+        "$value": "#2B3544",
+        "modify": null,
+        "$description": "Dark \"light\" 300 (muted surface scale) \u2192 --pgn-color-light-300"
+      },
+      "400": {
+        "$value": "#313B4A",
+        "modify": null,
+        "$description": "Dark \"light\" 400 (muted surface scale) \u2192 --pgn-color-light-400"
+      },
+      "500": {
+        "$value": "{color.light.base}",
+        "$description": "Dark \"light\" 500 = color.light.base \u2192 --pgn-color-light-500"
+      },
+      "600": {
+        "$value": "#4B5563",
+        "modify": null,
+        "$description": "Dark \"light\" 600 (muted surface scale) \u2192 --pgn-color-light-600"
+      },
+      "700": {
+        "$value": "#6B7280",
+        "modify": null,
+        "$description": "Dark \"light\" 700 (muted surface scale) \u2192 --pgn-color-light-700"
+      },
+      "800": {
+        "$value": "#9CA3AF",
+        "modify": null,
+        "$description": "Dark \"light\" 800 (muted surface scale) \u2192 --pgn-color-light-800"
+      },
+      "900": {
+        "$value": "#D1D5DB",
+        "modify": null,
+        "$description": "Dark \"light\" 900 (muted surface scale) \u2192 --pgn-color-light-900"
+      }
+    },
+    "theme": {
+      "bg": {
+        "primary": {
+          "$value": "{color.primary.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.8"
+            }
+          ],
+          "$description": "Tinted dark surface for primary (alerts, highlights): primary mixed 80% into the page color \u2192 --pgn-color-theme-bg-primary"
+        },
+        "secondary": {
+          "$value": "{color.secondary.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.8"
+            }
+          ],
+          "$description": "Tinted dark surface for secondary (alerts, highlights): secondary mixed 80% into the page color \u2192 --pgn-color-theme-bg-secondary"
+        },
+        "brand": {
+          "$value": "{color.brand.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.8"
+            }
+          ],
+          "$description": "Tinted dark surface for brand (alerts, highlights): brand mixed 80% into the page color \u2192 --pgn-color-theme-bg-brand"
+        },
+        "success": {
+          "$value": "{color.success.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.8"
+            }
+          ],
+          "$description": "Tinted dark surface for success (alerts, highlights): success mixed 80% into the page color \u2192 --pgn-color-theme-bg-success"
+        },
+        "info": {
+          "$value": "{color.info.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.8"
+            }
+          ],
+          "$description": "Tinted dark surface for info (alerts, highlights): info mixed 80% into the page color \u2192 --pgn-color-theme-bg-info"
+        },
+        "warning": {
+          "$value": "{color.warning.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.8"
+            }
+          ],
+          "$description": "Tinted dark surface for warning (alerts, highlights): warning mixed 80% into the page color \u2192 --pgn-color-theme-bg-warning"
+        },
+        "danger": {
+          "$value": "{color.danger.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.8"
+            }
+          ],
+          "$description": "Tinted dark surface for danger (alerts, highlights): danger mixed 80% into the page color \u2192 --pgn-color-theme-bg-danger"
+        },
+        "light": {
+          "$value": "{color.light.200}",
+          "$description": "Tinted dark surface for light \u2192 --pgn-color-theme-bg-light"
+        },
+        "dark": {
+          "$value": "{color.dark.base}",
+          "modify": [
+            {
+              "type": "mix",
+              "otherColor": "#111827",
+              "amount": "0.5"
+            }
+          ],
+          "$description": "Tinted dark surface for dark \u2192 --pgn-color-theme-bg-dark"
+        },
+        "gray": {
+          "$value": "{color.gray.100}",
+          "$description": "Tinted dark surface for gray \u2192 --pgn-color-theme-bg-gray"
+        }
+      },
+      "focus": {
+        "secondary": {
+          "$value": "{color.secondary.300}",
+          "$description": "Focus ring for secondary on dark (secondary.base is too dark to see) \u2192 --pgn-color-theme-focus-secondary"
+        },
+        "dark": {
+          "$value": "{color.dark.300}",
+          "$description": "Focus ring for dark on dark \u2192 --pgn-color-theme-focus-dark"
+        },
+        "light": {
+          "$value": "{color.gray.500}",
+          "$description": "Focus ring for light on dark \u2192 --pgn-color-theme-focus-light"
+        }
+      }
+    }
+  }
+}

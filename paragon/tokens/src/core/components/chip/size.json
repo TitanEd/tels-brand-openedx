@@ -5,6 +5,10 @@
       "border-radius": {
         "$value": "{size.border.radius.base}",
         "$description": "Chip radius → --pgn-size-chip-border-radius"
+      },
+      "icon": {
+        "$value": "1.5rem",
+        "$description": "Paragon default → --pgn-size-chip-icon"
       }
     }
   },
@@ -24,6 +28,26 @@
         "base": {
           "$value": ".125rem",
           "$description": "Chip margin → --pgn-spacing-chip-margin-base"
+        },
+        "icon": {
+          "$value": ".25rem",
+          "$description": "Paragon default → --pgn-spacing-chip-margin-icon"
+        }
+      },
+      "outline": {
+        "selected-distance": {
+          "dark": {
+            "$value": "3px",
+            "$description": "Paragon default → --pgn-spacing-chip-outline-selected-distance-dark"
+          },
+          "light": {
+            "$value": "3px",
+            "$description": "Paragon default → --pgn-spacing-chip-outline-selected-distance-light"
+          }
+        },
+        "width": {
+          "$value": "3px",
+          "$description": "Paragon default → --pgn-spacing-chip-outline-width"
         }
       }
     }

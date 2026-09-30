@@ -1,0 +1,91 @@
+{
+  "$description": "Dark \u2014 inverse success (white fill). Labels use modify:null.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-success": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-inverse-success"
+        }
+      },
+      "text": {
+        "inverse-success": {
+          "$value": "{color.success.base}",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-inverse-success"
+        }
+      },
+      "border": {
+        "inverse-success": {
+          "$value": "transparent",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-inverse-success"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-success": {
+            "$value": "#EBEBEB",
+            "modify": null,
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-inverse-success"
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.success.800}",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-inverse-success"
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "transparent",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-inverse-success"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-success": {
+            "$value": "#EBEBEB",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-inverse-success"
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.success.800}",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-inverse-success"
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "transparent",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-inverse-success"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-success": {
+            "$value": "{color.btn.bg.inverse-success}",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-inverse-success"
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.btn.text.inverse-success}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-inverse-success"
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "transparent",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-inverse-success"
+          }
+        }
+      }
+    }
+  }
+}

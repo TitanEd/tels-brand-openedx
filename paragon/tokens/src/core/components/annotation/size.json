@@ -5,6 +5,44 @@
       "border-radius": {
         "$value": "{size.border.radius.sm}",
         "$description": "Annotation radius → --pgn-size-annotation-border-radius"
+      },
+      "arrow-border": {
+        "width": {
+          "$value": ".5rem",
+          "$description": "Paragon default → --pgn-size-annotation-arrow-border-width"
+        }
+      },
+      "max-width": {
+        "$value": "18.75rem",
+        "$description": "Paragon default → --pgn-size-annotation-max-width"
+      }
+    }
+  },
+  "spacing": {
+    "annotation": {
+      "arrow-side": {
+        "margin": {
+          "$value": ".25rem",
+          "$description": "Paragon default → --pgn-spacing-annotation-arrow-side-margin"
+        }
+      },
+      "padding": {
+        "$value": ".5rem",
+        "$description": "Paragon default → --pgn-spacing-annotation-padding"
+      }
+    }
+  },
+  "typography": {
+    "annotation": {
+      "font-size": {
+        "$value": "{typography.font.size.sm}",
+        "$type": "dimension",
+        "$description": "Paragon default → --pgn-typography-annotation-font-size"
+      },
+      "line-height": {
+        "$value": "{typography.line-height.sm}",
+        "$type": "number",
+        "$description": "Paragon default → --pgn-typography-annotation-line-height"
       }
     }
   }

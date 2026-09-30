@@ -1,0 +1,89 @@
+{
+  "$description": "Dark \u2014 solid brand. White labels use modify:null.",
+  "color": {
+    "btn": {
+      "bg": {
+        "brand": {
+          "$value": "{color.brand.base}",
+          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-brand"
+        }
+      },
+      "text": {
+        "brand": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "text (dark) \u2192 --pgn-color-btn-text-brand"
+        }
+      },
+      "border": {
+        "brand": {
+          "$value": "{color.btn.bg.brand}",
+          "$description": "border (dark) \u2192 --pgn-color-btn-border-brand"
+        }
+      },
+      "hover": {
+        "bg": {
+          "brand": {
+            "$value": "{color.theme.hover.brand}",
+            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-brand"
+          }
+        },
+        "text": {
+          "brand": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-brand"
+          }
+        },
+        "border": {
+          "brand": {
+            "$value": "{color.theme.hover.brand}",
+            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-brand"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "brand": {
+            "$value": "{color.theme.active.brand}",
+            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-brand"
+          }
+        },
+        "text": {
+          "brand": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-brand"
+          }
+        },
+        "border": {
+          "brand": {
+            "$value": "{color.theme.active.brand}",
+            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-brand"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "brand": {
+            "$value": "{color.btn.bg.brand}",
+            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-brand"
+          }
+        },
+        "text": {
+          "brand": {
+            "$value": "{color.btn.text.brand}",
+            "modify": null,
+            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-brand"
+          }
+        },
+        "border": {
+          "brand": {
+            "$value": "{color.btn.border.brand}",
+            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-brand"
+          }
+        }
+      }
+    }
+  }
+}

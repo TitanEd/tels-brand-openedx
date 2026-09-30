@@ -1,0 +1,112 @@
+{
+  "$description": "OUTLINE BRAND \u2014 class: .btn.btn-outline-brand. Default / Hover / Active / Disabled.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-brand": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-outline-brand"
+        }
+      },
+      "text": {
+        "outline-brand": {
+          "$value": "{color.brand.base}",
+          "$description": "Text \u2192 --pgn-color-btn-text-outline-brand"
+        }
+      },
+      "border": {
+        "outline-brand": {
+          "$value": "{color.brand.base}",
+          "$description": "Border \u2192 --pgn-color-btn-border-outline-brand"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-brand": {
+            "$value": "transparent",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-outline-brand"
+          }
+        },
+        "text": {
+          "outline-brand": {
+            "$value": "{color.theme.hover.brand}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-outline-brand"
+          }
+        },
+        "border": {
+          "outline-brand": {
+            "$value": "{color.brand.700}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-outline-brand"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-brand": {
+            "$value": "transparent",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-outline-brand"
+          }
+        },
+        "text": {
+          "outline-brand": {
+            "$value": "{color.theme.active.brand}",
+            "modify": null,
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-brand"
+          }
+        },
+        "border": {
+          "outline-brand": {
+            "$value": "{color.theme.active.brand}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-outline-brand"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-brand": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-outline-brand"
+          }
+        },
+        "text": {
+          "outline-brand": {
+            "$value": "{color.btn.text.outline-brand}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-outline-brand"
+          }
+        },
+        "border": {
+          "outline-brand": {
+            "$value": "{color.btn.border.outline-brand}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-brand"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-brand": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-outline-brand"
+          }
+        },
+        "border": {
+          "outline-brand": {
+            "$value": "{color.btn.border.outline-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-outline-brand"
+          }
+        },
+        "outline": {
+          "outline-brand": {
+            "$value": "{color.theme.focus.brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-outline-brand"
+          }
+        },
+        "text": {
+          "outline-brand": {
+            "$value": "{color.btn.text.outline-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-outline-brand"
+          }
+        }
+      }
+    }
+  }
+}

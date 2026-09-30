@@ -1,0 +1,111 @@
+{
+  "$description": "TERTIARY \u2014 class: .btn.btn-tertiary. Lowest emphasis, no border. Default / Hover / Active / Disabled.",
+  "color": {
+    "btn": {
+      "bg": {
+        "tertiary": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-tertiary"
+        }
+      },
+      "text": {
+        "tertiary": {
+          "$value": "{color.gray.700}",
+          "$description": "Text \u2192 --pgn-color-btn-text-tertiary"
+        }
+      },
+      "border": {
+        "tertiary": {
+          "$value": "transparent",
+          "$description": "Border \u2192 --pgn-color-btn-border-tertiary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "tertiary": {
+            "$value": "{color.light.500}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.gray.700}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-tertiary"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "tertiary": {
+            "$value": "{color.light.500}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.gray.700}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-tertiary"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.btn.text.tertiary}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "transparent",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-tertiary"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "tertiary": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-tertiary"
+          }
+        },
+        "border": {
+          "tertiary": {
+            "$value": "{color.btn.border.tertiary}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-tertiary"
+          }
+        },
+        "outline": {
+          "tertiary": {
+            "$value": "{color.theme.focus.primary}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-tertiary"
+          }
+        },
+        "text": {
+          "tertiary": {
+            "$value": "{color.btn.text.tertiary}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-tertiary"
+          }
+        }
+      }
+    }
+  }
+}

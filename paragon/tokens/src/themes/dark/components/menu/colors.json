@@ -1,0 +1,11 @@
+{
+  "$description": "LAYER 2 (dark) — Menu / SelectMenu (.pgn__menu). Paragon's stock menu is white; it floats one step lighter than the page, like the modal.",
+  "color": {
+    "menu": {
+      "bg": {
+        "$value": "{color.gray.100}",
+        "$description": "Menu background (dark) → --pgn-color-menu-bg"
+      }
+    }
+  }
+}

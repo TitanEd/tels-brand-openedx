@@ -1,0 +1,126 @@
+{
+  "$description": "SOLID WARNING \u2014 class: .btn.btn-warning.",
+  "color": {
+    "btn": {
+      "bg": {
+        "warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Solid warning bg \u2192 --pgn-color-btn-bg-warning"
+        }
+      },
+      "text": {
+        "warning": {
+          "$value": "{color.btn.bg.warning}",
+          "$description": "Solid warning text \u2192 --pgn-color-btn-text-warning",
+          "modify": [
+            {
+              "type": "color-yiq"
+            }
+          ]
+        }
+      },
+      "border": {
+        "warning": {
+          "$value": "{color.btn.bg.warning}",
+          "$description": "Solid warning border \u2192 --pgn-color-btn-border-warning"
+        }
+      },
+      "hover": {
+        "bg": {
+          "warning": {
+            "$value": "{color.theme.hover.warning}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "{color.btn.bg.warning}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-warning",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ]
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.theme.hover.warning}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-warning"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "warning": {
+            "$value": "{color.theme.active.warning}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "{color.btn.bg.warning}",
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-warning",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ]
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.theme.active.warning}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-warning"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "warning": {
+            "$value": "{color.btn.bg.warning}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "{color.btn.text.warning}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-warning"
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.btn.border.warning}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-warning"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "warning": {
+            "$value": "{color.btn.bg.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-warning"
+          }
+        },
+        "border": {
+          "warning": {
+            "$value": "{color.btn.border.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-warning"
+          }
+        },
+        "outline": {
+          "warning": {
+            "$value": "{color.theme.focus.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-warning"
+          }
+        },
+        "text": {
+          "warning": {
+            "$value": "{color.btn.text.warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-warning"
+          }
+        }
+      }
+    }
+  }
+}

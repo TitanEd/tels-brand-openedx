@@ -1,0 +1,40 @@
+{
+  "$description": "form — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "elevation": {
+    "$type": "shadow",
+    "form": {
+      "control": {
+        "indicator": {
+          "checked": {
+            "focus": {
+              "$value": {
+                "color": "rgba(0, 0, 0, .1)",
+                "spread": "4px",
+                "offsetX": "0",
+                "offsetY": "0",
+                "blur": "0"
+              },
+              "$description": "Paragon default → --pgn-elevation-form-control-indicator-checked-focus"
+            }
+          }
+        }
+      },
+      "input": {
+        "base": {
+          "$value": "none",
+          "$description": "Paragon default → --pgn-elevation-form-input-base"
+        },
+        "focus": {
+          "$value": {
+            "color": "{color.primary.500}",
+            "spread": "1px",
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0"
+          },
+          "$description": "Paragon default → --pgn-elevation-form-input-focus"
+        }
+      }
+    }
+  }
+}

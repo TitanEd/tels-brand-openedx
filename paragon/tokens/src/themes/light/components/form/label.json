@@ -1,0 +1,13 @@
+{
+  "$description": "LAYER 2 — Form label text color (.pgn__form-label). Defaults to body; override here to diverge from Body.",
+  "color": {
+    "form": {
+      "label": {
+        "base": {
+          "$value": "{color.body.base}",
+          "$description": "UI: Form label color → --pgn-color-form-label-base"
+        }
+      }
+    }
+  }
+}

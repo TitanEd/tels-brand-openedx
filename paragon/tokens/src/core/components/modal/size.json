@@ -11,6 +11,55 @@
           "$value": "0px",
           "$description": "Modal content border width → --pgn-size-modal-content-border-width"
         }
+      },
+      "md": {
+        "$value": "500px",
+        "$description": "Paragon default → --pgn-size-modal-md"
+      }
+    }
+  },
+  "elevation": {
+    "modal": {
+      "zindex": {
+        "$value": "1050",
+        "$description": "Paragon default → --pgn-elevation-modal-zindex"
+      }
+    }
+  },
+  "spacing": {
+    "modal": {
+      "dialog-margin": {
+        "$value": "1.5rem",
+        "$description": "Paragon default → --pgn-spacing-modal-dialog-margin"
+      },
+      "footer-padding": {
+        "y": {
+          "$value": "1rem",
+          "$description": "Paragon default → --pgn-spacing-modal-footer-padding-y"
+        }
+      },
+      "header-padding": {
+        "base": {
+          "$value": {
+            "x": "1.5rem",
+            "y": "{spacing.modal.header-padding.y}"
+          },
+          "$description": "Paragon default → --pgn-spacing-modal-header-padding-base"
+        },
+        "y": {
+          "$value": "1rem",
+          "$description": "Paragon default → --pgn-spacing-modal-header-padding-y"
+        }
+      },
+      "inner-padding": {
+        "base": {
+          "$value": "1.5rem",
+          "$description": "Paragon default → --pgn-spacing-modal-inner-padding-base"
+        },
+        "bottom": {
+          "$value": ".7rem",
+          "$description": "Paragon default → --pgn-spacing-modal-inner-padding-bottom"
+        }
       }
     }
   }

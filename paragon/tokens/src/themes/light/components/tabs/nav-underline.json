@@ -1,22 +1,239 @@
 {
-  "$description": "COURSE / NAV UNDERLINE TABS \u2014 .nav-underline-tabs .nav-link (Learning MFE course tabs).",
+  "$description": "LAYER 2 — Tabs (Paragon Tabs → .nav-tabs, plus Learning .nav-underline-tabs). Keys follow Paragon's own color.nav.* / border-color.nav.* paths so each value overrides the stock token instead of emitting a duplicate. link.text, link.hover.text and link.active.border are TitanEd additions read by Layer 3 tab maps (_learning, _authn, _communications).",
   "color": {
-    "nav-tabs": {
-      "base": {
-        "link": {
-          "active": {
-            "text": {
-              "$value": "{color.primary.base}",
-              "$description": "Active tab text color"
+    "nav": {
+      "link": {
+        "text": {
+          "base": {
+            "$value": "{color.gray.700}",
+            "$description": "Tab / nav link text (default) → --pgn-color-nav-link-text-base"
+          },
+          "disabled": {
+            "$value": "{color.gray.300}",
+            "$description": "Disabled tab text → --pgn-color-nav-link-text-disabled"
+          }
+        },
+        "border": {
+          "$value": "transparent",
+          "$description": "Paragon default → --pgn-color-nav-link-border"
+        }
+      },
+      "tabs": {
+        "base": {
+          "border": {
+            "base": {
+              "$value": "{color.light.400}",
+              "$description": "Tab bar bottom border → --pgn-color-nav-tabs-base-border-base"
             },
-            "border": {
-              "$value": "{color.primary.base}",
-              "$description": "Active tab underline"
+            "focus": {
+              "$value": "{color.nav.tabs.base.bg.hover}",
+              "$description": "Paragon default → --pgn-color-nav-tabs-base-border-focus"
+            }
+          },
+          "link": {
+            "text": {
+              "$value": "{color.nav.link.text.base}",
+              "$description": "Inactive tab text (Layer 3 maps) → --pgn-color-nav-tabs-base-link-text"
+            },
+            "hover": {
+              "bg": {
+                "$value": "{color.light.400}",
+                "$description": "Tab hover background → --pgn-color-nav-tabs-base-link-hover-bg"
+              },
+              "text": {
+                "$value": "{color.nav.tabs.base.link.active.text}",
+                "$description": "Tab hover text (Layer 3 maps) → --pgn-color-nav-tabs-base-link-hover-text"
+              }
+            },
+            "active": {
+              "text": {
+                "$value": "{color.primary.base}",
+                "$description": "Active tab text → --pgn-color-nav-tabs-base-link-active-text"
+              },
+              "bg": {
+                "$value": "transparent",
+                "$description": "Active tab background → --pgn-color-nav-tabs-base-link-active-bg"
+              },
+              "border": {
+                "$value": "{color.primary.base}",
+                "$description": "Active tab underline (Layer 3 maps) → --pgn-color-nav-tabs-base-link-active-border"
+              }
             }
           },
           "text": {
-            "$value": "{color.gray.700}",
-            "$description": "Inactive tab text"
+            "disabled": {
+              "$value": "{color.nav.tabs.base.bg.hover}",
+              "$description": "Paragon default → --pgn-color-nav-tabs-base-text-disabled"
+            }
+          }
+        },
+        "inverse": {
+          "dropdown": {
+            "border": {
+              "$value": "{color.nav.tabs.inverse.link.bg.active-hover}",
+              "$description": "Paragon default → --pgn-color-nav-tabs-inverse-dropdown-border"
+            }
+          },
+          "link": {
+            "bg": {
+              "active": {
+                "$value": "{color.nav.tabs.inverse.link.bg.hover}",
+                "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-bg-active"
+              },
+              "active-hover": {
+                "$value": "transparent",
+                "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-bg-active-hover"
+              },
+              "focus": {
+                "$value": "{color.nav.tabs.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-bg-focus"
+              },
+              "hover": {
+                "$value": "{color.nav.tabs.inverse.link.border.bottom}",
+                "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-bg-hover"
+              }
+            },
+            "border": {
+              "active": {
+                "$value": "{color.nav.tabs.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-border-active"
+              },
+              "bottom": {
+                "$value": "{color.dark.300}",
+                "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-border-bottom"
+              }
+            },
+            "tab-content-color": {
+              "$value": "{color.nav.tabs.inverse.link.text.base}",
+              "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-tab-content-color"
+            },
+            "text": {
+              "base": {
+                "$value": "{color.white}",
+                "$description": "Paragon default → --pgn-color-nav-tabs-inverse-link-text-base"
+              }
+            }
+          }
+        }
+      },
+      "pills": {
+        "base": {
+          "link": {
+            "active": {
+              "bg": {
+                "$value": "{color.bg.active}",
+                "$description": "Paragon default → --pgn-color-nav-pills-base-link-active-bg"
+              },
+              "border": {
+                "$value": "{color.white}",
+                "$description": "Paragon default → --pgn-color-nav-pills-base-link-active-border"
+              },
+              "text": {
+                "$value": "{color.active}",
+                "$description": "Paragon default → --pgn-color-nav-pills-base-link-active-text"
+              }
+            },
+            "border": {
+              "$value": "{color.nav.tabs.base.border.base}",
+              "$description": "Paragon default → --pgn-color-nav-pills-base-link-border"
+            }
+          }
+        },
+        "inverse": {
+          "link": {
+            "bg": {
+              "active": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-bg-active"
+              },
+              "active-focus-hover": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-bg-active-focus-hover"
+              },
+              "active-hover": {
+                "$value": "{color.nav.pills.inverse.link.border.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-bg-active-hover"
+              },
+              "hover": {
+                "$value": "{color.nav.pills.inverse.link.border.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-bg-hover"
+              }
+            },
+            "border": {
+              "active": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-border-active"
+              },
+              "active-focus": {
+                "$value": "{color.primary.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-border-active-focus"
+              },
+              "active-hover": {
+                "$value": "{color.nav.pills.inverse.link.border.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-border-active-hover"
+              },
+              "base": {
+                "$value": "{color.dark.300}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-border-base"
+              },
+              "focus-hover": {
+                "$value": "{color.nav.pills.inverse.link.border.active-focus}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-border-focus-hover"
+              }
+            },
+            "text": {
+              "active": {
+                "$value": "{color.primary.500}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-text-active"
+              },
+              "active-focus": {
+                "$value": "{color.nav.pills.inverse.link.text.active}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-text-active-focus"
+              },
+              "active-hover": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-text-active-hover"
+              },
+              "base": {
+                "$value": "{color.white}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-text-base"
+              },
+              "focus": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-text-focus"
+              }
+            }
+          },
+          "tab-content-color": {
+            "$value": "{color.nav.pills.inverse.link.text.base}",
+            "$description": "Paragon default → --pgn-color-nav-pills-inverse-tab-content-color"
+          }
+        }
+      }
+    }
+  },
+  "border-color": {
+    "nav": {
+      "tabs-link": {
+        "border": {
+          "active": {
+            "$value": "{color.primary.base}",
+            "$type": "color",
+            "$description": "Active tab underline (Paragon .nav-tabs) → --pgn-border-color-nav-tabs-link-border-active"
+          },
+          "focus": {
+            "$value": "{color.nav.tabs.base.link.active.text}",
+            "$type": "color",
+            "$description": "Tab focus ring → --pgn-border-color-nav-tabs-link-border-focus"
+          },
+          "hover": {
+            "$value": {
+              "top": "transparent",
+              "right": "transparent",
+              "bottom": "{color.nav.tabs.base.border.base}",
+              "left": "transparent"
+            },
+            "$description": "Paragon default → --pgn-border-color-nav-tabs-link-border-hover"
           }
         }
       }

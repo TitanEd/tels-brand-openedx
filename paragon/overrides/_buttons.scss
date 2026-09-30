@@ -22,57 +22,90 @@
   }
 }
 
-// Outline kit site-wide — beats Studio utilities like .border-gray-500 /
-// .rounded-0 on "New section/subsection/unit" block buttons, and Paragon
-// color-yiq active text (#454545). Tokens: outline-primary.json /
-// outline-secondary.json.
-button.btn.btn-outline-secondary,
-a.btn.btn-outline-secondary,
-.btn.btn-outline-secondary {
-  color: var(--pgn-color-btn-text-outline-secondary) !important;
-  background-color: var(--pgn-color-btn-bg-outline-secondary, transparent) !important;
-  border: var(--pgn-size-btn-border-width, 1px) solid var(--pgn-color-btn-border-outline-secondary) !important;
+// Shared metrics for every .btn (radius / size / weight / padding live in
+// core/components/button/size-padding-radius.json).
+.btn:not(.btn-icon) {
+  font-weight: var(--pgn-typography-btn-font-weight, inherit);
+}
+
+// Paragon Button iconBefore / iconAfter hardcode .5rem; route through the token.
+.btn .btn-icon-before {
+  margin-inline-end: var(--pgn-spacing-btn-icon-gap, .5rem);
+}
+
+.btn .btn-icon-after {
+  margin-inline-start: var(--pgn-spacing-btn-icon-gap, .5rem);
+}
+
+[dir="rtl"] .btn .btn-icon-before {
+  margin-left: var(--pgn-spacing-btn-icon-gap, .5rem);
+}
+
+[dir="rtl"] .btn .btn-icon-after {
+  margin-right: var(--pgn-spacing-btn-icon-gap, .5rem);
+}
+
+// Outline kits — !important beats Studio utilities (.border-gray-500 / .rounded-0).
+// Do not !important solid fills (that flattens hover).
+@mixin tels-outline-btn($variant) {
+  @include button-variant($variant);
+
+  color: var(--pgn-color-btn-text-#{$variant}) !important;
+  background-color: var(--pgn-color-btn-bg-#{$variant}, transparent) !important;
+  border: var(--pgn-size-btn-border-width, 1px) solid var(--pgn-color-btn-border-#{$variant}) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 
   &:hover:not(:disabled):not([aria-disabled="true"]),
   &:focus:not(:disabled) {
-    color: var(--pgn-color-btn-hover-text-outline-secondary) !important;
-    border-color: var(--pgn-color-btn-hover-border-outline-secondary) !important;
-    background-color: var(--pgn-color-btn-hover-bg-outline-secondary, transparent) !important;
+    color: var(--pgn-color-btn-hover-text-#{$variant}) !important;
+    border-color: var(--pgn-color-btn-hover-border-#{$variant}) !important;
+    background-color: var(--pgn-color-btn-hover-bg-#{$variant}, transparent) !important;
   }
 
   &:active:not(:disabled),
   &.active:not(:disabled) {
-    color: var(--pgn-color-btn-active-text-outline-secondary, var(--pgn-color-btn-hover-text-outline-secondary)) !important;
-    border-color: var(--pgn-color-btn-active-border-outline-secondary, var(--pgn-color-btn-hover-border-outline-secondary)) !important;
-    background-color: var(--pgn-color-btn-active-bg-outline-secondary, var(--pgn-color-btn-hover-bg-outline-secondary, transparent)) !important;
+    color: var(--pgn-color-btn-active-text-#{$variant}, var(--pgn-color-btn-hover-text-#{$variant})) !important;
+    border-color: var(--pgn-color-btn-active-border-#{$variant}, var(--pgn-color-btn-hover-border-#{$variant})) !important;
+    background-color: var(--pgn-color-btn-active-bg-#{$variant}, var(--pgn-color-btn-hover-bg-#{$variant}, transparent)) !important;
   }
 
-  &:disabled {
-    opacity: 0.65;
+  &:disabled,
+  &.disabled {
+    color: var(--pgn-color-btn-disabled-text-#{$variant}, var(--pgn-color-btn-text-#{$variant})) !important;
+    background-color: var(--pgn-color-btn-disabled-bg-#{$variant}, transparent) !important;
+    border-color: var(--pgn-color-btn-disabled-border-#{$variant}, var(--pgn-color-btn-border-#{$variant})) !important;
+    opacity: var(--pgn-other-btn-disabled-opacity, 0.65);
   }
 }
 
-button.btn.btn-outline-primary,
-a.btn.btn-outline-primary,
-.btn.btn-outline-primary {
-  color: var(--pgn-color-btn-text-outline-primary) !important;
-  background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
-  border: var(--pgn-size-btn-border-width, 1px) solid var(--pgn-color-btn-border-outline-primary) !important;
-  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+$tels-outline-variants: (
+  "outline-primary",
+  "outline-secondary",
+  "outline-brand",
+  "outline-success",
+  "outline-danger",
+  "outline-warning",
+  "outline-info",
+  "outline-light",
+  "outline-dark",
+  "outline-tertiary",
+  "inverse-outline-primary",
+  "inverse-outline-secondary",
+  "inverse-outline-brand",
+  "inverse-outline-tertiary",
+  "inverse-outline-success",
+  "inverse-outline-danger",
+  "inverse-outline-warning",
+  "inverse-outline-info",
+  "inverse-outline-light",
+  "inverse-outline-dark"
+);
 
-  &:hover:not(:disabled):not([aria-disabled="true"]),
-  &:focus:not(:disabled) {
-    color: var(--pgn-color-btn-hover-text-outline-primary) !important;
-    border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
-    background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
-  }
-
-  &:active:not(:disabled),
-  &.active:not(:disabled) {
-    color: var(--pgn-color-btn-active-text-outline-primary, var(--pgn-color-btn-hover-text-outline-primary)) !important;
-    border-color: var(--pgn-color-btn-active-border-outline-primary, var(--pgn-color-btn-hover-border-outline-primary)) !important;
-    background-color: var(--pgn-color-btn-active-bg-outline-primary, var(--pgn-color-btn-hover-bg-outline-primary, transparent)) !important;
+@each $v in $tels-outline-variants {
+  button.btn.btn-#{$v},
+  a.btn.btn-#{$v},
+  .btn.btn-#{$v} {
+    @include tels-outline-btn($v);
   }
 }
 
@@ -101,15 +134,55 @@ a.btn.btn-outline-primary,
       border-color: var(--pgn-btn-active-border-color, transparent);
     }
   }
+
+  &:disabled,
+  &.disabled {
+    color: var(--pgn-btn-disabled-color, var(--pgn-btn-color));
+    background-color: var(--pgn-btn-disabled-bg, var(--pgn-btn-bg));
+    border-color: var(--pgn-btn-disabled-border-color, var(--pgn-btn-border-color));
+    opacity: var(--pgn-other-btn-disabled-opacity, 0.65);
+  }
 }
 
-// Primary + brand locals from tokens (same as Paragon button-variant mixin)
+// Solid + inverse-solid + tertiary locals (no !important on fills — hover must darken).
+$tels-solid-variants: (
+  "primary",
+  "secondary",
+  "brand",
+  "success",
+  "danger",
+  "warning",
+  "info",
+  "light",
+  "dark",
+  "tertiary",
+  "inverse-primary",
+  "inverse-secondary",
+  "inverse-brand",
+  "inverse-success",
+  "inverse-danger",
+  "inverse-warning",
+  "inverse-info",
+  "inverse-light",
+  "inverse-dark",
+  "inverse-tertiary"
+);
+
+@each $v in $tels-solid-variants {
+  .btn-#{$v},
+  button.btn.btn-#{$v},
+  a.btn.btn-#{$v} {
+    @include button-variant($v);
+
+    border-radius: var(--pgn-size-btn-border-radius-base);
+  }
+}
+
+// White labels that Studio/MFE CSS otherwise rewrites. Fills stay without !important.
 .btn-primary,
 button.btn.btn-primary,
 a.btn.btn-primary,
 #edit-filters-btn {
-  @include button-variant("primary");
-
   color: var(--pgn-color-btn-text-primary) !important;
   border-radius: var(--pgn-size-btn-border-radius-base) !important;
 }
@@ -117,10 +190,13 @@ a.btn.btn-primary,
 .btn-brand,
 button.btn.btn-brand,
 a.btn.btn-brand {
-  @include button-variant("brand");
-
   color: var(--pgn-color-btn-text-brand) !important;
-  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+
+.btn-secondary,
+button.btn.btn-secondary,
+a.btn.btn-secondary {
+  color: var(--pgn-color-btn-text-secondary) !important;
 }
 
 // Icon buttons — btn-icon btn-icon-primary / btn-icon-secondary

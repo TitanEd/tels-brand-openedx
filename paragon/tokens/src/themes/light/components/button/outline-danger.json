@@ -1,0 +1,112 @@
+{
+  "$description": "OUTLINE DANGER \u2014 class: .btn.btn-outline-danger.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-danger": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-outline-danger"
+        }
+      },
+      "text": {
+        "outline-danger": {
+          "$value": "{color.danger.base}",
+          "$description": "Text \u2192 --pgn-color-btn-text-outline-danger"
+        }
+      },
+      "border": {
+        "outline-danger": {
+          "$value": "{color.danger.base}",
+          "$description": "Border \u2192 --pgn-color-btn-border-outline-danger"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-danger": {
+            "$value": "transparent",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-outline-danger"
+          }
+        },
+        "text": {
+          "outline-danger": {
+            "$value": "{color.theme.hover.danger}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-outline-danger"
+          }
+        },
+        "border": {
+          "outline-danger": {
+            "$value": "{color.danger.700}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-outline-danger"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-danger": {
+            "$value": "transparent",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-outline-danger"
+          }
+        },
+        "text": {
+          "outline-danger": {
+            "$value": "{color.theme.active.danger}",
+            "modify": null,
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-danger"
+          }
+        },
+        "border": {
+          "outline-danger": {
+            "$value": "{color.theme.active.danger}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-outline-danger"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-danger": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-outline-danger"
+          }
+        },
+        "text": {
+          "outline-danger": {
+            "$value": "{color.btn.text.outline-danger}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-outline-danger"
+          }
+        },
+        "border": {
+          "outline-danger": {
+            "$value": "{color.btn.border.outline-danger}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-danger"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-danger": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-outline-danger"
+          }
+        },
+        "border": {
+          "outline-danger": {
+            "$value": "{color.btn.border.outline-danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-outline-danger"
+          }
+        },
+        "outline": {
+          "outline-danger": {
+            "$value": "{color.theme.focus.danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-outline-danger"
+          }
+        },
+        "text": {
+          "outline-danger": {
+            "$value": "{color.btn.text.outline-danger}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-outline-danger"
+          }
+        }
+      }
+    }
+  }
+}

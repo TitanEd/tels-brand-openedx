@@ -6,6 +6,56 @@
         "border-radius": {
           "$value": "{size.border.radius.base}",
           "$description": "Menu panel radius → --pgn-size-menu-base-border-radius"
+        },
+        "max-height": {
+          "$value": "16.813rem",
+          "$description": "Paragon default → --pgn-size-menu-base-max-height"
+        }
+      },
+      "item": {
+        "border": {
+          "width": {
+            "$value": "{size.btn.border.width}",
+            "$description": "Paragon default → --pgn-size-menu-item-border-width"
+          }
+        },
+        "height": {
+          "$value": "3rem",
+          "$description": "Paragon default → --pgn-size-menu-item-height"
+        },
+        "width": {
+          "base": {
+            "$value": "19rem",
+            "$description": "Paragon default → --pgn-size-menu-item-width-base"
+          },
+          "xs": {
+            "$value": "13.438rem",
+            "$description": "Paragon default → --pgn-size-menu-item-width-xs"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "menu": {
+      "item": {
+        "icon": {
+          "margin": {
+            "left": {
+              "$value": ".25em",
+              "$description": "Paragon default → --pgn-spacing-menu-item-icon-margin-left"
+            }
+          }
+        },
+        "padding": {
+          "x": {
+            "$value": "{spacing.btn.padding.x.base}",
+            "$description": "Paragon default → --pgn-spacing-menu-item-padding-x"
+          },
+          "y": {
+            "$value": "{spacing.btn.padding.y.base}",
+            "$description": "Paragon default → --pgn-spacing-menu-item-padding-y"
+          }
         }
       }
     }

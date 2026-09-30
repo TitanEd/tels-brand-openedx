@@ -1,0 +1,54 @@
+{
+  "$description": "collapsible — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "spacing": {
+    "$type": "dimension",
+    "collapsible": {
+      "card": {
+        "spacer": {
+          "basic": {
+            "icon": {
+              "$value": ".625rem",
+              "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-basic-icon"
+            },
+            "x": {
+              "$value": ".5rem",
+              "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-basic-x"
+            },
+            "y": {
+              "$value": ".5rem",
+              "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-basic-y"
+            }
+          },
+          "icon": {
+            "$value": "2.5rem",
+            "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-icon"
+          },
+          "left-body": {
+            "$value": ".75rem",
+            "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-left-body"
+          },
+          "x": {
+            "base": {
+              "$value": ".5rem",
+              "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-x-base"
+            },
+            "lg": {
+              "$value": "{spacing.card.spacer.x}",
+              "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-x-lg"
+            }
+          },
+          "y": {
+            "base": {
+              "$value": ".5rem",
+              "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-y-base"
+            },
+            "lg": {
+              "$value": "{spacing.card.spacer.y}",
+              "$description": "Paragon default → --pgn-spacing-collapsible-card-spacer-y-lg"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "$description": "INVERSE BRAND \u2014 class: .btn.btn-inverse-brand. White fill + brand text on dark chrome.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-brand": {
+          "$value": "#FFFFFF",
+          "$description": "Inverse solid bg \u2192 --pgn-color-btn-bg-inverse-brand",
+          "modify": null
+        }
+      },
+      "text": {
+        "inverse-brand": {
+          "$value": "{color.brand.base}",
+          "$description": "Inverse solid text \u2192 --pgn-color-btn-text-inverse-brand"
+        }
+      },
+      "border": {
+        "inverse-brand": {
+          "$value": "transparent",
+          "$description": "Inverse solid border \u2192 --pgn-color-btn-border-inverse-brand"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-brand": {
+            "$value": "{color.gray.100}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-brand"
+          }
+        },
+        "text": {
+          "inverse-brand": {
+            "$value": "{color.brand.base}",
+            "modify": null,
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-brand"
+          }
+        },
+        "border": {
+          "inverse-brand": {
+            "$value": "transparent",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-inverse-brand"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-brand": {
+            "$value": "{color.gray.100}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-brand"
+          }
+        },
+        "text": {
+          "inverse-brand": {
+            "$value": "{color.brand.base}",
+            "modify": null,
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-brand"
+          }
+        },
+        "border": {
+          "inverse-brand": {
+            "$value": "transparent",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-inverse-brand"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-brand": {
+            "$value": "{color.btn.bg.inverse-brand}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-inverse-brand"
+          }
+        },
+        "text": {
+          "inverse-brand": {
+            "$value": "{color.btn.text.inverse-brand}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-inverse-brand"
+          }
+        },
+        "border": {
+          "inverse-brand": {
+            "$value": "transparent",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-brand"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-brand": {
+            "$value": "{color.btn.bg.inverse-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-brand"
+          }
+        },
+        "border": {
+          "inverse-brand": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-brand"
+          }
+        },
+        "outline": {
+          "inverse-brand": {
+            "$value": "{color.btn.focus.border.inverse-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-brand"
+          }
+        },
+        "text": {
+          "inverse-brand": {
+            "$value": "{color.btn.text.inverse-brand}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-brand"
+          }
+        }
+      }
+    }
+  }
+}

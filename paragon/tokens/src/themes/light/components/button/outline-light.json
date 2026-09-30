@@ -1,0 +1,112 @@
+{
+  "$description": "OUTLINE LIGHT \u2014 class: .btn.btn-outline-light.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-light": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-outline-light"
+        }
+      },
+      "text": {
+        "outline-light": {
+          "$value": "{color.light.base}",
+          "$description": "Text \u2192 --pgn-color-btn-text-outline-light"
+        }
+      },
+      "border": {
+        "outline-light": {
+          "$value": "{color.light.base}",
+          "$description": "Border \u2192 --pgn-color-btn-border-outline-light"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-light": {
+            "$value": "transparent",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-outline-light"
+          }
+        },
+        "text": {
+          "outline-light": {
+            "$value": "{color.theme.hover.light}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-outline-light"
+          }
+        },
+        "border": {
+          "outline-light": {
+            "$value": "{color.light.700}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-outline-light"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-light": {
+            "$value": "transparent",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-outline-light"
+          }
+        },
+        "text": {
+          "outline-light": {
+            "$value": "{color.gray.700}",
+            "modify": null,
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-light"
+          }
+        },
+        "border": {
+          "outline-light": {
+            "$value": "{color.theme.active.light}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-outline-light"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-light": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-outline-light"
+          }
+        },
+        "text": {
+          "outline-light": {
+            "$value": "{color.btn.text.outline-light}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-outline-light"
+          }
+        },
+        "border": {
+          "outline-light": {
+            "$value": "{color.btn.border.outline-light}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-light"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-light": {
+            "$value": "transparent",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-outline-light"
+          }
+        },
+        "border": {
+          "outline-light": {
+            "$value": "{color.btn.border.outline-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-outline-light"
+          }
+        },
+        "outline": {
+          "outline-light": {
+            "$value": "{color.theme.focus.light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-outline-light"
+          }
+        },
+        "text": {
+          "outline-light": {
+            "$value": "{color.btn.text.outline-light}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-outline-light"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$description": "LAYER 2 (dark) — SelectableBox (.pgn__selectable_box).",
+  "color": {
+    "selectable-box": {
+      "bg": {
+        "$value": "{color.surface.base}",
+        "$description": "TitanEd: box background (dark) → --pgn-color-selectable-box-bg"
+      }
+    }
+  }
+}

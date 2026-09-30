@@ -6,3 +6,4 @@ dist/*.map
 
 # Do not commit duplicate token trees (source is tokens/src only)
 paragon/tokens/generated/
+saved-theme/

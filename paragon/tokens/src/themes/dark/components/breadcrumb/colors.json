@@ -1,0 +1,29 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Breadcrumb.",
+  "color": {
+    "breadcrumb": {
+      "base": {
+        "$value": "{color.primary.base}",
+        "$description": "Breadcrumb link (dark) \u2192 --pgn-color-breadcrumb-base"
+      },
+      "active": {
+        "$value": "{color.gray.500}",
+        "$description": "Current page (dark) \u2192 --pgn-color-breadcrumb-active"
+      },
+      "inverse": {
+        "base": {
+          "$value": "{color.white}",
+          "$description": "Inverse breadcrumb link (dark) \u2192 --pgn-color-breadcrumb-inverse-base"
+        },
+        "active": {
+          "$value": "{color.gray.500}",
+          "$description": "Inverse current page (dark) \u2192 --pgn-color-breadcrumb-inverse-active"
+        },
+        "spacer": {
+          "$value": "{color.gray.400}",
+          "$description": "Inverse separator (dark) \u2192 --pgn-color-breadcrumb-inverse-spacer"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "$description": "INVERSE WARNING \u2014 class: .btn.btn-inverse-warning.",
+  "color": {
+    "btn": {
+      "bg": {
+        "inverse-warning": {
+          "$value": "#FFFFFF",
+          "$description": "Inverse solid bg \u2192 --pgn-color-btn-bg-inverse-warning",
+          "modify": null
+        }
+      },
+      "text": {
+        "inverse-warning": {
+          "$value": "{color.warning.base}",
+          "$description": "Inverse solid text \u2192 --pgn-color-btn-text-inverse-warning"
+        }
+      },
+      "border": {
+        "inverse-warning": {
+          "$value": "transparent",
+          "$description": "Inverse solid border \u2192 --pgn-color-btn-border-inverse-warning"
+        }
+      },
+      "hover": {
+        "bg": {
+          "inverse-warning": {
+            "$value": "{color.gray.100}",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-inverse-warning"
+          }
+        },
+        "text": {
+          "inverse-warning": {
+            "$value": "{color.warning.base}",
+            "modify": null,
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-inverse-warning"
+          }
+        },
+        "border": {
+          "inverse-warning": {
+            "$value": "transparent",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-inverse-warning"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "inverse-warning": {
+            "$value": "{color.gray.100}",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-inverse-warning"
+          }
+        },
+        "text": {
+          "inverse-warning": {
+            "$value": "{color.warning.base}",
+            "modify": null,
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-inverse-warning"
+          }
+        },
+        "border": {
+          "inverse-warning": {
+            "$value": "transparent",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-inverse-warning"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "inverse-warning": {
+            "$value": "{color.btn.bg.inverse-warning}",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-inverse-warning"
+          }
+        },
+        "text": {
+          "inverse-warning": {
+            "$value": "{color.btn.text.inverse-warning}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-inverse-warning"
+          }
+        },
+        "border": {
+          "inverse-warning": {
+            "$value": "transparent",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-inverse-warning"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-warning": {
+            "$value": "{color.btn.bg.inverse-warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-inverse-warning"
+          }
+        },
+        "border": {
+          "inverse-warning": {
+            "$value": "{color.btn.border.inverse-warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-inverse-warning"
+          }
+        },
+        "outline": {
+          "inverse-warning": {
+            "$value": "{color.white}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-inverse-warning"
+          }
+        },
+        "text": {
+          "inverse-warning": {
+            "$value": "{color.btn.text.inverse-warning}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-inverse-warning"
+          }
+        }
+      }
+    }
+  }
+}

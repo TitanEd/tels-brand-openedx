@@ -61,6 +61,52 @@
             "$description": "Active border → --pgn-color-btn-active-border-outline-primary"
           }
         }
+      },
+      "disabled": {
+        "bg": {
+          "outline-primary": {
+            "$value": "transparent",
+            "$description": "Disabled bg → --pgn-color-btn-disabled-bg-outline-primary"
+          }
+        },
+        "text": {
+          "outline-primary": {
+            "$value": "{color.btn.text.outline-primary}",
+            "$description": "Disabled text → --pgn-color-btn-disabled-text-outline-primary"
+          }
+        },
+        "border": {
+          "outline-primary": {
+            "$value": "{color.btn.border.outline-primary}",
+            "$description": "Disabled border → --pgn-color-btn-disabled-border-outline-primary"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-primary": {
+            "$value": "inherit",
+            "$description": "Paragon default → --pgn-color-btn-focus-bg-outline-primary"
+          }
+        },
+        "border": {
+          "outline-primary": {
+            "$value": "{color.btn.border.outline-primary}",
+            "$description": "Paragon default → --pgn-color-btn-focus-border-outline-primary"
+          }
+        },
+        "outline": {
+          "outline-primary": {
+            "$value": "{color.theme.focus.primary}",
+            "$description": "Paragon default → --pgn-color-btn-focus-outline-outline-primary"
+          }
+        },
+        "text": {
+          "outline-primary": {
+            "$value": "{color.btn.text.outline-primary}",
+            "$description": "Paragon default → --pgn-color-btn-focus-text-outline-primary"
+          }
+        }
       }
     }
   }

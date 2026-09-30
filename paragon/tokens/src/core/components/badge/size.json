@@ -33,5 +33,27 @@
         }
       }
     }
+  },
+  "transition": {
+    "badge": {
+      "$value": "none",
+      "$description": "Paragon default → --pgn-transition-badge"
+    }
+  },
+  "typography": {
+    "badge": {
+      "font": {
+        "size": {
+          "$value": "75%",
+          "$type": "percentage",
+          "$description": "Paragon default → --pgn-typography-badge-font-size"
+        },
+        "weight": {
+          "$value": "{typography.font.weight.bold}",
+          "$type": "fontWeight",
+          "$description": "Paragon default → --pgn-typography-badge-font-weight"
+        }
+      }
+    }
   }
 }

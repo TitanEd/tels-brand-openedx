@@ -1,0 +1,112 @@
+{
+  "$description": "OUTLINE INFO \u2014 class: .btn.btn-outline-info.",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-info": {
+          "$value": "transparent",
+          "$description": "Background \u2192 --pgn-color-btn-bg-outline-info"
+        }
+      },
+      "text": {
+        "outline-info": {
+          "$value": "{color.info.base}",
+          "$description": "Text \u2192 --pgn-color-btn-text-outline-info"
+        }
+      },
+      "border": {
+        "outline-info": {
+          "$value": "{color.info.base}",
+          "$description": "Border \u2192 --pgn-color-btn-border-outline-info"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-info": {
+            "$value": "transparent",
+            "$description": "Hover bg \u2192 --pgn-color-btn-hover-bg-outline-info"
+          }
+        },
+        "text": {
+          "outline-info": {
+            "$value": "{color.theme.hover.info}",
+            "$description": "Hover text \u2192 --pgn-color-btn-hover-text-outline-info"
+          }
+        },
+        "border": {
+          "outline-info": {
+            "$value": "{color.info.700}",
+            "$description": "Hover border \u2192 --pgn-color-btn-hover-border-outline-info"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "outline-info": {
+            "$value": "transparent",
+            "$description": "Active bg \u2192 --pgn-color-btn-active-bg-outline-info"
+          }
+        },
+        "text": {
+          "outline-info": {
+            "$value": "{color.theme.active.info}",
+            "modify": null,
+            "$description": "Active text \u2192 --pgn-color-btn-active-text-outline-info"
+          }
+        },
+        "border": {
+          "outline-info": {
+            "$value": "{color.theme.active.info}",
+            "$description": "Active border \u2192 --pgn-color-btn-active-border-outline-info"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "outline-info": {
+            "$value": "transparent",
+            "$description": "Disabled bg \u2192 --pgn-color-btn-disabled-bg-outline-info"
+          }
+        },
+        "text": {
+          "outline-info": {
+            "$value": "{color.btn.text.outline-info}",
+            "$description": "Disabled text \u2192 --pgn-color-btn-disabled-text-outline-info"
+          }
+        },
+        "border": {
+          "outline-info": {
+            "$value": "{color.btn.border.outline-info}",
+            "$description": "Disabled border \u2192 --pgn-color-btn-disabled-border-outline-info"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-info": {
+            "$value": "inherit",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-bg-outline-info"
+          }
+        },
+        "border": {
+          "outline-info": {
+            "$value": "{color.btn.border.outline-info}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-border-outline-info"
+          }
+        },
+        "outline": {
+          "outline-info": {
+            "$value": "{color.theme.focus.info}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-outline-outline-info"
+          }
+        },
+        "text": {
+          "outline-info": {
+            "$value": "{color.btn.text.outline-info}",
+            "$description": "Paragon default \u2192 --pgn-color-btn-focus-text-outline-info"
+          }
+        }
+      }
+    }
+  }
+}

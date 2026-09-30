@@ -1,0 +1,85 @@
+{
+  "$description": "LAYER 2 (dark) \u2014 Navbar. On the dark page both navbar variants use white text.",
+  "color": {
+    "navbar": {
+      "dark": {
+        "text": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "$description": "Navbar text (dark) \u2192 --pgn-color-navbar-*-text"
+        },
+        "hover": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.75
+            }
+          ],
+          "$description": "Navbar hover (dark) \u2192 --pgn-color-navbar-*-hover"
+        },
+        "active": {
+          "$value": "{color.white}",
+          "$description": "Navbar active (dark) \u2192 --pgn-color-navbar-*-active"
+        },
+        "disabled": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.25
+            }
+          ],
+          "$description": "Navbar disabled (dark) \u2192 --pgn-color-navbar-*-disabled"
+        }
+      },
+      "light": {
+        "text": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.6
+            }
+          ],
+          "$description": "Navbar text (dark) \u2192 --pgn-color-navbar-*-text"
+        },
+        "hover": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.8
+            }
+          ],
+          "$description": "Navbar hover (dark) \u2192 --pgn-color-navbar-*-hover"
+        },
+        "active": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.95
+            }
+          ],
+          "$description": "Navbar active (dark) \u2192 --pgn-color-navbar-*-active"
+        },
+        "disabled": {
+          "$value": "{color.white}",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.3
+            }
+          ],
+          "$description": "Navbar disabled (dark) \u2192 --pgn-color-navbar-*-disabled"
+        }
+      }
+    }
+  }
+}
