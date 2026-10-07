@@ -37,6 +37,8 @@ Cascade: Primary → `.btn-primary`, `.btn-outline-primary`, inverse-primary kit
 
 | What you want | File | Key | CSS variable |
 |---------------|------|-----|--------------|
+| **Footer band** (template-1 `.tels-footer`) | `themes/light/global/color.json` (+ dark) | `color.footer.{bg,link,muted,border}`, `color.text.footer` | `--pgn-color-footer-*`, `--pgn-color-text-footer` |
+| **Marketing chrome / public pages** (template-1) | same | `color.primary.{hover,soft}`, `color.chrome.{border,surface-subtle,surface-warm,text-muted}`, `color.marketing.accent`, `color.text.secondary` | `--pgn-color-primary-hover/-soft`, `--pgn-color-chrome-*`, `--pgn-color-marketing-accent`, `--pgn-color-text-secondary` |
 | **Font family** | `core/global/typography.json` | `typography.font.family.sans.serif` | `--pgn-typography-font-family-base` |
 | **Self-hosted font file** | `paragon/fonts/` + `_fonts.scss` | `@font-face`; `make build` copies → `dist/fonts/` | |
 | **Font scale** (all rem text, e.g. `1.2` = +20%) | `core/global/typography.json` | `typography.font.scale` | `--pgn-typography-font-scale` |
@@ -167,6 +169,7 @@ SCSS: `overrides/_buttons.scss`. Layer 1 `color.primary.base` updates primary + 
 | Class | File |
 |-------|------|
 | `a`, `.btn-link` | `themes/light/components/link/colors.json` → `link.base` |
+| Link underline (reboot `a` / `a:hover`) | `themes/*/components/link/decoration.json` → `--pgn-typography-link-decoration-*`; `.btn` and `.tels-btn` scope the hover decoration to `none` in `overrides/_buttons.scss` and `overrides/_links.scss` |
 | `.pgn__hyperlink.inline-link` (Authn mailto, etc.) | same → **`link.inline.base`** (Paragon default is info blue) |
 | `.alert-link` / links inside Alert messages | same inline/base tokens via `overrides/_links.scss` + `_authn.scss` |
 
@@ -294,6 +297,7 @@ Only when a page needs parent alignment. No new colors.
 | `_communications.scss` | Bulk email tool (instructor-only) — shares Learning's header/footer; course-tabs bar flattened to match Learning's underline look (real Paragon `.nav-tabs`, not the underline style); content widened from the MFE's own "md" cap to standard site width |
 | `_ora-grading.scss` | Enhanced Staff Grader (instructor-only) — shares Learning's header/footer; content was a stray edge-to-edge `.container-fluid` (didn't line up under the inset header) — constrained to the standard content width |
 | `_admin-console.scss` | Platform AuthZ / admin tooling (staff-only) — shares Studio's header; no footer; content width not yet constrained (documented, not guessed) |
+| `_public.scss` | `frontend-app-public` page bodies (Home, Courses, Course About, About, Contact, Privacy, Terms) — template-1 hero/card/section/stats/legal classes (`.tels-*`); colors from `color.primary.hover/soft`, `color.chrome.*`, `color.marketing.accent`, `color.text.secondary`. `.custom-header` / `.tels-header` chrome is in `_header.scss`, the `.tels-footer` band in `_footer.scss`; their markup lives in `tutor-tels-theme-plugins` |
 | `_site.scss` | frontend-base shell (Instructor dashboard, Notifications): the shell renders header, instructor toolbar, course tabs and footer with utility classes only, so this maps its structure to the same tokens and mixins as Learning — logo size (`_header.scss`), content width, underline tabs, one footer (the shell's own footer is collapsed; the theme plugin also hides it through the compat footer slot). The shell's CSS is in cascade layers, so an `!important` of its utilities beats an `!important` here: override other properties instead of fighting `display` |
 | `_dark.scss` | Dark mode remaps for colors baked into MFE bundles (see "Dark mode") |
 

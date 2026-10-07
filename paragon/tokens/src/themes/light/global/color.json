@@ -69,6 +69,14 @@
       "light": {
         "$value": "#F2F7F8",
         "$description": "Primary light surface"
+      },
+      "hover": {
+        "$value": "#BC472E",
+        "$description": "Marketing primary hover/darker shade \u2192 --pgn-color-primary-hover (Lovable --brand-primary-hover)"
+      },
+      "soft": {
+        "$value": "#FFF1ED",
+        "$description": "Marketing primary tint surface (badges, icon chips, soft CTAs) \u2192 --pgn-color-primary-soft (Lovable --brand-primary-soft)"
       }
     },
     "secondary": {
@@ -282,12 +290,58 @@
         "$description": "Text primary variant"
       },
       "footer": {
-        "$value": "#374151",
-        "$description": "Footer text"
+        "$value": "#F9FAFB",
+        "$description": "Footer body text on the dark footer band (template-1 .tels-footer, color.footer.bg) \u2192 --pgn-color-text-footer"
       },
       "inverse": {
         "$value": "{color.white}",
         "$description": "Text, border or icon on a colored or dark backdrop (solid buttons, inverse buttons, badges, toolbars). White in both modes: in dark mode color.white is the surface color, this one stays white \u2192 --pgn-color-text-inverse"
+      },
+      "secondary": {
+        "$value": "#475467",
+        "$description": "Secondary body text \u2192 --pgn-color-text-secondary"
+      }
+    },
+    "chrome": {
+      "border": {
+        "$value": "#E5E5E5",
+        "$description": "Marketing chrome + public page borders (header/footer, cards, form fields, filter pills) \u2192 --pgn-color-chrome-border"
+      },
+      "surface-subtle": {
+        "$value": "#F9FAFB",
+        "$description": "Marketing chrome + public page subtle surface (search field bg, alternating section bg) \u2192 --pgn-color-chrome-surface-subtle"
+      },
+      "surface-warm": {
+        "$value": "#F7F5F2",
+        "$description": "Public page warm off-white surface for alternating sections \u2192 --pgn-color-chrome-surface-warm (Lovable --surface-warm)"
+      },
+      "text-muted": {
+        "$value": "#98A2B3",
+        "$description": "Marketing chrome muted text/icons \u2192 --pgn-color-chrome-text-muted"
+      }
+    },
+    "marketing": {
+      "accent": {
+        "$value": "#444CE7",
+        "$description": "Public page secondary accent (insight/tag highlights) \u2192 --pgn-color-marketing-accent (Lovable --brand-accent)"
+      }
+    },
+    "footer": {
+      "bg": {
+        "$value": "#1D2939",
+        "$description": "Site footer background \u2192 --pgn-color-footer-bg"
+      },
+      "link": {
+        "$value": "#D0D5DD",
+        "$description": "Footer link color \u2192 --pgn-color-footer-link"
+      },
+      "muted": {
+        "$value": "#98A2B3",
+        "$description": "Footer muted / copyright text \u2192 --pgn-color-footer-muted"
+      },
+      "border": {
+        "$value": "#344054",
+        "$description": "Footer dividers and social rings \u2192 --pgn-color-footer-border"
       }
     }
   }

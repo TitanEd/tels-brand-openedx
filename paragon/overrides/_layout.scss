@@ -22,6 +22,18 @@
   box-sizing: border-box;
 }
 
+// Marketing / public chrome (.tels-container) — same box as the MFE shells.
+// CustomHeader, the site footer and the public pages wrap content in this class.
+// Must be tels-content-width (half gutter + !important), not a second pad model,
+// or changing spacing.grid.gutter-width would miss those surfaces.
+@mixin tels-container {
+  @include tels-content-width;
+}
+
+.tels-container {
+  @include tels-container;
+}
+
 $tels-gutter-x: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 
 // Same content column as tels-content-width above, but as PADDING only — for

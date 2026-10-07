@@ -11,7 +11,10 @@
 
 // Catalog / learner-dashboard / authn desktop header
 .site-header-desktop > .container-fluid,
-.site-header-mobile > .container-fluid {
+.site-header-mobile > .container-fluid,
+// CustomHeader / public TelsHeader (template-1) — inner .tels-container is the same shell
+.custom-header > .tels-container,
+.tels-header > .tels-container {
   @include tels-content-width;
 }
 
@@ -646,4 +649,371 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   #root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider {
     background-color: var(--pgn-color-primary-base) !important;
   }
+}
+
+// ---------------------------------------------------------------------------
+// Template-1 chrome: CustomHeader / public TelsHeader (.custom-header, .tels-header, .tels-btn,
+// .tels-user-menu-toggle*). Markup lives in tutor-tels-theme-plugins. Ported from the
+// native-plus-template-a branch; white text on colored fills uses --pgn-color-text-inverse.
+// ---------------------------------------------------------------------------
+// --- Lovable-matching marketing header (.custom-header / .tels-header) ---
+// Markup: tutor-tels-theme-plugins CustomHeader (.custom-header).
+// .tels-header remains as an alias for the public MFE local preview copy.
+// Tokens: Layer 1 primary / text / bg / border + tels-content-width
+
+// Sizes match the Lovable reference exactly (app.scss .tels-btn / --lg / --sm).
+// core/components/button/size-padding-radius.json's --pgn-typography-btn-*
+// and --pgn-spacing-btn-padding-* tokens reference paths that don't exist
+// anywhere in this token tree, so those CSS vars never get generated —
+// every var() below was silently falling back to its literal fallback value,
+// and that fallback had been copy-pasted from the --sm variant, so the base
+// (unmodified) .tels-btn was rendering at "small" size everywhere, and
+// .tels-btn--lg (used throughout the public MFE's hero/CTA buttons) didn't
+// exist at all. Fixed with the literal values directly, same convention
+// _public.scss already uses for spacing/sizing (colors still go through
+// --pgn-color-btn-* tokens below, which do resolve correctly).
+.tels-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+  // Beat Paragon reboot `a:hover { text-decoration: underline }` when
+  // .tels-btn is an <a> / React Router <Link>.
+  --pgn-typography-link-decoration-base: none;
+  --pgn-typography-link-decoration-hover: none;
+  text-decoration: none;
+  font-family: inherit;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &--primary {
+    background: var(--pgn-color-btn-bg-primary);
+    color: var(--pgn-color-btn-text-primary) !important;
+    border-color: var(--pgn-color-btn-border-primary);
+
+    &:hover {
+      background: var(--pgn-color-btn-hover-bg-primary);
+      border-color: var(--pgn-color-btn-hover-border-primary, var(--pgn-color-btn-hover-bg-primary));
+      color: var(--pgn-color-btn-hover-text-primary) !important;
+      text-decoration: none;
+    }
+  }
+
+  &--ghost,
+  &--outline {
+    background: var(--pgn-color-bg-base, var(--pgn-color-white));
+    color: var(--pgn-color-btn-text-outline-primary) !important;
+    border-color: var(--pgn-color-btn-border-outline-primary);
+
+    &:hover {
+      background: var(--pgn-color-btn-bg-primary);
+      color: var(--pgn-color-btn-text-primary) !important;
+      border-color: var(--pgn-color-btn-border-primary);
+      text-decoration: none;
+    }
+  }
+
+  &--sm {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  &--lg {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.tels-header,
+.custom-header {
+  background: var(--pgn-color-bg-base, var(--pgn-color-white));
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.tels-header__row,
+.custom-header__row {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  height: 72px;
+}
+
+.tels-header__logo img,
+.custom-header__logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.tels-header__nav,
+.custom-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+
+  a,
+  .tels-header__nav-link,
+  .custom-header__nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--pgn-color-text-base) !important;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+
+    &:hover,
+    &.active {
+      color: var(--pgn-color-primary-base) !important;
+      border-bottom-color: var(--pgn-color-primary-base);
+    }
+  }
+}
+
+.tels-header__actions,
+.custom-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+// Native language menu + dark-mode switch inside the template header: stays
+// visible at every viewport (next to the user menu, or the hamburger on phones).
+.custom-header__controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  .indigo-header-controls {
+    margin-right: 0 !important;
+  }
+}
+
+.tels-header__user,
+.custom-header__user {
+  position: relative;
+}
+
+.tels-header__user-toggle,
+.custom-header__user-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1px solid var(--pgn-color-light-500, #E5E5E5);
+  border-radius: var(--pgn-size-border-radius-base, 8px);
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--pgn-color-text-base);
+  cursor: pointer;
+}
+
+.tels-header__user-menu,
+.custom-header__user-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 180px;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  background: var(--pgn-color-bg-base, var(--pgn-color-white));
+  border: 1px solid var(--pgn-color-light-500, #E5E5E5);
+  border-radius: var(--pgn-size-border-radius-base, 8px);
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+  z-index: 50;
+
+  a {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    color: var(--pgn-color-text-base);
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      background: var(--pgn-color-light-100, #F9FAFB);
+      color: var(--pgn-color-primary-base);
+    }
+  }
+}
+
+.tels-header__mobile,
+.custom-header__mobile {
+  display: none;
+  margin-inline-start: auto;
+  background: none;
+  border: 0;
+  font-size: 1.25rem;
+  color: var(--pgn-color-text-base);
+  cursor: pointer;
+}
+
+.tels-header__mobile-panel,
+.custom-header__mobile-panel {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .tels-header__nav,
+  .tels-header__actions,
+  .custom-header__nav,
+  .custom-header__actions {
+    display: none;
+  }
+
+  .tels-header__mobile,
+  .custom-header__mobile {
+    display: inline-flex;
+  }
+
+  .tels-header__mobile-panel,
+  .custom-header__mobile-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    // Full-bleed panel (border spans the viewport); L/R matches native gutter.
+    @include tels-content-inset;
+    border-top: 1px solid var(--pgn-color-chrome-border);
+    background: var(--pgn-color-bg-base, var(--pgn-color-white));
+
+    a:not(.tels-btn) {
+      padding: 0.5rem 0;
+      color: var(--pgn-color-text-base) !important;
+      text-decoration: none;
+      font-weight: 500;
+
+      &.active,
+      &:hover {
+        color: var(--pgn-color-primary-base) !important;
+      }
+    }
+
+    .tels-btn {
+      align-self: flex-start;
+    }
+  }
+}
+
+[data-paragon-theme-variant="dark"] {
+  .tels-header,
+  .custom-header {
+    background: var(--pgn-color-bg-base);
+    border-bottom-color: var(--pgn-color-light-base, #374151);
+  }
+
+  .tels-header__user-menu,
+  .custom-header__user-menu {
+    background: var(--pgn-color-bg-base);
+    border-color: var(--pgn-color-light-base, #374151);
+  }
+}
+
+// Custom header user-menu toggle (avatar + name + chevron) — inserted via
+// org.openedx.frontend.layout.header_desktop_user_menu_toggle.v1 by
+// tutor-tels-theme-plugins' CustomHeaderUserMenuDropdown.jsx, replacing the
+// native toggle's contents on account/gradebook/learner-dashboard/
+// discussions/communications/learning (see that plugin's plugin.py,
+// HEADER_USER_MENU_SLOTS, for which MFEs get it). It renders *inside* the
+// header package's own native `.dropdown-toggle.btn.btn-outline-primary`
+// button, so that button's own chrome (border, padding, hover state) still
+// comes from the rules above — only the avatar/name/chevron content itself
+// is styled here. Previously injected at runtime via a <style> tag in that
+// component; moved here so it ships with the rest of the header's design
+// tokens instead.
+//
+// Deliberately does NOT reuse the bare `.avatar` class — that already has a
+// `#root header .menu-trigger .avatar` rule above (native <Avatar> icon)
+// which would otherwise clobber this component's own sizing/background
+// regardless of specificity. Same box treatment as that native icon
+// (tels-header-user-icon-box, same 1.25rem — matches every other header
+// icon instead of inventing a separate size), reused here rather than
+// duplicated, so the two stay in sync.
+.tels-user-menu-toggle-avatar {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: cover;
+}
+
+.tels-user-menu-toggle-avatar-container {
+  @include tels-header-user-icon-box;
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  background-color: var(--pgn-color-light-400, #eaeaea) !important;
+
+  // Extra .pgn__icon wrapper span here (Paragon's <Icon> component) that the
+  // native rule above doesn't have to size through. Same explicit-size, all
+  // the way to the svg, !important treatment as that rule's own `svg` block
+  // — needed because Paragon's own core.css ships
+  // `.pgn__icon svg { width: 100%; height: 100%; }`, whose percentage sizing
+  // doesn't resolve reliably through this nested inline-flex chain
+  // (confirmed live in DevTools: the icon rendered outside its circle
+  // instead of filling it).
+  .pgn__icon {
+    display: block !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+
+    svg {
+      display: block !important;
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+      color: inherit !important;
+      fill: currentColor !important;
+    }
+  }
+}
+
+.tels-user-menu-toggle-name {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  color: var(--pgn-color-text-base, #1f2937);
+  text-transform: capitalize;
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tels-user-menu-toggle-chevron {
+  width: 0.85rem;
+  height: 0.85rem;
+  color: currentColor;
+  transform: rotate(0deg);
+  transition: transform 150ms ease;
+
+  &.is-open {
+    transform: rotate(180deg);
+  }
+}
+
+// Bootstrap/Paragon auto-paints a caret via `.dropdown-toggle::after` on any
+// element with that class — this component only replaces the toggle
+// button's inner content (it doesn't own the <button> itself), so that
+// native caret was rendering right alongside this component's own chevron
+// SVG, showing two. Hide it specifically where this chevron is present,
+// rather than globally on every `.dropdown-toggle` (native toggles
+// elsewhere in the header — e.g. the studio user menu above — still need
+// their own `::after` caret).
+.dropdown-toggle:has(.tels-user-menu-toggle-chevron)::after {
+  display: none !important;
+  content: none !important;
 }

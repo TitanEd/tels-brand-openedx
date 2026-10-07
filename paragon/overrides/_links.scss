@@ -50,7 +50,8 @@ button.btn-link,
 }
 
 // Order matters (visited → hover → focus → active): same specificity, last wins.
-a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more) {
+// Template-1 chrome nav + .tels-btn action links keep their own colors (Register keeps its white label).
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more):not(.tels-btn):not(.tels-header__nav-link):not(.custom-header__nav-link) {
   color: $tels-link;
 
   &:visited {
@@ -67,5 +68,21 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 
   &:active {
     color: $tels-link-active;
+  }
+}
+
+// Action buttons rendered as <a> / <Link> must never pick up the reboot link underline
+// (--pgn-typography-link-decoration-*, themes/*/components/link/decoration.json).
+a.tels-btn,
+a.btn:not(.btn-link),
+.tels-btn {
+  --pgn-typography-link-decoration-base: none;
+  --pgn-typography-link-decoration-hover: none;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
   }
 }
