@@ -1,0 +1,69 @@
+{
+  "$description": "Dark twin of themes/light/components/progress-bar/colors.json (scripts/sync-dark-tokens.js). progress-bar — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "progress-bar": {
+      "base": {
+        "$value": "{color.text.inverse}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-progress-bar-base",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "bg": {
+        "annotated": {
+          "$value": "{color.dark.500}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-progress-bar-bg-annotated",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "base": {
+          "$value": "{color.accent.a}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-progress-bar-bg-base",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "border": {
+        "$value": "{color.gray.500}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-progress-bar-border",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    },
+    "progress": {
+      "bg": {
+        "$value": "transparent",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-progress-bg",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "progress-bar": {
+      "box-shadow": {
+        "$value": "none",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-progress-bar-box-shadow",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  }
+}

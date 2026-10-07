@@ -34,3 +34,6 @@
 @import "./communications";
 @import "./ora-grading";
 @import "./admin-console";
+
+// Dark mode remaps for colors baked into MFE bundles — last, so it wins
+@import "./dark";

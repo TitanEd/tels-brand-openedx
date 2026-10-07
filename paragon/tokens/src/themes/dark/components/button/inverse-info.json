@@ -1,25 +1,25 @@
 {
-  "$description": "Dark \u2014 inverse info (white fill). Labels use modify:null.",
+  "$description": "Dark — inverse info (white fill). Labels use modify:null.",
   "color": {
     "btn": {
       "bg": {
         "inverse-info": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-inverse-info"
+          "$description": "bg (dark) → --pgn-color-btn-bg-inverse-info"
         }
       },
       "text": {
         "inverse-info": {
           "$value": "{color.info.base}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-inverse-info"
+          "$description": "text (dark) → --pgn-color-btn-text-inverse-info"
         }
       },
       "border": {
         "inverse-info": {
           "$value": "transparent",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-inverse-info"
+          "$description": "border (dark) → --pgn-color-btn-border-inverse-info"
         }
       },
       "hover": {
@@ -27,20 +27,20 @@
           "inverse-info": {
             "$value": "#EBEBEB",
             "modify": null,
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-inverse-info"
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-inverse-info"
           }
         },
         "text": {
           "inverse-info": {
             "$value": "{color.info.800}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-inverse-info"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-inverse-info"
           }
         },
         "border": {
           "inverse-info": {
             "$value": "transparent",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-inverse-info"
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-inverse-info"
           }
         }
       },
@@ -48,20 +48,20 @@
         "bg": {
           "inverse-info": {
             "$value": "#EBEBEB",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-inverse-info"
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-inverse-info"
           }
         },
         "text": {
           "inverse-info": {
             "$value": "{color.info.800}",
             "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-inverse-info"
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-inverse-info"
           }
         },
         "border": {
           "inverse-info": {
             "$value": "transparent",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-inverse-info"
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-inverse-info"
           }
         }
       },
@@ -69,20 +69,66 @@
         "bg": {
           "inverse-info": {
             "$value": "{color.btn.bg.inverse-info}",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-inverse-info"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-inverse-info"
           }
         },
         "text": {
           "inverse-info": {
             "$value": "{color.btn.text.inverse-info}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-inverse-info"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-inverse-info"
           }
         },
         "border": {
           "inverse-info": {
             "$value": "transparent",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-inverse-info"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-inverse-info"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-info": {
+            "$value": "{color.btn.bg.inverse-info}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-inverse-info",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "inverse-info": {
+            "$value": "{color.text.inverse}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-inverse-info",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "inverse-info": {
+            "$value": "{color.btn.focus.border.inverse-info}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-inverse-info",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "inverse-info": {
+            "$value": "{color.btn.text.inverse-info}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-inverse-info",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

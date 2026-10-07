@@ -7,14 +7,43 @@
         "$description": "Popover background (dark) → --pgn-color-popover-bg"
       },
       "border": {
-        "$value": "{color.white}",
-        "modify": [{ "type": "alpha", "amount": 0.2 }],
+        "$value": "{color.text.inverse}",
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.2
+          }
+        ],
         "$description": "Popover border (dark): white at 20% → --pgn-color-popover-border"
       },
       "header": {
         "bg": {
           "$value": "{color.gray.100}",
           "$description": "Popover title background (dark) → --pgn-color-popover-header-bg"
+        },
+        "border-bottom-dark": {
+          "modify": [
+            {
+              "type": "darken",
+              "amount": 0.05
+            }
+          ],
+          "$value": "{color.text.inverse}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-popover-header-border-bottom-dark",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "text": {
+          "$value": "{color.headings.base}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-popover-header-text",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
         }
       },
       "success": {
@@ -33,6 +62,54 @@
         "bg": {
           "$value": "{color.theme.bg.danger}",
           "$description": "Danger popover title background (dark) → --pgn-color-popover-danger-bg"
+        }
+      },
+      "arrow": {
+        "base": {
+          "$value": "{color.popover.bg}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-popover-arrow-base",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "outer": {
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.05
+            }
+          ],
+          "$value": "{color.popover.border}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-popover-arrow-outer",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "body": {
+        "$value": "{color.body.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-popover-body",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "popover": {
+      "box-shadow": {
+        "$value": "none",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-popover-box-shadow",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
         }
       }
     }

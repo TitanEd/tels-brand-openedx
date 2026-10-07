@@ -1,0 +1,662 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/global/elevation.json (scripts/sync-dark-tokens.js).",
+  "elevation": {
+    "box-shadow": {
+      "level": {
+        "2": {
+          "source": "$level-2-box-shadow",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".5rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-level-2 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Basic box shadow of level 2.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "3": {
+          "source": "$level-3-box-shadow",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".625rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-level-3 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Basic box shadow of level 3.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "4": {
+          "source": "$level-4-box-shadow",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".625rem",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "1.25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-level-4 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Basic box shadow of level 4.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "5": {
+          "source": "$level-5-box-shadow",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "1.25rem",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "3rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-level-5 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Basic box shadow of level 5.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "base": {
+        "source": "$box-shadow",
+        "$value": {
+          "color": "rgba(0, 0, 0, .3)",
+          "offsetX": "0",
+          "offsetY": ".125rem",
+          "blur": ".25rem"
+        },
+        "$description": "Paragon default → --pgn-elevation-box-shadow-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Default box shadow.",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "sm": {
+        "source": "$box-shadow-sm",
+        "$value": {
+          "color": "rgba(0, 0, 0, .2)",
+          "offsetX": "0",
+          "offsetY": ".0625rem",
+          "blur": ".125rem"
+        },
+        "$description": "Paragon default → --pgn-elevation-box-shadow-sm (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Small box shadow.",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "lg": {
+        "source": "$box-shadow-lg",
+        "$value": {
+          "color": "rgba(0, 0, 0, .3)",
+          "offsetX": "0",
+          "offsetY": ".25rem",
+          "blur": ".5rem"
+        },
+        "$description": "Paragon default → --pgn-elevation-box-shadow-lg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Large box shadow.",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "down": {
+        "3": {
+          "source": "$box-shadow-down-3",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".25rem",
+              "blur": ".625rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-down-3 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Bottom box shadow of level 3.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "4": {
+          "source": "$box-shadow-down-4",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".625rem",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "1.25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-down-4 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Bottom box shadow of level 4.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "5": {
+          "source": "$box-shadow-down-5",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "1.25rem",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".5rem",
+              "blur": "3rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-down-5 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Bottom box shadow of level 5.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "left": {
+        "1": {
+          "source": "$box-shadow-left-1",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.0625rem",
+              "offsetY": "0",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.0625rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-left-1 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Left box shadow of level 1.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "2": {
+          "source": "$box-shadow-left-2",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.125rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.125rem",
+              "offsetY": "0",
+              "blur": ".5rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-left-2 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Left box shadow of level 2.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "3": {
+          "source": "$box-shadow-left-3",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.5rem",
+              "offsetY": "0",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.25rem",
+              "offsetY": "0",
+              "blur": ".625rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-left-3 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Left box shadow of level 3.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "4": {
+          "source": "$box-shadow-left-4",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.625rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.5rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-left-4 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Left box shadow of level 4.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "5": {
+          "source": "$box-shadow-left-5",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-1.25rem",
+              "offsetY": "0",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "-.5rem",
+              "offsetY": "0",
+              "blur": "3rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-left-5 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Left box shadow of level 5.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "up": {
+        "1": {
+          "source": "$box-shadow-up-1",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.0625rem",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.0625rem",
+              "blur": ".25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-up-1 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Top box shadow of level 1.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "2": {
+          "source": "$box-shadow-up-2",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.125rem",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.125rem",
+              "blur": ".5rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-up-2 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Top box shadow of level 2.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "3": {
+          "source": "$box-shadow-up-3",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.5rem",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.25rem",
+              "blur": ".625rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-up-3 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Top box shadow of level 3.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "4": {
+          "source": "$box-shadow-up-4",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.625rem",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.5rem",
+              "blur": "1.25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-up-4 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Top box shadow of level 4.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "5": {
+          "source": "$box-shadow-up-5",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-1.25rem",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "-.5rem",
+              "blur": "3rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-up-5 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Basic box shadow of level 5.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "right": {
+        "1": {
+          "source": "$box-shadow-right-1",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".0625rem",
+              "offsetY": "0",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".0625rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-right-1 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Right box shadow of level 1.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "2": {
+          "source": "$box-shadow-right-2",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".125rem",
+              "offsetY": "0",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".125rem",
+              "offsetY": "0",
+              "blur": ".5rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-right-2 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Right box shadow of level 2.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "3": {
+          "source": "$box-shadow-right-3",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".5rem",
+              "offsetY": "0",
+              "blur": "1rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".25rem",
+              "offsetY": "0",
+              "blur": ".625rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-right-3 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Right box shadow of level 3.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "4": {
+          "source": "$box-shadow-right-4",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".625rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".5rem",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-right-4 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Right box shadow of level 4.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "5": {
+          "source": "$box-shadow-right-5",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "1.25rem",
+              "offsetY": "0",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": ".5rem",
+              "offsetY": "0",
+              "blur": "3rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-right-5 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Right box shadow of level 5.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "centered": {
+        "2": {
+          "source": "$box-shadow-centered-2",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".5rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-centered-2 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Centered box shadow of level 2.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "3": {
+          "source": "$box-shadow-centered-3",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".625rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-centered-3 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Centered box shadow of level 3.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "4": {
+          "source": "$box-shadow-centered-4",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "1.25rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-centered-4 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Centered box shadow of level 4.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "5": {
+          "source": "$box-shadow-centered-5",
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "2.5rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "3rem"
+            }
+          ],
+          "$description": "Paragon default → --pgn-elevation-box-shadow-centered-5 (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Centered box shadow of level 5.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

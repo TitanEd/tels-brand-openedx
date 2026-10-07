@@ -1,0 +1,33 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/Stepper.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "stepper": {
+      "header": {
+        "step": {
+          "bg": {
+            "base": {
+              "source": "$stepper-header-step-bg",
+              "$value": "{color.stepper.header.bg.base}",
+              "$description": "Paragon default → --pgn-color-stepper-header-step-bg-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "border": {
+            "source": "$stepper-header-step-border",
+            "$value": "none",
+            "$description": "Paragon default → --pgn-color-stepper-header-step-border (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

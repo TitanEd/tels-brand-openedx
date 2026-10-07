@@ -10,7 +10,7 @@
       },
       "text": {
         "primary": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
           "$description": "Solid primary text (dark) → --pgn-color-btn-text-primary"
         }
@@ -24,7 +24,7 @@
         },
         "text": {
           "primary": {
-            "$value": "#FFFFFF",
+            "$value": "{color.text.inverse}",
             "modify": null,
             "$description": "Hover text (dark)"
           }
@@ -45,7 +45,7 @@
         },
         "text": {
           "primary": {
-            "$value": "#FFFFFF",
+            "$value": "{color.text.inverse}",
             "modify": null,
             "$description": "Active text (dark)"
           }
@@ -75,6 +75,63 @@
           "primary": {
             "$value": "{color.btn.border.primary}",
             "$description": "Disabled border (dark)"
+          }
+        }
+      },
+      "border": {
+        "primary": {
+          "$value": "{color.btn.bg.primary}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Solid primary border → --pgn-color-btn-border-primary",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "primary": {
+            "$value": "{color.btn.bg.primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "{color.btn.border.primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "primary": {
+            "$value": "{color.theme.focus.primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "{color.btn.text.primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

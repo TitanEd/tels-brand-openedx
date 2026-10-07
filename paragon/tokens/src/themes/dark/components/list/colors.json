@@ -1,72 +1,72 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 List group.",
+  "$description": "LAYER 2 (dark) — List group.",
   "color": {
     "list-group": {
       "base": {
         "$value": "inherit",
-        "$description": "List item text (dark) \u2192 --pgn-color-list-group-base"
+        "$description": "List item text (dark) → --pgn-color-list-group-base"
       },
       "bg": {
         "base": {
           "$value": "{color.surface.base}",
-          "$description": "List background (dark) \u2192 --pgn-color-list-group-bg-base"
+          "$description": "List background (dark) → --pgn-color-list-group-bg-base"
         },
         "hover": {
           "$value": "{color.gray.100}",
-          "$description": "List item hover (dark) \u2192 --pgn-color-list-group-bg-hover"
+          "$description": "List item hover (dark) → --pgn-color-list-group-bg-hover"
         }
       },
       "border": {
-        "$value": "{color.white}",
+        "$value": "{color.text.inverse}",
         "modify": [
           {
             "type": "alpha",
             "amount": 0.125
           }
         ],
-        "$description": "List border (dark): white at 12.5% \u2192 --pgn-color-list-group-border"
+        "$description": "List border (dark): white at 12.5% → --pgn-color-list-group-border"
       },
       "active": {
         "base": {
           "$value": "{color.active}",
-          "$description": "Selected item text (dark) \u2192 --pgn-color-list-group-active-base"
+          "$description": "Selected item text (dark) → --pgn-color-list-group-active-base"
         },
         "bg": {
           "$value": "{color.bg.active}",
-          "$description": "Selected item background (dark) \u2192 --pgn-color-list-group-active-bg"
+          "$description": "Selected item background (dark) → --pgn-color-list-group-active-bg"
         },
         "border": {
           "$value": "{color.list-group.active.bg}",
-          "$description": "Selected item border (dark) \u2192 --pgn-color-list-group-active-border"
+          "$description": "Selected item border (dark) → --pgn-color-list-group-active-border"
         }
       },
       "disabled": {
         "base": {
           "$value": "{color.gray.400}",
-          "$description": "Disabled item text (dark) \u2192 --pgn-color-list-group-disabled-base"
+          "$description": "Disabled item text (dark) → --pgn-color-list-group-disabled-base"
         },
         "bg": {
           "$value": "{color.list-group.bg.base}",
-          "$description": "Disabled item background (dark) \u2192 --pgn-color-list-group-disabled-bg"
+          "$description": "Disabled item background (dark) → --pgn-color-list-group-disabled-bg"
         }
       },
       "action": {
         "base": {
           "$value": "{color.gray.700}",
-          "$description": "Action item text (dark) \u2192 --pgn-color-list-group-action-base"
+          "$description": "Action item text (dark) → --pgn-color-list-group-action-base"
         },
         "hover": {
           "$value": "{color.list-group.action.base}",
-          "$description": "Action item hover text (dark) \u2192 --pgn-color-list-group-action-hover"
+          "$description": "Action item hover text (dark) → --pgn-color-list-group-action-hover"
         },
         "active": {
           "base": {
             "$value": "{color.body.base}",
-            "$description": "Action item pressed text (dark) \u2192 --pgn-color-list-group-action-active-base"
+            "$description": "Action item pressed text (dark) → --pgn-color-list-group-action-active-base"
           },
           "bg": {
             "$value": "{color.gray.200}",
-            "$description": "Action item pressed background (dark) \u2192 --pgn-color-list-group-action-active-bg"
+            "$description": "Action item pressed background (dark) → --pgn-color-list-group-action-active-bg"
           }
         }
       }

@@ -1,0 +1,24 @@
+{
+  "$description": "Dark twin of themes/light/components/scrollable/colors.json (scripts/sync-dark-tokens.js). scrollable — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "elevation": {
+    "scrollable": {
+      "body": {
+        "box-shadow": {
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.55
+            }
+          ],
+          "$value": "{color.black}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-scrollable-body-box-shadow",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

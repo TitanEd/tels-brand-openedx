@@ -1,65 +1,65 @@
 {
-  "$description": "Dark \u2014 inverse outline primary: white outline, white fill on hover / press. Labels use modify:null.",
+  "$description": "Dark — inverse outline primary: white outline, white fill on hover / press. Labels use modify:null.",
   "color": {
     "btn": {
       "bg": {
         "inverse-outline-primary": {
           "$value": "transparent",
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-inverse-outline-primary"
+          "$description": "bg (dark) → --pgn-color-btn-bg-inverse-outline-primary"
         }
       },
       "text": {
         "inverse-outline-primary": {
-          "$value": "{color.white}",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-inverse-outline-primary"
+          "$description": "text (dark) → --pgn-color-btn-text-inverse-outline-primary"
         }
       },
       "border": {
         "inverse-outline-primary": {
-          "$value": "{color.white}",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-inverse-outline-primary"
+          "$value": "{color.text.inverse}",
+          "$description": "border (dark) → --pgn-color-btn-border-inverse-outline-primary"
         }
       },
       "hover": {
         "bg": {
           "inverse-outline-primary": {
-            "$value": "{color.white}",
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-inverse-outline-primary"
+            "$value": "{color.text.inverse}",
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-inverse-outline-primary"
           }
         },
         "text": {
           "inverse-outline-primary": {
             "$value": "{color.primary.800}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-inverse-outline-primary"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-inverse-outline-primary"
           }
         },
         "border": {
           "inverse-outline-primary": {
-            "$value": "{color.white}",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-inverse-outline-primary"
+            "$value": "{color.text.inverse}",
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-inverse-outline-primary"
           }
         }
       },
       "active": {
         "bg": {
           "inverse-outline-primary": {
-            "$value": "{color.white}",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-inverse-outline-primary"
+            "$value": "{color.text.inverse}",
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-inverse-outline-primary"
           }
         },
         "text": {
           "inverse-outline-primary": {
             "$value": "{color.primary.800}",
             "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-inverse-outline-primary"
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-inverse-outline-primary"
           }
         },
         "border": {
           "inverse-outline-primary": {
-            "$value": "{color.white}",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-inverse-outline-primary"
+            "$value": "{color.text.inverse}",
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-inverse-outline-primary"
           }
         }
       },
@@ -67,20 +67,66 @@
         "bg": {
           "inverse-outline-primary": {
             "$value": "transparent",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-inverse-outline-primary"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-inverse-outline-primary"
           }
         },
         "text": {
           "inverse-outline-primary": {
-            "$value": "{color.white}",
+            "$value": "{color.text.inverse}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-inverse-outline-primary"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-inverse-outline-primary"
           }
         },
         "border": {
           "inverse-outline-primary": {
-            "$value": "{color.white}",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-inverse-outline-primary"
+            "$value": "{color.text.inverse}",
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-inverse-outline-primary"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-outline-primary": {
+            "$value": "inherit",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-inverse-outline-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "inverse-outline-primary": {
+            "$value": "{color.btn.border.inverse-outline-primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-inverse-outline-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "inverse-outline-primary": {
+            "$value": "{color.btn.border.inverse-outline-primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-inverse-outline-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "inverse-outline-primary": {
+            "$value": "{color.btn.text.inverse-outline-primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-inverse-outline-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

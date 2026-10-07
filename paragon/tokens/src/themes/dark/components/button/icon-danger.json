@@ -1,0 +1,93 @@
+{
+  "$description": "Dark twin of themes/light/components/button/icon-danger.json (scripts/sync-dark-tokens.js). button — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "icon-button": {
+      "bg": {
+        "danger": {
+          "base": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-danger-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-danger-focus",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "$value": "{color.danger.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-danger-hover",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      },
+      "text": {
+        "danger": {
+          "base": {
+            "$value": "{color.danger.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-danger-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.danger.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-danger-focus",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-danger-hover",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "icon-button": {
+      "box-shadow": {
+        "danger": {
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.danger.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-icon-button-box-shadow-danger-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

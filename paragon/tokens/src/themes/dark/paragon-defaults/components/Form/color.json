@@ -1,0 +1,521 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/Form/color.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "form": {
+      "input": {
+        "plaintext": {
+          "source": "$input-plaintext-color",
+          "$value": "{color.body.base}",
+          "$description": "Paragon default → --pgn-color-form-input-plaintext (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "control": {
+        "indicator": {
+          "bg": {
+            "disabled": {
+              "source": "$custom-control-indicator-disabled-bg",
+              "$value": "{color.form.input.bg.disabled}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-bg-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "checked": {
+            "base": {
+              "source": "$custom-control-indicator-checked-color",
+              "$value": "{color.bg.active}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-checked-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "valid": {
+              "source": "$custom-control-indicator-checked-valid-color",
+              "$value": "{color.success.base}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-checked-valid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "invalid": {
+              "source": "$custom-control-indicator-checked-invalid-color",
+              "$value": "{color.danger.base}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-checked-invalid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "bg": {
+              "disabled": {
+                "source": "$custom-control-indicator-checked-disabled-bg",
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.5
+                  }
+                ],
+                "$value": "{color.primary.base}",
+                "$description": "Paragon default → --pgn-color-form-control-indicator-checked-bg-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            },
+            "border": {
+              "focus": {
+                "source": "$custom-control-indicator-focus-border-color",
+                "$value": "{color.form.input.focus.border}",
+                "$description": "Paragon default → --pgn-color-form-control-indicator-checked-border-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "source": "$custom-control-indicator-active-color",
+              "$value": "{color.active}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "bg": {
+              "source": "$custom-control-indicator-active-bg",
+              "$value": "{color.bg.active}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-active-bg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "border": {
+              "source": "$custom-control-indicator-active-border-color",
+              "$value": "{color.form.control.indicator.active.bg}",
+              "$description": "Paragon default → --pgn-color-form-control-indicator-active-border (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "label": {
+          "base": {
+            "source": "$custom-control-label-color",
+            "$value": "inherit",
+            "$description": "Paragon default → --pgn-color-form-control-label-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "disabled": {
+            "source": "$custom-control-label-disabled-color",
+            "$value": "{color.disabled}",
+            "$description": "Paragon default → --pgn-color-form-control-label-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "checkbox": {
+          "indicator": {
+            "indeterminate": {
+              "base": {
+                "source": "$custom-checkbox-indicator-indeterminate-color",
+                "$value": "{color.form.control.indicator.checked.base}",
+                "$description": "Paragon default → --pgn-color-form-control-checkbox-indicator-indeterminate-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "bg": {
+                "source": "$custom-checkbox-indicator-indeterminate-bg",
+                "$value": "{color.bg.active}",
+                "$description": "Paragon default → --pgn-color-form-control-checkbox-indicator-indeterminate-bg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "border": {
+                "source": "$custom-checkbox-indicator-indeterminate-border-color",
+                "$value": "{color.form.control.checkbox.indicator.indeterminate.bg}",
+                "$description": "Paragon default → --pgn-color-form-control-checkbox-indicator-indeterminate-border (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "select": {
+          "base": {
+            "source": "$custom-select-color",
+            "$value": "{color.form.input.base}",
+            "$type": "color",
+            "$description": "Paragon default → --pgn-color-form-control-select-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "disabled": {
+            "source": "$custom-select-disabled-color",
+            "$value": "{color.disabled}",
+            "$type": "color",
+            "$description": "Paragon default → --pgn-color-form-control-select-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "indicator": {
+            "base": {
+              "source": "$custom-select-indicator-color",
+              "$value": "{color.theme.hover.gray}",
+              "$description": "Paragon default → --pgn-color-form-control-select-indicator-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "bg": {
+            "base": {
+              "source": "$custom-select-bg",
+              "$value": "{color.form.input.bg.base}",
+              "$type": "color",
+              "$description": "Paragon default → --pgn-color-form-control-select-bg-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "disabled": {
+              "source": "$custom-select-disabled-bg",
+              "$value": "{color.gray.100}",
+              "$type": "color",
+              "$description": "Paragon default → --pgn-color-form-control-select-bg-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "size": {
+              "source": "$custom-select-bg-size",
+              "$value": "{color.gray.100}",
+              "$type": "dimension",
+              "$description": "Paragon default → --pgn-color-form-control-select-bg-size (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "border": {
+            "base": {
+              "source": "$custom-select-border-color",
+              "$value": "{color.form.input.border}",
+              "$description": "Paragon default → --pgn-color-form-control-select-border-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "source": "$custom-select-focus-border-color",
+              "$value": "{color.form.input.focus.border}",
+              "$description": "Paragon default → --pgn-color-form-control-select-border-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "range": {
+          "track": {
+            "bg": {
+              "source": "$custom-range-track-bg",
+              "$value": "{color.gray.300}",
+              "$description": "Paragon default → --pgn-color-form-control-range-track-bg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "thumb": {
+            "bg": {
+              "base": {
+                "source": "$custom-range-thumb-bg",
+                "$value": "{color.bg.active}",
+                "$description": "Paragon default → --pgn-color-form-control-range-thumb-bg-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "disabled": {
+                "source": "$custom-range-thumb-disabled-bg",
+                "$value": "{color.disabled}",
+                "$description": "Paragon default → --pgn-color-form-control-range-thumb-bg-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active": {
+                "source": "$custom-range-thumb-active-bg",
+                "modify": [
+                  {
+                    "type": "lighten",
+                    "amount": "0.35"
+                  }
+                ],
+                "$value": "{color.bg.active}",
+                "$description": "Paragon default → --pgn-color-form-control-range-thumb-bg-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "file": {
+          "base": {
+            "source": "$custom-file-color",
+            "$value": "{color.form.input.base}",
+            "$description": "Paragon default → --pgn-color-form-control-file-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "bg": {
+            "base": {
+              "source": "$custom-file-bg",
+              "$value": "{color.form.input.bg.base}",
+              "$description": "Paragon default → --pgn-color-form-control-file-bg-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "disabled": {
+              "source": "$custom-file-disabled-bg",
+              "$value": "{color.form.input.bg.disabled}",
+              "$description": "Paragon default → --pgn-color-form-control-file-bg-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "button": {
+            "base": {
+              "source": "$custom-file-button-color",
+              "$value": "{color.form.control.file.base}",
+              "$description": "Paragon default → --pgn-color-form-control-file-button-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "bg": {
+              "source": "$custom-file-button-bg",
+              "$value": "{color.form.input.group.addon.bg}",
+              "$description": "Paragon default → --pgn-color-form-control-file-button-bg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "border": {
+            "base": {
+              "source": "$custom-file-border-color",
+              "$value": "{color.form.input.border}",
+              "$description": "Paragon default → --pgn-color-form-control-file-border-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "source": "$custom-file-focus-border-color",
+              "$value": "{color.form.input.focus.border}",
+              "$description": "Paragon default → --pgn-color-form-control-file-border-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "feedback": {
+        "icon": {
+          "valid": {
+            "source": "$form-feedback-icon-valid-color",
+            "$value": "{color.form.feedback.valid}",
+            "$description": "Paragon default → --pgn-color-form-feedback-icon-valid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "invalid": {
+            "source": "$form-feedback-icon-invalid-color",
+            "$value": "{color.form.feedback.invalid}",
+            "$description": "Paragon default → --pgn-color-form-feedback-icon-invalid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "tooltip": {
+          "valid": {
+            "source": "$form-feedback-tooltip-valid-color",
+            "modify": [
+              {
+                "type": "color-yiq"
+              }
+            ],
+            "$value": "{color.form.feedback.valid}",
+            "$description": "Paragon default → --pgn-color-form-feedback-tooltip-valid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "bg": {
+            "valid": {
+              "source": "$form-feedback-tooltip-valid-bg",
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 0.9
+                }
+              ],
+              "$value": "{color.form.feedback.valid}",
+              "$description": "Paragon default → --pgn-color-form-feedback-tooltip-bg-valid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "invalid": {
+              "source": "$form-feedback-tooltip-invalid-bg",
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 0.9
+                }
+              ],
+              "$value": "{color.form.feedback.invalid}",
+              "$description": "Paragon default → --pgn-color-form-feedback-tooltip-bg-invalid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "checked": {
+          "valid": {
+            "source": "$form-feedback-checked-valid-color",
+            "modify": [
+              {
+                "type": "lighten",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.form.feedback.valid}",
+            "$description": "Paragon default → --pgn-color-form-feedback-checked-valid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "invalid": {
+            "source": "$form-feedback-checked-invalid-color",
+            "modify": [
+              {
+                "type": "lighten",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.form.feedback.invalid}",
+            "$description": "Paragon default → --pgn-color-form-feedback-checked-invalid (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

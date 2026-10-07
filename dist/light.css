@@ -731,6 +731,7 @@
   --pgn-color-bg-base: var(--pgn-color-white);
   --pgn-color-text-50-black: #00000080;
   --pgn-color-text-50-white: #FFFFFF80;
+  --pgn-color-text-inverse: var(--pgn-color-white);
   --pgn-color-active: var(--pgn-color-white);
   --pgn-color-border: var(--pgn-color-gray-200);
   --pgn-color-theme-bg-gray: var(--pgn-color-gray-100);
@@ -4848,7 +4849,7 @@ input.form-control:disabled {
 .badge.badge-info,
 .badge-info {
   background-color: var(--pgn-color-primary-base) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
   border-radius: var(--pgn-size-border-radius-sm) !important;
 }
 .badge.badge-info .btn,
@@ -4859,7 +4860,7 @@ input.form-control:disabled {
 .badge-info .btn-info {
   background-color: transparent !important;
   border-color: transparent !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 
 select.form-control,
@@ -4924,7 +4925,7 @@ select.form-control.has-value option:focus,
 .pgn__form-control-decorator-group > select.form-control option:focus {
   background-color: var(--pgn-color-primary-base) !important;
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 
 .pgn__searchfield:not(.pgn__searchfield--external) {
@@ -6630,19 +6631,19 @@ a.btn.btn-primary,
 .btn-icon.btn-icon-primary,
 button.btn-icon.btn-icon-primary {
   --btn-icon-color: var(--pgn-color-icon-button-text-primary-base);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse)));
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-hover);
   color: var(--pgn-color-icon-button-text-primary-base) !important;
 }
 .btn-icon.btn-icon-primary:hover:not(:disabled), .btn-icon.btn-icon-primary:focus:not(:disabled),
 button.btn-icon.btn-icon-primary:hover:not(:disabled),
 button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover) !important;
 }
 .btn-icon.btn-icon-primary:active:not(:disabled),
 button.btn-icon.btn-icon-primary:active:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 
@@ -6650,13 +6651,13 @@ button.btn-icon.btn-icon-primary:active:not(:disabled) {
 button.btn-icon.btn-icon-primary.btn-icon-primary-active,
 .btn-icon.btn-icon-primary[aria-selected=true],
 button.btn-icon.btn-icon-primary[aria-selected=true] {
-  --btn-icon-color: var(--pgn-color-icon-button-text-primary-active-base, #fff);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-active-hover, #fff);
-  --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-active-focus, #fff);
+  --btn-icon-color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-text-inverse));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-active-hover, var(--pgn-color-text-inverse));
+  --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-active-focus, var(--pgn-color-text-inverse));
   --btn-icon-bg-color: var(--pgn-color-icon-button-bg-primary-active-base);
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-active-hover, var(--pgn-color-icon-button-bg-primary-active-base));
   --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-primary-active-focus, var(--pgn-color-icon-button-bg-primary-active-base));
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-primary-base)) !important;
 }
 .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
@@ -6675,7 +6676,7 @@ button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
 button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
 button.btn-icon.btn-icon-primary[aria-selected=true] svg,
 button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   fill: currentColor !important;
 }
 .btn-icon.btn-icon-primary.btn-icon-primary-active:hover:not(:disabled), .btn-icon.btn-icon-primary.btn-icon-primary-active:focus:not(:disabled),
@@ -6685,26 +6686,26 @@ button.btn-icon.btn-icon-primary.btn-icon-primary-active:focus:not(:disabled),
 .btn-icon.btn-icon-primary[aria-selected=true]:focus:not(:disabled),
 button.btn-icon.btn-icon-primary[aria-selected=true]:hover:not(:disabled),
 button.btn-icon.btn-icon-primary[aria-selected=true]:focus:not(:disabled) {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-hover, var(--pgn-color-icon-button-bg-primary-active-base)) !important;
 }
 
 .btn-icon.btn-icon-secondary,
 button.btn-icon.btn-icon-secondary {
   --btn-icon-color: var(--pgn-color-icon-button-text-secondary-base);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, #fff));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse)));
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-hover);
   color: var(--pgn-color-icon-button-text-secondary-base) !important;
 }
 .btn-icon.btn-icon-secondary:hover:not(:disabled), .btn-icon.btn-icon-secondary:focus:not(:disabled),
 button.btn-icon.btn-icon-secondary:hover:not(:disabled),
 button.btn-icon.btn-icon-secondary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-secondary-hover) !important;
 }
 .btn-icon.btn-icon-secondary:active:not(:disabled),
 button.btn-icon.btn-icon-secondary:active:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-secondary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-secondary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-secondary-active-base, var(--pgn-color-icon-button-bg-secondary-hover)) !important;
 }
 
@@ -6712,12 +6713,12 @@ button.btn-icon.btn-icon-secondary:active:not(:disabled) {
 button.btn-icon.btn-icon-secondary.btn-icon-secondary-active,
 .btn-icon.btn-icon-secondary[aria-selected=true],
 button.btn-icon.btn-icon-secondary[aria-selected=true] {
-  --btn-icon-color: var(--pgn-color-icon-button-text-secondary-active-base, #fff);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-active-hover, #fff);
-  --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-active-focus, #fff);
+  --btn-icon-color: var(--pgn-color-icon-button-text-secondary-active-base, var(--pgn-color-text-inverse));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-active-hover, var(--pgn-color-text-inverse));
+  --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-active-focus, var(--pgn-color-text-inverse));
   --btn-icon-bg-color: var(--pgn-color-icon-button-bg-secondary-active-base);
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-active-hover, var(--pgn-color-icon-button-bg-secondary-active-base));
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-secondary-active-base, var(--pgn-color-secondary-base)) !important;
 }
 .btn-icon.btn-icon-secondary.btn-icon-secondary-active .pgn__icon,
@@ -6736,7 +6737,7 @@ button.btn-icon.btn-icon-secondary[aria-selected=true] .pgn__icon,
 button.btn-icon.btn-icon-secondary[aria-selected=true] .btn-icon__icon,
 button.btn-icon.btn-icon-secondary[aria-selected=true] svg,
 button.btn-icon.btn-icon-secondary[aria-selected=true] svg path {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   fill: currentColor !important;
 }
 .btn-icon.btn-icon-secondary.btn-icon-secondary-active:hover:not(:disabled), .btn-icon.btn-icon-secondary.btn-icon-secondary-active:focus:not(:disabled),
@@ -6746,7 +6747,7 @@ button.btn-icon.btn-icon-secondary.btn-icon-secondary-active:focus:not(:disabled
 .btn-icon.btn-icon-secondary[aria-selected=true]:focus:not(:disabled),
 button.btn-icon.btn-icon-secondary[aria-selected=true]:hover:not(:disabled),
 button.btn-icon.btn-icon-secondary[aria-selected=true]:focus:not(:disabled) {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-secondary-active-hover, var(--pgn-color-icon-button-bg-secondary-active-base)) !important;
 }
 
@@ -6866,7 +6867,7 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 [role=listbox] [role=option]:focus,
 [role=listbox] [role=option][aria-selected=true] {
   background-color: var(--pgn-color-dropdown-item-hover-bg, var(--pgn-color-primary-base)) !important;
-  color: var(--pgn-color-dropdown-item-hover-text, var(--pgn-color-white)) !important;
+  color: var(--pgn-color-dropdown-item-hover-text, var(--pgn-color-text-inverse)) !important;
 }
 
 .tox-tinymce {
@@ -6968,7 +6969,7 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 .tox .tox-selectfield select option:checked, .tox .tox-selectfield select option:hover, .tox .tox-selectfield select option:focus {
   background-color: var(--pgn-color-primary-base) !important;
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 
 .tox.tox-silver-sink.tox-tinymce-aux,
@@ -6986,7 +6987,7 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 .tox-tinymce-aux .tox-collection__item--enabled,
 .tox-tinymce-aux .tox-collection__item[aria-selected=true] {
   background-color: var(--pgn-color-primary-base) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 .tox.tox-silver-sink.tox-tinymce-aux .tox-listboxfield .tox-listbox--select:focus,
 .tox-tinymce-aux .tox-listboxfield .tox-listbox--select:focus {
@@ -7999,7 +8000,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
   object-fit: cover;
 }
 #root .course-media-wrapper .pgn__icon {
-  color: var(--pgn-color-white, #fff);
+  color: var(--pgn-color-text-inverse);
   filter: drop-shadow(0 0.125rem 0.5rem color-mix(in srgb, var(--pgn-color-black, #000) 35%, transparent));
 }
 #root .course-media-wrapper button,
@@ -8216,7 +8217,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 .page-gradebook .pgn__form-control-decorator-group > select.form-control option:focus {
   background-color: var(--pgn-color-primary-base) !important;
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 #root main > .d-flex.sidebar-container.page-gradebook a,
 #root main > .d-flex.sidebar-container.page-gradebook .btn-link,
@@ -8358,21 +8359,21 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root .learning-header .btn-icon.btn-icon-primary:hover:not(:disabled), #root .learning-header .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root .learning-header button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root .learning-header button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
 }
 #root .learning-header .btn-icon.btn-icon-primary:active:not(:disabled),
 #root .learning-header button.btn-icon.btn-icon-primary:active:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root .learning-header .btn-icon.btn-icon-primary.btn-icon-primary-active,
 #root .learning-header button.btn-icon.btn-icon-primary.btn-icon-primary-active,
 #root .learning-header .btn-icon.btn-icon-primary[aria-selected=true],
 #root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] {
-  --btn-icon-color: #fff;
-  --btn-icon-hover-color: #fff;
-  color: #fff !important;
+  --btn-icon-color: var(--pgn-color-text-inverse);
+  --btn-icon-hover-color: var(--pgn-color-text-inverse);
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root .learning-header .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
@@ -8391,7 +8392,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
 #root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] svg,
 #root .learning-header button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   fill: currentColor !important;
 }
 #root .learning-header a:not(.btn):not(.nav-link):not(.dropdown-item),
@@ -8531,21 +8532,21 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary:hover:not(:disabled), #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
 }
 #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary:active:not(:disabled),
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary:active:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary.btn-icon-primary-active,
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary.btn-icon-primary-active,
 #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary[aria-selected=true],
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] {
-  --btn-icon-color: #fff;
-  --btn-icon-hover-color: #fff;
-  color: #fff !important;
+  --btn-icon-color: var(--pgn-color-text-inverse);
+  --btn-icon-hover-color: var(--pgn-color-text-inverse);
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root [data-testid=instructor-toolbar] .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
@@ -8564,7 +8565,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] svg,
 #root [data-testid=instructor-toolbar] button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   fill: currentColor !important;
 }
 #root [data-testid=instructor-toolbar] a:not(.btn):not(.nav-link):not(.dropdown-item),
@@ -8694,21 +8695,21 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .btn-icon.btn-icon-primary:hover:not(:disabled), #root:has(.learning-header) main .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
 }
 #root:has(.learning-header) main .btn-icon.btn-icon-primary:active:not(:disabled),
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary:active:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root:has(.learning-header) main .btn-icon.btn-icon-primary.btn-icon-primary-active,
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary.btn-icon-primary-active,
 #root:has(.learning-header) main .btn-icon.btn-icon-primary[aria-selected=true],
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] {
-  --btn-icon-color: #fff;
-  --btn-icon-hover-color: #fff;
-  color: #fff !important;
+  --btn-icon-color: var(--pgn-color-text-inverse);
+  --btn-icon-hover-color: var(--pgn-color-text-inverse);
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root:has(.learning-header) main .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
@@ -8727,7 +8728,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] svg,
 #root:has(.learning-header) main button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   fill: currentColor !important;
 }
 #root:has(.learning-header) main a:not(.btn):not(.nav-link):not(.dropdown-item),
@@ -8939,14 +8940,14 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary:focus:not(:disabled),
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary:hover:not(:disabled),
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary:focus:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
 }
 #root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary:active:not(:disabled),
 #root:has(.learning-header) main .unit-navigation button.btn-icon.btn-icon-primary:active:not(:disabled),
 #root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary:active:not(:disabled),
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary:active:not(:disabled) {
-  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active,
@@ -8957,9 +8958,9 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary.btn-icon-primary-active,
 #root:has(.learning-header) main .top-unit-navigation .btn-icon.btn-icon-primary[aria-selected=true],
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] {
-  --btn-icon-color: #fff;
-  --btn-icon-hover-color: #fff;
-  color: #fff !important;
+  --btn-icon-color: var(--pgn-color-text-inverse);
+  --btn-icon-hover-color: var(--pgn-color-text-inverse);
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
 }
 #root:has(.learning-header) main .unit-navigation .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
@@ -8994,7 +8995,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] svg,
 #root:has(.learning-header) main .top-unit-navigation button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   fill: currentColor !important;
 }
 #root:has(.learning-header) main .unit-navigation a.previous-button.btn.btn-outline-secondary,
@@ -9052,6 +9053,10 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 }
 #root .streak-modal .modal-title {
   font-size: var(--pgn-typography-font-size-h2-base) !important;
+}
+
+.sidebar-trigger-btn {
+  color: var(--pgn-color-text-base) !important;
 }
 
 #root .discussion-posts select.form-control,
@@ -9134,7 +9139,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root [class*=discussion] select.form-control option:focus {
   background-color: var(--pgn-color-primary-base) !important;
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 #root .discussion-posts .pgn__searchfield:not(.pgn__searchfield--external),
 #root .discussion-comments .pgn__searchfield:not(.pgn__searchfield--external),
@@ -9208,7 +9213,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 .tox-tinymce-aux .tox-dialog .tox-selectfield select option:focus {
   background-color: var(--pgn-color-primary-base) !important;
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 
 #root .account-section .pgn-transition-replace-group,
@@ -10032,7 +10037,7 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
 #root .pgn__chip.pgn__chip-light:hover .pgn__chip__icon-before,
 #root .pgn__chip.pgn__chip-light:hover .pgn__chip__icon-after,
 #root .pgn__chip.pgn__chip-light:hover .pgn__chip__icon-after.btn-icon {
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
 }
 #root #dashboard-container a:not(.btn):not(.nav-link):not(.dropdown-item),
 #root #dashboard-container a.pgn__hyperlink,
@@ -10296,4 +10301,122 @@ main[data-testid=main] > .py-4.container-fluid {
   padding-left: max(var(--pgn-spacing-grid-gutter-width) * 0.5, (100% - var(--pgn-size-container-max-width-xl)) / 2 + calc(var(--pgn-spacing-grid-gutter-width) * 0.5)) !important;
   padding-right: max(var(--pgn-spacing-grid-gutter-width) * 0.5, (100% - var(--pgn-size-container-max-width-xl)) / 2 + calc(var(--pgn-spacing-grid-gutter-width) * 0.5)) !important;
   box-sizing: border-box;
+}
+
+[data-paragon-theme-variant=dark] .text-white {
+  color: var(--pgn-color-text-inverse) !important;
+}
+[data-paragon-theme-variant=dark] header.learning-header,
+[data-paragon-theme-variant=dark] #courseTabsNavigation {
+  background-color: var(--pgn-color-surface-base) !important;
+}
+[data-paragon-theme-variant=dark] .course-outline-container .pt-4 > .row.mx-0 {
+  background-color: var(--pgn-color-bg-base) !important;
+}
+[data-paragon-theme-variant=dark] .course-outline-container .item-children > .row.mx-0 {
+  background-color: var(--pgn-color-surface-base) !important;
+}
+[data-paragon-theme-variant=dark] .course-outline-container .sub-header-title {
+  color: var(--pgn-color-headings-base) !important;
+}
+[data-paragon-theme-variant=dark] .profile-page > .col.container-fluid.d-inline-flex,
+[data-paragon-theme-variant=dark] .profile-page > div > .col.container-fluid.d-inline-flex {
+  background-color: var(--pgn-color-bg-base) !important;
+}
+[data-paragon-theme-variant=dark] .tox-tinymce {
+  border-color: var(--pgn-color-border) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-toolbar,
+[data-paragon-theme-variant=dark] .tox .tox-toolbar__primary,
+[data-paragon-theme-variant=dark] .tox .tox-toolbar__overflow,
+[data-paragon-theme-variant=dark] .tox .tox-toolbar-overlord,
+[data-paragon-theme-variant=dark] .tox .tox-menubar,
+[data-paragon-theme-variant=dark] .tox .tox-statusbar,
+[data-paragon-theme-variant=dark] .tox .tox-editor-header {
+  background-color: var(--pgn-color-surface-base) !important;
+  border-color: var(--pgn-color-border) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-toolbar__group {
+  border-color: var(--pgn-color-border) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-tbtn,
+[data-paragon-theme-variant=dark] .tox .tox-tbtn__select-label,
+[data-paragon-theme-variant=dark] .tox .tox-statusbar__path-item,
+[data-paragon-theme-variant=dark] .tox .tox-statusbar__wordcount,
+[data-paragon-theme-variant=dark] .tox .tox-toolbar-label {
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-tbtn svg,
+[data-paragon-theme-variant=dark] .tox .tox-tbtn__select-chevron svg,
+[data-paragon-theme-variant=dark] .tox .tox-statusbar__resize-handle svg {
+  fill: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-tbtn:hover,
+[data-paragon-theme-variant=dark] .tox .tox-tbtn:focus,
+[data-paragon-theme-variant=dark] .tox .tox-tbtn--enabled {
+  background-color: var(--pgn-color-light-300) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-tbtn--disabled,
+[data-paragon-theme-variant=dark] .tox .tox-tbtn--disabled svg {
+  color: var(--pgn-color-text-muted, var(--pgn-color-gray-500)) !important;
+  fill: var(--pgn-color-text-muted, var(--pgn-color-gray-500)) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-edit-area__iframe {
+  background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-dialog,
+[data-paragon-theme-variant=dark] .tox .tox-dialog__header,
+[data-paragon-theme-variant=dark] .tox .tox-dialog__body,
+[data-paragon-theme-variant=dark] .tox .tox-dialog__footer,
+[data-paragon-theme-variant=dark] .tox .tox-menu,
+[data-paragon-theme-variant=dark] .tox .tox-collection__item {
+  background-color: var(--pgn-color-surface-base) !important;
+  color: var(--pgn-color-text-base) !important;
+  border-color: var(--pgn-color-border) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-label,
+[data-paragon-theme-variant=dark] .tox .tox-dialog__title,
+[data-paragon-theme-variant=dark] .tox .tox-dialog__body-nav-item,
+[data-paragon-theme-variant=dark] .tox .tox-collection__item-label,
+[data-paragon-theme-variant=dark] .tox .tox-collection__item-caret svg {
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-dialog__header .tox-button--icon svg,
+[data-paragon-theme-variant=dark] .tox .tox-collection__item-icon svg {
+  fill: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .tox .tox-textfield,
+[data-paragon-theme-variant=dark] .tox .tox-toolbar-textfield,
+[data-paragon-theme-variant=dark] .tox .tox-listboxfield .tox-listbox--select,
+[data-paragon-theme-variant=dark] .tox .tox-textarea,
+[data-paragon-theme-variant=dark] .tox .tox-selectfield select {
+  background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+  color: var(--pgn-color-form-input-base, var(--pgn-color-text-base)) !important;
+}
+[data-paragon-theme-variant=dark] .text-light,
+[data-paragon-theme-variant=dark] .text-light-100,
+[data-paragon-theme-variant=dark] .text-light-200,
+[data-paragon-theme-variant=dark] .text-light-300,
+[data-paragon-theme-variant=dark] .text-light-400,
+[data-paragon-theme-variant=dark] .text-light-500,
+[data-paragon-theme-variant=dark] .text-light-600,
+[data-paragon-theme-variant=dark] .text-light-700,
+[data-paragon-theme-variant=dark] .text-light-800,
+[data-paragon-theme-variant=dark] .text-light-900 {
+  color: var(--pgn-color-text-inverse) !important;
+}
+[data-paragon-theme-variant=dark] table,
+[data-paragon-theme-variant=dark] .pacing-section .pgn__form-group label.pgn__form-label,
+[data-paragon-theme-variant=dark] .component-style-collection span,
+[data-paragon-theme-variant=dark] .component-style-collection .pgn__icon,
+[data-paragon-theme-variant=dark] .scan-results .unit-header,
+[data-paragon-theme-variant=dark] .scan-results .section-collapsible-header,
+[data-paragon-theme-variant=dark] .scan-results .section-collapsible-header-action-item,
+[data-paragon-theme-variant=dark] .scan-results .scan-header-title,
+[data-paragon-theme-variant=dark] .scan-results .broken-links-header-title,
+[data-paragon-theme-variant=dark] .section-title {
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .icon-with-border {
+  background-color: var(--pgn-color-surface-base) !important;
 }

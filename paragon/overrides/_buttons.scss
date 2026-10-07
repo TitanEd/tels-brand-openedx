@@ -206,18 +206,18 @@ a.btn.btn-secondary {
 .btn-icon.btn-icon-primary,
 button.btn-icon.btn-icon-primary {
   --btn-icon-color: var(--pgn-color-icon-button-text-primary-base);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse)));
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-hover);
   color: var(--pgn-color-icon-button-text-primary-base) !important;
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {
-    color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+    color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
     background-color: var(--pgn-color-icon-button-bg-primary-hover) !important;
   }
 
   &:active:not(:disabled) {
-    color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+    color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
     background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
   }
 }
@@ -228,26 +228,26 @@ button.btn-icon.btn-icon-primary {
 button.btn-icon.btn-icon-primary.btn-icon-primary-active,
 .btn-icon.btn-icon-primary[aria-selected="true"],
 button.btn-icon.btn-icon-primary[aria-selected="true"] {
-  --btn-icon-color: var(--pgn-color-icon-button-text-primary-active-base, #fff);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-active-hover, #fff);
-  --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-active-focus, #fff);
+  --btn-icon-color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-text-inverse));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-primary-active-hover, var(--pgn-color-text-inverse));
+  --btn-icon-focus-color: var(--pgn-color-icon-button-text-primary-active-focus, var(--pgn-color-text-inverse));
   --btn-icon-bg-color: var(--pgn-color-icon-button-bg-primary-active-base);
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-primary-active-hover, var(--pgn-color-icon-button-bg-primary-active-base));
   --btn-icon-focus-bg-color: var(--pgn-color-icon-button-bg-primary-active-focus, var(--pgn-color-icon-button-bg-primary-active-base));
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-primary-base)) !important;
 
   .pgn__icon,
   .btn-icon__icon,
   svg,
   svg path {
-    color: #fff !important;
+    color: var(--pgn-color-text-inverse) !important;
     fill: currentColor !important;
   }
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {
-    color: #fff !important;
+    color: var(--pgn-color-text-inverse) !important;
     background-color: var(--pgn-color-icon-button-bg-primary-active-hover, var(--pgn-color-icon-button-bg-primary-active-base)) !important;
   }
 }
@@ -255,18 +255,18 @@ button.btn-icon.btn-icon-primary[aria-selected="true"] {
 .btn-icon.btn-icon-secondary,
 button.btn-icon.btn-icon-secondary {
   --btn-icon-color: var(--pgn-color-icon-button-text-secondary-base);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, #fff));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse)));
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-hover);
   color: var(--pgn-color-icon-button-text-secondary-base) !important;
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {
-    color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, #fff)) !important;
+    color: var(--pgn-color-icon-button-text-secondary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
     background-color: var(--pgn-color-icon-button-bg-secondary-hover) !important;
   }
 
   &:active:not(:disabled) {
-    color: var(--pgn-color-icon-button-text-secondary-active-base, var(--pgn-color-icon-button-accent, #fff)) !important;
+    color: var(--pgn-color-icon-button-text-secondary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
     background-color: var(--pgn-color-icon-button-bg-secondary-active-base, var(--pgn-color-icon-button-bg-secondary-hover)) !important;
   }
 }
@@ -275,25 +275,25 @@ button.btn-icon.btn-icon-secondary {
 button.btn-icon.btn-icon-secondary.btn-icon-secondary-active,
 .btn-icon.btn-icon-secondary[aria-selected="true"],
 button.btn-icon.btn-icon-secondary[aria-selected="true"] {
-  --btn-icon-color: var(--pgn-color-icon-button-text-secondary-active-base, #fff);
-  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-active-hover, #fff);
-  --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-active-focus, #fff);
+  --btn-icon-color: var(--pgn-color-icon-button-text-secondary-active-base, var(--pgn-color-text-inverse));
+  --btn-icon-hover-color: var(--pgn-color-icon-button-text-secondary-active-hover, var(--pgn-color-text-inverse));
+  --btn-icon-focus-color: var(--pgn-color-icon-button-text-secondary-active-focus, var(--pgn-color-text-inverse));
   --btn-icon-bg-color: var(--pgn-color-icon-button-bg-secondary-active-base);
   --btn-icon-hover-bg-color: var(--pgn-color-icon-button-bg-secondary-active-hover, var(--pgn-color-icon-button-bg-secondary-active-base));
-  color: #fff !important;
+  color: var(--pgn-color-text-inverse) !important;
   background-color: var(--pgn-color-icon-button-bg-secondary-active-base, var(--pgn-color-secondary-base)) !important;
 
   .pgn__icon,
   .btn-icon__icon,
   svg,
   svg path {
-    color: #fff !important;
+    color: var(--pgn-color-text-inverse) !important;
     fill: currentColor !important;
   }
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {
-    color: #fff !important;
+    color: var(--pgn-color-text-inverse) !important;
     background-color: var(--pgn-color-icon-button-bg-secondary-active-hover, var(--pgn-color-icon-button-bg-secondary-active-base)) !important;
   }
 }

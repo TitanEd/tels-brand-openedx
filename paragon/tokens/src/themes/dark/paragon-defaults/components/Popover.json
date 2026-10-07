@@ -1,0 +1,61 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/Popover.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "popover": {
+      "header": {
+        "bg-dark": {
+          "source": "$popover-header-bg-dark",
+          "modify": [
+            {
+              "type": "darken",
+              "amount": 0.5
+            }
+          ],
+          "$value": "{color.text.inverse}",
+          "$description": "Paragon default → --pgn-color-popover-header-bg-dark (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "success": {
+        "icon": {
+          "source": "$popover-success-icon-color",
+          "$value": "{color.success.500}",
+          "$description": "Paragon default → --pgn-color-popover-success-icon (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "warning": {
+        "icon": {
+          "source": "$popover-warning-icon-color",
+          "$value": "{color.warning.500}",
+          "$description": "Paragon default → --pgn-color-popover-warning-icon (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "danger": {
+        "icon": {
+          "source": "$popover-danger-icon-color",
+          "$value": "{color.danger.500}",
+          "$description": "Paragon default → --pgn-color-popover-danger-icon (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -427,7 +427,7 @@
     }
 
     .pgn__icon {
-      color: var(--pgn-color-white, #fff);
+      color: var(--pgn-color-text-inverse);
       filter: drop-shadow(0 0.125rem 0.5rem color-mix(in srgb, var(--pgn-color-black, #000) 35%, transparent));
     }
 
