@@ -1,0 +1,14 @@
+{
+  "$description": "Dark twin of themes/light/global/surfaces.json (scripts/sync-dark-tokens.js). LAYER 1 — page background + global border (light). color.border is set to the Paragon stock value ({color.gray.200}); changing it affects every component that reads --pgn-color-border (cards, collapsibles, tables). Buttons keep their own border tokens.",
+  "color": {
+    "border": {
+      "$value": "{color.gray.200}",
+      "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Global border → --pgn-color-border (Paragon stock default)",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    }
+  }
+}

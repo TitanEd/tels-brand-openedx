@@ -1,0 +1,97 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/Nav.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "nav": {
+      "tabs": {
+        "base": {
+          "bg": {
+            "hover": {
+              "source": "$nav-tabs-hover-bg",
+              "$value": "transparent",
+              "$description": "Paragon default → --pgn-color-nav-tabs-base-bg-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "link": {
+            "disabled": {
+              "border": {
+                "source": "$nav-tabs-link-disabled-border-color",
+                "$value": "{color.nav.link.border}",
+                "$description": "Paragon default → --pgn-color-nav-tabs-base-link-disabled-border (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "pills": {
+        "inverse": {
+          "link": {
+            "text": {
+              "hover": {
+                "source": "$nav-inverse-pills-link-hover-color",
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Paragon default → --pgn-color-nav-pills-inverse-link-text-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "divider": {
+        "source": "$nav-divider-color",
+        "$value": "{color.gray.100}",
+        "$description": "Paragon default → --pgn-color-nav-divider (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "dark": {
+        "source": "$navbar-dark-color",
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.5
+          }
+        ],
+        "$value": "{color.text.inverse}",
+        "$description": "Paragon default → --pgn-color-nav-dark (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "light": {
+        "source": "$navbar-light-color",
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.5
+          }
+        ],
+        "$value": "{color.black}",
+        "$description": "Paragon default → --pgn-color-nav-light (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  }
+}

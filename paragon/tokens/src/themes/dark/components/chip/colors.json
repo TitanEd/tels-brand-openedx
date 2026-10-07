@@ -1,37 +1,101 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 Chip.",
+  "$description": "LAYER 2 (dark) — Chip.",
   "color": {
     "chip": {
       "text": {
         "light": {
           "$value": "{color.text.base}",
-          "$description": "Light chip text (dark) \u2192 --pgn-color-chip-text-light"
+          "$description": "Light chip text (dark) → --pgn-color-chip-text-light"
         },
         "dark": {
-          "$value": "{color.white}",
-          "$description": "Dark chip text (dark) \u2192 --pgn-color-chip-text-dark"
+          "$value": "{color.text.inverse}",
+          "$description": "Dark chip text (dark) → --pgn-color-chip-text-dark"
         }
       },
       "bg": {
         "light": {
           "$value": "{color.gray.100}",
-          "$description": "Light chip background (dark) \u2192 --pgn-color-chip-bg-light"
+          "$description": "Light chip background (dark) → --pgn-color-chip-bg-light"
         },
         "dark": {
           "$value": "{color.primary.700}",
-          "$description": "Dark chip background (dark) \u2192 --pgn-color-chip-bg-dark"
+          "$description": "Dark chip background (dark) → --pgn-color-chip-bg-dark"
         }
       },
       "border": {
         "base": {
           "$value": "{color.light.600}",
-          "$description": "Chip border (dark) \u2192 --pgn-color-chip-border-base"
+          "$description": "Chip border (dark) → --pgn-color-chip-border-base"
+        },
+        "focus": {
+          "selected": {
+            "dark": {
+              "$value": "{color.chip.outline.dark}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-chip-border-focus-selected-dark",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "light": {
+              "$value": "{color.dark.500}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-chip-border-focus-selected-light",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
         }
       },
       "label": {
         "base": {
           "$value": "{color.primary.400}",
-          "$description": "Chip label (dark) \u2192 --pgn-color-chip-label-base"
+          "$description": "Chip label (dark) → --pgn-color-chip-label-base"
+        },
+        "dark": {
+          "$value": "{color.chip.outline.dark}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-chip-label-dark",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "outline": {
+        "dark": {
+          "$value": "{color.text.inverse}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-chip-outline-dark",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "light": {
+          "$value": "{color.chip.label.base}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-chip-outline-light",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "chip": {
+      "opacity-disabled": {
+        "$value": ".3",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-chip-opacity-disabled",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
         }
       }
     }

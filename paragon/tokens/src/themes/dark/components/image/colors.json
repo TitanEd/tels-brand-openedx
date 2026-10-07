@@ -1,0 +1,51 @@
+{
+  "$description": "Dark twin of themes/light/components/image/colors.json (scripts/sync-dark-tokens.js). image — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "image": {
+      "figure-caption": {
+        "$value": "{color.gray.500}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-image-figure-caption",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "thumbnail": {
+        "bg": {
+          "$value": "{color.body.bg}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-image-thumbnail-bg",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "border": {
+          "$value": "{color.gray.200}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-image-thumbnail-border",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "image": {
+      "thumbnail": {
+        "box-shadow": {
+          "$value": "none",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-image-thumbnail-box-shadow",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

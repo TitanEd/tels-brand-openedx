@@ -1,0 +1,47 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/general/text.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "text-muted": {
+      "source": "$text-muted",
+      "$value": "{color.gray.500}",
+      "$description": "Paragon default → --pgn-color-text-muted (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "mark-bg": {
+      "source": "$mark-bg",
+      "$value": "#FFF243",
+      "$description": "Paragon default → --pgn-color-mark-bg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "blockquote": {
+      "small": {
+        "source": "$blockquote-small-color",
+        "$value": "{color.gray.500}",
+        "$description": "Paragon default → --pgn-color-blockquote-small (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    },
+    "yiq-light": {
+      "source": "$yiq-text-light",
+      "$value": "{color.text.inverse}",
+      "$description": "Paragon default → --pgn-color-yiq-light (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    }
+  }
+}

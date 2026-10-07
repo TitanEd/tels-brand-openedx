@@ -1,25 +1,25 @@
 {
-  "$description": "Dark \u2014 inverse success (white fill). Labels use modify:null.",
+  "$description": "Dark — inverse success (white fill). Labels use modify:null.",
   "color": {
     "btn": {
       "bg": {
         "inverse-success": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-inverse-success"
+          "$description": "bg (dark) → --pgn-color-btn-bg-inverse-success"
         }
       },
       "text": {
         "inverse-success": {
           "$value": "{color.success.base}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-inverse-success"
+          "$description": "text (dark) → --pgn-color-btn-text-inverse-success"
         }
       },
       "border": {
         "inverse-success": {
           "$value": "transparent",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-inverse-success"
+          "$description": "border (dark) → --pgn-color-btn-border-inverse-success"
         }
       },
       "hover": {
@@ -27,20 +27,20 @@
           "inverse-success": {
             "$value": "#EBEBEB",
             "modify": null,
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-inverse-success"
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-inverse-success"
           }
         },
         "text": {
           "inverse-success": {
             "$value": "{color.success.800}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-inverse-success"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-inverse-success"
           }
         },
         "border": {
           "inverse-success": {
             "$value": "transparent",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-inverse-success"
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-inverse-success"
           }
         }
       },
@@ -48,20 +48,20 @@
         "bg": {
           "inverse-success": {
             "$value": "#EBEBEB",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-inverse-success"
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-inverse-success"
           }
         },
         "text": {
           "inverse-success": {
             "$value": "{color.success.800}",
             "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-inverse-success"
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-inverse-success"
           }
         },
         "border": {
           "inverse-success": {
             "$value": "transparent",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-inverse-success"
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-inverse-success"
           }
         }
       },
@@ -69,20 +69,66 @@
         "bg": {
           "inverse-success": {
             "$value": "{color.btn.bg.inverse-success}",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-inverse-success"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-inverse-success"
           }
         },
         "text": {
           "inverse-success": {
             "$value": "{color.btn.text.inverse-success}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-inverse-success"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-inverse-success"
           }
         },
         "border": {
           "inverse-success": {
             "$value": "transparent",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-inverse-success"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-inverse-success"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-success": {
+            "$value": "{color.btn.bg.inverse-success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-inverse-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "inverse-success": {
+            "$value": "{color.text.inverse}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-inverse-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "inverse-success": {
+            "$value": "{color.btn.focus.border.inverse-success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-inverse-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "inverse-success": {
+            "$value": "{color.btn.text.inverse-success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-inverse-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

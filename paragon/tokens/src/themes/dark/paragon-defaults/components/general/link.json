@@ -1,0 +1,141 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/general/link.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "link": {
+      "muted": {
+        "inline": {
+          "base": {
+            "source": "$muted-inline-link-color",
+            "$value": "{color.primary.500}",
+            "$description": "Paragon default → --pgn-color-link-muted-inline-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "decoration": {
+            "source": "$muted-inline-link-decoration-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.3
+              }
+            ],
+            "$value": "{color.link.muted.inline.base}",
+            "$description": "Paragon default → --pgn-color-link-muted-inline-decoration (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "base": {
+              "source": "$muted-inline-link-hover-color",
+              "modify": [
+                {
+                  "type": "darken",
+                  "amount": 0.15
+                }
+              ],
+              "$value": "{color.link.muted.inline.base}",
+              "$description": "Paragon default → --pgn-color-link-muted-inline-hover-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "decoration": {
+              "source": "$muted-inline-link-hover-decoration-color",
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 1
+                }
+              ],
+              "$value": "{color.link.muted.inline.hover.base}",
+              "$description": "Paragon default → --pgn-color-link-muted-inline-hover-decoration (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "brand": {
+        "inline": {
+          "decoration": {
+            "source": "$brand-inline-link-decoration-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.3
+              }
+            ],
+            "$value": "{color.link.brand.inline.base}",
+            "$description": "Paragon default → --pgn-color-link-brand-inline-decoration (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "base": {
+              "source": "$brand-inline-link-hover-color",
+              "modify": [
+                {
+                  "type": "darken",
+                  "amount": 0.15
+                }
+              ],
+              "$value": "{color.link.brand.inline.base}",
+              "$description": "Paragon default → --pgn-color-link-brand-inline-hover-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "decoration": {
+              "source": "$brand-inline-link-hover-decoration-color",
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 1
+                }
+              ],
+              "$value": "{color.link.brand.inline.hover.base}",
+              "$description": "Paragon default → --pgn-color-link-brand-inline-hover-decoration (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "link": {
+      "emphasized-hover": {
+        "darken-percentage": {
+          "source": "$emphasized-link-hover-darken-percentage",
+          "$value": "15%",
+          "$description": "Paragon default → --pgn-other-link-emphasized-hover-darken-percentage (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -404,7 +404,10 @@ const buttonTypes = [...new Set([...light.tokens.keys()]
   .map((p) => p.match(/^color\.btn\.bg\.([\w-]+)$/)?.[1])
   .filter(Boolean))].sort();
 const isInverse = (type) => type.startsWith('inverse');
-const backdropFor = (type) => (isInverse(type) ? settings.inverseBackdrop : PAGE_BG);
+// settings.inverseBackdrop: the chrome inverse buttons sit on, one variable or { light, dark } (one per mode).
+const inverseBackdrop = (mode) => (typeof settings.inverseBackdrop === 'object' && settings.inverseBackdrop
+  ? settings.inverseBackdrop[mode] : settings.inverseBackdrop);
+const backdropFor = (type, mode) => (isInverse(type) ? inverseBackdrop(mode) : PAGE_BG);
 const BTN_PROPS = ['bg', 'text', 'border'];
 const BTN_STATES = ['', 'hover', 'active', 'disabled'];
 const btnTokenPath = (state, prop, type) => ['color', 'btn', state, prop, type].filter(Boolean).join('.');
@@ -671,7 +674,7 @@ for (const type of buttonTypes) {
         continue;
       }
       const stateLook = look(state);
-      const page = colorOf(mode, backdropFor(type)) || WHITE;
+      const page = colorOf(mode, backdropFor(type, mode)) || WHITE;
       const changed = stateLook.some((c, i) => c && normal[i] && distinct(over(c, page), over(normal[i], page)));
       if (changed) {
         pass(id, `${prefix}Button "${type}" ${state} looks different from normal`);
@@ -699,10 +702,10 @@ for (const type of buttonTypes) {
   }
   for (const mode of ['light', 'dark']) {
     checkContrast(9, mode, `Button "${type}" focus ring`, focusVar,
-      backdropFor(type), settings.contrast.nonText, backdropFor(type));
+      backdropFor(type, mode), settings.contrast.nonText, backdropFor(type, mode));
     for (const state of ['', 'hover', 'active']) {
       checkContrast(11, mode, `Button "${type}" ${state || 'normal'} label`,
-        btnVar(state, 'text', type), btnVar(state, 'bg', type), settings.contrast.text, backdropFor(type));
+        btnVar(state, 'text', type), btnVar(state, 'bg', type), settings.contrast.text, backdropFor(type, mode));
     }
   }
 }

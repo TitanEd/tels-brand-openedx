@@ -1,0 +1,167 @@
+{
+  "$description": "Dark twin of themes/light/components/button/icon-light.json (scripts/sync-dark-tokens.js). button — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "icon-button": {
+      "bg": {
+        "light": {
+          "base": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-light-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-light-focus",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "$value": "{color.light.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-light-hover",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-light-inverse-base",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-light-inverse-focus",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-light-inverse-hover",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "text": {
+        "light": {
+          "base": {
+            "$value": "{color.light.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-light-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.light.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-light-focus",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "$value": "{color.icon-button.accent}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-light-hover",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-light-inverse-base",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-light-inverse-focus",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.light.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-light-inverse-hover",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "icon-button": {
+      "box-shadow": {
+        "light": {
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.light.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-icon-button-box-shadow-light-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-icon-button-box-shadow-light-inverse",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

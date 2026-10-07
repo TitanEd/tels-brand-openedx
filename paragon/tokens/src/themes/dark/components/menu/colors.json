@@ -5,6 +5,88 @@
       "bg": {
         "$value": "{color.gray.100}",
         "$description": "Menu background (dark) → --pgn-color-menu-bg"
+      },
+      "item": {
+        "bg": {
+          "$value": "transparent",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-menu-item-bg",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "border": {
+          "$value": "{color.menu.item.bg}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-menu-item-border",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "color": {
+          "$value": "{color.body.base}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-menu-item-color",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "focus": {
+          "bg": {
+            "$value": "{color.light.500}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-menu-item-focus-bg",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "hover": {
+          "bg": {
+            "$value": "{color.btn.hover.bg.tertiary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-menu-item-hover-bg",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "border": {
+            "$value": "{color.menu.item.bg}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-menu-item-hover-border",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "color": {
+            "$value": "{color.btn.hover.text.tertiary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-menu-item-hover-color",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "menu": {
+      "box-shadow": {
+        "$value": "{elevation.box-shadow.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-menu-box-shadow",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
       }
     }
   }

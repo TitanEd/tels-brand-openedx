@@ -16,6 +16,7 @@
     "validate": "node scripts/validate-tokens.js",
     "validate:strict": "node scripts/validate-tokens.js --strict",
     "validate:baseline": "node scripts/validate-tokens.js --update-baseline",
+    "sync-dark-tokens": "node scripts/sync-dark-tokens.js",
     "hooks:install": "node scripts/install-git-hooks.js",
     "prepare": "node scripts/install-git-hooks.js"
   },

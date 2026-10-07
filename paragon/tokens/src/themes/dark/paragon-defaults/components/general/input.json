@@ -1,0 +1,39 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/general/input.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "input": {
+      "btn-focus": {
+        "source": "$input-btn-focus-color",
+        "$value": "{color.bg.active}",
+        "$description": "Paragon default → --pgn-color-input-btn-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "input": {
+      "btn-focus": {
+        "box-shadow": {
+          "source": "$input-btn-focus-box-shadow",
+          "$value": {
+            "color": "{color.input.btn-focus}",
+            "spread": "{size.input.btn.focus-width}",
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0"
+          },
+          "$description": "Paragon default → --pgn-elevation-input-btn-focus-box-shadow (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

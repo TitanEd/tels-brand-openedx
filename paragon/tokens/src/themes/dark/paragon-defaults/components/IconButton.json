@@ -1,0 +1,1562 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/IconButton.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "icon-button": {
+      "bg": {
+        "base": {
+          "source": "$btn-icon-bg",
+          "$value": "transparent",
+          "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "primary": {
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-primary-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-primary-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-primary-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "secondary": {
+          "active": {
+            "hover": {
+              "$value": "{color.icon-button.bg.secondary.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-secondary-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.secondary.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-secondary-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-secondary-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-secondary-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-secondary-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "brand": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.brand.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.brand.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.brand.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-brand-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "success": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.success.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.success.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.success.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-success-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "warning": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.warning.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.warning.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.warning.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-warning-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "danger": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.danger.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.danger.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.danger.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-danger-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "light": {
+          "active": {
+            "base": {
+              "$value": "{color.light.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-light-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.light.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-light-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.light.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-light-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-light-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-light-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-light-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "dark": {
+          "active": {
+            "base": {
+              "$value": "{color.dark.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-dark-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.dark.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-dark-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.dark.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-dark-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-dark-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-dark-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-dark-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "black": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.black}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.bg.black.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.black.active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-bg-black-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "text": {
+        "primary": {
+          "inverse-active": {
+            "base": {
+              "$value": "{color.icon-button.text.primary.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-primary-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.primary.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-primary-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.primary.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-primary-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "secondary": {
+          "inverse-active": {
+            "base": {
+              "$value": "{color.secondary.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-secondary-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.secondary.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-secondary-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.secondary.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-secondary-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "brand": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.brand.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.brand.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.brand.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.brand.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-brand-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "success": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.success.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.success.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.success.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.success.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-success-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "warning": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.warning.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.warning.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.warning.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.warning.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-warning-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "danger": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.danger.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.danger.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.danger.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.danger.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-danger-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "light": {
+          "active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-light-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-light-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-light-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.light.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-light-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.light.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-light-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.light.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-light-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "dark": {
+          "active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-dark-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-dark-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-dark-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.dark.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-dark-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.dark.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-dark-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.dark.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-dark-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "black": {
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-inverse-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.bg.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-inverse-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). (dark: the page color, dark text on a light or colored surface)",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-inverse-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "inverse-active": {
+            "base": {
+              "$value": "{color.black}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-inverse-active-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.text.black.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-inverse-active-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.text.black.inverse-active.base}",
+              "$description": "Paragon default \u2192 --pgn-color-icon-button-text-black-inverse-active-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "black": {
+        "source": "$btn-icon-black",
+        "$value": "{color.black}",
+        "$description": "Paragon default \u2192 --pgn-color-icon-button-black (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "icon-button": {
+      "box-shadow": {
+        "primary": {
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-primary-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "secondary": {
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-secondary-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-secondary-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "brand": {
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-brand-inverse (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-brand-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-brand-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "success": {
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-success-inverse (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-success-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-success-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "warning": {
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-warning-inverse (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-warning-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-warning-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "danger": {
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-danger-inverse (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-danger-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-danger-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "light": {
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-light-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-light-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "dark": {
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-dark-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-dark-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "black": {
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-black-inverse (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-black-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse-active": {
+            "$value": "none",
+            "$description": "Paragon default \u2192 --pgn-elevation-icon-button-box-shadow-black-inverse-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

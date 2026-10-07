@@ -1,0 +1,16 @@
+{
+  "$description": "Dark twin of themes/light/components/avatar/colors.json (scripts/sync-dark-tokens.js). avatar — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "avatar": {
+      "border": {
+        "$value": "{color.light.300}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-avatar-border",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  }
+}

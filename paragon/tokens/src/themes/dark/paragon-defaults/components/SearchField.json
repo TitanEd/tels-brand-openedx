@@ -1,0 +1,35 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/SearchField.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "search-field": {
+      "button": {
+        "bg": {
+          "brand": {
+            "source": "$search-btn-brand-bg",
+            "$value": "{color.brand.500}",
+            "$description": "Paragon default → --pgn-color-search-field-button-bg-brand (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "search-field": {
+      "disabled-opacity": {
+        "source": "$search-disabled-opacity",
+        "$value": ".3",
+        "$description": "Paragon default → --pgn-other-search-field-disabled-opacity (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  }
+}

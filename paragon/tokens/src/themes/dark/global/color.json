@@ -1,29 +1,74 @@
 {
   "$type": "color",
-  "$description": "LAYER 1 — Dark semantic colors. Keep primary aligned with light. Add aliases needed by Layer 2 dark component tokens.",
+  "$description": "LAYER 1 \u2014 Dark semantic colors. Keep primary aligned with light. Add aliases needed by Layer 2 dark component tokens.",
   "color": {
     "white": {
-      "$value": "#FFFFFF",
-      "$description": "White (dropdown hover text, etc.)"
+      "$value": "{color.surface.base}",
+      "$description": "On the dark page \"white\" is the surface color: every MFE surface written as white or bg-white (headers, cards, form sections, Studio outline) follows the dark surface. Text or borders that must stay white use #FFFFFF (scripts/sync-dark-tokens.js does that for the dark twins) \u2192 --pgn-color-white"
     },
     "primary": {
+      "500": {
+        "actions": {
+          "default": "{color.action.default.primary.500}"
+        },
+        "$value": "{color.primary.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-primary-500",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "700": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "black",
+            "amount": "0.20"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.primary.700}"
+        },
+        "$value": "{color.primary.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-primary-700",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
       "base": {
         "$value": "#EB5939",
-        "$description": "LAYER 1 color 1 — Primary on dark surfaces."
+        "$description": "LAYER 1 color 1 \u2014 Primary on dark surfaces."
       },
       "light": {
-        "$value": "#2A2220",
-        "$description": "Primary-tinted surface for row/trigger hover on dark"
+        "$value": "{color.primary.base}",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "{color.bg.base}",
+            "amount": "0.88"
+          }
+        ],
+        "$description": "Primary-tinted surface for row/trigger hover on dark: primary mixed 88% into the page color, so it follows the primary and page colors \u2192 --pgn-color-primary-light"
       }
     },
     "secondary": {
       "base": {
         "$value": "#273F2F",
-        "$description": "LAYER 1 color 2 — Secondary on dark surfaces."
+        "$description": "LAYER 1 color 2 \u2014 Secondary on dark surfaces."
       },
       "light": {
-        "$value": "#1C2A22",
-        "$description": "Secondary-tinted surface on dark"
+        "$value": "{color.secondary.base}",
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "{color.bg.base}",
+            "amount": "0.88"
+          }
+        ],
+        "$description": "Secondary-tinted surface on dark: secondary mixed 88% into the page color \u2192 --pgn-color-secondary-light"
       }
     },
     "brand": {
@@ -47,7 +92,7 @@
     "surface": {
       "base": {
         "$value": "{color.bg.base}",
-        "$description": "Dark surface → --pgn-color-surface-base (follows dark page bg)."
+        "$description": "Dark surface \u2192 --pgn-color-surface-base (follows dark page bg)."
       }
     },
     "text": {
@@ -57,15 +102,220 @@
       },
       "light": {
         "$value": "{color.gray.600}",
-        "$description": "Secondary text on dark (catalog meta, course card details) → --pgn-color-text-light"
+        "$description": "Secondary text on dark (catalog meta, course card details) \u2192 --pgn-color-text-light"
       },
       "primary": {
         "$value": "{color.gray.600}",
-        "$description": "Secondary text on dark (authn tabs fallback) → --pgn-color-text-primary"
+        "$description": "Secondary text on dark (authn tabs fallback) \u2192 --pgn-color-text-primary"
       },
       "footer": {
         "$value": "{color.gray.600}",
-        "$description": "Footer text on dark → --pgn-color-text-footer"
+        "$description": "Footer text on dark \u2192 --pgn-color-text-footer"
+      },
+      "inverse": {
+        "$value": "#FFFFFF",
+        "$description": "Text, border or icon on a colored or dark backdrop; the one place white is written in the dark theme (color.white is the surface color) \u2192 --pgn-color-text-inverse"
+      }
+    },
+    "black": {
+      "$value": "{color.text.base}",
+      "$description": "On the dark page \"black\" is the page text color: the MFEs write strong text (Studio page titles, section headers, help sidebar titles) as black. Text that must stay dark on a light or colored surface uses {color.bg.base} \u2192 --pgn-color-black"
+    },
+    "red": {
+      "$value": "#C32D3A",
+      "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Base red (feeds Danger when linked)",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "green": {
+      "$value": "#178253",
+      "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Base green (feeds Success when linked)",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "blue": {
+      "$value": "#23419F",
+      "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Base blue",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "yellow": {
+      "$value": "#FFD900",
+      "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Base yellow (feeds Warning when linked)",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "teal": {
+      "$value": "#006DAA",
+      "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Base teal (feeds Info when linked)",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "accent": {
+      "a": {
+        "$value": "#00BBF9",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). UI label: Accent A",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "b": {
+        "$value": "#FFEE88",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). UI label: Accent B",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    },
+    "success": {
+      "100": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "{color.bg.base}",
+            "amount": "0.94"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.success.100}"
+        },
+        "$value": "{color.success.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-success-100",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "base": {
+        "$value": "{color.green}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). UI label: Success",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    },
+    "info": {
+      "base": {
+        "$value": "{color.teal}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). UI label: Info",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    },
+    "warning": {
+      "100": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "{color.bg.base}",
+            "amount": "0.94"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.warning.100}"
+        },
+        "$value": "{color.warning.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-warning-100",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "200": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "{color.bg.base}",
+            "amount": "0.75"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.warning.200}"
+        },
+        "$value": "{color.warning.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-warning-200",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "500": {
+        "actions": {
+          "default": "{color.action.default.warning.500}"
+        },
+        "$value": "{color.warning.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-warning-500",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "base": {
+        "$value": "{color.yellow}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). UI label: Warning",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    },
+    "danger": {
+      "100": {
+        "modify": [
+          {
+            "type": "mix",
+            "otherColor": "{color.bg.base}",
+            "amount": "0.94"
+          }
+        ],
+        "actions": {
+          "default": "{color.action.default.danger.100}"
+        },
+        "$value": "{color.danger.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-danger-100",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "base": {
+        "$value": "{color.red}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). UI label: Danger",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
       }
     }
   }

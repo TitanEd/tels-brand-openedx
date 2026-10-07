@@ -1,81 +1,399 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 Badge. Explicit label colors (modify: null) so color-yiq does not pick them.",
+  "$description": "LAYER 2 (dark) — Badge. Explicit label colors (modify: null) so color-yiq does not pick them.",
   "color": {
     "badge": {
       "bg": {
         "primary": {
           "$value": "{color.primary.base}",
-          "$description": "Badge primary background (dark) \u2192 --pgn-color-badge-bg-primary"
+          "$description": "Badge primary background (dark) → --pgn-color-badge-bg-primary"
         },
         "secondary": {
           "$value": "{color.secondary.base}",
-          "$description": "Badge secondary background (dark) \u2192 --pgn-color-badge-bg-secondary"
+          "$description": "Badge secondary background (dark) → --pgn-color-badge-bg-secondary"
         },
         "success": {
           "$value": "{color.success.base}",
-          "$description": "Badge success background (dark) \u2192 --pgn-color-badge-bg-success"
+          "$description": "Badge success background (dark) → --pgn-color-badge-bg-success"
         },
         "warning": {
           "$value": "{color.warning.base}",
-          "$description": "Badge warning background (dark) \u2192 --pgn-color-badge-bg-warning"
+          "$description": "Badge warning background (dark) → --pgn-color-badge-bg-warning"
         },
         "danger": {
           "$value": "{color.danger.base}",
-          "$description": "Badge danger background (dark) \u2192 --pgn-color-badge-bg-danger"
+          "$description": "Badge danger background (dark) → --pgn-color-badge-bg-danger"
         },
         "info": {
           "$value": "{color.info.base}",
-          "$description": "Badge info background (dark) \u2192 --pgn-color-badge-bg-info"
+          "$description": "Badge info background (dark) → --pgn-color-badge-bg-info"
         },
         "light": {
           "$value": "{color.light.base}",
-          "$description": "Badge light background (dark) \u2192 --pgn-color-badge-bg-light"
+          "$description": "Badge light background (dark) → --pgn-color-badge-bg-light"
         },
         "dark": {
           "$value": "{color.dark.base}",
-          "$description": "Badge dark background (dark) \u2192 --pgn-color-badge-bg-dark"
+          "$description": "Badge dark background (dark) → --pgn-color-badge-bg-dark"
         }
       },
       "text": {
         "primary": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "Badge primary text (dark) \u2192 --pgn-color-badge-text-primary"
+          "$description": "Badge primary text (dark) → --pgn-color-badge-text-primary"
         },
         "secondary": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "Badge secondary text (dark) \u2192 --pgn-color-badge-text-secondary"
+          "$description": "Badge secondary text (dark) → --pgn-color-badge-text-secondary"
         },
         "success": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "Badge success text (dark) \u2192 --pgn-color-badge-text-success"
+          "$description": "Badge success text (dark) → --pgn-color-badge-text-success"
         },
         "warning": {
-          "$value": "#111827",
+          "$value": "{color.bg.base}",
           "modify": null,
-          "$description": "Badge warning text (dark): dark label on yellow \u2192 --pgn-color-badge-text-warning"
+          "$description": "Badge warning text (dark): dark label on yellow → --pgn-color-badge-text-warning"
         },
         "danger": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "Badge danger text (dark) \u2192 --pgn-color-badge-text-danger"
+          "$description": "Badge danger text (dark) → --pgn-color-badge-text-danger"
         },
         "info": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "Badge info text (dark) \u2192 --pgn-color-badge-text-info"
+          "$description": "Badge info text (dark) → --pgn-color-badge-text-info"
         },
         "light": {
-          "$value": "#FFFFFF",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "Badge light text (dark) \u2192 --pgn-color-badge-text-light"
+          "$description": "Badge light text (dark) → --pgn-color-badge-text-light"
         },
         "dark": {
-          "$value": "#FFFFFF",
+          "$value": "{color.bg.base}",
           "modify": null,
-          "$description": "Badge dark text (dark) \u2192 --pgn-color-badge-text-dark"
+          "$description": "Badge dark text (dark) → --pgn-color-badge-text-dark"
+        }
+      },
+      "focus": {
+        "bg": {
+          "danger": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.danger}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-danger",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "dark": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.dark}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-dark",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "info": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.info}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-info",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "light": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.light}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-light",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "primary": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "secondary": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.secondary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-secondary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "success": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "warning": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.badge.bg.warning}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-bg-warning",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "box-shadow": {
+          "danger": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.danger}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-danger",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "dark": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.dark}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-dark",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "info": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.info}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-info",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "light": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.light}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-light",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "primary": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.primary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-primary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "secondary": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.secondary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-secondary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "success": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "warning": {
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.05
+              }
+            ],
+            "$value": "{color.badge.bg.warning}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-box-shadow-warning",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "danger": {
+          "$value": "{color.badge.text.danger}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-danger",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "dark": {
+          "$value": "{color.badge.text.dark}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-dark",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "info": {
+          "$value": "{color.badge.text.info}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-info",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "light": {
+          "$value": "{color.badge.text.light}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-light",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "primary": {
+          "$value": "{color.badge.text.primary}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-primary",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.badge.text.secondary}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-secondary",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "success": {
+          "$value": "{color.badge.text.success}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-success",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "warning": {
+          "$value": "{color.badge.text.warning}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-badge-focus-warning",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
         }
       }
     }

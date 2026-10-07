@@ -1,33 +1,72 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 Tooltip. Light tooltip on the dark page (a black tooltip would disappear).",
+  "$description": "LAYER 2 (dark) — Tooltip. Light tooltip on the dark page (a black tooltip would disappear).",
   "color": {
     "tooltip": {
       "text": {
         "$value": "{color.bg.base}",
-        "$description": "Tooltip text (dark) \u2192 --pgn-color-tooltip-text"
+        "$description": "Tooltip text (dark) → --pgn-color-tooltip-text"
       },
       "light": {
         "$value": "{color.text.base}",
-        "$description": "Light-variant tooltip text (dark) \u2192 --pgn-color-tooltip-light"
+        "$description": "Light-variant tooltip text (dark) → --pgn-color-tooltip-light"
       },
       "bg": {
         "base": {
           "$value": "{color.text.base}",
-          "$description": "Tooltip background (dark) \u2192 --pgn-color-tooltip-bg-base"
+          "$description": "Tooltip background (dark) → --pgn-color-tooltip-bg-base"
         },
         "light": {
           "$value": "{color.gray.100}",
-          "$description": "Light-variant tooltip background (dark) \u2192 --pgn-color-tooltip-bg-light"
+          "$description": "Light-variant tooltip background (dark) → --pgn-color-tooltip-bg-light"
         }
       },
       "arrow": {
         "base": {
           "$value": "{color.tooltip.bg.base}",
-          "$description": "Tooltip arrow (dark) \u2192 --pgn-color-tooltip-arrow-base"
+          "$description": "Tooltip arrow (dark) → --pgn-color-tooltip-arrow-base"
         },
         "light": {
           "$value": "{color.tooltip.bg.light}",
-          "$description": "Light-variant tooltip arrow (dark) \u2192 --pgn-color-tooltip-arrow-light"
+          "$description": "Light-variant tooltip arrow (dark) → --pgn-color-tooltip-arrow-light"
+        }
+      }
+    }
+  },
+  "elevation": {
+    "tooltip": {
+      "box-shadow": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "2px",
+            "blur": "4px"
+          },
+          {
+            "color": "rgba(0, 0, 0, .15)",
+            "offsetX": "0",
+            "offsetY": "2px",
+            "blur": "8px"
+          }
+        ],
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-tooltip-box-shadow",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "tooltip": {
+      "opacity": {
+        "$value": "1",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-tooltip-opacity",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
         }
       }
     }

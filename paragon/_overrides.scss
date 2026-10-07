@@ -49,3 +49,6 @@
 @import "./custom_learning";
 @import "./custom_ora-grading";
 @import "./custom_profile";
+
+// Dark mode remaps for colors baked into MFE bundles — last, so it wins
+@import "./dark";

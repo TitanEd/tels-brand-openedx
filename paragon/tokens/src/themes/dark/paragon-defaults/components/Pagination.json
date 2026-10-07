@@ -1,0 +1,59 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/Pagination.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "pagination": {
+      "text": {
+        "inverse": {
+          "source": "$pagination-color-inverse",
+          "$value": "{color.text.inverse}",
+          "$description": "Paragon default → --pgn-color-pagination-text-inverse (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "focus": {
+        "text": {
+          "source": "$pagination-focus-color-text",
+          "$value": "{color.black}",
+          "$description": "Paragon default → --pgn-color-pagination-focus-text (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "dropdown": {
+        "text-inverse": {
+          "source": "$pagination-dropdown-color-inverse",
+          "$value": "{color.text.inverse}",
+          "$description": "Paragon default → --pgn-color-pagination-dropdown-text-inverse (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "pagination": {
+      "focus": {
+        "box-shadow": {
+          "source": "$pagination-focus-box-shadow",
+          "$value": "{elevation.input.btn-focus.box-shadow}",
+          "$description": "Paragon default → --pgn-elevation-pagination-focus-box-shadow (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+// LAYER 3 — Dark mode remaps.
+// Everything in dark mode comes from the tokens in paragon/tokens/src/themes/dark/ (CONTROLS.md, "Dark
+// mode"). The rules here cover the two things tokens cannot reach:
+//   1. colors that the MFE bundles bake in as literals (white cards and headers compiled from an older
+//      @edx/frontend-component-header or from the MFE's own SCSS): remapped to the dark surface tokens;
+//   2. the Bootstrap utility .text-white, which is text on a colored bar and must stay white although
+//      --pgn-color-white is the dark surface on the dark page (themes/dark/global/color.json).
+// Values only via var(--pgn-*).
+[data-paragon-theme-variant="dark"] {
+  // Text on colored chrome (Learning instructor toolbar, tooltips, popovers).
+  .text-white {
+    color: var(--pgn-color-text-inverse) !important;
+  }
+
+  // Course header + tabs bar of the MFEs built with an older frontend-component-header
+  // (Discussions, Gradebook, ORA Grading, Communications): literal white in their CSS.
+  header.learning-header,
+  #courseTabsNavigation {
+    background-color: var(--pgn-color-surface-base) !important;
+  }
+
+  // Studio: the course outline list and its section / subsection / unit cards use literal white
+  // and off-white backgrounds, and the outline title is literal black.
+  .course-outline-container {
+    .pt-4 > .row.mx-0 {
+      background-color: var(--pgn-color-bg-base) !important;
+    }
+
+    .item-children > .row.mx-0 {
+      background-color: var(--pgn-color-surface-base) !important;
+    }
+
+    .sub-header-title {
+      color: var(--pgn-color-headings-base) !important;
+    }
+  }
+
+  // Profile: the certificates band is a literal off-white.
+  .profile-page > .col.container-fluid.d-inline-flex,
+  .profile-page > div > .col.container-fluid.d-inline-flex {
+    background-color: var(--pgn-color-bg-base) !important;
+  }
+
+  // TinyMCE (Discussions post editor, Studio): its own "oxide" skin is white and ignores Paragon.
+  // Toolbar, status bar and menus become surfaces; icons and labels take the text color; the edit
+  // area iframe takes the input background (its document is styled by the theme plugin, which
+  // gives same-origin iframes the dark text and page colors).
+  .tox-tinymce {
+    border-color: var(--pgn-color-border) !important;
+  }
+
+  .tox {
+    .tox-toolbar,
+    .tox-toolbar__primary,
+    .tox-toolbar__overflow,
+    .tox-toolbar-overlord,
+    .tox-menubar,
+    .tox-statusbar,
+    .tox-editor-header {
+      background-color: var(--pgn-color-surface-base) !important;
+      border-color: var(--pgn-color-border) !important;
+    }
+
+    .tox-toolbar__group {
+      border-color: var(--pgn-color-border) !important;
+    }
+
+    .tox-tbtn,
+    .tox-tbtn__select-label,
+    .tox-statusbar__path-item,
+    .tox-statusbar__wordcount,
+    .tox-toolbar-label {
+      color: var(--pgn-color-text-base) !important;
+    }
+
+    .tox-tbtn svg,
+    .tox-tbtn__select-chevron svg,
+    .tox-statusbar__resize-handle svg {
+      fill: var(--pgn-color-text-base) !important;
+    }
+
+    .tox-tbtn:hover,
+    .tox-tbtn:focus,
+    .tox-tbtn--enabled {
+      background-color: var(--pgn-color-light-300) !important;
+    }
+
+    .tox-tbtn--disabled,
+    .tox-tbtn--disabled svg {
+      color: var(--pgn-color-text-muted, var(--pgn-color-gray-500)) !important;
+      fill: var(--pgn-color-text-muted, var(--pgn-color-gray-500)) !important;
+    }
+
+    .tox-edit-area__iframe {
+      background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+    }
+
+    // Dialogs (Insert link / image / code) and the menus rendered in .tox-tinymce-aux
+    .tox-dialog,
+    .tox-dialog__header,
+    .tox-dialog__body,
+    .tox-dialog__footer,
+    .tox-menu,
+    .tox-collection__item {
+      background-color: var(--pgn-color-surface-base) !important;
+      color: var(--pgn-color-text-base) !important;
+      border-color: var(--pgn-color-border) !important;
+    }
+
+    .tox-label,
+    .tox-dialog__title,
+    .tox-dialog__body-nav-item,
+    .tox-collection__item-label,
+    .tox-collection__item-caret svg {
+      color: var(--pgn-color-text-base) !important;
+    }
+
+    .tox-dialog__header .tox-button--icon svg,
+    .tox-collection__item-icon svg {
+      fill: var(--pgn-color-text-base) !important;
+    }
+
+    .tox-textfield,
+    .tox-toolbar-textfield,
+    .tox-listboxfield .tox-listbox--select,
+    .tox-textarea,
+    .tox-selectfield select {
+      background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+      color: var(--pgn-color-form-input-base, var(--pgn-color-text-base)) !important;
+    }
+  }
+
+  // Light text utilities are "light text on a colored background" (Studio course team badge,
+  // chips on primary): they stay light although the light scale is a dark surface scale here.
+  .text-light,
+  .text-light-100,
+  .text-light-200,
+  .text-light-300,
+  .text-light-400,
+  .text-light-500,
+  .text-light-600,
+  .text-light-700,
+  .text-light-800,
+  .text-light-900 {
+    color: var(--pgn-color-text-inverse) !important;
+  }
+
+  // Studio (frontend-app-authoring) bakes a few literal dark text colors into its bundle: tables,
+  // the pacing labels of Schedule & details, the component picker, the link-check report and the
+  // section titles. The icon box of the course outline is a literal white.
+  table,
+  .pacing-section .pgn__form-group label.pgn__form-label,
+  .component-style-collection span,
+  .component-style-collection .pgn__icon,
+  .scan-results .unit-header,
+  .scan-results .section-collapsible-header,
+  .scan-results .section-collapsible-header-action-item,
+  .scan-results .scan-header-title,
+  .scan-results .broken-links-header-title,
+  .section-title {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  .icon-with-border {
+    background-color: var(--pgn-color-surface-base) !important;
+  }
+}

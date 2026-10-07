@@ -8,7 +8,7 @@
           "$description": "Dialog background (dark) \u2192 --pgn-color-modal-content-bg"
         },
         "border": {
-          "$value": "{color.white}",
+          "$value": "{color.text.inverse}",
           "modify": [
             {
               "type": "alpha",
@@ -19,8 +19,51 @@
         }
       },
       "backdrop-bg": {
-        "$value": "{color.black}",
-        "$description": "Backdrop (dark) \u2192 --pgn-color-modal-backdrop-bg"
+        "$value": "{color.bg.base}",
+        "$description": "Modal backdrop (dark): the page color behind the modal, dimmed by the backdrop opacity \u2192 --pgn-color-modal-backdrop-bg"
+      }
+    }
+  },
+  "elevation": {
+    "modal": {
+      "content": {
+        "box-shadow": {
+          "sm-up": {
+            "$value": [
+              {
+                "color": "rgba(0, 0, 0, .15)",
+                "offsetX": "0",
+                "offsetY": "10px",
+                "blur": "20px"
+              },
+              {
+                "color": "rgba(0, 0, 0, .15)",
+                "offsetX": "0",
+                "offsetY": "8px",
+                "blur": "20px"
+              }
+            ],
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-elevation-modal-content-box-shadow-sm-up",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "other": {
+    "modal": {
+      "opacity": {
+        "$value": ".5",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-other-modal-opacity",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
       }
     }
   }

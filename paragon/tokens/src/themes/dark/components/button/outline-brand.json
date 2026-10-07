@@ -1,44 +1,44 @@
 {
-  "$description": "Dark \u2014 outline brand. Labels readable on the dark page (modify:null).",
+  "$description": "Dark — outline brand. Labels readable on the dark page (modify:null).",
   "color": {
     "btn": {
       "bg": {
         "outline-brand": {
           "$value": "transparent",
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-brand"
+          "$description": "bg (dark) → --pgn-color-btn-bg-outline-brand"
         }
       },
       "text": {
         "outline-brand": {
           "$value": "{color.brand.base}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-brand"
+          "$description": "text (dark) → --pgn-color-btn-text-outline-brand"
         }
       },
       "border": {
         "outline-brand": {
           "$value": "{color.brand.base}",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-brand"
+          "$description": "border (dark) → --pgn-color-btn-border-outline-brand"
         }
       },
       "hover": {
         "bg": {
           "outline-brand": {
             "$value": "transparent",
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-brand"
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-outline-brand"
           }
         },
         "text": {
           "outline-brand": {
             "$value": "{color.brand.400}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-brand"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-outline-brand"
           }
         },
         "border": {
           "outline-brand": {
             "$value": "{color.brand.400}",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-brand"
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-outline-brand"
           }
         }
       },
@@ -46,20 +46,20 @@
         "bg": {
           "outline-brand": {
             "$value": "transparent",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-brand"
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-outline-brand"
           }
         },
         "text": {
           "outline-brand": {
             "$value": "{color.brand.300}",
             "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-brand"
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-outline-brand"
           }
         },
         "border": {
           "outline-brand": {
             "$value": "{color.brand.300}",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-brand"
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-outline-brand"
           }
         }
       },
@@ -67,20 +67,66 @@
         "bg": {
           "outline-brand": {
             "$value": "transparent",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-brand"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-outline-brand"
           }
         },
         "text": {
           "outline-brand": {
             "$value": "{color.btn.text.outline-brand}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-brand"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-outline-brand"
           }
         },
         "border": {
           "outline-brand": {
             "$value": "{color.btn.border.outline-brand}",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-brand"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-outline-brand"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-brand": {
+            "$value": "inherit",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-outline-brand",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "outline-brand": {
+            "$value": "{color.btn.border.outline-brand}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-outline-brand",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "outline-brand": {
+            "$value": "{color.theme.focus.brand}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-outline-brand",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "outline-brand": {
+            "$value": "{color.btn.text.outline-brand}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-outline-brand",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

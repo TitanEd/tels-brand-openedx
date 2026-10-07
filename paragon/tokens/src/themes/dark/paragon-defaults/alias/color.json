@@ -1,0 +1,507 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/alias/color.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "bg": {
+      "active": {
+        "source": "$component-active-bg",
+        "$value": "{color.primary.500}",
+        "$description": "Paragon default → --pgn-color-bg-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Active background color.",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    },
+    "text": {
+      "50": {
+        "black": {
+          "source": "$text-black-50",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "$value": "{color.black}",
+          "$description": "Paragon default → --pgn-color-text-50-black (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Black text color with transparency of 50%.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "white": {
+          "source": "$text-white-50",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.5
+            }
+          ],
+          "$value": "{color.text.inverse}",
+          "$description": "Paragon default → --pgn-color-text-50-white (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). White text color with transparency of 50%.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    },
+    "active": {
+      "source": "$component-active-color",
+      "$value": "{color.text.inverse}",
+      "$description": "Paragon default → --pgn-color-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Color for active element.",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "disabled": {
+      "$value": "{color.gray.500}",
+      "$description": "Paragon default → --pgn-color-disabled (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Color for disabled element.",
+      "$extensions": {
+        "tels": {
+          "syncedFromLight": true
+        }
+      }
+    },
+    "theme": {
+      "border": {
+        "primary": {
+          "$value": "{color.primary.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-primary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific primary border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.secondary.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-secondary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific secondary border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "brand": {
+          "$value": "{color.brand.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-brand (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific brand border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "success": {
+          "$value": "{color.success.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-success (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific success border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "info": {
+          "$value": "{color.info.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-info (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific info border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "warning": {
+          "$value": "{color.warning.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-warning (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific warning border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "danger": {
+          "$value": "{color.danger.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-danger (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific danger border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "light": {
+          "$value": "{color.light.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-light (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific light border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "dark": {
+          "$value": "{color.dark.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-dark (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific dark border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "gray": {
+          "$value": "{color.gray.200}",
+          "$description": "Paragon default → --pgn-color-theme-border-gray (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific gray border color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "focus": {
+        "primary": {
+          "$value": "{color.primary.500}",
+          "$description": "Paragon default → --pgn-color-theme-focus-primary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific primary focus color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "brand": {
+          "$value": "{color.brand.500}",
+          "$description": "Paragon default → --pgn-color-theme-focus-brand (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific brand focus color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "success": {
+          "$value": "{color.success.500}",
+          "$description": "Paragon default → --pgn-color-theme-focus-success (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific success focus color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "info": {
+          "$value": "{color.info.500}",
+          "$description": "Paragon default → --pgn-color-theme-focus-info (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific info focus color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "warning": {
+          "$value": "{color.warning.500}",
+          "$description": "Paragon default → --pgn-color-theme-focus-warning (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific warning focus color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "danger": {
+          "$value": "{color.danger.500}",
+          "$description": "Paragon default → --pgn-color-theme-focus-danger (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific danger focus color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "gray": {
+          "$value": "{color.gray.500}",
+          "$description": "Paragon default → --pgn-color-theme-focus-gray (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific gray focus color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "default": {
+        "primary": {
+          "$value": "{color.primary.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-primary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific primary default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.secondary.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-secondary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific secondary default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "brand": {
+          "$value": "{color.brand.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-brand (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific brand default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "success": {
+          "$value": "{color.success.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-success (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific success default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "info": {
+          "$value": "{color.info.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-info (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific info default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "warning": {
+          "$value": "{color.warning.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-warning (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific warning default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "danger": {
+          "$value": "{color.danger.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-danger (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific danger default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "light": {
+          "$value": "{color.light.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-light (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific light default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "dark": {
+          "$value": "{color.dark.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-dark (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific dark default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "gray": {
+          "$value": "{color.gray.500}",
+          "$description": "Paragon default → --pgn-color-theme-default-gray (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific gray default color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "hover": {
+        "primary": {
+          "$value": "{color.primary.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-primary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific primary hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.secondary.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-secondary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific secondary hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "brand": {
+          "$value": "{color.brand.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-brand (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific brand hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "success": {
+          "$value": "{color.success.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-success (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific success hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "info": {
+          "$value": "{color.info.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-info (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific info hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "warning": {
+          "$value": "{color.warning.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-warning (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific warning hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "danger": {
+          "$value": "{color.danger.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-danger (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific danger hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "light": {
+          "$value": "{color.light.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-light (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific light hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "dark": {
+          "$value": "{color.dark.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-dark (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific dark hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "gray": {
+          "$value": "{color.gray.700}",
+          "$description": "Paragon default → --pgn-color-theme-hover-gray (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific gray hover color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "active": {
+        "primary": {
+          "$value": "{color.primary.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-primary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific primary active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{color.secondary.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-secondary (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific secondary active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "brand": {
+          "$value": "{color.brand.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-brand (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific brand active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "success": {
+          "$value": "{color.success.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-success (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific success active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "info": {
+          "$value": "{color.info.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-info (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific info active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "warning": {
+          "$value": "{color.warning.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-warning (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific warning active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "danger": {
+          "$value": "{color.danger.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-danger (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific danger active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "light": {
+          "$value": "{color.light.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-light (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific light active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "dark": {
+          "$value": "{color.dark.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-dark (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific dark active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "gray": {
+          "$value": "{color.gray.900}",
+          "$description": "Paragon default → --pgn-color-theme-active-gray (dark twin of Paragon's light token; scripts/sync-dark-tokens.js). Theme-specific gray active color.",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

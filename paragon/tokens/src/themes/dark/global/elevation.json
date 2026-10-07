@@ -1,0 +1,101 @@
+{
+  "$description": "Dark twin of themes/light/global/elevation.json (scripts/sync-dark-tokens.js). global — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "elevation": {
+    "box-shadow": {
+      "centered": {
+        "1": {
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": ".25rem"
+            }
+          ],
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-box-shadow-centered-1",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "down": {
+        "1": {
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".25rem"
+            }
+          ],
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-box-shadow-down-1",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "2": {
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".25rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".125rem",
+              "blur": ".5rem"
+            }
+          ],
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-box-shadow-down-2",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "level": {
+        "1": {
+          "$value": [
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".125rem"
+            },
+            {
+              "color": "rgba(0, 0, 0, .15)",
+              "offsetX": "0",
+              "offsetY": ".0625rem",
+              "blur": ".25rem"
+            }
+          ],
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-box-shadow-level-1",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

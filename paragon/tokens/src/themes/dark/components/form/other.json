@@ -1,0 +1,135 @@
+{
+  "$description": "Dark twin of themes/light/components/form/other.json (scripts/sync-dark-tokens.js). form — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "other": {
+    "content": {
+      "form": {
+        "control": {
+          "checkbox": {
+            "indicator": {
+              "icon-checked": {
+                "base": {
+                  "outputReferences": false,
+                  "modify": [
+                    {
+                      "type": "str-replace",
+                      "toReplace": "#",
+                      "replaceWith": "%23"
+                    }
+                  ],
+                  "$value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='{color.form.control.indicator.checked.base}'/></svg>\")",
+                  "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-content-form-control-checkbox-indicator-icon-checked-base",
+                  "$extensions": {
+                    "tels": {
+                      "syncedFromLight": true
+                    }
+                  }
+                }
+              },
+              "indeterminate": {
+                "icon": {
+                  "outputReferences": false,
+                  "modify": [
+                    {
+                      "type": "str-replace",
+                      "toReplace": "#",
+                      "replaceWith": "%23"
+                    }
+                  ],
+                  "$value": "url(\"data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M21 3H3V21H21V3ZM17 13H7V11H17V13Z' fill='{color.form.control.checkbox.indicator.indeterminate.base}'/></svg>\")",
+                  "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-content-form-control-checkbox-indicator-indeterminate-icon",
+                  "$extensions": {
+                    "tels": {
+                      "syncedFromLight": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "radio": {
+            "indicator": {
+              "icon-checked": {
+                "base": {
+                  "outputReferences": false,
+                  "modify": [
+                    {
+                      "type": "str-replace",
+                      "toReplace": "#",
+                      "replaceWith": "%23"
+                    }
+                  ],
+                  "$value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.bg.base}'/%3e%3c/svg%3e\")",
+                  "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-content-form-control-radio-indicator-icon-checked-base",
+                  "$extensions": {
+                    "tels": {
+                      "syncedFromLight": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "select": {
+            "indicator": {
+              "icon": {
+                "outputReferences": false,
+                "modify": [
+                  {
+                    "type": "str-replace",
+                    "toReplace": "#",
+                    "replaceWith": "%23"
+                  }
+                ],
+                "$value": "url('data:image/svg+xml,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16.59 8.58984L12 13.1698L7.41 8.58984L6 9.99984L12 15.9998L18 9.99984L16.59 8.58984Z\" fill=\"{color.form.control.select.indicator.base}\"/></svg>')",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-content-form-control-select-indicator-icon",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          },
+          "switch": {
+            "indicator": {
+              "icon-off": {
+                "outputReferences": false,
+                "modify": [
+                  {
+                    "type": "str-replace",
+                    "toReplace": "#",
+                    "replaceWith": "%23"
+                  }
+                ],
+                "$value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.checked.bg.base}'/%3e%3c/svg%3e\")",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-content-form-control-switch-indicator-icon-off",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "icon-on": {
+                "outputReferences": false,
+                "modify": [
+                  {
+                    "type": "str-replace",
+                    "toReplace": "#",
+                    "replaceWith": "%23"
+                  }
+                ],
+                "$value": "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='{color.form.control.indicator.active.base}'/%3e%3c/svg%3e\")",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-content-form-control-switch-indicator-icon-on",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

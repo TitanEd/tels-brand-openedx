@@ -1,44 +1,44 @@
 {
-  "$description": "Dark \u2014 outline danger. Labels readable on the dark page (modify:null).",
+  "$description": "Dark — outline danger. Labels readable on the dark page (modify:null).",
   "color": {
     "btn": {
       "bg": {
         "outline-danger": {
           "$value": "transparent",
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-danger"
+          "$description": "bg (dark) → --pgn-color-btn-bg-outline-danger"
         }
       },
       "text": {
         "outline-danger": {
           "$value": "{color.danger.400}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-danger"
+          "$description": "text (dark) → --pgn-color-btn-text-outline-danger"
         }
       },
       "border": {
         "outline-danger": {
           "$value": "{color.danger.400}",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-danger"
+          "$description": "border (dark) → --pgn-color-btn-border-outline-danger"
         }
       },
       "hover": {
         "bg": {
           "outline-danger": {
             "$value": "transparent",
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-danger"
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-outline-danger"
           }
         },
         "text": {
           "outline-danger": {
             "$value": "{color.danger.300}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-danger"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-outline-danger"
           }
         },
         "border": {
           "outline-danger": {
             "$value": "{color.danger.300}",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-danger"
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-outline-danger"
           }
         }
       },
@@ -46,20 +46,33 @@
         "bg": {
           "outline-danger": {
             "$value": "transparent",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-danger"
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-outline-danger"
           }
         },
         "text": {
           "outline-danger": {
-            "$value": "{color.danger.200}",
-            "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-danger"
+            "$value": "{color.danger.base}",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.65"
+              }
+            ],
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-outline-danger (light tint: base mixed with white, because danger-200 is a dark tinted surface on the dark page)"
           }
         },
         "border": {
           "outline-danger": {
-            "$value": "{color.danger.200}",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-danger"
+            "$value": "{color.danger.base}",
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-outline-danger (light tint: base mixed with white, because danger-200 is a dark tinted surface on the dark page)",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.65"
+              }
+            ]
           }
         }
       },
@@ -67,20 +80,66 @@
         "bg": {
           "outline-danger": {
             "$value": "transparent",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-danger"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-outline-danger"
           }
         },
         "text": {
           "outline-danger": {
             "$value": "{color.btn.text.outline-danger}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-danger"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-outline-danger"
           }
         },
         "border": {
           "outline-danger": {
             "$value": "{color.btn.border.outline-danger}",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-danger"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-outline-danger"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-danger": {
+            "$value": "inherit",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-outline-danger",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "outline-danger": {
+            "$value": "{color.btn.border.outline-danger}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-outline-danger",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "outline-danger": {
+            "$value": "{color.theme.focus.danger}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-outline-danger",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "outline-danger": {
+            "$value": "{color.btn.text.outline-danger}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-outline-danger",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

@@ -1,54 +1,148 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 Inputs. Same references as light; the dark gray scale makes them light-on-dark.",
+  "$description": "LAYER 2 (dark) — Inputs. Same references as light; the dark gray scale makes them light-on-dark.",
   "color": {
     "form": {
       "input": {
         "base": {
           "$value": "{color.gray.700}",
-          "$description": "Input text (dark) \u2192 --pgn-color-form-input-base"
+          "$description": "Input text (dark) → --pgn-color-form-input-base"
         },
         "border": {
           "$value": "{color.gray.500}",
-          "$description": "Input border (dark) \u2192 --pgn-color-form-input-border"
+          "$description": "Input border (dark) → --pgn-color-form-input-border"
         },
         "bg": {
           "base": {
             "$value": "{color.bg.base}",
-            "$description": "Input background (dark) \u2192 --pgn-color-form-input-bg-base"
+            "$description": "Input background (dark) → --pgn-color-form-input-bg-base"
           },
           "disabled": {
             "$value": "{color.gray.100}",
-            "$description": "Disabled input background (dark) \u2192 --pgn-color-form-input-bg-disabled"
+            "$description": "Disabled input background (dark) → --pgn-color-form-input-bg-disabled"
           }
         },
         "focus": {
           "border": {
             "$value": "{color.primary.base}",
-            "$description": "Input focus border (dark) \u2192 --pgn-color-form-input-focus-border"
+            "$description": "Input focus border (dark) → --pgn-color-form-input-focus-border"
+          },
+          "base": {
+            "$value": "{color.form.input.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-input-focus-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "bg": {
+            "$value": "{color.form.input.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-input-focus-bg",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         },
         "placeholder": {
           "$value": "{color.gray.500}",
-          "$description": "Placeholder (dark) \u2192 --pgn-color-form-input-placeholder"
+          "$description": "Placeholder (dark) → --pgn-color-form-input-placeholder"
+        },
+        "group": {
+          "addon": {
+            "base": {
+              "$value": "{color.form.input.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-input-group-addon-base",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "bg": {
+              "$value": "{color.gray.100}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-input-group-addon-bg",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "border": {
+              "$value": "{color.form.input.border}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-input-group-addon-border",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
         }
       },
       "control": {
         "indicator": {
           "border": {
             "$value": "{color.gray.700}",
-            "$description": "Checkbox/radio border (dark) \u2192 --pgn-color-form-control-indicator-border"
+            "$description": "Checkbox/radio border (dark) → --pgn-color-form-control-indicator-border"
           },
           "checked": {
             "bg": {
               "base": {
                 "$value": "{color.primary.base}",
-                "$description": "Checked checkbox/radio fill (dark) \u2192 --pgn-color-form-control-indicator-checked-bg-base"
+                "$description": "Checked checkbox/radio fill (dark) → --pgn-color-form-control-indicator-checked-bg-base"
               }
             },
             "border": {
               "base": {
                 "$value": "{color.primary.base}",
-                "$description": "Checked checkbox/radio border (dark) \u2192 --pgn-color-form-control-indicator-checked-border-base"
+                "$description": "Checked checkbox/radio border (dark) → --pgn-color-form-control-indicator-checked-border-base"
+              }
+            }
+          },
+          "bg": {
+            "base": {
+              "$value": "{color.form.input.bg.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-control-indicator-bg-base",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "label": {
+          "floating": {
+            "text": {
+              "modify": [
+                {
+                  "type": "alpha",
+                  "amount": 0.1
+                }
+              ],
+              "$value": "{color.form.input.bg.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-control-label-floating-text",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "switch": {
+          "indicator": {
+            "checked": {
+              "bg": {
+                "$value": "{color.success.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-control-switch-indicator-checked-bg",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
               }
             }
           }
@@ -57,14 +151,59 @@
       "feedback": {
         "invalid": {
           "$value": "{color.danger.400}",
-          "$description": "Error message text (dark): lighter red, readable on the dark page \u2192 --pgn-color-form-feedback-invalid"
+          "$description": "Error message text (dark): lighter red, readable on the dark page → --pgn-color-form-feedback-invalid"
+        },
+        "tooltip": {
+          "box-shadow": {
+            "focus": {
+              "invalid": {
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.25
+                  }
+                ],
+                "$value": "{color.form.feedback.invalid}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-feedback-tooltip-box-shadow-focus-invalid",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "valid": {
+                "modify": [
+                  {
+                    "type": "alpha",
+                    "amount": 0.25
+                  }
+                ],
+                "$value": "{color.form.feedback.valid}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-feedback-tooltip-box-shadow-focus-valid",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "valid": {
+          "$value": "{color.success.base}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-form-feedback-valid",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
         }
       }
     },
     "input": {
       "focus": {
         "$value": "{color.primary.base}",
-        "$description": "Global input focus (dark) \u2192 --pgn-color-input-focus"
+        "$description": "Global input focus (dark) → --pgn-color-input-focus"
       }
     }
   }

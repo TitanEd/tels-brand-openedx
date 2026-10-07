@@ -1,0 +1,145 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/Form/elevation.json (scripts/sync-dark-tokens.js).",
+  "elevation": {
+    "form": {
+      "control": {
+        "indicator": {
+          "base": {
+            "source": "$custom-control-indicator-box-shadow",
+            "$value": "{elevation.form.input.base}",
+            "$description": "Paragon default → --pgn-elevation-form-control-indicator-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "checked": {
+            "base": {
+              "source": "$custom-control-indicator-checked-box-shadow",
+              "$value": "none",
+              "$description": "Paragon default → --pgn-elevation-form-control-indicator-checked-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "active": {
+            "source": "$custom-control-indicator-active-box-shadow",
+            "$value": "none",
+            "$description": "Paragon default → --pgn-elevation-form-control-indicator-active (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "checkbox": {
+          "indicator": {
+            "indeterminate": {
+              "source": "$custom-checkbox-indicator-indeterminate-box-shadow",
+              "$value": "none",
+              "$description": "Paragon default → --pgn-elevation-form-control-checkbox-indicator-indeterminate (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "range": {
+          "track": {
+            "source": "$custom-range-track-box-shadow",
+            "$value": "none",
+            "$description": "Paragon default → --pgn-elevation-form-control-range-track (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "thumb": {
+            "base": {
+              "source": "$custom-range-thumb-box-shadow",
+              "$value": "none",
+              "$description": "Paragon default → --pgn-elevation-form-control-range-thumb-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "source": "$custom-range-thumb-focus-box-shadow",
+              "$value": [
+                {
+                  "color": "{color.body.bg}",
+                  "spread": "0",
+                  "offsetX": "0",
+                  "offsetY": ".1rem",
+                  "blur": ".25rem"
+                }
+              ],
+              "$description": "Paragon default → --pgn-elevation-form-control-range-thumb-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "file": {
+          "base": {
+            "source": "$custom-file-box-shadow",
+            "$value": "{elevation.form.input.base}",
+            "$description": "Paragon default → --pgn-elevation-form-control-file-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "focus": {
+            "source": "$custom-file-focus-box-shadow",
+            "$value": "{elevation.form.input.focus}",
+            "$description": "Paragon default → --pgn-elevation-form-control-file-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "select": {
+          "border": {
+            "base": {
+              "source": "$custom-select-box-shadow",
+              "$value": "none",
+              "$description": "Paragon default → --pgn-elevation-form-control-select-border-base (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "source": "$custom-select-focus-box-shadow",
+              "$value": "{elevation.input.btn-focus.box-shadow}",
+              "$description": "Paragon default → --pgn-elevation-form-control-select-border-focus (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

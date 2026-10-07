@@ -49,5 +49,5 @@
 [role="listbox"] [role="option"]:focus,
 [role="listbox"] [role="option"][aria-selected="true"] {
   background-color: var(--pgn-color-dropdown-item-hover-bg, var(--pgn-color-primary-base)) !important;
-  color: var(--pgn-color-dropdown-item-hover-text, var(--pgn-color-white)) !important;
+  color: var(--pgn-color-dropdown-item-hover-text, var(--pgn-color-text-inverse)) !important;
 }

@@ -17,8 +17,120 @@
             "$description": "Item hover/focus/active bg → --pgn-color-dropdown-item-hover-bg"
           },
           "text": {
-            "$value": "{color.white}",
+            "$value": "{color.text.inverse}",
             "$description": "Item hover text → --pgn-color-dropdown-item-hover-text"
+          }
+        }
+      },
+      "border": {
+        "modify": [
+          {
+            "type": "alpha",
+            "amount": 0.15
+          }
+        ],
+        "$value": "{color.black}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-border",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "header": {
+        "$value": "{color.gray.500}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-header",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "link": {
+        "active": {
+          "base": {
+            "$value": "{color.active}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-link-active-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "bg": {
+            "$value": "{color.bg.active}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-link-active-bg",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "base": {
+          "$value": "{color.gray.900}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-link-base",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "disabled": {
+          "$value": "{color.disabled}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-link-disabled",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "hover": {
+          "base": {
+            "modify": [
+              {
+                "type": "darken",
+                "amount": 0.5
+              }
+            ],
+            "$value": "{color.gray.900}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-link-hover-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "bg": {
+            "$value": "{color.light.300}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-link-hover-bg",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      },
+      "text": {
+        "$value": "{color.body.base}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropdown-text",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "dropdown": {
+      "box-shadow": {
+        "$value": "none",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-dropdown-box-shadow",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
           }
         }
       }
