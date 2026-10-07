@@ -15,7 +15,9 @@
   // Course header + tabs bar of the MFEs built with an older frontend-component-header
   // (Discussions, Gradebook, ORA Grading, Communications): literal white in their CSS.
   header.learning-header,
-  #courseTabsNavigation {
+  #courseTabsNavigation,
+  #root > div > .flex-grow-0 > header,
+  nav.course-tabs-navigation {
     background-color: var(--pgn-color-surface-base) !important;
   }
 

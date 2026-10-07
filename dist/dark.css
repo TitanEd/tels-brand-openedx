@@ -7051,7 +7051,8 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 
 #root header.site-header-desktop .logo img,
 #root header.site-header-mobile .logo img,
-#root header.learning-header .logo img {
+#root header.learning-header .logo img,
+#root header > nav .logo img {
   height: 60px !important;
   width: auto !important;
 }
@@ -7064,6 +7065,7 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 #root .site-header-desktop .container-fluid .nav-container .logo,
 #root .site-header-mobile .container-fluid .nav-container .logo,
 #root header.learning-header .logo,
+#root header > nav .logo,
 #root .studio-header .logo,
 #root .studio-header img.logo {
   padding: 0.6rem 0 !important;
@@ -9059,6 +9061,403 @@ footer[role=contentinfo]:not(.tutor-container) > .container-xl {
   color: var(--pgn-color-text-base) !important;
 }
 
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) > nav > .container-fluid {
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .nav .course-title {
+  color: var(--pgn-color-headings-base, var(--pgn-color-text-base));
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-brand,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-brand,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-brand {
+  color: var(--pgn-color-btn-text-brand) !important;
+  border-color: var(--pgn-color-btn-border-brand);
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .pgn__stateful-btn.btn-primary {
+  color: var(--pgn-color-btn-text-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary);
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-primary {
+  color: var(--pgn-color-btn-text-outline-primary) !important;
+  border-color: var(--pgn-color-btn-border-outline-primary) !important;
+  background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-primary:hover:not(:disabled), #root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-primary:focus:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-primary:hover:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-primary:focus:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-primary:hover:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-primary:focus:not(:disabled) {
+  color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+  border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+  background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-primary .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-primary .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-primary .pgn__icon {
+  color: currentColor !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-secondary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-secondary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-secondary {
+  color: var(--pgn-color-btn-text-outline-secondary) !important;
+  border-color: var(--pgn-color-btn-border-outline-secondary) !important;
+  background-color: var(--pgn-color-btn-bg-outline-secondary, transparent) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-secondary:hover:not(:disabled), #root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-secondary:focus:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-secondary:hover:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-secondary:focus:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-secondary:hover:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-secondary:focus:not(:disabled) {
+  color: var(--pgn-color-btn-hover-text-outline-secondary) !important;
+  border-color: var(--pgn-color-btn-hover-border-outline-secondary) !important;
+  background-color: var(--pgn-color-btn-hover-bg-outline-secondary, transparent) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-secondary:disabled,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-secondary:disabled,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-secondary:disabled {
+  opacity: 0.65;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-outline-secondary .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-outline-secondary .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-outline-secondary .pgn__icon {
+  color: currentColor !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-inverse-outline-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-inverse-outline-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-inverse-outline-primary {
+  color: var(--pgn-color-btn-text-inverse-outline-primary) !important;
+  border-color: var(--pgn-color-btn-border-inverse-outline-primary) !important;
+  background-color: var(--pgn-color-btn-bg-inverse-outline-primary, transparent) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-inverse-outline-primary:hover:not(:disabled), #root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-inverse-outline-primary:focus:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-inverse-outline-primary:hover:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn.btn-inverse-outline-primary:focus:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-inverse-outline-primary:hover:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn.btn-inverse-outline-primary:focus:not(:disabled) {
+  color: var(--pgn-color-btn-hover-text-inverse-outline-primary, var(--pgn-color-primary-base)) !important;
+  background-color: var(--pgn-color-btn-hover-bg-inverse-outline-primary, var(--pgn-color-white)) !important;
+  border-color: var(--pgn-color-btn-hover-border-inverse-outline-primary, var(--pgn-color-white)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn-link,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-link,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-link,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .pgn__stateful-btn.btn-link {
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn-link:hover, #root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.btn-link:focus,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-link:hover,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-link:focus,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-link:hover,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn.btn-link:focus,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .pgn__stateful-btn.btn-link:hover,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .pgn__stateful-btn.btn-link:focus {
+  color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary {
+  color: var(--pgn-color-icon-button-text-primary-base) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary:hover:not(:disabled), #root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary:focus:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary:hover:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary:focus:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary:active:not(:disabled),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary:active:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary[aria-selected=true],
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary[aria-selected=true] {
+  --btn-icon-color: var(--pgn-color-text-inverse);
+  --btn-icon-hover-color: var(--pgn-color-text-inverse);
+  color: var(--pgn-color-text-inverse) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
+  color: var(--pgn-color-text-inverse) !important;
+  fill: currentColor !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a:not(.btn):not(.nav-link):not(.dropdown-item),
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.pgn__hyperlink,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.inline-link {
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a:not(.btn):not(.nav-link):not(.dropdown-item):hover, #root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.pgn__hyperlink:hover,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.pgn__hyperlink:focus,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.inline-link:hover,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) a.inline-link:focus {
+  color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) #outline-sidebar-outline a,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .outline-sidebar a,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) #courseHome-outline a {
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) #outline-sidebar-outline a:hover, #root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) #outline-sidebar-outline a:focus,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .outline-sidebar a:hover,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) .outline-sidebar a:focus,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) #courseHome-outline a:hover,
+#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header) #courseHome-outline a:focus {
+  color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+}
+
+#root .bg-primary.text-white:has(> .container-fluid) > .container-fluid {
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-brand,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-brand,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-brand {
+  color: var(--pgn-color-btn-text-brand) !important;
+  border-color: var(--pgn-color-btn-border-brand);
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-primary,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-primary,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-primary,
+#root .bg-primary.text-white:has(> .container-fluid) .pgn__stateful-btn.btn-primary {
+  color: var(--pgn-color-btn-text-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary);
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-primary,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-primary,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-primary {
+  color: var(--pgn-color-btn-text-outline-primary) !important;
+  border-color: var(--pgn-color-btn-border-outline-primary) !important;
+  background-color: var(--pgn-color-btn-bg-outline-primary, transparent) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-primary:hover:not(:disabled), #root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-primary:focus:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-primary:hover:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-primary:focus:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-primary:hover:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-primary:focus:not(:disabled) {
+  color: var(--pgn-color-btn-hover-text-outline-primary) !important;
+  border-color: var(--pgn-color-btn-hover-border-outline-primary) !important;
+  background-color: var(--pgn-color-btn-hover-bg-outline-primary, transparent) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-primary .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-primary .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-primary .pgn__icon {
+  color: currentColor !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-secondary,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-secondary,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-secondary {
+  color: var(--pgn-color-btn-text-outline-secondary) !important;
+  border-color: var(--pgn-color-btn-border-outline-secondary) !important;
+  background-color: var(--pgn-color-btn-bg-outline-secondary, transparent) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-secondary:hover:not(:disabled), #root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-secondary:focus:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-secondary:hover:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-secondary:focus:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-secondary:hover:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-secondary:focus:not(:disabled) {
+  color: var(--pgn-color-btn-hover-text-outline-secondary) !important;
+  border-color: var(--pgn-color-btn-hover-border-outline-secondary) !important;
+  background-color: var(--pgn-color-btn-hover-bg-outline-secondary, transparent) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-secondary:disabled,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-secondary:disabled,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-secondary:disabled {
+  opacity: 0.65;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-outline-secondary .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-outline-secondary .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-outline-secondary .pgn__icon {
+  color: currentColor !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-inverse-outline-primary,
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-inverse-outline-primary,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-inverse-outline-primary {
+  color: var(--pgn-color-btn-text-inverse-outline-primary) !important;
+  border-color: var(--pgn-color-btn-border-inverse-outline-primary) !important;
+  background-color: var(--pgn-color-btn-bg-inverse-outline-primary, transparent) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-inverse-outline-primary:hover:not(:disabled), #root .bg-primary.text-white:has(> .container-fluid) .btn.btn-inverse-outline-primary:focus:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-inverse-outline-primary:hover:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) a.btn.btn-inverse-outline-primary:focus:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-inverse-outline-primary:hover:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn.btn-inverse-outline-primary:focus:not(:disabled) {
+  color: var(--pgn-color-btn-hover-text-inverse-outline-primary, var(--pgn-color-primary-base)) !important;
+  background-color: var(--pgn-color-btn-hover-bg-inverse-outline-primary, var(--pgn-color-white)) !important;
+  border-color: var(--pgn-color-btn-hover-border-inverse-outline-primary, var(--pgn-color-white)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) a.btn-link,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-link,
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-link,
+#root .bg-primary.text-white:has(> .container-fluid) .pgn__stateful-btn.btn-link {
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) a.btn-link:hover, #root .bg-primary.text-white:has(> .container-fluid) a.btn-link:focus,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-link:hover,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-link:focus,
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-link:hover,
+#root .bg-primary.text-white:has(> .container-fluid) .btn.btn-link:focus,
+#root .bg-primary.text-white:has(> .container-fluid) .pgn__stateful-btn.btn-link:hover,
+#root .bg-primary.text-white:has(> .container-fluid) .pgn__stateful-btn.btn-link:focus {
+  color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary {
+  color: var(--pgn-color-icon-button-text-primary-base) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary:hover:not(:disabled), #root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary:focus:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary:hover:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary:focus:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-hover, transparent) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary:active:not(:disabled),
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary:active:not(:disabled) {
+  color: var(--pgn-color-icon-button-text-primary-active-base, var(--pgn-color-icon-button-accent, var(--pgn-color-text-inverse))) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary.btn-icon-primary-active,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary[aria-selected=true],
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary[aria-selected=true] {
+  --btn-icon-color: var(--pgn-color-text-inverse);
+  --btn-icon-hover-color: var(--pgn-color-text-inverse);
+  color: var(--pgn-color-text-inverse) !important;
+  background-color: var(--pgn-color-icon-button-bg-primary-active-base, var(--pgn-color-icon-button-bg-primary-hover)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary.btn-icon-primary-active .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary.btn-icon-primary-active .btn-icon__icon,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary.btn-icon-primary-active svg,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary.btn-icon-primary-active svg path,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root .bg-primary.text-white:has(> .container-fluid) .btn-icon.btn-icon-primary[aria-selected=true] svg path,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary[aria-selected=true] .pgn__icon,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary[aria-selected=true] .btn-icon__icon,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary[aria-selected=true] svg,
+#root .bg-primary.text-white:has(> .container-fluid) button.btn-icon.btn-icon-primary[aria-selected=true] svg path {
+  color: var(--pgn-color-text-inverse) !important;
+  fill: currentColor !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) a:not(.btn):not(.nav-link):not(.dropdown-item),
+#root .bg-primary.text-white:has(> .container-fluid) a.pgn__hyperlink,
+#root .bg-primary.text-white:has(> .container-fluid) a.inline-link {
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) a:not(.btn):not(.nav-link):not(.dropdown-item):hover, #root .bg-primary.text-white:has(> .container-fluid) a:not(.btn):not(.nav-link):not(.dropdown-item):focus,
+#root .bg-primary.text-white:has(> .container-fluid) a.pgn__hyperlink:hover,
+#root .bg-primary.text-white:has(> .container-fluid) a.pgn__hyperlink:focus,
+#root .bg-primary.text-white:has(> .container-fluid) a.inline-link:hover,
+#root .bg-primary.text-white:has(> .container-fluid) a.inline-link:focus {
+  color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) #outline-sidebar-outline a,
+#root .bg-primary.text-white:has(> .container-fluid) .outline-sidebar a,
+#root .bg-primary.text-white:has(> .container-fluid) #courseHome-outline a {
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+#root .bg-primary.text-white:has(> .container-fluid) #outline-sidebar-outline a:hover, #root .bg-primary.text-white:has(> .container-fluid) #outline-sidebar-outline a:focus,
+#root .bg-primary.text-white:has(> .container-fluid) .outline-sidebar a:hover,
+#root .bg-primary.text-white:has(> .container-fluid) .outline-sidebar a:focus,
+#root .bg-primary.text-white:has(> .container-fluid) #courseHome-outline a:hover,
+#root .bg-primary.text-white:has(> .container-fluid) #courseHome-outline a:focus {
+  color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+}
+
+#root nav.course-tabs-navigation {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--pgn-color-nav-tabs-base-border-base, var(--pgn-color-light-400));
+}
+#root nav.course-tabs-navigation > .container-fluid {
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+}
+#root nav.course-tabs-navigation .nav-tabs {
+  border-bottom: 0 !important;
+}
+#root nav.course-tabs-navigation .nav-item {
+  margin: 0 !important;
+}
+#root nav.course-tabs-navigation .nav-link {
+  border: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: var(--pgn-spacing-spacer-3) var(--pgn-spacing-spacer-4) !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  color: var(--pgn-color-nav-tabs-base-link-text, var(--pgn-color-gray-700)) !important;
+  background-color: transparent !important;
+}
+#root nav.course-tabs-navigation .nav-link:hover, #root nav.course-tabs-navigation .nav-link:focus {
+  color: var(--pgn-color-nav-tabs-base-link-hover-text, var(--pgn-color-primary-base)) !important;
+  background-color: var(--pgn-color-nav-tabs-base-link-hover-bg, transparent) !important;
+}
+#root nav.course-tabs-navigation .nav-link.active {
+  color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base)) !important;
+  border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-base)) !important;
+}
+
+#root footer:not(.tels-footer):has(~ footer.tels-footer) {
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
 #root .discussion-posts select.form-control,
 #root .discussion-comments select.form-control,
 #root .forum-nav-browse-filter select.form-control,
@@ -10307,7 +10706,9 @@ main[data-testid=main] > .py-4.container-fluid {
   color: var(--pgn-color-text-inverse) !important;
 }
 [data-paragon-theme-variant=dark] header.learning-header,
-[data-paragon-theme-variant=dark] #courseTabsNavigation {
+[data-paragon-theme-variant=dark] #courseTabsNavigation,
+[data-paragon-theme-variant=dark] #root > div > .flex-grow-0 > header,
+[data-paragon-theme-variant=dark] nav.course-tabs-navigation {
   background-color: var(--pgn-color-surface-base) !important;
 }
 [data-paragon-theme-variant=dark] .course-outline-container .pt-4 > .row.mx-0 {

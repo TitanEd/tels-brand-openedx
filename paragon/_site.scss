@@ -1,0 +1,96 @@
+// LAYER 3 — frontend-base shell (sites built with @openedx/frontend-base: the Instructor dashboard,
+// Notifications, and Authn / Learner dashboard when they run inside the site).
+// The shell renders the same chrome as the legacy MFEs (course header, instructor toolbar, course
+// tabs, footer) but with utility classes only — no .site-header-desktop / .learning-header /
+// #courseTabsNavigation hooks — so the rules of _header.scss and _learning.scss never reach it.
+// This file maps the shell's structure to the same tokens and mixins, so a learner moving from the
+// Course tab (Learning MFE) to the Instructor tab (shell) sees one header, one tab bar and one
+// footer. Values only via var(--pgn-*).
+
+// The shell page: #root > div.d-flex.flex-column.min-vh-100 > [header wrapper | main | footer wrapper]
+$tels-shell-header: '#root > div > .flex-grow-0 > header:not(.site-header-desktop):not(.site-header-mobile):not(.learning-header):not(.studio-header)';
+
+// ----- Course header -----------------------------------------------------
+#{$tels-shell-header} {
+  > nav > .container-fluid {
+    @include tels-content-width;
+  }
+
+  // Course org / title lockup next to the logo (same figure as Learning's course-title-lockup)
+  .nav .course-title {
+    color: var(--pgn-color-headings-base, var(--pgn-color-text-base));
+  }
+
+  @include tels-learn-buttons;
+  @include tels-learn-links;
+}
+
+// ----- Instructor toolbar (primary strip: "View this course as" / "View course in") --------
+#root .bg-primary.text-white:has(> .container-fluid) {
+  > .container-fluid {
+    @include tels-content-width;
+  }
+
+  @include tels-learn-buttons;
+  @include tels-learn-links;
+}
+
+// ----- Course tabs (Course / Progress / Dates / Discussion / Instructor) ------------------
+// The shell renders Bootstrap .nav-tabs (bordered boxes); Learning renders underline tabs
+// (.nav-underline-tabs). Same look here: text in the tab tokens, a 2px underline on the active tab.
+#root nav.course-tabs-navigation {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--pgn-color-nav-tabs-base-border-base, var(--pgn-color-light-400));
+
+  > .container-fluid {
+    @include tels-content-width;
+  }
+
+  .nav-tabs {
+    border-bottom: 0 !important;
+  }
+
+  .nav-item {
+    margin: 0 !important;
+  }
+
+  .nav-link {
+    border: 0 !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: var(--pgn-spacing-spacer-3) var(--pgn-spacing-spacer-4) !important;
+    font-size: var(--pgn-typography-font-size-base) !important;
+    color: var(--pgn-color-nav-tabs-base-link-text, var(--pgn-color-gray-700)) !important;
+    background-color: transparent !important;
+
+    &:hover,
+    &:focus {
+      color: var(--pgn-color-nav-tabs-base-link-hover-text, var(--pgn-color-primary-base)) !important;
+      background-color: var(--pgn-color-nav-tabs-base-link-hover-bg, transparent) !important;
+    }
+
+    &.active {
+      color: var(--pgn-color-nav-tabs-base-link-active-text, var(--pgn-color-primary-base)) !important;
+      border-bottom-color: var(--pgn-color-nav-tabs-base-link-active-border, var(--pgn-color-primary-base)) !important;
+    }
+  }
+}
+
+// ----- Footer ---------------------------------------------------------------
+// The shell's footerApp renders its own footer (logo, copyright, "Powered by Open edX", language
+// select) in front of the site footer the theme plugin inserts (footer.tels-footer), so the page
+// showed two. The plugin now hides the shell's default footer content; this keeps older site builds
+// to one footer as well.
+// The shell's CSS sits in cascade layers (cssLayerOrder) and its `.d-flex` is !important; an
+// important declaration in a layer beats one in this unlayered stylesheet, so `display: none`
+// cannot take. Collapse the footer instead (none of these properties is set by the utilities).
+#root footer:not(.tels-footer):has(~ footer.tels-footer) {
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
