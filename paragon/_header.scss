@@ -678,7 +678,7 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   justify-content: center;
   gap: 0.5rem;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   padding: 0.7rem 1.25rem;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -727,7 +727,7 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
   &--sm {
     padding: 0.5rem 0.85rem;
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   &--lg {
@@ -770,7 +770,7 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   a,
   .tels-header__nav-link,
   .custom-header__nav-link {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--pgn-color-text-base) !important;
     padding: 0.4rem 0;
@@ -819,7 +819,7 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   border-radius: var(--pgn-size-border-radius-base, 8px);
   padding: 0.4rem 0.75rem;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-base);
   cursor: pointer;
 }
@@ -844,7 +844,7 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     padding: 0.5rem 0.9rem;
     color: var(--pgn-color-text-base);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
 
     &:hover {
       background: var(--pgn-color-light-100, #F9FAFB);

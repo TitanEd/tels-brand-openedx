@@ -4132,7 +4132,7 @@ a.btn:not(.btn-link):active,
   justify-content: center;
   gap: 0.5rem;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   padding: 0.7rem 1.25rem;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -4171,7 +4171,7 @@ a.btn:not(.btn-link):active,
 }
 .tels-btn--sm {
   padding: 0.5rem 0.85rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 .tels-btn--lg {
   padding: 0.9rem 1.5rem;
@@ -4215,7 +4215,7 @@ a.btn:not(.btn-link):active,
 .custom-header__nav a,
 .custom-header__nav .tels-header__nav-link,
 .custom-header__nav .custom-header__nav-link {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--pgn-color-text-base) !important;
   padding: 0.4rem 0;
@@ -4268,7 +4268,7 @@ a.btn:not(.btn-link):active,
   border-radius: var(--pgn-size-border-radius-base, 8px);
   padding: 0.4rem 0.75rem;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-base);
   cursor: pointer;
 }
@@ -4294,7 +4294,7 @@ a.btn:not(.btn-link):active,
   padding: 0.5rem 0.9rem;
   color: var(--pgn-color-text-base);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .tels-header__user-menu a:hover,
 .custom-header__user-menu a:hover {
@@ -4530,7 +4530,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 
 .tels-footer__col h4 {
-  font-size: 0.85rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--pgn-color-text-inverse);
@@ -4546,11 +4546,11 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   gap: 0.5rem;
 }
 .tels-footer__col li {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .tels-footer__contact {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--pgn-color-footer-link);
 }
 .tels-footer__contact p {
@@ -4567,7 +4567,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-footer-muted);
 }
 
@@ -4582,7 +4582,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   }
 }
 .tels-eyebrow {
-  font-size: 0.78rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--pgn-color-primary-base);
@@ -4698,7 +4698,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   align-self: flex-start;
   background: var(--pgn-color-chrome-surface-subtle);
   color: var(--pgn-color-text-secondary);
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -4728,12 +4728,12 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 
 .tels-card__org {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
 }
 
 .tels-card__desc {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
   margin: 0.35rem 0 0;
   line-height: 1.5;
@@ -4748,7 +4748,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   padding-top: 0.75rem;
   display: flex;
   gap: 1rem;
-  font-size: 0.82rem;
+  font-size: 1rem;
   color: var(--pgn-color-chrome-text-muted);
   flex-wrap: wrap;
   align-items: center;
@@ -4840,7 +4840,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 
 .tels-discovery label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--pgn-color-text-secondary);
 }
@@ -4851,7 +4851,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   border: 1px solid var(--pgn-color-chrome-border);
   border-radius: 8px;
   background: var(--pgn-color-white);
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-base);
 }
 
@@ -4869,7 +4869,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   border: 1px solid var(--pgn-color-chrome-border);
   background: var(--pgn-color-white);
   color: var(--pgn-color-text-base);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
 }
@@ -4899,7 +4899,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   background: var(--pgn-color-white);
   border: 1px solid var(--pgn-color-primary-base);
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
@@ -4941,7 +4941,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   align-items: center;
   gap: 0.55rem;
   padding: 0.35rem 0.25rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   color: var(--pgn-color-text-base);
   font-weight: 500;
@@ -5005,7 +5005,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   color: var(--pgn-color-primary-base);
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 .tels-chip button {
@@ -5079,7 +5079,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   color: var(--pgn-color-primary-base);
 }
 .tels-courses-hero__stats span {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
 }
 
@@ -5160,7 +5160,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 
 .tels-breadcrumbs {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
   margin-bottom: 1rem;
 }
@@ -5188,7 +5188,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   gap: 1.25rem;
   flex-wrap: wrap;
   color: var(--pgn-color-text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: 1rem;
 }
 .tels-metarow span {
@@ -5216,7 +5216,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 
 .tels-enrollcard__note {
   color: var(--pgn-color-text-secondary);
-  font-size: 0.85rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -5319,7 +5319,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 .tels-syllabus-item .body {
   padding: 0 1.25rem 1rem;
   color: var(--pgn-color-text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .tels-syllabus-item--static span {
@@ -5340,7 +5340,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   border-radius: 999px;
   background: var(--pgn-color-chrome-surface-subtle);
   border: 1px solid var(--pgn-color-chrome-border);
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-base);
   font-weight: 500;
 }
@@ -5361,7 +5361,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 
 .tels-stats .l {
   color: var(--pgn-color-text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 700px) {
@@ -5482,7 +5482,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   gap: 0.15rem;
 }
 .tels-contact-list li strong {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--pgn-color-text-secondary);
@@ -5510,7 +5510,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 .tels-form label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.35rem;
   color: var(--pgn-color-text-base);
@@ -5526,7 +5526,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   padding: 0.7rem 0.9rem;
   border: 1px solid var(--pgn-color-chrome-border);
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-family: inherit;
   background: var(--pgn-color-white);
   color: var(--pgn-color-text-base);
@@ -5569,7 +5569,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   display: flex;
   gap: 0.5rem;
   align-items: flex-start;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
 }
 .tels-form .consent label {
@@ -5740,7 +5740,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 .tels-outcome p {
   color: var(--pgn-color-text-secondary);
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
@@ -5818,7 +5818,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 
 .tels-format p {
   color: var(--pgn-color-text-secondary);
-  font-size: 0.88rem;
+  font-size: 1rem;
   margin: 0 0 0.5rem;
 }
 
@@ -5832,7 +5832,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 
 .tels-format li {
-  font-size: 0.82rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
   display: flex;
   gap: 0.5rem;
@@ -5939,13 +5939,13 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 .tels-instructor__title {
   color: var(--pgn-color-primary-base);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
   margin: 0 0 0.6rem;
 }
 
 .tels-instructor__bio {
   color: var(--pgn-color-text-secondary);
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin: 0;
 }
@@ -6012,7 +6012,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   color: var(--pgn-color-text-inverse);
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .tels-play__circle {
@@ -6141,7 +6141,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 
 .tels-trusted__label {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -6321,7 +6321,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 .tels-evergreen__feature p {
   color: var(--pgn-color-text-secondary);
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .tels-execed {
@@ -6355,7 +6355,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-base);
 }
 
@@ -6382,7 +6382,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   z-index: 2;
 }
 .tels-promo-dark .eyebrow {
-  font-size: 0.78rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--pgn-color-primary-300);
@@ -6457,7 +6457,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   color: var(--pgn-color-text-base);
 }
 .tels-cat p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
   margin: 0;
 }
@@ -6517,7 +6517,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   align-items: center;
   gap: 0.75rem;
   color: var(--pgn-color-text-footer);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .tels-lead-card__check {
@@ -6529,7 +6529,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 1rem;
   flex: 0 0 24px;
 }
 
@@ -6588,7 +6588,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
   backdrop-filter: blur(8px);
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.68rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -6612,7 +6612,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 }
 
 .tels-insight p {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--pgn-color-text-secondary);
   margin: 0;
 }
@@ -6748,7 +6748,7 @@ footer[role=contentinfo]:not(.tutor-container):not(.tels-footer) > .container-xl
 .tels-toc a {
   color: var(--pgn-color-text-secondary);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.4;
   display: block;
   padding: 0.25rem 0;
