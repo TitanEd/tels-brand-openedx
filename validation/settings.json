@@ -5,11 +5,14 @@
     "nonText": 3,
     "stateDifference": 1.1
   },
-  "inverseBackdrop": "--pgn-color-dark-base",
+  "inverseBackdrop": {
+    "light": "--pgn-color-dark-base",
+    "dark": "--pgn-color-dark-100"
+  },
   "cssBudgetKb": {
     "core.min.css": 410,
     "light.min.css": 560,
-    "dark.min.css": 410
+    "dark.min.css": 560
   },
   "exceptions": []
 }

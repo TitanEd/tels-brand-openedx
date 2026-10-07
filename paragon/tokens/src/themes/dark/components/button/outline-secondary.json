@@ -1,44 +1,57 @@
 {
-  "$description": "Dark \u2014 outline secondary. Labels readable on the dark page (modify:null).",
+  "$description": "Dark — outline secondary. Labels readable on the dark page (modify:null).",
   "color": {
     "btn": {
       "bg": {
         "outline-secondary": {
           "$value": "transparent",
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-secondary"
+          "$description": "bg (dark) → --pgn-color-btn-bg-outline-secondary"
         }
       },
       "text": {
         "outline-secondary": {
           "$value": "{color.secondary.300}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-secondary"
+          "$description": "text (dark) → --pgn-color-btn-text-outline-secondary"
         }
       },
       "border": {
         "outline-secondary": {
           "$value": "{color.secondary.300}",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-secondary"
+          "$description": "border (dark) → --pgn-color-btn-border-outline-secondary"
         }
       },
       "hover": {
         "bg": {
           "outline-secondary": {
             "$value": "transparent",
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-secondary"
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-outline-secondary"
           }
         },
         "text": {
           "outline-secondary": {
-            "$value": "{color.secondary.200}",
-            "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-secondary"
+            "$value": "{color.secondary.base}",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.65"
+              }
+            ],
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-outline-secondary (light tint: base mixed with white, because secondary-200 is a dark tinted surface on the dark page)"
           }
         },
         "border": {
           "outline-secondary": {
-            "$value": "{color.secondary.200}",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-secondary"
+            "$value": "{color.secondary.base}",
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-outline-secondary (light tint: base mixed with white, because secondary-200 is a dark tinted surface on the dark page)",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.65"
+              }
+            ]
           }
         }
       },
@@ -46,20 +59,33 @@
         "bg": {
           "outline-secondary": {
             "$value": "transparent",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-secondary"
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-outline-secondary"
           }
         },
         "text": {
           "outline-secondary": {
-            "$value": "{color.secondary.100}",
-            "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-secondary"
+            "$value": "{color.secondary.base}",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.8"
+              }
+            ],
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-outline-secondary (light tint: base mixed with white, because secondary-100 is a dark tinted surface on the dark page)"
           }
         },
         "border": {
           "outline-secondary": {
-            "$value": "{color.secondary.100}",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-secondary"
+            "$value": "{color.secondary.base}",
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-outline-secondary (light tint: base mixed with white, because secondary-100 is a dark tinted surface on the dark page)",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.8"
+              }
+            ]
           }
         }
       },
@@ -67,20 +93,66 @@
         "bg": {
           "outline-secondary": {
             "$value": "transparent",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-secondary"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-outline-secondary"
           }
         },
         "text": {
           "outline-secondary": {
             "$value": "{color.btn.text.outline-secondary}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-secondary"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-outline-secondary"
           }
         },
         "border": {
           "outline-secondary": {
             "$value": "{color.btn.border.outline-secondary}",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-secondary"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-outline-secondary"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "transparent",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-outline-secondary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.btn.border.outline-secondary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-outline-secondary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "outline-secondary": {
+            "$value": "{color.theme.focus.secondary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-outline-secondary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.btn.text.outline-secondary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-outline-secondary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

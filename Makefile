@@ -1,4 +1,4 @@
-.PHONY: build clean append-overrides copy-fonts validate preview
+.PHONY: build clean append-overrides copy-fonts validate preview sync-dark-tokens
 
 clean:
 	rm -rf dist paragon/build
@@ -22,7 +22,12 @@ copy-fonts:
 # Design token checklist (validation/settings.json, validation/baseline.json).
 # Fails on any new problem; dist/ is already written when it runs.
 validate:
+	@node scripts/sync-dark-tokens.js --check
 	@node scripts/validate-tokens.js
+
+# Give every light token a dark twin (scripts/sync-dark-tokens.js), then make build.
+sync-dark-tokens:
+	@node scripts/sync-dark-tokens.js
 
 # Local page with Paragon components on the built CSS: /light.html and /dark.html
 preview:

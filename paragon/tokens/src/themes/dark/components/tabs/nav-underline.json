@@ -1,16 +1,25 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 Tabs (nav-underline and course tabs).",
+  "$description": "LAYER 2 (dark) — Tabs (nav-underline and course tabs).",
   "color": {
     "nav": {
       "link": {
         "text": {
           "base": {
             "$value": "{color.gray.700}",
-            "$description": "Tab text (dark) \u2192 --pgn-color-nav-link-text-base"
+            "$description": "Tab text (dark) → --pgn-color-nav-link-text-base"
           },
           "disabled": {
             "$value": "{color.gray.400}",
-            "$description": "Disabled tab (dark) \u2192 --pgn-color-nav-link-text-disabled"
+            "$description": "Disabled tab (dark) → --pgn-color-nav-link-text-disabled"
+          }
+        },
+        "border": {
+          "$value": "transparent",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-link-border",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
           }
         }
       },
@@ -19,36 +28,338 @@
           "border": {
             "base": {
               "$value": "{color.light.400}",
-              "$description": "Tab bar bottom border (dark) \u2192 --pgn-color-nav-tabs-base-border-base"
+              "$description": "Tab bar bottom border (dark) → --pgn-color-nav-tabs-base-border-base"
+            },
+            "focus": {
+              "$value": "{color.nav.tabs.base.bg.hover}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-base-border-focus",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
             }
           },
           "link": {
             "text": {
               "$value": "{color.nav.link.text.base}",
-              "$description": "Course tab text (dark) \u2192 --pgn-color-nav-tabs-base-link-text"
+              "$description": "Course tab text (dark) → --pgn-color-nav-tabs-base-link-text"
             },
             "hover": {
               "bg": {
                 "$value": "{color.light.200}",
-                "$description": "Tab hover background (dark) \u2192 --pgn-color-nav-tabs-base-link-hover-bg"
+                "$description": "Tab hover background (dark) → --pgn-color-nav-tabs-base-link-hover-bg"
               },
               "text": {
                 "$value": "{color.primary.400}",
-                "$description": "Tab hover text (dark): lighter primary \u2192 --pgn-color-nav-tabs-base-link-hover-text"
+                "$description": "Tab hover text (dark): lighter primary → --pgn-color-nav-tabs-base-link-hover-text"
               }
             },
             "active": {
               "text": {
                 "$value": "{color.primary.base}",
-                "$description": "Selected tab text (dark) \u2192 --pgn-color-nav-tabs-base-link-active-text"
+                "$description": "Selected tab text (dark) → --pgn-color-nav-tabs-base-link-active-text"
               },
               "bg": {
                 "$value": "transparent",
-                "$description": "Selected tab background (dark) \u2192 --pgn-color-nav-tabs-base-link-active-bg"
+                "$description": "Selected tab background (dark) → --pgn-color-nav-tabs-base-link-active-bg"
               },
               "border": {
                 "$value": "{color.primary.base}",
-                "$description": "Selected course tab underline (dark) \u2192 --pgn-color-nav-tabs-base-link-active-border"
+                "$description": "Selected course tab underline (dark) → --pgn-color-nav-tabs-base-link-active-border"
+              }
+            }
+          },
+          "text": {
+            "disabled": {
+              "$value": "{color.nav.tabs.base.bg.hover}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-base-text-disabled",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "inverse": {
+          "dropdown": {
+            "border": {
+              "$value": "{color.nav.tabs.inverse.link.bg.active-hover}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-dropdown-border",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          },
+          "link": {
+            "bg": {
+              "active": {
+                "$value": "{color.nav.tabs.inverse.link.bg.hover}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-bg-active",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active-hover": {
+                "$value": "transparent",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-bg-active-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "focus": {
+                "$value": "{color.nav.tabs.inverse.link.text.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-bg-focus",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "hover": {
+                "$value": "{color.nav.tabs.inverse.link.border.bottom}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-bg-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            },
+            "border": {
+              "active": {
+                "$value": "{color.nav.tabs.inverse.link.text.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-border-active",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "bottom": {
+                "$value": "{color.dark.300}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-border-bottom",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            },
+            "tab-content-color": {
+              "$value": "{color.nav.tabs.inverse.link.text.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-tab-content-color",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "text": {
+              "base": {
+                "$value": "{color.text.inverse}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-tabs-inverse-link-text-base",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "pills": {
+        "base": {
+          "link": {
+            "active": {
+              "bg": {
+                "$value": "{color.bg.active}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-base-link-active-bg",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "border": {
+                "$value": "{color.text.inverse}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-base-link-active-border",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "text": {
+                "$value": "{color.active}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-base-link-active-text",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            },
+            "border": {
+              "$value": "{color.nav.tabs.base.border.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-base-link-border",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        },
+        "inverse": {
+          "link": {
+            "bg": {
+              "active": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-bg-active",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active-focus-hover": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-bg-active-focus-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active-hover": {
+                "$value": "{color.nav.pills.inverse.link.border.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-bg-active-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "hover": {
+                "$value": "{color.nav.pills.inverse.link.border.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-bg-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            },
+            "border": {
+              "active": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-border-active",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active-focus": {
+                "$value": "{color.primary.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-border-active-focus",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active-hover": {
+                "$value": "{color.nav.pills.inverse.link.border.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-border-active-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "base": {
+                "$value": "{color.dark.300}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-border-base",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "focus-hover": {
+                "$value": "{color.nav.pills.inverse.link.border.active-focus}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-border-focus-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            },
+            "text": {
+              "active": {
+                "$value": "{color.primary.500}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-text-active",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active-focus": {
+                "$value": "{color.nav.pills.inverse.link.text.active}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-text-active-focus",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "active-hover": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-text-active-hover",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "base": {
+                "$value": "{color.text.inverse}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-text-base",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              },
+              "focus": {
+                "$value": "{color.nav.pills.inverse.link.text.base}",
+                "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-link-text-focus",
+                "$extensions": {
+                  "tels": {
+                    "syncedFromLight": true
+                  }
+                }
+              }
+            }
+          },
+          "tab-content-color": {
+            "$value": "{color.nav.pills.inverse.link.text.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-nav-pills-inverse-tab-content-color",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
               }
             }
           }
@@ -62,11 +373,25 @@
         "border": {
           "active": {
             "$value": "{color.primary.base}",
-            "$description": "Selected tab underline (dark) \u2192 --pgn-border-color-nav-tabs-link-border-active"
+            "$description": "Selected tab underline (dark) → --pgn-border-color-nav-tabs-link-border-active"
           },
           "focus": {
             "$value": "{color.nav.tabs.base.link.active.text}",
-            "$description": "Tab focus ring (dark) \u2192 --pgn-border-color-nav-tabs-link-border-focus"
+            "$description": "Tab focus ring (dark) → --pgn-border-color-nav-tabs-link-border-focus"
+          },
+          "hover": {
+            "$value": {
+              "top": "transparent",
+              "right": "transparent",
+              "bottom": "{color.nav.tabs.base.border.base}",
+              "left": "transparent"
+            },
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-border-color-nav-tabs-link-border-hover",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

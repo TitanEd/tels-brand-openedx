@@ -1,10 +1,23 @@
 {
-  "$description": "Dark \u2014 Button variant=\"link\" disabled color.",
+  "$description": "Dark — Button variant=\"link\" disabled color.",
   "color": {
     "btn": {
       "disabled-link": {
         "$value": "{color.disabled}",
-        "$description": "Disabled link button (dark) \u2192 --pgn-color-btn-disabled-link"
+        "$description": "Disabled link button (dark) → --pgn-color-btn-disabled-link"
+      }
+    }
+  },
+  "other": {
+    "btn": {
+      "disabled-opacity": {
+        "$value": ".65",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-other-btn-disabled-opacity",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
       }
     }
   }

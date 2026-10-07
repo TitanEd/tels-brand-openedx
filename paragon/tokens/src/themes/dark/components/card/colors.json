@@ -1,58 +1,58 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 Card.",
+  "$description": "LAYER 2 (dark) — Card.",
   "color": {
     "card": {
       "base": {
         "$value": "inherit",
-        "$description": "Card text (dark) \u2192 --pgn-color-card-base"
+        "$description": "Card text (dark) → --pgn-color-card-base"
       },
       "bg": {
         "base": {
           "$value": "{color.surface.base}",
-          "$description": "Card background (dark) \u2192 --pgn-color-card-bg-base"
+          "$description": "Card background (dark) → --pgn-color-card-bg-base"
         },
         "dark": {
           "$value": "{color.primary.base}",
-          "$description": "Dark card variant (dark) \u2192 --pgn-color-card-bg-dark"
+          "$description": "Dark card variant (dark) → --pgn-color-card-bg-dark"
         },
         "muted": {
           "$value": "{color.light.200}",
-          "$description": "Muted card (dark) \u2192 --pgn-color-card-bg-muted"
+          "$description": "Muted card (dark) → --pgn-color-card-bg-muted"
         }
       },
       "border": {
         "base": {
-          "$value": "{color.white}",
+          "$value": "{color.text.inverse}",
           "modify": [
             {
               "type": "alpha",
               "amount": 0.125
             }
           ],
-          "$description": "Card border (dark): white at 12.5% \u2192 --pgn-color-card-border-base"
+          "$description": "Card border (dark): white at 12.5% → --pgn-color-card-border-base"
         },
         "focus": {
           "base": {
             "$value": "{color.primary.base}",
-            "$description": "Card focus ring (dark) \u2192 --pgn-color-card-border-focus-base"
+            "$description": "Card focus ring (dark) → --pgn-color-card-border-focus-base"
           },
           "dark": {
             "$value": "{color.theme.focus.primary}",
-            "$description": "Dark card focus ring (dark) \u2192 --pgn-color-card-border-focus-dark"
+            "$description": "Dark card focus ring (dark) → --pgn-color-card-border-focus-dark"
           }
         }
       },
       "divider-bg": {
         "$value": "{color.light.400}",
-        "$description": "Card divider (dark) \u2192 --pgn-color-card-divider-bg"
+        "$description": "Card divider (dark) → --pgn-color-card-divider-bg"
       },
       "header-title": {
         "$value": "{color.headings.base}",
-        "$description": "TitanEd: Card.Header title (dark) \u2192 --pgn-color-card-header-title"
+        "$description": "TitanEd: Card.Header title (dark) → --pgn-color-card-header-title"
       },
       "status-text": {
-        "$value": "{color.black}",
-        "$description": "TitanEd: Card.Status message (dark); the success/danger/warning tints stay pale in dark \u2192 --pgn-color-card-status-text"
+        "$value": "{color.text.base}",
+        "$description": "TitanEd: Card.Status message (dark); the success/danger/warning tints stay pale in dark → --pgn-color-card-status-text"
       }
     }
   }

@@ -1,44 +1,44 @@
 {
-  "$description": "Dark \u2014 outline success. Labels readable on the dark page (modify:null).",
+  "$description": "Dark — outline success. Labels readable on the dark page (modify:null).",
   "color": {
     "btn": {
       "bg": {
         "outline-success": {
           "$value": "transparent",
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-outline-success"
+          "$description": "bg (dark) → --pgn-color-btn-bg-outline-success"
         }
       },
       "text": {
         "outline-success": {
           "$value": "{color.success.400}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-outline-success"
+          "$description": "text (dark) → --pgn-color-btn-text-outline-success"
         }
       },
       "border": {
         "outline-success": {
           "$value": "{color.success.400}",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-outline-success"
+          "$description": "border (dark) → --pgn-color-btn-border-outline-success"
         }
       },
       "hover": {
         "bg": {
           "outline-success": {
             "$value": "transparent",
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-outline-success"
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-outline-success"
           }
         },
         "text": {
           "outline-success": {
             "$value": "{color.success.300}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-outline-success"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-outline-success"
           }
         },
         "border": {
           "outline-success": {
             "$value": "{color.success.300}",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-outline-success"
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-outline-success"
           }
         }
       },
@@ -46,20 +46,33 @@
         "bg": {
           "outline-success": {
             "$value": "transparent",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-outline-success"
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-outline-success"
           }
         },
         "text": {
           "outline-success": {
-            "$value": "{color.success.200}",
-            "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-outline-success"
+            "$value": "{color.success.base}",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.65"
+              }
+            ],
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-outline-success (light tint: base mixed with white, because success-200 is a dark tinted surface on the dark page)"
           }
         },
         "border": {
           "outline-success": {
-            "$value": "{color.success.200}",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-outline-success"
+            "$value": "{color.success.base}",
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-outline-success (light tint: base mixed with white, because success-200 is a dark tinted surface on the dark page)",
+            "modify": [
+              {
+                "type": "mix",
+                "otherColor": "white",
+                "amount": "0.65"
+              }
+            ]
           }
         }
       },
@@ -67,20 +80,66 @@
         "bg": {
           "outline-success": {
             "$value": "transparent",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-outline-success"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-outline-success"
           }
         },
         "text": {
           "outline-success": {
             "$value": "{color.btn.text.outline-success}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-outline-success"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-outline-success"
           }
         },
         "border": {
           "outline-success": {
             "$value": "{color.btn.border.outline-success}",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-outline-success"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-outline-success"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "outline-success": {
+            "$value": "inherit",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-outline-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "outline-success": {
+            "$value": "{color.btn.border.outline-success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-outline-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "outline-success": {
+            "$value": "{color.theme.focus.success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-outline-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "outline-success": {
+            "$value": "{color.btn.text.outline-success}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-outline-success",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

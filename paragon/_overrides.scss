@@ -25,6 +25,7 @@
 @import "./catalog";
 @import "./gradebook";
 @import "./learning";
+@import "./site";
 @import "./discussion";
 @import "./account";
 @import "./profile";
@@ -34,3 +35,6 @@
 @import "./communications";
 @import "./ora-grading";
 @import "./admin-console";
+
+// Dark mode remaps for colors baked into MFE bundles — last, so it wins
+@import "./dark";

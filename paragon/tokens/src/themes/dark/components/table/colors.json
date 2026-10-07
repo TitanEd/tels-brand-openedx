@@ -1,46 +1,46 @@
 {
-  "$description": "LAYER 2 (dark) \u2014 Table / DataTable.",
+  "$description": "LAYER 2 (dark) — Table / DataTable.",
   "color": {
     "table": {
       "border": {
         "$value": "{color.border}",
-        "$description": "Table border (dark) \u2192 --pgn-color-table-border"
+        "$description": "Table border (dark) → --pgn-color-table-border"
       },
       "caption": {
         "$value": "{color.text.muted}",
-        "$description": "Table caption (dark) \u2192 --pgn-color-table-caption"
+        "$description": "Table caption (dark) → --pgn-color-table-caption"
       }
     },
     "data-table": {
       "bg": {
         "base": {
           "$value": "{color.surface.base}",
-          "$description": "DataTable background (dark) \u2192 --pgn-color-data-table-bg-base"
+          "$description": "DataTable background (dark) → --pgn-color-data-table-bg-base"
         }
       },
       "border": {
         "$value": "{color.light.300}",
-        "$description": "DataTable border (dark) \u2192 --pgn-color-data-table-border"
+        "$description": "DataTable border (dark) → --pgn-color-data-table-border"
       },
       "text": {
         "$value": "{color.body.base}",
-        "$description": "DataTable text (dark) \u2192 --pgn-color-data-table-text"
+        "$description": "DataTable text (dark) → --pgn-color-data-table-text"
       },
       "header": {
         "bg": {
           "$value": "{color.light.300}",
-          "$description": "DataTable header background (dark) \u2192 --pgn-color-data-table-header-bg"
+          "$description": "DataTable header background (dark) → --pgn-color-data-table-header-bg"
         },
         "text": {
           "$value": "{color.body.base}",
-          "$description": "DataTable header text (dark) \u2192 --pgn-color-data-table-header-text"
+          "$description": "DataTable header text (dark) → --pgn-color-data-table-header-text"
         }
       },
       "row": {
         "striped": {
           "bg": {
             "$value": "{color.light.200}",
-            "$description": "Striped row (dark) \u2192 --pgn-color-data-table-row-striped-bg"
+            "$description": "Striped row (dark) → --pgn-color-data-table-row-striped-bg"
           }
         },
         "selected": {
@@ -53,7 +53,20 @@
                 "amount": "0.75"
               }
             ],
-            "$description": "Selected row (dark): info mixed 75% into the page color \u2192 --pgn-color-data-table-row-selected-bg"
+            "$description": "Selected row (dark): info mixed 75% into the page color → --pgn-color-data-table-row-selected-bg"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "data-table": {
+      "box-shadow": {
+        "$value": "{elevation.box-shadow.sm}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-data-table-box-shadow",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
           }
         }
       }

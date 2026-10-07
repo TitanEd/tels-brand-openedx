@@ -1,77 +1,77 @@
 {
-  "$description": "Dark \u2014 inverse tertiary (white text button).",
+  "$description": "Dark — inverse tertiary (white text button).",
   "color": {
     "btn": {
       "bg": {
         "inverse-tertiary": {
           "$value": "transparent",
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-inverse-tertiary"
+          "$description": "bg (dark) → --pgn-color-btn-bg-inverse-tertiary"
         }
       },
       "text": {
         "inverse-tertiary": {
-          "$value": "{color.white}",
+          "$value": "{color.text.inverse}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-inverse-tertiary"
+          "$description": "text (dark) → --pgn-color-btn-text-inverse-tertiary"
         }
       },
       "border": {
         "inverse-tertiary": {
           "$value": "transparent",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-inverse-tertiary"
+          "$description": "border (dark) → --pgn-color-btn-border-inverse-tertiary"
         }
       },
       "hover": {
         "bg": {
           "inverse-tertiary": {
-            "$value": "{color.white}",
+            "$value": "{color.text.inverse}",
             "modify": [
               {
                 "type": "alpha",
                 "amount": 0.1
               }
             ],
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-inverse-tertiary"
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-inverse-tertiary"
           }
         },
         "text": {
           "inverse-tertiary": {
-            "$value": "{color.white}",
+            "$value": "{color.text.inverse}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-inverse-tertiary"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-inverse-tertiary"
           }
         },
         "border": {
           "inverse-tertiary": {
             "$value": "transparent",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-inverse-tertiary"
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-inverse-tertiary"
           }
         }
       },
       "active": {
         "bg": {
           "inverse-tertiary": {
-            "$value": "{color.white}",
+            "$value": "{color.text.inverse}",
             "modify": [
               {
                 "type": "alpha",
                 "amount": 0.1
               }
             ],
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-inverse-tertiary"
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-inverse-tertiary"
           }
         },
         "text": {
           "inverse-tertiary": {
-            "$value": "{color.white}",
+            "$value": "{color.text.inverse}",
             "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-inverse-tertiary"
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-inverse-tertiary"
           }
         },
         "border": {
           "inverse-tertiary": {
             "$value": "transparent",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-inverse-tertiary"
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-inverse-tertiary"
           }
         }
       },
@@ -79,20 +79,66 @@
         "bg": {
           "inverse-tertiary": {
             "$value": "transparent",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-inverse-tertiary"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-inverse-tertiary"
           }
         },
         "text": {
           "inverse-tertiary": {
-            "$value": "{color.white}",
+            "$value": "{color.text.inverse}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-inverse-tertiary"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-inverse-tertiary"
           }
         },
         "border": {
           "inverse-tertiary": {
             "$value": "transparent",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-inverse-tertiary"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-inverse-tertiary"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "inverse-tertiary": {
+            "$value": "inherit",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-inverse-tertiary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "inverse-tertiary": {
+            "$value": "transparent",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-inverse-tertiary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "inverse-tertiary": {
+            "$value": "{color.text.inverse}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-inverse-tertiary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "inverse-tertiary": {
+            "$value": "{color.btn.text.inverse-tertiary}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-inverse-tertiary",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

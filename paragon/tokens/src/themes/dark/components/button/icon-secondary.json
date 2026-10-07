@@ -1,33 +1,71 @@
 {
-  "$description": "Dark \u2014 IconButton secondary. White icon on the filled hover / pressed state (modify:null).",
+  "$description": "Dark — IconButton secondary. White icon on the filled hover / pressed state (modify:null).",
   "color": {
     "icon-button": {
       "text": {
         "secondary": {
           "base": {
             "$value": "{color.secondary.300}",
-            "$description": "Icon (dark) \u2192 --pgn-color-icon-button-text-secondary-base"
+            "$description": "Icon (dark) → --pgn-color-icon-button-text-secondary-base"
           },
           "hover": {
-            "$value": "#FFFFFF",
+            "$value": "{color.text.inverse}",
             "modify": null,
-            "$description": "Icon on hover (dark) \u2192 --pgn-color-icon-button-text-secondary-hover"
+            "$description": "Icon on hover (dark) → --pgn-color-icon-button-text-secondary-hover"
           },
           "active": {
             "base": {
-              "$value": "#FFFFFF",
+              "$value": "{color.text.inverse}",
               "modify": null,
-              "$description": "Icon pressed (dark) \u2192 --pgn-color-icon-button-text-secondary-active-base"
+              "$description": "Icon pressed (dark) → --pgn-color-icon-button-text-secondary-active-base"
             },
             "hover": {
-              "$value": "#FFFFFF",
+              "$value": "{color.text.inverse}",
               "modify": null,
-              "$description": "Icon pressed + hover (dark) \u2192 --pgn-color-icon-button-text-secondary-active-hover"
+              "$description": "Icon pressed + hover (dark) → --pgn-color-icon-button-text-secondary-active-hover"
             },
             "focus": {
-              "$value": "#FFFFFF",
+              "$value": "{color.text.inverse}",
               "modify": null,
-              "$description": "Icon pressed + focus (dark) \u2192 --pgn-color-icon-button-text-secondary-active-focus"
+              "$description": "Icon pressed + focus (dark) → --pgn-color-icon-button-text-secondary-active-focus"
+            }
+          },
+          "focus": {
+            "$value": "{color.icon-button.text.secondary.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-secondary-focus",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-secondary-inverse-base",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-secondary-inverse-focus",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.secondary.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-text-secondary-inverse-hover",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
             }
           }
         }
@@ -36,12 +74,99 @@
         "secondary": {
           "hover": {
             "$value": "{color.secondary.base}",
-            "$description": "Hover fill (dark) \u2192 --pgn-color-icon-button-bg-secondary-hover"
+            "$description": "Hover fill (dark) → --pgn-color-icon-button-bg-secondary-hover"
           },
           "active": {
             "base": {
               "$value": "{color.secondary.base}",
-              "$description": "Pressed fill (dark) \u2192 --pgn-color-icon-button-bg-secondary-active-base"
+              "$description": "Pressed fill (dark) → --pgn-color-icon-button-bg-secondary-active-base"
+            }
+          },
+          "base": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-secondary-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "focus": {
+            "$value": "{color.icon-button.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-secondary-focus",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse": {
+            "base": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-secondary-inverse-base",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "focus": {
+              "$value": "{color.icon-button.bg.base}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-secondary-inverse-focus",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            },
+            "hover": {
+              "$value": "{color.icon-button.accent}",
+              "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-icon-button-bg-secondary-inverse-hover",
+              "$extensions": {
+                "tels": {
+                  "syncedFromLight": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "icon-button": {
+      "box-shadow": {
+        "secondary": {
+          "base": {
+            "$value": {
+              "color": "{color.icon-button.text.secondary.base}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-icon-button-box-shadow-secondary-base",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "inverse": {
+            "$value": {
+              "color": "{color.icon-button.accent}",
+              "spread": "{size.btn.focus.width}",
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "inset": "inset"
+            },
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-icon-button-box-shadow-secondary-inverse",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
             }
           }
         }

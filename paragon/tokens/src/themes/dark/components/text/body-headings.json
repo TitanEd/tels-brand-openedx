@@ -1,9 +1,9 @@
 {
-  "$description": "Dark \u2014 body / headings text (page text color itself is color.text.base in global/color.json)",
+  "$description": "Dark — body / headings text (page text color itself is color.text.base in global/color.json)",
   "color": {
     "headings": {
       "base": {
-        "$value": "#FFFFFF",
+        "$value": "{color.text.inverse}",
         "$description": "Dark headings"
       }
     },

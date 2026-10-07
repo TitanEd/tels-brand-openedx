@@ -1,0 +1,25 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/DataTable.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "data-table": {
+      "bg": {
+        "is-loading": {
+          "source": "$data-table-is-loading-bg",
+          "modify": [
+            {
+              "type": "alpha",
+              "amount": 0.7
+            }
+          ],
+          "$value": "{color.text.inverse}",
+          "$description": "Paragon default → --pgn-color-data-table-bg-is-loading (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

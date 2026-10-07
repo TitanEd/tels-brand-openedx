@@ -1,0 +1,63 @@
+{
+  "$description": "Dark twin of themes/light/components/dropzone/colors.json (scripts/sync-dark-tokens.js). dropzone — Paragon defaults (copied from @openedx/paragon tokens; values unchanged). Edit here to change them for TitanEd.",
+  "color": {
+    "dropzone": {
+      "border": {
+        "base": {
+          "$value": "{color.gray.500}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropzone-border-base",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        }
+      },
+      "restriction-msg": {
+        "$value": "{color.gray.500}",
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-dropzone-restriction-msg",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "dropzone": {
+      "focus": {
+        "$value": {
+          "color": "{color.info.300}",
+          "spread": "2px",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "0",
+          "inset": "inset"
+        },
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-dropzone-focus",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      },
+      "hover": {
+        "$value": {
+          "color": "{color.info.300}",
+          "spread": "2px",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "0",
+          "inset": "inset"
+        },
+        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-dropzone-hover",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  }
+}

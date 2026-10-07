@@ -1,11 +1,88 @@
 {
-  "$description": "LAYER 2 (dark) — PageBanner. The light variant's background (light-400) is a dark gray in dark mode, so its text turns white.",
+  "$description": "LAYER 2 (dark) \u2014 PageBanner. The light variant's background (light-400) is a dark gray in dark mode, so its text turns white.",
   "color": {
     "page-banner": {
       "text": {
         "light": {
-          "$value": "{color.white}",
-          "$description": "Light banner text (dark) → --pgn-color-page-banner-text-light"
+          "$value": "{color.text.inverse}",
+          "$description": "Light banner text (dark) \u2192 --pgn-color-page-banner-text-light"
+        },
+        "accent": {
+          "a": {
+            "$value": "{color.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-page-banner-text-accent-a (dark: the page color, dark text on a light or colored surface)",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "b": {
+            "$value": "{color.bg.base}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-page-banner-text-accent-b (dark: the page color, dark text on a light or colored surface)",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "dark": {
+          "$value": "{color.bg.base}",
+          "$description": "Page banner dark text (dark): the \"dark\" banner is a light neutral on the dark page, so the text is the page color \u2192 --pgn-color-page-banner-text-dark"
+        },
+        "warning": {
+          "$value": "{color.text.base}",
+          "$description": "Page banner warning text (dark): the banner is a dark warning tint, so the text is the page text color \u2192 --pgn-color-page-banner-text-warning"
+        }
+      },
+      "bg": {
+        "accent": {
+          "a": {
+            "$value": "{color.accent.a}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-page-banner-bg-accent-a",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "b": {
+            "$value": "{color.accent.b}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-page-banner-bg-accent-b",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "dark": {
+          "$value": "{color.dark.500}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-page-banner-bg-dark",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "light": {
+          "$value": "{color.light.400}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-page-banner-bg-light",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
+        },
+        "warning": {
+          "$value": "{color.warning.100}",
+          "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default \u2192 --pgn-color-page-banner-bg-warning",
+          "$extensions": {
+            "tels": {
+              "syncedFromLight": true
+            }
+          }
         }
       }
     }

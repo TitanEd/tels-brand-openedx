@@ -1,6 +1,6 @@
 {
   "$type": "color",
-  "$description": "LAYER 1 — Global semantic colors (light). Change color.primary.base once → buttons, links, tabs, selects, TinyMCE accents. Applied via CSS vars; bridges only rematch selectors.",
+  "$description": "LAYER 1 \u2014 Global semantic colors (light). Change color.primary.base once \u2192 buttons, links, tabs, selects, TinyMCE accents. Applied via CSS vars; bridges only rematch selectors.",
   "color": {
     "white": {
       "$value": "#FFFFFF",
@@ -46,7 +46,7 @@
           "default": "{color.action.default.primary.500}"
         },
         "$value": "{color.primary.base}",
-        "$description": "Paragon default → --pgn-color-primary-500"
+        "$description": "Paragon default \u2192 --pgn-color-primary-500"
       },
       "700": {
         "modify": [
@@ -60,11 +60,11 @@
           "default": "{color.action.default.primary.700}"
         },
         "$value": "{color.primary.base}",
-        "$description": "Paragon default → --pgn-color-primary-700"
+        "$description": "Paragon default \u2192 --pgn-color-primary-700"
       },
       "base": {
         "$value": "#EB5939",
-        "$description": "LAYER 1 color 1 — Primary. Change once → solid/outline/inverse primary buttons, brand (linked), links, tabs."
+        "$description": "LAYER 1 color 1 \u2014 Primary. Change once \u2192 solid/outline/inverse primary buttons, brand (linked), links, tabs."
       },
       "light": {
         "$value": "#F2F7F8",
@@ -74,7 +74,7 @@
     "secondary": {
       "base": {
         "$value": "#273F2F",
-        "$description": "LAYER 1 color 2 — Secondary. Change once → solid/outline/inverse secondary buttons and icon-secondary."
+        "$description": "LAYER 1 color 2 \u2014 Secondary. Change once \u2192 solid/outline/inverse secondary buttons and icon-secondary."
       },
       "light": {
         "$value": "#F3F5F4",
@@ -90,7 +90,7 @@
     "surface": {
       "base": {
         "$value": "{color.white}",
-        "$description": "LAYER 1 — Surface (raised containers on the page bg). → --pgn-color-surface-base. Feeds modal content, dropdown menu and DataTable backgrounds."
+        "$description": "LAYER 1 \u2014 Surface (raised containers on the page bg). \u2192 --pgn-color-surface-base. Feeds modal content, dropdown menu and DataTable backgrounds."
       }
     },
     "success": {
@@ -106,7 +106,7 @@
           "default": "{color.action.default.success.100}"
         },
         "$value": "{color.success.base}",
-        "$description": "Paragon default → --pgn-color-success-100"
+        "$description": "Paragon default \u2192 --pgn-color-success-100"
       },
       "base": {
         "$value": "{color.green}",
@@ -132,7 +132,7 @@
           "default": "{color.action.default.warning.100}"
         },
         "$value": "{color.warning.base}",
-        "$description": "Paragon default → --pgn-color-warning-100"
+        "$description": "Paragon default \u2192 --pgn-color-warning-100"
       },
       "200": {
         "modify": [
@@ -146,14 +146,14 @@
           "default": "{color.action.default.warning.200}"
         },
         "$value": "{color.warning.base}",
-        "$description": "Paragon default → --pgn-color-warning-200"
+        "$description": "Paragon default \u2192 --pgn-color-warning-200"
       },
       "500": {
         "actions": {
           "default": "{color.action.default.warning.500}"
         },
         "$value": "{color.warning.base}",
-        "$description": "Paragon default → --pgn-color-warning-500"
+        "$description": "Paragon default \u2192 --pgn-color-warning-500"
       },
       "base": {
         "$value": "{color.yellow}",
@@ -173,7 +173,7 @@
           "default": "{color.action.default.danger.100}"
         },
         "$value": "{color.danger.base}",
-        "$description": "Paragon default → --pgn-color-danger-100"
+        "$description": "Paragon default \u2192 --pgn-color-danger-100"
       },
       "base": {
         "$value": "{color.red}",
@@ -193,7 +193,7 @@
           "default": "{color.action.default.light.200}"
         },
         "$value": "{color.light.base}",
-        "$description": "Paragon default → --pgn-color-light-200"
+        "$description": "Paragon default \u2192 --pgn-color-light-200"
       },
       "300": {
         "modify": [
@@ -207,7 +207,7 @@
           "default": "{color.action.default.light.300}"
         },
         "$value": "{color.light.base}",
-        "$description": "Paragon default → --pgn-color-light-300"
+        "$description": "Paragon default \u2192 --pgn-color-light-300"
       },
       "base": {
         "$value": "#E1DDDB",
@@ -227,7 +227,7 @@
           "default": "{color.action.default.dark.700}"
         },
         "$value": "{color.dark.base}",
-        "$description": "Paragon default → --pgn-color-dark-700"
+        "$description": "Paragon default \u2192 --pgn-color-dark-700"
       },
       "base": {
         "$value": "#273F2F",
@@ -240,28 +240,28 @@
           "default": "{color.action.default.gray.100}"
         },
         "$value": "#EBEBEB",
-        "$description": "Paragon default → --pgn-color-gray-100"
+        "$description": "Paragon default \u2192 --pgn-color-gray-100"
       },
       "300": {
         "actions": {
           "default": "{color.action.default.gray.300}"
         },
         "$value": "#ADADAD",
-        "$description": "Paragon default → --pgn-color-gray-300"
+        "$description": "Paragon default \u2192 --pgn-color-gray-300"
       },
       "500": {
         "actions": {
           "default": "{color.action.default.gray.500}"
         },
         "$value": "{color.gray.base}",
-        "$description": "Paragon default → --pgn-color-gray-500"
+        "$description": "Paragon default \u2192 --pgn-color-gray-500"
       },
       "700": {
         "actions": {
           "default": "{color.action.default.gray.700}"
         },
         "$value": "#454545",
-        "$description": "Paragon default → --pgn-color-gray-700"
+        "$description": "Paragon default \u2192 --pgn-color-gray-700"
       },
       "base": {
         "$value": "#707070",
@@ -284,6 +284,10 @@
       "footer": {
         "$value": "#374151",
         "$description": "Footer text"
+      },
+      "inverse": {
+        "$value": "{color.white}",
+        "$description": "Text, border or icon on a colored or dark backdrop (solid buttons, inverse buttons, badges, toolbars). White in both modes: in dark mode color.white is the surface color, this one stays white \u2192 --pgn-color-text-inverse"
       }
     }
   }

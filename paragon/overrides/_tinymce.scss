@@ -110,7 +110,7 @@
   .tox-collection__item--enabled,
   .tox-collection__item[aria-selected="true"] {
     background-color: var(--pgn-color-primary-base) !important;
-    color: var(--pgn-color-white) !important;
+    color: var(--pgn-color-text-inverse) !important;
   }
 
   .tox-listboxfield .tox-listbox--select:focus {

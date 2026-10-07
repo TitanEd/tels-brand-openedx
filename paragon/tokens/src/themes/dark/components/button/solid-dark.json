@@ -1,65 +1,65 @@
 {
-  "$description": "Dark \u2014 solid dark. White labels use modify:null.",
+  "$description": "Dark — solid dark. White labels use modify:null.",
   "color": {
     "btn": {
       "bg": {
         "dark": {
           "$value": "{color.dark.base}",
-          "$description": "bg (dark) \u2192 --pgn-color-btn-bg-dark"
+          "$description": "bg (dark) → --pgn-color-btn-bg-dark"
         }
       },
       "text": {
         "dark": {
-          "$value": "#FFFFFF",
+          "$value": "{color.bg.base}",
           "modify": null,
-          "$description": "text (dark) \u2192 --pgn-color-btn-text-dark"
+          "$description": "text (dark) → --pgn-color-btn-text-dark"
         }
       },
       "border": {
         "dark": {
           "$value": "{color.btn.bg.dark}",
-          "$description": "border (dark) \u2192 --pgn-color-btn-border-dark"
+          "$description": "border (dark) → --pgn-color-btn-border-dark"
         }
       },
       "hover": {
         "bg": {
           "dark": {
-            "$value": "{color.theme.hover.dark}",
-            "$description": "Hover bg (dark) \u2192 --pgn-color-btn-hover-bg-dark"
+            "$value": "{color.dark.700}",
+            "$description": "Hover bg (dark) → --pgn-color-btn-hover-bg-dark"
           }
         },
         "text": {
           "dark": {
-            "$value": "#FFFFFF",
+            "$value": "{color.bg.base}",
             "modify": null,
-            "$description": "Hover text (dark) \u2192 --pgn-color-btn-hover-text-dark"
+            "$description": "Hover text (dark) → --pgn-color-btn-hover-text-dark"
           }
         },
         "border": {
           "dark": {
-            "$value": "{color.theme.hover.dark}",
-            "$description": "Hover border (dark) \u2192 --pgn-color-btn-hover-border-dark"
+            "$value": "{color.dark.700}",
+            "$description": "Hover border (dark) → --pgn-color-btn-hover-border-dark"
           }
         }
       },
       "active": {
         "bg": {
           "dark": {
-            "$value": "{color.theme.active.dark}",
-            "$description": "Active bg (dark) \u2192 --pgn-color-btn-active-bg-dark"
+            "$value": "{color.dark.800}",
+            "$description": "Active bg (dark) → --pgn-color-btn-active-bg-dark"
           }
         },
         "text": {
           "dark": {
-            "$value": "#FFFFFF",
+            "$value": "{color.bg.base}",
             "modify": null,
-            "$description": "Active text (dark) \u2192 --pgn-color-btn-active-text-dark"
+            "$description": "Active text (dark) → --pgn-color-btn-active-text-dark"
           }
         },
         "border": {
           "dark": {
-            "$value": "{color.theme.active.dark}",
-            "$description": "Active border (dark) \u2192 --pgn-color-btn-active-border-dark"
+            "$value": "{color.dark.800}",
+            "$description": "Active border (dark) → --pgn-color-btn-active-border-dark"
           }
         }
       },
@@ -67,20 +67,66 @@
         "bg": {
           "dark": {
             "$value": "{color.btn.bg.dark}",
-            "$description": "Disabled bg (dark) \u2192 --pgn-color-btn-disabled-bg-dark"
+            "$description": "Disabled bg (dark) → --pgn-color-btn-disabled-bg-dark"
           }
         },
         "text": {
           "dark": {
             "$value": "{color.btn.text.dark}",
             "modify": null,
-            "$description": "Disabled text (dark) \u2192 --pgn-color-btn-disabled-text-dark"
+            "$description": "Disabled text (dark) → --pgn-color-btn-disabled-text-dark"
           }
         },
         "border": {
           "dark": {
             "$value": "{color.btn.border.dark}",
-            "$description": "Disabled border (dark) \u2192 --pgn-color-btn-disabled-border-dark"
+            "$description": "Disabled border (dark) → --pgn-color-btn-disabled-border-dark"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "dark": {
+            "$value": "{color.btn.bg.dark}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-bg-dark",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "border": {
+          "dark": {
+            "$value": "{color.btn.focus.bg.dark}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-border-dark",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "outline": {
+          "dark": {
+            "$value": "{color.theme.focus.dark}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-outline-dark",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "text": {
+          "dark": {
+            "$value": "{color.btn.text.dark}",
+            "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-color-btn-focus-text-dark",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
           }
         }
       }

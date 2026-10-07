@@ -1,0 +1,17 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/OverflowScroll.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "overflow-scroll": {
+      "opacity-mask-transparent": {
+        "source": "$overflow-scroll-opacity-mask-transparent",
+        "$value": "rgba(0, 0, 0, .4)",
+        "$description": "Paragon default → --pgn-color-overflow-scroll-opacity-mask-transparent (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+        "$extensions": {
+          "tels": {
+            "syncedFromLight": true
+          }
+        }
+      }
+    }
+  }
+}

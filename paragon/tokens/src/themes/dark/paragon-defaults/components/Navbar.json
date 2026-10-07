@@ -1,0 +1,137 @@
+{
+  "$description": "Dark twin of Paragon's themes/light/components/Navbar.json (scripts/sync-dark-tokens.js).",
+  "color": {
+    "navbar": {
+      "dark": {
+        "toggler": {
+          "border": {
+            "source": "$navbar-dark-toggler-border-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.text.inverse}",
+            "$description": "Paragon default → --pgn-color-navbar-dark-toggler-border (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "brand": {
+          "text": {
+            "source": "$navbar-dark-brand-color",
+            "$value": "{color.navbar.dark.active}",
+            "$description": "Paragon default → --pgn-color-navbar-dark-brand-text (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "source": "$navbar-dark-brand-hover-color",
+            "$value": "{color.navbar.dark.active}",
+            "$description": "Paragon default → --pgn-color-navbar-dark-brand-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      },
+      "light": {
+        "toggler": {
+          "border": {
+            "source": "$navbar-light-toggler-border-color",
+            "modify": [
+              {
+                "type": "alpha",
+                "amount": 0.1
+              }
+            ],
+            "$value": "{color.black}",
+            "$description": "Paragon default → --pgn-color-navbar-light-toggler-border (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "brand": {
+          "text": {
+            "source": "$navbar-light-brand-color",
+            "$value": "{color.navbar.light.active}",
+            "$description": "Paragon default → --pgn-color-navbar-light-brand-text (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          },
+          "hover": {
+            "source": "$navbar-light-brand-hover-color",
+            "$value": "{color.navbar.light.active}",
+            "$description": "Paragon default → --pgn-color-navbar-light-brand-hover (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "content": {
+    "navbar": {
+      "toggler": {
+        "dark": {
+          "icon-bg": {
+            "source": "$navbar-dark-toggler-icon-bg",
+            "outputReferences": false,
+            "modify": [
+              {
+                "type": "str-replace",
+                "toReplace": "#",
+                "replaceWith": "%23"
+              }
+            ],
+            "$value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.dark.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
+            "$description": "Paragon default → --pgn-content-navbar-toggler-dark-icon-bg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        },
+        "light": {
+          "icon-bg": {
+            "source": "$navbar-light-toggler-icon-bg",
+            "outputReferences": false,
+            "modify": [
+              {
+                "type": "str-replace",
+                "toReplace": "#",
+                "replaceWith": "%23"
+              }
+            ],
+            "$value": "url(\"data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='{color.navbar.light.text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
+            "$description": "Paragon default → --pgn-content-navbar-toggler-light-icon-bg (dark twin of Paragon's light token; scripts/sync-dark-tokens.js).",
+            "$extensions": {
+              "tels": {
+                "syncedFromLight": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

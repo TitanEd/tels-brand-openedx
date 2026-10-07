@@ -116,7 +116,7 @@ input.form-control:disabled {
 .badge.badge-info,
 .badge-info {
   background-color: var(--pgn-color-primary-base) !important;
-  color: var(--pgn-color-white) !important;
+  color: var(--pgn-color-text-inverse) !important;
   border-radius: var(--pgn-size-border-radius-sm) !important;
 
   .btn,
@@ -124,6 +124,6 @@ input.form-control:disabled {
   .btn-info {
     background-color: transparent !important;
     border-color: transparent !important;
-    color: var(--pgn-color-white) !important;
+    color: var(--pgn-color-text-inverse) !important;
   }
 }
