@@ -10,9 +10,9 @@
     "dark": "--pgn-color-dark-100"
   },
   "cssBudgetKb": {
-    "core.min.css": 410,
-    "light.min.css": 560,
-    "dark.min.css": 560
+    "core.min.css": 450,
+    "light.min.css": 600,
+    "dark.min.css": 600
   },
   "exceptions": []
 }

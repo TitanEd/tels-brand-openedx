@@ -7,6 +7,10 @@
  * (uploaded-fonts/<file>, which those stylesheets load with @font-face). Nothing is cached, so a reload of an MFE
  * page shows the latest values.
  *   THEME_PORT=3001 THEME_HOST=127.0.0.1 npm run serve
+ * THEME_RAW=1 serves dist/ exactly as built (no values from the preview page): the upstream for
+ * control-panel's live theme during development (Tutor INDIGO_BRAND_THEME_DEPLOYED_URL pointed at this
+ * server from the LMS container, e.g. http://172.22.0.1:3001), so a `make build` shows up on the site
+ * with the design tokens saved on the theme configuration page written on top.
  */
 const http = require('http');
 const fs = require('fs');
@@ -14,6 +18,7 @@ const path = require('path');
 const { DIST, MODES, themeFile } = require('./saved-theme');
 
 const PORT = Number(process.env.THEME_PORT) || 3000;
+const RAW = ['1', 'true', 'yes'].includes(String(process.env.THEME_RAW || '').toLowerCase());
 const HOST = process.env.THEME_HOST || '0.0.0.0';
 const TYPES = {
   '.css': 'text/css', '.json': 'application/json', '.map': 'application/json', '.svg': 'image/svg+xml',
@@ -24,7 +29,9 @@ http.createServer((req, res) => {
   const headers = { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' };
   let file = null;
   try {
-    file = themeFile(decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\/+/, ''));
+    const name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\/+/, '');
+    file = RAW ? path.normalize(path.join(DIST, name)) : themeFile(name);
+    if (RAW && !file.startsWith(`${DIST}${path.sep}`)) { file = null; }
   } catch (e) {
     console.error(e);
   }
@@ -41,6 +48,6 @@ http.createServer((req, res) => {
   const base = `http://${HOST}:${PORT}`;
   console.log(`Theme CSS for PARAGON_THEME_URLS brandOverride: ${base}`);
   console.log(`  core: ${base}/core.min.css`);
-  MODES.forEach((mode) => console.log(`  ${mode}: ${base}/${mode}.min.css (with the values saved or previewed on the preview page)`));
+  MODES.forEach((mode) => console.log(`  ${mode}: ${base}/${mode}.min.css${RAW ? ' (dist as built, THEME_RAW=1)' : ' (with the values saved or previewed on the preview page)'}`));
   console.log('Ctrl+C to stop.');
 });

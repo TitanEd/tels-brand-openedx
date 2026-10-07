@@ -45,7 +45,8 @@
 // the wrong size. Same fix, same three vars, one more selector.
 #root header.site-header-desktop .logo img,
 #root header.site-header-mobile .logo img,
-#root header.learning-header .logo img {
+#root header.learning-header .logo img,
+#root header > nav .logo img {
   height: 60px !important;
   width: auto !important;
 }
@@ -73,6 +74,7 @@
 #root .site-header-desktop .container-fluid .nav-container .logo,
 #root .site-header-mobile .container-fluid .nav-container .logo,
 #root header.learning-header .logo,
+#root header > nav .logo,
 #root .studio-header .logo,
 #root .studio-header img.logo {
   padding: .6rem 0 !important;
