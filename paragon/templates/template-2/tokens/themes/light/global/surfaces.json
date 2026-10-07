@@ -1,0 +1,17 @@
+{
+  "$description": "LAYER 1 — page background (light). Do NOT set color.border here — leave Open edX/Paragon default component borders (cards, collapsibles, etc.). Buttons keep their own border tokens.",
+  "color": {
+    "bg": {
+      "base": {
+        "$value": "{color.white}",
+        "$description": "Page background → --pgn-color-bg-base"
+      }
+    },
+    "input": {
+      "focus": {
+        "$value": "{color.primary.500}",
+        "$description": "Input focus → --pgn-color-input-focus"
+      }
+    }
+  }
+}

@@ -1,0 +1,1053 @@
+// LAYER 3 — Shared site headers (all MFEs)
+// Width tokens: core/components/container/max-width.json + core/global/spacing.json
+// Applied via tels-content-width mixin from overrides/_layout.scss
+// .site-header-desktop / .site-header-mobile come from the ONE shared
+// @edx/frontend-component-header package — Learner Dashboard,
+// Gradebook, Account, Authn, and Learning (wrapped in its own
+// .learning-header for width purposes below) all render the exact same
+// header markup, so a single rule here reaches every one of them. Studio
+// doesn't use this package (its own .studio-header, different markup
+// entirely) — matching logo size lives in _authoring.scss instead.
+
+// Learner-dashboard / authn desktop header
+.site-header-desktop > .container-fluid,
+.site-header-mobile > .container-fluid {
+  @include tels-content-width;
+}
+
+// Learning MFE header — width/L-R pad live on the parent `.learning-header`
+// (see _learning.scss). Do NOT also constrain this child or gutters double.
+// Global `.container-xl` padding from _layout.scss must be zeroed here.
+.learning-header > .container-xl,
+.learning-header > .container-xl.py-2 {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  // Bootstrap `py-2` vertical pad — keep header height aligned with site-header
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  box-sizing: border-box;
+}
+
+// Logo — same rendered size everywhere the shared header appears, so the
+// header doesn't visibly resize when navigating between MFEs that each load
+// their own copy of it.
+//
+// Learning MFE included here too: @edx/frontend-component-header's own
+// stock CSS ships `.logo img { display: block; height: 100%; }`, sized for
+// whatever height its wrapper happens to have — that stock rule was only
+// being beaten for .site-header-desktop / .site-header-mobile above, so
+// .learning-header's logo (the light/dark logo-image swap pair rendered
+// inline by the Learning MFE) was still falling back to it and rendering at
+// the wrong size. Same fix, same three vars, one more selector.
+#root header.site-header-desktop .logo img,
+#root header.site-header-mobile .logo img,
+#root header.learning-header .logo img {
+  height: 40px !important;
+  width: auto !important;
+  max-height: 44px;
+  object-fit: contain;
+
+  @media (min-width: 48em) {
+    height: 44px !important;
+  }
+}
+
+// Stock header hardcodes height on the .logo <a> wrapper (1.75rem). Studio
+// home puts class="logo" on the <img> — do not force height: auto on that
+// img or it overrides the fixed height above. Wrappers only.
+#root header a.logo,
+#root header .logo:not(img) {
+  height: auto !important;
+}
+
+// Logo's own vertical padding, and nav-links matched to the same figure —
+// same rhythm as the logo means the header's total height can't drift
+// between MFEs even if their surrounding layout differs.
+// Learning has no .nav-container — same padding on `.learning-header .logo`.
+#root .site-header-desktop .container-fluid .nav-container .logo,
+#root .site-header-mobile .container-fluid .nav-container .logo,
+#root header.learning-header .logo {
+  padding: .6rem 0 !important;
+}
+
+#root .site-header-desktop .nav-container .nav .nav-link,
+#root .site-header-mobile .nav-container .nav .nav-link {
+  padding-top: .6rem !important;
+  padding-bottom: .6rem !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  line-height: 1.5 !important;
+}
+
+// Main nav (Courses / Discover / …): stock header fills
+// `.nav-link.active` / hover with `--pgn-color-bg-active` but leaves square
+// corners and no gap, so adjacent items read as one block. Radius token +
+// flex gap on every shared header that uses this markup.
+#root header.site-header-desktop .main-nav,
+#root header.site-header-mobile .main-nav,
+#root header.learning-header .main-nav {
+  gap: var(--pgn-spacing-spacer-2);
+
+  .nav-link {
+    border-radius: var(--pgn-size-border-radius-base) !important;
+
+    &:hover,
+    &:focus,
+    &.active {
+      border-radius: var(--pgn-size-border-radius-base) !important;
+    }
+  }
+}
+
+// Secondary header nav links (when present) share the same active fill —
+// keep the same radius so hover/active don't go square there either.
+#root header.site-header-desktop .secondary-menu-container .nav-link,
+#root header.site-header-mobile .secondary-menu-container .nav-link {
+  border-radius: var(--pgn-size-border-radius-base) !important;
+}
+
+// Studio header uses a different DOM (`.studio-header` + `pgn__action-row`,
+// not `.site-header-desktop .main-nav`). Content / Settings / Tools are
+// `DropdownButton`s with Bootstrap `mr-2` on each `.dropdown` — same visual
+// job as site-header main-nav spacing. Prefer flex gap (same spacer-2 token
+// as site-header) and zero the per-item mr so spacing is one system, not
+// mr + gap stacked.
+#root .studio-header [data-testid="desktop-menu"].nav,
+#root .studio-header .pgn__action-row > .nav {
+  display: flex;
+  align-items: center;
+  gap: var(--pgn-spacing-spacer-2);
+
+  > .dropdown.mr-2,
+  > .mr-2.dropdown,
+  > .dropdown {
+    margin-right: 0 !important;
+  }
+
+  .btn,
+  .dropdown-toggle {
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  }
+}
+
+// Studio home header (isHiddenMainMenu) wraps the logo in
+// `Row.flex-nowrap.ml-4` (HeaderBody.tsx) — extra left inset other MFEs
+// never apply. Course context already uses `m-0`. Zero ml-4 so logo L edge
+// matches site-header / learning-header under the same content gutter.
+#root .studio-header .row.flex-nowrap.ml-4 {
+  margin-left: 0 !important;
+}
+
+// Studio Container ships `px-2.5` + container-mw-xl; other headers use
+// tels-content-width (max-width xl + half gutter). Same shell here.
+#root .studio-header > .container-fluid,
+#root .studio-header > .container-mw-xl {
+  @include tels-content-width;
+}
+
+// Account menu + learning user dropdown — ONE shared size on every MFE.
+// Site header: .menu-trigger.btn.btn-outline-primary (avatar + name)
+// Learning / Discussions: .user-dropdown .dropdown-toggle.btn.btn-outline-primary
+// Must beat: older .6rem padding rules, Bootstrap pl-2/pr-3, fa-lg icon sizing.
+#root header.site-header-desktop .secondary-menu-container .menu-trigger,
+#root header.site-header-mobile .secondary-menu-container .menu-trigger,
+#root header.site-header-desktop .menu .menu-trigger,
+#root header.site-header-mobile .menu .menu-trigger,
+#root header .secondary-menu-container .menu-trigger.btn,
+#root header .menu .menu-trigger.btn.btn-outline-primary,
+#root header.learning-header .user-dropdown .dropdown-toggle.btn,
+#root header.learning-header .user-dropdown .btn.btn-outline-primary,
+#root header .user-dropdown .dropdown-toggle.btn,
+#root header .user-dropdown .btn.btn-outline-primary,
+#root header .pgn__dropdown.user-dropdown .dropdown-toggle,
+#root header .pgn__dropdown .dropdown-toggle.btn.btn-outline-primary {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--pgn-spacing-spacer-2, 0.5rem);
+  min-height: var(--pgn-size-form-input-height-base) !important;
+  height: var(--pgn-size-form-input-height-base) !important;
+  max-height: var(--pgn-size-form-input-height-base) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: var(--pgn-spacing-btn-padding-x-base, 1rem) !important;
+  padding-right: var(--pgn-spacing-btn-padding-x-base, 1rem) !important;
+  font-size: var(--pgn-typography-btn-font-size-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: 1 !important;
+  border-radius: var(--pgn-size-btn-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+  border-width: var(--pgn-size-btn-border-width, 1px) !important;
+}
+
+// ---------------------------------------------------------------------------
+// Header user icon — ONE glyph everywhere (site-header AvatarIcon path).
+// Site header: .menu-trigger .avatar > AvatarIcon SVG
+// Learning / Discussions: FA fa-circle-user (different shape) → mask to AvatarIcon
+// ---------------------------------------------------------------------------
+
+$tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M4.10255106,18.1351061 C4.7170266,16.0581859 8.01891846,14.4720277 12,14.4720277 C15.9810815,14.4720277 19.2829734,16.0581859 19.8974489,18.1351061 C21.215206,16.4412566 22,14.3122775 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,14.3122775 2.78479405,16.4412566 4.10255106,18.1351061 Z M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,13 C9.790861,13 8,11.209139 8,9 C8,6.790861 9.790861,5 12,5 C14.209139,5 16,6.790861 16,9 C16,11.209139 14.209139,13 12,13 Z'/%3E%3C/svg%3E");
+
+@mixin tels-header-user-icon-box {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: var(--pgn-size-icon-sm) !important;
+  height: var(--pgn-size-icon-sm) !important;
+  margin-right: var(--pgn-spacing-spacer-2, 0.5rem) !important;
+  flex-shrink: 0;
+  color: var(--pgn-color-btn-text-outline-primary, var(--pgn-color-primary-base)) !important;
+}
+
+// Site-header Avatar (+ any .avatar in header)
+#root header .menu-trigger .avatar,
+#root header .secondary-menu-container .menu-trigger .avatar,
+#root header .user-dropdown .avatar,
+#root header.learning-header .user-dropdown .avatar {
+  @include tels-header-user-icon-box;
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+
+  svg {
+    display: block !important;
+    width: var(--pgn-size-icon-sm) !important;
+    height: var(--pgn-size-icon-sm) !important;
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+
+  path {
+    fill: currentColor !important;
+  }
+}
+
+// Learning / Discussions FA icon → same AvatarIcon silhouette via mask
+#root header.learning-header .user-dropdown .dropdown-toggle .svg-inline--fa,
+#root header.learning-header .user-dropdown .dropdown-toggle .fa-circle-user,
+#root header.learning-header .user-dropdown .btn .svg-inline--fa,
+#root header.learning-header .user-dropdown .btn .fa-circle-user,
+#root header .user-dropdown .dropdown-toggle .svg-inline--fa.d-md-none,
+#root header .user-dropdown .dropdown-toggle svg.d-md-none,
+#root header .user-dropdown .btn .svg-inline--fa.d-md-none,
+#root header .user-dropdown .dropdown-toggle .svg-inline--fa,
+#root header .user-dropdown .btn .svg-inline--fa {
+  @include tels-header-user-icon-box;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  background-color: currentColor !important;
+  -webkit-mask-image: $tels-header-avatar-icon;
+  mask-image: $tels-header-avatar-icon;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  // Hide FA's own glyph; mask paints the shared AvatarIcon shape
+  path,
+  * {
+    fill: transparent !important;
+    opacity: 0 !important;
+  }
+}
+
+#root header .user-dropdown .dropdown-toggle .fa-lg,
+#root header .user-dropdown .btn .fa-lg {
+  font-size: var(--pgn-size-icon-sm) !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+// Caret on site-header menu-trigger (not the avatar)
+#root header .menu-trigger > svg {
+  width: var(--pgn-size-icon-xs) !important;
+  height: var(--pgn-size-icon-xs) !important;
+  flex-shrink: 0;
+  color: inherit !important;
+  margin-left: var(--pgn-spacing-spacer-1, 0.25rem);
+}
+
+// Username next to icon stays visible on desktop
+#root header.learning-header .user-dropdown .dropdown-toggle .d-md-inline,
+#root header .user-dropdown .dropdown-toggle span[data-hj-suppress] {
+  display: inline !important;
+}
+
+// ---------------------------------------------------------------------------
+// Indigo header controls — language select + dark-mode switch (all MFEs)
+// DOM (legacy): .theme-toggle-button > .toggle-switch > .switch > input + .slider
+// DOM (current): .indigo-theme-toggle > label.__switch > input + .__slider
+// Language: .indigo-language-menu select / #indigo-header-language-select
+// Values via --pgn-* only (form + primary + radius tokens).
+// ---------------------------------------------------------------------------
+
+#root header .indigo-header-controls {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--pgn-spacing-spacer-3, 1rem);
+  // Space before account / user-dropdown menu (beats zeroed child mr-3)
+  margin-right: var(--pgn-spacing-spacer-3, 1rem) !important;
+}
+
+#root header .user-dropdown,
+#root header .pgn__dropdown.user-dropdown {
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--pgn-spacing-spacer-3, 1rem) !important;
+}
+
+// Learning / Discussions "Help" (when slot not replaced) — same vertical rhythm
+#root header.learning-header > .container-xl > a.text-gray-700,
+#root header.learning-header a.text-gray-700 {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--pgn-size-form-input-height-base);
+  height: var(--pgn-size-form-input-height-base);
+  padding: 0 var(--pgn-spacing-spacer-2, 0.5rem);
+  margin: 0 !important;
+  font-size: var(--pgn-typography-btn-font-size-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: 1 !important;
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+  text-decoration: none !important;
+
+  &:hover,
+  &:focus {
+    color: var(--pgn-color-link-hover, var(--pgn-color-primary-700)) !important;
+  }
+}
+
+// Language — same height token as user menu triggers
+#root header .indigo-language-menu {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0 !important;
+}
+
+#root header .indigo-language-menu select,
+#root header #indigo-header-language-select,
+#root header .indigo-language-menu select.form-control,
+#root header .indigo-language-menu select.form-control-sm {
+  box-sizing: border-box;
+  min-width: 8rem;
+  // Same vertical size as .btn / form-control base (user menu dropdown beside it)
+  height: var(--pgn-size-form-input-height-base) !important;
+  min-height: var(--pgn-size-form-input-height-base) !important;
+  padding-top: var(--pgn-spacing-btn-padding-y-base, var(--pgn-spacing-form-input-padding-y-base, 0.5625rem)) !important;
+  padding-bottom: var(--pgn-spacing-btn-padding-y-base, var(--pgn-spacing-form-input-padding-y-base, 0.5625rem)) !important;
+  padding-left: var(--pgn-spacing-btn-padding-x-base, var(--pgn-spacing-form-input-padding-x-base, 1rem)) !important;
+  padding-right: 2rem !important; // chevron clearance
+  font-size: var(--pgn-typography-btn-font-size-base, var(--pgn-typography-font-size-base)) !important;
+  line-height: var(--pgn-typography-form-input-line-height-base, 1.5) !important;
+  color: var(--pgn-color-form-input-base, var(--pgn-color-text-base)) !important;
+  background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base, var(--pgn-color-white))) !important;
+  border: var(--pgn-size-btn-border-width, var(--pgn-size-form-input-width-border, 1px)) solid var(--pgn-color-form-input-border, var(--pgn-color-light-700, #cbd5e1)) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base, var(--pgn-size-border-radius-base)) !important;
+  accent-color: var(--pgn-color-primary-base);
+
+  &:focus {
+    border-color: var(--pgn-color-form-input-focus-border, var(--pgn-color-primary-base)) !important;
+    box-shadow: 0 0 0 0.125rem color-mix(in srgb, var(--pgn-color-primary-base) 25%, transparent) !important;
+    outline: none !important;
+  }
+}
+
+// Dark-mode switch — hide native checkbox; paint an iOS-style track + thumb
+#root header .theme-toggle-button,
+#root header .indigo-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pgn-spacing-spacer-2, 0.5rem);
+  margin-right: 0 !important;
+}
+
+#root header .theme-toggle-button .light-theme-icon,
+#root header .theme-toggle-button .dark-theme-icon,
+#root header .indigo-theme-toggle__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--pgn-color-primary-base) !important;
+
+  .pgn__icon,
+  svg {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+    color: inherit !important;
+    fill: currentColor;
+  }
+}
+
+#root header .theme-toggle-button .toggle-switch,
+#root header .theme-toggle-button .switch,
+#root header .indigo-theme-toggle__switch {
+  position: relative;
+  display: inline-block;
+  width: 2.75rem;
+  height: 1.5rem;
+  margin: 0 !important;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+#root header .theme-toggle-button .switch input,
+#root header .theme-toggle-button .toggle-switch input,
+#root header .indigo-theme-toggle__switch input,
+#root header #theme-toggle-checkbox,
+#root header #indigo-theme-toggle-input {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  pointer-events: none;
+}
+
+#root header .theme-toggle-button .slider,
+#root header .theme-toggle-button .slider.round,
+#root header .indigo-theme-toggle__slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background-color: var(--pgn-color-gray-300, #adadad) !important;
+  border-radius: var(--pgn-size-rounded-pill, 50rem) !important;
+  transition: background-color 0.2s ease;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pgn-color-black, #000) 8%, transparent);
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1.15rem;
+    width: 1.15rem;
+    left: 0.175rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--pgn-color-white, #fff) !important;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--pgn-color-black, #000) 25%, transparent);
+    transition: transform 0.2s ease;
+  }
+}
+
+#root header .theme-toggle-button .switch input:checked + .slider,
+#root header .theme-toggle-button .toggle-switch input:checked + .slider,
+#root header .theme-toggle-button input:checked + .slider,
+#root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider {
+  background-color: var(--pgn-color-primary-base) !important;
+}
+
+#root header .theme-toggle-button .switch input:checked + .slider::before,
+#root header .theme-toggle-button .toggle-switch input:checked + .slider::before,
+#root header .theme-toggle-button input:checked + .slider::before,
+#root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider::before {
+  transform: translate(1.2rem, -50%);
+}
+
+#root header .theme-toggle-button .switch input:focus-visible + .slider,
+#root header .theme-toggle-button input:focus-visible + .slider,
+#root header .indigo-theme-toggle__switch input:focus-visible + .indigo-theme-toggle__slider {
+  outline: 2px solid var(--pgn-color-primary-base);
+  outline-offset: 2px;
+}
+
+[data-paragon-theme-variant="dark"] {
+  #root header .indigo-language-menu select,
+  #root header #indigo-header-language-select {
+    color: var(--pgn-color-form-input-base, var(--pgn-color-text-base)) !important;
+    background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+    border-color: var(--pgn-color-form-input-border, var(--pgn-color-light-700)) !important;
+  }
+
+  #root header .theme-toggle-button .light-theme-icon,
+  #root header .theme-toggle-button .dark-theme-icon,
+  #root header .indigo-theme-toggle__icon {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  #root header .theme-toggle-button .slider,
+  #root header .indigo-theme-toggle__slider {
+    background-color: var(--pgn-color-gray-500, #707070) !important;
+  }
+
+  #root header .theme-toggle-button input:checked + .slider,
+  #root header .indigo-theme-toggle__switch input:checked + .indigo-theme-toggle__slider {
+    background-color: var(--pgn-color-primary-base) !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// LAYER 3 — Marketing chrome (public MFE): .tels-container / .tels-btn* /
+// .tels-header* — Template B (Harvard-PLL / tels-mirror). Markup:
+// frontend-app-public TelsHeader.jsx (tels_header slot). Catalog search in
+// the header submits to /courses?keywords=… (CoursesPage filter).
+// ---------------------------------------------------------------------------
+
+.tels-container {
+  @include tels-container;
+}
+
+// Buttons — PLL marketing CTAs: 16px / pad 20px / weight 400 / radius 3px /
+// uppercase UI font. Kept on .tels-btn (Layer 3) so Paragon .btn in LMS/Studio
+// is unchanged.
+.tels-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  padding: 1.25rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--pgn-color-primary-base);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background: var(--pgn-color-primary-base);
+    color: var(--pgn-color-white) !important;
+    border-color: var(--pgn-color-primary-base);
+
+    &:hover:not(:disabled) {
+      background: var(--pgn-color-primary-hover);
+      border-color: var(--pgn-color-primary-hover);
+      color: var(--pgn-color-white) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--pgn-color-primary-active, var(--pgn-color-primary-hover));
+      border-color: var(--pgn-color-primary-active, var(--pgn-color-primary-hover));
+      color: var(--pgn-color-white) !important;
+    }
+  }
+
+  &--outline {
+    // PLL outline "VIEW ALL TRENDING" etc.: crimson border + text, pad 20px.
+    background: transparent;
+    color: var(--pgn-color-primary-base) !important;
+    border-color: var(--pgn-color-primary-base);
+
+    &:hover:not(:disabled) {
+      background: var(--pgn-color-primary-base);
+      color: var(--pgn-color-white) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--pgn-color-primary-hover);
+      border-color: var(--pgn-color-primary-hover);
+      color: var(--pgn-color-white) !important;
+    }
+  }
+
+  &--inverse {
+    background: transparent;
+    color: var(--pgn-color-white) !important;
+    border-color: rgba(255, 255, 255, 0.6);
+
+    &:hover:not(:disabled) {
+      background: var(--pgn-color-white);
+      color: var(--pgn-color-chrome-header-dark) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--pgn-color-white);
+      color: var(--pgn-color-chrome-header-dark) !important;
+      opacity: 0.92;
+    }
+  }
+
+  &--sm {
+    padding: var(--pgn-spacing-btn-padding-y-sm) var(--pgn-spacing-btn-padding-x-sm);
+    font-size: var(--pgn-typography-btn-font-size-sm);
+  }
+
+  &--lg {
+    padding: var(--pgn-spacing-btn-padding-y-lg) var(--pgn-spacing-btn-padding-x-lg);
+    font-size: var(--pgn-typography-btn-font-size-lg);
+  }
+}
+
+.tels-link {
+  color: var(--pgn-color-primary-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--pgn-color-primary-hover);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Header — sticky. Same chrome on every page: solid dark navy
+// (.tels-header--dark). Home is the only exception — transparent over the
+// hero until scroll. Centered logo (57px, PLL), 3-span hamburger, right-side
+// catalog search. State classes toggled by TelsHeader.jsx.
+// ---------------------------------------------------------------------------
+
+.tels-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background: transparent;
+  color: var(--pgn-color-white);
+  transition: background-color 0.2s, color 0.2s;
+
+  &--light {
+    background: var(--pgn-color-white);
+    color: var(--pgn-color-text-base);
+  }
+
+  &--dark {
+    background: var(--pgn-color-chrome-header-dark);
+    color: var(--pgn-color-white);
+  }
+}
+
+// Header row height tracks pll.harvard.edu (~90px with 57px logo). Home hero
+// negative margin (.tels-hero) and mega-menu `top` must stay in lockstep.
+:root {
+  --tels-header-height: 74px;
+}
+@media (min-width: 768px) {
+  :root {
+    --tels-header-height: 90px;
+  }
+}
+
+.tels-header__row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  height: var(--tels-header-height);
+}
+
+.tels-header__start {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tels-header__end {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+// Harvard PLL-style hamburger: 35×30 box, 6px-thick bars
+// (.site-header .navbar-toggler-icon on pll.harvard.edu).
+.tels-header__menu-btn {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: inherit;
+  appearance: none;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  span {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 35px;
+    height: 6px;
+    border-radius: 1.5px;
+    background: currentColor;
+    transition: all 0.5s ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: 0;
+  }
+
+  span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+
+  span:nth-child(3) {
+    bottom: 0;
+  }
+
+  &.is-open {
+    span {
+      border-radius: 2.5px;
+    }
+
+    span:nth-child(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+}
+
+// Filter-reset control on the courses listing page (header only renders
+// it there, while a filter is applied) — the header is always the
+// dark/solid variant on courses pages, so this is a plain white outline
+// button, not adaptive to header state.
+.tels-header__view-all {
+  display: none;
+  align-items: center;
+  height: 58px;
+  padding: 1.25rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  border: 1px solid var(--pgn-color-white) !important;
+  border-radius: 3px;
+  color: var(--pgn-color-white) !important;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none !important;
+
+  @media (min-width: 768px) {
+    display: inline-flex;
+  }
+
+  &:hover {
+    background: var(--pgn-color-white);
+    color: var(--pgn-color-chrome-header-dark) !important;
+    border-color: var(--pgn-color-white) !important;
+  }
+}
+
+.tels-header__logo {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+
+  // pll.harvard.edu .navbar-brand img — 57px tall, width auto.
+  img {
+    height: 57px !important;
+    width: auto !important;
+    max-height: 57px;
+    object-fit: contain;
+  }
+
+  // Light header state: brand logo is a light/transparent PNG designed for
+  // dark backgrounds, so invert it to read on white — same trick tels-mirror
+  // itself uses (style={{ filter: 'invert(1) brightness(0)' }}).
+  .tels-header--light & img {
+    filter: invert(1) brightness(0);
+  }
+}
+
+// Catalog search — pll.harvard.edu .catalog-search: white input + transparent
+// 58×58 submit with bold white glyph outside the box (icon font ~2.1875rem).
+// Colors/sizes: search-field + form-input tokens.
+.tels-header__search {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 0;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+
+  @media (max-width: 575px) {
+    width: auto;
+  }
+}
+
+.tels-header__search-input {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  width: var(--pgn-size-search-field-header-input-max-width, 180px);
+  max-width: var(--pgn-size-search-field-header-input-max-width, 180px);
+  height: var(--pgn-size-search-field-header-input-height, 58px);
+  max-height: var(--pgn-size-search-field-header-input-height, 58px);
+  margin: 0;
+  // PLL header .form-text: padding 14px 20px — centers placeholder vertically
+  // and insets it ~20px from the left edge (not the old 35px catalog filter pad).
+  padding: var(--pgn-size-search-field-header-input-padding-y, 14px)
+    var(--pgn-size-search-field-header-input-padding-x, 20px);
+  border: 0 solid transparent;
+  border-radius: var(--pgn-size-search-field-header-input-border-radius, 3px);
+  background: var(--pgn-color-search-field-form-bg, var(--pgn-color-white));
+  color: var(--pgn-color-form-input-base);
+  font-family: var(--pgn-typography-font-family-base);
+  // PLL computed 16px / 300 — keep independent of global body 1.125rem.
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.95;
+  outline: none;
+  appearance: none;
+  box-shadow: none;
+
+  &::placeholder {
+    color: var(--pgn-color-form-input-placeholder);
+    opacity: 1;
+    // Match typed text inset; some UAs shift placeholder otherwise.
+    text-align: start;
+    line-height: inherit;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  @media (max-width: 575px) {
+    display: none;
+  }
+}
+
+.tels-header__search-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: var(--pgn-size-search-field-header-icon-size, 58px);
+  height: var(--pgn-size-search-field-header-input-height, 58px);
+  max-height: var(--pgn-size-search-field-header-input-height, 58px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--pgn-color-search-field-header-icon, var(--pgn-color-white));
+  cursor: pointer;
+  appearance: none;
+
+  // No hover/focus color shift — stays white like PLL default chrome.
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--pgn-color-search-field-header-icon, var(--pgn-color-white));
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  svg {
+    width: var(--pgn-size-search-field-header-icon-glyph, 2.1875rem);
+    height: var(--pgn-size-search-field-header-icon-glyph, 2.1875rem);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 3.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.tels-header--light {
+  .tels-header__search-input {
+    background: var(--pgn-color-search-field-form-bg, var(--pgn-color-form-input-bg-base));
+    color: var(--pgn-color-form-input-base);
+
+    &::placeholder {
+      color: var(--pgn-color-form-input-placeholder);
+    }
+  }
+
+  .tels-header__search-submit {
+    color: var(--pgn-color-search-field-header-icon-on-light, var(--pgn-color-form-input-base));
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--pgn-color-search-field-header-icon-on-light, var(--pgn-color-form-input-base));
+      background-color: transparent;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Subject mega-menu — overlay under the sticky header (does NOT push the
+// hero / main page). TelsHeader.jsx renders this as a sibling after
+// </header>; position: fixed takes it out of flow so the page stays put
+// and the panel layers over it. Open grows top → bottom; close shrinks
+// bottom → top. Duration/easing from Paragon collapse tokens.
+// ---------------------------------------------------------------------------
+.tels-header__menu {
+  position: fixed;
+  top: 74px;
+  left: 0;
+  right: 0;
+  z-index: 1039;
+  width: 100%;
+  // Content-sized overlay (not full viewport). 0fr / 1fr animates open
+  // height; max-height only caps tall menus so the page can still peek
+  // below the panel.
+  max-height: calc(100vh - 74px);
+  background: var(--pgn-color-chrome-header-dark);
+  color: var(--pgn-color-white);
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+      var(--pgn-transition-collapse-height-timing-function, ease),
+    visibility 0s linear var(--pgn-transition-collapse-height-duration, 0.35s);
+
+  @media (min-width: 768px) {
+    top: 90px;
+    max-height: calc(100vh - 90px);
+  }
+
+  &--open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+        var(--pgn-transition-collapse-height-timing-function, ease),
+      visibility 0s linear 0s;
+  }
+}
+
+.tels-header__menu-clip {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.tels-header__menu--open .tels-header__menu-clip {
+  overflow-y: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tels-header__menu {
+    transition: none;
+  }
+}
+
+.tels-header__menu-inner {
+  padding: 1.5rem 0 2rem;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 0;
+  }
+}
+
+// Matches tels-mirror's Header.tsx mega-menu title exactly
+// (font-serif text-[2.6rem] md:text-[3rem]).
+.tels-header__menu-title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.05);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--pgn-color-white);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.22);
+  }
+}
+
+.tels-header__subjects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tels-header__subject-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-family: var(--pgn-typography-font-family-base);
+  // Matches tels-mirror's Header.tsx mega-menu subject link exactly
+  // (font-serif text-[1.15rem] md:text-[1.25rem]).
+  font-size: var(--pgn-typography-font-size-h4-base);
+  color: var(--pgn-color-white) !important;
+
+  @media (min-width: 768px) {
+    font-size: var(--pgn-typography-font-size-h3-base);
+  }
+
+  svg {
+    width: var(--pgn-size-icon-md);
+    height: var(--pgn-size-icon-md);
+    opacity: 0.9;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Mobile: hide "View all courses" pill (hamburger + logo only); mega-menu
+// subject grid already collapses to 1 column above.
+// ---------------------------------------------------------------------------
+@media (max-width: 767px) {
+  .tels-header__view-all {
+    display: none !important;
+  }
+}

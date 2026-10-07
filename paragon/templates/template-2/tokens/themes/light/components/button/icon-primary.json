@@ -1,0 +1,51 @@
+{
+  "$description": "ICON BUTTON PRIMARY — class: btn-icon btn-icon-primary (+ btn-icon-primary-active). Does NOT change solid btn-primary. On primary fill (hover/active), icon must be white.",
+  "color": {
+    "icon-button": {
+      "text": {
+        "primary": {
+          "base": {
+            "$value": "{color.primary.base}",
+            "$description": "Default icon (transparent bg) → --pgn-color-icon-button-text-primary-base"
+          },
+          "hover": {
+            "$value": "#FFFFFF",
+            "modify": null,
+            "$description": "Icon on primary hover fill → --pgn-color-icon-button-text-primary-hover"
+          },
+          "active": {
+            "base": {
+              "$value": "#FFFFFF",
+              "modify": null,
+              "$description": "Icon on primary active fill (.btn-icon-primary-active) → --pgn-color-icon-button-text-primary-active-base"
+            },
+            "hover": {
+              "$value": "#FFFFFF",
+              "modify": null,
+              "$description": "Active+hover icon → --pgn-color-icon-button-text-primary-active-hover"
+            },
+            "focus": {
+              "$value": "#FFFFFF",
+              "modify": null,
+              "$description": "Active+focus icon → --pgn-color-icon-button-text-primary-active-focus"
+            }
+          }
+        }
+      },
+      "bg": {
+        "primary": {
+          "hover": {
+            "$value": "{color.primary.base}",
+            "$description": "Hover background for icon-primary"
+          },
+          "active": {
+            "base": {
+              "$value": "{color.primary.base}",
+              "$description": "Active background (.btn-icon-primary-active)"
+            }
+          }
+        }
+      }
+    }
+  }
+}

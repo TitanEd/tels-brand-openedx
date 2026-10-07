@@ -1,0 +1,23 @@
+{
+  "$description": "Dark \u2014 body / headings text",
+  "color": {
+    "text": {
+      "base": {
+        "$value": "#F9FAFB",
+        "$description": "Dark mode body text."
+      }
+    },
+    "headings": {
+      "base": {
+        "$value": "#FFFFFF",
+        "$description": "Dark headings"
+      }
+    },
+    "body": {
+      "base": {
+        "$value": "#F9FAFB",
+        "$description": "Dark body"
+      }
+    }
+  }
+}

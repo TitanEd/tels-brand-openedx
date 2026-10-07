@@ -1,0 +1,15 @@
+{
+  "$description": "TOAST (light) — component-level color tokens (.toast). Same neutral defaults Paragon derives, now a documented, independently overridable control point.",
+  "color": {
+    "toast": {
+      "base": { "$value": "inherit", "$description": "Toast base text → --pgn-color-toast-base" },
+      "bg": { "$value": "{color.gray.700}", "$description": "Toast bg → --pgn-color-toast-bg" },
+      "border": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.1 }], "$description": "Toast border → --pgn-color-toast-border" },
+      "header": {
+        "text": { "$value": "{color.white}", "$description": "Toast header text → --pgn-color-toast-header-text" },
+        "bg": { "$value": "{color.gray.700}", "$description": "Toast header bg → --pgn-color-toast-header-bg" },
+        "border": { "$value": "{color.black}", "modify": [{ "type": "alpha", "amount": 0.5 }], "$description": "Toast header border → --pgn-color-toast-header-border" }
+      }
+    }
+  }
+}

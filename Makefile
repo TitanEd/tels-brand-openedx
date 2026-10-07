@@ -1,4 +1,4 @@
-.PHONY: build clean append-overrides copy-fonts validate preview sync-dark-tokens
+.PHONY: build clean append-overrides copy-fonts validate preview sync-dark-tokens build-templates
 
 clean:
 	rm -rf dist paragon/build
@@ -33,9 +33,15 @@ sync-dark-tokens:
 preview:
 	@node scripts/preview-server.js
 
+# Site templates (paragon/templates/<id>/, scripts/build-template.js) → dist/templates/<id>/
+# and the manifest dist/templates/index.json listed on control-panel's theme configuration page.
+build-templates:
+	@node scripts/build-template.js
+
 build: clean
 	npm run build-tokens
 	npm run build-scss
 	$(MAKE) append-overrides
 	$(MAKE) copy-fonts
 	$(MAKE) validate
+	$(MAKE) build-templates

@@ -6,10 +6,13 @@ ship on light/dark or Gradebook forms/selects never pick them up.
 """
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DIST = ROOT / "dist"
+# Optional argument: the dist directory to process (a site template build under
+# dist/templates/<id>/, see scripts/build-template.js). Default: dist/.
+DIST = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "dist"
 
 # First shared container rule from paragon/overrides/_layout.scss
 MARKER = ".container,\n.container-fluid"

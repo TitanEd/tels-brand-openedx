@@ -1,0 +1,45 @@
+{
+  "$description": "OUTLINE SECONDARY — class: btn btn-outline-secondary (Gradebook Apply, pagination-adjacent actions)",
+  "color": {
+    "btn": {
+      "bg": {
+        "outline-secondary": {
+          "$value": "transparent",
+          "$description": "Background → --pgn-color-btn-bg-outline-secondary"
+        }
+      },
+      "text": {
+        "outline-secondary": {
+          "$value": "{color.secondary.base}",
+          "$description": "Text → --pgn-color-btn-text-outline-secondary"
+        }
+      },
+      "border": {
+        "outline-secondary": {
+          "$value": "{color.secondary.base}",
+          "$description": "Border → --pgn-color-btn-border-outline-secondary"
+        }
+      },
+      "hover": {
+        "bg": {
+          "outline-secondary": {
+            "$value": "{color.secondary.100}",
+            "$description": "Hover bg"
+          }
+        },
+        "text": {
+          "outline-secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Hover text"
+          }
+        },
+        "border": {
+          "outline-secondary": {
+            "$value": "{color.theme.hover.secondary}",
+            "$description": "Hover border"
+          }
+        }
+      }
+    }
+  }
+}

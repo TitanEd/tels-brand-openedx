@@ -1,0 +1,53 @@
+{
+  "$description": "LAYER 2 — Links. Standalone + inline (.pgn__hyperlink.inline-link, e.g. Authn reset-password mailto). Inline defaults to info blue in Paragon — must set link.inline here or it stays blue.",
+  "color": {
+    "link": {
+      "base": {
+        "$value": "{color.primary.base}",
+        "$description": "Standalone link → --pgn-color-link-base"
+      },
+      "hover": {
+        "$value": "{color.primary.700}",
+        "$description": "Standalone link hover → --pgn-color-link-hover"
+      },
+      "inline": {
+        "base": {
+          "$value": "{color.primary.base}",
+          "$description": "Inline / mailto hyperlink → --pgn-color-link-inline-base (Authn support email, etc.)"
+        },
+        "hover": {
+          "base": {
+            "$value": "{color.primary.700}",
+            "$description": "Inline link hover → --pgn-color-link-inline-hover-base"
+          }
+        }
+      },
+      "brand": {
+        "base": {
+          "$value": "{color.brand.base}",
+          "$description": "Brand link → --pgn-color-link-brand-base"
+        },
+        "hover": {
+          "$value": "{color.brand.700}",
+          "$description": "Brand link hover"
+        },
+        "inline": {
+          "base": {
+            "$value": "{color.brand.base}",
+            "$description": "Brand inline link → --pgn-color-link-brand-inline-base"
+          }
+        }
+      },
+      "muted": {
+        "base": {
+          "$value": "{color.gray.base}",
+          "$description": "Muted link → --pgn-color-link-muted-base"
+        },
+        "hover": {
+          "$value": "{color.primary.base}",
+          "$description": "Muted link hover"
+        }
+      }
+    }
+  }
+}

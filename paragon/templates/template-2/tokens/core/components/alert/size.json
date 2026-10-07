@@ -1,0 +1,31 @@
+{
+  "$description": "ALERT — component-level size tokens (class: .alert). Radius defaults to global radius (cascades), independently overridable here. Border width defaults to Paragon stock (0 = borderless); set >0 to show alert.border.<variant> colors.",
+  "size": {
+    "alert": {
+      "border": {
+        "radius": {
+          "$value": "{size.border.radius.base}",
+          "$description": "Alert border radius → --pgn-size-alert-border-radius"
+        },
+        "width": {
+          "$value": "0",
+          "$description": "Alert border width → --pgn-size-alert-border-width"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "alert": {
+      "padding": {
+        "x": {
+          "$value": "1.5rem",
+          "$description": "Alert padding X → --pgn-spacing-alert-padding-x"
+        },
+        "y": {
+          "$value": "1.5rem",
+          "$description": "Alert padding Y → --pgn-spacing-alert-padding-y"
+        }
+      }
+    }
+  }
+}

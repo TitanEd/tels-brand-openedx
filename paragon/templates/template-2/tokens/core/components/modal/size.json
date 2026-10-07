@@ -1,0 +1,17 @@
+{
+  "$description": "MODAL — component-level size tokens (.modal-content). Radius defaults to global lg radius (cascades); border width defaults to Paragon stock (0px = borderless, relies on box-shadow).",
+  "size": {
+    "modal": {
+      "content-border": {
+        "radius": {
+          "$value": "{size.border.radius.lg}",
+          "$description": "Modal content radius → --pgn-size-modal-content-border-radius"
+        },
+        "width": {
+          "$value": "0px",
+          "$description": "Modal content border width → --pgn-size-modal-content-border-width"
+        }
+      }
+    }
+  }
+}

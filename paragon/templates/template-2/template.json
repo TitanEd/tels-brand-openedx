@@ -1,0 +1,6 @@
+{
+  "id": "template-2",
+  "name": "Template 2 — Harvard PLL",
+  "description": "Serif typography (Merriweather), crimson primary, sticky header with subject menu and catalog search, CTA footer. Marketing MFE: frontend-app-tels-public@native-plus-template-b, served at /template-2.",
+  "default": false
+}
