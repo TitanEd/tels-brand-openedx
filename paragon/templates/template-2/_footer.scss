@@ -1,0 +1,108 @@
+// LAYER 3 — Shared site footer (all MFEs)
+// Width tokens: max-width.json + spacing.json via tels-content-width
+// Learning / Dashboard: footer.tutor-container IS the constrained element (no inner container)
+// Catalog: footer.footer > .container-fluid
+
+footer.tutor-container,
+#footer.tutor-container,
+.wrapper-footer > footer.tutor-container,
+.wrapper-footer > #footer {
+  @include tels-content-width;
+}
+
+footer.footer,
+footer[role="contentinfo"]:not(.tutor-container):not(.tels-footer) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  > .container-fluid,
+  > .container,
+  > .container-xl {
+    @include tels-content-width;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Marketing footer (public MFE) — Template B (Harvard-PLL / tels-mirror).
+// Markup: tutor-tels-theme-plugins IndigoFooter.jsx (indigo_footer slot).
+// Structure measured directly from the live pll.harvard.edu <footer
+// class="site-footer">, NOT from tels-mirror's own Footer.tsx (which
+// invents a richer CTA+blurb / explore-links+social / logo+tagline+contact
+// footer that the real site doesn't have): 3 asymmetric columns — CTA button
+// only / legal links only (no visible column heading — Drupal's own
+// <h2 class="visually-hidden">) / site logo only. No social icons, no
+// contact block, no bottom copyright bar — the real footer has none.
+// ---------------------------------------------------------------------------
+
+.tels-footer {
+  background: var(--pgn-color-footer-bg);
+  color: var(--pgn-color-text-footer);
+  width: 100%;
+
+  // !important — overrides.scss's global `a:not(.btn):not(.nav-link)...`
+  // link-color rule (overrides/_links.scss) has enough :not() clauses to
+  // out-specificity a plain `.tels-footer a` selector even though it loads
+  // later; same fix already applied to .tels-header__view-all for the same
+  // reason.
+  a:not(.tels-btn) {
+    color: var(--pgn-color-footer-link) !important;
+    text-decoration: none !important;
+
+    &:hover,
+    &:focus {
+      color: var(--pgn-color-footer-link-hover, var(--pgn-color-footer-link)) !important;
+    }
+  }
+}
+
+.tels-footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+
+  // 3 parts: CTA | links | logo (no empty spacer column).
+  @media (min-width: 40em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 64em) {
+    grid-template-columns: 4fr 4fr 3fr;
+    align-items: start;
+  }
+}
+
+.tels-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: var(--pgn-typography-font-size-base);
+}
+
+.tels-footer__brand {
+  text-align: start;
+
+  @media (min-width: 40em) and (max-width: 63.98em) {
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 64em) {
+    text-align: end;
+  }
+}
+
+.tels-footer__logo a {
+  display: inline-block;
+  line-height: 0;
+}
+
+.tels-footer__logo img {
+  height: 48px;
+
+  @media (min-width: 64em) {
+    margin-inline-start: auto;
+  }
+}

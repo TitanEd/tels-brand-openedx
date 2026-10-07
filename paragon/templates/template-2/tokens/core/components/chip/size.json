@@ -1,0 +1,31 @@
+{
+  "$description": "CHIP — component-level size tokens (class: .pgn__chip). Radius defaults to global base radius (cascades), independently overridable here.",
+  "size": {
+    "chip": {
+      "border-radius": {
+        "$value": "{size.border.radius.base}",
+        "$description": "Chip radius → --pgn-size-chip-border-radius"
+      }
+    }
+  },
+  "spacing": {
+    "chip": {
+      "padding": {
+        "x": {
+          "$value": ".5rem",
+          "$description": "Chip padding X → --pgn-spacing-chip-padding-x"
+        },
+        "y": {
+          "$value": "1px",
+          "$description": "Chip padding Y → --pgn-spacing-chip-padding-y"
+        }
+      },
+      "margin": {
+        "base": {
+          "$value": ".125rem",
+          "$description": "Chip margin → --pgn-spacing-chip-margin-base"
+        }
+      }
+    }
+  }
+}

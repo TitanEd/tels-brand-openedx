@@ -1,0 +1,20 @@
+// Template 2 (Harvard PLL look) — a site template layer on top of the default
+// brand build. Built by `scripts/build-template.js` into dist/templates/template-2/
+// (tokens in ./tokens/ deep-merged over paragon/tokens/src, then this file after
+// paragon/_overrides.scss, so every rule here wins over the default template's).
+// Add a template: copy this folder, edit template.json, tokens and partials.
+
+@import "./fonts";
+
+// Layer 2 — component bridges that differ from the default template
+@import "./overrides/layout";
+@import "./overrides/typography";
+@import "./overrides/forms";
+@import "./overrides/buttons";
+@import "./overrides/links";
+
+// Layer 3 — chrome (Template2Header / Template2Footer in tutor-tels-theme-plugins)
+// and the marketing pages of frontend-app-tels-public@native-plus-template-b
+@import "./header";
+@import "./footer";
+@import "./public";

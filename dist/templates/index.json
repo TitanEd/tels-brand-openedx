@@ -1,0 +1,18 @@
+{
+  "templates": [
+    {
+      "path": "templates/template-1",
+      "default": true,
+      "id": "template-1",
+      "name": "Template 1 — TitanEd",
+      "description": "Nunito Sans, orange primary, marketing header with Home / Courses / About / Contact, four-column footer. Marketing MFE: frontend-app-tels-public@native-plus-template-a, served at /template-1."
+    },
+    {
+      "path": "templates/template-2",
+      "default": false,
+      "id": "template-2",
+      "name": "Template 2 — Harvard PLL",
+      "description": "Serif typography (Merriweather), crimson primary, sticky header with subject menu and catalog search, CTA footer. Marketing MFE: frontend-app-tels-public@native-plus-template-b, served at /template-2."
+    }
+  ]
+}

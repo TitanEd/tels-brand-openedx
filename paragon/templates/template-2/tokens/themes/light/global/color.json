@@ -1,0 +1,188 @@
+{
+  "$type": "color",
+  "$description": "LAYER 1 — Global semantic colors (light), Template B (Harvard-PLL / tels-mirror). Change color.primary.base once → buttons, links, tabs, selects, TinyMCE accents. Applied via CSS vars; bridges only rematch selectors.",
+  "color": {
+    "white": {
+      "$value": "#FFFFFF",
+      "$description": "UI label: White"
+    },
+    "black": {
+      "$value": "#000000",
+      "$description": "UI label: Black"
+    },
+    "red": {
+      "$value": "#C32D3A",
+      "$description": "Base red (feeds Danger when linked)"
+    },
+    "green": {
+      "$value": "#18A300",
+      "$description": "Base green (feeds Success when linked) — tels-mirror --brand-success"
+    },
+    "blue": {
+      "$value": "#23419F",
+      "$description": "Base blue"
+    },
+    "yellow": {
+      "$value": "#FFD900",
+      "$description": "Base yellow (feeds Warning when linked)"
+    },
+    "teal": {
+      "$value": "#006DAA",
+      "$description": "Base teal (feeds Info when linked)"
+    },
+    "accent": {
+      "a": {
+        "$value": "#00BBF9",
+        "$description": "UI label: Accent A"
+      },
+      "b": {
+        "$value": "#FFEE88",
+        "$description": "UI label: Accent B"
+      }
+    },
+    "primary": {
+      "base": {
+        "$value": "#A51C30",
+        "$description": "UI label: Primary — Harvard crimson, cascades to solid primary button bg and related primary uses (tels-mirror --brand-primary)"
+      },
+      "light": {
+        "$value": "#F7E7E9",
+        "$description": "Primary light surface"
+      },
+      "hover": {
+        "$value": "#861426",
+        "$description": "Marketing primary hover/darker shade → --pgn-color-primary-hover (tels-mirror --brand-primary-hover)"
+      },
+      "soft": {
+        "$value": "#FFF0F2",
+        "$description": "Marketing primary tint surface (badges, icon chips, soft CTAs) → --pgn-color-primary-soft (tels-mirror --brand-primary-soft)"
+      }
+    },
+    "secondary": {
+      "base": {
+        "$value": "#A51C30",
+        "$description": "UI label: Secondary"
+      }
+    },
+    "brand": {
+      "base": {
+        "$value": "#A51C30",
+        "$description": "UI label: Brand"
+      }
+    },
+    "success": {
+      "base": {
+        "$value": "{color.green}",
+        "$description": "UI label: Success"
+      }
+    },
+    "info": {
+      "base": {
+        "$value": "{color.teal}",
+        "$description": "UI label: Info"
+      }
+    },
+    "warning": {
+      "base": {
+        "$value": "{color.yellow}",
+        "$description": "UI label: Warning"
+      }
+    },
+    "danger": {
+      "base": {
+        "$value": "{color.red}",
+        "$description": "UI label: Danger"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "#E1DDDB",
+        "$description": "UI label: Light base"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "#273F2F",
+        "$description": "UI label: Dark base"
+      }
+    },
+    "gray": {
+      "base": {
+        "$value": "#707070",
+        "$description": "UI label: Gray base"
+      }
+    },
+    "chrome": {
+      "border": {
+        "$value": "#E6E6E6",
+        "$description": "Marketing chrome + public page borders (header/footer, cards, form fields, filter pills) → --pgn-color-chrome-border (tels-mirror --border)"
+      },
+      "surface-subtle": {
+        "$value": "#F7F7F7",
+        "$description": "Marketing chrome + public page subtle surface (search field bg, alternating section bg) → --pgn-color-chrome-surface-subtle (tels-mirror --surface-subtle)"
+      },
+      "surface-warm": {
+        "$value": "#F7F7F7",
+        "$description": "Public page alt-section surface → --pgn-color-chrome-surface-warm. tels-mirror has one subtle off-white, no separate warm tone — same value as surface-subtle here."
+      },
+      "text-muted": {
+        "$value": "#6B6B6B",
+        "$description": "Marketing chrome muted text/icons → --pgn-color-chrome-text-muted (tels-mirror --text-muted)"
+      },
+      "header-dark": {
+        "$value": "#293352",
+        "$description": "Header scrolled dark navy, subject mega-menu bg, courses/legal page dark title band → --pgn-color-chrome-header-dark. Measured from the live pll.harvard.edu .site-header.scroll background (#293352) — supersedes tels-mirror's own approximation (Tailwind bg-[#263557])."
+      }
+    },
+    "marketing": {
+      "accent": {
+        "$value": "#444CE7",
+        "$description": "Public page secondary accent (insight/tag highlights) → --pgn-color-marketing-accent (tels-mirror --brand-accent)"
+      }
+    },
+    "text": {
+      "base": {
+        "$value": "#1E1E1E",
+        "$description": "UI label: Body text (text-base) — tels-mirror --text-primary"
+      },
+      "secondary": {
+        "$value": "#414141",
+        "$description": "Secondary body text → --pgn-color-text-secondary (tels-mirror --text-secondary)"
+      },
+      "light": {
+        "$value": "#414141",
+        "$description": "Lighter body text"
+      },
+      "primary": {
+        "$value": "#414141",
+        "$description": "Text primary variant"
+      },
+      "footer": {
+        "$value": "#FFFFFF",
+        "$description": "Footer body text on dark footer band → --pgn-color-text-footer (tels-mirror footer uses plain text-white)"
+      }
+    },
+    "footer": {
+      "bg": {
+        "$value": "#1E1E1E",
+        "$description": "Site footer background → --pgn-color-footer-bg (tels-mirror --footer-bg)"
+      },
+      "link": {
+        "$value": "#FFFFFF",
+        "$description": "Footer link color → --pgn-color-footer-link (white on dark footer band)",
+        "hover": {
+          "$value": "#FFFFFF",
+          "$description": "Footer link hover → --pgn-color-footer-link-hover. Stay white — primary crimson is not readable on --pgn-color-footer-bg."
+        }
+      },
+      "muted": {
+        "$value": "rgba(255, 255, 255, 0.5)",
+        "$description": "Footer muted / copyright text → --pgn-color-footer-muted (tels-mirror text-white/50)"
+      },
+      "border": {
+        "$value": "rgba(255, 255, 255, 0.1)",
+        "$description": "Footer dividers and social rings → --pgn-color-footer-border (tels-mirror border-white/10)"
+      }
+    }
+  }
+}

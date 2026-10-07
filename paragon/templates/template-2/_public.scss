@@ -1,0 +1,2231 @@
+// LAYER 3 — Public marketing site (Template B / Harvard-PLL / tels-mirror).
+// Recovered 2026-08-26 from dist/core.css (this file was accidentally
+// deleted from the working tree before ever being committed on this branch;
+// recovered verbatim from the last successful `npm run build-scss` output,
+// which is why selectors are flat/compiled rather than SCSS-nested — still
+// 100% valid SCSS and functionally identical to the original source).
+// Values via var(--pgn-*), same convention as every other Layer 3 file.
+
+.tels-eyebrow {
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: var(--pgn-typography-font-size-h6-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--pgn-color-primary-base);
+}
+
+// PLL .pt-short.pb-short on Subject Areas / similar bands: padding 40px 0.
+.tels-section {
+  padding: 40px 0;
+}
+
+.tels-section--tight {
+  padding: 2.5rem 0;
+}
+
+.tels-section--subtle {
+  background: var(--pgn-color-chrome-surface-subtle);
+}
+
+.tels-section--dark {
+  background: var(--pgn-color-text-base);
+  color: var(--pgn-color-white);
+}
+
+.tels-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  // PLL: ~50px from View All button bottom → first teaser card top
+  // (Trending / Recently added / Starting soon).
+  margin-bottom: 50px;
+}
+
+// PLL Subject Areas h2.viewsreference--view-title.h1:
+// 48px Merriweather / #1E1E1E / margin-bottom 20px.
+.tels-section-header__title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #1e1e1e;
+  margin: 0 0 20px;
+}
+@media (min-width: 40em) {
+  .tels-section-header__title {
+    font-size: 3rem; // 48px
+    line-height: 1.4;
+  }
+}
+
+.tels-section--dark .tels-section-header__title,
+.tels-section--dark .tels-eyebrow {
+  color: var(--pgn-color-white);
+}
+
+// Matches the Lovable mock exactly — tels-mirror's SectionHeader viewAll
+// link is a solid primary-filled pill (px-6 py-4 text-[12px]), not the
+// outline/invert-on-hover treatment this previously had.
+.tels-view-all {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.25rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1rem;
+  // PLL view-all links are 400 (not bold).
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  border: 0;
+  border-radius: 2px;
+  color: var(--pgn-color-white);
+  background: var(--pgn-color-primary-base);
+  white-space: nowrap;
+}
+.tels-view-all:hover {
+  background: var(--pgn-color-primary-hover);
+  color: var(--pgn-color-white);
+}
+
+// Home hero — match pll.harvard.edu
+// .paragraph--type--section.pt-tall.pb-short.background-image-shadow
+//   + nested .pt-tall.pb-none row (pads stack: 80+80 top @≥40em).
+// Background photo is <img.tels-hero__media> (webpack-bundled) — do not set
+// background-image here with !important.
+.tels-hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  // Pull under sticky transparent header (PLL section starts at y=0 under header).
+  margin-top: calc(-1 * var(--tels-header-height, 74px));
+  // PLL .pt-tall (60px) + .pb-short (~40px)
+  padding: 60px 0 40px;
+  display: block;
+  overflow: hidden;
+  color: var(--pgn-color-white);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 40em) {
+  .tels-hero {
+    // PLL @40em: .pt-tall 80px / .pb-short 40px
+    padding: 80px 0 40px;
+    margin-top: calc(-1 * var(--tels-header-height, 90px));
+  }
+}
+
+.tels-hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+// PLL .background-image-shadow::before — navy wash, not flat black.
+.tels-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(41, 51, 82, 0.4);
+  pointer-events: none;
+}
+
+// Nested PLL .pt-tall.pb-none on the inner row (second 60/80 top pad).
+.tels-hero__inner {
+  position: relative;
+  z-index: 2;
+  padding: 60px 0 0;
+  text-align: center;
+}
+@media (min-width: 40em) {
+  .tels-hero__inner {
+    padding: 80px 0 0;
+  }
+}
+
+// PLL .hero-content-title-item — no L/R padding or auto side margins.
+.tels-hero__title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  max-width: none;
+  width: 100%;
+  margin: 0.3em 0 0;
+  padding-left: 0;
+  padding-right: 0;
+  color: #fefefe;
+  text-align: center;
+  text-shadow: 2px 2px 11px rgb(30, 30, 30);
+}
+@media (min-width: 40em) {
+  .tels-hero__title {
+    font-size: 3.875rem;
+    margin: 0;
+  }
+}
+@media (min-width: 64em) {
+  .tels-hero__title {
+    font-size: 5.25rem;
+  }
+}
+
+// PLL .hero-content-subtitle-item (h2)
+.tels-hero__subtitle {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0.8em 0 1em;
+  padding: 0 0 1rem;
+  color: #fefefe;
+  text-align: center;
+  text-shadow: 2px 2px 11px rgb(30, 30, 30);
+}
+@media (min-width: 40em) {
+  .tels-hero__subtitle {
+    font-size: 1.375rem;
+  }
+}
+@media (min-width: 64em) {
+  .tels-hero__subtitle {
+    font-size: 1.75rem;
+  }
+}
+
+// PLL .hero-content-links .field__items — inline-flex, buttons margin 10px,
+// link field padding-top 8px.
+.tels-hero__cta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding-top: 8px;
+  width: 100%;
+}
+
+.tels-hero__cta .tels-btn {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 1.25rem;
+  margin: 10px;
+  border-radius: 3px;
+  letter-spacing: normal;
+}
+
+.tels-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.tels-grid--3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.tels-grid--2 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .tels-grid--3, .tels-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .tels-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.tels-course-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--pgn-color-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.19);
+  transition: box-shadow 0.15s;
+}
+.tels-course-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tels-course-card__img {
+  display: block;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--pgn-color-chrome-surface-subtle);
+}
+.tels-course-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.tels-course-card:hover .tels-course-card__img img {
+  transform: scale(1.02);
+}
+
+// PLL .group-details — padding 20px all sides (was 20/20/16).
+.tels-course-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  // PLL teaser body ≈ 341px @1440 — match content chrome height.
+  min-height: 21.25rem;
+}
+
+// PLL stacks subject + modality as separate rows (no bullet separator).
+.tels-course-card__eyebrow {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+// PLL .field---extra-field-pll-extra-field-subject: pad 2px 0 14px,
+// #555 / 16px Merriweather.
+.tels-course-card__subject {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 2px 0 14px;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #555555;
+}
+.tels-course-card__subject a {
+  font-family: var(--pgn-typography-font-family-ui);
+  color: #555555;
+  text-decoration: none;
+}
+.tels-course-card__subject a:hover {
+  color: var(--pgn-color-primary-base);
+  text-decoration: underline;
+}
+
+// PLL .icon-monitor: 14.4px / 700 / uppercase / pad 5px 0 / #555.
+.tels-course-card__modality {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 5px 0;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #555555;
+}
+
+.tels-course-card__subject svg,
+.tels-course-card__modality svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+// PLL teaser title link: Merriweather Sans 23px / 400 / #A51C30;
+// h3 margin -4px 0 9px.
+.tels-course-card__title {
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1.4375rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: -4px 0 9px;
+}
+.tels-course-card__title a {
+  color: var(--pgn-color-primary-base);
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.tels-course-card__title a:hover {
+  color: var(--pgn-color-primary-hover);
+  text-decoration: underline;
+}
+
+// PLL .field--name-field-summary: Merriweather 16px / 300 / #1E1E1E;
+// margin-top 15px.
+.tels-course-card__desc {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  font-weight: 300;
+  color: #1e1e1e;
+  line-height: 1.5;
+  margin: 15px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// PLL .group-details-inner: margin-top 25px, space-between,
+// Merriweather Sans 16px / 400 / #555 / uppercase — no top border.
+.tels-course-card__meta {
+  margin-top: auto;
+  padding-top: 25px;
+  border-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #555555;
+}
+
+.tels-course-card__price {
+  color: #555555;
+  font-weight: 400;
+}
+
+.tels-trending-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--pgn-color-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.19);
+  transition: box-shadow 0.15s;
+}
+.tels-trending-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tels-trending-card__thumb {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tels-trending-card__glyph {
+  font-size: var(--pgn-typography-font-size-h1-base);
+  opacity: 0.9;
+  color: var(--pgn-color-white);
+}
+
+.tels-trending-card__code {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--pgn-typography-font-family-base);
+  font-weight: 900;
+  font-size: var(--pgn-typography-font-size-h2-base);
+  line-height: 0.95;
+  color: var(--pgn-color-white);
+}
+@media (min-width: 640px) {
+  .tels-trending-card__code {
+    font-size: var(--pgn-typography-font-size-h1-base);
+  }
+}
+
+.tels-trending-card__body {
+  // PLL .group-details — 20px all sides (same as course card body).
+  padding: 20px;
+  min-height: 21.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tels-subject-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tels-subject-grid > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tels-subject-grid > li::marker {
+  content: none;
+}
+@media (min-width: 640px) {
+  .tels-subject-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .tels-subject-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// PLL subject list links: #A51C30 / 18px Merriweather Sans;
+// icons 18×18 with 8px gap (margin-right 8px on ::before).
+.tels-subject-grid a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1.125rem; // 18px
+  font-weight: 400;
+  color: var(--pgn-color-primary-base) !important;
+}
+.tels-subject-grid a svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--pgn-color-primary-base);
+}
+.tels-subject-grid a:hover {
+  color: var(--pgn-color-primary-hover) !important;
+}
+
+// PLL .topic-tag / .topic-tag a (pll.harvard.edu Featured topics)
+.tels-topic-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  // margins live on each pill (5px 10px 10px 0) to match PLL
+}
+
+.tels-topic-pill {
+  display: inline-block;
+  margin-block: 5px 10px;
+  margin-inline: 0 10px;
+  padding: 7px 10px;
+  background-color: #f8f8f8;
+  border: 0;
+  border-radius: 1.125rem;
+  box-shadow: 0 2px 6px rgba(94, 94, 94, 0.53);
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: none !important;
+}
+.tels-topic-pill:hover {
+  background-color: #f0f0f0;
+  color: var(--pgn-color-primary-hover) !important;
+  box-shadow: 0 2px 8px rgba(94, 94, 94, 0.6);
+}
+
+.tels-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .tels-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tels-stats__n {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .tels-stats__n {
+    // PLL .statistic-large-text: 64px Merriweather white.
+    font-size: 4rem;
+  }
+}
+
+.tels-stats__l {
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1rem;
+  // PLL <strong> LEARNERS / COURSES / COUNTRIES → 700.
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+// PLL stats band: #7c0516, padding 60px 0 (pt-tall-ish).
+.tels-stats-band {
+  background: #7c0516;
+  color: var(--pgn-color-white);
+  padding: 60px 0;
+}
+
+.tels-stats-band .tels-stats__n {
+  color: #ffffff;
+}
+
+.tels-stats-band .tels-stats__l {
+  color: #ffffff;
+}
+
+.tels-stats-band--dark {
+  background: var(--pgn-color-text-base);
+  color: var(--pgn-color-white);
+}
+
+.tels-stats-band--dark .tels-stats__n {
+  color: var(--pgn-color-primary-base);
+}
+
+.tels-stats-band--dark .tels-stats__l {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+// PLL schools logo carousel: white/page bg (not blue — inspect overlay was blue).
+.tels-orgs-band {
+  background: #ffffff;
+  padding: 60px 0 40px; // PLL pt-medium pb-short
+}
+
+.tels-orgs-carousel {
+  position: relative;
+  // Room for arrows at ±40px like PLL .slick-arrow left/right: -40px
+  padding: 0 40px;
+}
+
+.tels-orgs-carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.tels-orgs-carousel__track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.tels-orgs-carousel__slide {
+  box-sizing: border-box;
+  padding: 0 0.75rem;
+  text-align: center;
+}
+
+.tels-orgs-carousel__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: inherit;
+  min-height: 100%;
+}
+
+.tels-orgs-carousel__item img {
+  display: block;
+  width: auto;
+  max-width: 96px;
+  height: 114px;
+  object-fit: contain;
+}
+
+.tels-orgs-carousel__name {
+  display: block;
+  margin-top: 0.75rem;
+  // PLL school name link: Merriweather 18px / 700 / #414141
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.125rem; // 18px
+  font-weight: 700;
+  line-height: 1.35;
+  color: #414141;
+  text-align: center;
+}
+
+.tels-orgs-carousel__item:hover .tels-orgs-carousel__name {
+  color: var(--pgn-color-primary-base);
+  text-decoration: underline;
+}
+
+.tels-orgs-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  // PLL .icon-chevron-*::before → primary crimson
+  color: var(--pgn-color-primary-base);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.tels-orgs-carousel__arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.tels-orgs-carousel__arrow--prev {
+  left: 0;
+}
+
+.tels-orgs-carousel__arrow--next {
+  right: 0;
+}
+
+.tels-orgs-carousel__arrow svg {
+  display: block;
+}
+
+// Legacy static grid (About page cards still use --cards variant).
+.tels-orgs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+@media (min-width: 640px) {
+  .tels-orgs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .tels-orgs-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.tels-orgs-grid img {
+  max-height: 80px;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.tels-orgs-grid figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #1e1e1e;
+  text-align: center;
+}
+
+.tels-orgs-grid--cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .tels-orgs-grid--cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .tels-orgs-grid--cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tels-org-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+  padding: 1.5rem;
+  background: var(--pgn-color-white);
+  border: 1px solid var(--pgn-color-chrome-border);
+}
+.tels-org-card:hover {
+  border-color: var(--pgn-color-primary-base);
+}
+.tels-org-card img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+// PLL bottom "Keep learning." band — pt/pb medium, navy wash overlay.
+.tels-cta-photo {
+  position: relative;
+  padding: 5rem 0;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: var(--pgn-color-white);
+}
+.tels-cta-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  // PLL .background-image-shadow ≈ #293352 @ 40%.
+  background: rgba(41, 51, 82, 0.4);
+}
+
+.tels-cta-photo__inner {
+  position: relative;
+  z-index: 1;
+}
+
+// PLL h2.stat: 64px Merriweather / white / margin-bottom 16px.
+.tels-cta-photo h2 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+@media (min-width: 64em) {
+  .tels-cta-photo h2 {
+    font-size: 4rem; // 64px
+  }
+}
+
+// PLL a.white-background.button: white fill, #A51C30 text, pad 20px.
+.tels-cta-photo .tels-btn {
+  background: #ffffff;
+  color: var(--pgn-color-primary-base) !important;
+  border-color: #ffffff;
+  padding: 20px;
+  margin: 0 0 16px;
+  font-weight: 400;
+}
+.tels-cta-photo .tels-btn:hover {
+  background: var(--pgn-color-primary-base);
+  color: #ffffff !important;
+  border-color: var(--pgn-color-primary-base);
+}
+
+.tels-cta-band {
+  background: var(--pgn-color-chrome-surface-subtle);
+  border-top: 1px solid var(--pgn-color-chrome-border);
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.tels-cta-band h2 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+}
+
+.tels-cta-band__actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tels-email-signup {
+  // PLL section pt-short.pb-short background #7C0516, form centered ~650px.
+  background: #7c0516;
+  color: var(--pgn-color-white);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.tels-email-signup__title {
+  // PLL webform h2: Manrope 28px / 900 / white / margin 14px 0.
+  font-family: var(--pgn-typography-font-family-manrope);
+  font-size: 1.75rem; // 28px
+  font-weight: 900;
+  color: var(--pgn-color-white) !important;
+  margin: 14px 0;
+  line-height: 1.4;
+}
+
+.tels-email-signup__subtitle {
+  // PLL span under h2: ~20px / 400 / white (Newsreader → our Merriweather).
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.25rem; // 20px
+  font-weight: 400;
+  line-height: 1.5; // 30px
+  color: var(--pgn-color-white);
+  margin: 0 0 1rem;
+}
+
+.tels-email-signup__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 40.625rem; // 650px
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tels-email-signup__form input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 54px;
+  background: var(--pgn-color-white);
+  color: #000;
+  // PLL #edit-email: pad-start 16px, margin-bottom 20px (logical for RTL).
+  padding-block: 0;
+  padding-inline: 16px 0;
+  margin: 0 0 20px;
+  font-family: var(--pgn-typography-font-family-manrope);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: start;
+}
+
+.tels-email-signup__form button {
+  background: var(--pgn-color-primary-base);
+  color: var(--pgn-color-white);
+  border: 1px solid var(--pgn-color-primary-base);
+  border-radius: 3px;
+  padding: 10px;
+  min-height: 46px;
+  font-family: var(--pgn-typography-font-family-manrope);
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+.tels-email-signup__form button:hover {
+  background: var(--pgn-color-primary-hover);
+  border-color: var(--pgn-color-primary-hover);
+}
+.tels-email-signup__form button:focus-visible {
+  outline: 2px solid var(--pgn-color-white);
+  outline-offset: 2px;
+}
+.tels-email-signup__form button:active:not(:disabled) {
+  background: var(--pgn-color-primary-active, var(--pgn-color-primary-hover));
+  border-color: var(--pgn-color-primary-active, var(--pgn-color-primary-hover));
+}
+.tels-email-signup__form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.tels-email-signup__form .tels-field-error {
+  width: 100%;
+  margin: -12px 0 16px;
+  text-align: start;
+}
+
+.tels-email-signup__success {
+  margin-top: 0.75rem;
+  font-size: var(--pgn-typography-font-size-base);
+}
+
+.tels-email-signup--light {
+  background: var(--pgn-color-chrome-surface-subtle);
+  color: var(--pgn-color-text-base);
+}
+.tels-email-signup--light .tels-email-signup__title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .tels-email-signup--light .tels-email-signup__title {
+    font-size: var(--pgn-typography-font-size-h1-base);
+  }
+}
+.tels-email-signup--light .tels-email-signup__subtitle {
+  color: var(--pgn-color-text-secondary);
+  font-size: var(--pgn-typography-font-size-base);
+}
+.tels-email-signup--light .tels-email-signup__form input {
+  border: 1px solid var(--pgn-color-chrome-border);
+  padding: 0.75rem 1rem;
+  font-size: var(--pgn-typography-font-size-base);
+}
+.tels-email-signup--light .tels-email-signup__form button {
+  background: var(--pgn-color-primary-base);
+  border-color: var(--pgn-color-primary-base);
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--pgn-typography-btn-font-size-base);
+}
+
+// Vertical padding belongs to the H1's own inner container, not the
+// outer dark section — .tels-filter-bar is a sibling that follows it
+// and must sit flush against the section's real bottom edge.
+.tels-courses-header {
+  background: var(--pgn-color-chrome-header-dark);
+}
+
+.tels-courses-header > .tels-container:first-child {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .tels-courses-header > .tels-container:first-child {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.tels-courses-header h1 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.15);
+  font-weight: 400;
+  color: var(--pgn-color-white);
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .tels-courses-header h1 {
+    font-size: calc(var(--pgn-typography-font-size-h1-base) * 1.29);
+  }
+}
+
+.tels-filter-bar {
+  background: color-mix(in srgb, var(--pgn-color-chrome-header-dark) 85%, black);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tels-filter-bar > .tels-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tels-filter-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 44px;
+  padding: 0 1.25rem;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: var(--pgn-typography-btn-font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+  background: none;
+  border: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+.tels-filter-trigger svg {
+  // Chevron size matches the courses filter trigger icon.
+  width: var(--pgn-size-icon-xs);
+  height: var(--pgn-size-icon-xs);
+  transition: transform var(--pgn-transition-collapse-height-duration, 0.35s)
+    var(--pgn-transition-collapse-height-timing-function, ease);
+}
+.tels-filter-trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+.tels-filter-trigger:hover {
+  color: var(--pgn-color-white);
+}
+.tels-filter-trigger.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: -1px;
+  height: 3px;
+  background: var(--pgn-color-primary-base);
+}
+
+// Courses filter dropdown: clip wrapper stays mounted so open grows
+// top → bottom and close shrinks bottom → top (public MFE only).
+.tels-filter-panel-clip {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  z-index: 30;
+  min-width: 240px;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+      var(--pgn-transition-collapse-height-timing-function, ease),
+    visibility 0s linear var(--pgn-transition-collapse-height-duration, 0.35s);
+}
+.tels-filter-panel-clip.is-open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    grid-template-rows var(--pgn-transition-collapse-height-duration, 0.35s)
+      var(--pgn-transition-collapse-height-timing-function, ease),
+    visibility 0s linear 0s;
+}
+
+.tels-filter-panel {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tels-filter-panel__inner {
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+  background: var(--pgn-color-white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tels-filter-panel-clip,
+  .tels-filter-trigger svg {
+    transition: none;
+  }
+}
+
+.tels-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: var(--pgn-typography-font-size-h6-base);
+  color: var(--pgn-color-text-base);
+  background: none;
+  border: 0;
+  text-align: start;
+  cursor: pointer;
+}
+.tels-filter-option:hover {
+  background: var(--pgn-color-chrome-surface-subtle);
+}
+.tels-filter-option input {
+  accent-color: var(--pgn-color-primary-base);
+  width: 1rem;
+  height: 1rem;
+}
+
+.tels-courses-results {
+  background: var(--pgn-color-chrome-surface-subtle);
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .tels-courses-results {
+    padding: 4.4rem 0;
+  }
+}
+
+.tels-results-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.tels-results-head h2 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h3-base);
+  font-weight: 400;
+  margin: 0;
+}
+
+.tels-clear-filters {
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: var(--pgn-typography-font-size-h5-base);
+  font-weight: 700;
+  color: var(--pgn-color-primary-base);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.tels-clear-filters:hover {
+  text-decoration: underline;
+}
+
+.tels-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.tels-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 2rem;
+  padding: 0 0.5rem 0 0.75rem;
+  background: var(--pgn-color-white);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: var(--pgn-typography-font-size-h6-base);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.tels-chip button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  display: inline-flex;
+}
+.tels-chip svg {
+  // Chip remove icon size.
+  width: var(--pgn-size-icon-xs);
+  height: var(--pgn-size-icon-xs);
+}
+
+.tels-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--pgn-color-text-secondary);
+}
+
+.tels-breadcrumb {
+  font-size: var(--pgn-typography-font-size-base);
+  color: var(--pgn-color-text-secondary);
+}
+.tels-breadcrumb a {
+  color: inherit;
+}
+.tels-breadcrumb a:hover {
+  color: var(--pgn-color-primary-base);
+}
+.tels-breadcrumb__sep {
+  margin: 0 0.5rem;
+  color: var(--pgn-color-chrome-text-muted);
+}
+
+.tels-page-header {
+  background: var(--pgn-color-white);
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+  padding: 2.5rem 0;
+}
+@media (min-width: 768px) {
+  .tels-page-header {
+    padding: 3rem 0;
+  }
+}
+.tels-page-header h1 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0.5rem 0 0.75rem;
+}
+@media (min-width: 768px) {
+  .tels-page-header h1 {
+    font-size: var(--pgn-typography-font-size-h1-base);
+  }
+}
+
+// Course about — Harvard PLL overlapping facts card.
+// Dark navy sub-header band + white facts card (530px) overlapping the band.
+// One .tels-container grid: hero in col 1, facts in col 2 spanning hero→body.
+.tels-course-about {
+  overflow-x: clip;
+  background: #f8f8f8;
+  // pll.harvard.edu .group-details image is 530px (16_9_medium); the card
+  // is that width so the photo and fact rows share one edge.
+  --tels-course-facts-width: 33.125rem;
+  --tels-course-facts-gap: calc(var(--pgn-spacing-spacer-base) * 2);
+}
+
+.tels-course-about__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  position: relative;
+}
+
+.tels-course-about__main {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+// PLL .node-view-mode--sub-header — navy sized to hero content only.
+// box-shadow + clip-path full-bleeds horizontally from the left column
+// without stretching when the facts card is taller.
+// Top pad: 140px from viewport top including sticky header → subtract
+// .tels-header__row height (via --tels-header-height).
+.tels-course-hero {
+  position: relative;
+  z-index: 1;
+  color: var(--pgn-color-white);
+  padding: calc(140px - var(--tels-header-height, 74px)) 0 2rem;
+  background: var(--pgn-color-chrome-header-dark);
+  box-shadow: 0 0 0 100vmax var(--pgn-color-chrome-header-dark);
+  clip-path: inset(0 -100vmax);
+}
+@media (min-width: 768px) {
+  .tels-course-hero {
+    padding: calc(140px - var(--tels-header-height, 90px)) 0 2.5rem;
+  }
+}
+// PLL course H1: ~3rem / weight 300 / white Merriweather.
+.tels-course-hero h1 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--pgn-color-white);
+  margin: 0 0 1rem;
+  max-width: 48rem;
+}
+@media (min-width: 40em) {
+  .tels-course-hero h1 {
+    font-size: 3rem;
+  }
+}
+.tels-course-hero__teaser {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--pgn-color-white);
+}
+.tels-course-hero__cta {
+  margin-top: calc(var(--pgn-spacing-spacer-base) * 1.5);
+}
+.tels-course-hero__cta .tels-btn {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 1.25rem;
+  border-radius: 3px;
+  letter-spacing: normal;
+}
+
+// PLL .group-extra-details-wrapper — full-bleed white under navy.
+.tels-course-extras {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0 0 0 100vmax #ffffff;
+  clip-path: inset(0 -100vmax);
+}
+.tels-course-extras__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  padding: 15px 0;
+  min-height: 94px;
+  box-sizing: border-box;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #414141;
+}
+.tels-course-extras__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 4px;
+  color: #414141;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 300;
+}
+.tels-course-extras__item svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #414141;
+  stroke-width: 1.75;
+}
+.tels-course-extras__help {
+  display: inline-flex;
+  align-items: center;
+  color: #1e1e1e !important;
+  margin-inline-start: 0.25rem;
+  text-decoration: none !important;
+}
+.tels-course-extras__help svg {
+  width: 16px;
+  height: 16px;
+}
+.tels-course-extras__help:hover {
+  color: var(--pgn-color-primary-base) !important;
+}
+
+.tels-course-facts {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 0 calc(var(--pgn-spacing-spacer-base) * 2);
+  background: var(--pgn-color-white);
+  // PLL .group-details computed: border-radius 3px, shadow 0 2px 4px rgba(0,0,0,0.5)
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: 0;
+  overflow: hidden;
+}
+.tels-course-facts__media {
+  background: var(--pgn-color-chrome-surface-subtle);
+  // PLL .field--name-field-media img: width 530 / height 298 (16_9_medium).
+  width: 100%;
+  line-height: 0;
+}
+.tels-course-facts__media img {
+  display: block;
+  width: 100%;
+  max-width: 33.125rem; // 530px
+  height: auto;
+  aspect-ratio: 530 / 298;
+  object-fit: cover;
+  object-position: center;
+}
+
+// PLL .group-details-inner: padding 0 20px 15px — use 20px all sides
+// per design request (even gutters on every edge).
+.tels-course-facts__list {
+  padding: 20px;
+  color: #1e1e1e;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+}
+
+// PLL fact rows: pad 16px 0 measured; match requested 20px vertical rhythm.
+.tels-course-fact {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1rem;
+}
+.tels-course-fact:last-child {
+  border-bottom: 0;
+}
+@media (max-width: 639px) {
+  .tels-course-fact {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+.tels-course-fact__label {
+  display: inline-flex;
+  align-items: center;
+  // PLL icon ::before margin-right 10px.
+  gap: 10px;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #1e1e1e;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tels-course-fact__label svg {
+  // PLL .fas.fa-* ::before ≈ 24×24.
+  width: 24px;
+  height: 24px;
+  color: #1e1e1e;
+  flex-shrink: 0;
+  stroke-width: 1.75;
+}
+.tels-course-fact__value {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  font-weight: 300;
+  color: #1e1e1e;
+  text-align: end;
+  min-width: 0;
+}
+.tels-course-fact__value a {
+  color: var(--pgn-color-primary-base);
+  text-decoration: none;
+}
+.tels-course-fact__value a:hover {
+  text-decoration: underline;
+}
+.tels-course-fact__value:has(.tels-topic-chip) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  justify-content: end;
+}
+.tels-course-fact:has(.tels-topic-chips) {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0.25rem;
+  border-bottom: 0;
+}
+.tels-course-fact:has(.tels-topic-chips) .tels-course-fact__value {
+  text-align: start;
+  justify-content: start;
+}
+.tels-course-facts .tels-topic-chip {
+  display: inline-flex;
+  // PLL .topic-tag: margin 5px 10px 10px 0; pad 7px 10px; bg #f8f8f8.
+  margin-block: 5px 10px;
+  margin-inline: 0 10px;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  box-shadow: none;
+}
+.tels-course-facts__schools {
+  padding: 20px;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+// PLL Associated Schools h2: ~28px Merriweather, margin 14px 0 16px.
+.tels-course-facts__schools-label {
+  margin: 14px 0 16px;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.75rem;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #1e1e1e;
+}
+.tels-course-school {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  color: #1e1e1e !important;
+  text-decoration: none !important;
+  text-align: center;
+}
+// PLL .max-width-120.min-height-145 around school logo.
+.tels-course-school__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 7.5rem; // 120px
+  min-height: 9.0625rem; // 145px
+  width: 100%;
+  margin: 0 auto;
+}
+// PLL school logo img attrs: width 96 / height 116 (4_5_small).
+.tels-course-school img {
+  display: block;
+  width: 6rem; // 96px
+  height: 7.25rem; // 116px
+  max-width: 7.5rem; // 120px
+  object-fit: contain;
+  padding: 0;
+  margin: 0 auto;
+  background: transparent;
+  border-radius: 0;
+}
+.tels-course-school span {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.125rem; // ~18px like PLL school name
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1e1e1e;
+}
+.tels-course-school:hover span {
+  color: var(--pgn-color-primary-base);
+  text-decoration: underline;
+}
+
+.tels-course-about__primary {
+  min-width: 0;
+}
+
+.tels-course-body {
+  // PLL: body starts immediately under extras — no large top pad.
+  padding: 0;
+}
+.tels-course-body section {
+  max-width: 48rem;
+  margin-bottom: 2.5rem;
+}
+.tels-course-body section:first-child .tels-detail-heading,
+.tels-course-body section:first-child h2 {
+  margin-top: 16px;
+}
+// PLL section H2s on course body: 28px Merriweather / #1E1E1E / margin 14px 0 16px.
+.tels-course-body section h2,
+.tels-course-body .tels-detail-heading {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: #1e1e1e;
+  margin: 14px 0 16px;
+}
+
+@media (min-width: 900px) {
+  // One row: main stack | facts. Layout height = max(main, facts+offset)
+  // so the card is covered and never overlaps Enroll now.
+  // Under dir=rtl, CSS Grid places column 1 on the right and column 2 on the
+  // left — so the facts card stays on the physical left without extra rules.
+  .tels-course-about__layout {
+    grid-template-columns: minmax(0, 1fr) var(--tels-course-facts-width);
+    column-gap: var(--tels-course-facts-gap);
+    align-items: start;
+  }
+  .tels-course-about__main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .tels-course-facts {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    width: 100%;
+    // Match hero content start (140px from viewport − header height).
+    margin: calc(140px - var(--tels-header-height, 90px)) 0 2.5rem;
+    z-index: 3;
+  }
+  .tels-course-about__primary {
+    margin: 0;
+    padding: 0;
+  }
+}
+.tels-course-learn {
+  color: var(--pgn-color-text-secondary);
+  padding-inline-start: 1.25rem;
+  margin: 0 0 1.5rem;
+  line-height: 1.55;
+}
+.tels-course-learn li {
+  margin-bottom: 0.5rem;
+}
+.tels-course-body__copy {
+  font-family: var(--pgn-typography-font-family-base);
+  color: #1e1e1e;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+// PLL faculty band — full-bleed section above Enroll banner.
+// Heading centered 28px; cards ~380px with 145px circular photo overlapping the card top.
+.tels-course-faculty {
+  padding: 3.75rem 0; // 60px
+  background: var(--pgn-color-white);
+}
+.tels-course-faculty__title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.75rem; // 28px
+  font-weight: 300;
+  line-height: 1.25;
+  color: #1e1e1e;
+  text-align: center;
+  margin: 0 0 1.875rem; // 30px (PLL field__label)
+}
+.tels-course-faculty__grid {
+  list-style: none;
+  margin: 4.5rem 0 0; // clear half of overlapping 145px photo
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem 2rem;
+}
+.tels-course-faculty__item {
+  margin: 0 0 1.25rem; // PLL field__item margin-bottom ~20px
+  padding: 0 1rem; // 16px
+  flex: 0 1 24rem; // ~384px
+  max-width: 24rem;
+  box-sizing: border-box;
+}
+
+.tels-instructor-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  // Room for overlapping 145px photo (~72px overhang + breathing room).
+  padding: 6.25rem 1.25rem 1.25rem; // 100px 20px 20px
+  border: 1px solid #e5e5e5;
+  background: var(--pgn-color-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+}
+
+.tels-instructor-card__media {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+  width: 145px;
+  height: 145px;
+}
+
+[dir="rtl"] .tels-instructor-card__media {
+  transform: translate(50%, -50%);
+}
+
+.tels-instructor-card__photo,
+.tels-instructor-card__avatar {
+  display: block;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.tels-instructor-card__avatar {
+  border: 0;
+  background: var(--pgn-color-chrome-surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--pgn-color-text-secondary);
+}
+
+.tels-instructor-card__body {
+  width: 100%;
+  padding: 0;
+}
+
+.tels-instructor-card__name {
+  margin: 0.5625rem 0 0; // ~9px
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.125rem; // 18px
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--pgn-color-primary-base);
+}
+
+.tels-instructor-card__title {
+  margin: 0.5rem 0 0;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 0.875rem; // 14px
+  font-weight: 300;
+  line-height: 1.5;
+  color: #1e1e1e;
+}
+
+// PLL "Enroll now." band — #293352, 64px Merriweather white.
+.tels-enroll-banner {
+  background: #293352;
+  color: var(--pgn-color-white);
+  padding: 4rem 0;
+}
+@media (min-width: 64em) {
+  .tels-enroll-banner {
+    padding: 6rem 0;
+  }
+}
+.tels-enroll-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
+}
+.tels-enroll-banner__stat {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+  color: #ffffff;
+}
+@media (min-width: 40em) {
+  .tels-enroll-banner__stat {
+    font-size: 4rem; // 64px
+  }
+}
+.tels-enroll-banner .tels-btn {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 20px;
+  border-radius: 3px;
+  letter-spacing: normal;
+}
+
+// PLL "You may also like" — 1.75rem / 300.
+.tels-course-related-title {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--pgn-color-text-base);
+  margin-bottom: 1.5rem;
+}
+
+// Course page signup uses primary (crimson) band like PLL — not light.
+.tels-course-about__more {
+  background: transparent;
+}
+.tels-course-about__more .tels-email-signup--light {
+  background: transparent;
+}
+
+.tels-course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: var(--pgn-typography-font-size-base);
+  color: var(--pgn-color-text-secondary);
+  margin-top: 0.75rem;
+}
+
+.tels-course-meta__price {
+  color: var(--pgn-color-primary-base);
+  font-weight: 700;
+}
+
+.tels-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .tels-detail-grid {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
+.tels-detail-grid aside {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .tels-detail-aside--sticky {
+    position: sticky;
+    top: 6rem;
+  }
+}
+.tels-detail-heading {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  color: var(--pgn-color-text-base);
+}
+@media (min-width: 768px) {
+  .tels-detail-heading {
+    font-size: var(--pgn-typography-font-size-h1-base);
+  }
+}
+
+.tels-details-card {
+  border: 1px solid var(--pgn-color-chrome-border);
+  padding: 1.5rem;
+}
+.tels-details-card dl {
+  margin: 0;
+  font-size: var(--pgn-typography-font-size-base);
+}
+.tels-details-card .tels-details-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+}
+.tels-details-card .tels-details-row:last-child {
+  border-bottom: 0;
+}
+.tels-details-card .tels-details-row dt {
+  color: var(--pgn-color-text-secondary);
+}
+.tels-details-card .tels-details-row dd {
+  margin: 0;
+  text-align: end;
+}
+
+.tels-topic-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+// PLL topic tag inside facts: pill, light fill, crimson text + border.
+.tels-topic-chip {
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  padding: 7px 10px;
+  background: #f8f8f8;
+  border: 1px solid var(--pgn-color-primary-base);
+  border-radius: 1.125rem;
+  box-shadow: 0 2px 6px rgba(94, 94, 94, 0.25);
+  color: var(--pgn-color-primary-base) !important;
+  line-height: 1;
+  text-decoration: none !important;
+}
+.tels-topic-chip:hover {
+  background: #f0f0f0;
+  color: var(--pgn-color-primary-hover) !important;
+}
+
+.tels-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) {
+  .tels-contact-grid {
+    grid-template-columns: 1fr 280px;
+  }
+}
+
+.tels-field {
+  margin-bottom: 1.25rem;
+}
+
+.tels-field label {
+  display: block;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: var(--pgn-typography-font-size-h6-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pgn-color-chrome-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.tels-field input,
+.tels-field textarea {
+  width: 100%;
+  border: 1px solid var(--pgn-color-chrome-border);
+  padding: 0.6rem 0.75rem;
+  font-size: var(--pgn-typography-font-size-base);
+  font-family: inherit;
+  color: var(--pgn-color-text-base);
+  background: var(--pgn-color-white);
+}
+.tels-field input:focus,
+.tels-field textarea:focus {
+  outline: 2px solid var(--pgn-color-primary-base);
+  outline-offset: 0;
+  border-color: var(--pgn-color-primary-base);
+}
+
+.tels-field-error {
+  margin: 0.35rem 0 0;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--pgn-color-danger-base, #b91c1c);
+  text-align: start;
+}
+
+.tels-form-banner {
+  margin-top: 0.75rem;
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 0.875rem;
+}
+
+.tels-form-banner--success {
+  color: var(--pgn-color-success-base, var(--pgn-color-green, #15803d));
+}
+
+.tels-form-banner--error {
+  color: var(--pgn-color-danger-base, #b91c1c);
+}
+
+.tels-page-header__intro {
+  margin-top: 0.5rem;
+  max-width: 40rem;
+  color: var(--pgn-color-text-secondary);
+  font-family: var(--pgn-typography-font-family-base);
+}
+
+.tels-page-body {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.tels-contact-form {
+  max-width: 36rem;
+}
+
+// Skip link — visually hidden until focused (does not affect layout).
+.tels-skip-link {
+  position: absolute;
+  inset-inline-start: 0.75rem;
+  top: -100px;
+  z-index: 2000;
+  padding: 0.5rem 0.75rem;
+  background: var(--pgn-color-primary-base);
+  color: var(--pgn-color-white) !important;
+  font-family: var(--pgn-typography-font-family-ui);
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.tels-skip-link:focus {
+  top: 0.75rem;
+}
+
+.tels-header__menu-lang {
+  margin-top: 1.5rem;
+  max-width: 16rem;
+}
+
+// RTL marketing: keep reading start on the right; do not mirror chevron glyphs.
+[dir="rtl"] .tels-shell {
+  text-align: start;
+}
+
+[dir="rtl"] .tels-section-header__title,
+[dir="rtl"] .tels-page-header h1,
+[dir="rtl"] .tels-page-header__intro,
+[dir="rtl"] .tels-about-prose,
+[dir="rtl"] .tels-about-orgs-title,
+[dir="rtl"] .tels-course-hero h1,
+[dir="rtl"] .tels-course-hero__teaser,
+[dir="rtl"] .tels-course-body,
+[dir="rtl"] .tels-course-learn,
+[dir="rtl"] .tels-detail-heading,
+[dir="rtl"] .tels-legal-header h1,
+[dir="rtl"] .tels-legal__intro,
+[dir="rtl"] .tels-legal__updated,
+[dir="rtl"] .tels-legal__block,
+[dir="rtl"] .tels-contact-form,
+[dir="rtl"] .tels-contact-aside,
+[dir="rtl"] .tels-email-signup__title,
+[dir="rtl"] .tels-email-signup__subtitle,
+[dir="rtl"] .tels-courses-header h1,
+[dir="rtl"] .tels-results-head,
+[dir="rtl"] .tels-school-header__title {
+  text-align: start;
+}
+
+[dir="rtl"] .tels-email-signup--light {
+  text-align: start;
+}
+
+[dir="rtl"] .tels-email-signup--light .tels-email-signup__form {
+  align-items: stretch;
+}
+
+[dir="rtl"] .tels-email-signup--light .tels-email-signup__form input,
+[dir="rtl"] .tels-email-signup--light .tels-email-signup__form button {
+  text-align: start;
+}
+
+[dir="rtl"] .tels-field label,
+[dir="rtl"] .tels-field input,
+[dir="rtl"] .tels-field textarea {
+  text-align: start;
+}
+
+.tels-about-prose {
+  max-width: 48rem;
+  color: var(--pgn-color-text-secondary);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: var(--pgn-typography-font-family-base);
+}
+
+.tels-about-orgs-title {
+  margin-bottom: 1.5rem;
+}
+
+.tels-org-card--stacked {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tels-org-card__fallback {
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-align: center;
+  font-family: var(--pgn-typography-font-family-ui);
+}
+
+.tels-org-card__caption {
+  font-size: 0.75rem;
+  color: var(--pgn-color-chrome-text-muted);
+  font-family: var(--pgn-typography-font-family-ui);
+}
+
+.tels-section--bordered {
+  border-top: 1px solid var(--pgn-color-chrome-border);
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+}
+
+.tels-trending-card__code-dim {
+  opacity: 0.8;
+}
+
+.tels-trending-card__code-dimmer {
+  opacity: 0.6;
+}
+
+.tels-school-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.tels-school-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.tels-school-header__logo {
+  height: 4rem;
+  object-fit: contain;
+}
+
+.tels-school-header__title {
+  margin: 0;
+}
+
+.tels-filter-dropdown {
+  position: relative;
+}
+
+.tels-filter-option--disabled {
+  opacity: 0.6;
+}
+
+.tels-contact-aside h3 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: var(--pgn-typography-font-size-h4-base);
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--pgn-color-chrome-border);
+  margin: 0 0 1rem;
+}
+
+.tels-contact-aside .tels-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--pgn-typography-font-size-base);
+  margin-bottom: 0.85rem;
+  color: var(--pgn-color-text-base) !important;
+}
+.tels-contact-aside .tels-contact-row svg {
+  // Matches tels-mirror's contact.tsx Mail/MapPin/Globe/Linkedin icons (size={14}).
+  width: var(--pgn-size-icon-sm);
+  height: var(--pgn-size-icon-sm);
+  color: var(--pgn-color-primary-base);
+  flex-shrink: 0;
+}
+
+.tels-legal-header {
+  background: var(--pgn-color-chrome-header-dark);
+  // PLL terms band: pad-top includes header overlap (~140px from viewport top);
+  // under sticky header use content padding that lands H1 ~same visual weight.
+  padding: 4.5rem 0 2.8rem;
+}
+
+.tels-legal-header .tels-eyebrow {
+  display: none; // PLL terms has title only in the dark band
+}
+
+.tels-legal-header h1 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--pgn-color-white);
+  margin: 0;
+}
+@media (min-width: 40em) {
+  .tels-legal-header h1 {
+    font-size: 3rem;
+  }
+}
+
+.tels-legal-header p {
+  display: none; // PLL terms intro lives in the white body, not the band
+}
+
+// PLL terms: single column, body bg #f8f8f8, 16px/300 Merriweather — no TOC.
+.tels-legal-layout {
+  display: block;
+  background: #f8f8f8;
+  padding-top: 2.5rem !important;
+  padding-bottom: 4rem !important;
+}
+.tels-legal-layout > aside {
+  display: none;
+}
+
+.tels-legal {
+  max-width: none;
+  width: 100%;
+}
+
+.tels-legal__block {
+  margin-bottom: 1.5rem;
+  scroll-margin-top: 1.5rem;
+}
+.tels-legal__block h2 {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--pgn-color-text-base);
+}
+.tels-legal__block p {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgb(30, 30, 30);
+  line-height: 1.75; // ~28px on 16px
+  margin-bottom: 1rem;
+}
+
+.tels-legal__intro {
+  font-family: var(--pgn-typography-font-family-base);
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgb(30, 30, 30);
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.tels-legal__updated {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--pgn-color-chrome-text-muted);
+  margin: 0 0 1rem;
+}
+
+// Soft page wash like PLL body bg on course/terms.
+.tels-legal-page {
+  background: #f8f8f8;
+  min-height: 40vh;
+}

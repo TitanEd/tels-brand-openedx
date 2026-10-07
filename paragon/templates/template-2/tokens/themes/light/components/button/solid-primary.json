@@ -1,0 +1,26 @@
+{
+  "$description": "SOLID PRIMARY only — class: .btn.btn-primary. Outline lives in outline-primary.json (do not duplicate here). Hover/active: Paragon defaults (theme.hover / primary-700) — do not override here.",
+  "color": {
+    "btn": {
+      "bg": {
+        "primary": {
+          "$value": "{color.primary.base}",
+          "$description": "Solid primary background → --pgn-color-btn-bg-primary"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "Solid primary text → --pgn-color-btn-text-primary (modify null keeps white)"
+        }
+      },
+      "border": {
+        "primary": {
+          "$value": "{color.btn.bg.primary}",
+          "$description": "Solid primary border → --pgn-color-btn-border-primary"
+        }
+      }
+    }
+  }
+}

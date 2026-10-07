@@ -1,0 +1,20 @@
+{
+  "$description": "Dark — solid primary button contrast. Hover: Paragon defaults — do not override here.",
+  "color": {
+    "btn": {
+      "bg": {
+        "primary": {
+          "$value": "{color.primary.base}",
+          "$description": "Solid primary bg (dark)"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#FFFFFF",
+          "modify": null,
+          "$description": "UI label: Solid primary text (dark) → --pgn-color-btn-text-primary"
+        }
+      }
+    }
+  }
+}

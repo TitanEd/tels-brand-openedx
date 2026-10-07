@@ -1,0 +1,27 @@
+{
+  "$description": "Dark — links (including .inline-link / mailto)",
+  "color": {
+    "link": {
+      "base": {
+        "$value": "{color.primary.base}",
+        "$description": "Link on dark"
+      },
+      "hover": {
+        "$value": "{color.primary.base}",
+        "$description": "Link hover on dark"
+      },
+      "inline": {
+        "base": {
+          "$value": "{color.primary.base}",
+          "$description": "Inline / mailto on dark → --pgn-color-link-inline-base"
+        },
+        "hover": {
+          "base": {
+            "$value": "{color.primary.base}",
+            "$description": "Inline link hover on dark"
+          }
+        }
+      }
+    }
+  }
+}

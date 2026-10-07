@@ -1,0 +1,15 @@
+{
+  "$description": "BREADCRUMB — focus-ring radius (class: .breadcrumb-item, keyboard focus). Radius defaults to global sm radius (small focus ring, cascades), independently overridable here. Was previously hardcoded (.125rem) in @openedx/paragon's own tokens.",
+  "size": {
+    "breadcrumb": {
+      "border": {
+        "radius": {
+          "focus": {
+            "$value": "{size.border.radius.sm}",
+            "$description": "Breadcrumb focus ring radius → --pgn-size-breadcrumb-border-radius-focus"
+          }
+        }
+      }
+    }
+  }
+}

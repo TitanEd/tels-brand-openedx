@@ -1,0 +1,11 @@
+{
+  "$description": "SELECTABLEBOX — component-level size tokens (class: .pgn__selectable-box, used by problem/answer choices in Learning). Radius defaults to global base radius (cascades), independently overridable here. Was previously hardcoded (.25rem) in @openedx/paragon's own tokens.",
+  "spacing": {
+    "selectable-box": {
+      "border-radius": {
+        "$value": "{size.border.radius.base}",
+        "$description": "SelectableBox radius → --pgn-spacing-selectable-box-border-radius"
+      }
+    }
+  }
+}

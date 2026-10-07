@@ -1,0 +1,21 @@
+{
+  "$description": "CHIP (light) — component-level color tokens (class: .pgn__chip). Label/dark-bg already tint from primary via Paragon's auto-derived ramp; pinned here explicitly so they're a real, documented override point.",
+  "color": {
+    "chip": {
+      "text": {
+        "light": { "$value": "{color.black}", "$description": "Light chip text → --pgn-color-chip-text-light" },
+        "dark": { "$value": "{color.white}", "$description": "Dark chip text → --pgn-color-chip-text-dark" }
+      },
+      "bg": {
+        "light": { "$value": "{color.white}", "$description": "Light chip bg → --pgn-color-chip-bg-light" },
+        "dark": { "$value": "{color.primary.300}", "$description": "Dark chip bg → --pgn-color-chip-bg-dark" }
+      },
+      "border": {
+        "base": { "$value": "{color.light.800}", "$description": "Chip border → --pgn-color-chip-border-base" }
+      },
+      "label": {
+        "base": { "$value": "{color.primary.700}", "$description": "Chip label text → --pgn-color-chip-label-base" }
+      }
+    }
+  }
+}

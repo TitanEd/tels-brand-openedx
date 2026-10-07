@@ -22,7 +22,7 @@
 // Layer 3 — chrome + per-MFE
 @import "./header";
 @import "./footer";
-@import "./public";
+// Marketing pages, header and footer chrome: per site template, paragon/templates/<id>/ (scripts/build-template.js).
 @import "./catalog";
 @import "./gradebook";
 @import "./learning";

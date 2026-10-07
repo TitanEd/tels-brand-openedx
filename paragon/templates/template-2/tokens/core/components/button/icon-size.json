@@ -1,0 +1,15 @@
+{
+  "$description": "btn-icon sizes (btn-icon-sm / md). Class: btn-icon btn-icon-sm",
+  "size": {
+    "btn-icon": {
+      "sm": {
+        "$value": "1.75rem",
+        "$description": "Icon button sm → --pgn-size-btn-icon-sm"
+      },
+      "md": {
+        "$value": "2.25rem",
+        "$description": "Icon button md → --pgn-size-btn-icon-md"
+      }
+    }
+  }
+}
