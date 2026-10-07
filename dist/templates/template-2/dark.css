@@ -12852,12 +12852,12 @@ footer.tutor-container,
   }
 }
 .tels-results-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 1rem;
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .tels-results-head h2 {
@@ -13961,4 +13961,126 @@ footer.tutor-container,
 .tels-legal-page {
   background: #f8f8f8;
   min-height: 40vh;
+}
+
+.tels-results-head__page {
+  color: var(--pgn-color-text-secondary);
+  font-size: 1rem;
+}
+
+.tels-filter-option__count {
+  margin-left: auto;
+  padding-left: 0.75rem;
+  color: var(--pgn-color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.tels-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2.5rem 0 0.5rem;
+}
+
+.tels-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tels-pagination__page,
+.tels-pagination__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--pgn-color-chrome-border);
+  border-radius: 999px;
+  background: var(--pgn-color-bg-base);
+  color: var(--pgn-color-text-base);
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.tels-pagination__page:hover:not(:disabled),
+.tels-pagination__arrow:hover:not(:disabled) {
+  border-color: var(--pgn-color-primary-base);
+  color: var(--pgn-color-primary-base);
+}
+.tels-pagination__page:disabled,
+.tels-pagination__arrow:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.tels-pagination__page.is-current {
+  background: var(--pgn-color-primary-base);
+  border-color: var(--pgn-color-primary-base);
+  color: var(--pgn-color-text-inverse);
+}
+
+.tels-pagination__gap {
+  padding: 0 0.25rem;
+  color: var(--pgn-color-text-secondary);
+}
+
+.tels-course-card--skeleton .tels-course-card__media {
+  min-height: 160px;
+  background: var(--pgn-color-chrome-surface-subtle);
+}
+
+.tels-skeleton-line {
+  height: 0.9rem;
+  margin: 0.6rem 0;
+  border-radius: 999px;
+  background: var(--pgn-color-chrome-surface-subtle);
+  animation: tels-skeleton 1.2s ease-in-out infinite;
+}
+.tels-skeleton-line--short {
+  width: 45%;
+}
+
+@keyframes tels-skeleton {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tels-skeleton-line {
+    animation: none;
+  }
+}
+.tels-course-about__state {
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--pgn-color-text-secondary);
+}
+
+.tels-enroll-banner__message {
+  margin: 0.5rem 0 0;
+  color: var(--pgn-color-text-secondary);
+  font-size: 1rem;
+}
+
+.tels-course-body__copy--html {
+  line-height: 1.6;
+}
+
+.tels-course-body__copy--html img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tels-course-body__copy--html h2, .tels-course-body__copy--html h3 {
+  font-size: 1.25rem;
+  margin: 1.25rem 0 0.5rem;
 }
