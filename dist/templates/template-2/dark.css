@@ -11698,6 +11698,7 @@ footer.tutor-container,
   background: var(--pgn-color-footer-bg);
   color: var(--pgn-color-text-footer);
   width: 100%;
+  font-size: var(--pgn-typography-font-size-base);
 }
 .tels-footer a:not(.tels-btn) {
   color: var(--pgn-color-footer-link) !important;
@@ -11711,7 +11712,7 @@ footer.tutor-container,
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 2rem;
 }
 @media (min-width: 40em) {
   .tels-footer__top {
@@ -11725,6 +11726,17 @@ footer.tutor-container,
   }
 }
 
+.tels-footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.tels-footer__contact address {
+  margin: 0;
+  font-style: normal;
+  line-height: 1.6;
+}
+
 .tels-footer__col ul {
   list-style: none;
   padding: 0;
@@ -11732,11 +11744,13 @@ footer.tutor-container,
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: var(--pgn-typography-font-size-base);
 }
 
 .tels-footer__brand {
-  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 @media (min-width: 40em) and (max-width: 63.98em) {
   .tels-footer__brand {
@@ -11745,6 +11759,7 @@ footer.tutor-container,
 }
 @media (min-width: 64em) {
   .tels-footer__brand {
+    align-items: flex-end;
     text-align: end;
   }
 }
@@ -11757,12 +11772,58 @@ footer.tutor-container,
 .tels-footer__logo img {
   height: 48px;
 }
-@media (min-width: 64em) {
-  .tels-footer__logo img {
-    margin-inline-start: auto;
-  }
+
+.tels-footer__social,
+.tels-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tels-footer__social a,
+.tels-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--pgn-color-footer-border, var(--pgn-color-chrome-border));
+  border-radius: 50%;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.tels-footer__social a:hover, .tels-footer__social a:focus-visible,
+.tels-social a:hover,
+.tels-social a:focus-visible {
+  background: var(--pgn-color-primary-base);
+  border-color: var(--pgn-color-primary-base);
+  color: var(--pgn-color-text-inverse) !important;
+}
+.tels-footer__social svg,
+.tels-social svg {
+  width: 1rem;
+  height: 1rem;
 }
 
+.tels-social a {
+  color: var(--pgn-color-text-base);
+}
+
+.tels-footer__bottom {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--pgn-color-footer-border, var(--pgn-color-chrome-border));
+  text-align: center;
+  font-size: 1rem;
+  color: var(--pgn-color-footer-muted, var(--pgn-color-text-footer));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tels-footer__social a,
+  .tels-social a {
+    transition: none;
+  }
+}
 .tels-eyebrow {
   font-family: var(--pgn-typography-font-family-ui);
   font-size: var(--pgn-typography-font-size-h6-base);
@@ -13877,38 +13938,8 @@ footer.tutor-container,
   flex-shrink: 0;
 }
 
-.tels-legal-header {
-  background: var(--pgn-color-chrome-header-dark);
-  padding: 4.5rem 0 2.8rem;
-}
-
-.tels-legal-header .tels-eyebrow {
-  display: none;
-}
-
-.tels-legal-header h1 {
-  font-family: var(--pgn-typography-font-family-base);
-  font-size: 2rem;
-  font-weight: 300;
-  line-height: 1.4;
-  color: var(--pgn-color-white);
-  margin: 0;
-}
-
-@media (min-width: 40em) {
-  .tels-legal-header h1 {
-    font-size: 3rem;
-  }
-}
-.tels-legal-header p {
-  display: none;
-}
-
 .tels-legal-layout {
   display: block;
-  background: #f8f8f8;
-  padding-top: 2.5rem !important;
-  padding-bottom: 4rem !important;
 }
 
 .tels-legal-layout > aside {
@@ -13916,51 +13947,50 @@ footer.tutor-container,
 }
 
 .tels-legal {
-  max-width: none;
+  max-width: 48rem;
   width: 100%;
 }
 
 .tels-legal__block {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   scroll-margin-top: 1.5rem;
 }
 
 .tels-legal__block h2 {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
   color: var(--pgn-color-text-base);
 }
 
-.tels-legal__block p {
-  font-family: var(--pgn-typography-font-family-base);
-  font-size: 1rem;
-  font-weight: 300;
-  color: rgb(30, 30, 30);
-  line-height: 1.75;
-  margin-bottom: 1rem;
-}
-
+.tels-legal__block p,
 .tels-legal__intro {
   font-family: var(--pgn-typography-font-family-base);
-  font-size: 1rem;
-  font-weight: 300;
-  color: rgb(30, 30, 30);
-  line-height: 1.5;
-  margin: 0 0 1.5rem;
-}
-
-.tels-legal__updated {
-  font-size: 0.875rem;
+  font-size: var(--pgn-typography-font-size-base);
   font-weight: 400;
-  color: var(--pgn-color-chrome-text-muted);
+  color: var(--pgn-color-text-base);
+  line-height: 1.7;
   margin: 0 0 1rem;
 }
 
+.tels-legal__intro {
+  color: var(--pgn-color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.tels-legal__updated {
+  font-size: 1rem;
+  color: var(--pgn-color-text-secondary);
+  margin: 0 0 1rem;
+}
+
+.tels-legal__note a {
+  color: var(--pgn-color-primary-base);
+}
+
 .tels-legal-page {
-  background: #f8f8f8;
-  min-height: 40vh;
+  background: var(--pgn-color-bg-base);
 }
 
 .tels-results-head__page {
@@ -14083,4 +14113,61 @@ footer.tutor-container,
 .tels-course-body__copy--html h2, .tels-course-body__copy--html h3 {
   font-size: 1.25rem;
   margin: 1.25rem 0 0.5rem;
+}
+
+.tels-field select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--pgn-color-chrome-border);
+  border-radius: 8px;
+  background: var(--pgn-color-bg-base);
+  color: var(--pgn-color-text-base);
+  font: inherit;
+  font-size: 1rem;
+}
+.tels-field select:focus {
+  outline: 2px solid var(--pgn-color-primary-base);
+  outline-offset: 1px;
+}
+
+.tels-field--checkbox label {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+.tels-field--checkbox label a {
+  color: var(--pgn-color-primary-base);
+  text-decoration: underline;
+}
+
+.tels-field--checkbox input[type=checkbox] {
+  width: 1.1rem;
+  height: 1.1rem;
+  min-width: 1.1rem;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  flex: none;
+  accent-color: var(--pgn-color-primary-base);
+}
+
+.tels-field--checkbox span {
+  flex: 1 1 auto;
+  line-height: 1.5;
+}
+
+.tels-field--checkbox.is-invalid input[type=checkbox] {
+  outline: 2px solid var(--pgn-color-danger-base);
+  outline-offset: 2px;
+}
+
+.tels-contact-row--address {
+  align-items: flex-start;
+}
+
+.tels-contact-aside h3 + .tels-social {
+  margin-top: 0.5rem;
 }
