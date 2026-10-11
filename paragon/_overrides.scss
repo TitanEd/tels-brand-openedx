@@ -34,3 +34,18 @@
 @import "./communications";
 @import "./ora-grading";
 @import "./admin-console";
+
+// Shared custom course tab bar (Learning / Discussions / Communications)
+@import "./custom_course_tabs";
+
+// Layer 3 — Verawood custom UI shells (custom_<mfe>.scss)
+@import "./custom_account";
+@import "./custom_authn";
+@import "./custom_authoring";
+@import "./custom_communications";
+@import "./custom_discussions";
+@import "./custom_gradebook";
+@import "./custom_learner-dashboard";
+@import "./custom_learning";
+@import "./custom_ora-grading";
+@import "./custom_profile";

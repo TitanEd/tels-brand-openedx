@@ -1,0 +1,60 @@
+// LAYER 3 — ORA grading custom shell (Verawood new UI)
+// Scoped to .tels-custom-ora-grading. Stock Verawood styles stay in _ora-grading.scss.
+// Applies the existing design tokens (--pgn-*) to the custom UI; no new tokens.
+
+.tels-custom-ora-grading {
+  // Color variables read by the custom UI (titaned-frontend-library and the
+  // MFE custom styles), set from the design tokens.
+  --primary: var(--pgn-color-primary-base);
+  --primary-alt: var(--pgn-color-primary-700);
+  --primary-hover: var(--pgn-color-primary-300);
+  --primary-active: var(--pgn-color-primary-800);
+  --primary-light: var(--pgn-color-primary-light);
+  --secondary: var(--pgn-color-secondary-base);
+  --secondary-alt: var(--pgn-color-secondary-base);
+  --secondary-hover: var(--pgn-color-primary-light);
+  --secondary-active: var(--pgn-color-secondary-base);
+  --secondary-light: var(--pgn-color-primary-light);
+  --bg-body: var(--pgn-color-primary-light);
+  --bg-surface: var(--pgn-color-bg-base);
+  --border-color: var(--pgn-color-light-400);
+  --text-primary: var(--pgn-color-text-base);
+  --text-secondary: var(--pgn-color-text-light);
+  --text-muted: var(--pgn-color-text-light);
+  --text-white: var(--pgn-color-white);
+  --disabled: var(--pgn-color-gray-300);
+  --danger: var(--pgn-color-danger-base);
+
+  background-color: var(--pgn-color-bg-base);
+  color: var(--pgn-color-body-base);
+  font-family: var(--pgn-typography-font-family-base);
+
+  .main-content,
+  .page-content,
+  .content-wrapper {
+    background-color: var(--pgn-color-primary-light);
+    color: var(--pgn-color-body-base);
+  }
+
+  a:not(.btn) {
+    color: var(--pgn-color-link-base);
+  }
+
+  // Main content column: same max-width + L/R gutter as other custom MFE shells.
+  // Stock Verawood already applies tels-content-width on
+  // main[data-testid="main"] > .py-4.container-fluid (_ora-grading.scss).
+  .course-header.container-xl {
+    @include tels-content-width;
+    padding-top: var(--pgn-spacing-spacer-3, 1rem) !important;
+  }
+
+  .main-content > .page-content {
+    width: 100%;
+  }
+
+  // Nested list Container already gets tels-content-width from _ora-grading.scss;
+  // keep header + list on the same column without a second L/R pad fight.
+  main[data-testid='main'] > .py-4.container-fluid {
+    padding-top: 0 !important;
+  }
+}

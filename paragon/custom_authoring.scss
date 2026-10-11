@@ -1,0 +1,125 @@
+// LAYER 3 — Studio custom shell (Verawood new UI)
+// Scoped to .tels-custom-authoring. Stock Verawood styles stay in _authoring.scss.
+// Applies the existing design tokens (--pgn-*) to the custom UI; no new tokens.
+
+.tels-custom-authoring {
+  // Color variables read by the custom UI (titaned-frontend-library and the
+  // MFE custom styles), set from the design tokens.
+  --primary: var(--pgn-color-primary-base);
+  --primary-alt: var(--pgn-color-primary-700);
+  --primary-hover: var(--pgn-color-primary-300);
+  --primary-active: var(--pgn-color-primary-800);
+  --primary-light: var(--pgn-color-primary-light);
+  --secondary: var(--pgn-color-secondary-base);
+  --secondary-alt: var(--pgn-color-secondary-base);
+  --secondary-hover: var(--pgn-color-primary-light);
+  --secondary-active: var(--pgn-color-secondary-base);
+  --secondary-light: var(--pgn-color-primary-light);
+  --bg-body: var(--pgn-color-primary-light);
+  --bg-surface: var(--pgn-color-bg-base);
+  --border-color: var(--pgn-color-light-400);
+  --text-primary: var(--pgn-color-text-base);
+  --text-secondary: var(--pgn-color-text-light);
+  --text-muted: var(--pgn-color-text-light);
+  --text-white: var(--pgn-color-white);
+  --disabled: var(--pgn-color-gray-300);
+  --danger: var(--pgn-color-danger-base);
+
+  background-color: var(--pgn-color-bg-base);
+  color: var(--pgn-color-body-base);
+  font-family: var(--pgn-typography-font-family-base);
+
+  .main-content,
+  .page-content,
+  .content-wrapper {
+    background-color: var(--pgn-color-primary-light);
+    color: var(--pgn-color-body-base);
+  }
+
+  a:not(.btn) {
+    color: var(--pgn-color-link-base);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Content column — same model as Learner Dashboard / Account / Profile:
+  // max-width + L/R padding only on the outer page wrapper (tels-content-width:
+  // --pgn-size-container-max-width-xl, half --pgn-spacing-grid-gutter-width).
+  // Nested wrappers get no extra L/R padding or max-width.
+
+  // Studio-level pages (dashboard, create course, my courses, libraries,
+  // taxonomies, calendar, assignments…): the wrapper inside .page-content.
+  .main-content > .page-content > :not(:has(> .ca-main-layout)) {
+    @include tels-content-width;
+  }
+
+  // Course pages: breadcrumb text and the course menu + page share the column;
+  // the breadcrumb strip background stays full width.
+  .ca-breadcrumb-container,
+  .ca-main-layout {
+    @include tels-content-width;
+  }
+
+  .ca-main-layout {
+    column-gap: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
+  }
+
+  .ca-sidebar {
+    margin-left: 0;
+  }
+
+  // :not(#main) matches the specificity of the stock container rule in
+  // overrides/_layout.scss.
+  .page-content {
+    .container:not(#main),
+    .container-fluid:not(#main),
+    .container-mw-xl:not(#main),
+    .dashboard-main-content,
+    .calendar-page,
+    .assignment-page,
+    .my-courses-page,
+    .create-new-course-form,
+    .ps-course-form,
+    .custom-schedule-details,
+    .custom-taxonomy-list-page-container {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .container:not(#main),
+    .container-fluid:not(#main),
+    .container-mw-xl:not(#main),
+    .dashboard-main-content {
+      max-width: none !important;
+    }
+
+    // Footer action bars stay inside the column (no negative bleed).
+    .ps-courseform-footer-bar {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    // Create course: only the page column pads L/R. Wrapper rows/cols add no
+    // inset; the form's two columns keep the gutter between them only.
+    .create-new-course-form {
+      .container-fluid > .row {
+        margin-left: 0;
+        margin-right: 0;
+
+        > [class*="col"] {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+
+      .course-form > .row {
+        > [class*="col"]:first-child {
+          padding-left: 0;
+        }
+
+        > [class*="col"]:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

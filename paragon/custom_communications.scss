@@ -1,0 +1,99 @@
+// LAYER 3 — Communications custom shell (Verawood new UI)
+// Scoped to .tels-custom-communications. Stock Verawood styles stay in _communications.scss.
+// Applies the existing design tokens (--pgn-*) to the custom UI; no new tokens.
+// Content column: --pgn-size-container-max-width-xl + half --pgn-spacing-grid-gutter-width
+// (same tels-content-width as Account / Profile / Learning / Learner-dashboard).
+
+.tels-custom-communications {
+  // Color variables read by the custom UI (titaned-frontend-library and the
+  // MFE custom styles), set from the design tokens.
+  --primary: var(--pgn-color-primary-base);
+  --primary-alt: var(--pgn-color-primary-700);
+  --primary-hover: var(--pgn-color-primary-300);
+  --primary-active: var(--pgn-color-primary-800);
+  --primary-light: var(--pgn-color-primary-light);
+  --secondary: var(--pgn-color-secondary-base);
+  --secondary-alt: var(--pgn-color-secondary-base);
+  --secondary-hover: var(--pgn-color-primary-light);
+  --secondary-active: var(--pgn-color-secondary-base);
+  --secondary-light: var(--pgn-color-primary-light);
+  --bg-body: var(--pgn-color-primary-light);
+  --bg-surface: var(--pgn-color-bg-base);
+  --border-color: var(--pgn-color-light-400);
+  --text-primary: var(--pgn-color-text-base);
+  --text-secondary: var(--pgn-color-text-light);
+  --text-muted: var(--pgn-color-text-light);
+  --text-white: var(--pgn-color-white);
+  --disabled: var(--pgn-color-gray-300);
+  --danger: var(--pgn-color-danger-base);
+
+  background-color: var(--pgn-color-bg-base);
+  color: var(--pgn-color-body-base);
+  font-family: var(--pgn-typography-font-family-base);
+
+  .main-content,
+  .page-content,
+  .content-wrapper {
+    background-color: var(--pgn-color-primary-light);
+    color: var(--pgn-color-body-base);
+  }
+
+  // Same column pattern as Discussions: header + main.container-xl.
+  .course-header.container-xl,
+  main#main.container-xl {
+    @include tels-content-width;
+  }
+
+  .course-header.container-xl {
+    padding-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  #courseTabsNavigation.course-tabs-navigation {
+    @include tels-custom-course-tabs-shell-nested;
+  }
+
+  // Email surface — shared inset for Back link, title, and form.
+  .bulk-email-tool-content {
+    padding: 1rem !important;
+
+    @media (min-width: 768px) {
+      padding: 1.5rem !important;
+    }
+
+    .bulk-email-tool-heading .btn {
+      margin-bottom: 0.75rem !important;
+    }
+
+    .bulk-email-main-card {
+      box-shadow: none !important;
+      background-color: transparent !important;
+    }
+
+    .bulk-email-main-card > .pgn__card-body {
+      padding: 0 !important;
+    }
+  }
+
+  // Page title — same tokens as learner-dashboard .dashboard-header.
+  .bulk-email-tool-content > .ca-breadcrumb-container .ca-title,
+  h1.ca-title {
+    font-size: var(--pgn-typography-font-size-h3-base) !important;
+    font-weight: var(--pgn-typography-font-weight-bold) !important;
+    line-height: var(--pgn-typography-line-height-base, 1.2) !important;
+    letter-spacing: normal !important;
+    color: var(--pgn-color-text-base) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  // Cancel stock Breakout that fights the content-column gutter.
+  .bulk-email-tool-content a.ml-n4\.5,
+  .bulk-email-tool-content .ml-n4\.5 {
+    margin-left: 0 !important;
+  }
+
+  a:not(.btn) {
+    color: var(--pgn-color-link-base);
+  }
+}

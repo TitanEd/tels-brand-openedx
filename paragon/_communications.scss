@@ -62,7 +62,7 @@
 // core's stock `.nav-tabs` puts its own 2px border-bottom directly on the bar
 // instead, which is what we're replacing.
 .pb-3.container #main-content > .py-4:has(> .nav.nav-tabs) {
-  border-bottom: solid 1px #eaeaea;
+  border-bottom: solid 1px var(--pgn-color-light-400);
   // Beats core's `.py-4` padding-bottom !important, same as _ora-grading.scss.
   padding-bottom: 0 !important;
 }
