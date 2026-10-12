@@ -9,23 +9,37 @@
 
   --tels-page-inset: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 
-  // Masquerade bar ("View this course as") and course tabs: inside the content column.
+  // The page reads like the Course and Progress tabs of the Learning MFE (custom_learning.scss):
+  // the masquerade bar ("View this course as") is a strip across the page; breadcrumb, title,
+  // course tabs and content share one centered column (.tels-page-column, TelsLayout.tsx).
   .page-content > div:has(> .bg-primary) {
-    padding: var(--pgn-spacing-spacer-3, 1rem) var(--tels-page-inset) 0;
+    padding: 0;
 
     > .bg-primary {
-      border-radius: var(--pgn-size-border-radius-lg, .5rem);
+      border-radius: 0;
     }
 
+    // The bar's own content: the same column as the page below it, with the small inset the
+    // Learning MFE gives the two controls.
     .container-fluid {
-      max-width: none;
+      @include tels-content-width;
+      box-sizing: border-box !important;
+
+      > div {
+        padding-inline: var(--pgn-spacing-spacer-1, .25rem);
+      }
     }
+  }
+
+  .tels-page-column {
+    @include tels-content-width;
+    padding-top: var(--pgn-spacing-spacer-3, 1rem);
   }
 
   // Course tabs: the track + selected chip of the other custom shells (_custom_course_tabs.scss).
   .page-content nav.course-tabs-navigation {
-    margin: var(--pgn-spacing-spacer-3, 1rem) var(--tels-page-inset) 0;
-    padding: var(--pgn-spacing-spacer-2, .5rem);
+    margin: 0 0 var(--pgn-spacing-spacer-4, 1.5rem);
+    padding: 0 var(--pgn-spacing-spacer-2-5, .75rem);
     border-bottom: none;
     border-radius: var(--pgn-size-border-radius-base, 4px);
     background-color: color-mix(in srgb, var(--pgn-color-primary-base) 12%, var(--pgn-color-bg-base));
@@ -65,11 +79,18 @@
     }
   }
 
-  // Section tabs (Course Info, Enrollments…): one line that scrolls sideways when it is too long.
+  // Section tabs (Course Info, Enrollments…): they wrap onto a second line when the window is
+  // too narrow for one. No scroll bars: a scrolling strip here showed both a horizontal and a
+  // vertical one.
+  #main-content nav.navbar,
+  #main-content nav.navbar .nav-tabs {
+    overflow: visible;
+  }
+
   #instructor-nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: thin;
+    flex-wrap: wrap;
+    overflow: visible;
+    row-gap: var(--pgn-spacing-spacer-1, .25rem);
 
     .nav-item {
       flex: none;
@@ -128,9 +149,9 @@
 // are therefore declared in the `paragon` layer themselves.
 @layer paragon {
   // Page column: title, section tabs and content start on the same line as the bars above.
-  .tels-custom-instructor-dashboard .page-content > #main-content {
+  .tels-custom-instructor-dashboard .page-content #main-content {
     max-width: none !important;
-    padding: 0 var(--tels-page-inset) !important;
+    padding: 0 !important;
 
     main > .container-fluid {
       max-width: none !important;
@@ -153,6 +174,110 @@
     }
   }
 
+  // ---- Pages (Grading, Certificates, Cohorts, Special Exams…) ----
+  .tels-custom-instructor-dashboard #main-content {
+    // A page that brings a container of its own (Certificates) starts on the same line as the
+    // others.
+    main > .container-fluid .container-fluid {
+      max-width: none !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    // Switches between two views of a page ("Single Learner | All Learners", "Issued
+    // Certificates | Certificate Generation History", "Exam Attempts | Allowances"): two
+    // separate buttons with a space between them, not one joined strip.
+    .btn-group {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: var(--pgn-spacing-spacer-2, .5rem);
+
+      > .btn {
+        flex: none;
+        margin: 0 !important;
+        border-radius: var(--pgn-size-border-radius-base, .375rem) !important;
+      }
+    }
+
+    // A search field and the controls next to it (filter menu, buttons) sit on one line: the
+    // field's own bottom margin pushed it up.
+    .pgn__searchfield {
+      margin-bottom: 0 !important;
+    }
+
+    // Table tool bars (search on the left, action button on the right): the same inset as the
+    // switch above them, both ends on one line, and a search field wide enough for its hint.
+    .pgn__data-table-wrapper > .p-3,
+    .pgn__data-table-wrapper > .pgn__data-table-status-bar,
+    .pgn__data-table-wrapper > .px-4 {
+      padding-left: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+      padding-right: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+    }
+
+    .pgn__data-table-actions {
+      padding-bottom: 0 !important;
+    }
+
+    .pgn__data-table-filters-breakout-filter .pgn__form-control-decorator-group,
+    .pgn__searchfield,
+    .pgn__form-control-decorator-group.username {
+      // Not a percentage: the field's parent takes the width of the field.
+      min-width: 20rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 575.98px) {
+      .pgn__data-table-filters-breakout-filter .pgn__form-control-decorator-group,
+      .pgn__searchfield,
+      .pgn__form-control-decorator-group.username {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+
+    // Small links inside tables ("Download Report") are as large as the text around them.
+    .pgn__data-table .btn-link.btn-sm,
+    .pgn__data-table a.small {
+      font-size: inherit !important;
+    }
+
+    // Small print stays readable.
+    .x-small {
+      font-size: var(--pgn-typography-font-size-sm, .875rem) !important;
+    }
+
+    .username .form-control::placeholder {
+      font-size: inherit !important;
+    }
+  }
+
+  // ---- Dialogs ----
+  // The close button was a filled circle in the primary color with its "×" in the same color.
+  .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-close-button {
+    background-color: transparent !important;
+    color: var(--pgn-color-text-base) !important;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--pgn-color-light-300, rgba(0, 0, 0, .08)) !important;
+    }
+  }
+
+  // A dialog scrolls up and down when it is taller than the window, never sideways.
+  .tels-custom-instructor-dashboard .pgn__modal,
+  .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-body,
+  .tels-custom-instructor-dashboard .pgn__modal form.overflow-auto {
+    overflow-x: hidden !important;
+  }
+
+  .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-body {
+    padding: var(--pgn-spacing-spacer-3, 1rem) var(--pgn-spacing-spacer-4, 1.5rem) !important;
+  }
+
+  .tels-custom-instructor-dashboard .pgn__modal .x-small {
+    font-size: var(--pgn-typography-font-size-sm, .875rem) !important;
+  }
+
   // Section titles use the dark primary shade (.text-primary-700), unreadable on dark
   // surfaces: they take the text color, as titles do in the other custom shells.
   .tels-custom-instructor-dashboard .page-content .text-primary-700 {
@@ -161,7 +286,8 @@
 
   // Course tabs: the selected tab is a chip on the track, not an underlined tab.
   .tels-custom-instructor-dashboard .page-content nav.course-tabs-navigation {
-    padding: var(--pgn-spacing-spacer-2, .5rem) !important;
+    // 59px high, as the tab track of the Learning MFE.
+    padding: .40625rem var(--pgn-spacing-spacer-2-5, .75rem) !important;
 
     > .container-fluid {
       max-width: none !important;

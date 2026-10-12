@@ -8487,17 +8487,36 @@ main[data-testid=main] > .py-4.container-fluid {
   --tels-page-inset: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
 }
 .tels-custom-instructor-dashboard .page-content > div:has(> .bg-primary) {
-  padding: var(--pgn-spacing-spacer-3, 1rem) var(--tels-page-inset) 0;
+  padding: 0;
 }
 .tels-custom-instructor-dashboard .page-content > div:has(> .bg-primary) > .bg-primary {
-  border-radius: var(--pgn-size-border-radius-lg, 0.5rem);
+  border-radius: 0;
 }
 .tels-custom-instructor-dashboard .page-content > div:has(> .bg-primary) .container-fluid {
-  max-width: none;
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box !important;
+}
+.tels-custom-instructor-dashboard .page-content > div:has(> .bg-primary) .container-fluid > div {
+  padding-inline: var(--pgn-spacing-spacer-1, 0.25rem);
+}
+.tels-custom-instructor-dashboard .tels-page-column {
+  max-width: var(--pgn-size-container-max-width-xl) !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5) !important;
+  box-sizing: border-box;
+  padding-top: var(--pgn-spacing-spacer-3, 1rem);
 }
 .tels-custom-instructor-dashboard .page-content nav.course-tabs-navigation {
-  margin: var(--pgn-spacing-spacer-3, 1rem) var(--tels-page-inset) 0;
-  padding: var(--pgn-spacing-spacer-2, 0.5rem);
+  margin: 0 0 var(--pgn-spacing-spacer-4, 1.5rem);
+  padding: 0 var(--pgn-spacing-spacer-2-5, 0.75rem);
   border-bottom: none;
   border-radius: var(--pgn-size-border-radius-base, 4px);
   background-color: color-mix(in srgb, var(--pgn-color-primary-base) 12%, var(--pgn-color-bg-base));
@@ -8531,10 +8550,14 @@ main[data-testid=main] > .py-4.container-fluid {
   min-width: 0;
   max-width: 100%;
 }
+.tels-custom-instructor-dashboard #main-content nav.navbar,
+.tels-custom-instructor-dashboard #main-content nav.navbar .nav-tabs {
+  overflow: visible;
+}
 .tels-custom-instructor-dashboard #instructor-nav {
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: thin;
+  flex-wrap: wrap;
+  overflow: visible;
+  row-gap: var(--pgn-spacing-spacer-1, 0.25rem);
 }
 .tels-custom-instructor-dashboard #instructor-nav .nav-item {
   flex: none;
@@ -8576,31 +8599,100 @@ main[data-testid=main] > .py-4.container-fluid {
 }
 
 @layer paragon {
-  .tels-custom-instructor-dashboard .page-content > #main-content {
+  .tels-custom-instructor-dashboard .page-content #main-content {
     max-width: none !important;
-    padding: 0 var(--tels-page-inset) !important;
+    padding: 0 !important;
   }
-  .tels-custom-instructor-dashboard .page-content > #main-content main > .container-fluid {
+  .tels-custom-instructor-dashboard .page-content #main-content main > .container-fluid {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  .tels-custom-instructor-dashboard .page-content > #main-content main > .container-fluid > h2 {
+  .tels-custom-instructor-dashboard .page-content #main-content main > .container-fluid > h2 {
     margin: var(--pgn-spacing-spacer-4, 1.5rem) 0 var(--pgn-spacing-spacer-3, 1rem) !important;
     font-size: var(--pgn-typography-font-size-h3-base) !important;
     color: var(--pgn-color-text-base) !important;
   }
-  .tels-custom-instructor-dashboard .page-content > #main-content main > .container-fluid > nav.navbar {
+  .tels-custom-instructor-dashboard .page-content #main-content main > .container-fluid > nav.navbar {
     padding: 0 !important;
   }
-  .tels-custom-instructor-dashboard .page-content > #main-content main > .container-fluid > .m-4 {
+  .tels-custom-instructor-dashboard .page-content #main-content main > .container-fluid > .m-4 {
     margin: var(--pgn-spacing-spacer-3, 1rem) 0 var(--pgn-spacing-spacer-4, 1.5rem) !important;
+  }
+  .tels-custom-instructor-dashboard #main-content main > .container-fluid .container-fluid {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .tels-custom-instructor-dashboard #main-content .btn-group {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: var(--pgn-spacing-spacer-2, 0.5rem);
+  }
+  .tels-custom-instructor-dashboard #main-content .btn-group > .btn {
+    flex: none;
+    margin: 0 !important;
+    border-radius: var(--pgn-size-border-radius-base, 0.375rem) !important;
+  }
+  .tels-custom-instructor-dashboard #main-content .pgn__searchfield {
+    margin-bottom: 0 !important;
+  }
+  .tels-custom-instructor-dashboard #main-content .pgn__data-table-wrapper > .p-3,
+  .tels-custom-instructor-dashboard #main-content .pgn__data-table-wrapper > .pgn__data-table-status-bar,
+  .tels-custom-instructor-dashboard #main-content .pgn__data-table-wrapper > .px-4 {
+    padding-left: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+    padding-right: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+  }
+  .tels-custom-instructor-dashboard #main-content .pgn__data-table-actions {
+    padding-bottom: 0 !important;
+  }
+  .tels-custom-instructor-dashboard #main-content .pgn__data-table-filters-breakout-filter .pgn__form-control-decorator-group,
+  .tels-custom-instructor-dashboard #main-content .pgn__searchfield,
+  .tels-custom-instructor-dashboard #main-content .pgn__form-control-decorator-group.username {
+    min-width: 20rem;
+    max-width: 100%;
+  }
+  @media (max-width: 575.98px) {
+    .tels-custom-instructor-dashboard #main-content .pgn__data-table-filters-breakout-filter .pgn__form-control-decorator-group,
+    .tels-custom-instructor-dashboard #main-content .pgn__searchfield,
+    .tels-custom-instructor-dashboard #main-content .pgn__form-control-decorator-group.username {
+      min-width: 0;
+      width: 100%;
+    }
+  }
+  .tels-custom-instructor-dashboard #main-content .pgn__data-table .btn-link.btn-sm,
+  .tels-custom-instructor-dashboard #main-content .pgn__data-table a.small {
+    font-size: inherit !important;
+  }
+  .tels-custom-instructor-dashboard #main-content .x-small {
+    font-size: var(--pgn-typography-font-size-sm, 0.875rem) !important;
+  }
+  .tels-custom-instructor-dashboard #main-content .username .form-control::placeholder {
+    font-size: inherit !important;
+  }
+  .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-close-button {
+    background-color: transparent !important;
+    color: var(--pgn-color-text-base) !important;
+  }
+  .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-close-button:hover, .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-close-button:focus-visible {
+    background-color: var(--pgn-color-light-300, rgba(0, 0, 0, 0.08)) !important;
+  }
+  .tels-custom-instructor-dashboard .pgn__modal,
+  .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-body,
+  .tels-custom-instructor-dashboard .pgn__modal form.overflow-auto {
+    overflow-x: hidden !important;
+  }
+  .tels-custom-instructor-dashboard .pgn__modal .pgn__modal-body {
+    padding: var(--pgn-spacing-spacer-3, 1rem) var(--pgn-spacing-spacer-4, 1.5rem) !important;
+  }
+  .tels-custom-instructor-dashboard .pgn__modal .x-small {
+    font-size: var(--pgn-typography-font-size-sm, 0.875rem) !important;
   }
   .tels-custom-instructor-dashboard .page-content .text-primary-700 {
     color: var(--pgn-color-text-base) !important;
   }
   .tels-custom-instructor-dashboard .page-content nav.course-tabs-navigation {
-    padding: var(--pgn-spacing-spacer-2, 0.5rem) !important;
+    padding: 0.40625rem var(--pgn-spacing-spacer-2-5, 0.75rem) !important;
   }
   .tels-custom-instructor-dashboard .page-content nav.course-tabs-navigation > .container-fluid {
     max-width: none !important;
