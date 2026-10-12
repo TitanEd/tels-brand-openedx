@@ -181,3 +181,10 @@ main#main.container-fluid {
 .mw-md { max-width: var(--pgn-size-container-max-width-md) !important; }
 .mw-lg { max-width: var(--pgn-size-container-max-width-lg) !important; }
 .mw-xl { max-width: var(--pgn-size-container-max-width-xl) !important; }
+
+// Course breadcrumb of the custom UI (Studio, Learning, Discussions): the link and its icon were
+// a literal light gray, below the contrast the text-light token gives.
+.ca-breadcrumb .ca-breadcrumb-link,
+.ca-breadcrumb .ca-breadcrumb-icon {
+  color: var(--pgn-color-text-light) !important;
+}

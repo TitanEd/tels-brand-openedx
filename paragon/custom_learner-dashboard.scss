@@ -24,7 +24,8 @@
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  // Text on colored chrome: white in both modes (--pgn-color-white is the dark surface in dark mode).
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
 

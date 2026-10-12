@@ -21,7 +21,8 @@
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  // Text on colored chrome: white in both modes (--pgn-color-white is the dark surface in dark mode).
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
 
@@ -122,4 +123,64 @@
       }
     }
   }
+}
+
+// -----------------------------------------------------------------------------
+// Consistency of the course pages (QA 2026-10-12). Each page of the custom UI
+// sized its own title and buttons; these rules give every page the same ones,
+// from the design tokens only.
+.tels-custom-authoring {
+  // Page title: one size on every page (heading 3 token).
+  .sub-header .sub-header-title,
+  h2.courseOutlineh2,
+  h2.title-class {
+    font-size: var(--pgn-typography-font-size-h3-base) !important;
+    font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+    line-height: var(--pgn-typography-headings-line-height, 1.25) !important;
+    letter-spacing: normal !important;
+    color: var(--pgn-color-text-base);
+  }
+
+  // Section title inside a page (heading 4 token).
+  .sub-header-content .sub-header-content-title {
+    font-size: var(--pgn-typography-font-size-h4-base) !important;
+    font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+    line-height: var(--pgn-typography-headings-line-height, 1.25) !important;
+    color: var(--pgn-color-text-base);
+  }
+
+  // Text buttons: one size (some pages used the default size, others "sm").
+  .page-content .btn:not(.btn-icon):not(.btn-lg):not(.btn-link):not(.tox-tbtn) {
+    font-size: var(--pgn-typography-btn-font-size-sm);
+    line-height: var(--pgn-typography-btn-line-height-sm);
+    border-radius: var(--pgn-size-btn-border-radius-base);
+  }
+
+  .page-content .btn.btn-sm:not(.btn-icon):not(.btn-link) {
+    padding: var(--pgn-spacing-btn-padding-y-sm) var(--pgn-spacing-btn-padding-x-base);
+  }
+
+  // Schedule & Details: the form's row pulled the first column under the course menu.
+  .schedule-and-details .course-form > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  // Breadcrumb link and hints were lighter than the text-light token allows to read.
+  .ca-breadcrumb .ca-breadcrumb-link,
+  .ca-breadcrumb .ca-breadcrumb-icon,
+  .member-hint,
+  .member-hint span {
+    color: var(--pgn-color-text-light) !important;
+  }
+
+  .badge-current-user,
+  .badge-current-user * {
+    color: var(--pgn-color-btn-text-primary) !important;
+  }
+}
+
+// Schedule & Details: its first column sat on the edge of the page card.
+.tels-custom-authoring .schedule-and-details .course-form > .row > [class*="col"]:first-child {
+  padding-left: var(--pgn-spacing-spacer-3, 1rem) !important;
 }

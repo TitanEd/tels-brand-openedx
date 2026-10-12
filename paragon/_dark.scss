@@ -167,3 +167,102 @@
     background-color: var(--pgn-color-surface-base) !important;
   }
 }
+
+// -----------------------------------------------------------------------------
+// QA 2026-10-12 — places of the custom UI (titaned-frontend-library header, the
+// forks' dashboards and Studio pages) that carry literal light or dark colors,
+// some of them as inline styles (hence !important). Tokens only.
+[data-paragon-theme-variant="dark"] {
+  // Custom header: the search field is a literal white box with black text.
+  .header-container .navbarContainer .flex-grow-1 > div > div {
+    background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+    border-color: var(--pgn-color-border) !important;
+  }
+
+  .header-container .navbarContainer input {
+    background-color: transparent !important;
+    color: var(--pgn-color-text-base) !important;
+
+    &::placeholder {
+      color: var(--pgn-color-text-light) !important;
+    }
+  }
+
+  // Studio course pages: the course title above the page is a literal dark blue.
+  .ca-breadcrumb-container .ca-title,
+  .ca-breadcrumb .ca-breadcrumb-current {
+    color: var(--pgn-color-headings-base) !important;
+  }
+
+  // Dashboards (Studio home, learner home, Progress): card rows written with inline dark text.
+  .overview-card .card-section span,
+  .overview-card .card-section p,
+  .dashboard-main-content .pgn__card span:not(.badge):not(.pgn__icon),
+  .dashboard-wrapper .pgn__card span:not(.badge):not(.pgn__icon) {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  // ApexCharts draws its labels and grid in fixed dark grays.
+  .apexcharts-canvas {
+    .apexcharts-text,
+    .apexcharts-title-text,
+    .apexcharts-subtitle-text,
+    .apexcharts-datalabel-label,
+    .apexcharts-datalabel-value {
+      fill: var(--pgn-color-text-base) !important;
+    }
+
+    .apexcharts-gridline,
+    .apexcharts-xaxis line,
+    .apexcharts-yaxis line,
+    .apexcharts-grid-borders line {
+      stroke: var(--pgn-color-border) !important;
+    }
+  }
+
+  .apexcharts-legend-text {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  .apexcharts-tooltip,
+  .apexcharts-menu {
+    background: var(--pgn-color-surface-base) !important;
+    border-color: var(--pgn-color-border) !important;
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  // Light boxes: embedded video frame, Studio upload and preview boxes.
+  .video-wrapper,
+  .upload-box,
+  .image-preview-container,
+  .introduction-video {
+    background-color: var(--pgn-color-surface-base) !important;
+    border-color: var(--pgn-color-border) !important;
+    color: var(--pgn-color-text-base);
+  }
+
+  // Grading scale: the segments keep their fixed pastel colors, so their labels must be dark.
+  .grading-scale-segment .grading-scale-segment-content,
+  .grading-scale-segment .grading-scale-segment-content * {
+    color: var(--pgn-color-bg-base) !important;
+  }
+
+  // Learning > Progress: list text written in the light theme's secondary color.
+  .tels-custom-learning .page-content li > p {
+    color: var(--pgn-color-text-base);
+  }
+
+  // Thin scrollbars inside cards: no white track.
+  .pgn__card-section,
+  .overview-card .card-section {
+    scrollbar-color: var(--pgn-color-border) transparent;
+  }
+}
+
+// The dark "primary light" surface is the primary mixed into the page color
+// (themes/dark/global/color.json). The token build bakes that mix into a literal, so a primary
+// chosen later on the theme configuration page left the old tint behind; the same mix is made
+// here at run time, from whatever the two tokens are now.
+:root[data-paragon-theme-variant="dark"] {
+  --pgn-color-primary-light: color-mix(in srgb, var(--pgn-color-primary-base) 12%, var(--pgn-color-bg-base));
+}

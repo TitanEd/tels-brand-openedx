@@ -4672,6 +4672,11 @@ main#main.container-fluid {
   max-width: var(--pgn-size-container-max-width-xl) !important;
 }
 
+.ca-breadcrumb .ca-breadcrumb-link,
+.ca-breadcrumb .ca-breadcrumb-icon {
+  color: var(--pgn-color-text-light) !important;
+}
+
 html {
   font-family: var(--pgn-typography-font-family-base);
   font-size: calc(100% * var(--pgn-typography-font-scale, 1));
@@ -10983,7 +10988,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11044,7 +11049,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11078,7 +11083,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11158,6 +11163,48 @@ main[data-testid=main] > .py-4.container-fluid {
   padding-right: 0;
 }
 
+.tels-custom-authoring .sub-header .sub-header-title,
+.tels-custom-authoring h2.courseOutlineh2,
+.tels-custom-authoring h2.title-class {
+  font-size: var(--pgn-typography-font-size-h3-base) !important;
+  font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+  line-height: var(--pgn-typography-headings-line-height, 1.25) !important;
+  letter-spacing: normal !important;
+  color: var(--pgn-color-text-base);
+}
+.tels-custom-authoring .sub-header-content .sub-header-content-title {
+  font-size: var(--pgn-typography-font-size-h4-base) !important;
+  font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+  line-height: var(--pgn-typography-headings-line-height, 1.25) !important;
+  color: var(--pgn-color-text-base);
+}
+.tels-custom-authoring .page-content .btn:not(.btn-icon):not(.btn-lg):not(.btn-link):not(.tox-tbtn) {
+  font-size: var(--pgn-typography-btn-font-size-sm);
+  line-height: var(--pgn-typography-btn-line-height-sm);
+  border-radius: var(--pgn-size-btn-border-radius-base);
+}
+.tels-custom-authoring .page-content .btn.btn-sm:not(.btn-icon):not(.btn-link) {
+  padding: var(--pgn-spacing-btn-padding-y-sm) var(--pgn-spacing-btn-padding-x-base);
+}
+.tels-custom-authoring .schedule-and-details .course-form > .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.tels-custom-authoring .ca-breadcrumb .ca-breadcrumb-link,
+.tels-custom-authoring .ca-breadcrumb .ca-breadcrumb-icon,
+.tels-custom-authoring .member-hint,
+.tels-custom-authoring .member-hint span {
+  color: var(--pgn-color-text-light) !important;
+}
+.tels-custom-authoring .badge-current-user,
+.tels-custom-authoring .badge-current-user * {
+  color: var(--pgn-color-btn-text-primary) !important;
+}
+
+.tels-custom-authoring .schedule-and-details .course-form > .row > [class*=col]:first-child {
+  padding-left: var(--pgn-spacing-spacer-3, 1rem) !important;
+}
+
 .tels-custom-communications {
   --primary: var(--pgn-color-primary-base);
   --primary-alt: var(--pgn-color-primary-700);
@@ -11175,7 +11222,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11356,7 +11403,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11505,7 +11552,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11549,7 +11596,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11610,7 +11657,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11786,7 +11833,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11836,7 +11883,7 @@ main[data-testid=main] > .py-4.container-fluid {
   --text-primary: var(--pgn-color-text-base);
   --text-secondary: var(--pgn-color-text-light);
   --text-muted: var(--pgn-color-text-light);
-  --text-white: var(--pgn-color-white);
+  --text-white: var(--pgn-color-text-inverse);
   --disabled: var(--pgn-color-gray-300);
   --danger: var(--pgn-color-danger-base);
   background-color: var(--pgn-color-bg-base);
@@ -11984,4 +12031,71 @@ main[data-testid=main] > .py-4.container-fluid {
 }
 [data-paragon-theme-variant=dark] .icon-with-border {
   background-color: var(--pgn-color-surface-base) !important;
+}
+
+[data-paragon-theme-variant=dark] .header-container .navbarContainer .flex-grow-1 > div > div {
+  background-color: var(--pgn-color-form-input-bg-base, var(--pgn-color-bg-base)) !important;
+  border-color: var(--pgn-color-border) !important;
+}
+[data-paragon-theme-variant=dark] .header-container .navbarContainer input {
+  background-color: transparent !important;
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .header-container .navbarContainer input::placeholder {
+  color: var(--pgn-color-text-light) !important;
+}
+[data-paragon-theme-variant=dark] .ca-breadcrumb-container .ca-title,
+[data-paragon-theme-variant=dark] .ca-breadcrumb .ca-breadcrumb-current {
+  color: var(--pgn-color-headings-base) !important;
+}
+[data-paragon-theme-variant=dark] .overview-card .card-section span,
+[data-paragon-theme-variant=dark] .overview-card .card-section p,
+[data-paragon-theme-variant=dark] .dashboard-main-content .pgn__card span:not(.badge):not(.pgn__icon),
+[data-paragon-theme-variant=dark] .dashboard-wrapper .pgn__card span:not(.badge):not(.pgn__icon) {
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-text,
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-title-text,
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-subtitle-text,
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-datalabel-label,
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-datalabel-value {
+  fill: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-gridline,
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-xaxis line,
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-yaxis line,
+[data-paragon-theme-variant=dark] .apexcharts-canvas .apexcharts-grid-borders line {
+  stroke: var(--pgn-color-border) !important;
+}
+[data-paragon-theme-variant=dark] .apexcharts-legend-text {
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .apexcharts-tooltip,
+[data-paragon-theme-variant=dark] .apexcharts-menu {
+  background: var(--pgn-color-surface-base) !important;
+  border-color: var(--pgn-color-border) !important;
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .video-wrapper,
+[data-paragon-theme-variant=dark] .upload-box,
+[data-paragon-theme-variant=dark] .image-preview-container,
+[data-paragon-theme-variant=dark] .introduction-video {
+  background-color: var(--pgn-color-surface-base) !important;
+  border-color: var(--pgn-color-border) !important;
+  color: var(--pgn-color-text-base);
+}
+[data-paragon-theme-variant=dark] .grading-scale-segment .grading-scale-segment-content,
+[data-paragon-theme-variant=dark] .grading-scale-segment .grading-scale-segment-content * {
+  color: var(--pgn-color-bg-base) !important;
+}
+[data-paragon-theme-variant=dark] .tels-custom-learning .page-content li > p {
+  color: var(--pgn-color-text-base);
+}
+[data-paragon-theme-variant=dark] .pgn__card-section,
+[data-paragon-theme-variant=dark] .overview-card .card-section {
+  scrollbar-color: var(--pgn-color-border) transparent;
+}
+
+:root[data-paragon-theme-variant=dark] {
+  --pgn-color-primary-light: color-mix(in srgb, var(--pgn-color-primary-base) 12%, var(--pgn-color-bg-base));
 }
