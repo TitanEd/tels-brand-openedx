@@ -1,0 +1,106 @@
+// LAYER 3 — Admin Console custom shell (TitanEd header + left navigation)
+// Scoped to .tels-custom-admin-console (src/CustomLayout.jsx of the fork). Stock styles stay
+// in _admin-console.scss. Applies the existing design tokens (--pgn-*); no new tokens.
+
+.tels-custom-admin-console {
+  // Color variables, page background and link color: shared with the gradebook shell
+  // (custom_gradebook.scss).
+
+  // One content column, the same inset as the other custom shells (half a grid gutter).
+  --tels-page-inset: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
+
+  // Title row: no band of its own, the page background shows through.
+  #main .bg-light-100.container-fluid {
+    padding: var(--pgn-spacing-spacer-3, 1rem) var(--tels-page-inset) var(--pgn-spacing-spacer-2, .5rem) !important;
+    background-color: transparent !important;
+
+    .pgn__breadcrumb:empty,
+    .pgn__breadcrumb:has(> ol:empty) {
+      display: none;
+    }
+
+    > .row {
+      margin-top: 0 !important;
+      align-items: center;
+
+      > [class*="col-"] {
+        margin-bottom: var(--pgn-spacing-spacer-2, .5rem) !important;
+      }
+    }
+
+    h2 {
+      font-size: var(--pgn-typography-font-size-h3-base);
+      line-height: var(--pgn-typography-line-height-base, 1.25);
+      color: var(--pgn-color-text-base) !important;
+    }
+  }
+
+  // Tabs line up with the title; their panel is the page, not a second band.
+  .authz-module .pgn__tabs.nav-tabs {
+    padding-left: var(--tels-page-inset) !important;
+    padding-right: var(--tels-page-inset) !important;
+    background-color: transparent !important;
+  }
+
+  .authz-module .tab-content,
+  .authz-module .tab-content > .tab-pane {
+    background-color: transparent !important;
+  }
+
+  .authz-module .tab-content > .tab-pane {
+    padding: var(--pgn-spacing-spacer-3, 1rem) var(--tels-page-inset) var(--pgn-spacing-spacer-4, 1.5rem) !important;
+  }
+
+  // Assign-role wizard: the step line and the step itself sit in the same column; the step
+  // is a surface card instead of a full-width band.
+  #main > .pgn__stepper-header {
+    margin: 0 var(--tels-page-inset);
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent !important;
+    border-bottom: var(--pgn-size-border-width, 1px) solid var(--pgn-color-border, var(--pgn-color-light-400));
+  }
+
+  #main > .bg-light-200 {
+    padding: var(--pgn-spacing-spacer-3, 1rem) var(--tels-page-inset) var(--pgn-spacing-spacer-4, 1.5rem) !important;
+    background-color: transparent !important;
+
+    > .pgn__stepper-step {
+      padding: var(--pgn-spacing-spacer-4, 1.5rem);
+      background-color: var(--pgn-color-bg-base);
+      border: var(--pgn-size-border-width, 1px) solid var(--pgn-color-border, var(--pgn-color-light-400));
+      border-radius: var(--pgn-size-border-radius-lg, .5rem);
+    }
+  }
+
+  // Tables and role cards sit on a surface card.
+  .authz-module .pgn__data-table-wrapper {
+    background-color: var(--pgn-color-bg-base);
+    border: var(--pgn-size-border-width, 1px) solid var(--pgn-color-border, var(--pgn-color-light-400));
+    border-radius: var(--pgn-size-border-radius-lg, .5rem);
+    box-shadow: none;
+  }
+
+  // Header row: a tint of the surface that follows the theme and the mode (it stayed light
+  // in dark mode).
+  .authz-module .pgn__data-table thead th {
+    background-color: color-mix(in srgb, var(--pgn-color-text-base) 8%, var(--pgn-color-bg-base));
+  }
+
+  // Column titles are text, not links (the sort buttons inherited the link color).
+  .authz-module .pgn__data-table th,
+  .authz-module .pgn__data-table th button,
+  .authz-module .pgn__data-table th span {
+    color: var(--pgn-color-text-base);
+  }
+
+  @media (max-width: 767.98px) {
+    #main .bg-light-100.container-fluid .pgn__hstack {
+      justify-content: flex-start !important;
+    }
+
+    .authz-module .pgn__data-table-wrapper {
+      padding: var(--pgn-spacing-spacer-2, .5rem);
+    }
+  }
+}

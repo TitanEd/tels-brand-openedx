@@ -296,8 +296,8 @@ $tels-authn-glow: color-mix(in srgb, var(--pgn-color-primary-base) 45%, transpar
   a:not(.btn),
   a.alert-link,
   .alert-link,
-  .alert-message-content a,
-  .pgn__alert-message-wrapper a {
+  .alert-message-content a:not(.btn),
+  .pgn__alert-message-wrapper a:not(.btn) {
     color: $tels-authn-inline !important;
 
     &:hover,

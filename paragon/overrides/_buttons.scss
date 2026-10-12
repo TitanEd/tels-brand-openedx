@@ -312,3 +312,27 @@ button.btn-icon.btn-icon-secondary[aria-selected="true"] {
     background-color: var(--pgn-color-icon-button-bg-secondary-active-hover, var(--pgn-color-icon-button-bg-secondary-active-base)) !important;
   }
 }
+
+// A solid button written as a link (<a class="btn btn-primary">) inside an alert or other
+// link-colored context took the link color: primary text on a primary button (Studio's
+// discussion-upgrade notice "Learn more"). Solid buttons always use their own text token.
+a.btn.btn-primary,
+.alert a.btn.btn-primary,
+.alert .btn.btn-primary {
+  color: var(--pgn-color-btn-text-primary) !important;
+
+  &:hover,
+  &:focus {
+    color: var(--pgn-color-btn-hover-text-primary) !important;
+  }
+}
+
+a.btn.btn-brand,
+.alert .btn.btn-brand {
+  color: var(--pgn-color-btn-text-brand) !important;
+
+  &:hover,
+  &:focus {
+    color: var(--pgn-color-btn-hover-text-brand) !important;
+  }
+}

@@ -647,3 +647,52 @@ $tels-header-avatar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
     background-color: var(--pgn-color-primary-base) !important;
   }
 }
+
+// -----------------------------------------------------------------------------
+// Custom header (MainHeader of titaned-frontend-library): notification bell.
+// The stock tray (@edx/frontend-plugin-notifications) draws its bell as a "light"
+// icon button, which is nearly invisible on the header surface. Here it takes the
+// same icon-button tokens as the light / dark switch next to it.
+// -----------------------------------------------------------------------------
+.tels-header-extras .notification-button.btn-icon,
+.tels-header-extras button.notification-button {
+  --btn-icon-color: var(--pgn-color-icon-button-text-primary-base);
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--pgn-color-icon-button-text-primary-base) !important;
+  background-color: transparent;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    color: var(--pgn-color-icon-button-text-primary-hover, var(--pgn-color-text-inverse)) !important;
+    background-color: var(--pgn-color-icon-button-bg-primary-hover) !important;
+  }
+}
+
+// Unseen-notifications badge: readable on any primary color.
+.tels-header-extras #notificationIcon .notification-badge {
+  color: var(--pgn-color-text-inverse, #fff);
+}
+
+// The tray is a surface of the theme (it is hard-coded white in the plugin).
+#notificationTray.popover {
+  background-color: var(--pgn-color-bg-surface, var(--pgn-color-white));
+  border-radius: var(--pgn-size-border-radius-lg, .5rem) !important;
+  box-shadow: var(--pgn-elevation-box-shadow-level-3, 0 .5rem 1.5rem rgba(0, 0, 0, .18));
+  z-index: 1060;
+
+  .popover-header,
+  .bg-white {
+    background-color: var(--pgn-color-bg-surface, var(--pgn-color-white)) !important;
+  }
+}
+
+// Narrow screens: the tray stays inside the screen (the plugin gives it 100% width plus a left
+// margin, and the overlay shifts it a few pixels more, which pushed it past the right edge).
+@media (max-width: 767.98px) {
+  #notificationTray.popover {
+    margin-left: 0 !important;
+    width: calc(100vw - 1.5rem) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+  }
+}

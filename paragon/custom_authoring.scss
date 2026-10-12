@@ -184,3 +184,225 @@
 .tels-custom-authoring .schedule-and-details .course-form > .row > [class*="col"]:first-child {
   padding-left: var(--pgn-spacing-spacer-3, 1rem) !important;
 }
+
+// -----------------------------------------------------------------------------
+// QA 2026-10-12 (second pass)
+.tels-custom-authoring {
+  // Taxonomies: each taxonomy is a proper card.
+  .taxonomy-card.pgn__card {
+    height: 100%;
+    border: var(--pgn-size-border-width, 1px) solid var(--pgn-color-light-400) !important;
+    border-radius: var(--pgn-size-border-radius-lg, 0.5rem) !important;
+    background-color: var(--pgn-color-bg-base) !important;
+    box-shadow: var(--pgn-elevation-box-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.08)) !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--pgn-color-primary-base) !important;
+      box-shadow: var(--pgn-elevation-box-shadow-base, 0 4px 12px rgba(0, 0, 0, 0.12)) !important;
+      text-decoration: none;
+    }
+
+    .pgn__card-header {
+      padding: var(--pgn-spacing-spacer-3, 1rem) var(--pgn-spacing-spacer-3, 1rem) var(--pgn-spacing-spacer-2, 0.5rem);
+    }
+
+    .pgn__card-section {
+      padding: 0 var(--pgn-spacing-spacer-3, 1rem) var(--pgn-spacing-spacer-3, 1rem);
+      color: var(--pgn-color-text-light);
+    }
+
+    .pgn__card-header-title-md {
+      color: var(--pgn-color-headings-base, var(--pgn-color-text-base));
+      font-weight: var(--pgn-typography-headings-font-weight, 700);
+    }
+  }
+
+  .custom-taxonomy-list-page-card-view > .row {
+    row-gap: var(--pgn-spacing-spacer-3, 1rem);
+  }
+}
+
+// Sidebar of the custom UI (every MFE): the menu was forced taller than its column, which
+// drew a scroll bar beside a handful of items. It fills the column; a long menu still scrolls.
+.sidebar-container > .sidebar {
+  min-height: 100% !important;
+  height: 100%;
+}
+
+// Content libraries (QA 2026-10-12, second pass) ------------------------------
+.tels-custom-authoring {
+  // "Create new library": the page title above a form card of a readable width, like the other
+  // form pages (was one full-width white strip with the fields on its edges).
+  .custom-create-library-container {
+    margin-top: 0 !important;
+    padding-top: var(--pgn-spacing-spacer-3, 1rem) !important;
+    padding-bottom: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    > .border-bottom {
+      border: 0 !important;
+      margin-bottom: var(--pgn-spacing-spacer-3, 1rem) !important;
+    }
+
+    > hr {
+      display: none;
+    }
+
+    > form {
+      max-width: 46rem;
+      padding: var(--pgn-spacing-spacer-4, 1.5rem);
+      border: var(--pgn-size-border-width, 1px) solid var(--pgn-color-light-400);
+      border-radius: var(--pgn-size-border-radius-lg, 0.5rem);
+      background-color: var(--pgn-color-bg-base);
+      box-shadow: var(--pgn-elevation-box-shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.08));
+
+      .pgn__form-group {
+        margin-bottom: var(--pgn-spacing-spacer-4, 1.5rem);
+      }
+
+      .pgn__form-label {
+        margin-bottom: var(--pgn-spacing-spacer-1, 0.25rem);
+        font-weight: var(--pgn-typography-font-weight-semi-bold, 600);
+        color: var(--pgn-color-text-base);
+      }
+
+      .pgn__form-text {
+        margin-top: var(--pgn-spacing-spacer-1, 0.25rem);
+        color: var(--pgn-color-text-light);
+      }
+
+      .pgn__form-control-decorator-group {
+        padding-bottom: 0 !important;
+      }
+
+      // The Cancel / Create row.
+      > .pgn__action-row,
+      > div:last-child:not(.pgn__form-group) {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--pgn-spacing-spacer-2, 0.5rem);
+        margin-top: var(--pgn-spacing-spacer-2, 0.5rem);
+        padding-top: var(--pgn-spacing-spacer-3, 1rem);
+        border-top: var(--pgn-size-border-width, 1px) solid var(--pgn-color-light-400);
+      }
+    }
+  }
+
+  // Library page: its column lines up with every other page (it had its own margins, padding
+  // and a breadcrumb pulled out with negative margins).
+  .library-authoring-page-container {
+    @include tels-content-width;
+    margin-top: 0 !important;
+    column-gap: var(--pgn-spacing-spacer-3, 1rem);
+
+    .library-authoring-page-content {
+      min-width: 0;
+      padding: 0 !important;
+    }
+
+    .ca-breadcrumb-bg {
+      margin: 0 0 var(--pgn-spacing-spacer-3, 1rem) !important;
+      padding: var(--pgn-spacing-spacer-2, 0.5rem) 0 0 !important;
+      background: transparent !important;
+    }
+
+    .ca-breadcrumb-container {
+      max-width: none !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .library-authoring-page {
+      padding: var(--pgn-spacing-spacer-3, 1rem) !important;
+      border: var(--pgn-size-border-width, 1px) solid var(--pgn-color-light-400);
+      border-radius: var(--pgn-size-border-radius-lg, 0.5rem);
+      background-color: var(--pgn-color-bg-base);
+
+      hr {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Section / subsection / unit pages of a library: the stock Studio header repeated under
+  // the custom header. The page becomes one card in the page column, beside its info panel.
+  .page-content .studio-header {
+    display: none !important;
+  }
+
+  .page-content > .d-flex:has(> .library-authoring-sidebar) {
+    @include tels-content-width;
+    column-gap: var(--pgn-spacing-spacer-3, 1rem);
+    padding-top: var(--pgn-spacing-spacer-3, 1rem);
+
+    > .flex-grow-1 {
+      min-width: 0;
+    }
+
+    .library-authoring-page {
+      margin-top: 0 !important;
+      overflow: hidden;
+      border: var(--pgn-size-border-width, 1px) solid var(--pgn-color-light-400);
+      border-radius: var(--pgn-size-border-radius-lg, 0.5rem);
+      background-color: var(--pgn-color-bg-base) !important;
+    }
+
+    .library-container-children,
+    .library-container-children > h4 {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.tels-custom-authoring {
+  // Create new library: room between a field's help text and the next label.
+  .custom-create-library-container > form .pgn__form-group + .pgn__form-group {
+    margin-top: var(--pgn-spacing-spacer-4, 1.5rem) !important;
+  }
+
+  // Library section / subsection / unit pages: inner spacing of the card.
+  .page-content > .d-flex:has(> .library-authoring-sidebar) .library-authoring-page {
+    > .container-fluid {
+      padding: var(--pgn-spacing-spacer-3, 1rem) var(--pgn-spacing-spacer-4, 1.5rem) var(--pgn-spacing-spacer-4, 1.5rem) !important;
+    }
+
+    .library-container-children > h4 {
+      margin-bottom: var(--pgn-spacing-spacer-3, 1rem);
+      font-size: var(--pgn-typography-font-size-h4-base);
+    }
+
+    // The two "Add …" buttons share the row without touching the card's edge.
+    > .container-fluid > .d-flex {
+      gap: var(--pgn-spacing-spacer-3, 1rem);
+      flex-wrap: wrap;
+
+      > * {
+        flex: 1 1 14rem;
+        min-width: 0;
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+// Unit page: the header was pulled up over the unit title by a negative margin.
+.tels-custom-authoring .course-unit-container {
+  .sub-header {
+    margin-bottom: var(--pgn-spacing-spacer-2, 0.5rem) !important;
+    align-items: center;
+  }
+
+  .sub-header-title {
+    height: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .unit-header-status-bar {
+    margin-top: 0 !important;
+  }
+}

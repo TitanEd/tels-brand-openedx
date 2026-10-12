@@ -2,7 +2,11 @@
 // Scoped to .tels-custom-gradebook. Stock Verawood styles stay in _gradebook.scss.
 // Applies the existing design tokens (--pgn-*) to the custom UI; no new tokens.
 
-.tels-custom-gradebook {
+// The variables and base colors below are shared with the admin-console and
+// instructor-dashboard shells (custom_admin-console.scss, custom_instructor-dashboard.scss).
+.tels-custom-gradebook,
+.tels-custom-admin-console,
+.tels-custom-instructor-dashboard {
   // Color variables read by the custom UI (titaned-frontend-library and the
   // MFE custom styles), set from the design tokens.
   --primary: var(--pgn-color-primary-base);
@@ -41,6 +45,9 @@
     color: var(--pgn-color-link-base);
   }
 
+}
+
+.tels-custom-gradebook {
   // Main gradebook column: same max-width + L/R gutter as other custom MFE shells.
   .main-content > .page-content {
     width: 100%;
@@ -54,5 +61,40 @@
   .gradebook-content {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+
+  // Breadcrumb: the course name reads as the current page, as in the other custom shells.
+  .ca-breadcrumb a.ca-breadcrumb-current:not(.btn) {
+    color: var(--pgn-color-text-muted);
+  }
+
+  // Page title: one size and weight for the title text, whatever element holds it.
+  .gradebook-header-title,
+  .gradebook-header-title > * {
+    font-size: var(--pgn-typography-font-size-h3-base) !important;
+    font-weight: var(--pgn-typography-font-weight-bold) !important;
+    line-height: var(--pgn-typography-line-height-base, 1.25);
+  }
+
+  // Narrow screens: the learner search takes the full row under the filter button.
+  @media (max-width: 575.98px) {
+    .search-container {
+      width: 100%;
+      margin-left: 0 !important;
+      margin-top: var(--pgn-spacing-spacer-3, 1rem);
+      margin-bottom: var(--pgn-spacing-spacer-3, 1rem);
+
+      .pgn__searchfield {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+
+  // Column titles: full text color on the header row (they were dimmed, unreadable in dark mode).
+  .pgn__data-table thead th,
+  .pgn__data-table thead th div,
+  .pgn__data-table thead th span {
+    color: var(--pgn-color-text-base) !important;
   }
 }

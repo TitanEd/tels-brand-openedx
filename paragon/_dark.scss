@@ -67,6 +67,9 @@
       border-color: var(--pgn-color-border) !important;
     }
 
+    // .tox-mbtn: the menu bar (Edit, View, Insert…) of editors that show one (bulk email).
+    .tox-mbtn,
+    .tox-mbtn__select-label,
     .tox-tbtn,
     .tox-tbtn__select-label,
     .tox-statusbar__path-item,
@@ -81,6 +84,9 @@
       fill: var(--pgn-color-text-base) !important;
     }
 
+    .tox-mbtn:hover,
+    .tox-mbtn:focus,
+    .tox-mbtn--active,
     .tox-tbtn:hover,
     .tox-tbtn:focus,
     .tox-tbtn--enabled {
@@ -270,4 +276,10 @@
 // TinyMCE dialogs: the veil behind the dialog is a literal white, which washes a dark page out.
 [data-paragon-theme-variant="dark"] .tox .tox-dialog-wrap__backdrop {
   background-color: color-mix(in srgb, var(--pgn-color-bg-base) 72%, transparent) !important;
+}
+
+// Studio libraries: the publish-status box of the info panel is a literal light tint.
+[data-paragon-theme-variant="dark"] .library-authoring-sidebar .status-widget {
+  background-color: var(--pgn-color-surface-base) !important;
+  color: var(--pgn-color-text-base) !important;
 }
