@@ -4825,8 +4825,10 @@ input.form-control:disabled {
   border-color: var(--pgn-color-form-control-indicator-checked-border-base, var(--pgn-color-primary-base)) !important;
   background-color: var(--pgn-color-form-control-indicator-bg-base, var(--pgn-color-white)) !important;
   background-image: var(--pgn-other-content-form-control-checkbox-indicator-icon-checked-base) !important;
-  background-position: center !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23fff' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3e%3c/svg%3e") !important;
   background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
 }
 .pgn__form-checkbox-input:indeterminate {
   background-image: var(--pgn-other-content-form-control-checkbox-indicator-indeterminate-icon) !important;
@@ -4866,6 +4868,24 @@ input.form-control:disabled {
   background-color: transparent !important;
   border-color: transparent !important;
   color: var(--pgn-color-text-inverse) !important;
+}
+
+.pgn__form-checkbox-input:checked,
+.pgn__form-checkbox-input:indeterminate {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+}
+
+.pgn__form-radio-input:checked {
+  background-image: none !important;
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  box-shadow: inset 0 0 0 3px var(--pgn-color-form-control-indicator-bg-base, var(--pgn-color-bg-base)) !important;
+}
+
+.pgn__form-checkbox-input:disabled:checked,
+.pgn__form-radio-input:disabled:checked {
+  opacity: 0.65;
 }
 
 select.form-control,
@@ -7010,6 +7030,53 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
 .tox-tinymce-aux .tox-listboxfield .tox-listbox--select:focus {
   border-color: var(--pgn-color-primary-base) !important;
   box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+}
+
+.tox,
+.tox .tox-dialog,
+.tox .tox-dialog *,
+.tox .tox-menu,
+.tox .tox-collection__item-label,
+.tox .tox-tbtn,
+.tox .tox-tbtn__select-label,
+.tox .tox-label,
+.tox .tox-textfield,
+.tox .tox-textarea,
+.tox .tox-listbox,
+.tox .tox-listboxfield .tox-listbox--select,
+.tox .tox-selectfield select,
+.tox .tox-button,
+.tox .tox-statusbar,
+.tox .tox-tooltip__body {
+  font-family: var(--pgn-typography-font-family-base) !important;
+}
+
+.tox .tox-dialog__title {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base)) !important;
+  font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+}
+
+.tox .tox-dialog .tox-textarea[data-mce-name=code],
+.tox .tox-dialog textarea.tox-textarea--monospace,
+.tox .tox-dialog pre,
+.tox .tox-dialog code {
+  font-family: var(--pgn-typography-font-family-monospace) !important;
+}
+
+.tox .tox-dialog .tox-button {
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  font-weight: var(--pgn-typography-btn-font-weight, 400) !important;
+}
+
+.tox .tox-dialog .tox-button:not(.tox-button--secondary):not(.tox-button--naked):not(.tox-button--icon) {
+  background-color: var(--pgn-color-btn-bg-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary) !important;
+  color: var(--pgn-color-btn-text-primary) !important;
+}
+.tox .tox-dialog .tox-button:not(.tox-button--secondary):not(.tox-button--naked):not(.tox-button--icon):hover:not(:disabled) {
+  background-color: var(--pgn-color-btn-hover-bg-primary) !important;
+  border-color: var(--pgn-color-btn-hover-border-primary) !important;
+  color: var(--pgn-color-btn-hover-text-primary) !important;
 }
 
 .collapsible-card,
@@ -12098,4 +12165,8 @@ main[data-testid=main] > .py-4.container-fluid {
 
 :root[data-paragon-theme-variant=dark] {
   --pgn-color-primary-light: color-mix(in srgb, var(--pgn-color-primary-base) 12%, var(--pgn-color-bg-base));
+}
+
+[data-paragon-theme-variant=dark] .tox .tox-dialog-wrap__backdrop {
+  background-color: color-mix(in srgb, var(--pgn-color-bg-base) 72%, transparent) !important;
 }

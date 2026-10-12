@@ -118,3 +118,56 @@
     box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
   }
 }
+
+// Fonts. TinyMCE's skin sets its own system font on every part (toolbar, menus and the
+// dialogs: Insert/Edit Link, Code Sample, Image, Special Character…), so the editor chrome
+// ignored the theme's fonts. Everything takes the body font token; dialog titles take the
+// headings font. Code fields keep the monospace token.
+.tox,
+.tox .tox-dialog,
+.tox .tox-dialog *,
+.tox .tox-menu,
+.tox .tox-collection__item-label,
+.tox .tox-tbtn,
+.tox .tox-tbtn__select-label,
+.tox .tox-label,
+.tox .tox-textfield,
+.tox .tox-textarea,
+.tox .tox-listbox,
+.tox .tox-listboxfield .tox-listbox--select,
+.tox .tox-selectfield select,
+.tox .tox-button,
+.tox .tox-statusbar,
+.tox .tox-tooltip__body {
+  font-family: var(--pgn-typography-font-family-base) !important;
+}
+
+.tox .tox-dialog__title {
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base)) !important;
+  font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+}
+
+.tox .tox-dialog .tox-textarea[data-mce-name="code"],
+.tox .tox-dialog textarea.tox-textarea--monospace,
+.tox .tox-dialog pre,
+.tox .tox-dialog code {
+  font-family: var(--pgn-typography-font-family-monospace) !important;
+}
+
+// Dialog buttons follow the button tokens like every other button.
+.tox .tox-dialog .tox-button {
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  font-weight: var(--pgn-typography-btn-font-weight, 400) !important;
+}
+
+.tox .tox-dialog .tox-button:not(.tox-button--secondary):not(.tox-button--naked):not(.tox-button--icon) {
+  background-color: var(--pgn-color-btn-bg-primary) !important;
+  border-color: var(--pgn-color-btn-border-primary) !important;
+  color: var(--pgn-color-btn-text-primary) !important;
+
+  &:hover:not(:disabled) {
+    background-color: var(--pgn-color-btn-hover-bg-primary) !important;
+    border-color: var(--pgn-color-btn-hover-border-primary) !important;
+    color: var(--pgn-color-btn-hover-text-primary) !important;
+  }
+}
