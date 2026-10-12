@@ -196,3 +196,272 @@
 //   generic Bootstrap border-dashed combo, which risks matching other
 //   dropzone-style elements elsewhere in Studio.
 // ---------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Stock Verawood Studio styles that hardcode colors in the MFE's own SCSS.
+// Remapped here to design tokens (no MFE core file changes).
+// ---------------------------------------------------------------------------
+
+// Content library block-type palette (generic/block-type-utils/index.scss).
+:root {
+  --content-library-component-default-color: var(--pgn-color-gray-600);
+  --content-library-component-default-color-light: var(--pgn-color-gray-500);
+  --content-library-component-default-color-light-focus: var(--pgn-color-gray-400);
+  --content-library-component-default-color-dark: var(--pgn-color-gray-800);
+  --content-library-component-primary-color: var(--pgn-color-primary-500);
+  --content-library-component-primary-color-light: var(--pgn-color-primary-400);
+  --content-library-component-primary-color-light-focus: var(--pgn-color-primary-300);
+  --content-library-component-primary-color-dark: var(--pgn-color-primary-700);
+  --content-library-component-html-color: var(--pgn-color-brand-500);
+  --content-library-component-html-color-light: var(--pgn-color-brand-400);
+  --content-library-component-html-color-light-focus: var(--pgn-color-brand-300);
+  --content-library-component-html-color-dark: var(--pgn-color-brand-700);
+  --content-library-component-video-color: var(--pgn-color-success-500);
+  --content-library-component-video-color-light: var(--pgn-color-success-400);
+  --content-library-component-video-color-light-focus: var(--pgn-color-success-300);
+  --content-library-component-video-color-dark: var(--pgn-color-success-700);
+  --content-library-collection-color: var(--pgn-color-warning-500);
+  --content-library-collection-color-light: var(--pgn-color-warning-400);
+  --content-library-collection-color-light-focus: var(--pgn-color-warning-300);
+  --content-library-collection-color-dark: var(--pgn-color-warning-700);
+  --content-library-container-unit-color: var(--pgn-color-info-500);
+  --content-library-container-unit-color-light: var(--pgn-color-info-400);
+  --content-library-container-unit-color-light-focus: var(--pgn-color-info-300);
+  --content-library-container-unit-color-dark: var(--pgn-color-info-700);
+  --content-library-container-subsection-color: var(--pgn-color-danger-500);
+  --content-library-container-subsection-color-light: var(--pgn-color-danger-400);
+  --content-library-container-subsection-color-light-focus: var(--pgn-color-danger-300);
+  --content-library-container-subsection-color-dark: var(--pgn-color-danger-700);
+  --content-library-container-section-color: var(--pgn-color-primary-700);
+  --content-library-container-section-color-light: var(--pgn-color-primary-600);
+  --content-library-container-section-color-light-focus: var(--pgn-color-primary-500);
+  --content-library-container-section-color-dark: var(--pgn-color-primary-900);
+}
+
+.component-style-default,
+.component-style-html,
+.component-style-video,
+.component-style-vertical,
+.component-style-sequential,
+.component-style-chapter,
+.component-style-other {
+  > .pgn__icon:not(.btn-icon-before),
+  > span,
+  > .btn {
+    color: var(--pgn-color-white);
+  }
+}
+
+.component-style-collection {
+  > .pgn__icon:not(.btn-icon-before),
+  > span {
+    color: var(--pgn-color-text-base);
+  }
+}
+
+.icon-with-border {
+  background-color: var(--pgn-color-surface-base, var(--pgn-color-white));
+}
+
+.upstream-info-icon.sync-state:hover {
+  color: var(--pgn-color-white);
+}
+
+// Draft status (course outline, unit page, library history / status widget).
+.bg-draft-status,
+.library-authoring-page .status-border-in-progress {
+  background-color: var(--pgn-color-warning-300);
+}
+
+.unit-header-status-bar .draft-badge {
+  background-color: var(--pgn-color-warning-700);
+  color: var(--pgn-color-white);
+}
+
+.course-unit-publish-controls.draft {
+  box-shadow: 0 -7px 0 0 var(--pgn-color-warning-700);
+}
+
+.history-log .history-log-group.draft-group {
+  .history-log-group-avatar {
+    border-color: var(--pgn-color-warning-700);
+  }
+
+  .history-log-vert {
+    background-color: var(--pgn-color-warning-700);
+  }
+}
+
+.status-border-imported {
+  border-left-color: var(--pgn-color-info-500);
+}
+
+.status-border-in-progress {
+  border-left-color: var(--pgn-color-warning-300);
+}
+
+.border-left-purple {
+  border-left-color: var(--pgn-color-brand-500) !important;
+}
+
+// Grading scale segments (grading-settings/scss/_variables.scss).
+.grading-scale .grading-scale-segment {
+  &.segment-0 { background-color: var(--pgn-color-success-300); }
+  &.segment-1 { background-color: var(--pgn-color-warning-200); }
+  &.segment-2 { background-color: var(--pgn-color-warning-400); }
+  &.segment-3 { background-color: var(--pgn-color-danger-300); }
+  &.segment-4 { background-color: var(--pgn-color-danger-500); }
+}
+
+// Tags drawer select.
+.react-select-add-tags__control--is-focused {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+
+.react-select-add-tags__multi-value__remove:hover {
+  background-color: var(--pgn-color-text-base) !important;
+  color: var(--pgn-color-white) !important;
+}
+
+// Course optimizer scan results.
+.scan-results {
+  .unit-card {
+    border-color: var(--pgn-color-light-400);
+    box-shadow: var(--pgn-elevation-box-shadow-down-1);
+
+    table tbody tr {
+      border-top-color: var(--pgn-color-light-400);
+
+      td a {
+        color: var(--pgn-color-link-base, var(--pgn-color-info-500));
+      }
+    }
+  }
+
+  .unit-header,
+  .section-collapsible-header,
+  .section-collapsible-header-action-item,
+  .scan-header-title,
+  .broken-links-header-title {
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  .section-collapsible-item-container {
+    box-shadow: var(--pgn-elevation-box-shadow-down-1);
+  }
+}
+
+.section-title {
+  color: var(--pgn-color-text-base);
+}
+
+.arrow-forward-ios {
+  color: var(--pgn-color-gray-500);
+}
+
+.scan-results-active-filters-chip {
+  border-color: var(--pgn-color-light-300);
+  background: var(--pgn-color-surface-base, var(--pgn-color-white));
+}
+
+.no-results-found {
+  color: var(--pgn-color-gray-700);
+}
+
+.open-section-rounded {
+  border-color: var(--pgn-color-light-400);
+}
+
+// Video upload editor and editors' shared widgets.
+.dropzone-middle {
+  border-color: var(--pgn-color-light-400);
+
+  &.active {
+    border-color: var(--pgn-color-text-base);
+  }
+}
+
+.video-id-prompt {
+  input::placeholder {
+    color: var(--pgn-color-text-muted);
+  }
+
+  button {
+    background-color: var(--pgn-color-surface-base, var(--pgn-color-white));
+  }
+
+  .btn-icon.url-submit-button {
+    &,
+    &:active,
+    &:hover {
+      color: var(--pgn-color-gray-500) !important;
+    }
+  }
+
+  .prompt-button {
+    background: var(--pgn-color-primary-light);
+  }
+}
+
+.video-thumbnail .thumbnail-overlay {
+  background: color-mix(in srgb, var(--pgn-color-black) 70%, transparent);
+}
+
+.expandable-mce {
+  .error {
+    outline-color: var(--pgn-color-danger-base);
+  }
+
+  *[contentEditable="false"] {
+    outline-color: var(--pgn-color-light-400);
+  }
+
+  *[contentEditable="true"] {
+    outline-color: var(--pgn-color-gray-500);
+
+    &:focus,
+    &:active {
+      outline-color: var(--pgn-color-text-base);
+    }
+  }
+}
+
+.total-label {
+  border-color: var(--pgn-color-gray-500);
+}
+
+.tinyMceWidget .tox-toolbar__group:not(:last-of-type)::after {
+  border-color: var(--pgn-color-light-300);
+}
+
+.search-sort-menu .pgn__menu > div:nth-child(even) {
+  border-bottom-color: var(--pgn-color-light-200);
+}
+
+// Misc stock surfaces.
+.export-footer-list > li {
+  border-bottom-color: var(--pgn-color-light-400);
+}
+
+.discussion-restriction .unselected-button:hover {
+  background: var(--pgn-color-light-300);
+}
+
+.hide-discussion-modal .bg-black,
+.features-table table,
+table.features-table {
+  color: var(--pgn-color-text-base);
+}
+
+.schedule-section .schedule-date-item-container {
+  border-bottom-color: var(--pgn-color-light-400);
+}
+
+.library-container-children .pgn__card.clickable:hover,
+.library-unit-page .pgn__card.clickable:hover {
+  box-shadow: var(--pgn-elevation-box-shadow-down-2);
+}
+
+.modal-popup-content {
+  filter: drop-shadow(0 2px 4px color-mix(in srgb, var(--pgn-color-black) 15%, transparent));
+}

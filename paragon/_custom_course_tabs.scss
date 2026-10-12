@@ -1,0 +1,144 @@
+// Shared course tab bar — Learning / Discussions / Communications custom UI.
+// MFE copies: mfes/frontend-app-{learning,discussions,communications}/src/styles/_custom_course_tabs.scss
+// Peach track + white selected chip; tokens only (--pgn-*).
+
+@mixin tels-custom-course-tab-track-appearance {
+  background-color: color-mix(in srgb, var(--pgn-color-primary-base) 12%, var(--pgn-color-bg-base));
+  border-radius: var(--pgn-size-border-radius-base, 4px);
+  border-bottom: none;
+  margin-bottom: 1.5rem !important;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+@mixin tels-custom-course-tabs-breakout-in-gutter {
+  // Stay inside the content column: the old gutter breakout (100% + gutter,
+  // negative margins) pushed the bar past the right edge (page scroll-x).
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
+  padding-right: calc(var(--pgn-spacing-grid-gutter-width) * 0.5);
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+@mixin tels-custom-course-tabs-inner-container-xl {
+  > .container-xl {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background-color: transparent !important;
+    border-radius: 0;
+  }
+}
+
+@mixin tels-custom-course-tabs-nav-menu {
+  .nav-menu {
+    padding: 0.5rem 0;
+    margin-left: 0;
+    // Flex item of .nav-bar: allow it to shrink so the tab row scrolls inside.
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .nav-tabs,
+  .nav-underline-tabs,
+  .nav.flex-nowrap {
+    // Narrow screens: the tab row scrolls by itself, not the page.
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-bottom: none !important;
+    max-width: none !important;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .nav a,
+  .nav button {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .nav a:not(.active):hover {
+    background-color: transparent;
+    border-radius: 0.5rem;
+    border-bottom: none;
+  }
+}
+
+@mixin tels-custom-course-tab-links {
+  .nav-underline-tabs .nav-link,
+  .nav.flex-nowrap .nav-link,
+  a.nav-item.nav-link {
+    color: var(--pgn-color-primary-base) !important;
+    border: none !important;
+    border-bottom: none !important;
+    border-bottom-color: transparent !important;
+    border-top: none !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0;
+    background-color: transparent !important;
+    background: transparent !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0 !important;
+    font-weight: 400;
+
+    &:hover,
+    &:focus {
+      color: var(--pgn-color-primary-base) !important;
+      background-color: transparent !important;
+      background: transparent !important;
+      border-radius: 0.5rem;
+      border-bottom: none !important;
+      border-bottom-color: transparent !important;
+    }
+
+    &.active {
+      background-color: var(--pgn-color-bg-base) !important;
+      background: var(--pgn-color-bg-base) !important;
+      border-bottom: none !important;
+      border-bottom-color: transparent !important;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      color: var(--pgn-color-primary-base) !important;
+    }
+  }
+
+  .btn.btn-link.nav-link {
+    color: var(--pgn-color-primary-base) !important;
+    border: none !important;
+    background-color: transparent !important;
+
+    &:hover,
+    &:focus {
+      border-radius: 0.5rem;
+      background-color: transparent !important;
+    }
+  }
+}
+
+// Tab bar is its own content-column shell (Learning).
+@mixin tels-custom-course-tabs-shell-column {
+  @include tels-custom-course-tab-track-appearance;
+  @include tels-custom-course-tabs-inner-container-xl;
+  @include tels-custom-course-tabs-nav-menu;
+  @include tels-custom-course-tab-links;
+}
+
+// Tab bar sits inside another gutter-padded container (Discussions, Communications).
+@mixin tels-custom-course-tabs-shell-nested {
+  @include tels-custom-course-tab-track-appearance;
+  @include tels-custom-course-tabs-breakout-in-gutter;
+  @include tels-custom-course-tabs-inner-container-xl;
+  @include tels-custom-course-tabs-nav-menu;
+  @include tels-custom-course-tab-links;
+}

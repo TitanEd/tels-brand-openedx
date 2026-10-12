@@ -29,6 +29,8 @@
 // Sidebar width must match WithSidebar.scss `$sidebar-width` — not a design
 // token; it's Gradebook layout chrome.
 $tels-gradebook-sidebar-width: 350px;
+// Gap between open filter drawer and main column (existing spacing token).
+$tels-gradebook-sidebar-gap: var(--pgn-spacing-spacer-3);
 
 .pgn__data-table-layout-wrapper {
   overflow-x: visible !important;
@@ -53,16 +55,17 @@ $tels-gradebook-sidebar-width: 350px;
 
     // MFE `.opening` used calc(100vw - 350px); stay % of parent instead.
     &.opening {
-      width: calc(100% - #{$tels-gradebook-sidebar-width}) !important;
-      max-width: calc(100% - #{$tels-gradebook-sidebar-width});
+      width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap}) !important;
+      max-width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap});
     }
   }
 
-  // Open filter drawer: margin-left 350px from MFE — shrink width so the
+  // Open filter drawer: margin-left includes sidebar + gap — shrink width so the
   // column does not extend past the shell (100% + margin = x-overflow).
   .sidebar.open + .sidebar-contents {
-    width: calc(100% - #{$tels-gradebook-sidebar-width}) !important;
-    max-width: calc(100% - #{$tels-gradebook-sidebar-width});
+    margin-left: calc(#{$tels-gradebook-sidebar-width} + #{$tels-gradebook-sidebar-gap}) !important;
+    width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap}) !important;
+    max-width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap});
   }
 
   .gradebook-content {
@@ -71,6 +74,28 @@ $tels-gradebook-sidebar-width: 350px;
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
+  }
+
+  // Custom shell (CustomWithSidebar) — same overflow/width fixes as .sidebar-contents.
+  .with-sidebar-contents {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: visible !important;
+
+    &.opening {
+      width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap}) !important;
+      max-width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap});
+    }
+  }
+
+  .with-sidebar.open + .with-sidebar-contents {
+    margin-left: calc(#{$tels-gradebook-sidebar-width} + #{$tels-gradebook-sidebar-gap}) !important;
+    width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap}) !important;
+    max-width: calc(100% - #{$tels-gradebook-sidebar-width} - #{$tels-gradebook-sidebar-gap});
   }
 
   // MFE already puts overflow-x/y: auto here — reinforce as the only x-scroller
@@ -104,6 +129,16 @@ $tels-gradebook-sidebar-width: 350px;
       flex: 0 0 auto;
       margin-left: auto;
       max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: fit-content;
+
+      .search-help-text {
+        margin-left: 0;
+        margin-top: var(--pgn-spacing-spacer-1, 0.25rem);
+        max-width: 100%;
+      }
 
       .pgn__searchfield {
         // 21ch ≈ "Search for a learner" + submit icon + field pad.

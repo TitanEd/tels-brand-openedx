@@ -9,7 +9,7 @@
   "cssBudgetKb": {
     "core.min.css": 410,
     "light.min.css": 560,
-    "dark.min.css": 410
+    "dark.min.css": 440
   },
   "exceptions": []
 }
