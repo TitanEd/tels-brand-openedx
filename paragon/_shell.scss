@@ -1,0 +1,14 @@
+// LAYER 3 — TitanEd shell shared by every MFE fork (titaned-frontend-library:
+// MainHeader + Sidebar inside .app-container > .content-wrapper > .sidebar-container;
+// the instructor dashboard renders the same markup from its vendored copy).
+// Applies the existing design tokens (--pgn-*); no new tokens.
+//
+// Text size: nothing in the shell below 1rem. A size taken from a token is
+// floored with max(1rem, …) so a theme can make it larger, never smaller.
+
+// Left navigation labels ("Dashboard", "My Courses", "My Assessments"…). The
+// items are Paragon buttons; the library writes their label at 14px.
+// .sidebar-container in front outranks the library's `.sidebar .sidebar-btn .btn-label`.
+.sidebar-container .sidebar .sidebar-btn .btn-label {
+  font-size: max(1rem, var(--pgn-typography-btn-font-size-sm));
+}

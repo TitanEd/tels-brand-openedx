@@ -149,9 +149,10 @@
     color: var(--pgn-color-text-base);
   }
 
-  // Text buttons: one size (some pages used the default size, others "sm").
+  // Text buttons: one size (some pages used the default size, others "sm"):
+  // the small-button token, never below 1rem (minimum text size).
   .page-content .btn:not(.btn-icon):not(.btn-lg):not(.btn-link):not(.tox-tbtn) {
-    font-size: var(--pgn-typography-btn-font-size-sm);
+    font-size: max(1rem, var(--pgn-typography-btn-font-size-sm));
     line-height: var(--pgn-typography-btn-line-height-sm);
     border-radius: var(--pgn-size-btn-border-radius-base);
   }
@@ -404,5 +405,15 @@
 
   .unit-header-status-bar {
     margin-top: 0 !important;
+  }
+}
+
+// My Courses (src/my-courses/MyCourses.tsx): the course id line of the cards.
+// Its filter menus, "Create Course" and card buttons follow the one button size
+// above. Paragon's small text size, never below 1rem (minimum text size).
+.tels-custom-authoring .my-courses-page {
+  .small,
+  small {
+    font-size: max(1rem, var(--pgn-typography-font-size-sm));
   }
 }

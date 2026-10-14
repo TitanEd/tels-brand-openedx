@@ -72,3 +72,20 @@
     color: var(--pgn-color-link-base);
   }
 }
+
+// My Courses (#dashboard-container): the organisation and date lines of the
+// course cards, small buttons and the staff "View as" bar. Paragon's small
+// sizes, never below 1rem (minimum text size). The card buttons are sized in
+// the fork (src/styles/styles-overrides.scss) with the same token.
+.tels-custom-learner-dashboard #dashboard-container {
+  .btn-sm,
+  .custom-masquerade-bar .btn {
+    font-size: max(1rem, var(--pgn-typography-btn-font-size-sm));
+  }
+
+  .small,
+  small,
+  .custom-masquerade-bar .form-control {
+    font-size: max(1rem, var(--pgn-typography-font-size-sm));
+  }
+}

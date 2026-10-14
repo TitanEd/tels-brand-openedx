@@ -7587,6 +7587,10 @@ main[data-testid=main] > .py-4.container-fluid {
   box-sizing: border-box;
 }
 
+.sidebar-container .sidebar .sidebar-btn .btn-label {
+  font-size: max(1rem, var(--pgn-typography-btn-font-size-sm));
+}
+
 .tels-custom-account {
   --primary: var(--pgn-color-primary-base);
   --primary-alt: var(--pgn-color-primary-700);
@@ -7795,7 +7799,7 @@ main[data-testid=main] > .py-4.container-fluid {
   color: var(--pgn-color-text-base);
 }
 .tels-custom-authoring .page-content .btn:not(.btn-icon):not(.btn-lg):not(.btn-link):not(.tox-tbtn) {
-  font-size: var(--pgn-typography-btn-font-size-sm);
+  font-size: max(1rem, var(--pgn-typography-btn-font-size-sm));
   line-height: var(--pgn-typography-btn-line-height-sm);
   border-radius: var(--pgn-size-btn-border-radius-base);
 }
@@ -7995,6 +7999,11 @@ main[data-testid=main] > .py-4.container-fluid {
 }
 .tels-custom-authoring .course-unit-container .unit-header-status-bar {
   margin-top: 0 !important;
+}
+
+.tels-custom-authoring .my-courses-page .small,
+.tels-custom-authoring .my-courses-page small {
+  font-size: max(1rem, var(--pgn-typography-font-size-sm));
 }
 
 .tels-custom-communications {
@@ -8769,6 +8778,16 @@ main[data-testid=main] > .py-4.container-fluid {
 }
 .tels-custom-learner-dashboard a:not(.btn) {
   color: var(--pgn-color-link-base);
+}
+
+.tels-custom-learner-dashboard #dashboard-container .btn-sm,
+.tels-custom-learner-dashboard #dashboard-container .custom-masquerade-bar .btn {
+  font-size: max(1rem, var(--pgn-typography-btn-font-size-sm));
+}
+.tels-custom-learner-dashboard #dashboard-container .small,
+.tels-custom-learner-dashboard #dashboard-container small,
+.tels-custom-learner-dashboard #dashboard-container .custom-masquerade-bar .form-control {
+  font-size: max(1rem, var(--pgn-typography-font-size-sm));
 }
 
 .tels-custom-learning {
