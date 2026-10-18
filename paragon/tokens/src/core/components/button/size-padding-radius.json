@@ -100,8 +100,8 @@
             "$description": "UI: Button font size → --pgn-typography-btn-font-size-base"
           },
           "sm": {
-            "$value": "{typography.input.btn.font.size.sm}",
-            "$description": "UI: Button font size sm → --pgn-typography-btn-font-size-sm"
+            "$value": "1rem",
+            "$description": "UI: Button font size sm (text floor 1rem, 2026-10-18; was typography.input.btn.font.size.sm = 0.875rem) → --pgn-typography-btn-font-size-sm"
           },
           "lg": {
             "$value": "{typography.input.btn.font.size.lg}",

@@ -1,0 +1,144 @@
+// LAYER 3 — Responsive floor for every MFE (QA pass 2026-10-18).
+// Phones 320–430 px and tablets 768–1024 px: no page-wide horizontal scroll, text never below
+// 1rem (the h5/h6/sm/xs/micro tokens carry the floor for Paragon classes; this file covers the
+// classes MFEs size themselves), touch targets at least 2.5rem (40 px) on touch-size screens.
+// Tokens only, logical properties. Loaded after every other Layer 3 file so it wins ties.
+
+// ---------------------------------------------------------------------------
+// Text floor
+// ---------------------------------------------------------------------------
+#root :is(.pgn__form-label, .alert-message-content, .ca-breadcrumb *,
+  .pgn__data-table-cell-wrap, .header-label, .tels-footer__bottom, .pgn__form-text *, .badge-label, .badge-current-user,
+  .help-sidebar-about *, .sidebar-link a, .warning-message-content *, .alert-heading, .tb-table *,
+  .grading-scale-segment-content-number, .grading-scale-tick-number, .badge, .pgn__card-section,
+  .tb-goal__week small, .tb-bar-top__actions .btn, .apexcharts-legend-text, .apexcharts-text) {
+  font-size: 1rem !important;
+}
+
+// TinyMCE chrome (menus, tool bar, status bar, dialogs) is 14px / 12px in its skin.
+body .tox :is(.tox-mbtn, .tox-mbtn__select-label, .tox-tbtn, .tox-statusbar, .tox-statusbar__path-item, .tox-label,
+  .tox-button, .tox-collection__item-label,
+  .tox-dialog__body-nav-item, .tox-notification__body, .tox-tooltip__body) {
+  font-size: 1rem;
+}
+
+// Discussions (stock build, root carries .small): the app shrinks text to 14 / 12 / 10 / 8 px,
+// most of it with !important, and goes smaller on phones.
+html body #root.small,
+html body #root.small :is(#main, .btn, .badge, .dropdown-menu, .form-control, .pgn__form-control-floating-label-content,
+  .pgn__modal, .post-summary-timestamp, .hover-card button, .small-font, .font-size-8, .discussion-posts .btn-md,
+  .discussion-comments h5, .post-form h4, .tooltip, header span:first-child, #notificationTray) {
+  font-size: 1rem !important;
+}
+
+// Account: the notification preferences (a table drawn with flex rows) scroll inside their card.
+#notifications .notification-preferences .flex-row.w-100 {
+  overflow-x: auto;
+}
+
+#root #notifications :is(.font-size-14, button) {
+  font-size: 1rem !important;
+}
+
+// Pages built without the TELS mobile header (account, profile from the mfe image) show the bare
+// logo link on phones: keep it at header size instead of its natural 300 px.
+#root a.logo > .logo-image {
+  max-block-size: 3.75rem;
+  inline-size: auto;
+}
+
+// Course tabs: the row scrolls by itself (_custom_course_tabs.scss), so the Learning "More..."
+// overflow menu is never needed. When its width check runs before the page is laid out it puts
+// an empty "More..." in front of the tabs; hide it there.
+#courseTabsNavigation .nav > .nav-item:first-child:has(> .dropdown) {
+  display: none;
+}
+
+// ---------------------------------------------------------------------------
+// Header on phones: the user menu shows the picture only (the stock header hides the name
+// below md; _header.scss shows it again for desktop and it pushed the menu off screen).
+// ---------------------------------------------------------------------------
+@media (max-width: 575.98px) {
+  #root header.learning-header .user-dropdown .dropdown-toggle .d-md-inline,
+  #root header .user-dropdown .dropdown-toggle span[data-hj-suppress] {
+    display: none !important;
+  }
+
+  #root header .user-dropdown,
+  #root header .pgn__dropdown.user-dropdown {
+    margin-inline-start: var(--pgn-spacing-spacer-2, .5rem) !important;
+  }
+
+  #root header.learning-header .user-dropdown .dropdown-toggle.btn {
+    padding-inline: var(--pgn-spacing-spacer-2, .5rem) !important;
+  }
+
+  #root header.learning-header .logo {
+    margin-inline-end: var(--pgn-spacing-spacer-2, .5rem) !important;
+  }
+
+  #root header.learning-header .logo img {
+    max-inline-size: 6.5rem;
+    height: auto !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Left navigation on phones: the open menu lies over the page instead of squeezing it into
+// the last 175 px (cards were cut in half). Same markup in every fork (_shell.scss).
+// ---------------------------------------------------------------------------
+@media (max-width: 767.98px) {
+  // Shell header: when its buttons wrap to a second row, the row pushes the page down instead of
+  // lying under the masquerade bar (the library fixes the bar at 5rem).
+  .app-container .navbarContainer {
+    height: auto;
+    min-height: 5rem;
+  }
+
+  .app-container > .content-wrapper {
+    position: relative;
+
+    > .sidebar-container {
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: 0;
+      z-index: 1020;
+      max-inline-size: 85vw;
+    }
+
+    > .sidebar-container:has(> .sidebar:not(.collapsed)) {
+      background-color: var(--pgn-color-bg-base);
+      box-shadow: var(--pgn-elevation-box-shadow-level-3, 0 .5rem 1.5rem rgba(0, 0, 0, .2));
+    }
+
+    > .main-content {
+      flex: 1 1 100%;
+      min-inline-size: 0;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Touch targets (phones and tablets)
+// ---------------------------------------------------------------------------
+@media (max-width: 1024px) {
+  #root :is(.btn, .form-control:not(textarea), .collapsible-trigger, .nav-tabs .nav-link, .pgn__tabs .nav-link) {
+    min-height: 2.5rem;
+  }
+
+  #root :is(.btn-icon, .tels-footer__social a) {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+
+  // Stand-alone text links: a 40 px row, text wraps inside it.
+  #root :is(.tels-footer li > a, .tels-footer__contact-row > a, .ca-breadcrumb > *, .muted-link, .tb-course__title, .tb-widget__body > a, .tb-events__text > a,
+    a.pgn__hyperlink:only-child, li > a.pgn__hyperlink, .forgot-password-link, .signup-link, .tels-footer__powered a,
+    .tels-course-details__nav-link, .jump-nav a, .sidebar-link a, .flex-grow-1 > h2 > a) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    min-inline-size: 2.5rem;
+    max-inline-size: 100%;
+  }
+}

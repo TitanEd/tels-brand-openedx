@@ -11202,6 +11202,770 @@ main[data-testid=main] > .py-4.container-fluid {
   color: var(--pgn-color-link-base);
 }
 
+html.tels-custom-authn body.tels-custom-authn {
+  background: var(--pgn-color-light-200);
+}
+html.tels-custom-authn body.tels-custom-authn .custom-logistration-container, html.tels-custom-authn body.tels-custom-authn .custom-forgot-password-container, html.tels-custom-authn body.tels-custom-authn .custom-reset-password-container {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--pgn-color-light-200) !important;
+  font-family: var(--pgn-typography-font-family-base);
+}
+@media (min-width: 992px) {
+  html.tels-custom-authn body.tels-custom-authn .custom-logistration-container, html.tels-custom-authn body.tels-custom-authn .custom-forgot-password-container, html.tels-custom-authn body.tels-custom-authn .custom-reset-password-container {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  }
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel {
+  display: none;
+  position: sticky;
+  inset-block-start: 0;
+  height: 100vh;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.75rem 3rem;
+  overflow: hidden;
+  color: var(--pgn-color-text-inverse, #fff);
+  background: linear-gradient(180deg, transparent 35%, color-mix(in srgb, #000 28%, transparent) 100%), radial-gradient(circle at 12% 14%, color-mix(in srgb, var(--pgn-color-text-inverse, #fff) 14%, transparent) 0 120px, transparent 121px), radial-gradient(circle at 92% 88%, color-mix(in srgb, var(--pgn-color-text-inverse, #fff) 8%, transparent) 0 240px, transparent 241px), radial-gradient(circle at 80% 8%, color-mix(in srgb, var(--pgn-color-text-inverse, #fff) 8%, transparent) 0 70px, transparent 71px), linear-gradient(155deg, var(--pgn-color-primary-500) 0%, var(--pgn-color-primary-base) 45%, var(--pgn-color-primary-800) 100%);
+}
+@media (min-width: 992px) {
+  html.tels-custom-authn body.tels-custom-authn .tels-auth-panel {
+    display: flex;
+  }
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__logo {
+  align-self: flex-start;
+  box-sizing: content-box;
+  width: auto;
+  max-width: 10rem;
+  max-height: 2.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: var(--pgn-size-border-radius-lg);
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, #000 18%, transparent);
+  object-fit: contain;
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__art {
+  flex: 1 1 auto;
+  min-height: 8rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 420' fill='none'%3E%3Cg stroke='white' stroke-opacity='.55' stroke-width='2'%3E%3Crect x='40' y='70' width='250' height='150' rx='18' fill='white' fill-opacity='.10'/%3E%3Crect x='62' y='94' width='88' height='60' rx='10' fill='white' fill-opacity='.22'/%3E%3Cpath d='M166 104h96M166 124h70M166 144h84' stroke-linecap='round'/%3E%3Crect x='62' y='176' width='206' height='10' rx='5' fill='white' fill-opacity='.12'/%3E%3Crect x='62' y='176' width='140' height='10' rx='5' fill='white' fill-opacity='.65' stroke='none'/%3E%3Crect x='190' y='250' width='250' height='130' rx='18' fill='white' fill-opacity='.10'/%3E%3Ccircle cx='250' cy='315' r='34' stroke-opacity='.3' stroke-width='10'/%3E%3Cpath d='M250 281a34 34 0 1 1-29.4 51' stroke-opacity='.9' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M306 296h104M306 318h80M306 340h92' stroke-linecap='round'/%3E%3Ccircle cx='372' cy='118' r='46' fill='white' fill-opacity='.14'/%3E%3Cpath d='M352 118l14 14 26-28' stroke-opacity='.95' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M352 160l-8 34 28-14 28 14-8-34' fill='white' fill-opacity='.18'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__text {
+  view-transition-name: tels-auth-panel-text;
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__title {
+  max-width: 26rem;
+  margin: 0 0 0.75rem;
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-h2-base);
+  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  line-height: 1.2;
+  color: inherit;
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__tagline {
+  max-width: 28rem;
+  margin: 0 0 1.25rem;
+  font-size: var(--pgn-typography-font-size-lg, 1.125rem);
+  line-height: 1.5;
+  color: inherit;
+  opacity: 0.92;
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__points {
+  display: grid;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__points li {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--pgn-typography-font-size-base);
+  font-weight: var(--pgn-typography-font-weight-semi-bold, 600);
+}
+html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__points .tels-auth-panel__point-icon {
+  flex: none;
+  width: 1.375rem;
+  height: 1.375rem;
+  color: inherit;
+  opacity: 0.9;
+}
+html.tels-custom-authn body.tels-custom-authn .custom-logistration-container > .main-content,
+html.tels-custom-authn body.tels-custom-authn .forgot-password-form-wrapper,
+html.tels-custom-authn body.tels-custom-authn .reset-password-form-wrapper {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding: 2.5rem 1rem !important;
+  background: transparent !important;
+}
+@media (min-width: 576px) {
+  html.tels-custom-authn body.tels-custom-authn .custom-logistration-container > .main-content,
+  html.tels-custom-authn body.tels-custom-authn .forgot-password-form-wrapper,
+  html.tels-custom-authn body.tels-custom-authn .reset-password-form-wrapper {
+    padding: 3rem 2rem !important;
+  }
+}
+html.tels-custom-authn body.tels-custom-authn .login-centered-layout, html.tels-custom-authn body.tels-custom-authn .login-split-layout, html.tels-custom-authn body.tels-custom-authn .forgot-password-form-container, html.tels-custom-authn body.tels-custom-authn .reset-password-form-container {
+  display: block !important;
+  width: 100% !important;
+  max-width: 30rem !important;
+  margin: 0 auto !important;
+  padding: 2.5rem 2.25rem !important;
+  border: 1px solid var(--pgn-color-light-400) !important;
+  border-radius: calc(var(--pgn-size-border-radius-lg) * 2) !important;
+  background: var(--pgn-color-bg-base) !important;
+  box-shadow: var(--pgn-elevation-box-shadow-centered-2) !important;
+  color: var(--pgn-color-text-base);
+  text-align: start;
+}
+@media (max-width: 575.98px) {
+  html.tels-custom-authn body.tels-custom-authn .login-centered-layout, html.tels-custom-authn body.tels-custom-authn .login-split-layout, html.tels-custom-authn body.tels-custom-authn .forgot-password-form-container, html.tels-custom-authn body.tels-custom-authn .reset-password-form-container {
+    padding: 1.75rem 1.25rem !important;
+    border-radius: var(--pgn-size-border-radius-lg) !important;
+  }
+}
+html.tels-custom-authn body.tels-custom-authn .login-split-layout.registration-page-with-social-login {
+  max-width: 32rem !important;
+}
+html.tels-custom-authn body.tels-custom-authn .login-form-container,
+html.tels-custom-authn body.tels-custom-authn .registration-form-container,
+html.tels-custom-authn body.tels-custom-authn .traditional-login-section,
+html.tels-custom-authn body.tels-custom-authn .social-login-section,
+html.tels-custom-authn body.tels-custom-authn .registration-form {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html.tels-custom-authn body.tels-custom-authn .logo-section {
+  display: flex !important;
+  justify-content: flex-start !important;
+  margin: 0 0 1.75rem !important;
+  padding: 0 !important;
+}
+html.tels-custom-authn body.tels-custom-authn .logo-section .titan-logo img {
+  display: block;
+  width: auto !important;
+  max-width: 12rem !important;
+  max-height: 3.5rem !important;
+  object-fit: contain;
+}
+html.tels-custom-authn body.tels-custom-authn .main-heading,
+html.tels-custom-authn body.tels-custom-authn .forgot-password-title,
+html.tels-custom-authn body.tels-custom-authn .reset-password-title {
+  margin: 0 0 0.5rem !important;
+  padding: 0 !important;
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base)) !important;
+  font-size: var(--pgn-typography-font-size-h3-base) !important;
+  font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+  line-height: var(--pgn-typography-headings-line-height, 1.25) !important;
+  color: var(--pgn-color-text-base) !important;
+  text-align: start !important;
+}
+@media (max-width: 575.98px) {
+  html.tels-custom-authn body.tels-custom-authn .main-heading,
+  html.tels-custom-authn body.tels-custom-authn .forgot-password-title,
+  html.tels-custom-authn body.tels-custom-authn .reset-password-title {
+    font-size: var(--pgn-typography-font-size-h3-mobile, var(--pgn-typography-font-size-h4-base)) !important;
+  }
+}
+html.tels-custom-authn body.tels-custom-authn .section-heading,
+html.tels-custom-authn body.tels-custom-authn .forgot-password-instructions,
+html.tels-custom-authn body.tels-custom-authn .reset-password-instructions {
+  margin: 0 0 1.75rem !important;
+  padding: 0 !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  font-weight: var(--pgn-typography-font-weight-normal, 400) !important;
+  line-height: 1.5 !important;
+  color: var(--pgn-color-text-light) !important;
+  text-align: start !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-group,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-group .pgn__form-control-decorator-group,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-group .form-control {
+  width: 100% !important;
+  max-width: none !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-group {
+  margin-block-end: 1.25rem !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-label,
+html.tels-custom-authn body.tels-custom-authn .form-label {
+  margin-block-end: 0.5rem !important;
+  font-size: max(1rem, var(--pgn-typography-font-size-sm)) !important;
+  font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+  color: var(--pgn-color-text-base) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .form-control {
+  height: var(--pgn-size-form-input-height-lg, 3rem) !important;
+  padding-block: 0 !important;
+  padding-inline: 1rem !important;
+  border: 1px solid var(--pgn-color-light-500) !important;
+  border-radius: var(--pgn-size-form-input-radius-border-base) !important;
+  background: var(--pgn-color-bg-base) !important;
+  font-family: var(--pgn-typography-font-family-base) !important;
+  font-size: max(1rem, var(--pgn-typography-form-input-font-size-base)) !important;
+  color: var(--pgn-color-text-base) !important;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+html.tels-custom-authn body.tels-custom-authn .form-control::placeholder {
+  color: var(--pgn-color-text-muted, var(--pgn-color-text-light)) !important;
+  opacity: 1;
+}
+html.tels-custom-authn body.tels-custom-authn .form-control:hover {
+  border-color: var(--pgn-color-gray-500) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .form-control:focus {
+  border-color: var(--pgn-color-primary-base) !important;
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--pgn-color-primary-base) 22%, transparent) !important;
+  outline: none;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-control-decorator-group.has-trailing-element .form-control {
+  padding-inline-end: 3rem !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-control-decorator-trailing {
+  inset-inline-end: 0.5rem;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-control-decorator-trailing .btn-icon,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-control-decorator-trailing .pgn__icon,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-control-decorator-trailing button {
+  color: var(--pgn-color-text-light) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-control-decorator-group.is-invalid .form-control,
+html.tels-custom-authn body.tels-custom-authn .form-control.is-invalid {
+  border-color: var(--pgn-color-danger-base) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-text,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-text-default,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-feedback,
+html.tels-custom-authn body.tels-custom-authn .form-text,
+html.tels-custom-authn body.tels-custom-authn .invalid-feedback,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-checkbox,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-checkbox-input + div,
+html.tels-custom-authn body.tels-custom-authn .form-check-label {
+  font-size: max(1rem, var(--pgn-typography-font-size-sm)) !important;
+  line-height: 1.45 !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-text-default,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-text-default span {
+  color: var(--pgn-color-text-light) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .pgn__form-text-invalid,
+html.tels-custom-authn body.tels-custom-authn .pgn__form-text-invalid span,
+html.tels-custom-authn body.tels-custom-authn .invalid-feedback {
+  color: var(--pgn-color-danger-base) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .login-btn,
+html.tels-custom-authn body.tels-custom-authn .register-button,
+html.tels-custom-authn body.tels-custom-authn #register-user,
+html.tels-custom-authn body.tels-custom-authn .forgot-password--button,
+html.tels-custom-authn body.tels-custom-authn .reset-password--button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  min-height: var(--pgn-size-form-input-height-lg, 3rem) !important;
+  margin: 0.25rem 0 0 !important;
+  padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base) !important;
+  border: var(--pgn-size-btn-border-width, 1px) solid var(--pgn-color-primary-base) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  background: var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-text-inverse) !important;
+  font-family: var(--pgn-typography-btn-font-family, var(--pgn-typography-font-family-base)) !important;
+  font-size: max(1rem, var(--pgn-typography-btn-font-size-base)) !important;
+  font-weight: var(--pgn-typography-btn-font-weight, 600) !important;
+  line-height: var(--pgn-typography-btn-line-height-base, 1.5) !important;
+  box-shadow: none !important;
+}
+html.tels-custom-authn body.tels-custom-authn .login-btn:hover, html.tels-custom-authn body.tels-custom-authn .login-btn:focus-visible,
+html.tels-custom-authn body.tels-custom-authn .register-button:hover,
+html.tels-custom-authn body.tels-custom-authn .register-button:focus-visible,
+html.tels-custom-authn body.tels-custom-authn #register-user:hover,
+html.tels-custom-authn body.tels-custom-authn #register-user:focus-visible,
+html.tels-custom-authn body.tels-custom-authn .forgot-password--button:hover,
+html.tels-custom-authn body.tels-custom-authn .forgot-password--button:focus-visible,
+html.tels-custom-authn body.tels-custom-authn .reset-password--button:hover,
+html.tels-custom-authn body.tels-custom-authn .reset-password--button:focus-visible {
+  border-color: var(--pgn-color-primary-700) !important;
+  background: var(--pgn-color-primary-700) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .login-btn:focus-visible,
+html.tels-custom-authn body.tels-custom-authn .register-button:focus-visible,
+html.tels-custom-authn body.tels-custom-authn #register-user:focus-visible,
+html.tels-custom-authn body.tels-custom-authn .forgot-password--button:focus-visible,
+html.tels-custom-authn body.tels-custom-authn .reset-password--button:focus-visible {
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--pgn-color-primary-base) 22%, transparent) !important;
+  outline: none;
+}
+html.tels-custom-authn body.tels-custom-authn .forgot-password-link {
+  display: block !important;
+  margin: 1.25rem 0 0 !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+  text-align: center !important;
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .signup-text,
+html.tels-custom-authn body.tels-custom-authn .help-text,
+html.tels-custom-authn body.tels-custom-authn .support-info,
+html.tels-custom-authn body.tels-custom-authn .support-info span {
+  font-size: var(--pgn-typography-font-size-base) !important;
+  color: var(--pgn-color-text-light) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .signup-link,
+html.tels-custom-authn body.tels-custom-authn .help-link,
+html.tels-custom-authn body.tels-custom-authn .support-info a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  vertical-align: baseline !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+  color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+html.tels-custom-authn body.tels-custom-authn .signup-link:hover,
+html.tels-custom-authn body.tels-custom-authn .help-link:hover,
+html.tels-custom-authn body.tels-custom-authn .support-info a:hover {
+  text-decoration: underline !important;
+}
+html.tels-custom-authn body.tels-custom-authn .text-center.mt-4:has(.signup-link) {
+  margin-block-start: 1.75rem !important;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid var(--pgn-color-light-400);
+}
+html.tels-custom-authn body.tels-custom-authn .help-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-block-start: 1.75rem !important;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid var(--pgn-color-light-400);
+}
+html.tels-custom-authn body.tels-custom-authn .support-info {
+  margin: 0.75rem 0 0 !important;
+  text-align: center !important;
+}
+html.tels-custom-authn body.tels-custom-authn .back-button-container {
+  margin: 0 0 1.25rem !important;
+}
+html.tels-custom-authn body.tels-custom-authn .back-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  padding: 0 !important;
+  border: 1px solid var(--pgn-color-light-400) !important;
+  border-radius: 50% !important;
+  background: var(--pgn-color-bg-base) !important;
+  color: var(--pgn-color-text-base) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .back-button:hover, html.tels-custom-authn body.tels-custom-authn .back-button:focus-visible {
+  border-color: var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-primary-base) !important;
+}
+[dir=rtl] html.tels-custom-authn body.tels-custom-authn .back-button .pgn__icon {
+  transform: scaleX(-1);
+}
+html.tels-custom-authn body.tels-custom-authn .alert {
+  border-radius: var(--pgn-size-border-radius-lg) !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .login-form-wrapper,
+html.tels-custom-authn body.tels-custom-authn .registration-form-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+html.tels-custom-authn body.tels-custom-authn .login-split-layout .logo-section,
+html.tels-custom-authn body.tels-custom-authn .login-split-layout .main-heading {
+  grid-column: auto !important;
+}
+html.tels-custom-authn body.tels-custom-authn .login-split-layout .main-heading {
+  margin-block-end: 1.5rem !important;
+}
+html.tels-custom-authn body.tels-custom-authn .social-login-section {
+  order: 0;
+}
+html.tels-custom-authn body.tels-custom-authn .social-buttons {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+html.tels-custom-authn body.tels-custom-authn .social-buttons > .row,
+html.tels-custom-authn body.tels-custom-authn .social-buttons .row {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 !important;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-social {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: var(--pgn-size-form-input-height-lg, 3rem) !important;
+  margin: 0 !important;
+  padding: 0.5rem 1rem !important;
+  border: 1px solid var(--pgn-color-light-500) !important;
+  border-radius: var(--pgn-size-btn-border-radius-base) !important;
+  background: var(--pgn-color-bg-base) !important;
+  color: var(--pgn-color-text-base) !important;
+  font-family: var(--pgn-typography-font-family-base) !important;
+  font-size: max(1rem, var(--pgn-typography-btn-font-size-base)) !important;
+  font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-social:hover {
+  border-color: var(--pgn-color-gray-500) !important;
+  background: var(--pgn-color-light-200) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-social:focus-visible {
+  border-color: var(--pgn-color-primary-base) !important;
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--pgn-color-primary-base) 22%, transparent) !important;
+  outline: none;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-social #provider-name {
+  padding: 0 !important;
+  font-size: inherit !important;
+  color: inherit !important;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-social .btn-tpa__font-container,
+html.tels-custom-authn body.tels-custom-authn .btn-social > div[aria-hidden=true] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  margin: 0 !important;
+  font-size: 1.25rem;
+  color: var(--tels-tpa-mark, var(--pgn-color-text-base)) !important;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-social .btn-tpa__image-icon {
+  display: block;
+  width: 1.375rem !important;
+  height: 1.375rem !important;
+  object-fit: contain;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-oa2-google-oauth2 {
+  --tels-tpa-mark: #4285f4;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-oa2-facebook {
+  --tels-tpa-mark: #1877f2;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-oa2-linkedin-oauth2 {
+  --tels-tpa-mark: #0a66c2;
+}
+html.tels-custom-authn body.tels-custom-authn .btn-oa2-azuread-oauth2 {
+  --tels-tpa-mark: #0078d4;
+}
+html.tels-custom-authn body.tels-custom-authn .social-buttons .row > .btn-social:last-child:nth-child(odd):not(:only-child) {
+  grid-column: 1/-1;
+}
+html.tels-custom-authn body.tels-custom-authn .divider {
+  order: 1;
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  width: 100% !important;
+  height: auto !important;
+  margin: 1.5rem 0 !important;
+  padding: 0 !important;
+}
+html.tels-custom-authn body.tels-custom-authn .divider::before, html.tels-custom-authn body.tels-custom-authn .divider::after {
+  content: "" !important;
+  position: static !important;
+  flex: 1 1 auto;
+  width: auto !important;
+  height: 1px !important;
+  border: 0 !important;
+  background: var(--pgn-color-light-400) !important;
+  transform: none !important;
+}
+html.tels-custom-authn body.tels-custom-authn .divider .divider-text {
+  position: static !important;
+  padding: 0 !important;
+  background: transparent !important;
+  font-size: var(--pgn-typography-font-size-base) !important;
+  color: var(--pgn-color-text-light) !important;
+  text-transform: lowercase;
+  transform: none !important;
+}
+html.tels-custom-authn body.tels-custom-authn .traditional-login-section {
+  order: 2;
+}
+html.tels-custom-authn body.tels-custom-authn .traditional-login-section .section-heading {
+  margin-block-end: 1.25rem !important;
+}
+
+#root .container-fluid.d-flex.py-5:has(> p.text-muted.mw-32em) {
+  min-height: 100vh;
+  align-items: center !important;
+  padding: 2rem 1rem !important;
+  background: var(--pgn-color-light-200);
+}
+#root .container-fluid.d-flex.py-5:has(> p.text-muted.mw-32em) > p.mw-32em {
+  max-width: 32rem;
+  margin: 0 !important;
+  padding: 2.5rem 2rem !important;
+  border: 1px solid var(--pgn-color-light-400);
+  border-radius: calc(var(--pgn-size-border-radius-lg) * 2);
+  background: var(--pgn-color-bg-base);
+  box-shadow: var(--pgn-elevation-box-shadow-centered-2);
+  font-size: var(--pgn-typography-font-size-base);
+  line-height: 1.55;
+  color: var(--pgn-color-text-light) !important;
+}
+#root .container-fluid.d-flex.py-5:has(> p.text-muted.mw-32em) > p.mw-32em::before {
+  content: "404";
+  display: block;
+  margin-block-end: 0.75rem;
+  font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+  font-size: var(--pgn-typography-font-size-display-3, 3.5rem);
+  font-weight: var(--pgn-typography-headings-font-weight, 700);
+  line-height: 1;
+  color: var(--pgn-color-primary-base);
+}
+
+@media (min-width: 992px) {
+  html.tels-custom-authn body.tels-custom-authn .custom-logistration-container .logo-section {
+    display: none !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .social-buttons > .row,
+  html.tels-custom-authn body.tels-custom-authn .social-buttons .row {
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  }
+  html.tels-custom-authn body.tels-custom-authn .login-split-layout.registration-page-with-social-login,
+  html.tels-custom-authn body.tels-custom-authn .custom-logistration-container .login-centered-layout:has(#registration-form) {
+    max-width: 42rem !important;
+    padding: 2rem 2.25rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn #registration-form {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
+    align-items: start;
+  }
+  html.tels-custom-authn body.tels-custom-authn #registration-form > * {
+    grid-column: 1/-1;
+    min-width: 0;
+  }
+  html.tels-custom-authn body.tels-custom-authn #registration-form > .pgn__form-group,
+  html.tels-custom-authn body.tels-custom-authn #registration-form > .username__form-group-wrapper {
+    grid-column: auto;
+    margin-block-end: 1rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn #registration-form .username__form-group-wrapper .pgn__form-group {
+    margin-block-end: 0 !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .registration-form > .mw-xs {
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .registration-page-with-social-login .main-heading {
+    margin-block-end: 1.25rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .registration-page-with-social-login .divider {
+    margin: 1.25rem 0 !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .registration-page-with-social-login .traditional-login-section .section-heading {
+    margin-block-end: 1rem !important;
+    display: none !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .registration-page-with-social-login .text-center.mt-4:has(.signup-link) {
+    margin-block-start: 1.25rem !important;
+    padding-block-start: 1.25rem;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.tels-custom-authn body.tels-custom-authn .login-centered-layout, html.tels-custom-authn body.tels-custom-authn .login-split-layout, html.tels-custom-authn body.tels-custom-authn .forgot-password-form-container, html.tels-custom-authn body.tels-custom-authn .reset-password-form-container {
+    view-transition-name: tels-auth-card;
+  }
+  html.tels-custom-authn body.tels-custom-authn:not(.tels-auth-transition) .login-centered-layout, html.tels-custom-authn body.tels-custom-authn .login-split-layout, html.tels-custom-authn body.tels-custom-authn .forgot-password-form-container, html.tels-custom-authn body.tels-custom-authn .reset-password-form-container {
+    animation: tels-auth-rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__text {
+    animation: tels-auth-rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+  }
+  ::view-transition-group(tels-auth-card) {
+    animation-duration: 0.55s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: clip;
+    border-radius: calc(var(--pgn-size-border-radius-lg) * 2);
+  }
+  ::view-transition-old(tels-auth-card),
+  ::view-transition-new(tels-auth-card) {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  ::view-transition-old(tels-auth-card) {
+    animation: tels-auth-out-forward 0.3s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+  ::view-transition-new(tels-auth-card) {
+    animation: tels-auth-in-forward 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+  }
+  html[data-tels-auth-direction=back]::view-transition-old(tels-auth-card) {
+    animation-name: tels-auth-out-back;
+  }
+  html[data-tels-auth-direction=back]::view-transition-new(tels-auth-card) {
+    animation-name: tels-auth-in-back;
+  }
+  html[dir=rtl][data-tels-auth-direction=forward]::view-transition-old(tels-auth-card) {
+    animation-name: tels-auth-out-back;
+  }
+  html[dir=rtl][data-tels-auth-direction=forward]::view-transition-new(tels-auth-card) {
+    animation-name: tels-auth-in-back;
+  }
+  html[dir=rtl][data-tels-auth-direction=back]::view-transition-old(tels-auth-card) {
+    animation-name: tels-auth-out-forward;
+  }
+  html[dir=rtl][data-tels-auth-direction=back]::view-transition-new(tels-auth-card) {
+    animation-name: tels-auth-in-forward;
+  }
+  ::view-transition-old(tels-auth-panel-text) {
+    animation: tels-auth-text-out 0.3s ease both;
+  }
+  ::view-transition-new(tels-auth-panel-text) {
+    animation: tels-auth-text-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.12s both;
+  }
+}
+@keyframes tels-auth-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tels-auth-out-forward {
+  to {
+    opacity: 0;
+    transform: translateX(-2.5rem) scale(0.97);
+    filter: blur(6px);
+  }
+}
+@keyframes tels-auth-in-forward {
+  from {
+    opacity: 0;
+    transform: translateX(3rem) scale(0.97);
+    filter: blur(6px);
+  }
+}
+@keyframes tels-auth-out-back {
+  to {
+    opacity: 0;
+    transform: translateX(2.5rem) scale(0.97);
+    filter: blur(6px);
+  }
+}
+@keyframes tels-auth-in-back {
+  from {
+    opacity: 0;
+    transform: translateX(-3rem) scale(0.97);
+    filter: blur(6px);
+  }
+}
+@keyframes tels-auth-text-out {
+  to {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+}
+@keyframes tels-auth-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+@media (min-width: 992px) {
+  html.tels-custom-authn body.tels-custom-authn .login-split-layout:not(.registration-page-with-social-login) {
+    max-width: 32rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .social-buttons .row > .btn-social:last-child:nth-child(odd):not(:only-child) {
+    grid-column: auto;
+  }
+}
+@media (min-width: 992px) and (max-height: 860px) {
+  html.tels-custom-authn body.tels-custom-authn .custom-logistration-container > .main-content,
+  html.tels-custom-authn body.tels-custom-authn .forgot-password-form-wrapper,
+  html.tels-custom-authn body.tels-custom-authn .reset-password-form-wrapper {
+    padding: 1.25rem 2rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .login-centered-layout, html.tels-custom-authn body.tels-custom-authn .login-split-layout, html.tels-custom-authn body.tels-custom-authn .forgot-password-form-container, html.tels-custom-authn body.tels-custom-authn .reset-password-form-container {
+    padding: 1.5rem 2rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .main-heading {
+    margin-block-end: 1rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .traditional-login-section .section-heading {
+    margin-block-end: 0.75rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .divider {
+    margin: 0.75rem 0 !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .pgn__form-group {
+    margin-block-end: 0.875rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .forgot-password-link {
+    margin-block-start: 0.875rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .text-center.mt-4:has(.signup-link),
+  html.tels-custom-authn body.tels-custom-authn .registration-page-with-social-login .text-center.mt-4:has(.signup-link) {
+    margin-block-start: 1rem !important;
+    padding-block-start: 1rem;
+  }
+  html.tels-custom-authn body.tels-custom-authn #registration-form > .pgn__form-group,
+  html.tels-custom-authn body.tels-custom-authn #registration-form > .username__form-group-wrapper {
+    margin-block-end: 0.75rem !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn #registration-form .pgn__form-text-default {
+    display: none !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn #registration-form .pgn__form-group:focus-within .pgn__form-text-default {
+    display: block !important;
+  }
+  html.tels-custom-authn body.tels-custom-authn .tels-auth-panel {
+    padding: 2rem 2.5rem;
+  }
+  html.tels-custom-authn body.tels-custom-authn .tels-auth-panel__title {
+    font-size: var(--pgn-typography-font-size-h3-base);
+  }
+}
+@media (min-width: 992px) and (max-height: 680px) {
+  html.tels-custom-authn body.tels-custom-authn .custom-logistration-container > .main-content,
+  html.tels-custom-authn body.tels-custom-authn .forgot-password-form-wrapper,
+  html.tels-custom-authn body.tels-custom-authn .reset-password-form-wrapper {
+    padding: 0.75rem 2rem !important;
+  }
+}
 .tels-custom-authoring {
   --primary: var(--pgn-color-primary-base);
   --primary-alt: var(--pgn-color-primary-700);
@@ -12579,6 +13343,106 @@ main[data-testid=main] > .py-4.container-fluid {
   color: var(--pgn-color-link-base);
 }
 
+#root :is(.pgn__form-label, .alert-message-content, .ca-breadcrumb *,
+.pgn__data-table-cell-wrap, .header-label, .tels-footer__bottom, .pgn__form-text *, .badge-label, .badge-current-user,
+.help-sidebar-about *, .sidebar-link a, .warning-message-content *, .alert-heading, .tb-table *,
+.grading-scale-segment-content-number, .grading-scale-tick-number, .badge, .pgn__card-section,
+.tb-goal__week small, .tb-bar-top__actions .btn, .apexcharts-legend-text, .apexcharts-text) {
+  font-size: 1rem !important;
+}
+
+body .tox :is(.tox-mbtn, .tox-mbtn__select-label, .tox-tbtn, .tox-statusbar, .tox-statusbar__path-item, .tox-label,
+.tox-button, .tox-collection__item-label,
+.tox-dialog__body-nav-item, .tox-notification__body, .tox-tooltip__body) {
+  font-size: 1rem;
+}
+
+html body #root.small,
+html body #root.small :is(#main, .btn, .badge, .dropdown-menu, .form-control, .pgn__form-control-floating-label-content,
+.pgn__modal, .post-summary-timestamp, .hover-card button, .small-font, .font-size-8, .discussion-posts .btn-md,
+.discussion-comments h5, .post-form h4, .tooltip, header span:first-child, #notificationTray) {
+  font-size: 1rem !important;
+}
+
+#notifications .notification-preferences .flex-row.w-100 {
+  overflow-x: auto;
+}
+
+#root #notifications :is(.font-size-14, button) {
+  font-size: 1rem !important;
+}
+
+#root a.logo > .logo-image {
+  max-block-size: 3.75rem;
+  inline-size: auto;
+}
+
+#courseTabsNavigation .nav > .nav-item:first-child:has(> .dropdown) {
+  display: none;
+}
+
+@media (max-width: 575.98px) {
+  #root header.learning-header .user-dropdown .dropdown-toggle .d-md-inline,
+  #root header .user-dropdown .dropdown-toggle span[data-hj-suppress] {
+    display: none !important;
+  }
+  #root header .user-dropdown,
+  #root header .pgn__dropdown.user-dropdown {
+    margin-inline-start: var(--pgn-spacing-spacer-2, 0.5rem) !important;
+  }
+  #root header.learning-header .user-dropdown .dropdown-toggle.btn {
+    padding-inline: var(--pgn-spacing-spacer-2, 0.5rem) !important;
+  }
+  #root header.learning-header .logo {
+    margin-inline-end: var(--pgn-spacing-spacer-2, 0.5rem) !important;
+  }
+  #root header.learning-header .logo img {
+    max-inline-size: 6.5rem;
+    height: auto !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .app-container .navbarContainer {
+    height: auto;
+    min-height: 5rem;
+  }
+  .app-container > .content-wrapper {
+    position: relative;
+  }
+  .app-container > .content-wrapper > .sidebar-container {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    z-index: 1020;
+    max-inline-size: 85vw;
+  }
+  .app-container > .content-wrapper > .sidebar-container:has(> .sidebar:not(.collapsed)) {
+    background-color: var(--pgn-color-bg-base);
+    box-shadow: var(--pgn-elevation-box-shadow-level-3, 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2));
+  }
+  .app-container > .content-wrapper > .main-content {
+    flex: 1 1 100%;
+    min-inline-size: 0;
+  }
+}
+@media (max-width: 1024px) {
+  #root :is(.btn, .form-control:not(textarea), .collapsible-trigger, .nav-tabs .nav-link, .pgn__tabs .nav-link) {
+    min-height: 2.5rem;
+  }
+  #root :is(.btn-icon, .tels-footer__social a) {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+  #root :is(.tels-footer li > a, .tels-footer__contact-row > a, .ca-breadcrumb > *, .muted-link, .tb-course__title, .tb-widget__body > a, .tb-events__text > a,
+  a.pgn__hyperlink:only-child, li > a.pgn__hyperlink, .forgot-password-link, .signup-link, .tels-footer__powered a,
+  .tels-course-details__nav-link, .jump-nav a, .sidebar-link a, .flex-grow-1 > h2 > a) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    min-inline-size: 2.5rem;
+    max-inline-size: 100%;
+  }
+}
 [data-paragon-theme-variant=dark] .text-white {
   color: var(--pgn-color-text-inverse) !important;
 }

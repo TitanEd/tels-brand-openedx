@@ -10,8 +10,8 @@
               "$description": "UI: Label / form input font size → --pgn-typography-form-input-font-size-base"
             },
             "sm": {
-              "$value": "0.875rem",
-              "$description": "UI: Label / form input font size sm → --pgn-typography-form-input-font-size-sm"
+              "$value": "1rem",
+              "$description": "UI: Label / form input font size sm (text floor 1rem, 2026-10-18; was 0.875rem) → --pgn-typography-form-input-font-size-sm"
             },
             "lg": {
               "$value": "1.325rem",

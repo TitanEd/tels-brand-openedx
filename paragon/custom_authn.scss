@@ -41,3 +41,910 @@
     color: var(--pgn-color-link-base);
   }
 }
+
+// ---------------------------------------------------------------------------
+// Sign-in, sign-up, forgot password, reset password (2026-10-18 redesign).
+// Same tokens as the rest of the platform: font, sizes, buttons, colors, radius.
+// Desktop: a brand panel (drawn from the primary colors, no text to translate)
+// next to the form card. Phone: the card alone. Third-party sign-in (Google,
+// Facebook… with the icon uploaded in the admin, else the brand icon) sits above
+// the form, then "or", then the e-mail form. Nothing below 1rem.
+// The authn fork's own sheets use many !important rules; these selectors start at
+// html + body so they win, with !important only where the fork forces a value.
+// ---------------------------------------------------------------------------
+
+$tels-auth-pages: ".custom-logistration-container, .custom-forgot-password-container, .custom-reset-password-container";
+$tels-auth-cards: ".login-centered-layout, .login-split-layout, .forgot-password-form-container, .reset-password-form-container";
+$tels-auth-radius: calc(var(--pgn-size-border-radius-lg) * 2);
+$tels-auth-ring: 0 0 0 0.25rem color-mix(in srgb, var(--pgn-color-primary-base) 22%, transparent);
+$tels-auth-white-08: color-mix(in srgb, var(--pgn-color-text-inverse, #fff) 8%, transparent);
+$tels-auth-white-14: color-mix(in srgb, var(--pgn-color-text-inverse, #fff) 14%, transparent);
+$tels-auth-white-22: color-mix(in srgb, var(--pgn-color-text-inverse, #fff) 22%, transparent);
+
+// Learning illustration of the brand panel: course cards, a progress ring, a
+// certificate badge. White strokes and fills only, so it suits every theme color.
+$tels-auth-art: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 420' fill='none'%3E%3Cg stroke='white' stroke-opacity='.55' stroke-width='2'%3E%3Crect x='40' y='70' width='250' height='150' rx='18' fill='white' fill-opacity='.10'/%3E%3Crect x='62' y='94' width='88' height='60' rx='10' fill='white' fill-opacity='.22'/%3E%3Cpath d='M166 104h96M166 124h70M166 144h84' stroke-linecap='round'/%3E%3Crect x='62' y='176' width='206' height='10' rx='5' fill='white' fill-opacity='.12'/%3E%3Crect x='62' y='176' width='140' height='10' rx='5' fill='white' fill-opacity='.65' stroke='none'/%3E%3Crect x='190' y='250' width='250' height='130' rx='18' fill='white' fill-opacity='.10'/%3E%3Ccircle cx='250' cy='315' r='34' stroke-opacity='.3' stroke-width='10'/%3E%3Cpath d='M250 281a34 34 0 1 1-29.4 51' stroke-opacity='.9' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M306 296h104M306 318h80M306 340h92' stroke-linecap='round'/%3E%3Ccircle cx='372' cy='118' r='46' fill='white' fill-opacity='.14'/%3E%3Cpath d='M352 118l14 14 26-28' stroke-opacity='.95' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M352 160l-8 34 28-14 28 14-8-34' fill='white' fill-opacity='.18'/%3E%3C/g%3E%3C/svg%3E");
+
+html.tels-custom-authn body.tels-custom-authn {
+  background: var(--pgn-color-light-200);
+
+  // ---- page: brand panel + form column -----------------------------------
+  #{$tels-auth-pages} {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--pgn-color-light-200) !important;
+    font-family: var(--pgn-typography-font-family-base);
+
+    @media (min-width: 992px) {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
+
+  }
+
+  // ---- brand panel (desktop): logo, illustration, title, tagline, benefits ----
+  .tels-auth-panel {
+    display: none;
+    position: sticky;
+    inset-block-start: 0;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.75rem 3rem;
+    overflow: hidden;
+    color: var(--pgn-color-text-inverse, #fff);
+    background:
+      linear-gradient(180deg, transparent 35%, color-mix(in srgb, #000 28%, transparent) 100%),
+      radial-gradient(circle at 12% 14%, #{$tels-auth-white-14} 0 120px, transparent 121px),
+      radial-gradient(circle at 92% 88%, #{$tels-auth-white-08} 0 240px, transparent 241px),
+      radial-gradient(circle at 80% 8%, #{$tels-auth-white-08} 0 70px, transparent 71px),
+      linear-gradient(155deg, var(--pgn-color-primary-500) 0%, var(--pgn-color-primary-base) 45%, var(--pgn-color-primary-800) 100%);
+
+    @media (min-width: 992px) {
+      display: flex;
+    }
+  }
+
+  // The normal logo on a light chip: readable whatever the theme color behind it.
+  .tels-auth-panel__logo {
+    align-self: flex-start;
+    box-sizing: content-box;
+    width: auto;
+    max-width: 10rem;
+    max-height: 2.5rem;
+    padding: 0.625rem 1rem;
+    border-radius: var(--pgn-size-border-radius-lg);
+    background: #fff;
+    box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, #000 18%, transparent);
+    object-fit: contain;
+  }
+
+  .tels-auth-panel__art {
+    flex: 1 1 auto;
+    min-height: 8rem;
+    background: $tels-auth-art center / contain no-repeat;
+  }
+
+  .tels-auth-panel__text {
+    view-transition-name: tels-auth-panel-text;
+  }
+
+  .tels-auth-panel__title {
+    max-width: 26rem;
+    margin: 0 0 0.75rem;
+    font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+    font-size: var(--pgn-typography-font-size-h2-base);
+    font-weight: var(--pgn-typography-headings-font-weight, 700);
+    line-height: 1.2;
+    color: inherit;
+  }
+
+  .tels-auth-panel__tagline {
+    max-width: 28rem;
+    margin: 0 0 1.25rem;
+    font-size: var(--pgn-typography-font-size-lg, 1.125rem);
+    line-height: 1.5;
+    color: inherit;
+    opacity: 0.92;
+  }
+
+  .tels-auth-panel__points {
+    display: grid;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: var(--pgn-typography-font-size-base);
+      font-weight: var(--pgn-typography-font-weight-semi-bold, 600);
+    }
+
+    .tels-auth-panel__point-icon {
+      flex: none;
+      width: 1.375rem;
+      height: 1.375rem;
+      color: inherit;
+      opacity: 0.9;
+    }
+  }
+
+  .custom-logistration-container > .main-content,
+  .forgot-password-form-wrapper,
+  .reset-password-form-wrapper {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100vh;
+    margin: 0 !important;
+    padding: 2.5rem 1rem !important;
+    background: transparent !important;
+
+    @media (min-width: 576px) {
+      padding: 3rem 2rem !important;
+    }
+  }
+
+  // ---- the card -----------------------------------------------------------
+  #{$tels-auth-cards} {
+    display: block !important;
+    width: 100% !important;
+    max-width: 30rem !important;
+    margin: 0 auto !important;
+    padding: 2.5rem 2.25rem !important;
+    border: 1px solid var(--pgn-color-light-400) !important;
+    border-radius: $tels-auth-radius !important;
+    background: var(--pgn-color-bg-base) !important;
+    box-shadow: var(--pgn-elevation-box-shadow-centered-2) !important;
+    color: var(--pgn-color-text-base);
+    text-align: start;
+
+    @media (max-width: 575.98px) {
+      padding: 1.75rem 1.25rem !important;
+      border-radius: var(--pgn-size-border-radius-lg) !important;
+    }
+  }
+
+  // Sign-up with third-party sign-in: the form is longer, the card a little wider.
+  .login-split-layout.registration-page-with-social-login {
+    max-width: 32rem !important;
+  }
+
+  .login-form-container,
+  .registration-form-container,
+  .traditional-login-section,
+  .social-login-section,
+  .registration-form {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  // ---- logo and headings --------------------------------------------------
+  .logo-section {
+    display: flex !important;
+    justify-content: flex-start !important;
+    margin: 0 0 1.75rem !important;
+    padding: 0 !important;
+
+    .titan-logo img {
+      display: block;
+      width: auto !important;
+      max-width: 12rem !important;
+      max-height: 3.5rem !important;
+      object-fit: contain;
+    }
+  }
+
+  .main-heading,
+  .forgot-password-title,
+  .reset-password-title {
+    margin: 0 0 0.5rem !important;
+    padding: 0 !important;
+    font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base)) !important;
+    font-size: var(--pgn-typography-font-size-h3-base) !important;
+    font-weight: var(--pgn-typography-headings-font-weight, 700) !important;
+    line-height: var(--pgn-typography-headings-line-height, 1.25) !important;
+    color: var(--pgn-color-text-base) !important;
+    text-align: start !important;
+
+    @media (max-width: 575.98px) {
+      font-size: var(--pgn-typography-font-size-h3-mobile, var(--pgn-typography-font-size-h4-base)) !important;
+    }
+  }
+
+  .section-heading,
+  .forgot-password-instructions,
+  .reset-password-instructions {
+    margin: 0 0 1.75rem !important;
+    padding: 0 !important;
+    font-size: var(--pgn-typography-font-size-base) !important;
+    font-weight: var(--pgn-typography-font-weight-normal, 400) !important;
+    line-height: 1.5 !important;
+    color: var(--pgn-color-text-light) !important;
+    text-align: start !important;
+  }
+
+  // ---- fields --------------------------------------------------------------
+  .pgn__form-group,
+  .pgn__form-group .pgn__form-control-decorator-group,
+  .pgn__form-group .form-control {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .pgn__form-group {
+    margin-block-end: 1.25rem !important;
+  }
+
+  .pgn__form-label,
+  .form-label {
+    margin-block-end: 0.5rem !important;
+    font-size: max(1rem, var(--pgn-typography-font-size-sm)) !important;
+    font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  .form-control {
+    height: var(--pgn-size-form-input-height-lg, 3rem) !important;
+    padding-block: 0 !important;
+    padding-inline: 1rem !important;
+    border: 1px solid var(--pgn-color-light-500) !important;
+    border-radius: var(--pgn-size-form-input-radius-border-base) !important;
+    background: var(--pgn-color-bg-base) !important;
+    font-family: var(--pgn-typography-font-family-base) !important;
+    font-size: max(1rem, var(--pgn-typography-form-input-font-size-base)) !important;
+    color: var(--pgn-color-text-base) !important;
+    box-shadow: none !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &::placeholder {
+      color: var(--pgn-color-text-muted, var(--pgn-color-text-light)) !important;
+      opacity: 1;
+    }
+
+    &:hover {
+      border-color: var(--pgn-color-gray-500) !important;
+    }
+
+    &:focus {
+      border-color: var(--pgn-color-primary-base) !important;
+      box-shadow: $tels-auth-ring !important;
+      outline: none;
+    }
+  }
+
+  .pgn__form-control-decorator-group.has-trailing-element .form-control {
+    padding-inline-end: 3rem !important;
+  }
+
+  .pgn__form-control-decorator-trailing {
+    inset-inline-end: 0.5rem;
+
+    .btn-icon,
+    .pgn__icon,
+    button {
+      color: var(--pgn-color-text-light) !important;
+    }
+  }
+
+  .pgn__form-control-decorator-group.is-invalid .form-control,
+  .form-control.is-invalid {
+    border-color: var(--pgn-color-danger-base) !important;
+  }
+
+  // Help and error text under a field, and the small print of the forms.
+  .pgn__form-text,
+  .pgn__form-text-default,
+  .pgn__form-feedback,
+  .form-text,
+  .invalid-feedback,
+  .pgn__form-checkbox,
+  .pgn__form-checkbox-input + div,
+  .form-check-label {
+    font-size: max(1rem, var(--pgn-typography-font-size-sm)) !important;
+    line-height: 1.45 !important;
+  }
+
+  .pgn__form-text-default,
+  .pgn__form-text-default span {
+    color: var(--pgn-color-text-light) !important;
+  }
+
+  .pgn__form-text-invalid,
+  .pgn__form-text-invalid span,
+  .invalid-feedback {
+    color: var(--pgn-color-danger-base) !important;
+  }
+
+  // ---- buttons -------------------------------------------------------------
+  .login-btn,
+  .register-button,
+  #register-user,
+  .forgot-password--button,
+  .reset-password--button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    min-height: var(--pgn-size-form-input-height-lg, 3rem) !important;
+    margin: 0.25rem 0 0 !important;
+    padding: var(--pgn-spacing-btn-padding-y-base) var(--pgn-spacing-btn-padding-x-base) !important;
+    border: var(--pgn-size-btn-border-width, 1px) solid var(--pgn-color-primary-base) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    background: var(--pgn-color-primary-base) !important;
+    color: var(--pgn-color-text-inverse) !important;
+    font-family: var(--pgn-typography-btn-font-family, var(--pgn-typography-font-family-base)) !important;
+    font-size: max(1rem, var(--pgn-typography-btn-font-size-base)) !important;
+    font-weight: var(--pgn-typography-btn-font-weight, 600) !important;
+    line-height: var(--pgn-typography-btn-line-height-base, 1.5) !important;
+    box-shadow: none !important;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--pgn-color-primary-700) !important;
+      background: var(--pgn-color-primary-700) !important;
+    }
+
+    &:focus-visible {
+      box-shadow: $tels-auth-ring !important;
+      outline: none;
+    }
+  }
+
+  // ---- links under the form ------------------------------------------------
+  .forgot-password-link {
+    display: block !important;
+    margin: 1.25rem 0 0 !important;
+    font-size: var(--pgn-typography-font-size-base) !important;
+    font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+    text-align: center !important;
+    color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+  }
+
+  .signup-text,
+  .help-text,
+  .support-info,
+  .support-info span {
+    font-size: var(--pgn-typography-font-size-base) !important;
+    color: var(--pgn-color-text-light) !important;
+  }
+
+  .signup-link,
+  .help-link,
+  .support-info a {
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    vertical-align: baseline !important;
+    font-size: var(--pgn-typography-font-size-base) !important;
+    font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+    color: var(--pgn-color-link-base, var(--pgn-color-primary-base)) !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  .text-center.mt-4:has(.signup-link) {
+    margin-block-start: 1.75rem !important;
+    padding-block-start: 1.5rem;
+    border-block-start: 1px solid var(--pgn-color-light-400);
+  }
+
+  .help-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.375rem;
+    margin-block-start: 1.75rem !important;
+    padding-block-start: 1.5rem;
+    border-block-start: 1px solid var(--pgn-color-light-400);
+  }
+
+  .support-info {
+    margin: 0.75rem 0 0 !important;
+    text-align: center !important;
+  }
+
+  // Forgot / reset password: the back arrow sits above the title.
+  .back-button-container {
+    margin: 0 0 1.25rem !important;
+  }
+
+  .back-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    padding: 0 !important;
+    border: 1px solid var(--pgn-color-light-400) !important;
+    border-radius: 50% !important;
+    background: var(--pgn-color-bg-base) !important;
+    color: var(--pgn-color-text-base) !important;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--pgn-color-primary-base) !important;
+      color: var(--pgn-color-primary-base) !important;
+    }
+
+    [dir="rtl"] & .pgn__icon {
+      transform: scaleX(-1);
+    }
+  }
+
+  // ---- messages above the form ----------------------------------------------
+  .alert {
+    border-radius: var(--pgn-size-border-radius-lg) !important;
+    font-size: var(--pgn-typography-font-size-base) !important;
+  }
+
+  // ---- third-party sign-in: buttons first, then "or", then the form ----------
+  .login-form-wrapper,
+  .registration-form-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .login-split-layout {
+    .logo-section,
+    .main-heading {
+      grid-column: auto !important;
+    }
+
+    .main-heading {
+      margin-block-end: 1.5rem !important;
+    }
+  }
+
+  .social-login-section {
+    order: 0;
+  }
+
+  .social-buttons {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    > .row,
+    .row {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      gap: 0.75rem;
+      margin: 0 !important;
+    }
+  }
+
+  .btn-social {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: var(--pgn-size-form-input-height-lg, 3rem) !important;
+    margin: 0 !important;
+    padding: 0.5rem 1rem !important;
+    border: 1px solid var(--pgn-color-light-500) !important;
+    border-radius: var(--pgn-size-btn-border-radius-base) !important;
+    background: var(--pgn-color-bg-base) !important;
+    color: var(--pgn-color-text-base) !important;
+    font-family: var(--pgn-typography-font-family-base) !important;
+    font-size: max(1rem, var(--pgn-typography-btn-font-size-base)) !important;
+    font-weight: var(--pgn-typography-font-weight-semi-bold, 600) !important;
+    box-shadow: none !important;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+      border-color: var(--pgn-color-gray-500) !important;
+      background: var(--pgn-color-light-200) !important;
+    }
+
+    &:focus-visible {
+      border-color: var(--pgn-color-primary-base) !important;
+      box-shadow: $tels-auth-ring !important;
+      outline: none;
+    }
+
+    #provider-name {
+      padding: 0 !important;
+      font-size: inherit !important;
+      color: inherit !important;
+    }
+
+    .btn-tpa__font-container,
+    > div[aria-hidden="true"] {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.375rem;
+      height: 1.375rem;
+      margin: 0 !important;
+      font-size: 1.25rem;
+      color: var(--tels-tpa-mark, var(--pgn-color-text-base)) !important;
+    }
+
+    .btn-tpa__image-icon {
+      display: block;
+      width: 1.375rem !important;
+      height: 1.375rem !important;
+      object-fit: contain;
+    }
+  }
+
+  // The providers' own colors for their marks (not theme colors); others use the text color.
+  .btn-oa2-google-oauth2 { --tels-tpa-mark: #4285f4; }
+  .btn-oa2-facebook { --tels-tpa-mark: #1877f2; }
+  .btn-oa2-linkedin-oauth2 { --tels-tpa-mark: #0a66c2; }
+  .btn-oa2-azuread-oauth2 { --tels-tpa-mark: #0078d4; }
+
+  // An odd number of providers: the last one takes the whole row.
+  .social-buttons .row > .btn-social:last-child:nth-child(odd):not(:only-child) {
+    grid-column: 1 / -1;
+  }
+
+  .divider {
+    order: 1;
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+    width: 100% !important;
+    height: auto !important;
+    margin: 1.5rem 0 !important;
+    padding: 0 !important;
+
+    &::before,
+    &::after {
+      content: "" !important;
+      position: static !important;
+      flex: 1 1 auto;
+      width: auto !important;
+      height: 1px !important;
+      border: 0 !important;
+      background: var(--pgn-color-light-400) !important;
+      transform: none !important;
+    }
+
+    .divider-text {
+      position: static !important;
+      padding: 0 !important;
+      background: transparent !important;
+      font-size: var(--pgn-typography-font-size-base) !important;
+      color: var(--pgn-color-text-light) !important;
+      text-transform: lowercase;
+      transform: none !important;
+    }
+  }
+
+  .traditional-login-section {
+    order: 2;
+
+    .section-heading {
+      margin-block-end: 1.25rem !important;
+    }
+  }
+}
+
+
+// "Page not found" of the authn MFE (stock NotFoundPage, the same markup in other
+// MFEs): the message in a centered card under a large 404, like the other pages.
+#root .container-fluid.d-flex.py-5:has(> p.text-muted.mw-32em) {
+  min-height: 100vh;
+  align-items: center !important;
+  padding: 2rem 1rem !important;
+  background: var(--pgn-color-light-200);
+
+  > p.mw-32em {
+    max-width: 32rem;
+    margin: 0 !important;
+    padding: 2.5rem 2rem !important;
+    border: 1px solid var(--pgn-color-light-400);
+    border-radius: $tels-auth-radius;
+    background: var(--pgn-color-bg-base);
+    box-shadow: var(--pgn-elevation-box-shadow-centered-2);
+    font-size: var(--pgn-typography-font-size-base);
+    line-height: 1.55;
+    color: var(--pgn-color-text-light) !important;
+
+    &::before {
+      content: "404";
+      display: block;
+      margin-block-end: 0.75rem;
+      font-family: var(--pgn-typography-headings-font-family, var(--pgn-typography-font-family-base));
+      font-size: var(--pgn-typography-font-size-display-3, 3.5rem);
+      font-weight: var(--pgn-typography-headings-font-weight, 700);
+      line-height: 1;
+      color: var(--pgn-color-primary-base);
+    }
+  }
+}
+
+// ---- desktop: the logo is in the panel; the sign-up form fits the screen -----
+@media (min-width: 992px) {
+  html.tels-custom-authn body.tels-custom-authn {
+    .custom-logistration-container .logo-section {
+      display: none !important;
+    }
+
+    // Provider tiles side by side (three on one row when they fit).
+    .social-buttons > .row,
+    .social-buttons .row {
+      grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    }
+
+    // Sign-up: a wider card with the fields in two columns, so the page needs no scroll bar.
+    .login-split-layout.registration-page-with-social-login,
+    .custom-logistration-container .login-centered-layout:has(#registration-form) {
+      max-width: 42rem !important;
+      padding: 2rem 2.25rem !important;
+    }
+
+    #registration-form {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 1.25rem;
+      align-items: start;
+
+      > * {
+        grid-column: 1 / -1;
+        min-width: 0;
+      }
+
+      > .pgn__form-group,
+      > .username__form-group-wrapper {
+        grid-column: auto;
+        margin-block-end: 1rem !important;
+      }
+
+      .username__form-group-wrapper .pgn__form-group {
+        margin-block-end: 0 !important;
+      }
+    }
+
+    .registration-form > .mw-xs {
+      max-width: none !important;
+      margin: 0 !important;
+    }
+
+    .registration-page-with-social-login {
+      .main-heading {
+        margin-block-end: 1.25rem !important;
+      }
+
+      .divider {
+        margin: 1.25rem 0 !important;
+      }
+
+      .traditional-login-section .section-heading {
+        margin-block-end: 1rem !important;
+      }
+
+      .text-center.mt-4:has(.signup-link) {
+        margin-block-start: 1.25rem !important;
+        padding-block-start: 1.25rem;
+      }
+    }
+  }
+}
+
+// ---- motion -------------------------------------------------------------------
+// The card is one shared element between the pages: on login <-> sign up and
+// forgot / reset password it morphs to its new size while the old content slides
+// out and the new one slides in from the side the visitor is heading to (the
+// fork's authTransition() starts the View Transition and gives its direction).
+// The panel's title rises in. The first view of a page fades the card up.
+@media (prefers-reduced-motion: no-preference) {
+  html.tels-custom-authn body.tels-custom-authn {
+    #{$tels-auth-cards} {
+      view-transition-name: tels-auth-card;
+    }
+
+    // First view of the page (not during a page change, the transition does that).
+    &:not(.tels-auth-transition) #{$tels-auth-cards} {
+      animation: tels-auth-rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    .tels-auth-panel__text {
+      animation: tels-auth-rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+    }
+  }
+
+  ::view-transition-group(tels-auth-card) {
+    animation-duration: 0.55s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: clip;
+    border-radius: $tels-auth-radius;
+  }
+
+  ::view-transition-old(tels-auth-card),
+  ::view-transition-new(tels-auth-card) {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  ::view-transition-old(tels-auth-card) {
+    animation: tels-auth-out-forward 0.3s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+
+  ::view-transition-new(tels-auth-card) {
+    animation: tels-auth-in-forward 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+  }
+
+  html[data-tels-auth-direction="back"]::view-transition-old(tels-auth-card) {
+    animation-name: tels-auth-out-back;
+  }
+
+  html[data-tels-auth-direction="back"]::view-transition-new(tels-auth-card) {
+    animation-name: tels-auth-in-back;
+  }
+
+  // Right-to-left languages: "forward" comes in from the left.
+  html[dir="rtl"][data-tels-auth-direction="forward"]::view-transition-old(tels-auth-card) {
+    animation-name: tels-auth-out-back;
+  }
+
+  html[dir="rtl"][data-tels-auth-direction="forward"]::view-transition-new(tels-auth-card) {
+    animation-name: tels-auth-in-back;
+  }
+
+  html[dir="rtl"][data-tels-auth-direction="back"]::view-transition-old(tels-auth-card) {
+    animation-name: tels-auth-out-forward;
+  }
+
+  html[dir="rtl"][data-tels-auth-direction="back"]::view-transition-new(tels-auth-card) {
+    animation-name: tels-auth-in-forward;
+  }
+
+  ::view-transition-old(tels-auth-panel-text) {
+    animation: tels-auth-text-out 0.3s ease both;
+  }
+
+  ::view-transition-new(tels-auth-panel-text) {
+    animation: tels-auth-text-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.12s both;
+  }
+}
+
+@keyframes tels-auth-rise {
+  from { opacity: 0; transform: translateY(1.25rem) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes tels-auth-out-forward {
+  to { opacity: 0; transform: translateX(-2.5rem) scale(0.97); filter: blur(6px); }
+}
+
+@keyframes tels-auth-in-forward {
+  from { opacity: 0; transform: translateX(3rem) scale(0.97); filter: blur(6px); }
+}
+
+@keyframes tels-auth-out-back {
+  to { opacity: 0; transform: translateX(2.5rem) scale(0.97); filter: blur(6px); }
+}
+
+@keyframes tels-auth-in-back {
+  from { opacity: 0; transform: translateX(-3rem) scale(0.97); filter: blur(6px); }
+}
+
+@keyframes tels-auth-text-out {
+  to { opacity: 0; transform: translateY(-0.75rem); }
+}
+
+@keyframes tels-auth-text-in {
+  from { opacity: 0; transform: translateY(1rem); }
+}
+
+// ---- desktop: one row of provider tiles; short screens stay without a scroll bar ----
+@media (min-width: 992px) {
+  html.tels-custom-authn body.tels-custom-authn {
+    .login-split-layout:not(.registration-page-with-social-login) {
+      max-width: 32rem !important;
+    }
+
+    .social-buttons .row > .btn-social:last-child:nth-child(odd):not(:only-child) {
+      grid-column: auto;
+    }
+
+    // The title says "Create An Account": the extra line above the form is left out.
+    .registration-page-with-social-login .traditional-login-section .section-heading {
+      display: none !important;
+    }
+  }
+}
+
+// Laptop screens (about 860px of page height or less): tighter spacing, and the help
+// text of a sign-up field shows while the field is being filled in.
+@media (min-width: 992px) and (max-height: 860px) {
+  html.tels-custom-authn body.tels-custom-authn {
+    .custom-logistration-container > .main-content,
+    .forgot-password-form-wrapper,
+    .reset-password-form-wrapper {
+      padding: 1.25rem 2rem !important;
+    }
+
+    #{$tels-auth-cards} {
+      padding: 1.5rem 2rem !important;
+    }
+
+    .main-heading {
+      margin-block-end: 1rem !important;
+    }
+
+    .traditional-login-section .section-heading {
+      margin-block-end: 0.75rem !important;
+    }
+
+    .divider {
+      margin: 0.75rem 0 !important;
+    }
+
+    .pgn__form-group {
+      margin-block-end: 0.875rem !important;
+    }
+
+    .forgot-password-link {
+      margin-block-start: 0.875rem !important;
+    }
+
+    .text-center.mt-4:has(.signup-link),
+    .registration-page-with-social-login .text-center.mt-4:has(.signup-link) {
+      margin-block-start: 1rem !important;
+      padding-block-start: 1rem;
+    }
+
+    #registration-form {
+      > .pgn__form-group,
+      > .username__form-group-wrapper {
+        margin-block-end: 0.75rem !important;
+      }
+
+      .pgn__form-text-default {
+        display: none !important;
+      }
+
+      .pgn__form-group:focus-within .pgn__form-text-default {
+        display: block !important;
+      }
+    }
+
+    .tels-auth-panel {
+      padding: 2rem 2.5rem;
+    }
+
+    .tels-auth-panel__title {
+      font-size: var(--pgn-typography-font-size-h3-base);
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-height: 680px) {
+  html.tels-custom-authn body.tels-custom-authn {
+    .custom-logistration-container > .main-content,
+    .forgot-password-form-wrapper,
+    .reset-password-form-wrapper {
+      padding: 0.75rem 2rem !important;
+    }
+  }
+}

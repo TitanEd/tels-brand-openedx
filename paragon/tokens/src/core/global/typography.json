@@ -112,8 +112,8 @@
         },
         "h5": {
           "base": {
-            "$value": "0.875rem",
-            "$description": "UI label: H5 → --pgn-typography-font-size-h5-base"
+            "$value": "1rem",
+            "$description": "UI label (text floor 1rem, 2026-10-18; was 0.875rem): H5 → --pgn-typography-font-size-h5-base"
           },
           "mobile": {
             "$value": "{typography.font.size.h5.base}",
@@ -122,8 +122,8 @@
         },
         "h6": {
           "base": {
-            "$value": "0.75rem",
-            "$description": "UI label: H6 → --pgn-typography-font-size-h6-base"
+            "$value": "1rem",
+            "$description": "UI label (text floor 1rem, 2026-10-18; was 0.75rem): H6 → --pgn-typography-font-size-h6-base"
           },
           "mobile": {
             "$value": "{typography.font.size.h6.base}",
@@ -147,12 +147,16 @@
           "$description": "Paragon default → --pgn-typography-font-size-lg"
         },
         "sm": {
-          "$value": "87.5%",
-          "$description": "Paragon default → --pgn-typography-font-size-sm"
+          "$value": "max(1rem, 87.5%)",
+          "$description": "Text floor 1rem (2026-10-18); Paragon default 87.5% → --pgn-typography-font-size-sm"
         },
         "xs": {
-          "$value": "75%",
-          "$description": "Paragon default → --pgn-typography-font-size-xs"
+          "$value": "max(1rem, 75%)",
+          "$description": "Text floor 1rem (2026-10-18); Paragon default 75% → --pgn-typography-font-size-xs"
+        },
+        "micro": {
+          "$value": "1rem",
+          "$description": "Text floor 1rem (2026-10-18); Paragon default 0.688rem → --pgn-typography-font-size-micro"
         }
       }
     },

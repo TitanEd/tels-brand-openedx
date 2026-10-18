@@ -50,7 +50,10 @@ def minify_like(src: Path, dest: Path) -> None:
     css = src.read_text()
     css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
     css = re.sub(r"\s+", " ", css)
-    css = re.sub(r"\s*([{}:;,])\s*", r"\1", css)
+    # Never drop the space before ":" — in a selector it is a descendant combinator
+    # ("#root :is(...)" is not "#root:is(...)").
+    css = re.sub(r"\s*([{};,])\s*", r"\1", css)
+    css = re.sub(r":\s+", ":", css)
     dest.write_text(css.strip() + "\n")
     print(f"rewrote {dest.name}")
 
