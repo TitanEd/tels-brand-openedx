@@ -7729,8 +7729,22 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.btn-link):not(.pgn__tab_more
   background-color: var(--pgn-color-icon-button-bg-primary-hover) !important;
 }
 
+.tels-header-extras #notificationIcon {
+  position: relative;
+  display: inline-flex;
+}
+
 .tels-header-extras #notificationIcon .notification-badge {
+  top: 0.125rem;
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+  margin: 0 !important;
   color: var(--pgn-color-text-inverse, #fff);
+  pointer-events: auto;
+}
+
+.tels-header-extras #notificationIcon .notification-badge-unrounded {
+  inset-inline-end: -0.25rem;
 }
 
 #notificationTray.popover {
