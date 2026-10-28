@@ -1225,6 +1225,8 @@
   --pgn-color-action-default-accent-b: #FFE755FF;
   --pgn-color-surface-base: var(--pgn-color-bg-base);
   --pgn-border-color-nav-tabs-link-border-active: var(--pgn-color-primary-base);
+  --pgn-elevation-dropzone-hover-color: var(--pgn-color-primary-500);
+  --pgn-elevation-dropzone-focus-color: var(--pgn-color-primary-500);
   --pgn-elevation-dropzone-active-color: var(--pgn-color-primary-500);
   --pgn-elevation-form-input-focus-color: var(--pgn-color-primary-500);
   --pgn-elevation-form-control-range-thumb-focus-color: var(--pgn-color-body-bg);
@@ -1763,8 +1765,6 @@
   --pgn-border-color-nav-tabs-link-border-hover-bottom: var(--pgn-color-nav-tabs-base-border-base);
   --pgn-border-color-nav-tabs-link-border-focus: var(--pgn-color-nav-tabs-base-link-active-text);
   --pgn-elevation-close-button-text-shadow-color: var(--pgn-color-white);
-  --pgn-elevation-dropzone-hover-color: var(--pgn-color-info-300);
-  --pgn-elevation-dropzone-focus-color: var(--pgn-color-info-300);
   --pgn-elevation-dropzone-error-color: var(--pgn-color-danger-300);
   --pgn-elevation-icon-button-box-shadow-secondary-base-color: var(--pgn-color-icon-button-text-secondary-base);
   --pgn-elevation-icon-button-box-shadow-brand-base-color: var(--pgn-color-icon-button-text-brand-base);

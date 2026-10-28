@@ -28,14 +28,14 @@
     "dropzone": {
       "focus": {
         "$value": {
-          "color": "{color.info.300}",
+          "color": "{color.primary.500}",
           "spread": "2px",
           "offsetX": "0",
           "offsetY": "0",
           "blur": "0",
           "inset": "inset"
         },
-        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-dropzone-focus",
+        "$description": "Theme primary colour (Paragon's info-300 blue ignored the theme) → --pgn-elevation-dropzone-focus",
         "$extensions": {
           "tels": {
             "syncedFromLight": true
@@ -44,14 +44,14 @@
       },
       "hover": {
         "$value": {
-          "color": "{color.info.300}",
+          "color": "{color.primary.500}",
           "spread": "2px",
           "offsetX": "0",
           "offsetY": "0",
           "blur": "0",
           "inset": "inset"
         },
-        "$description": "Dark twin of the light token (scripts/sync-dark-tokens.js). Paragon default → --pgn-elevation-dropzone-hover",
+        "$description": "Theme primary colour (Paragon's info-300 blue ignored the theme) → --pgn-elevation-dropzone-hover",
         "$extensions": {
           "tels": {
             "syncedFromLight": true

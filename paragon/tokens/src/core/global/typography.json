@@ -166,6 +166,10 @@
         "$type": "number",
         "$description": "UI label: Body line height (unitless) → --pgn-typography-line-height-base"
       },
+      "micro": {
+        "$value": "{typography.line-height.base}",
+        "$description": "Body line height: micro text is 1rem (text floor), Paragon's 0.938rem made its lines touch → --pgn-typography-line-height-micro"
+      },
       "display": {
         "base": {
           "$value": "1",

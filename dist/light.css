@@ -1203,6 +1203,8 @@
   --pgn-color-selectable-box-bg: var(--pgn-color-white);
   --pgn-color-surface-base: var(--pgn-color-white);
   --pgn-border-color-nav-tabs-link-border-active: var(--pgn-color-primary-base);
+  --pgn-elevation-dropzone-hover-color: var(--pgn-color-primary-500);
+  --pgn-elevation-dropzone-focus-color: var(--pgn-color-primary-500);
   --pgn-elevation-dropzone-active-color: var(--pgn-color-primary-500);
   --pgn-elevation-form-input-focus-color: var(--pgn-color-primary-500);
   --pgn-elevation-form-control-file-focus-color: var(--pgn-color-primary-500);
@@ -1726,8 +1728,6 @@
   --pgn-content-navbar-toggler-dark-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23FFFFFF80' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --pgn-content-navbar-toggler-light-icon-bg: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%2300000080' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --pgn-border-color-nav-tabs-link-border-focus: var(--pgn-color-nav-tabs-base-link-active-text);
-  --pgn-elevation-dropzone-hover-color: var(--pgn-color-info-300);
-  --pgn-elevation-dropzone-focus-color: var(--pgn-color-info-300);
   --pgn-elevation-dropzone-error-color: var(--pgn-color-danger-300);
   --pgn-elevation-form-control-range-thumb-focus-color: var(--pgn-color-body-bg);
   --pgn-elevation-icon-button-box-shadow-brand-base-color: var(--pgn-color-icon-button-text-brand-base);

@@ -360,7 +360,6 @@
   --pgn-typography-line-height-base: 1.5556;
   --pgn-typography-line-height-lg: 1.5;
   --pgn-typography-line-height-sm: 1.5;
-  --pgn-typography-line-height-micro: 0.938rem;
   --pgn-typography-line-height-display-base: 1;
   --pgn-typography-line-height-display-mobile: 3.5rem;
   --pgn-typography-letter-spacing-base: normal;
@@ -615,6 +614,7 @@
   --pgn-typography-font-weight-display-2: var(--pgn-typography-font-weight-bold);
   --pgn-typography-font-weight-display-3: var(--pgn-typography-font-weight-bold);
   --pgn-typography-font-weight-display-4: var(--pgn-typography-font-weight-bold);
+  --pgn-typography-line-height-micro: var(--pgn-typography-line-height-base);
   --pgn-transition-carousel-base-duration: var(--pgn-transition-carousel-duration);
   --pgn-transition-carousel-indicator-duration: var(--pgn-transition-carousel-duration);
   --pgn-size-btn-focus-border-radius-base: calc(var(--pgn-size-btn-border-radius-base) + var(--pgn-spacing-btn-focus-border-gap));
