@@ -1255,6 +1255,7 @@
   --pgn-color-theme-active-secondary: var(--pgn-color-secondary-900);
   --pgn-color-theme-active-light: var(--pgn-color-light-900);
   --pgn-color-theme-active-dark: var(--pgn-color-dark-900);
+  --pgn-color-alert-icon-info: var(--pgn-color-primary-500);
   --pgn-color-annotation-text-light: var(--pgn-color-primary-500);
   --pgn-color-annotation-bg-success: var(--pgn-color-success-base);
   --pgn-color-annotation-bg-error: var(--pgn-color-danger-base);
@@ -2039,7 +2040,6 @@
   --pgn-other-content-form-feedback-icon-valid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23178253FF' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   --pgn-other-content-form-feedback-icon-invalid: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23C32D3AFF' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23C32D3AFF' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
   --pgn-color-alert-icon-success: var(--pgn-color-theme-default-success);
-  --pgn-color-alert-icon-info: var(--pgn-color-theme-default-info);
   --pgn-color-alert-icon-danger: var(--pgn-color-theme-default-danger);
   --pgn-color-alert-icon-warning: var(--pgn-color-theme-default-warning);
   --pgn-color-alert-bg-success: var(--pgn-color-theme-bg-success);
@@ -13475,6 +13475,10 @@ html body #root.small :is(#main, .btn, .badge, .dropdown-menu, .form-control, .p
 [data-paragon-theme-variant=dark] .course-outline-container .sub-header-title {
   color: var(--pgn-color-headings-base) !important;
 }
+[data-paragon-theme-variant=dark] .course-outline-container .text-secondary-400,
+[data-paragon-theme-variant=dark] .course-outline-container [data-testid=status-messages-div] {
+  color: var(--pgn-color-text-base) !important;
+}
 [data-paragon-theme-variant=dark] .profile-page > .col.container-fluid.d-inline-flex,
 [data-paragon-theme-variant=dark] .profile-page > div > .col.container-fluid.d-inline-flex {
   background-color: var(--pgn-color-bg-base) !important;
@@ -13580,6 +13584,25 @@ html body #root.small :is(#main, .btn, .badge, .dropdown-menu, .form-control, .p
 }
 [data-paragon-theme-variant=dark] .icon-with-border {
   background-color: var(--pgn-color-surface-base) !important;
+}
+[data-paragon-theme-variant=dark] .cm-editor {
+  background-color: var(--pgn-color-bg-base);
+  color: var(--pgn-color-text-base);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-gutters {
+  background-color: var(--pgn-color-light-200);
+  border-color: var(--pgn-color-border);
+  color: var(--pgn-color-text-muted);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-activeLine,
+[data-paragon-theme-variant=dark] .cm-editor .cm-activeLineGutter {
+  background-color: var(--pgn-color-light-300);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-cursor {
+  border-left-color: var(--pgn-color-text-base);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-selectionBackground, [data-paragon-theme-variant=dark] .cm-editor.cm-focused .cm-selectionBackground {
+  background-color: var(--pgn-color-gray-300) !important;
 }
 
 [data-paragon-theme-variant=dark] .header-container .navbarContainer .flex-grow-1 > div > div {

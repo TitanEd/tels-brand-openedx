@@ -35,6 +35,13 @@
     .sub-header-title {
       color: var(--pgn-color-headings-base) !important;
     }
+
+    // Status lines of the cards (release date, graded as, due date, staff-only and other notes):
+    // Paragon's secondary-400 and .text-dark are dark grays on the dark card. Icons follow the text.
+    .text-secondary-400,
+    [data-testid="status-messages-div"] {
+      color: var(--pgn-color-text-base) !important;
+    }
   }
 
   // Profile: the certificates band is a literal off-white.
@@ -171,6 +178,33 @@
 
   .icon-with-border {
     background-color: var(--pgn-color-surface-base) !important;
+  }
+
+  // Studio code editors (problem XML, HTML source): CodeMirror's light gutter, active line and
+  // selection. The syntax colors stay CodeMirror's own.
+  .cm-editor {
+    background-color: var(--pgn-color-bg-base);
+    color: var(--pgn-color-text-base);
+
+    .cm-gutters {
+      background-color: var(--pgn-color-light-200);
+      border-color: var(--pgn-color-border);
+      color: var(--pgn-color-text-muted);
+    }
+
+    .cm-activeLine,
+    .cm-activeLineGutter {
+      background-color: var(--pgn-color-light-300);
+    }
+
+    .cm-cursor {
+      border-left-color: var(--pgn-color-text-base);
+    }
+
+    .cm-selectionBackground,
+    &.cm-focused .cm-selectionBackground {
+      background-color: var(--pgn-color-gray-300) !important;
+    }
   }
 }
 

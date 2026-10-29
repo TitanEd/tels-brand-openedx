@@ -16,8 +16,8 @@
           "$description": "Alert success icon (dark) → --pgn-color-alert-icon-success"
         },
         "info": {
-          "$value": "{color.info.400}",
-          "$description": "Alert info icon (dark) → --pgn-color-alert-icon-info"
+          "$value": "{color.primary.500}",
+          "$description": "Alert info icon (dark): the theme's primary colour (Paragon's info blue ignored the theme) → --pgn-color-alert-icon-info"
         },
         "danger": {
           "$value": "{color.danger.400}",

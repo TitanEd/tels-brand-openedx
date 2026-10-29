@@ -12,7 +12,7 @@
       },
       "icon": {
         "success": { "$value": "{color.theme.default.success}", "$description": "Success icon → --pgn-color-alert-icon-success" },
-        "info": { "$value": "{color.theme.default.info}", "$description": "Info icon → --pgn-color-alert-icon-info" },
+        "info": { "$value": "{color.primary.500}", "$description": "Info icon: the theme's primary colour (Paragon's info blue ignored the theme) → --pgn-color-alert-icon-info" },
         "danger": { "$value": "{color.theme.default.danger}", "$description": "Danger icon → --pgn-color-alert-icon-danger" },
         "warning": { "$value": "{color.theme.default.warning}", "$description": "Warning icon → --pgn-color-alert-icon-warning" }
       },

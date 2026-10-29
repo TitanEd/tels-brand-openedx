@@ -1271,6 +1271,7 @@
   --pgn-color-theme-hover-secondary: var(--pgn-color-secondary-700);
   --pgn-color-theme-active-primary: var(--pgn-color-primary-900);
   --pgn-color-theme-active-secondary: var(--pgn-color-secondary-900);
+  --pgn-color-alert-icon-info: var(--pgn-color-primary-500);
   --pgn-color-alert-icon-warning: var(--pgn-color-warning-base);
   --pgn-color-alert-border-success: var(--pgn-color-success-base);
   --pgn-color-alert-border-info: var(--pgn-color-info-base);
@@ -1807,7 +1808,6 @@
   --pgn-color-theme-active-warning: var(--pgn-color-warning-900);
   --pgn-color-theme-active-danger: var(--pgn-color-danger-900);
   --pgn-color-alert-icon-success: var(--pgn-color-success-400);
-  --pgn-color-alert-icon-info: var(--pgn-color-info-400);
   --pgn-color-alert-icon-danger: var(--pgn-color-danger-400);
   --pgn-color-alert-bg-success: var(--pgn-color-theme-bg-success);
   --pgn-color-alert-bg-info: var(--pgn-color-theme-bg-info);
@@ -13475,6 +13475,10 @@ html body #root.small :is(#main, .btn, .badge, .dropdown-menu, .form-control, .p
 [data-paragon-theme-variant=dark] .course-outline-container .sub-header-title {
   color: var(--pgn-color-headings-base) !important;
 }
+[data-paragon-theme-variant=dark] .course-outline-container .text-secondary-400,
+[data-paragon-theme-variant=dark] .course-outline-container [data-testid=status-messages-div] {
+  color: var(--pgn-color-text-base) !important;
+}
 [data-paragon-theme-variant=dark] .profile-page > .col.container-fluid.d-inline-flex,
 [data-paragon-theme-variant=dark] .profile-page > div > .col.container-fluid.d-inline-flex {
   background-color: var(--pgn-color-bg-base) !important;
@@ -13580,6 +13584,25 @@ html body #root.small :is(#main, .btn, .badge, .dropdown-menu, .form-control, .p
 }
 [data-paragon-theme-variant=dark] .icon-with-border {
   background-color: var(--pgn-color-surface-base) !important;
+}
+[data-paragon-theme-variant=dark] .cm-editor {
+  background-color: var(--pgn-color-bg-base);
+  color: var(--pgn-color-text-base);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-gutters {
+  background-color: var(--pgn-color-light-200);
+  border-color: var(--pgn-color-border);
+  color: var(--pgn-color-text-muted);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-activeLine,
+[data-paragon-theme-variant=dark] .cm-editor .cm-activeLineGutter {
+  background-color: var(--pgn-color-light-300);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-cursor {
+  border-left-color: var(--pgn-color-text-base);
+}
+[data-paragon-theme-variant=dark] .cm-editor .cm-selectionBackground, [data-paragon-theme-variant=dark] .cm-editor.cm-focused .cm-selectionBackground {
+  background-color: var(--pgn-color-gray-300) !important;
 }
 
 [data-paragon-theme-variant=dark] .header-container .navbarContainer .flex-grow-1 > div > div {
