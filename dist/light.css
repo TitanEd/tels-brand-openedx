@@ -13648,6 +13648,14 @@ html body #root.small :is(#main, .btn, .badge, .dropdown-menu, .form-control, .p
   border-color: var(--pgn-color-border) !important;
   color: var(--pgn-color-text-base) !important;
 }
+[data-paragon-theme-variant=dark] .apexcharts-tooltip .apexcharts-tooltip-title {
+  background: var(--pgn-color-light-200) !important;
+  border-bottom-color: var(--pgn-color-border) !important;
+  color: var(--pgn-color-text-base) !important;
+}
+[data-paragon-theme-variant=dark] .grade-bar text {
+  fill: currentColor;
+}
 [data-paragon-theme-variant=dark] .video-wrapper,
 [data-paragon-theme-variant=dark] .upload-box,
 [data-paragon-theme-variant=dark] .image-preview-container,

@@ -271,6 +271,18 @@
     color: var(--pgn-color-text-base) !important;
   }
 
+  // The tooltip's title bar keeps ApexCharts' light-theme grey (Progress > Grade summary).
+  .apexcharts-tooltip .apexcharts-tooltip-title {
+    background: var(--pgn-color-light-200) !important;
+    border-bottom-color: var(--pgn-color-border) !important;
+    color: var(--pgn-color-text-base) !important;
+  }
+
+  // Progress > Grades: the bar's labels ("0%", "50%", "Passing grade") are SVG text, black by default.
+  .grade-bar text {
+    fill: currentColor;
+  }
+
   // Light boxes: embedded video frame, Studio upload and preview boxes.
   .video-wrapper,
   .upload-box,
