@@ -234,6 +234,15 @@ DataTable has no row-hover state in Paragon, so there is no hover token.
 | A — Paragon JSX menu | `.dropdown-menu`, `.dropdown-item` | `themes/light/components/dropdown/colors.json` + `overrides/_dropdown.scss` |
 | B — native `<select>` | `select.form-control` + `option` | primary + `form/input.json` + `overrides/_selects.scss` |
 
+### Date / time pickers
+
+| Kind | Class | File / SCSS |
+|------|-------|-------------|
+| A — native `<input type="date|time|…">` | icon + dark pop-up | primary + `overrides/_datepicker.scss` |
+| B — react-datepicker pop-up | `.react-datepicker*` | dropdown kit (`themes/*/components/dropdown/colors.json`) + primary-100 / light-200 / gray-300 + `overrides/_datepicker.scss` |
+
+Chrome draws the native pop-up grid itself, so its colours cannot follow the tokens; TitanEd forms use react-datepicker (TelsDateInput / TelsTimeInput) where the pop-up must be in the brand colour.
+
 ### Alert / Badge / Chip / Navbar / Modal / Toast
 
 No thin SCSS bridge needed — Paragon's own component CSS already reads these `--pgn-*` names directly. Each JSON file is now the documented, independently overridable control point (colors default to your semantic roots; radius/padding default to global size tokens, so they still cascade unless you override them here).
