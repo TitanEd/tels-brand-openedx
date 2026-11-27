@@ -5116,6 +5116,11 @@ input[type=time] {
   color: var(--pgn-color-primary-base) !important;
 }
 
+html .react-loading-skeleton {
+  --base-color: var(--pgn-color-light-400);
+  --highlight-color: var(--pgn-color-light-200);
+}
+
 .pgn__searchfield:not(.pgn__searchfield--external) {
   border-color: var(--pgn-color-search-field-border-base) !important;
   border-radius: var(--pgn-size-search-field-border-radius, var(--pgn-size-form-input-radius-border-base, var(--pgn-size-border-radius-base))) !important;
@@ -13169,6 +13174,39 @@ html.tels-custom-authn body.tels-custom-authn .traditional-login-section .sectio
     border-color: transparent !important;
     font-weight: var(--pgn-typography-font-weight-bold);
     box-shadow: none !important;
+  }
+}
+.tels-custom-instructor-dashboard .page-content span[aria-busy=true]:has(> .react-loading-skeleton) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+}
+.tels-custom-instructor-dashboard .page-content span[aria-busy=true]:has(> .react-loading-skeleton) > .react-loading-skeleton,
+.tels-custom-instructor-dashboard .page-content span[aria-busy=true]:has(> .react-loading-skeleton) > br {
+  display: none;
+}
+.tels-custom-instructor-dashboard .page-content span[aria-busy=true]:has(> .react-loading-skeleton)::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border: 0.25em solid var(--pgn-color-primary-base);
+  border-inline-end-color: transparent;
+  border-radius: 50%;
+  animation: tels-loading-spin 0.75s linear infinite;
+}
+.tels-custom-instructor-dashboard .page-content span[aria-busy=true]:has(> .react-loading-skeleton) + span[aria-busy=true]:has(> .react-loading-skeleton) {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tels-custom-instructor-dashboard .page-content span[aria-busy=true]:has(> .react-loading-skeleton)::after {
+    animation-duration: 1.5s;
+  }
+}
+@keyframes tels-loading-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 .tels-custom-learner-dashboard {

@@ -243,6 +243,14 @@ DataTable has no row-hover state in Paragon, so there is no hover token.
 
 Chrome draws the native pop-up grid itself, so its colours cannot follow the tokens; TitanEd forms use react-datepicker (TelsDateInput / TelsTimeInput) where the pop-up must be in the brand colour.
 
+### Loading skeletons
+
+| Kind | Class | File / SCSS |
+|------|-------|-------------|
+| Paragon `<Skeleton>` placeholders | `.react-loading-skeleton` | light-400 (bar) + light-200 (shimmer) + `overrides/_skeleton.scss` |
+
+The library's own greys (#ebebeb / #f5f5f5) are light-mode only; the tokens switch with the theme, so dark pages no longer flash white bars while loading.
+
 ### Alert / Badge / Chip / Navbar / Modal / Toast
 
 No thin SCSS bridge needed — Paragon's own component CSS already reads these `--pgn-*` names directly. Each JSON file is now the documented, independently overridable control point (colors default to your semantic roots; radius/padding default to global size tokens, so they still cascade unless you override them here).

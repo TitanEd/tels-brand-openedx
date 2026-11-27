@@ -1,0 +1,9 @@
+// LAYER 2 — Loading skeletons (Paragon <Skeleton>, all MFEs)
+// Tokens reused: light-400 (bar), light-200 (shimmer). Both follow the theme: light #E9E6E4 / #F8F7F6, dark #313B4A / #1F2937.
+// Why: react-loading-skeleton (inside Paragon Skeleton) hard-codes --base-color #ebebeb and --highlight-color #f5f5f5, so in dark mode the placeholders that show while a page loads were bright white bars on the dark page (TSD-183, instructor dashboard). Map its two variables to the theme tokens so loading looks the same as the page around it.
+
+// html: one step more specific than the library rule, which each MFE bundle loads after this brand CSS.
+html .react-loading-skeleton {
+  --base-color: var(--pgn-color-light-400);
+  --highlight-color: var(--pgn-color-light-200);
+}
